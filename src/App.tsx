@@ -1,6 +1,6 @@
 import { CSSProperties, PointerEvent, useEffect, useMemo, useRef, useState } from "react";
 
-type TeamKey = "brazil" | "argentina" | "spain" | "france";
+type TeamKey = "brazil" | "argentina" | "spain" | "france" | "england" | "portugal" | "germany" | "netherlands";
 type Tone = "green" | "blue" | "gold" | "orange" | "red" | "muted";
 
 type Team = {
@@ -68,6 +68,17 @@ type MatchPrediction = {
     engine: string;
     simulationCount: number;
     lockedResults: number;
+    dataset?: {
+      source: string;
+      teamCount: number;
+      fixtureCount: number;
+      eventCount: number;
+    };
+    events?: {
+      watched: number;
+      applied: number;
+      ignored: number;
+    };
   };
 };
 
@@ -99,6 +110,34 @@ const teams: Team[] = [
     code: "FRA",
     factors: { overall: 90, attack: 89, defense: 87, goalkeeper: 86, path: 74, squad: 89 },
     tournament: { champion: 13.1, final: 25.9, semifinal: 42.5, quarterfinal: 64.9, change: -0.2 },
+  },
+  {
+    key: "england",
+    name: "英格兰",
+    code: "ENG",
+    factors: { overall: 85, attack: 86, defense: 84, goalkeeper: 82, path: 73, squad: 83 },
+    tournament: { champion: 9.8, final: 20.2, semifinal: 35.1, quarterfinal: 58.5, change: 0.1 },
+  },
+  {
+    key: "portugal",
+    name: "葡萄牙",
+    code: "POR",
+    factors: { overall: 84, attack: 87, defense: 80, goalkeeper: 81, path: 70, squad: 82 },
+    tournament: { champion: 8.7, final: 18.4, semifinal: 32.6, quarterfinal: 55.2, change: -0.1 },
+  },
+  {
+    key: "germany",
+    name: "德国",
+    code: "GER",
+    factors: { overall: 82, attack: 84, defense: 82, goalkeeper: 84, path: 71, squad: 81 },
+    tournament: { champion: 7.9, final: 17.2, semifinal: 30.4, quarterfinal: 53.8, change: 0.2 },
+  },
+  {
+    key: "netherlands",
+    name: "荷兰",
+    code: "NED",
+    factors: { overall: 82, attack: 83, defense: 83, goalkeeper: 82, path: 69, squad: 80 },
+    tournament: { champion: 7.1, final: 15.8, semifinal: 28.6, quarterfinal: 51.9, change: -0.3 },
   },
 ];
 
@@ -248,7 +287,7 @@ function App() {
   const dataModeLabel = dataMode === "api" ? "真实模型" : "演示动态";
   const championBoard = [...teamsData].sort((left, right) => right.tournament.champion - left.tournament.champion);
   const modelSummary = matchPrediction.modelMeta
-    ? `${matchPrediction.modelMeta.simulationCount.toLocaleString("zh-CN")} 次模拟 · 已锁定 ${matchPrediction.modelMeta.lockedResults} 场赛果`
+    ? `${matchPrediction.modelMeta.simulationCount.toLocaleString("zh-CN")} 次模拟 · 已锁定 ${matchPrediction.modelMeta.lockedResults} 场赛果 · 事件 ${matchPrediction.modelMeta.events?.applied ?? 0} 入模 / ${matchPrediction.modelMeta.events?.ignored ?? 0} 忽略`
     : "已结束比赛只作为后续权重因子";
 
   useEffect(() => {

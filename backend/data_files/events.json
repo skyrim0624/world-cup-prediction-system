@@ -1,0 +1,32 @@
+[
+  {
+    "title": "官方名单",
+    "detail": "两队暂无新增停赛，核心阵容可用",
+    "team": null,
+    "source_level": "S",
+    "factor": "squad",
+    "direction": 1,
+    "strength": 0.01,
+    "time": "1 小时前"
+  },
+  {
+    "title": "训练信息",
+    "detail": "巴西边路主力单独训练，出场仍待确认",
+    "team": "brazil",
+    "source_level": "B",
+    "factor": "attack",
+    "direction": -1,
+    "strength": 0.035,
+    "time": "3 小时前"
+  },
+  {
+    "title": "社媒传闻",
+    "detail": "未证实更衣室消息，不改变概率",
+    "team": "argentina",
+    "source_level": "D",
+    "factor": "squad",
+    "direction": -1,
+    "strength": 0.06,
+    "time": "5 小时前"
+  }
+]

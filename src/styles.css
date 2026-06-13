@@ -440,6 +440,54 @@ button {
   background: linear-gradient(90deg, #183e9f 0 33%, #fff 33% 66%, #df2335 66%);
 }
 
+.flag-england {
+  background: #f4f4f4;
+}
+
+.flag-england::before,
+.flag-england::after {
+  content: "";
+  position: absolute;
+  background: #c8102e;
+}
+
+.flag-england::before {
+  left: 0;
+  right: 0;
+  top: 19px;
+  height: 8px;
+}
+
+.flag-england::after {
+  top: 0;
+  bottom: 0;
+  left: 30px;
+  width: 8px;
+}
+
+.flag-portugal {
+  background: linear-gradient(90deg, #006f3c 0 40%, #d71920 40%);
+}
+
+.flag-portugal::after {
+  content: "";
+  position: absolute;
+  left: 23px;
+  top: 15px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ffd100;
+}
+
+.flag-germany {
+  background: linear-gradient(#111 0 33%, #dd0000 33% 66%, #ffce00 66%);
+}
+
+.flag-netherlands {
+  background: linear-gradient(#ae1c28 0 33%, #fff 33% 66%, #21468b 66%);
+}
+
 .module-grid {
   display: grid;
   grid-template-columns: minmax(320px, 1fr) minmax(320px, 1fr);

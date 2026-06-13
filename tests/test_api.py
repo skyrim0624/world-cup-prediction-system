@@ -1,0 +1,21 @@
+import unittest
+
+from fastapi.testclient import TestClient
+
+from backend.main import app
+
+
+class PredictionApiTest(unittest.TestCase):
+    def test_model_status_exposes_coverage_and_known_gaps(self):
+        client = TestClient(app)
+        response = client.get("/api/model-status")
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertEqual(payload["dataset"]["source"], "local-json")
+        self.assertGreaterEqual(payload["dataset"]["teamCount"], 8)
+        self.assertIn("knownGaps", payload)
+        self.assertIn("完整 48 队赛程", payload["knownGaps"][0])
+
+
+if __name__ == "__main__":
+    unittest.main()

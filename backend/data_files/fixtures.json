@@ -1,0 +1,92 @@
+[
+  {
+    "home": "spain",
+    "away": "france",
+    "stage": "小组赛 E 组",
+    "kickoff": "6月12日 08:00",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 1
+  },
+  {
+    "home": "brazil",
+    "away": "spain",
+    "stage": "小组赛 E 组",
+    "kickoff": "6月13日 08:00",
+    "status": "finished",
+    "home_score": 1,
+    "away_score": 1
+  },
+  {
+    "home": "argentina",
+    "away": "france",
+    "stage": "小组赛 E 组",
+    "kickoff": "6月14日 08:00",
+    "status": "finished",
+    "home_score": 2,
+    "away_score": 0
+  },
+  {
+    "home": "brazil",
+    "away": "argentina",
+    "stage": "小组赛 E 组",
+    "kickoff": "6月15日 08:00",
+    "status": "scheduled"
+  },
+  {
+    "home": "spain",
+    "away": "argentina",
+    "stage": "小组赛 E 组",
+    "kickoff": "6月18日 08:00",
+    "status": "scheduled"
+  },
+  {
+    "home": "brazil",
+    "away": "france",
+    "stage": "小组赛 E 组",
+    "kickoff": "6月18日 11:00",
+    "status": "scheduled"
+  },
+  {
+    "home": "england",
+    "away": "portugal",
+    "stage": "小组赛 F 组",
+    "kickoff": "6月12日 11:00",
+    "status": "scheduled"
+  },
+  {
+    "home": "germany",
+    "away": "netherlands",
+    "stage": "小组赛 F 组",
+    "kickoff": "6月13日 11:00",
+    "status": "scheduled"
+  },
+  {
+    "home": "england",
+    "away": "germany",
+    "stage": "小组赛 F 组",
+    "kickoff": "6月16日 08:00",
+    "status": "scheduled"
+  },
+  {
+    "home": "portugal",
+    "away": "netherlands",
+    "stage": "小组赛 F 组",
+    "kickoff": "6月16日 11:00",
+    "status": "scheduled"
+  },
+  {
+    "home": "england",
+    "away": "netherlands",
+    "stage": "小组赛 F 组",
+    "kickoff": "6月20日 08:00",
+    "status": "scheduled"
+  },
+  {
+    "home": "portugal",
+    "away": "germany",
+    "stage": "小组赛 F 组",
+    "kickoff": "6月20日 11:00",
+    "status": "scheduled"
+  }
+]

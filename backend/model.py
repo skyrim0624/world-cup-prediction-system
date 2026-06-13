@@ -7,7 +7,7 @@ from math import exp, factorial
 from random import Random
 from typing import Literal
 
-from .data import CURRENT_MATCH, EVENTS, FIXTURES, SOURCE_WEIGHTS, TEAM_PROFILES, Fixture, TeamProfile
+from .data import CURRENT_MATCH, DATASET_META, EVENTS, FIXTURES, SOURCE_WEIGHTS, TEAM_PROFILES, Fixture, TeamProfile
 
 Outcome = Literal["home", "draw", "away"]
 
@@ -121,9 +121,17 @@ def build_standings(fixtures: list[Fixture]) -> dict[str, dict[str, int]]:
     return standings
 
 
-def rank_group(standings: dict[str, dict[str, int]], rng: Random) -> list[str]:
+def rank_group(
+    standings: dict[str, dict[str, int]],
+    group: str,
+    rng: Random | None = None,
+    teams: dict[str, TeamProfile] | None = None,
+) -> list[str]:
+    rng = rng or Random(0)
+    teams = teams or TEAM_PROFILES
+    group_teams = [team_key for team_key, team in teams.items() if team.group == group]
     return sorted(
-        standings,
+        group_teams,
         key=lambda key: (
             standings[key]["points"],
             standings[key]["gd"],
@@ -140,6 +148,17 @@ def match_win_probability(team_key: str, virtual_rating: int, teams: dict[str, T
     rating_gap = team.elo + (team.attack - 86) * 6 + (team.defense - 84) * 4 + (team.squad - 84) * 4 - virtual_rating
     probability = 1 / (1 + exp(-rating_gap / 210))
     return rng.random() < probability
+
+
+def team_knockout_rating(team_key: str, teams: dict[str, TeamProfile]) -> int:
+    team = teams[team_key]
+    return team.elo + (team.attack - 86) * 6 + (team.defense - 84) * 4 + (team.squad - 84) * 4
+
+
+def head_to_head_winner(team_a: str, team_b: str, teams: dict[str, TeamProfile], rng: Random) -> str:
+    rating_gap = team_knockout_rating(team_a, teams) - team_knockout_rating(team_b, teams)
+    probability = 1 / (1 + exp(-rating_gap / 210))
+    return team_a if rng.random() < probability else team_b
 
 
 def simulate_tournament(
@@ -170,28 +189,45 @@ def simulate_tournament(
             )
 
         standings = build_standings(simulated_fixtures)
-        ranked = rank_group(standings, rng)
-        qualifiers = ranked[:2]
-        for index, team_key in enumerate(qualifiers):
+        groups = sorted({team.group for team in teams.values()})
+        group_qualifiers = {group: rank_group(standings, group, rng, teams)[:2] for group in groups}
+        qualifiers = [team_key for group in groups for team_key in group_qualifiers[group]]
+        for team_key in qualifiers:
             counts[team_key]["quarterfinal"] += 1
-            quarter_opponent = 1840 if index == 0 else 1880
-            if not match_win_probability(team_key, quarter_opponent, teams, rng):
-                continue
-            counts[team_key]["semifinal"] += 1
-            semifinal_opponent = 1890 if index == 0 else 1910
+
+        quarterfinal_winners: list[str] = []
+        if len(groups) >= 2:
+            first_group = group_qualifiers[groups[0]]
+            second_group = group_qualifiers[groups[1]]
+            pairings = [(first_group[0], second_group[1]), (second_group[0], first_group[1])]
+        else:
+            pairings = [(qualifiers[0], qualifiers[1])] if len(qualifiers) >= 2 else []
+
+        for home_key, away_key in pairings:
+            winner = head_to_head_winner(home_key, away_key, teams, rng)
+            counts[winner]["semifinal"] += 1
+            quarterfinal_winners.append(winner)
+
+        final_candidates: list[str] = []
+        for index, team_key in enumerate(quarterfinal_winners):
+            semifinal_opponent = 1890 + index * 24
             if not match_win_probability(team_key, semifinal_opponent, teams, rng):
                 continue
             counts[team_key]["final"] += 1
-            final_opponent = 1905 if index == 0 else 1925
-            if match_win_probability(team_key, final_opponent, teams, rng):
-                counts[team_key]["champion"] += 1
+            final_candidates.append(team_key)
+
+        if len(final_candidates) >= 2:
+            champion = head_to_head_winner(final_candidates[0], final_candidates[1], teams, rng)
+            counts[champion]["champion"] += 1
+        elif len(final_candidates) == 1 and match_win_probability(final_candidates[0], 1920, teams, rng):
+            counts[final_candidates[0]]["champion"] += 1
 
     return {
         team_key: {
             stage: round(counts[team_key][stage] / simulation_count * 100, 1)
             for stage in ("quarterfinal", "semifinal", "final", "champion")
         }
-        for team_key in TEAM_PROFILES
+        for team_key in teams
     }
 
 
@@ -222,6 +258,14 @@ def event_to_news_item(event) -> dict[str, str]:
         "impact": impact,
         "tone": tone,
         "time": event.time,
+    }
+
+
+def event_summary() -> dict[str, int]:
+    return {
+        "watched": len(EVENTS),
+        "applied": len([event for event in EVENTS if SOURCE_WEIGHTS[event.source_level] > 0 and event.team is not None]),
+        "ignored": len([event for event in EVENTS if SOURCE_WEIGHTS[event.source_level] == 0]),
     }
 
 
@@ -348,5 +392,7 @@ def build_match_prediction() -> dict[str, object]:
             "engine": "Poisson + Monte Carlo",
             "simulationCount": SIMULATION_COUNT,
             "lockedResults": len([fixture for fixture in FIXTURES if fixture.status == "finished"]),
+            "dataset": DATASET_META,
+            "events": event_summary(),
         },
     }

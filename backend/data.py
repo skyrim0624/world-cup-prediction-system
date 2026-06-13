@@ -1,6 +1,12 @@
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
+from pathlib import Path
+from typing import Any
+
+
+DATA_DIR = Path(__file__).with_name("data_files")
 
 
 @dataclass(frozen=True)
@@ -40,65 +46,60 @@ class TeamEvent:
     time: str
 
 
-TEAM_PROFILES: dict[str, TeamProfile] = {
-    "brazil": TeamProfile("brazil", "巴西", "BRA", "E", 1884, 90, 82, 85, 76, 84),
-    "argentina": TeamProfile("argentina", "阿根廷", "ARG", "E", 1856, 87, 81, 83, 72, 82),
-    "spain": TeamProfile("spain", "西班牙", "ESP", "E", 1868, 88, 86, 84, 79, 87),
-    "france": TeamProfile("france", "法国", "FRA", "E", 1872, 89, 87, 86, 74, 89),
-}
+def read_json_file(name: str) -> Any:
+    with (DATA_DIR / name).open(encoding="utf-8") as file:
+        return json.load(file)
 
 
-FIXTURES: list[Fixture] = [
-    Fixture("spain", "france", "小组赛 E 组", "6月12日 08:00", "finished", 2, 1),
-    Fixture("brazil", "spain", "小组赛 E 组", "6月13日 08:00", "finished", 1, 1),
-    Fixture("argentina", "france", "小组赛 E 组", "6月14日 08:00", "finished", 2, 0),
-    Fixture("brazil", "argentina", "小组赛 E 组", "6月15日 08:00", "scheduled"),
-    Fixture("spain", "argentina", "小组赛 E 组", "6月18日 08:00", "scheduled"),
-    Fixture("brazil", "france", "小组赛 E 组", "6月18日 11:00", "scheduled"),
-]
+def load_team_profiles() -> dict[str, TeamProfile]:
+    rows = read_json_file("teams.json")
+    profiles = {row["key"]: TeamProfile(**row) for row in rows}
+    if len(profiles) != len(rows):
+        raise ValueError("球队 key 不能重复")
+    return profiles
 
 
-CURRENT_MATCH = ("brazil", "argentina")
+def load_fixtures(team_profiles: dict[str, TeamProfile]) -> list[Fixture]:
+    rows = read_json_file("fixtures.json")
+    fixtures = [Fixture(**row) for row in rows]
+    known_teams = set(team_profiles)
+    for fixture in fixtures:
+        if fixture.home not in known_teams or fixture.away not in known_teams:
+            raise ValueError(f"赛程包含未知球队: {fixture.home} vs {fixture.away}")
+        if fixture.status == "finished" and (fixture.home_score is None or fixture.away_score is None):
+            raise ValueError(f"已完赛必须有比分: {fixture.home} vs {fixture.away}")
+    return fixtures
 
 
-EVENTS: list[TeamEvent] = [
-    TeamEvent(
-        "官方名单",
-        "两队暂无新增停赛，核心阵容可用",
-        None,
-        "S",
-        "squad",
-        1,
-        0.01,
-        "1 小时前",
-    ),
-    TeamEvent(
-        "训练信息",
-        "巴西边路主力单独训练，出场仍待确认",
-        "brazil",
-        "B",
-        "attack",
-        -1,
-        0.035,
-        "3 小时前",
-    ),
-    TeamEvent(
-        "社媒传闻",
-        "未证实更衣室消息，不改变概率",
-        "argentina",
-        "D",
-        "squad",
-        -1,
-        0.06,
-        "5 小时前",
-    ),
-]
+def load_events(team_profiles: dict[str, TeamProfile]) -> list[TeamEvent]:
+    rows = read_json_file("events.json")
+    events = [TeamEvent(**row) for row in rows]
+    known_teams = set(team_profiles)
+    for event in events:
+        if event.team is not None and event.team not in known_teams:
+            raise ValueError(f"事件包含未知球队: {event.team}")
+    return events
 
 
-SOURCE_WEIGHTS = {
-    "S": 1.0,
-    "A": 0.7,
-    "B": 0.4,
-    "C": 0.2,
-    "D": 0.0,
+def load_source_weights() -> dict[str, float]:
+    weights = read_json_file("source-weights.json")
+    return {level: float(value) for level, value in weights.items()}
+
+
+def load_current_match() -> tuple[str, str]:
+    row = read_json_file("current-match.json")
+    return row["home"], row["away"]
+
+
+TEAM_PROFILES = load_team_profiles()
+FIXTURES = load_fixtures(TEAM_PROFILES)
+EVENTS = load_events(TEAM_PROFILES)
+SOURCE_WEIGHTS = load_source_weights()
+CURRENT_MATCH = load_current_match()
+
+DATASET_META = {
+    "source": "local-json",
+    "teamCount": len(TEAM_PROFILES),
+    "fixtureCount": len(FIXTURES),
+    "eventCount": len(EVENTS),
 }

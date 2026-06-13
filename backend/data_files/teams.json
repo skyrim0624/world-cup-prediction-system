@@ -1,0 +1,98 @@
+[
+  {
+    "key": "brazil",
+    "name": "巴西",
+    "code": "BRA",
+    "group": "E",
+    "elo": 1884,
+    "attack": 90,
+    "defense": 82,
+    "goalkeeper": 85,
+    "path": 76,
+    "squad": 84
+  },
+  {
+    "key": "argentina",
+    "name": "阿根廷",
+    "code": "ARG",
+    "group": "E",
+    "elo": 1856,
+    "attack": 87,
+    "defense": 81,
+    "goalkeeper": 83,
+    "path": 72,
+    "squad": 82
+  },
+  {
+    "key": "spain",
+    "name": "西班牙",
+    "code": "ESP",
+    "group": "E",
+    "elo": 1868,
+    "attack": 88,
+    "defense": 86,
+    "goalkeeper": 84,
+    "path": 79,
+    "squad": 87
+  },
+  {
+    "key": "france",
+    "name": "法国",
+    "code": "FRA",
+    "group": "E",
+    "elo": 1872,
+    "attack": 89,
+    "defense": 87,
+    "goalkeeper": 86,
+    "path": 74,
+    "squad": 89
+  },
+  {
+    "key": "england",
+    "name": "英格兰",
+    "code": "ENG",
+    "group": "F",
+    "elo": 1848,
+    "attack": 86,
+    "defense": 84,
+    "goalkeeper": 82,
+    "path": 73,
+    "squad": 83
+  },
+  {
+    "key": "portugal",
+    "name": "葡萄牙",
+    "code": "POR",
+    "group": "F",
+    "elo": 1836,
+    "attack": 87,
+    "defense": 80,
+    "goalkeeper": 81,
+    "path": 70,
+    "squad": 82
+  },
+  {
+    "key": "germany",
+    "name": "德国",
+    "code": "GER",
+    "group": "F",
+    "elo": 1824,
+    "attack": 84,
+    "defense": 82,
+    "goalkeeper": 84,
+    "path": 71,
+    "squad": 81
+  },
+  {
+    "key": "netherlands",
+    "name": "荷兰",
+    "code": "NED",
+    "group": "F",
+    "elo": 1818,
+    "attack": 83,
+    "defense": 83,
+    "goalkeeper": 82,
+    "path": 69,
+    "squad": 80
+  }
+]
