@@ -1,6 +1,16 @@
 import unittest
 
-from backend.data import DATASET_META, EVENTS, FIXTURES, RAW_NEWS_ITEMS, TEAM_PROFILES, THIRD_PLACE_COMBINATIONS
+from backend.data import (
+    DATASET_META,
+    EVENTS,
+    FIXTURES,
+    RAW_NEWS_ITEMS,
+    TEAM_PROFILES,
+    THIRD_PLACE_COMBINATIONS,
+    NewsSource,
+    RawNewsItem,
+    action_for_news_item,
+)
 from backend.model import (
     ROUND_OF_16_MATCHES,
     apply_event_adjustments,
@@ -104,6 +114,25 @@ class PredictionModelTest(unittest.TestCase):
         impacts = event_factor_impacts()
         self.assertLess(impacts["brazil"]["attack"], 0)
         self.assertEqual(impacts["argentina"]["squad"], 0)
+
+    def test_multi_source_c_level_news_can_enter_reviewed_model_flow(self):
+        source = NewsSource(
+            key="local-weather",
+            name="本地天气观察",
+            source_level="C",
+            url="https://example.com/weather",
+        )
+        item = RawNewsItem(
+            id="weather-watch",
+            title="比赛日高温多源确认",
+            summary="官方和本地气象均确认比赛日高温。",
+            source="local-weather",
+            team="brazil",
+            status="multi_source",
+            published_at="6 小时前",
+            url="https://example.com/weather",
+        )
+        self.assertEqual(action_for_news_item(item, source), "apply")
 
 
 if __name__ == "__main__":

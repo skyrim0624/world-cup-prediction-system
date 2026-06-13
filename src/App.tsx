@@ -35,6 +35,43 @@ type NewsItem = {
   time: string;
 };
 
+type ReviewStatus = "confirmed" | "multi_source" | "single_source" | "unverified" | "rumor";
+
+type EventReviewSummary = {
+  watched: number;
+  applied: number;
+  ignored: number;
+  reviewRequired: number;
+};
+
+type EventReviewItem = NewsItem & {
+  id?: string | null;
+  team: TeamKey | null;
+  source: string;
+  sourceLevel: string;
+  status: ReviewStatus;
+  action: "apply" | "watch" | "ignore";
+  factor: string;
+  direction: number;
+  strength: number;
+  url?: string | null;
+};
+
+type EventReviewResponse = {
+  summary: EventReviewSummary;
+  rawNewsCount: number;
+  items: EventReviewItem[];
+};
+
+type EventReviewWriteResponse = {
+  item: {
+    id: string;
+    status: ReviewStatus;
+    team: TeamKey | null;
+  };
+  requiresSnapshotRefresh: boolean;
+};
+
 type ScoreOutcome = {
   score: string;
   probability: number;
@@ -80,6 +117,7 @@ type MatchPrediction = {
       watched: number;
       applied: number;
       ignored: number;
+      reviewRequired?: number;
     };
     factorImpacts?: FactorImpactMap;
   };
@@ -289,12 +327,45 @@ function plateImpact(teamKey: TeamKey, plateKey: PlateKey, impacts?: FactorImpac
   return 0;
 }
 
+function actionAfterReview(status: ReviewStatus, sourceLevel: string) {
+  if (status === "unverified" || status === "rumor" || sourceLevel === "D") return "ignore";
+  if (sourceLevel === "C" && (status === "confirmed" || status === "multi_source")) return "apply";
+  if (sourceLevel === "C") return "watch";
+  return "apply";
+}
+
+function decorateReviewedItem(item: EventReviewItem, status: ReviewStatus, team: TeamKey | null): EventReviewItem {
+  const action = actionAfterReview(status, item.sourceLevel);
+  if (action === "ignore") {
+    return { ...item, status, team, action, impact: "不入模型", tone: "muted" };
+  }
+  if (action === "watch") {
+    return { ...item, status, team, action, impact: "待审核", tone: "gold" };
+  }
+  if (!team) {
+    return { ...item, status, team, action, impact: "全局备注", tone: "green" };
+  }
+  return { ...item, status, team, action, impact: item.sourceLevel === "C" ? "轻微修正" : "可入模型", tone: item.direction < 0 ? "orange" : "green" };
+}
+
+function summarizeReviewItems(items: EventReviewItem[]): EventReviewSummary {
+  return {
+    watched: items.length,
+    applied: items.filter((item) => item.action === "apply" && item.team).length,
+    ignored: items.filter((item) => item.action === "ignore").length,
+    reviewRequired: items.filter((item) => item.action === "watch").length,
+  };
+}
+
 function App() {
   const [selectedTeam, setSelectedTeam] = useState<TeamKey>("brazil");
   const [layoutUnlocked, setLayoutUnlocked] = useState(false);
   const [positions, setPositions] = useState<Record<string, { x: number; y: number }>>({});
   const [forecastTick, setForecastTick] = useState(0);
   const [apiPrediction, setApiPrediction] = useState<MatchPrediction | null>(null);
+  const [eventReview, setEventReview] = useState<EventReviewResponse | null>(null);
+  const [reviewPendingId, setReviewPendingId] = useState<string | null>(null);
+  const [reviewMessage, setReviewMessage] = useState<string | null>(null);
   const [dataMode, setDataMode] = useState<"api" | "demo">("demo");
   const dragRef = useRef<DragState | null>(null);
   const lastTapRef = useRef(0);
@@ -331,10 +402,25 @@ function App() {
       }
     }
 
+    async function loadEventReview() {
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/events`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`事件接口返回 ${response.status}`);
+        const data = (await response.json()) as EventReviewResponse;
+        if (!active) return;
+        setEventReview(data);
+      } catch {
+        if (!active) return;
+        setEventReview(null);
+      }
+    }
+
     loadPrediction();
+    loadEventReview();
     const timer = window.setInterval(() => {
       setForecastTick((value) => value + 1);
       loadPrediction();
+      loadEventReview();
     }, FORECAST_REFRESH_MS);
 
     return () => {
@@ -342,6 +428,33 @@ function App() {
       window.clearInterval(timer);
     };
   }, []);
+
+  async function submitEventReview(item: EventReviewItem, status: ReviewStatus) {
+    if (!item.id || reviewPendingId) return;
+    setReviewPendingId(item.id);
+    setReviewMessage(null);
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/events/review`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: item.id, status, team: item.team }),
+      });
+      if (!response.ok) throw new Error(`审核接口返回 ${response.status}`);
+      const result = (await response.json()) as EventReviewWriteResponse;
+      setEventReview((current) => {
+        if (!current) return current;
+        const items = current.items.map((currentItem) =>
+          currentItem.id === result.item.id ? decorateReviewedItem(currentItem, result.item.status, result.item.team) : currentItem,
+        );
+        return { ...current, summary: summarizeReviewItems(items), items };
+      });
+      setReviewMessage(result.requiresSnapshotRefresh ? "已写入，重建快照后进入正式预测" : "已写入");
+    } catch {
+      setReviewMessage("审核写入失败");
+    } finally {
+      setReviewPendingId(null);
+    }
+  }
 
   function toggleLayoutLock() {
     setLayoutUnlocked((value) => !value);
@@ -581,6 +694,24 @@ function App() {
         </DraggablePanel>
 
         <DraggablePanel
+          id="review"
+          className="wide"
+          title="事件审核"
+          position={positions.review}
+          layoutUnlocked={layoutUnlocked}
+          onPointerDown={startDrag}
+          onPointerMove={moveDrag}
+          onPointerUp={endDrag}
+        >
+          <EventReviewPanel
+            eventReview={eventReview}
+            pendingId={reviewPendingId}
+            message={reviewMessage}
+            onReview={submitEventReview}
+          />
+        </DraggablePanel>
+
+        <DraggablePanel
           id="layers"
           className="wide"
           title="三层模型"
@@ -783,6 +914,73 @@ function ChampionBoard({ teams }: { teams: Team[] }) {
           <em className={team.tournament.change >= 0 ? "green" : "red"}>{formatSignedPercent(team.tournament.change)}</em>
         </article>
       ))}
+    </div>
+  );
+}
+
+function EventReviewPanel({
+  eventReview,
+  pendingId,
+  message,
+  onReview,
+}: {
+  eventReview: EventReviewResponse | null;
+  pendingId: string | null;
+  message: string | null;
+  onReview: (item: EventReviewItem, status: ReviewStatus) => void;
+}) {
+  if (!eventReview) {
+    return <p className="review-empty">事件审核等待 API 连接</p>;
+  }
+
+  const reviewItems = eventReview.items.filter((item) => item.id);
+  const visibleItems = reviewItems.filter((item) => item.action === "watch");
+  const queue = visibleItems.length > 0 ? visibleItems : reviewItems.slice(0, 4);
+
+  return (
+    <div className="review-dashboard">
+      <div className="review-summary">
+        <span>
+          原始新闻 <b>{eventReview.rawNewsCount}</b>
+        </span>
+        <span>
+          入模 <b>{eventReview.summary.applied}</b>
+        </span>
+        <span>
+          待审 <b>{eventReview.summary.reviewRequired}</b>
+        </span>
+        <span>
+          忽略 <b>{eventReview.summary.ignored}</b>
+        </span>
+      </div>
+      <div className="review-list">
+        {queue.map((item) => (
+          <article className={`review-row ${item.action}`} key={item.id}>
+            <div className="review-copy">
+              <strong>{item.title}</strong>
+              <p>{item.detail}</p>
+              <small>
+                {item.sourceLevel}级 · {item.status} · {item.source}
+              </small>
+            </div>
+            <div className="review-meta">
+              <span>{item.team ?? "全局"}</span>
+              <em>{item.impact}</em>
+            </div>
+            {item.action === "watch" ? (
+              <div className="review-actions">
+                <button disabled={pendingId === item.id} onClick={() => onReview(item, "multi_source")}>
+                  多源确认
+                </button>
+                <button disabled={pendingId === item.id} onClick={() => onReview(item, "unverified")}>
+                  忽略
+                </button>
+              </div>
+            ) : null}
+          </article>
+        ))}
+      </div>
+      {message ? <p className="review-message">{message}</p> : null}
     </div>
   );
 }

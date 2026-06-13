@@ -49,6 +49,7 @@ class TeamEvent:
     url: str | None = None
     status: str = "confirmed"
     action: str = "apply"
+    id: str | None = None
 
 
 @dataclass(frozen=True)
@@ -208,6 +209,8 @@ def infer_event_strength(text: str) -> float:
 def action_for_news_item(item: RawNewsItem, source: NewsSource) -> str:
     if item.status in {"unverified", "rumor"} or source.source_level == "D":
         return "ignore"
+    if source.source_level == "C" and item.status in {"confirmed", "multi_source"}:
+        return "apply"
     if source.source_level == "C":
         return "watch"
     return "apply"
@@ -232,6 +235,7 @@ def events_from_raw_news(items: list[RawNewsItem], news_sources: dict[str, NewsS
                 url=item.url,
                 status=item.status,
                 action=action_for_news_item(item, source),
+                id=item.id,
             )
         )
     return events

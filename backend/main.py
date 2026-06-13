@@ -2,10 +2,12 @@ from __future__ import annotations
 
 from time import monotonic
 
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 
 from .data import DATASET_META, EVENTS, FIXTURES, RAW_NEWS_ITEMS
+from .event_review import RAW_NEWS_PATH, review_raw_news_item
 from .model import SIMULATION_COUNT, build_match_prediction, event_summary, event_to_news_item
 from .snapshot import read_prediction_snapshot
 
@@ -13,11 +15,18 @@ from .snapshot import read_prediction_snapshot
 app = FastAPI(title="World Cup Prediction MVP")
 PREDICTION_CACHE_TTL_SECONDS = 15
 prediction_cache: dict[int, tuple[float, dict[str, object]]] = {}
+review_data_path = RAW_NEWS_PATH
+
+
+class EventReviewRequest(BaseModel):
+    id: str
+    status: str
+    team: str | None = None
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://127.0.0.1:5173", "http://127.0.0.1:5174", "http://localhost:5173", "http://localhost:5174"],
-    allow_methods=["GET"],
+    allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 
@@ -55,8 +64,8 @@ def model_status() -> dict[str, object]:
         "knownGaps": [
             "官方 48 队名单和真实分组尚未替换当前槽位数据",
             "新闻抓取仍由本地 raw-news JSON 承接，暂未接外部抓取任务",
-            "暂未接后台审核写入和多源交叉验证",
-            "暂未接后台录入、支付和权限",
+            "新闻审核写入后需要重建快照或重启进程，运行中模型暂不热重载",
+            "暂未接多源交叉验证、后台录入、支付和权限",
         ],
     }
 
@@ -69,6 +78,7 @@ def events() -> dict[str, object]:
         items.append(
             {
                 **news_item,
+                "id": event.id,
                 "team": event.team,
                 "source": event.source,
                 "sourceLevel": event.source_level,
@@ -84,4 +94,17 @@ def events() -> dict[str, object]:
         "summary": event_summary(),
         "rawNewsCount": len(RAW_NEWS_ITEMS),
         "items": items,
+    }
+
+
+@app.post("/api/events/review")
+def review_event(request: EventReviewRequest) -> dict[str, object]:
+    try:
+        updated = review_raw_news_item(review_data_path, request.id, request.status, request.team)
+    except ValueError as error:
+        raise HTTPException(status_code=400, detail=str(error)) from error
+    prediction_cache.clear()
+    return {
+        "item": updated,
+        "requiresSnapshotRefresh": True,
     }
