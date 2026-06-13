@@ -9,7 +9,14 @@ from pydantic import BaseModel
 from . import data as data_state
 from .event_review import RAW_NEWS_PATH, review_raw_news_item
 from .fixture_update import record_fixture_result
-from .model import SIMULATION_COUNT, build_match_prediction, event_summary, event_to_news_item, reload_model_data
+from .model import (
+    SIMULATION_COUNT,
+    build_match_prediction,
+    build_upcoming_match_predictions,
+    event_summary,
+    event_to_news_item,
+    reload_model_data,
+)
 from .news_ingest import append_raw_news_item
 from .snapshot import DEFAULT_SNAPSHOT_PATH, read_prediction_snapshot, write_prediction_snapshot
 
@@ -94,6 +101,11 @@ def model_status() -> dict[str, object]:
             "暂未接多源交叉验证、后台录入、支付和权限",
         ],
     }
+
+
+@app.get("/api/upcoming-matches")
+def upcoming_matches(limit: int = Query(12, ge=1, le=72)) -> dict[str, object]:
+    return build_upcoming_match_predictions(limit)
 
 
 @app.get("/api/events")

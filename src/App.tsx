@@ -87,6 +87,31 @@ type ScoreOutcome = {
   tone: Tone;
 };
 
+type UpcomingMatch = {
+  stage: string;
+  kickoff: string;
+  status: string;
+  homeTeam: TeamKey;
+  awayTeam: TeamKey;
+  homeName: string;
+  awayName: string;
+  homeCode: string;
+  awayCode: string;
+  homeWin: number;
+  draw: number;
+  awayWin: number;
+  topScore: {
+    score: string;
+    probability: number;
+  };
+};
+
+type UpcomingMatchesResponse = {
+  updatedAt: string;
+  count: number;
+  items: UpcomingMatch[];
+};
+
 type ScenarioImpact = {
   label: string;
   probability: number;
@@ -371,6 +396,7 @@ function App() {
   const [positions, setPositions] = useState<Record<string, { x: number; y: number }>>({});
   const [forecastTick, setForecastTick] = useState(0);
   const [apiPrediction, setApiPrediction] = useState<MatchPrediction | null>(null);
+  const [upcomingMatches, setUpcomingMatches] = useState<UpcomingMatchesResponse | null>(null);
   const [eventReview, setEventReview] = useState<EventReviewResponse | null>(null);
   const [reviewPendingId, setReviewPendingId] = useState<string | null>(null);
   const [snapshotPending, setSnapshotPending] = useState(false);
@@ -424,12 +450,27 @@ function App() {
       }
     }
 
+    async function loadUpcomingMatches() {
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/upcoming-matches?limit=6`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`未赛程接口返回 ${response.status}`);
+        const data = (await response.json()) as UpcomingMatchesResponse;
+        if (!active) return;
+        setUpcomingMatches(data);
+      } catch {
+        if (!active) return;
+        setUpcomingMatches(null);
+      }
+    }
+
     loadPrediction();
     loadEventReview();
+    loadUpcomingMatches();
     const timer = window.setInterval(() => {
       setForecastTick((value) => value + 1);
       loadPrediction();
       loadEventReview();
+      loadUpcomingMatches();
     }, FORECAST_REFRESH_MS);
 
     return () => {
@@ -628,6 +669,19 @@ function App() {
               </article>
             ))}
           </div>
+        </DraggablePanel>
+
+        <DraggablePanel
+          id="upcoming"
+          className="wide"
+          title="未开赛预测"
+          position={positions.upcoming}
+          layoutUnlocked={layoutUnlocked}
+          onPointerDown={startDrag}
+          onPointerMove={moveDrag}
+          onPointerUp={endDrag}
+        >
+          <UpcomingMatchesPanel matches={upcomingMatches?.items ?? []} />
         </DraggablePanel>
 
         <DraggablePanel
@@ -905,6 +959,39 @@ function SegmentBar({ value, tone }: { value: number; tone: string }) {
         <i className={index < filled ? "filled" : ""} key={index} />
       ))}
     </span>
+  );
+}
+
+function UpcomingMatchesPanel({ matches }: { matches: UpcomingMatch[] }) {
+  if (matches.length === 0) {
+    return <p className="review-empty">未开赛预测等待 API 连接</p>;
+  }
+
+  return (
+    <div className="upcoming-list">
+      {matches.map((match) => (
+        <article className="upcoming-row" key={`${match.homeTeam}-${match.awayTeam}-${match.kickoff}`}>
+          <div className="upcoming-teams">
+            <span>{match.homeCode}</span>
+            <b>VS</b>
+            <span>{match.awayCode}</span>
+          </div>
+          <div className="upcoming-copy">
+            <strong>
+              {match.homeName} / {match.awayName}
+            </strong>
+            <small>
+              {match.stage} · {match.kickoff} · 最可能 {match.topScore.score} / {match.topScore.probability.toFixed(1)}%
+            </small>
+          </div>
+          <div className="upcoming-probs">
+            <em>{match.homeWin}%</em>
+            <em>{match.draw}%</em>
+            <em>{match.awayWin}%</em>
+          </div>
+        </article>
+      ))}
+    </div>
   );
 }
 

@@ -548,6 +548,46 @@ def build_scenario_impacts(
     return items
 
 
+def build_upcoming_match_predictions(limit: int = 12) -> dict[str, object]:
+    teams = apply_event_adjustments()
+    items = []
+    for fixture in FIXTURES:
+        if fixture.status != "scheduled":
+            continue
+        probabilities = win_draw_loss(fixture.home, fixture.away, teams)
+        home_win = round(probabilities["home"] * 100)
+        draw = round(probabilities["draw"] * 100)
+        away_win = 100 - home_win - draw
+        top_score = score_distribution(fixture.home, fixture.away, teams)[0]
+        items.append(
+            {
+                "stage": fixture.stage,
+                "kickoff": fixture.kickoff,
+                "status": fixture.status,
+                "homeTeam": fixture.home,
+                "awayTeam": fixture.away,
+                "homeName": teams[fixture.home].name,
+                "awayName": teams[fixture.away].name,
+                "homeCode": teams[fixture.home].code,
+                "awayCode": teams[fixture.away].code,
+                "homeWin": home_win,
+                "draw": draw,
+                "awayWin": away_win,
+                "topScore": {
+                    "score": top_score["score"],
+                    "probability": round(float(top_score["probability"]) * 100, 1),
+                },
+            }
+        )
+        if len(items) >= limit:
+            break
+    return {
+        "updatedAt": datetime.now(timezone.utc).isoformat(),
+        "count": len(items),
+        "items": items,
+    }
+
+
 def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str, object]:
     teams = apply_event_adjustments()
     home_key, away_key = CURRENT_MATCH

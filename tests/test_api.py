@@ -35,6 +35,20 @@ class PredictionApiTest(unittest.TestCase):
         second = client.get("/api/match-prediction?simulations=1200").json()
         self.assertEqual(first["updatedAt"], second["updatedAt"])
 
+    def test_upcoming_matches_api_lists_scheduled_match_predictions(self):
+        client = TestClient(app)
+        response = client.get("/api/upcoming-matches?limit=5")
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertEqual(len(payload["items"]), 5)
+        first = payload["items"][0]
+        self.assertEqual(first["status"], "scheduled")
+        self.assertIn("homeWin", first)
+        self.assertIn("draw", first)
+        self.assertIn("awayWin", first)
+        self.assertIn("topScore", first)
+        self.assertEqual(first["homeWin"] + first["draw"] + first["awayWin"], 100)
+
     def test_events_api_exposes_review_summary(self):
         client = TestClient(app)
         response = client.get("/api/events")

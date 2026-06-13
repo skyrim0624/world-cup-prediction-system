@@ -738,6 +738,70 @@ button {
   line-height: 1.35;
 }
 
+.upcoming-list {
+  display: grid;
+  gap: 12px;
+}
+
+.upcoming-row {
+  display: grid;
+  grid-template-columns: 156px minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  min-height: 82px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.upcoming-teams {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 8px;
+  color: #eefaf8;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.upcoming-teams b {
+  color: var(--gold);
+  font-size: 18px;
+}
+
+.upcoming-copy {
+  min-width: 0;
+}
+
+.upcoming-copy strong {
+  display: block;
+  color: #eefaf8;
+  font-size: 19px;
+}
+
+.upcoming-copy small {
+  display: block;
+  margin-top: 4px;
+  color: #9db1b0;
+  line-height: 1.4;
+}
+
+.upcoming-probs {
+  display: grid;
+  grid-template-columns: repeat(3, 52px);
+  gap: 8px;
+}
+
+.upcoming-probs em {
+  display: grid;
+  min-height: 38px;
+  place-items: center;
+  border: 1px solid rgba(24, 227, 208, 0.16);
+  color: var(--cyan);
+  font-style: normal;
+  font-weight: 900;
+}
+
 .path-preview {
   overflow: hidden;
 }
@@ -1471,6 +1535,15 @@ button {
     grid-template-columns: repeat(5, minmax(72px, 1fr));
     overflow-x: auto;
     padding-bottom: 8px;
+  }
+
+  .upcoming-row {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .upcoming-probs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .path-column {
