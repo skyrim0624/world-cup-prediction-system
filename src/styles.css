@@ -488,6 +488,18 @@ button {
   background: linear-gradient(#ae1c28 0 33%, #fff 33% 66%, #21468b 66%);
 }
 
+.flag-generic {
+  display: inline-grid;
+  place-items: center;
+  color: #d7e9e7;
+  background:
+    linear-gradient(135deg, rgba(24, 227, 208, 0.22), rgba(255, 198, 66, 0.12)),
+    rgba(255, 255, 255, 0.06);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
 .module-grid {
   display: grid;
   grid-template-columns: minmax(320px, 1fr) minmax(320px, 1fr);
@@ -573,6 +585,7 @@ button {
 .gold { color: var(--gold); }
 .orange { color: var(--orange); }
 .red { color: var(--red); }
+.muted { color: var(--muted); }
 
 .segment-bar {
   display: grid;
@@ -1068,7 +1081,7 @@ button {
 
 .factor-row {
   display: grid;
-  grid-template-columns: 42px 120px 1fr 48px;
+  grid-template-columns: 42px 112px 1fr 48px 54px;
   align-items: center;
   gap: 14px;
   min-height: 62px;
@@ -1104,6 +1117,13 @@ button {
 .factor-row b {
   justify-self: end;
   font-size: 24px;
+}
+
+.factor-row em {
+  justify-self: end;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 900;
 }
 
 .weight-grid {
@@ -1350,7 +1370,7 @@ button {
   }
 
   .factor-row {
-    grid-template-columns: 38px 112px 1fr 42px;
+    grid-template-columns: 38px 104px 1fr 42px 46px;
   }
 
   .champion-row {
@@ -1491,7 +1511,7 @@ button {
   }
 
   .factor-row {
-    grid-template-columns: 34px 1fr 48px;
+    grid-template-columns: 34px 1fr 48px 44px;
     gap: 10px;
   }
 

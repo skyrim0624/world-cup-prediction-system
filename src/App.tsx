@@ -1,7 +1,9 @@
 import { CSSProperties, PointerEvent, useEffect, useMemo, useRef, useState } from "react";
 
-type TeamKey = "brazil" | "argentina" | "spain" | "france" | "england" | "portugal" | "germany" | "netherlands";
+type TeamKey = string;
 type Tone = "green" | "blue" | "gold" | "orange" | "red" | "muted";
+type PlateKey = "strength" | "form" | "path" | "squad" | "margin";
+type FactorImpactMap = Record<string, Record<string, number>>;
 
 type Team = {
   key: TeamKey;
@@ -79,6 +81,7 @@ type MatchPrediction = {
       applied: number;
       ignored: number;
     };
+    factorImpacts?: FactorImpactMap;
   };
 };
 
@@ -87,68 +90,67 @@ const teams: Team[] = [
     key: "brazil",
     name: "巴西",
     code: "BRA",
-    factors: { overall: 88, attack: 90, defense: 82, goalkeeper: 85, path: 76, squad: 84 },
+    factors: { strength: 88, form: 86, path: 76, squad: 84, margin: 84 },
     tournament: { champion: 12.8, final: 25.4, semifinal: 41.2, quarterfinal: 63.8, change: 0.7 },
   },
   {
     key: "argentina",
     name: "阿根廷",
     code: "ARG",
-    factors: { overall: 86, attack: 87, defense: 81, goalkeeper: 83, path: 72, squad: 82 },
+    factors: { strength: 86, form: 84, path: 72, squad: 82, margin: 82 },
     tournament: { champion: 10.9, final: 22.6, semifinal: 38.4, quarterfinal: 60.1, change: -0.4 },
   },
   {
     key: "spain",
     name: "西班牙",
     code: "ESP",
-    factors: { overall: 91, attack: 88, defense: 86, goalkeeper: 84, path: 79, squad: 87 },
+    factors: { strength: 91, form: 87, path: 79, squad: 87, margin: 85 },
     tournament: { champion: 13.6, final: 26.1, semifinal: 43.7, quarterfinal: 66.4, change: 0.3 },
   },
   {
     key: "france",
     name: "法国",
     code: "FRA",
-    factors: { overall: 90, attack: 89, defense: 87, goalkeeper: 86, path: 74, squad: 89 },
+    factors: { strength: 90, form: 88, path: 74, squad: 89, margin: 87 },
     tournament: { champion: 13.1, final: 25.9, semifinal: 42.5, quarterfinal: 64.9, change: -0.2 },
   },
   {
     key: "england",
     name: "英格兰",
     code: "ENG",
-    factors: { overall: 85, attack: 86, defense: 84, goalkeeper: 82, path: 73, squad: 83 },
+    factors: { strength: 85, form: 85, path: 73, squad: 83, margin: 83 },
     tournament: { champion: 9.8, final: 20.2, semifinal: 35.1, quarterfinal: 58.5, change: 0.1 },
   },
   {
     key: "portugal",
     name: "葡萄牙",
     code: "POR",
-    factors: { overall: 84, attack: 87, defense: 80, goalkeeper: 81, path: 70, squad: 82 },
+    factors: { strength: 84, form: 84, path: 70, squad: 82, margin: 81 },
     tournament: { champion: 8.7, final: 18.4, semifinal: 32.6, quarterfinal: 55.2, change: -0.1 },
   },
   {
     key: "germany",
     name: "德国",
     code: "GER",
-    factors: { overall: 82, attack: 84, defense: 82, goalkeeper: 84, path: 71, squad: 81 },
+    factors: { strength: 82, form: 83, path: 71, squad: 81, margin: 83 },
     tournament: { champion: 7.9, final: 17.2, semifinal: 30.4, quarterfinal: 53.8, change: 0.2 },
   },
   {
     key: "netherlands",
     name: "荷兰",
     code: "NED",
-    factors: { overall: 82, attack: 83, defense: 83, goalkeeper: 82, path: 69, squad: 80 },
+    factors: { strength: 82, form: 83, path: 69, squad: 80, margin: 83 },
     tournament: { champion: 7.1, final: 15.8, semifinal: 28.6, quarterfinal: 51.9, change: -0.3 },
   },
 ];
 
 const factorRows = [
-  { key: "overall", label: "综合", value: 88, tone: "green" },
-  { key: "attack", label: "进攻", value: 90, tone: "green" },
-  { key: "defense", label: "防守", value: 82, tone: "green" },
-  { key: "goalkeeper", label: "门将", value: 85, tone: "blue" },
-  { key: "path", label: "路径", value: 76, tone: "gold" },
-  { key: "squad", label: "阵容", value: 84, tone: "green" },
-];
+  { key: "strength", label: "实力盘", tone: "green" },
+  { key: "form", label: "状态盘", tone: "blue" },
+  { key: "path", label: "路径盘", tone: "gold" },
+  { key: "squad", label: "人员盘", tone: "green" },
+  { key: "margin", label: "边际盘", tone: "orange" },
+] satisfies Array<{ key: PlateKey; label: string; tone: Tone }>;
 
 const weightFactors = [
   { label: "基础实力", value: 22, note: "Elo / SPI / 长期评级" },
@@ -191,6 +193,9 @@ const sourceWeights = [
   { level: "C", value: "0.20", label: "普通媒体", tone: "orange" },
   { level: "D", value: "0.00", label: "传闻", tone: "red" },
 ];
+
+const INTERACTIVE_SIMULATION_COUNT = 1200;
+const FORECAST_REFRESH_MS = 15000;
 
 const fallbackNewsItems: NewsItem[] = [
   { title: "官方名单", detail: "两队暂无新增停赛，核心阵容可用", impact: "可入模型", tone: "green", time: "1 小时前" },
@@ -268,6 +273,21 @@ function formatSignedPercent(value: number) {
   return `${value > 0 ? "+" : ""}${value.toFixed(1)}%`;
 }
 
+function formatSignedNumber(value: number) {
+  if (Math.abs(value) < 0.05) return "0";
+  return `${value > 0 ? "+" : ""}${value.toFixed(1)}`;
+}
+
+function plateImpact(teamKey: TeamKey, plateKey: PlateKey, impacts?: FactorImpactMap) {
+  const teamImpacts = impacts?.[teamKey];
+  if (!teamImpacts) return 0;
+  if (plateKey === "form") return ((teamImpacts.attack ?? 0) + (teamImpacts.defense ?? 0)) / 2;
+  if (plateKey === "margin") return ((teamImpacts.goalkeeper ?? 0) + (teamImpacts.defense ?? 0)) / 2;
+  if (plateKey === "path") return teamImpacts.path ?? 0;
+  if (plateKey === "squad") return teamImpacts.squad ?? 0;
+  return 0;
+}
+
 function App() {
   const [selectedTeam, setSelectedTeam] = useState<TeamKey>("brazil");
   const [layoutUnlocked, setLayoutUnlocked] = useState(false);
@@ -295,7 +315,7 @@ function App() {
 
     async function loadPrediction() {
       try {
-        const response = await fetch("/api/match-prediction", { cache: "no-store" });
+        const response = await fetch(`/api/match-prediction?simulations=${INTERACTIVE_SIMULATION_COUNT}`, { cache: "no-store" });
         if (!response.ok) throw new Error(`预测接口返回 ${response.status}`);
         const data = (await response.json()) as MatchPrediction;
         if (!active) return;
@@ -312,7 +332,7 @@ function App() {
     const timer = window.setInterval(() => {
       setForecastTick((value) => value + 1);
       loadPrediction();
-    }, 5000);
+    }, FORECAST_REFRESH_MS);
 
     return () => {
       active = false;
@@ -388,13 +408,13 @@ function App() {
         <MiniPitch side="left" />
         <div className="score-strip match-strip">
           <div className="score-team home-team">
-            <TeamFlag team={homeTeam.key} />
+            <TeamFlag team={homeTeam.key} code={homeTeam.code} />
             <span className="team-code">{homeTeam.code}</span>
           </div>
           <strong className="versus-mark">VS</strong>
           <div className="score-team away-team">
             <span className="team-code">{awayTeam.code}</span>
-            <TeamFlag team={awayTeam.key} />
+            <TeamFlag team={awayTeam.key} code={awayTeam.code} />
           </div>
           <div className="match-clock forecast-clock">
             <span>{matchPrediction.kickoff}</span>
@@ -479,7 +499,7 @@ function App() {
                 key={team.key}
                 onClick={() => setSelectedTeam(team.key)}
               >
-                <TeamFlag team={team.key} />
+                <TeamFlag team={team.key} code={team.code} />
                 <span>{team.name}</span>
                 <span className="star">{selectedTeam === team.key ? "★" : "☆"}</span>
               </button>
@@ -599,7 +619,8 @@ function App() {
               <FactorBar
                 key={factor.key}
                 label={factor.label}
-                value={selected.factors[factor.key] ?? factor.value}
+                value={selected.factors[factor.key] ?? 0}
+                impact={plateImpact(selected.key, factor.key, matchPrediction.modelMeta?.factorImpacts)}
                 tone={factor.tone}
               />
             ))}
@@ -679,8 +700,14 @@ function DraggablePanel({
   );
 }
 
-function TeamFlag({ team }: { team: TeamKey }) {
-  return <span className={`flag flag-${team}`} aria-hidden="true" />;
+function TeamFlag({ team, code }: { team: TeamKey; code?: string }) {
+  const knownFlags = new Set(["brazil", "argentina", "spain", "france", "england", "portugal", "germany", "netherlands"]);
+  const className = knownFlags.has(team) ? `flag flag-${team}` : "flag flag-generic";
+  return (
+    <span className={className} aria-hidden="true">
+      {knownFlags.has(team) ? null : code?.slice(0, 3)}
+    </span>
+  );
 }
 
 function MiniPitch({ side }: { side: "left" | "right" }) {
@@ -742,7 +769,7 @@ function ChampionBoard({ teams }: { teams: Team[] }) {
       {teams.map((team, index) => (
         <article className="champion-row" key={team.key}>
           <span>{index + 1}</span>
-          <TeamFlag team={team.key} />
+          <TeamFlag team={team.key} code={team.code} />
           <div>
             <strong>{team.name}</strong>
             <small>
@@ -757,7 +784,7 @@ function ChampionBoard({ teams }: { teams: Team[] }) {
   );
 }
 
-function FactorBar({ label, value, tone }: { label: string; value: number; tone: string }) {
+function FactorBar({ label, value, impact, tone }: { label: string; value: number; impact: number; tone: string }) {
   return (
     <div className="factor-row">
       <span className={`factor-icon ${tone}`} />
@@ -766,6 +793,7 @@ function FactorBar({ label, value, tone }: { label: string; value: number; tone:
         <i className={tone} style={{ width: `${value}%` }} />
       </div>
       <b>{value}</b>
+      <em className={impact > 0 ? "green" : impact < 0 ? "red" : "muted"}>{formatSignedNumber(impact)}</em>
     </div>
   );
 }

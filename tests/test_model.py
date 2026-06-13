@@ -7,6 +7,7 @@ from backend.model import (
     build_score_sampler,
     build_match_prediction,
     build_standings,
+    event_factor_impacts,
     group_names,
     rank_group,
     simulate_tournament,
@@ -49,6 +50,11 @@ class PredictionModelTest(unittest.TestCase):
         self.assertEqual(prediction["modelMeta"]["events"]["applied"], 1)
         self.assertEqual(prediction["modelMeta"]["events"]["ignored"], 1)
 
+    def test_team_factors_use_five_product_plates(self):
+        prediction = build_match_prediction(1200)
+        first_team = prediction["teams"][0]
+        self.assertEqual(set(first_team["factors"]), {"strength", "form", "path", "squad", "margin"})
+
     def test_group_ranking_only_uses_teams_from_that_group(self):
         standings = build_standings(FIXTURES)
         ranked = rank_group(standings, "E")
@@ -71,6 +77,11 @@ class PredictionModelTest(unittest.TestCase):
         sampler = build_score_sampler("brazil", "argentina", teams)
         self.assertGreater(len(sampler), 0)
         self.assertAlmostEqual(sampler[-1][0], 1.0, places=6)
+
+    def test_events_generate_factor_impact_details(self):
+        impacts = event_factor_impacts()
+        self.assertLess(impacts["brazil"]["attack"], 0)
+        self.assertEqual(impacts["argentina"]["squad"], 0)
 
 
 if __name__ == "__main__":

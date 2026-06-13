@@ -1,12 +1,12 @@
 from __future__ import annotations
 
+from bisect import bisect_left
 from collections import defaultdict
 from dataclasses import replace
 from datetime import datetime, timezone
 from math import exp, factorial
 from random import Random
 from typing import Literal
-from bisect import bisect_left
 
 from .data import CURRENT_MATCH, DATASET_META, EVENTS, FIXTURES, SOURCE_WEIGHTS, TEAM_PROFILES, Fixture, TeamProfile
 
@@ -14,22 +14,47 @@ Outcome = Literal["home", "draw", "away"]
 
 SIMULATION_COUNT = 8_000
 MAX_GOALS = 7
+EVENT_FACTORS = ("attack", "defense", "goalkeeper", "path", "squad")
+
+
+def event_factor_impacts() -> dict[str, dict[str, float]]:
+    impacts = {team_key: {factor: 0.0 for factor in EVENT_FACTORS} for team_key in TEAM_PROFILES}
+    for event in EVENTS:
+        weight = SOURCE_WEIGHTS[event.source_level]
+        if weight <= 0 or event.team is None or event.factor not in EVENT_FACTORS:
+            continue
+        impacts[event.team][event.factor] += round(event.direction * event.strength * weight * 100, 2)
+    return impacts
+
+
+def profile_to_plates(profile: TeamProfile) -> dict[str, int]:
+    return {
+        "strength": round((profile.elo - 1000) / 10),
+        "form": round((profile.attack + profile.defense) / 2),
+        "path": profile.path,
+        "squad": profile.squad,
+        "margin": round((profile.goalkeeper + profile.defense) / 2),
+    }
 
 
 def apply_event_adjustments() -> dict[str, TeamProfile]:
     adjusted = dict(TEAM_PROFILES)
-    for event in EVENTS:
-        weight = SOURCE_WEIGHTS[event.source_level]
-        if weight <= 0 or event.team is None:
-            continue
-        team = adjusted[event.team]
-        delta = int(round(event.direction * event.strength * weight * 100))
-        if event.factor == "attack":
-            adjusted[event.team] = replace(team, attack=max(50, min(99, team.attack + delta)))
-        elif event.factor == "defense":
-            adjusted[event.team] = replace(team, defense=max(50, min(99, team.defense + delta)))
-        elif event.factor == "squad":
-            adjusted[event.team] = replace(team, squad=max(50, min(99, team.squad + delta)))
+    impacts = event_factor_impacts()
+    for team_key, factor_impacts in impacts.items():
+        team = adjusted[team_key]
+        attack_delta = int(round(factor_impacts["attack"]))
+        defense_delta = int(round(factor_impacts["defense"]))
+        goalkeeper_delta = int(round(factor_impacts["goalkeeper"]))
+        path_delta = int(round(factor_impacts["path"]))
+        squad_delta = int(round(factor_impacts["squad"]))
+        adjusted[team_key] = replace(
+            team,
+            attack=max(50, min(99, team.attack + attack_delta)),
+            defense=max(50, min(99, team.defense + defense_delta)),
+            goalkeeper=max(50, min(99, team.goalkeeper + goalkeeper_delta)),
+            path=max(50, min(99, team.path + path_delta)),
+            squad=max(50, min(99, team.squad + squad_delta)),
+        )
     return adjusted
 
 
@@ -394,14 +419,7 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
                 "key": profile.key,
                 "name": profile.name,
                 "code": profile.code,
-                "factors": {
-                    "overall": round((profile.elo - 1000) / 10),
-                    "attack": profile.attack,
-                    "defense": profile.defense,
-                    "goalkeeper": profile.goalkeeper,
-                    "path": profile.path,
-                    "squad": profile.squad,
-                },
+                "factors": profile_to_plates(profile),
                 "tournament": {
                     "champion": tournament["champion"],
                     "final": tournament["final"],
@@ -439,5 +457,6 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
             "lockedResults": len([fixture for fixture in FIXTURES if fixture.status == "finished"]),
             "dataset": DATASET_META,
             "events": event_summary(),
+            "factorImpacts": event_factor_impacts(),
         },
     }
