@@ -2,8 +2,10 @@ import unittest
 
 from backend.data import DATASET_META, EVENTS, FIXTURES, TEAM_PROFILES
 from backend.model import (
+    ROUND_OF_16_MATCHES,
     apply_event_adjustments,
     best_third_place_teams,
+    build_round_of_32_matches,
     build_score_sampler,
     build_match_prediction,
     build_standings,
@@ -64,6 +66,17 @@ class PredictionModelTest(unittest.TestCase):
         standings = build_standings(FIXTURES)
         third_place = best_third_place_teams(standings, TEAM_PROFILES)
         self.assertEqual(len(third_place), 8)
+
+    def test_round_of_32_uses_fifa_fixed_slots(self):
+        standings = build_standings(FIXTURES)
+        rankings = {group: rank_group(standings, group, teams=TEAM_PROFILES) for group in group_names(TEAM_PROFILES)}
+        third_place = best_third_place_teams(standings, TEAM_PROFILES, rankings=rankings)
+        matches = build_round_of_32_matches(rankings, third_place, TEAM_PROFILES)
+        self.assertEqual(matches[73], (rankings["A"][1], rankings["B"][1]))
+        self.assertEqual(matches[74][0], rankings["E"][0])
+        self.assertEqual(len(matches), 16)
+        self.assertEqual(len({team for match in matches.values() for team in match}), 32)
+        self.assertEqual(ROUND_OF_16_MATCHES[0], (89, 74, 77))
 
     def test_tournament_outputs_32_team_path_stages(self):
         teams = apply_event_adjustments()

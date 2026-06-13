@@ -16,6 +16,39 @@ SIMULATION_COUNT = 8_000
 MAX_GOALS = 7
 EVENT_FACTORS = ("attack", "defense", "goalkeeper", "path", "squad")
 
+# NOTE: 固定路径来自 FIFA World Cup 26 Regulations Article 12.6-12.11。
+# Annexe C 的 495 种第三名组合后续会独立数据化；这里先用官方槽位约束做确定性匹配。
+ROUND_OF_32_MATCHES = (
+    (73, ("runnerUp", "A"), ("runnerUp", "B")),
+    (74, ("winner", "E"), ("third", "ABCDF")),
+    (75, ("winner", "F"), ("runnerUp", "C")),
+    (76, ("winner", "C"), ("runnerUp", "F")),
+    (77, ("winner", "I"), ("third", "CDFGH")),
+    (78, ("runnerUp", "E"), ("runnerUp", "I")),
+    (79, ("winner", "A"), ("third", "CEFHI")),
+    (80, ("winner", "L"), ("third", "EHIJK")),
+    (81, ("winner", "D"), ("third", "BEFIJ")),
+    (82, ("winner", "G"), ("third", "AEHIJ")),
+    (83, ("runnerUp", "K"), ("runnerUp", "L")),
+    (84, ("winner", "H"), ("runnerUp", "J")),
+    (85, ("winner", "B"), ("third", "EFGIJ")),
+    (86, ("winner", "J"), ("runnerUp", "H")),
+    (87, ("winner", "K"), ("third", "DEIJL")),
+    (88, ("runnerUp", "D"), ("runnerUp", "G")),
+)
+ROUND_OF_16_MATCHES = (
+    (89, 74, 77),
+    (90, 73, 75),
+    (91, 76, 78),
+    (92, 79, 80),
+    (93, 83, 84),
+    (94, 81, 82),
+    (95, 86, 88),
+    (96, 85, 87),
+)
+QUARTERFINAL_MATCHES = ((97, 89, 90), (98, 93, 94), (99, 91, 92), (100, 95, 96))
+SEMIFINAL_MATCHES = ((101, 97, 98), (102, 99, 100))
+
 
 def event_factor_impacts() -> dict[str, dict[str, float]]:
     impacts = {team_key: {factor: 0.0 for factor in EVENT_FACTORS} for team_key in TEAM_PROFILES}
@@ -198,9 +231,11 @@ def best_third_place_teams(
     standings: dict[str, dict[str, int]],
     teams: dict[str, TeamProfile],
     rng: Random | None = None,
+    rankings: dict[str, list[str]] | None = None,
 ) -> list[str]:
     rng = rng or Random(0)
-    third_place = [rank_group(standings, group, rng, teams)[2] for group in group_names(teams)]
+    rankings = rankings or {group: rank_group(standings, group, rng, teams) for group in group_names(teams)}
+    third_place = [rankings[group][2] for group in group_names(teams)]
     return sorted(
         third_place,
         key=lambda key: (
@@ -230,6 +265,94 @@ def head_to_head_winner(team_a: str, team_b: str, teams: dict[str, TeamProfile],
     rating_gap = team_knockout_rating(team_a, teams) - team_knockout_rating(team_b, teams)
     probability = 1 / (1 + exp(-rating_gap / 210))
     return team_a if rng.random() < probability else team_b
+
+
+def assign_third_place_slots(
+    third_place: list[str],
+    teams: dict[str, TeamProfile],
+) -> dict[int, str]:
+    slots = [
+        (match_no, seed[1])
+        for match_no, _, seed in ROUND_OF_32_MATCHES
+        if seed[0] == "third"
+    ]
+    ranked_groups = tuple(teams[team_key].group for team_key in third_place)
+    third_by_group = {teams[team_key].group: team_key for team_key in third_place}
+    rank_index = {group: index for index, group in enumerate(ranked_groups)}
+
+    def search(index: int, remaining_groups: tuple[str, ...]) -> dict[int, str] | None:
+        if index == len(slots):
+            return {}
+        match_no, allowed_groups = slots[index]
+        candidates = sorted(
+            [group for group in remaining_groups if group in allowed_groups],
+            key=lambda group: rank_index[group],
+        )
+        for group in candidates:
+            next_remaining = tuple(item for item in remaining_groups if item != group)
+            result = search(index + 1, next_remaining)
+            if result is not None:
+                return {match_no: third_by_group[group], **result}
+        return None
+
+    assigned = search(0, ranked_groups)
+    if assigned is None:
+        return {match_no: third_place[index] for index, (match_no, _) in enumerate(slots)}
+    return assigned
+
+
+def resolve_round_seed(
+    seed: tuple[str, str],
+    match_no: int,
+    rankings: dict[str, list[str]],
+    third_assignments: dict[int, str],
+) -> str:
+    seed_type, value = seed
+    if seed_type == "winner":
+        return rankings[value][0]
+    if seed_type == "runnerUp":
+        return rankings[value][1]
+    return third_assignments[match_no]
+
+
+def build_round_of_32_matches(
+    rankings: dict[str, list[str]],
+    third_place: list[str],
+    teams: dict[str, TeamProfile],
+) -> dict[int, tuple[str, str]]:
+    third_assignments = assign_third_place_slots(third_place, teams)
+    return {
+        match_no: (
+            resolve_round_seed(left_seed, match_no, rankings, third_assignments),
+            resolve_round_seed(right_seed, match_no, rankings, third_assignments),
+        )
+        for match_no, left_seed, right_seed in ROUND_OF_32_MATCHES
+    }
+
+
+def play_bracket_matches(
+    matchups: dict[int, tuple[str, str]],
+    teams: dict[str, TeamProfile],
+    rng: Random,
+    counts,
+    stage: str,
+) -> dict[int, str]:
+    winners = {}
+    for match_no, (team_a, team_b) in matchups.items():
+        winner = head_to_head_winner(team_a, team_b, teams, rng)
+        winners[match_no] = winner
+        counts[winner][stage] += 1
+    return winners
+
+
+def build_next_round_matchups(
+    bracket: tuple[tuple[int, int, int], ...],
+    previous_winners: dict[int, str],
+) -> dict[int, tuple[str, str]]:
+    return {
+        match_no: (previous_winners[left_match], previous_winners[right_match])
+        for match_no, left_match, right_match in bracket
+    }
 
 
 def simulate_tournament(
@@ -262,34 +385,22 @@ def simulate_tournament(
 
         standings = build_standings(simulated_fixtures)
         groups = group_names(teams)
-        group_qualifiers = {group: rank_group(standings, group, rng, teams)[:2] for group in groups}
-        top_two = [team_key for group in groups for team_key in group_qualifiers[group]]
-        third_place = best_third_place_teams(standings, teams, rng)
+        rankings = {group: rank_group(standings, group, rng, teams) for group in groups}
+        top_two = [team_key for group in groups for team_key in rankings[group][:2]]
+        third_place = best_third_place_teams(standings, teams, rng, rankings)
         round_teams = top_two + third_place
-        round_teams = sorted(
-            round_teams,
-            key=lambda key: (
-                standings[key]["points"],
-                standings[key]["gd"],
-                teams[key].elo,
-                rng.random(),
-            ),
-            reverse=True,
-        )
         for team_key in round_teams:
             counts[team_key]["roundOf32"] += 1
-
-        for next_stage in ("roundOf16", "quarterfinal", "semifinal", "final", "champion"):
-            winners = []
-            bracket = list(round_teams)
-            for index in range(0, len(bracket), 2):
-                if index + 1 >= len(bracket):
-                    winners.append(bracket[index])
-                    continue
-                winners.append(head_to_head_winner(bracket[index], bracket[index + 1], teams, rng))
-            for winner in winners:
-                counts[winner][next_stage] += 1
-            round_teams = winners
+        round_of_32 = build_round_of_32_matches(rankings, third_place, teams)
+        round_of_32_winners = play_bracket_matches(round_of_32, teams, rng, counts, "roundOf16")
+        round_of_16 = build_next_round_matchups(ROUND_OF_16_MATCHES, round_of_32_winners)
+        round_of_16_winners = play_bracket_matches(round_of_16, teams, rng, counts, "quarterfinal")
+        quarterfinals = build_next_round_matchups(QUARTERFINAL_MATCHES, round_of_16_winners)
+        quarterfinal_winners = play_bracket_matches(quarterfinals, teams, rng, counts, "semifinal")
+        semifinals = build_next_round_matchups(SEMIFINAL_MATCHES, quarterfinal_winners)
+        semifinal_winners = play_bracket_matches(semifinals, teams, rng, counts, "final")
+        champion = head_to_head_winner(semifinal_winners[101], semifinal_winners[102], teams, rng)
+        counts[champion]["champion"] += 1
 
     return {
         team_key: {

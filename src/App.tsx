@@ -196,6 +196,7 @@ const sourceWeights = [
 
 const INTERACTIVE_SIMULATION_COUNT = 1200;
 const FORECAST_REFRESH_MS = 15000;
+const API_BASE_URL = import.meta.env.DEV ? "http://127.0.0.1:8000" : "";
 
 const fallbackNewsItems: NewsItem[] = [
   { title: "官方名单", detail: "两队暂无新增停赛，核心阵容可用", impact: "可入模型", tone: "green", time: "1 小时前" },
@@ -315,7 +316,9 @@ function App() {
 
     async function loadPrediction() {
       try {
-        const response = await fetch(`/api/match-prediction?simulations=${INTERACTIVE_SIMULATION_COUNT}`, { cache: "no-store" });
+        const response = await fetch(`${API_BASE_URL}/api/match-prediction?simulations=${INTERACTIVE_SIMULATION_COUNT}`, {
+          cache: "no-store",
+        });
         if (!response.ok) throw new Error(`预测接口返回 ${response.status}`);
         const data = (await response.json()) as MatchPrediction;
         if (!active) return;

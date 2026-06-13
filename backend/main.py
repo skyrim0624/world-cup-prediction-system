@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from time import monotonic
+
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -8,6 +10,8 @@ from .model import SIMULATION_COUNT, build_match_prediction, event_summary
 
 
 app = FastAPI(title="World Cup Prediction MVP")
+PREDICTION_CACHE_TTL_SECONDS = 15
+prediction_cache: dict[int, tuple[float, dict[str, object]]] = {}
 
 app.add_middleware(
     CORSMiddleware,
@@ -24,7 +28,13 @@ def health() -> dict[str, str]:
 
 @app.get("/api/match-prediction")
 def match_prediction(simulations: int = Query(SIMULATION_COUNT, ge=1_000, le=50_000)) -> dict[str, object]:
-    return build_match_prediction(simulations)
+    now = monotonic()
+    cached = prediction_cache.get(simulations)
+    if cached and now - cached[0] < PREDICTION_CACHE_TTL_SECONDS:
+        return cached[1]
+    prediction = build_match_prediction(simulations)
+    prediction_cache[simulations] = (now, prediction)
+    return prediction
 
 
 @app.get("/api/model-status")

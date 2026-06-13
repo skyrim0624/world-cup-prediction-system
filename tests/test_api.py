@@ -23,6 +23,12 @@ class PredictionApiTest(unittest.TestCase):
         payload = response.json()
         self.assertEqual(payload["modelMeta"]["simulationCount"], 1200)
 
+    def test_match_prediction_reuses_short_cache(self):
+        client = TestClient(app)
+        first = client.get("/api/match-prediction?simulations=1200").json()
+        second = client.get("/api/match-prediction?simulations=1200").json()
+        self.assertEqual(first["updatedAt"], second["updatedAt"])
+
 
 if __name__ == "__main__":
     unittest.main()
