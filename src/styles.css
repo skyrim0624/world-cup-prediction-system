@@ -1450,7 +1450,8 @@ button {
 }
 
 .raw-news-form,
-.tournament-import-form {
+.tournament-import-form,
+.tournament-rollback-form {
   display: grid;
   gap: 10px;
 }
@@ -1480,7 +1481,8 @@ button {
 .raw-news-form input,
 .raw-news-form textarea,
 .raw-news-form select,
-.tournament-import-form textarea {
+.tournament-import-form textarea,
+.tournament-rollback-form input {
   min-height: 42px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: var(--text);
@@ -1499,7 +1501,8 @@ button {
 }
 
 .raw-news-form > button,
-.tournament-import-form > button {
+.tournament-import-form > button,
+.tournament-rollback-form > button {
   min-height: 44px;
   border: 1px solid rgba(24, 227, 208, 0.36);
   color: var(--cyan);
@@ -1511,7 +1514,8 @@ button {
 .raw-news-form input,
 .raw-news-form textarea,
 .raw-news-form select,
-.tournament-import-form textarea {
+.tournament-import-form textarea,
+.tournament-rollback-form input {
   width: 100%;
   min-width: 0;
   padding: 0 10px;

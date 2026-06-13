@@ -10,7 +10,7 @@ from . import data as data_state
 from .admin import build_admin_overview
 from .admin_audit import AUDIT_LOG_PATH, append_admin_audit
 from .admin_security import verify_admin_token
-from .data_import import apply_tournament_data_import
+from .data_import import apply_tournament_data_import, restore_tournament_backup
 from .daily_update import DEFAULT_DAILY_STATUS_PATH
 from .event_review import RAW_NEWS_PATH, review_raw_news_item
 from .fixture_update import record_fixture_live_score, record_fixture_result
@@ -65,6 +65,10 @@ class FixtureResultRequest(BaseModel):
     away: str
     homeScore: int
     awayScore: int
+
+
+class TournamentRollbackRequest(BaseModel):
+    backupId: str
 
 
 app.add_middleware(
@@ -285,6 +289,23 @@ def import_tournament_data(payload: dict[str, object], _: None = Depends(verify_
         "tournament-data:import",
         str(result["source"]),
         {"teamCount": result["teamCount"], "fixtureCount": result["fixtureCount"], "backupDir": result["backupDir"]},
+        audit_log_path,
+    )
+    return result
+
+
+@app.post("/api/admin/tournament-data/rollback")
+def rollback_tournament_data(request: TournamentRollbackRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
+    try:
+        result = restore_tournament_backup(runtime_data_dir, tournament_backup_dir, request.backupId)
+    except ValueError as error:
+        raise HTTPException(status_code=400, detail=str(error)) from error
+    reload_model_data(review_data_path, runtime_data_dir / "fixtures.json", runtime_data_dir / "teams.json")
+    prediction_cache.clear()
+    append_admin_audit(
+        "tournament-data:rollback",
+        request.backupId,
+        {"sourceBackupDir": result["sourceBackupDir"], "currentBackupDir": result["currentBackupDir"]},
         audit_log_path,
     )
     return result

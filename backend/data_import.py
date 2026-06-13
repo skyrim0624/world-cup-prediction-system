@@ -64,18 +64,51 @@ def validate_tournament_import_payload(payload: dict[str, Any]) -> dict[str, obj
     }
 
 
-def apply_tournament_data_import(data_dir: Path, backup_root: Path, payload: dict[str, Any]) -> dict[str, object]:
-    summary = validate_tournament_import_payload(payload)
+def create_current_tournament_backup(data_dir: Path, backup_root: Path) -> Path:
     teams_path = data_dir / "teams.json"
     fixtures_path = data_dir / "fixtures.json"
     backup_dir = backup_root / datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     backup_dir.mkdir(parents=True, exist_ok=False)
     shutil.copy2(teams_path, backup_dir / "teams.json")
     shutil.copy2(fixtures_path, backup_dir / "fixtures.json")
+    return backup_dir
+
+
+def apply_tournament_data_import(data_dir: Path, backup_root: Path, payload: dict[str, Any]) -> dict[str, object]:
+    summary = validate_tournament_import_payload(payload)
+    teams_path = data_dir / "teams.json"
+    fixtures_path = data_dir / "fixtures.json"
+    backup_dir = create_current_tournament_backup(data_dir, backup_root)
 
     teams_path.write_text(json.dumps(payload["teams"], ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     fixtures_path.write_text(json.dumps(payload["fixtures"], ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {
         **summary,
         "backupDir": str(backup_dir),
+    }
+
+
+def restore_tournament_backup(data_dir: Path, backup_root: Path, backup_id: str) -> dict[str, object]:
+    if not backup_id or "/" in backup_id or "\\" in backup_id or backup_id in {".", ".."}:
+        raise ValueError("备份 ID 不合法")
+    backup_dir = (backup_root / backup_id).resolve()
+    backup_root_resolved = backup_root.resolve()
+    try:
+        backup_dir.relative_to(backup_root_resolved)
+    except ValueError as error:
+        raise ValueError("备份 ID 不合法") from error
+    if not backup_dir.is_dir():
+        raise ValueError(f"备份不存在: {backup_id}")
+    backup_teams_path = backup_dir / "teams.json"
+    backup_fixtures_path = backup_dir / "fixtures.json"
+    if not backup_teams_path.exists() or not backup_fixtures_path.exists():
+        raise ValueError(f"备份不完整: {backup_id}")
+
+    current_backup_dir = create_current_tournament_backup(data_dir, backup_root)
+    shutil.copy2(backup_teams_path, data_dir / "teams.json")
+    shutil.copy2(backup_fixtures_path, data_dir / "fixtures.json")
+    return {
+        "restoredBackupId": backup_id,
+        "sourceBackupDir": str(backup_dir),
+        "currentBackupDir": str(current_backup_dir),
     }

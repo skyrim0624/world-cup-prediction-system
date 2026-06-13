@@ -301,6 +301,74 @@ class PredictionApiTest(unittest.TestCase):
             self.assertEqual(audit_rows[0]["action"], "tournament-data:import")
             self.assertEqual(audit_rows[0]["targetId"], "fifa-official-test")
 
+    def test_admin_tournament_rollback_restores_backup_reload_model_and_audit(self):
+        previous_token = os.environ.get("WORLD_CUP_ADMIN_TOKEN")
+        os.environ["WORLD_CUP_ADMIN_TOKEN"] = "secret-token"
+        payload = make_compatible_import_payload()
+        restored_payload = make_compatible_import_payload()
+        restored_payload["teams"][0]["name"] = "回滚后的巴西"
+        backup_id = "20260614T080000000000Z"
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            data_dir = root / "data"
+            backup_dir = root / "backups"
+            restore_dir = backup_dir / backup_id
+            audit_path = root / "admin-audit.jsonl"
+            data_dir.mkdir()
+            restore_dir.mkdir(parents=True)
+            (data_dir / "teams.json").write_text(json.dumps(payload["teams"], ensure_ascii=False), encoding="utf-8")
+            (data_dir / "fixtures.json").write_text(json.dumps(payload["fixtures"], ensure_ascii=False), encoding="utf-8")
+            (restore_dir / "teams.json").write_text(json.dumps(restored_payload["teams"], ensure_ascii=False), encoding="utf-8")
+            (restore_dir / "fixtures.json").write_text(json.dumps(restored_payload["fixtures"], ensure_ascii=False), encoding="utf-8")
+            previous_data_dir = getattr(main_module, "runtime_data_dir", None)
+            previous_backup_dir = getattr(main_module, "tournament_backup_dir", None)
+            previous_audit_path = getattr(main_module, "audit_log_path", None)
+            previous_fixtures_path = getattr(main_module, "fixtures_data_path", None)
+            main_module.runtime_data_dir = data_dir
+            main_module.tournament_backup_dir = backup_dir
+            main_module.audit_log_path = audit_path
+            main_module.fixtures_data_path = data_dir / "fixtures.json"
+            try:
+                client = TestClient(app)
+                response = client.post(
+                    "/api/admin/tournament-data/rollback",
+                    headers={"X-Admin-Token": "secret-token"},
+                    json={"backupId": backup_id},
+                )
+                status_response = client.get("/api/model-status")
+            finally:
+                if previous_data_dir is None:
+                    delattr(main_module, "runtime_data_dir")
+                else:
+                    main_module.runtime_data_dir = previous_data_dir
+                if previous_backup_dir is None:
+                    delattr(main_module, "tournament_backup_dir")
+                else:
+                    main_module.tournament_backup_dir = previous_backup_dir
+                if previous_audit_path is None:
+                    delattr(main_module, "audit_log_path")
+                else:
+                    main_module.audit_log_path = previous_audit_path
+                if previous_fixtures_path is None:
+                    delattr(main_module, "fixtures_data_path")
+                else:
+                    main_module.fixtures_data_path = previous_fixtures_path
+                main_module.reload_model_data()
+                if previous_token is None:
+                    os.environ.pop("WORLD_CUP_ADMIN_TOKEN", None)
+                else:
+                    os.environ["WORLD_CUP_ADMIN_TOKEN"] = previous_token
+
+            self.assertEqual(response.status_code, 200, response.text)
+            result = response.json()
+            self.assertEqual(result["restoredBackupId"], backup_id)
+            self.assertEqual(json.loads((data_dir / "teams.json").read_text(encoding="utf-8"))[0]["name"], "回滚后的巴西")
+            self.assertEqual(status_response.json()["dataset"]["placeholderSlots"], 0)
+            self.assertTrue(Path(result["currentBackupDir"]).exists())
+            audit_rows = [json.loads(line) for line in audit_path.read_text(encoding="utf-8").splitlines()]
+            self.assertEqual(audit_rows[0]["action"], "tournament-data:rollback")
+            self.assertEqual(audit_rows[0]["targetId"], backup_id)
+
     def test_match_prediction_accepts_simulation_count(self):
         client = TestClient(app)
         response = client.get("/api/match-prediction?simulations=1200")

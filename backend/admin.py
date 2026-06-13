@@ -73,5 +73,6 @@ def build_admin_overview(
             "liveScoreEndpoint": "/api/fixtures/live",
             "resultEndpoint": "/api/fixtures/result",
             "tournamentImportEndpoint": "/api/admin/tournament-data/import",
+            "tournamentRollbackEndpoint": "/api/admin/tournament-data/rollback",
         },
     }

@@ -142,6 +142,7 @@ type AdminOverview = {
     liveScoreEndpoint: string;
     resultEndpoint: string;
     tournamentImportEndpoint: string;
+    tournamentRollbackEndpoint: string;
   };
 };
 
@@ -1208,6 +1209,7 @@ function AdminConsole() {
     url: "",
   });
   const [tournamentImportText, setTournamentImportText] = useState("");
+  const [tournamentRollbackId, setTournamentRollbackId] = useState("");
   const dailyStatus = overview?.dailyUpdateStatus ?? null;
 
   function adminHeaders() {
@@ -1370,6 +1372,24 @@ function AdminConsole() {
     }
   }
 
+  async function submitTournamentRollback(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setMessage(null);
+    try {
+      const response = await fetch(`${API_BASE_URL}${overview?.operations.tournamentRollbackEndpoint ?? "/api/admin/tournament-data/rollback"}`, {
+        method: "POST",
+        headers: adminHeaders(),
+        body: JSON.stringify({ backupId: tournamentRollbackId.trim() }),
+      });
+      if (!response.ok) throw new Error(`赛事回滚接口返回 ${response.status}`);
+      await loadAdminData();
+      setTournamentRollbackId("");
+      setMessage("赛事数据已回滚");
+    } catch {
+      setMessage("赛事数据回滚失败");
+    }
+  }
+
   return (
     <main className="admin-shell">
       <header className="admin-topbar">
@@ -1479,6 +1499,16 @@ function AdminConsole() {
               required
             />
             <button type="submit">导入赛事数据</button>
+          </form>
+          <form className="tournament-rollback-form" onSubmit={submitTournamentRollback}>
+            <input
+              value={tournamentRollbackId}
+              onChange={(event) => setTournamentRollbackId(event.target.value)}
+              aria-label="回滚备份 ID"
+              placeholder="备份目录 ID"
+              required
+            />
+            <button type="submit">回滚赛事数据</button>
           </form>
         </article>
 
