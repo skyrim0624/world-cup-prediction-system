@@ -11,6 +11,7 @@ from .admin import build_admin_overview
 from .admin_audit import AUDIT_LOG_PATH, append_admin_audit
 from .admin_security import verify_admin_token
 from .data_import import apply_tournament_data_import
+from .daily_update import DEFAULT_DAILY_STATUS_PATH
 from .event_review import RAW_NEWS_PATH, review_raw_news_item
 from .fixture_update import record_fixture_live_score, record_fixture_result
 from .model import (
@@ -33,6 +34,7 @@ review_data_path = RAW_NEWS_PATH
 snapshot_data_path = DEFAULT_SNAPSHOT_PATH
 fixtures_data_path = data_state.DATA_DIR / "fixtures.json"
 audit_log_path = AUDIT_LOG_PATH
+daily_status_path = DEFAULT_DAILY_STATUS_PATH
 runtime_data_dir = data_state.DATA_DIR
 tournament_backup_dir = data_state.DATA_DIR / "backups"
 
@@ -114,7 +116,7 @@ def model_status() -> dict[str, object]:
 
 @app.get("/api/admin/overview")
 def admin_overview() -> dict[str, object]:
-    return build_admin_overview(snapshot_data_path, audit_log_path)
+    return build_admin_overview(snapshot_data_path, audit_log_path, daily_status_path)
 
 
 @app.get("/api/upcoming-matches")

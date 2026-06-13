@@ -1348,6 +1348,33 @@ Elo / 实力评分
 - 运营后台已经有最小可用入口，足以承载日更模型的人工作业。
 - 仍未完成的是正式用户账号 / 角色体系、真实外部调度和付费权限。
 
+### 2026-06-14：日更状态落盘与后台可视化
+
+已完成：
+
+- `run_daily_update` 新增日更状态输出，成功执行后可写入 `backend/data_files/daily-update-status.json`。
+- `scripts/run_daily_update.py` 新增 `--status` 参数，默认写入运行时状态文件。
+- 日更状态包含执行状态、更新时间、Feed 新增 / 跳过数量、快照路径、模拟次数、锁定赛果、进行中比赛和事件摘要。
+- 新增 `read_daily_update_status`，管理台 API 可读取最近一次日更状态。
+- `GET /api/admin/overview` 新增 `dailyUpdateStatus`。
+- `/admin` 的“日更快照”升级为“日更状态”，显示最近日更时间、执行状态、新增新闻和模拟次数。
+- `.gitignore` 已忽略 `backend/data_files/daily-update-status.json`，避免运行状态进入版本库。
+
+验证：
+
+- 新增日更函数测试：执行日更后写入 status JSON，并包含 `status=success`、新增新闻数、快照路径和模拟次数。
+- 新增日更 CLI 测试：`scripts/run_daily_update.py --status ...` 可生成状态文件。
+- 新增 API 测试：`/api/admin/overview` 可返回 `dailyUpdateStatus`。
+- `npm run validate:data` 通过。
+- `npm run test:model` 通过，50 个测试。
+- `npm run build` 通过。
+- 本地浏览器检查通过：`/admin` 在 1280px 和 390px 下显示日更状态、最近日更时间和 `1,200` 次模拟，无横向溢出；token 输入交互生效。
+
+当前判断：
+
+- 运营人员现在可以判断“今天是否跑过日更、是否生成快照、导入了多少新闻”。
+- 这一步补齐了日更流水线的可观察性，但还没有接真实定时任务平台和失败告警。
+
 ## 十、当前交接摘要
 
 一句话定义：
@@ -1358,7 +1385,7 @@ Elo / 实力评分
 
 1. 从 FIFA 官方来源整理真实 48 队名单、分组和 72 场小组赛，生成导入 JSON 并走导入器替换当前样例数据。
 2. 接真实新闻来源列表，把外部抓取任务接到 `npm run daily:update` 的 Feed 配置和报告输出。
-3. 扩展 `/admin` 后台，补真实调度状态、用户账号 / 角色体系和导入数据回滚入口。
+3. 扩展 `/admin` 后台，补真实外部调度、失败告警、用户账号 / 角色体系和导入数据回滚入口。
 4. 把单场详情升级为独立路由/页面，并接付费解锁边界。
 5. 最后接支付、用户权限和付费解锁入口。
 

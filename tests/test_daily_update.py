@@ -53,6 +53,34 @@ class DailyUpdateTest(unittest.TestCase):
             self.assertEqual(len(rows), 1)
             self.assertEqual(snapshot["modelMeta"]["simulationCount"], 1200)
 
+    def test_run_daily_update_writes_latest_status_file(self):
+        from backend.daily_update import FeedSpec, run_daily_update
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            feed_path = root / "feed.xml"
+            raw_news_path = root / "raw-news.json"
+            snapshot_path = root / "latest-match-prediction.json"
+            status_path = root / "daily-update-status.json"
+            feed_path.write_text(RSS_FEED, encoding="utf-8")
+            raw_news_path.write_text("[]", encoding="utf-8")
+
+            report = run_daily_update(
+                raw_news_path=raw_news_path,
+                snapshot_path=snapshot_path,
+                feed_specs=[FeedSpec(input_path=feed_path, source="reuters", team="brazil")],
+                simulation_count=1200,
+                status_path=status_path,
+            )
+
+            status = json.loads(status_path.read_text(encoding="utf-8"))
+            self.assertEqual(report["status"], "success")
+            self.assertEqual(status["status"], "success")
+            self.assertEqual(status["feeds"]["imported"], 1)
+            self.assertEqual(status["snapshot"]["path"], str(snapshot_path))
+            self.assertEqual(status["snapshot"]["simulationCount"], 1200)
+            self.assertIn("updatedAt", status)
+
     def test_daily_update_script_runs_from_feed_config(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
@@ -91,6 +119,38 @@ class DailyUpdateTest(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertIn("日更流程完成", result.stdout)
             self.assertTrue(snapshot_path.exists())
+
+    def test_daily_update_script_writes_status_path(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            raw_news_path = root / "raw-news.json"
+            snapshot_path = root / "latest-match-prediction.json"
+            status_path = root / "daily-update-status.json"
+            raw_news_path.write_text("[]", encoding="utf-8")
+
+            result = subprocess.run(
+                [
+                    "python3",
+                    "scripts/run_daily_update.py",
+                    "--raw-news-path",
+                    str(raw_news_path),
+                    "--snapshot",
+                    str(snapshot_path),
+                    "--status",
+                    str(status_path),
+                    "--simulations",
+                    "1200",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertIn("日更流程完成", result.stdout)
+            status = json.loads(status_path.read_text(encoding="utf-8"))
+            self.assertEqual(status["status"], "success")
+            self.assertEqual(status["snapshot"]["simulationCount"], 1200)
 
 
 if __name__ == "__main__":

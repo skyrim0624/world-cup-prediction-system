@@ -87,6 +87,23 @@ type AdminAuditEntry = {
   details: Record<string, unknown>;
 };
 
+type DailyUpdateStatus = {
+  status: string;
+  updatedAt: string;
+  feeds: {
+    imported: number;
+    skipped: number;
+    items: unknown[];
+  };
+  snapshot: {
+    path: string;
+    simulationCount: number;
+    lockedResults: number;
+    liveMatches: number;
+    events: EventReviewSummary;
+  };
+};
+
 type AdminOverview = {
   fixtureStatus: {
     scheduled: number;
@@ -109,6 +126,7 @@ type AdminOverview = {
     generatedAt: string;
     path: string;
   } | null;
+  dailyUpdateStatus: DailyUpdateStatus | null;
   operations: {
     dailyUpdateCommand: string;
     snapshotRebuildEndpoint: string;
@@ -1183,6 +1201,7 @@ function AdminConsole() {
     url: "",
   });
   const [tournamentImportText, setTournamentImportText] = useState("");
+  const dailyStatus = overview?.dailyUpdateStatus ?? null;
 
   function adminHeaders() {
     const headers: Record<string, string> = { "Content-Type": "application/json" };
@@ -1397,10 +1416,24 @@ function AdminConsole() {
         </article>
 
         <article className="admin-card">
-          <h2>日更快照</h2>
+          <h2>日更状态</h2>
           <div className="admin-command">
             <code>{overview?.operations.dailyUpdateCommand ?? "npm run daily:update"}</code>
-            <span>{overview?.latestSnapshot ? formatUpdateTime(overview.latestSnapshot.generatedAt) : "暂无快照"}</span>
+            <span>{dailyStatus ? `最近日更 ${formatUpdateTime(dailyStatus.updatedAt)}` : "暂无日更状态"}</span>
+          </div>
+          <div className="daily-status">
+            <span>
+              <b>{dailyStatus?.status === "success" ? "成功" : dailyStatus?.status ?? "待更新"}</b>
+              <em>执行状态</em>
+            </span>
+            <span>
+              <b>{dailyStatus?.feeds.imported ?? 0}</b>
+              <em>新增新闻</em>
+            </span>
+            <span>
+              <b>{dailyStatus?.snapshot.simulationCount.toLocaleString("zh-CN") ?? 0}</b>
+              <em>模拟次数</em>
+            </span>
           </div>
           <button className="snapshot-button" disabled={snapshotPending} onClick={rebuildSnapshot}>
             {snapshotPending ? "重建中" : "重建快照"}

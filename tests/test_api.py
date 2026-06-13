@@ -139,6 +139,44 @@ class PredictionApiTest(unittest.TestCase):
             self.assertEqual(payload["operations"]["liveScoreEndpoint"], "/api/fixtures/live")
             self.assertEqual(payload["reviewQueue"][0]["action"], "watch")
 
+    def test_admin_overview_api_returns_daily_update_status(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            status_path = Path(temp_dir) / "daily-update-status.json"
+            status_path.write_text(
+                json.dumps(
+                    {
+                        "status": "success",
+                        "updatedAt": "2026-06-14T08:00:00Z",
+                        "feeds": {"imported": 2, "skipped": 1, "items": []},
+                        "snapshot": {
+                            "path": "backend/data_files/latest-match-prediction.json",
+                            "simulationCount": 50000,
+                            "lockedResults": 4,
+                            "liveMatches": 1,
+                            "events": {"applied": 5, "watched": 2, "ignored": 1, "reviewRequired": 1},
+                        },
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            previous_status_path = getattr(main_module, "daily_status_path", None)
+            main_module.daily_status_path = status_path
+            try:
+                client = TestClient(app)
+                response = client.get("/api/admin/overview")
+            finally:
+                if previous_status_path is None:
+                    delattr(main_module, "daily_status_path")
+                else:
+                    main_module.daily_status_path = previous_status_path
+
+            self.assertEqual(response.status_code, 200)
+            payload = response.json()
+            self.assertEqual(payload["dailyUpdateStatus"]["status"], "success")
+            self.assertEqual(payload["dailyUpdateStatus"]["feeds"]["imported"], 2)
+            self.assertEqual(payload["dailyUpdateStatus"]["snapshot"]["liveMatches"], 1)
+
     def test_admin_write_apis_require_token_when_configured(self):
         previous_token = os.environ.get("WORLD_CUP_ADMIN_TOKEN")
         os.environ["WORLD_CUP_ADMIN_TOKEN"] = "secret-token"

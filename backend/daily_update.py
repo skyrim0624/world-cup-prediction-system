@@ -10,6 +10,8 @@ from .model import reload_model_data
 from .news_feed import import_news_feed
 from .snapshot import DEFAULT_SNAPSHOT_PATH, write_prediction_snapshot
 
+DEFAULT_DAILY_STATUS_PATH = RAW_NEWS_PATH.parent / "daily-update-status.json"
+
 
 @dataclass(frozen=True)
 class FeedSpec:
@@ -42,6 +44,7 @@ def run_daily_update(
     feed_specs: list[FeedSpec] | None = None,
     simulation_count: int = 50_000,
     fixtures_path: Path | None = None,
+    status_path: Path | None = None,
 ) -> dict[str, Any]:
     ensure_json_array_file(raw_news_path)
     total_imported = 0
@@ -69,7 +72,8 @@ def run_daily_update(
     reload_model_data(raw_news_path=raw_news_path, fixtures_path=fixtures_path)
     snapshot = write_prediction_snapshot(snapshot_path, simulation_count)
     model_meta = snapshot["modelMeta"]
-    return {
+    report = {
+        "status": "success",
         "feeds": {
             "imported": total_imported,
             "skipped": total_skipped,
@@ -84,3 +88,13 @@ def run_daily_update(
         },
         "updatedAt": snapshot["updatedAt"],
     }
+    if status_path is not None:
+        status_path.parent.mkdir(parents=True, exist_ok=True)
+        status_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return report
+
+
+def read_daily_update_status(path: Path = DEFAULT_DAILY_STATUS_PATH) -> dict[str, Any] | None:
+    if not path.exists():
+        return None
+    return json.loads(path.read_text(encoding="utf-8"))

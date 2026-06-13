@@ -9,7 +9,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from backend.daily_update import load_feed_specs, run_daily_update
+from backend.daily_update import DEFAULT_DAILY_STATUS_PATH, load_feed_specs, run_daily_update
 from backend.event_review import RAW_NEWS_PATH
 from backend.snapshot import DEFAULT_SNAPSHOT_PATH
 
@@ -21,6 +21,7 @@ def main() -> None:
     parser.add_argument("--feed-config", type=Path, default=None)
     parser.add_argument("--simulations", type=int, default=50_000)
     parser.add_argument("--report", type=Path, default=None)
+    parser.add_argument("--status", type=Path, default=DEFAULT_DAILY_STATUS_PATH)
     args = parser.parse_args()
 
     feed_specs = load_feed_specs(args.feed_config) if args.feed_config else []
@@ -29,6 +30,7 @@ def main() -> None:
         snapshot_path=args.snapshot,
         feed_specs=feed_specs,
         simulation_count=args.simulations,
+        status_path=args.status,
     )
 
     if args.report:
