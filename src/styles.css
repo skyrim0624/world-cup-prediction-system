@@ -227,10 +227,10 @@ button {
 
 .match-strip {
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  grid-template-rows: auto auto;
-  row-gap: 18px;
-  min-height: 142px;
-  padding-bottom: 44px;
+  grid-template-rows: auto auto auto;
+  row-gap: 10px;
+  min-height: 188px;
+  padding-bottom: 20px;
 }
 
 .score-team {
@@ -325,9 +325,15 @@ button {
   line-height: 1;
 }
 
-.forecast-clock {
-  bottom: 0;
+.match-strip .forecast-clock {
+  position: relative;
+  left: auto;
+  bottom: auto;
+  grid-column: 1 / -1;
+  grid-row: 3;
+  justify-self: center;
   min-height: 64px;
+  transform: none;
 }
 
 .forecast-clock span {
@@ -346,6 +352,7 @@ button {
   position: relative;
   z-index: 1;
   grid-column: 1 / -1;
+  grid-row: 2;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -1161,8 +1168,8 @@ button {
 
   .match-strip {
     grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-    min-height: 132px;
-    padding-bottom: 52px;
+    min-height: 180px;
+    padding-bottom: 18px;
   }
 
   .score-team {
@@ -1352,9 +1359,9 @@ button {
   }
 
   .match-strip {
-    min-height: 118px;
-    padding: 12px 10px 50px;
-    row-gap: 14px;
+    min-height: 156px;
+    padding: 12px 10px 16px;
+    row-gap: 8px;
   }
 
   .team-code {
