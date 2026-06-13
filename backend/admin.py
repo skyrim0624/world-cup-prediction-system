@@ -7,6 +7,7 @@ from . import data as data_state
 from .admin_audit import read_recent_admin_audit
 from .admin_security import admin_auth_required
 from .daily_update import read_daily_update_status
+from .data_import import list_tournament_backups
 from .model import event_summary, event_to_news_item
 from .snapshot import read_prediction_snapshot
 
@@ -47,6 +48,7 @@ def build_admin_overview(
     snapshot_path: Path,
     audit_path: Path | None = None,
     daily_status_path: Path | None = None,
+    tournament_backup_root: Path | None = None,
 ) -> dict[str, Any]:
     snapshot = read_prediction_snapshot(snapshot_path)
     dataset = data_state.DATASET_META
@@ -63,6 +65,7 @@ def build_admin_overview(
         "reviewQueue": review_queue(),
         "latestSnapshot": snapshot.get("snapshotMeta") if snapshot else None,
         "dailyUpdateStatus": read_daily_update_status(daily_status_path) if daily_status_path else read_daily_update_status(),
+        "tournamentBackups": list_tournament_backups(tournament_backup_root) if tournament_backup_root else [],
         "authRequired": admin_auth_required(),
         "recentAudit": read_recent_admin_audit(audit_path) if audit_path else read_recent_admin_audit(),
         "operations": {

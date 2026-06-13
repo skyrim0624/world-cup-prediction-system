@@ -1417,6 +1417,42 @@ button {
   gap: 10px;
 }
 
+.backup-list {
+  display: grid;
+  gap: 8px;
+}
+
+.backup-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 10px;
+  align-items: center;
+  min-height: 46px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.backup-row strong {
+  min-width: 0;
+  color: #d9e6e5;
+  overflow-wrap: anywhere;
+}
+
+.backup-row span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.backup-row button {
+  min-height: 34px;
+  border: 1px solid rgba(24, 227, 208, 0.36);
+  color: var(--cyan);
+  background: rgba(0, 0, 0, 0.2);
+  font-weight: 900;
+}
+
 .audit-row {
   display: grid;
   grid-template-columns: 170px minmax(0, 1fr) auto;
@@ -2073,6 +2109,7 @@ button {
   .admin-metrics,
   .daily-status,
   .admin-auth-row,
+  .backup-row,
   .audit-row,
   .fixture-inputs,
   .raw-news-grid {

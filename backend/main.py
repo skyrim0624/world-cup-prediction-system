@@ -120,7 +120,7 @@ def model_status() -> dict[str, object]:
 
 @app.get("/api/admin/overview")
 def admin_overview() -> dict[str, object]:
-    return build_admin_overview(snapshot_data_path, audit_log_path, daily_status_path)
+    return build_admin_overview(snapshot_data_path, audit_log_path, daily_status_path, tournament_backup_dir)
 
 
 @app.get("/api/upcoming-matches")

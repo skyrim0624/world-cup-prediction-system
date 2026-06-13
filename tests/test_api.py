@@ -177,6 +177,29 @@ class PredictionApiTest(unittest.TestCase):
             self.assertEqual(payload["dailyUpdateStatus"]["feeds"]["imported"], 2)
             self.assertEqual(payload["dailyUpdateStatus"]["snapshot"]["liveMatches"], 1)
 
+    def test_admin_overview_api_returns_tournament_backups(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            backup_root = Path(temp_dir) / "backups"
+            backup_dir = backup_root / "20260614T080000000000Z"
+            backup_dir.mkdir(parents=True)
+            (backup_dir / "teams.json").write_text("[]", encoding="utf-8")
+            (backup_dir / "fixtures.json").write_text("[]", encoding="utf-8")
+            previous_backup_dir = getattr(main_module, "tournament_backup_dir", None)
+            main_module.tournament_backup_dir = backup_root
+            try:
+                client = TestClient(app)
+                response = client.get("/api/admin/overview")
+            finally:
+                if previous_backup_dir is None:
+                    delattr(main_module, "tournament_backup_dir")
+                else:
+                    main_module.tournament_backup_dir = previous_backup_dir
+
+            self.assertEqual(response.status_code, 200)
+            payload = response.json()
+            self.assertEqual(payload["tournamentBackups"][0]["backupId"], "20260614T080000000000Z")
+            self.assertTrue(payload["tournamentBackups"][0]["isComplete"])
+
     def test_admin_write_apis_require_token_when_configured(self):
         previous_token = os.environ.get("WORLD_CUP_ADMIN_TOKEN")
         os.environ["WORLD_CUP_ADMIN_TOKEN"] = "secret-token"

@@ -105,6 +105,13 @@ type DailyUpdateStatus = {
   };
 };
 
+type TournamentBackup = {
+  backupId: string;
+  path: string;
+  createdAt: string;
+  isComplete: boolean;
+};
+
 function formatDailyStatus(status?: string) {
   if (status === "success") return "成功";
   if (status === "failed") return "失败";
@@ -128,6 +135,7 @@ type AdminOverview = {
   reviewQueue: EventReviewItem[];
   authRequired: boolean;
   recentAudit: AdminAuditEntry[];
+  tournamentBackups: TournamentBackup[];
   latestSnapshot: {
     type: string;
     generatedAt: string;
@@ -1510,6 +1518,21 @@ function AdminConsole() {
             />
             <button type="submit">回滚赛事数据</button>
           </form>
+          <div className="backup-list">
+            {(overview?.tournamentBackups ?? []).length > 0 ? (
+              overview?.tournamentBackups.map((backup) => (
+                <article className="backup-row" key={backup.backupId}>
+                  <strong>{backup.backupId}</strong>
+                  <span>{backup.isComplete ? "可回滚" : "不完整"}</span>
+                  <button type="button" onClick={() => setTournamentRollbackId(backup.backupId)}>
+                    选择
+                  </button>
+                </article>
+              ))
+            ) : (
+              <p className="review-empty">暂无赛事备份</p>
+            )}
+          </div>
         </article>
 
         <article className="admin-card admin-card-wide">

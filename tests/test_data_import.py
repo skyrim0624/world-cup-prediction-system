@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from backend.data_import import apply_tournament_data_import, restore_tournament_backup
+from backend.data_import import apply_tournament_data_import, list_tournament_backups, restore_tournament_backup
 
 
 def make_team(group: str, slot: int) -> dict[str, object]:
@@ -121,6 +121,23 @@ class TournamentDataImportTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             with self.assertRaises(ValueError):
                 restore_tournament_backup(Path(temp_dir) / "data", Path(temp_dir) / "backups", "../outside")
+
+    def test_list_tournament_backups_returns_recent_complete_backups(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            backup_root = Path(temp_dir) / "backups"
+            older = backup_root / "20260614T070000000000Z"
+            newer = backup_root / "20260614T080000000000Z"
+            incomplete = backup_root / "20260614T090000000000Z"
+            for backup_dir in (older, newer, incomplete):
+                backup_dir.mkdir(parents=True)
+                (backup_dir / "teams.json").write_text("[]", encoding="utf-8")
+            (older / "fixtures.json").write_text("[]", encoding="utf-8")
+            (newer / "fixtures.json").write_text("[]", encoding="utf-8")
+
+            backups = list_tournament_backups(backup_root)
+
+            self.assertEqual([item["backupId"] for item in backups], ["20260614T080000000000Z", "20260614T070000000000Z"])
+            self.assertTrue(all(item["isComplete"] for item in backups))
 
     def test_import_tournament_data_script_runs_with_temp_paths(self):
         payload = make_import_payload()

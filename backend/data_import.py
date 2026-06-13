@@ -74,6 +74,29 @@ def create_current_tournament_backup(data_dir: Path, backup_root: Path) -> Path:
     return backup_dir
 
 
+def list_tournament_backups(backup_root: Path, limit: int = 8) -> list[dict[str, object]]:
+    if not backup_root.exists():
+        return []
+    backups = []
+    for backup_dir in sorted([path for path in backup_root.iterdir() if path.is_dir()], reverse=True):
+        teams_path = backup_dir / "teams.json"
+        fixtures_path = backup_dir / "fixtures.json"
+        is_complete = teams_path.exists() and fixtures_path.exists()
+        if not is_complete:
+            continue
+        backups.append(
+            {
+                "backupId": backup_dir.name,
+                "path": str(backup_dir),
+                "createdAt": backup_dir.name,
+                "isComplete": is_complete,
+            }
+        )
+        if len(backups) >= limit:
+            break
+    return backups
+
+
 def apply_tournament_data_import(data_dir: Path, backup_root: Path, payload: dict[str, Any]) -> dict[str, object]:
     summary = validate_tournament_import_payload(payload)
     teams_path = data_dir / "teams.json"
