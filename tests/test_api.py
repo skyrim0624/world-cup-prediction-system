@@ -22,6 +22,60 @@ class PredictionApiTest(unittest.TestCase):
         self.assertIn("knownGaps", payload)
         self.assertIn("官方 48 队名单", payload["knownGaps"][0])
 
+    def test_admin_overview_api_returns_operational_status(self):
+        rows = [
+            {
+                "home": "brazil",
+                "away": "argentina",
+                "stage": "小组赛 E 组",
+                "kickoff": "6月15日 08:00",
+                "status": "scheduled",
+            },
+            {
+                "home": "spain",
+                "away": "france",
+                "stage": "小组赛 F 组",
+                "kickoff": "进行中",
+                "status": "live",
+                "home_score": 1,
+                "away_score": 0,
+            },
+            {
+                "home": "england",
+                "away": "portugal",
+                "stage": "小组赛 B 组",
+                "kickoff": "已结束",
+                "status": "finished",
+                "home_score": 2,
+                "away_score": 2,
+            },
+        ]
+        with tempfile.TemporaryDirectory() as temp_dir:
+            fixtures_path = Path(temp_dir) / "fixtures.json"
+            fixtures_path.write_text(json.dumps(rows, ensure_ascii=False), encoding="utf-8")
+            previous_fixtures_path = getattr(main_module, "fixtures_data_path", None)
+            main_module.fixtures_data_path = fixtures_path
+            main_module.reload_model_data(main_module.review_data_path, fixtures_path)
+            try:
+                client = TestClient(app)
+                response = client.get("/api/admin/overview")
+            finally:
+                if previous_fixtures_path is None:
+                    delattr(main_module, "fixtures_data_path")
+                else:
+                    main_module.fixtures_data_path = previous_fixtures_path
+                main_module.reload_model_data()
+
+            self.assertEqual(response.status_code, 200)
+            payload = response.json()
+            self.assertEqual(payload["fixtureStatus"]["scheduled"], 70)
+            self.assertEqual(payload["fixtureStatus"]["live"], 1)
+            self.assertEqual(payload["fixtureStatus"]["finished"], 1)
+            self.assertEqual(payload["eventSummary"]["reviewRequired"], 1)
+            self.assertEqual(payload["operations"]["dailyUpdateCommand"], "npm run daily:update")
+            self.assertEqual(payload["operations"]["liveScoreEndpoint"], "/api/fixtures/live")
+            self.assertEqual(payload["reviewQueue"][0]["action"], "watch")
+
     def test_match_prediction_accepts_simulation_count(self):
         client = TestClient(app)
         response = client.get("/api/match-prediction?simulations=1200")

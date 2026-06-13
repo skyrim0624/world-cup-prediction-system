@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from . import data as data_state
+from .admin import build_admin_overview
 from .event_review import RAW_NEWS_PATH, review_raw_news_item
 from .fixture_update import record_fixture_live_score, record_fixture_result
 from .model import (
@@ -100,9 +101,14 @@ def model_status() -> dict[str, object]:
         "knownGaps": [
             "官方 48 队名单和真实分组尚未替换当前槽位数据",
             "新闻抓取仍由本地 raw-news JSON 承接，暂未接外部定时任务",
-            "暂未接独立后台、支付和权限",
+            "运营后台尚未接登录权限、完整新闻录入和支付权限",
         ],
     }
+
+
+@app.get("/api/admin/overview")
+def admin_overview() -> dict[str, object]:
+    return build_admin_overview(snapshot_data_path)
 
 
 @app.get("/api/upcoming-matches")

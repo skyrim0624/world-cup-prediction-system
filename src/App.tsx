@@ -1,4 +1,4 @@
-import { CSSProperties, PointerEvent, useEffect, useMemo, useRef, useState } from "react";
+import { CSSProperties, FormEvent, PointerEvent, useEffect, useMemo, useRef, useState } from "react";
 
 type TeamKey = string;
 type Tone = "green" | "blue" | "gold" | "orange" | "red" | "muted";
@@ -77,6 +77,30 @@ type SnapshotPredictionResponse = MatchPrediction & {
     type: string;
     generatedAt: string;
     path: string;
+  };
+};
+
+type AdminOverview = {
+  fixtureStatus: {
+    scheduled: number;
+    live: number;
+    finished: number;
+  };
+  eventSummary: EventReviewSummary;
+  rawNewsCount: number;
+  reviewQueue: EventReviewItem[];
+  latestSnapshot: {
+    type: string;
+    generatedAt: string;
+    path: string;
+  } | null;
+  operations: {
+    dailyUpdateCommand: string;
+    snapshotRebuildEndpoint: string;
+    rawNewsEndpoint: string;
+    eventReviewEndpoint: string;
+    liveScoreEndpoint: string;
+    resultEndpoint: string;
   };
 };
 
@@ -407,6 +431,10 @@ function summarizeReviewItems(items: EventReviewItem[]): EventReviewSummary {
 }
 
 function App() {
+  if (window.location.pathname === "/admin") {
+    return <AdminConsole />;
+  }
+
   const [selectedTeam, setSelectedTeam] = useState<TeamKey>("brazil");
   const [layoutUnlocked, setLayoutUnlocked] = useState(false);
   const [positions, setPositions] = useState<Record<string, { x: number; y: number }>>({});
@@ -1110,6 +1138,202 @@ function ScenarioImpactList({ scenarios }: { scenarios: ScenarioImpact[] }) {
           <em>夺冠概率变化 {scenario.championShift}</em>
         </article>
       ))}
+    </div>
+  );
+}
+
+function AdminConsole() {
+  const [overview, setOverview] = useState<AdminOverview | null>(null);
+  const [eventReview, setEventReview] = useState<EventReviewResponse | null>(null);
+  const [pendingId, setPendingId] = useState<string | null>(null);
+  const [snapshotPending, setSnapshotPending] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
+  const [fixtureMode, setFixtureMode] = useState<"live" | "finished">("live");
+  const [fixtureForm, setFixtureForm] = useState({
+    home: "brazil",
+    away: "argentina",
+    homeScore: "0",
+    awayScore: "0",
+  });
+
+  async function loadAdminData() {
+    const [overviewResponse, eventsResponse] = await Promise.all([
+      fetch(`${API_BASE_URL}/api/admin/overview`, { cache: "no-store" }),
+      fetch(`${API_BASE_URL}/api/events`, { cache: "no-store" }),
+    ]);
+    if (!overviewResponse.ok) throw new Error(`后台概览接口返回 ${overviewResponse.status}`);
+    if (!eventsResponse.ok) throw new Error(`事件接口返回 ${eventsResponse.status}`);
+    setOverview((await overviewResponse.json()) as AdminOverview);
+    setEventReview((await eventsResponse.json()) as EventReviewResponse);
+  }
+
+  useEffect(() => {
+    let active = true;
+
+    async function run() {
+      try {
+        await loadAdminData();
+      } catch {
+        if (active) {
+          setOverview(null);
+          setEventReview(null);
+        }
+      }
+    }
+
+    run();
+    const timer = window.setInterval(run, FORECAST_REFRESH_MS);
+    return () => {
+      active = false;
+      window.clearInterval(timer);
+    };
+  }, []);
+
+  async function submitReview(item: EventReviewItem, status: ReviewStatus) {
+    if (!item.id || pendingId) return;
+    setPendingId(item.id);
+    setMessage(null);
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/events/review`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: item.id, status, team: item.team }),
+      });
+      if (!response.ok) throw new Error(`审核接口返回 ${response.status}`);
+      await loadAdminData();
+      setMessage("事件已写入");
+    } catch {
+      setMessage("事件写入失败");
+    } finally {
+      setPendingId(null);
+    }
+  }
+
+  async function rebuildSnapshot() {
+    if (snapshotPending) return;
+    setSnapshotPending(true);
+    setMessage(null);
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/snapshot/rebuild`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({}),
+      });
+      if (!response.ok) throw new Error(`快照接口返回 ${response.status}`);
+      await loadAdminData();
+      setMessage("快照已重建");
+    } catch {
+      setMessage("快照重建失败");
+    } finally {
+      setSnapshotPending(false);
+    }
+  }
+
+  async function submitFixtureScore(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setMessage(null);
+    const endpoint = fixtureMode === "live" ? "/api/fixtures/live" : "/api/fixtures/result";
+    try {
+      const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          home: fixtureForm.home.trim(),
+          away: fixtureForm.away.trim(),
+          homeScore: Number(fixtureForm.homeScore),
+          awayScore: Number(fixtureForm.awayScore),
+        }),
+      });
+      if (!response.ok) throw new Error(`比分接口返回 ${response.status}`);
+      await loadAdminData();
+      setMessage(fixtureMode === "live" ? "进行中比分已写入" : "完赛比分已锁定");
+    } catch {
+      setMessage("比分写入失败");
+    }
+  }
+
+  return (
+    <main className="admin-shell">
+      <header className="admin-topbar">
+        <div>
+          <span>World Cup Ops</span>
+          <h1>预测运营后台</h1>
+        </div>
+        <a href="/">返回预测页</a>
+      </header>
+
+      <section className="admin-grid">
+        <article className="admin-card">
+          <h2>赛程状态</h2>
+          <div className="admin-metrics">
+            <Metric label="未开赛" value={overview?.fixtureStatus.scheduled ?? 0} tone="blue" />
+            <Metric label="进行中" value={overview?.fixtureStatus.live ?? 0} tone="gold" />
+            <Metric label="已锁定" value={overview?.fixtureStatus.finished ?? 0} tone="green" />
+          </div>
+        </article>
+
+        <article className="admin-card">
+          <h2>事件状态</h2>
+          <div className="admin-metrics">
+            <Metric label="原始新闻" value={overview?.rawNewsCount ?? 0} tone="blue" />
+            <Metric label="待审" value={overview?.eventSummary.reviewRequired ?? 0} tone="gold" />
+            <Metric label="入模" value={overview?.eventSummary.applied ?? 0} tone="green" />
+          </div>
+        </article>
+
+        <article className="admin-card">
+          <h2>日更快照</h2>
+          <div className="admin-command">
+            <code>{overview?.operations.dailyUpdateCommand ?? "npm run daily:update"}</code>
+            <span>{overview?.latestSnapshot ? formatUpdateTime(overview.latestSnapshot.generatedAt) : "暂无快照"}</span>
+          </div>
+          <button className="snapshot-button" disabled={snapshotPending} onClick={rebuildSnapshot}>
+            {snapshotPending ? "重建中" : "重建快照"}
+          </button>
+        </article>
+
+        <article className="admin-card">
+          <h2>比分写入</h2>
+          <form className="fixture-form" onSubmit={submitFixtureScore}>
+            <div className="fixture-mode">
+              <button type="button" className={fixtureMode === "live" ? "selected" : ""} onClick={() => setFixtureMode("live")}>
+                进行中
+              </button>
+              <button type="button" className={fixtureMode === "finished" ? "selected" : ""} onClick={() => setFixtureMode("finished")}>
+                已完赛
+              </button>
+            </div>
+            <div className="fixture-inputs">
+              <input value={fixtureForm.home} onChange={(event) => setFixtureForm((current) => ({ ...current, home: event.target.value }))} aria-label="主队 key" />
+              <input value={fixtureForm.away} onChange={(event) => setFixtureForm((current) => ({ ...current, away: event.target.value }))} aria-label="客队 key" />
+              <input value={fixtureForm.homeScore} onChange={(event) => setFixtureForm((current) => ({ ...current, homeScore: event.target.value }))} inputMode="numeric" aria-label="主队比分" />
+              <input value={fixtureForm.awayScore} onChange={(event) => setFixtureForm((current) => ({ ...current, awayScore: event.target.value }))} inputMode="numeric" aria-label="客队比分" />
+            </div>
+            <button type="submit">写入比分</button>
+          </form>
+        </article>
+
+        <article className="admin-card admin-card-wide">
+          <h2>事件审核</h2>
+          <EventReviewPanel
+            eventReview={eventReview}
+            pendingId={pendingId}
+            snapshotPending={snapshotPending}
+            message={message}
+            onReview={submitReview}
+            onRebuildSnapshot={rebuildSnapshot}
+          />
+        </article>
+      </section>
+    </main>
+  );
+}
+
+function Metric({ label, value, tone }: { label: string; value: number; tone: Tone }) {
+  return (
+    <div className={`admin-metric ${tone}`}>
+      <span>{label}</span>
+      <strong>{value}</strong>
     </div>
   );
 }
