@@ -7,6 +7,7 @@ from typing import Any
 
 
 DATA_DIR = Path(__file__).with_name("data_files")
+WORLD_CUP_GROUPS = tuple("ABCDEFGHIJKL")
 
 
 @dataclass(frozen=True)
@@ -56,7 +57,30 @@ def load_team_profiles() -> dict[str, TeamProfile]:
     profiles = {row["key"]: TeamProfile(**row) for row in rows}
     if len(profiles) != len(rows):
         raise ValueError("球队 key 不能重复")
-    return profiles
+    return complete_world_cup_slots(profiles)
+
+
+def complete_world_cup_slots(profiles: dict[str, TeamProfile]) -> dict[str, TeamProfile]:
+    completed = dict(profiles)
+    for group_index, group in enumerate(WORLD_CUP_GROUPS):
+        group_teams = [team for team in completed.values() if team.group == group]
+        if len(group_teams) > 4:
+            raise ValueError(f"{group} 组球队不能超过 4 支")
+        for slot in range(len(group_teams) + 1, 5):
+            key = f"slot-{group.lower()}{slot}"
+            completed[key] = TeamProfile(
+                key=key,
+                name=f"{group}组第{slot}档球队",
+                code=f"{group}{slot}",
+                group=group,
+                elo=1775 - group_index * 4 - slot * 7,
+                attack=78 - min(group_index // 3, 4),
+                defense=77 - min(group_index // 4, 3),
+                goalkeeper=77,
+                path=64 - min(group_index // 3, 4),
+                squad=76,
+            )
+    return completed
 
 
 def load_fixtures(team_profiles: dict[str, TeamProfile]) -> list[Fixture]:
@@ -68,7 +92,22 @@ def load_fixtures(team_profiles: dict[str, TeamProfile]) -> list[Fixture]:
             raise ValueError(f"赛程包含未知球队: {fixture.home} vs {fixture.away}")
         if fixture.status == "finished" and (fixture.home_score is None or fixture.away_score is None):
             raise ValueError(f"已完赛必须有比分: {fixture.home} vs {fixture.away}")
-    return fixtures
+    return complete_group_fixtures(fixtures, team_profiles)
+
+
+def complete_group_fixtures(fixtures: list[Fixture], team_profiles: dict[str, TeamProfile]) -> list[Fixture]:
+    completed = list(fixtures)
+    existing_pairs = {tuple(sorted((fixture.home, fixture.away))) for fixture in completed}
+    for group in WORLD_CUP_GROUPS:
+        group_team_keys = [team.key for team in team_profiles.values() if team.group == group]
+        for index, home in enumerate(group_team_keys):
+            for away in group_team_keys[index + 1 :]:
+                pair = tuple(sorted((home, away)))
+                if pair in existing_pairs:
+                    continue
+                completed.append(Fixture(home, away, f"小组赛 {group} 组", "待定", "scheduled"))
+                existing_pairs.add(pair)
+    return completed
 
 
 def load_events(team_profiles: dict[str, TeamProfile]) -> list[TeamEvent]:
@@ -100,6 +139,8 @@ CURRENT_MATCH = load_current_match()
 DATASET_META = {
     "source": "local-json",
     "teamCount": len(TEAM_PROFILES),
+    "groupCount": len(WORLD_CUP_GROUPS),
     "fixtureCount": len(FIXTURES),
     "eventCount": len(EVENTS),
+    "placeholderSlots": len([team for team in TEAM_PROFILES.values() if team.key.startswith("slot-")]),
 }

@@ -35,7 +35,7 @@ def model_status() -> dict[str, object]:
         "lockedResults": len([fixture for fixture in FIXTURES if fixture.status == "finished"]),
         "eventSummary": event_summary(),
         "knownGaps": [
-            "完整 48 队赛程尚未接入",
+            "官方 48 队名单和真实分组尚未替换当前槽位数据",
             "新闻事件仍为本地结构化样例",
             "暂未接自动抓取和多源交叉验证",
             "暂未接后台录入、支付和权限",

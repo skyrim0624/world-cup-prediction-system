@@ -14,7 +14,7 @@ class PredictionApiTest(unittest.TestCase):
         self.assertEqual(payload["dataset"]["source"], "local-json")
         self.assertGreaterEqual(payload["dataset"]["teamCount"], 8)
         self.assertIn("knownGaps", payload)
-        self.assertIn("完整 48 队赛程", payload["knownGaps"][0])
+        self.assertIn("官方 48 队名单", payload["knownGaps"][0])
 
     def test_match_prediction_accepts_simulation_count(self):
         client = TestClient(app)

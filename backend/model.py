@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 from math import exp, factorial
 from random import Random
 from typing import Literal
+from bisect import bisect_left
 
 from .data import CURRENT_MATCH, DATASET_META, EVENTS, FIXTURES, SOURCE_WEIGHTS, TEAM_PROFILES, Fixture, TeamProfile
 
@@ -82,6 +83,19 @@ def win_draw_loss(home_key: str, away_key: str, teams: dict[str, TeamProfile]) -
     }
 
 
+def build_score_sampler(home_key: str, away_key: str, teams: dict[str, TeamProfile]) -> list[tuple[float, int, int]]:
+    distribution = score_distribution(home_key, away_key, teams)
+    total = sum(float(item["probability"]) for item in distribution)
+    cumulative = 0.0
+    sampler = []
+    for item in distribution:
+        cumulative += float(item["probability"]) / total
+        sampler.append((cumulative, int(item["homeGoals"]), int(item["awayGoals"])))
+    final_cumulative, final_home, final_away = sampler[-1]
+    sampler[-1] = (1.0, final_home, final_away)
+    return sampler
+
+
 def sample_score_from_distribution(distribution: list[dict[str, float | str]], rng: Random) -> tuple[int, int]:
     target = rng.random()
     cumulative = 0.0
@@ -91,6 +105,14 @@ def sample_score_from_distribution(distribution: list[dict[str, float | str]], r
             return int(item["homeGoals"]), int(item["awayGoals"])
     fallback = distribution[0]
     return int(fallback["homeGoals"]), int(fallback["awayGoals"])
+
+
+def sample_score_from_sampler(sampler: list[tuple[float, int, int]], rng: Random) -> tuple[int, int]:
+    index = bisect_left(sampler, (rng.random(), -1, -1))
+    if index >= len(sampler):
+        index = len(sampler) - 1
+    _, home_goals, away_goals = sampler[index]
+    return home_goals, away_goals
 
 
 def build_standings(fixtures: list[Fixture]) -> dict[str, dict[str, int]]:
@@ -121,6 +143,10 @@ def build_standings(fixtures: list[Fixture]) -> dict[str, dict[str, int]]:
     return standings
 
 
+def group_names(teams: dict[str, TeamProfile]) -> list[str]:
+    return sorted({team.group for team in teams.values()})
+
+
 def rank_group(
     standings: dict[str, dict[str, int]],
     group: str,
@@ -141,6 +167,26 @@ def rank_group(
         ),
         reverse=True,
     )
+
+
+def best_third_place_teams(
+    standings: dict[str, dict[str, int]],
+    teams: dict[str, TeamProfile],
+    rng: Random | None = None,
+) -> list[str]:
+    rng = rng or Random(0)
+    third_place = [rank_group(standings, group, rng, teams)[2] for group in group_names(teams)]
+    return sorted(
+        third_place,
+        key=lambda key: (
+            standings[key]["points"],
+            standings[key]["gd"],
+            standings[key]["gf"],
+            standings[key]["wins"],
+            rng.random(),
+        ),
+        reverse=True,
+    )[:8]
 
 
 def match_win_probability(team_key: str, virtual_rating: int, teams: dict[str, TeamProfile], rng: Random) -> bool:
@@ -166,10 +212,11 @@ def simulate_tournament(
     forced_current: Outcome | None = None,
     simulation_count: int = SIMULATION_COUNT,
 ) -> dict[str, dict[str, float]]:
-    counts = defaultdict(lambda: {"quarterfinal": 0, "semifinal": 0, "final": 0, "champion": 0})
+    stages = ("roundOf32", "roundOf16", "quarterfinal", "semifinal", "final", "champion")
+    counts = defaultdict(lambda: {stage: 0 for stage in stages})
     rng = Random(20260614 + (0 if forced_current is None else {"home": 11, "draw": 22, "away": 33}[forced_current]))
     distribution_cache = {
-        (fixture.home, fixture.away): score_distribution(fixture.home, fixture.away, teams)
+        (fixture.home, fixture.away): build_score_sampler(fixture.home, fixture.away, teams)
         for fixture in FIXTURES
         if fixture.status != "finished"
     }
@@ -183,49 +230,46 @@ def simulate_tournament(
             if (fixture.home, fixture.away) == CURRENT_MATCH and forced_current is not None:
                 score = {"home": (1, 0), "draw": (1, 1), "away": (0, 1)}[forced_current]
             else:
-                score = sample_score_from_distribution(distribution_cache[(fixture.home, fixture.away)], rng)
+                score = sample_score_from_sampler(distribution_cache[(fixture.home, fixture.away)], rng)
             simulated_fixtures.append(
                 Fixture(fixture.home, fixture.away, fixture.stage, fixture.kickoff, fixture.status, score[0], score[1])
             )
 
         standings = build_standings(simulated_fixtures)
-        groups = sorted({team.group for team in teams.values()})
+        groups = group_names(teams)
         group_qualifiers = {group: rank_group(standings, group, rng, teams)[:2] for group in groups}
-        qualifiers = [team_key for group in groups for team_key in group_qualifiers[group]]
-        for team_key in qualifiers:
-            counts[team_key]["quarterfinal"] += 1
+        top_two = [team_key for group in groups for team_key in group_qualifiers[group]]
+        third_place = best_third_place_teams(standings, teams, rng)
+        round_teams = top_two + third_place
+        round_teams = sorted(
+            round_teams,
+            key=lambda key: (
+                standings[key]["points"],
+                standings[key]["gd"],
+                teams[key].elo,
+                rng.random(),
+            ),
+            reverse=True,
+        )
+        for team_key in round_teams:
+            counts[team_key]["roundOf32"] += 1
 
-        quarterfinal_winners: list[str] = []
-        if len(groups) >= 2:
-            first_group = group_qualifiers[groups[0]]
-            second_group = group_qualifiers[groups[1]]
-            pairings = [(first_group[0], second_group[1]), (second_group[0], first_group[1])]
-        else:
-            pairings = [(qualifiers[0], qualifiers[1])] if len(qualifiers) >= 2 else []
-
-        for home_key, away_key in pairings:
-            winner = head_to_head_winner(home_key, away_key, teams, rng)
-            counts[winner]["semifinal"] += 1
-            quarterfinal_winners.append(winner)
-
-        final_candidates: list[str] = []
-        for index, team_key in enumerate(quarterfinal_winners):
-            semifinal_opponent = 1890 + index * 24
-            if not match_win_probability(team_key, semifinal_opponent, teams, rng):
-                continue
-            counts[team_key]["final"] += 1
-            final_candidates.append(team_key)
-
-        if len(final_candidates) >= 2:
-            champion = head_to_head_winner(final_candidates[0], final_candidates[1], teams, rng)
-            counts[champion]["champion"] += 1
-        elif len(final_candidates) == 1 and match_win_probability(final_candidates[0], 1920, teams, rng):
-            counts[final_candidates[0]]["champion"] += 1
+        for next_stage in ("roundOf16", "quarterfinal", "semifinal", "final", "champion"):
+            winners = []
+            bracket = list(round_teams)
+            for index in range(0, len(bracket), 2):
+                if index + 1 >= len(bracket):
+                    winners.append(bracket[index])
+                    continue
+                winners.append(head_to_head_winner(bracket[index], bracket[index + 1], teams, rng))
+            for winner in winners:
+                counts[winner][next_stage] += 1
+            round_teams = winners
 
     return {
         team_key: {
             stage: round(counts[team_key][stage] / simulation_count * 100, 1)
-            for stage in ("quarterfinal", "semifinal", "final", "champion")
+            for stage in stages
         }
         for team_key in teams
     }
