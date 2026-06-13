@@ -9,6 +9,7 @@ from pydantic import BaseModel
 from . import data as data_state
 from .event_review import RAW_NEWS_PATH, review_raw_news_item
 from .model import SIMULATION_COUNT, build_match_prediction, event_summary, event_to_news_item, reload_model_data
+from .news_ingest import append_raw_news_item
 from .snapshot import DEFAULT_SNAPSHOT_PATH, read_prediction_snapshot, write_prediction_snapshot
 
 
@@ -27,6 +28,17 @@ class EventReviewRequest(BaseModel):
 
 class SnapshotRebuildRequest(BaseModel):
     simulations: int = SIMULATION_COUNT
+
+
+class RawNewsCreateRequest(BaseModel):
+    id: str
+    title: str
+    summary: str
+    source: str
+    team: str | None = None
+    status: str
+    publishedAt: str
+    url: str
 
 
 app.add_middleware(
@@ -112,6 +124,35 @@ def review_event(request: EventReviewRequest) -> dict[str, object]:
     return {
         "item": updated,
         "requiresSnapshotRefresh": True,
+    }
+
+
+@app.post("/api/raw-news")
+def create_raw_news(request: RawNewsCreateRequest) -> dict[str, object]:
+    if request.source not in data_state.NEWS_SOURCES:
+        raise HTTPException(status_code=400, detail=f"未知新闻来源: {request.source}")
+    if request.team is not None and request.team not in data_state.TEAM_PROFILES:
+        raise HTTPException(status_code=400, detail=f"未知球队: {request.team}")
+
+    item = {
+        "id": request.id,
+        "title": request.title,
+        "summary": request.summary,
+        "source": request.source,
+        "team": request.team,
+        "status": request.status,
+        "published_at": request.publishedAt,
+        "url": request.url,
+    }
+    try:
+        created = append_raw_news_item(review_data_path, item)
+    except ValueError as error:
+        raise HTTPException(status_code=400, detail=str(error)) from error
+    reload_model_data(review_data_path)
+    prediction_cache.clear()
+    return {
+        "item": created,
+        "requiresReview": True,
     }
 
 

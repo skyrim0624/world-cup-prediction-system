@@ -144,6 +144,41 @@ class PredictionApiTest(unittest.TestCase):
                 any(item["title"] == "自动化测试高温事件" and item["impact"] == "轻微修正" for item in payload["newsItems"])
             )
 
+    def test_raw_news_api_appends_item_and_refreshes_event_queue(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            raw_news_path = Path(temp_dir) / "raw-news.json"
+            raw_news_path.write_text("[]", encoding="utf-8")
+            previous_review_path = getattr(main_module, "review_data_path", None)
+            main_module.review_data_path = raw_news_path
+            try:
+                client = TestClient(app)
+                response = client.post(
+                    "/api/raw-news",
+                    json={
+                        "id": "manual-brazil-lineup",
+                        "title": "巴西赛前首发待确认",
+                        "summary": "跟队消息称巴西边路首发仍有调整可能。",
+                        "source": "reuters",
+                        "team": "brazil",
+                        "status": "single_source",
+                        "publishedAt": "刚刚",
+                        "url": "https://example.com/manual-brazil-lineup",
+                    },
+                )
+                events_response = client.get("/api/events")
+            finally:
+                if previous_review_path is None:
+                    delattr(main_module, "review_data_path")
+                else:
+                    main_module.review_data_path = previous_review_path
+                main_module.reload_model_data()
+
+            self.assertEqual(response.status_code, 200)
+            rows = json.loads(raw_news_path.read_text(encoding="utf-8"))
+            self.assertEqual(rows[0]["id"], "manual-brazil-lineup")
+            self.assertEqual(rows[0]["published_at"], "刚刚")
+            self.assertTrue(any(item["id"] == "manual-brazil-lineup" for item in events_response.json()["items"]))
+
 
 if __name__ == "__main__":
     unittest.main()
