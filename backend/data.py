@@ -91,8 +91,11 @@ def read_json_file(name: str) -> Any:
         return json.load(file)
 
 
-def load_team_profiles() -> dict[str, TeamProfile]:
-    rows = read_json_file("teams.json")
+def load_team_profiles(path: Path | None = None) -> dict[str, TeamProfile]:
+    if path is None:
+        rows = read_json_file("teams.json")
+    else:
+        rows = json.loads(path.read_text(encoding="utf-8"))
     profiles = {row["key"]: TeamProfile(**row) for row in rows}
     if len(profiles) != len(rows):
         raise ValueError("球队 key 不能重复")
@@ -310,8 +313,12 @@ def load_current_match() -> tuple[str, str]:
     return row["home"], row["away"]
 
 
-def load_runtime_dataset(raw_news_path: Path | None = None, fixtures_path: Path | None = None) -> RuntimeDataset:
-    team_profiles = load_team_profiles()
+def load_runtime_dataset(
+    raw_news_path: Path | None = None,
+    fixtures_path: Path | None = None,
+    teams_path: Path | None = None,
+) -> RuntimeDataset:
+    team_profiles = load_team_profiles(teams_path)
     fixtures = load_fixtures(team_profiles, fixtures_path)
     source_weights = load_source_weights()
     news_sources = load_news_sources(source_weights)
@@ -361,8 +368,12 @@ def apply_runtime_dataset(dataset: RuntimeDataset) -> RuntimeDataset:
     return dataset
 
 
-def reload_runtime_data(raw_news_path: Path | None = None, fixtures_path: Path | None = None) -> RuntimeDataset:
-    return apply_runtime_dataset(load_runtime_dataset(raw_news_path, fixtures_path))
+def reload_runtime_data(
+    raw_news_path: Path | None = None,
+    fixtures_path: Path | None = None,
+    teams_path: Path | None = None,
+) -> RuntimeDataset:
+    return apply_runtime_dataset(load_runtime_dataset(raw_news_path, fixtures_path, teams_path))
 
 
 apply_runtime_dataset(load_runtime_dataset())

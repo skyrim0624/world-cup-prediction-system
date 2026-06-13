@@ -7,9 +7,71 @@ from pathlib import Path
 from fastapi.testclient import TestClient
 
 import backend.main as main_module
+from test_data_import import make_team
 
 
 app = main_module.app
+
+
+def make_compatible_import_payload() -> dict[str, object]:
+    groups = tuple("ABCDEFGHIJKL")
+    fixed_teams = {
+        "E": [
+            {"key": "brazil", "name": "巴西", "code": "BRA"},
+            {"key": "argentina", "name": "阿根廷", "code": "ARG"},
+            {"key": "spain", "name": "西班牙", "code": "ESP"},
+            {"key": "france", "name": "法国", "code": "FRA"},
+        ],
+        "F": [
+            {"key": "england", "name": "英格兰", "code": "ENG"},
+            {"key": "portugal", "name": "葡萄牙", "code": "POR"},
+            {"key": "germany", "name": "德国", "code": "GER"},
+            {"key": "netherlands", "name": "荷兰", "code": "NED"},
+        ],
+    }
+    teams = []
+    for group in groups:
+        if group in fixed_teams:
+            for index, row in enumerate(fixed_teams[group], start=1):
+                teams.append(
+                    {
+                        **row,
+                        "group": group,
+                        "elo": 1800 - index,
+                        "attack": 80,
+                        "defense": 80,
+                        "goalkeeper": 80,
+                        "path": 70,
+                        "squad": 80,
+                    }
+                )
+            continue
+        for slot in range(1, 5):
+            team = make_team(group, slot)
+            team["key"] = f"official-{group.lower()}-{slot}"
+            team["code"] = f"{group}{slot}"
+            teams.append(team)
+
+    fixtures = []
+    for group in groups:
+        group_keys = [team["key"] for team in teams if team["group"] == group]
+        for index, home in enumerate(group_keys):
+            for away in group_keys[index + 1 :]:
+                fixtures.append(
+                    {
+                        "home": home,
+                        "away": away,
+                        "stage": f"小组赛 {group} 组",
+                        "kickoff": "待定",
+                        "status": "scheduled",
+                    }
+                )
+    return {
+        "source": "fifa-official-test",
+        "retrievedAt": "2026-06-14T00:00:00Z",
+        "teams": teams,
+        "fixtures": fixtures,
+    }
 
 
 class PredictionApiTest(unittest.TestCase):
@@ -138,6 +200,68 @@ class PredictionApiTest(unittest.TestCase):
             audit_rows = [json.loads(line) for line in audit_path.read_text(encoding="utf-8").splitlines()]
             self.assertEqual(audit_rows[0]["action"], "raw-news:create")
             self.assertEqual(audit_rows[0]["targetId"], "manual-admin-audit")
+
+    def test_admin_tournament_import_writes_files_reload_model_and_audit(self):
+        previous_token = os.environ.get("WORLD_CUP_ADMIN_TOKEN")
+        os.environ["WORLD_CUP_ADMIN_TOKEN"] = "secret-token"
+        payload = make_compatible_import_payload()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            data_dir = root / "data"
+            backup_dir = root / "backups"
+            audit_path = root / "admin-audit.jsonl"
+            data_dir.mkdir()
+            (data_dir / "teams.json").write_text("[]", encoding="utf-8")
+            (data_dir / "fixtures.json").write_text("[]", encoding="utf-8")
+            previous_data_dir = getattr(main_module, "runtime_data_dir", None)
+            previous_backup_dir = getattr(main_module, "tournament_backup_dir", None)
+            previous_audit_path = getattr(main_module, "audit_log_path", None)
+            previous_fixtures_path = getattr(main_module, "fixtures_data_path", None)
+            main_module.runtime_data_dir = data_dir
+            main_module.tournament_backup_dir = backup_dir
+            main_module.audit_log_path = audit_path
+            main_module.fixtures_data_path = data_dir / "fixtures.json"
+            try:
+                client = TestClient(app)
+                response = client.post(
+                    "/api/admin/tournament-data/import",
+                    headers={"X-Admin-Token": "secret-token"},
+                    json=payload,
+                )
+                status_response = client.get("/api/model-status")
+            finally:
+                if previous_data_dir is None:
+                    delattr(main_module, "runtime_data_dir")
+                else:
+                    main_module.runtime_data_dir = previous_data_dir
+                if previous_backup_dir is None:
+                    delattr(main_module, "tournament_backup_dir")
+                else:
+                    main_module.tournament_backup_dir = previous_backup_dir
+                if previous_audit_path is None:
+                    delattr(main_module, "audit_log_path")
+                else:
+                    main_module.audit_log_path = previous_audit_path
+                if previous_fixtures_path is None:
+                    delattr(main_module, "fixtures_data_path")
+                else:
+                    main_module.fixtures_data_path = previous_fixtures_path
+                main_module.reload_model_data()
+                if previous_token is None:
+                    os.environ.pop("WORLD_CUP_ADMIN_TOKEN", None)
+                else:
+                    os.environ["WORLD_CUP_ADMIN_TOKEN"] = previous_token
+
+            self.assertEqual(response.status_code, 200, response.text)
+            result = response.json()
+            self.assertEqual(result["teamCount"], 48)
+            self.assertEqual(result["fixtureCount"], 72)
+            self.assertEqual(status_response.json()["dataset"]["placeholderSlots"], 0)
+            self.assertEqual(len(json.loads((data_dir / "teams.json").read_text(encoding="utf-8"))), 48)
+            self.assertTrue(Path(result["backupDir"]).exists())
+            audit_rows = [json.loads(line) for line in audit_path.read_text(encoding="utf-8").splitlines()]
+            self.assertEqual(audit_rows[0]["action"], "tournament-data:import")
+            self.assertEqual(audit_rows[0]["targetId"], "fifa-official-test")
 
     def test_match_prediction_accepts_simulation_count(self):
         client = TestClient(app)

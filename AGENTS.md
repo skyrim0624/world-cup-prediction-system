@@ -1327,15 +1327,21 @@ Elo / 实力评分
 - 新增 `backend/admin_audit.py`，后台写操作会写入 `backend/data_files/admin-audit.jsonl`。
 - `/admin` 支持保存后台 token，并展示最近审计记录。
 - `.gitignore` 已忽略运行时审计日志。
+- 新增 `POST /api/admin/tournament-data/import`，后台可导入 48 队和 72 场小组赛 JSON。
+- 数据层 `reload_model_data` 支持按指定 teams/fixtures 文件重载，导入后可立即刷新模型。
+- `/admin` 新增数据健康模块，显示球队数、赛程数和占位槽位数量。
+- `/admin` 新增赛事导入表单，可粘贴官方整理 JSON 并触发导入。
 
 验证：
 
 - 新增 API 测试：`/api/admin/overview` 返回 70 场未开赛、1 场进行中、1 场已锁定的临时赛程状态，并返回待审队列和日更命令。
 - 新增 API 测试：设置 `WORLD_CUP_ADMIN_TOKEN` 后，未带 token 的写接口返回 401；带 token 的新闻录入会生成审计记录。
-- `npm run test:model` 通过，46 个测试。
+- 新增 API 测试：后台赛事导入可写入临时 teams/fixtures，生成备份，刷新模型并写审计记录。
+- `npm run test:model` 通过，47 个测试。
 - `npm run build` 通过。
 - 浏览器检查通过：`/admin` 在桌面 1280px 和手机 390px 下能显示运营后台、比分写入、事件审核和日更命令，且无横向溢出。
 - 浏览器检查通过：启用 token 后，`/admin` 在桌面和手机端显示 token 提示与审计记录区域，且无横向溢出。
+- 浏览器检查通过：`/admin` 在桌面和手机端显示数据健康和赛事导入表单，且无横向溢出。
 
 当前判断：
 
@@ -1352,7 +1358,7 @@ Elo / 实力评分
 
 1. 从 FIFA 官方来源整理真实 48 队名单、分组和 72 场小组赛，生成导入 JSON 并走导入器替换当前样例数据。
 2. 接真实新闻来源列表，把外部抓取任务接到 `npm run daily:update` 的 Feed 配置和报告输出。
-3. 扩展 `/admin` 后台，补数据导入监控、用户账号 / 角色体系和真实调度状态。
+3. 扩展 `/admin` 后台，补真实调度状态、用户账号 / 角色体系和导入数据回滚入口。
 4. 把单场详情升级为独立路由/页面，并接付费解锁边界。
 5. 最后接支付、用户权限和付费解锁入口。
 

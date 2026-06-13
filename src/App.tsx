@@ -93,6 +93,12 @@ type AdminOverview = {
     live: number;
     finished: number;
   };
+  datasetHealth: {
+    teamCount: number;
+    fixtureCount: number;
+    placeholderSlots: number;
+    isOfficialDataReady: boolean;
+  };
   eventSummary: EventReviewSummary;
   rawNewsCount: number;
   reviewQueue: EventReviewItem[];
@@ -110,6 +116,7 @@ type AdminOverview = {
     eventReviewEndpoint: string;
     liveScoreEndpoint: string;
     resultEndpoint: string;
+    tournamentImportEndpoint: string;
   };
 };
 
@@ -1175,6 +1182,7 @@ function AdminConsole() {
     publishedAt: "刚刚",
     url: "",
   });
+  const [tournamentImportText, setTournamentImportText] = useState("");
 
   function adminHeaders() {
     const headers: Record<string, string> = { "Content-Type": "application/json" };
@@ -1317,6 +1325,25 @@ function AdminConsole() {
     }
   }
 
+  async function submitTournamentImport(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setMessage(null);
+    try {
+      const payload = JSON.parse(tournamentImportText) as Record<string, unknown>;
+      const response = await fetch(`${API_BASE_URL}/api/admin/tournament-data/import`, {
+        method: "POST",
+        headers: adminHeaders(),
+        body: JSON.stringify(payload),
+      });
+      if (!response.ok) throw new Error(`赛事导入接口返回 ${response.status}`);
+      await loadAdminData();
+      setTournamentImportText("");
+      setMessage("赛事数据已导入");
+    } catch {
+      setMessage("赛事数据导入失败");
+    }
+  }
+
   return (
     <main className="admin-shell">
       <header className="admin-topbar">
@@ -1361,6 +1388,15 @@ function AdminConsole() {
         </article>
 
         <article className="admin-card">
+          <h2>数据健康</h2>
+          <div className="admin-metrics">
+            <Metric label="球队" value={overview?.datasetHealth.teamCount ?? 0} tone="blue" />
+            <Metric label="赛程" value={overview?.datasetHealth.fixtureCount ?? 0} tone="green" />
+            <Metric label="占位" value={overview?.datasetHealth.placeholderSlots ?? 0} tone={overview?.datasetHealth.placeholderSlots ? "gold" : "green"} />
+          </div>
+        </article>
+
+        <article className="admin-card">
           <h2>日更快照</h2>
           <div className="admin-command">
             <code>{overview?.operations.dailyUpdateCommand ?? "npm run daily:update"}</code>
@@ -1389,6 +1425,20 @@ function AdminConsole() {
               <input value={fixtureForm.awayScore} onChange={(event) => setFixtureForm((current) => ({ ...current, awayScore: event.target.value }))} inputMode="numeric" aria-label="客队比分" />
             </div>
             <button type="submit">写入比分</button>
+          </form>
+        </article>
+
+        <article className="admin-card admin-card-wide">
+          <h2>赛事导入</h2>
+          <form className="tournament-import-form" onSubmit={submitTournamentImport}>
+            <textarea
+              value={tournamentImportText}
+              onChange={(event) => setTournamentImportText(event.target.value)}
+              aria-label="赛事导入 JSON"
+              placeholder='{"source":"fifa-official","teams":[],"fixtures":[]}'
+              required
+            />
+            <button type="submit">导入赛事数据</button>
           </form>
         </article>
 

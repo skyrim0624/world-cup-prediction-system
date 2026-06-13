@@ -10,6 +10,7 @@ from . import data as data_state
 from .admin import build_admin_overview
 from .admin_audit import AUDIT_LOG_PATH, append_admin_audit
 from .admin_security import verify_admin_token
+from .data_import import apply_tournament_data_import
 from .event_review import RAW_NEWS_PATH, review_raw_news_item
 from .fixture_update import record_fixture_live_score, record_fixture_result
 from .model import (
@@ -32,6 +33,8 @@ review_data_path = RAW_NEWS_PATH
 snapshot_data_path = DEFAULT_SNAPSHOT_PATH
 fixtures_data_path = data_state.DATA_DIR / "fixtures.json"
 audit_log_path = AUDIT_LOG_PATH
+runtime_data_dir = data_state.DATA_DIR
+tournament_backup_dir = data_state.DATA_DIR / "backups"
 
 
 class EventReviewRequest(BaseModel):
@@ -266,3 +269,20 @@ def update_fixture_live_score(request: FixtureResultRequest, _: None = Depends(v
         "fixture": fixture,
         "requiresSnapshotRefresh": True,
     }
+
+
+@app.post("/api/admin/tournament-data/import")
+def import_tournament_data(payload: dict[str, object], _: None = Depends(verify_admin_token)) -> dict[str, object]:
+    try:
+        result = apply_tournament_data_import(runtime_data_dir, tournament_backup_dir, payload)
+    except ValueError as error:
+        raise HTTPException(status_code=400, detail=str(error)) from error
+    reload_model_data(review_data_path, runtime_data_dir / "fixtures.json", runtime_data_dir / "teams.json")
+    prediction_cache.clear()
+    append_admin_audit(
+        "tournament-data:import",
+        str(result["source"]),
+        {"teamCount": result["teamCount"], "fixtureCount": result["fixtureCount"], "backupDir": result["backupDir"]},
+        audit_log_path,
+    )
+    return result

@@ -1417,7 +1417,8 @@ button {
   gap: 12px;
 }
 
-.raw-news-form {
+.raw-news-form,
+.tournament-import-form {
   display: grid;
   gap: 10px;
 }
@@ -1446,7 +1447,8 @@ button {
 .fixture-inputs input,
 .raw-news-form input,
 .raw-news-form textarea,
-.raw-news-form select {
+.raw-news-form select,
+.tournament-import-form textarea {
   min-height: 42px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: var(--text);
@@ -1464,7 +1466,8 @@ button {
   font-weight: 900;
 }
 
-.raw-news-form > button {
+.raw-news-form > button,
+.tournament-import-form > button {
   min-height: 44px;
   border: 1px solid rgba(24, 227, 208, 0.36);
   color: var(--cyan);
@@ -1475,17 +1478,25 @@ button {
 .fixture-inputs input,
 .raw-news-form input,
 .raw-news-form textarea,
-.raw-news-form select {
+.raw-news-form select,
+.tournament-import-form textarea {
   width: 100%;
   min-width: 0;
   padding: 0 10px;
   font-weight: 900;
 }
 
-.raw-news-form textarea {
+.raw-news-form textarea,
+.tournament-import-form textarea {
   min-height: 82px;
   padding: 10px;
   resize: vertical;
+}
+
+.tournament-import-form textarea {
+  min-height: 170px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  line-height: 1.45;
 }
 
 .muted {

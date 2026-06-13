@@ -44,9 +44,16 @@ def review_queue(limit: int = 8) -> list[dict[str, Any]]:
 
 def build_admin_overview(snapshot_path: Path, audit_path: Path | None = None) -> dict[str, Any]:
     snapshot = read_prediction_snapshot(snapshot_path)
+    dataset = data_state.DATASET_META
     return {
         "fixtureStatus": fixture_status_counts(),
         "eventSummary": event_summary(),
+        "datasetHealth": {
+            "teamCount": dataset.get("teamCount", 0),
+            "fixtureCount": dataset.get("fixtureCount", 0),
+            "placeholderSlots": dataset.get("placeholderSlots", 0),
+            "isOfficialDataReady": dataset.get("placeholderSlots", 0) == 0 and dataset.get("teamCount", 0) == 48,
+        },
         "rawNewsCount": len(data_state.RAW_NEWS_ITEMS),
         "reviewQueue": review_queue(),
         "latestSnapshot": snapshot.get("snapshotMeta") if snapshot else None,
@@ -59,5 +66,6 @@ def build_admin_overview(snapshot_path: Path, audit_path: Path | None = None) ->
             "eventReviewEndpoint": "/api/events/review",
             "liveScoreEndpoint": "/api/fixtures/live",
             "resultEndpoint": "/api/fixtures/result",
+            "tournamentImportEndpoint": "/api/admin/tournament-data/import",
         },
     }
