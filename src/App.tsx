@@ -72,6 +72,14 @@ type EventReviewWriteResponse = {
   requiresSnapshotRefresh: boolean;
 };
 
+type SnapshotPredictionResponse = MatchPrediction & {
+  snapshotMeta: {
+    type: string;
+    generatedAt: string;
+    path: string;
+  };
+};
+
 type ScoreOutcome = {
   score: string;
   probability: number;
@@ -365,6 +373,7 @@ function App() {
   const [apiPrediction, setApiPrediction] = useState<MatchPrediction | null>(null);
   const [eventReview, setEventReview] = useState<EventReviewResponse | null>(null);
   const [reviewPendingId, setReviewPendingId] = useState<string | null>(null);
+  const [snapshotPending, setSnapshotPending] = useState(false);
   const [reviewMessage, setReviewMessage] = useState<string | null>(null);
   const [dataMode, setDataMode] = useState<"api" | "demo">("demo");
   const dragRef = useRef<DragState | null>(null);
@@ -453,6 +462,28 @@ function App() {
       setReviewMessage("审核写入失败");
     } finally {
       setReviewPendingId(null);
+    }
+  }
+
+  async function rebuildSnapshot() {
+    if (snapshotPending) return;
+    setSnapshotPending(true);
+    setReviewMessage(null);
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/snapshot/rebuild`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({}),
+      });
+      if (!response.ok) throw new Error(`快照接口返回 ${response.status}`);
+      const data = (await response.json()) as SnapshotPredictionResponse;
+      setApiPrediction(data);
+      setDataMode("api");
+      setReviewMessage(`快照已重建 · ${data.modelMeta?.simulationCount.toLocaleString("zh-CN") ?? 0} 次模拟`);
+    } catch {
+      setReviewMessage("快照重建失败");
+    } finally {
+      setSnapshotPending(false);
     }
   }
 
@@ -706,8 +737,10 @@ function App() {
           <EventReviewPanel
             eventReview={eventReview}
             pendingId={reviewPendingId}
+            snapshotPending={snapshotPending}
             message={reviewMessage}
             onReview={submitEventReview}
+            onRebuildSnapshot={rebuildSnapshot}
           />
         </DraggablePanel>
 
@@ -921,13 +954,17 @@ function ChampionBoard({ teams }: { teams: Team[] }) {
 function EventReviewPanel({
   eventReview,
   pendingId,
+  snapshotPending,
   message,
   onReview,
+  onRebuildSnapshot,
 }: {
   eventReview: EventReviewResponse | null;
   pendingId: string | null;
+  snapshotPending: boolean;
   message: string | null;
   onReview: (item: EventReviewItem, status: ReviewStatus) => void;
+  onRebuildSnapshot: () => void;
 }) {
   if (!eventReview) {
     return <p className="review-empty">事件审核等待 API 连接</p>;
@@ -953,6 +990,9 @@ function EventReviewPanel({
           忽略 <b>{eventReview.summary.ignored}</b>
         </span>
       </div>
+      <button className="snapshot-button" disabled={snapshotPending} onClick={onRebuildSnapshot}>
+        {snapshotPending ? "重建中" : "重建快照"}
+      </button>
       <div className="review-list">
         {queue.map((item) => (
           <article className={`review-row ${item.action}`} key={item.id}>

@@ -6,22 +6,28 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
-from .data import DATASET_META, EVENTS, FIXTURES, RAW_NEWS_ITEMS
+from . import data as data_state
 from .event_review import RAW_NEWS_PATH, review_raw_news_item
-from .model import SIMULATION_COUNT, build_match_prediction, event_summary, event_to_news_item
-from .snapshot import read_prediction_snapshot
+from .model import SIMULATION_COUNT, build_match_prediction, event_summary, event_to_news_item, reload_model_data
+from .snapshot import DEFAULT_SNAPSHOT_PATH, read_prediction_snapshot, write_prediction_snapshot
 
 
 app = FastAPI(title="World Cup Prediction MVP")
 PREDICTION_CACHE_TTL_SECONDS = 15
 prediction_cache: dict[int, tuple[float, dict[str, object]]] = {}
 review_data_path = RAW_NEWS_PATH
+snapshot_data_path = DEFAULT_SNAPSHOT_PATH
 
 
 class EventReviewRequest(BaseModel):
     id: str
     status: str
     team: str | None = None
+
+
+class SnapshotRebuildRequest(BaseModel):
+    simulations: int = SIMULATION_COUNT
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -42,7 +48,7 @@ def match_prediction(
     use_snapshot: bool = Query(True, alias="useSnapshot"),
 ) -> dict[str, object]:
     if use_snapshot:
-        snapshot = read_prediction_snapshot()
+        snapshot = read_prediction_snapshot(snapshot_data_path)
         if snapshot is not None:
             return snapshot
     now = monotonic()
@@ -57,14 +63,13 @@ def match_prediction(
 @app.get("/api/model-status")
 def model_status() -> dict[str, object]:
     return {
-        "dataset": DATASET_META,
+        "dataset": data_state.DATASET_META,
         "simulationCount": SIMULATION_COUNT,
-        "lockedResults": len([fixture for fixture in FIXTURES if fixture.status == "finished"]),
+        "lockedResults": len([fixture for fixture in data_state.FIXTURES if fixture.status == "finished"]),
         "eventSummary": event_summary(),
         "knownGaps": [
             "官方 48 队名单和真实分组尚未替换当前槽位数据",
             "新闻抓取仍由本地 raw-news JSON 承接，暂未接外部抓取任务",
-            "新闻审核写入后需要重建快照或重启进程，运行中模型暂不热重载",
             "暂未接多源交叉验证、后台录入、支付和权限",
         ],
     }
@@ -73,7 +78,7 @@ def model_status() -> dict[str, object]:
 @app.get("/api/events")
 def events() -> dict[str, object]:
     items = []
-    for event in EVENTS:
+    for event in data_state.EVENTS:
         news_item = event_to_news_item(event)
         items.append(
             {
@@ -92,7 +97,7 @@ def events() -> dict[str, object]:
         )
     return {
         "summary": event_summary(),
-        "rawNewsCount": len(RAW_NEWS_ITEMS),
+        "rawNewsCount": len(data_state.RAW_NEWS_ITEMS),
         "items": items,
     }
 
@@ -108,3 +113,11 @@ def review_event(request: EventReviewRequest) -> dict[str, object]:
         "item": updated,
         "requiresSnapshotRefresh": True,
     }
+
+
+@app.post("/api/snapshot/rebuild")
+def rebuild_snapshot(request: SnapshotRebuildRequest) -> dict[str, object]:
+    reload_model_data(review_data_path)
+    payload = write_prediction_snapshot(snapshot_data_path, request.simulations)
+    prediction_cache.clear()
+    return payload

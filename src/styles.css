@@ -1022,6 +1022,21 @@ button {
   line-height: 1;
 }
 
+.snapshot-button {
+  justify-self: start;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid rgba(24, 227, 208, 0.52);
+  color: var(--cyan);
+  background: rgba(24, 227, 208, 0.08);
+  font-weight: 900;
+}
+
+.snapshot-button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
 .review-list {
   display: grid;
   gap: 12px;

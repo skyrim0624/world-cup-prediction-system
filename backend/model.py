@@ -6,8 +6,10 @@ from dataclasses import replace
 from datetime import datetime, timezone
 from math import exp, factorial
 from random import Random
+from pathlib import Path
 from typing import Literal
 
+from . import data as data_state
 from .data import (
     CURRENT_MATCH,
     DATASET_META,
@@ -58,6 +60,19 @@ ROUND_OF_16_MATCHES = (
 QUARTERFINAL_MATCHES = ((97, 89, 90), (98, 93, 94), (99, 91, 92), (100, 95, 96))
 SEMIFINAL_MATCHES = ((101, 97, 98), (102, 99, 100))
 THIRD_PLACE_WINNER_MATCHES = {"A": 79, "B": 85, "D": 81, "E": 74, "G": 82, "I": 77, "K": 87, "L": 80}
+
+
+def reload_model_data(raw_news_path: Path | None = None):
+    dataset = data_state.reload_runtime_data(raw_news_path)
+    global CURRENT_MATCH, DATASET_META, EVENTS, FIXTURES, SOURCE_WEIGHTS, TEAM_PROFILES, THIRD_PLACE_COMBINATIONS
+    CURRENT_MATCH = dataset.current_match
+    DATASET_META = dataset.dataset_meta
+    EVENTS = dataset.events
+    FIXTURES = dataset.fixtures
+    SOURCE_WEIGHTS = dataset.source_weights
+    TEAM_PROFILES = dataset.team_profiles
+    THIRD_PLACE_COMBINATIONS = dataset.third_place_combinations
+    return dataset
 
 
 def event_factor_impacts() -> dict[str, dict[str, float]]:

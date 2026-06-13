@@ -95,6 +95,55 @@ class PredictionApiTest(unittest.TestCase):
             self.assertEqual(updated_rows[0]["status"], "confirmed")
             self.assertEqual(updated_rows[0]["team"], "brazil")
 
+    def test_snapshot_rebuild_api_writes_prediction_snapshot(self):
+        rows = [
+            {
+                "id": "weather-watch",
+                "title": "自动化测试高温事件",
+                "summary": "官方和本地气象均确认比赛日高温。",
+                "source": "local-weather",
+                "team": "brazil",
+                "status": "single_source",
+                "published_at": "6 小时前",
+                "url": "https://example.com/weather",
+            }
+        ]
+        with tempfile.TemporaryDirectory() as temp_dir:
+            raw_news_path = Path(temp_dir) / "raw-news.json"
+            raw_news_path.write_text(json.dumps(rows, ensure_ascii=False), encoding="utf-8")
+            snapshot_path = Path(temp_dir) / "latest-match-prediction.json"
+            previous_path = getattr(main_module, "snapshot_data_path", None)
+            previous_review_path = getattr(main_module, "review_data_path", None)
+            main_module.snapshot_data_path = snapshot_path
+            main_module.review_data_path = raw_news_path
+            try:
+                client = TestClient(app)
+                review_response = client.post(
+                    "/api/events/review",
+                    json={"id": "weather-watch", "status": "multi_source", "team": "brazil"},
+                )
+                self.assertEqual(review_response.status_code, 200)
+                response = client.post("/api/snapshot/rebuild", json={"simulations": 1200})
+            finally:
+                if previous_path is None:
+                    delattr(main_module, "snapshot_data_path")
+                else:
+                    main_module.snapshot_data_path = previous_path
+                if previous_review_path is None:
+                    delattr(main_module, "review_data_path")
+                else:
+                    main_module.review_data_path = previous_review_path
+                main_module.reload_model_data()
+
+            self.assertEqual(response.status_code, 200)
+            self.assertTrue(snapshot_path.exists())
+            payload = response.json()
+            self.assertEqual(payload["snapshotMeta"]["path"], str(snapshot_path))
+            self.assertEqual(payload["modelMeta"]["simulationCount"], 1200)
+            self.assertTrue(
+                any(item["title"] == "自动化测试高温事件" and item["impact"] == "轻微修正" for item in payload["newsItems"])
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -72,6 +72,20 @@ class RawNewsItem:
     url: str
 
 
+@dataclass(frozen=True)
+class RuntimeDataset:
+    team_profiles: dict[str, TeamProfile]
+    fixtures: list[Fixture]
+    source_weights: dict[str, float]
+    news_sources: dict[str, NewsSource]
+    raw_news_items: list[RawNewsItem]
+    manual_events: list[TeamEvent]
+    events: list[TeamEvent]
+    third_place_combinations: dict[str, dict[str, str]]
+    current_match: tuple[str, str]
+    dataset_meta: dict[str, object]
+
+
 def read_json_file(name: str) -> Any:
     with (DATA_DIR / name).open(encoding="utf-8") as file:
         return json.load(file)
@@ -161,8 +175,15 @@ def load_news_sources(source_weights: dict[str, float]) -> dict[str, NewsSource]
     return sources
 
 
-def load_raw_news_items(team_profiles: dict[str, TeamProfile], news_sources: dict[str, NewsSource]) -> list[RawNewsItem]:
-    rows = read_json_file("raw-news.json")
+def load_raw_news_items(
+    team_profiles: dict[str, TeamProfile],
+    news_sources: dict[str, NewsSource],
+    path: Path | None = None,
+) -> list[RawNewsItem]:
+    if path is None:
+        rows = read_json_file("raw-news.json")
+    else:
+        rows = json.loads(path.read_text(encoding="utf-8"))
     items = [RawNewsItem(**row) for row in rows]
     known_ids = {item.id for item in items}
     if len(known_ids) != len(items):
@@ -254,24 +275,59 @@ def load_current_match() -> tuple[str, str]:
     return row["home"], row["away"]
 
 
-TEAM_PROFILES = load_team_profiles()
-FIXTURES = load_fixtures(TEAM_PROFILES)
-SOURCE_WEIGHTS = load_source_weights()
-NEWS_SOURCES = load_news_sources(SOURCE_WEIGHTS)
-RAW_NEWS_ITEMS = load_raw_news_items(TEAM_PROFILES, NEWS_SOURCES)
-MANUAL_EVENTS = load_events(TEAM_PROFILES)
-EVENTS = MANUAL_EVENTS + events_from_raw_news(RAW_NEWS_ITEMS, NEWS_SOURCES)
-THIRD_PLACE_COMBINATIONS = load_third_place_combinations()
-CURRENT_MATCH = load_current_match()
+def load_runtime_dataset(raw_news_path: Path | None = None) -> RuntimeDataset:
+    team_profiles = load_team_profiles()
+    fixtures = load_fixtures(team_profiles)
+    source_weights = load_source_weights()
+    news_sources = load_news_sources(source_weights)
+    raw_news_items = load_raw_news_items(team_profiles, news_sources, raw_news_path)
+    manual_events = load_events(team_profiles)
+    events = manual_events + events_from_raw_news(raw_news_items, news_sources)
+    third_place_combinations = load_third_place_combinations()
+    current_match = load_current_match()
+    dataset_meta = {
+        "source": "local-json",
+        "teamCount": len(team_profiles),
+        "groupCount": len(WORLD_CUP_GROUPS),
+        "fixtureCount": len(fixtures),
+        "eventCount": len(events),
+        "manualEventCount": len(manual_events),
+        "rawNewsCount": len(raw_news_items),
+        "newsSourceCount": len(news_sources),
+        "placeholderSlots": len([team for team in team_profiles.values() if team.key.startswith("slot-")]),
+    }
+    return RuntimeDataset(
+        team_profiles=team_profiles,
+        fixtures=fixtures,
+        source_weights=source_weights,
+        news_sources=news_sources,
+        raw_news_items=raw_news_items,
+        manual_events=manual_events,
+        events=events,
+        third_place_combinations=third_place_combinations,
+        current_match=current_match,
+        dataset_meta=dataset_meta,
+    )
 
-DATASET_META = {
-    "source": "local-json",
-    "teamCount": len(TEAM_PROFILES),
-    "groupCount": len(WORLD_CUP_GROUPS),
-    "fixtureCount": len(FIXTURES),
-    "eventCount": len(EVENTS),
-    "manualEventCount": len(MANUAL_EVENTS),
-    "rawNewsCount": len(RAW_NEWS_ITEMS),
-    "newsSourceCount": len(NEWS_SOURCES),
-    "placeholderSlots": len([team for team in TEAM_PROFILES.values() if team.key.startswith("slot-")]),
-}
+
+def apply_runtime_dataset(dataset: RuntimeDataset) -> RuntimeDataset:
+    global TEAM_PROFILES, FIXTURES, SOURCE_WEIGHTS, NEWS_SOURCES, RAW_NEWS_ITEMS
+    global MANUAL_EVENTS, EVENTS, THIRD_PLACE_COMBINATIONS, CURRENT_MATCH, DATASET_META
+    TEAM_PROFILES = dataset.team_profiles
+    FIXTURES = dataset.fixtures
+    SOURCE_WEIGHTS = dataset.source_weights
+    NEWS_SOURCES = dataset.news_sources
+    RAW_NEWS_ITEMS = dataset.raw_news_items
+    MANUAL_EVENTS = dataset.manual_events
+    EVENTS = dataset.events
+    THIRD_PLACE_COMBINATIONS = dataset.third_place_combinations
+    CURRENT_MATCH = dataset.current_match
+    DATASET_META = dataset.dataset_meta
+    return dataset
+
+
+def reload_runtime_data(raw_news_path: Path | None = None) -> RuntimeDataset:
+    return apply_runtime_dataset(load_runtime_dataset(raw_news_path))
+
+
+apply_runtime_dataset(load_runtime_dataset())
