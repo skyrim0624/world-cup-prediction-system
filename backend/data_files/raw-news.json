@@ -1,0 +1,42 @@
+[
+  {
+    "id": "brazil-winger-training-risk",
+    "title": "巴西边路主力继续单独训练",
+    "summary": "巴西边路主力连续两天单独训练，赛前出场仍待确认。",
+    "source": "reuters",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "3 小时前",
+    "url": "https://example.com/reuters-brazil-training"
+  },
+  {
+    "id": "france-defender-suspension",
+    "title": "法国中卫累计黄牌停赛",
+    "summary": "官方纪律公告确认法国一名主力中卫下场停赛。",
+    "source": "fifa",
+    "team": "france",
+    "status": "confirmed",
+    "published_at": "2 小时前",
+    "url": "https://example.com/fifa-france-suspension"
+  },
+  {
+    "id": "argentina-dressing-room-rumor",
+    "title": "阿根廷更衣室传闻",
+    "summary": "社媒称阿根廷队内气氛紧张，但没有可靠来源证实。",
+    "source": "social-rumor",
+    "team": "argentina",
+    "status": "unverified",
+    "published_at": "5 小时前",
+    "url": "https://example.com/social-argentina-rumor"
+  },
+  {
+    "id": "mexico-heat-watch",
+    "title": "小组赛比赛日可能出现高温",
+    "summary": "本地天气观察提示部分比赛日可能高温，具体影响等待官方赛前通报。",
+    "source": "local-weather",
+    "team": null,
+    "status": "single_source",
+    "published_at": "6 小时前",
+    "url": "https://example.com/weather-heat"
+  }
+]

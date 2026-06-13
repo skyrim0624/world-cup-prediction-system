@@ -29,6 +29,17 @@ class PredictionApiTest(unittest.TestCase):
         second = client.get("/api/match-prediction?simulations=1200").json()
         self.assertEqual(first["updatedAt"], second["updatedAt"])
 
+    def test_events_api_exposes_review_summary(self):
+        client = TestClient(app)
+        response = client.get("/api/events")
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertEqual(payload["summary"]["watched"], 7)
+        self.assertEqual(payload["summary"]["reviewRequired"], 1)
+        self.assertGreaterEqual(len(payload["items"]), 7)
+        self.assertEqual(payload["items"][0]["impact"], "全局备注")
+        self.assertTrue(any(item["action"] == "watch" and item["impact"] == "待审核" for item in payload["items"]))
+
 
 if __name__ == "__main__":
     unittest.main()

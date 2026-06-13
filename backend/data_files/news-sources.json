@@ -1,0 +1,32 @@
+[
+  {
+    "key": "fifa",
+    "name": "FIFA",
+    "source_level": "S",
+    "url": "https://www.fifa.com"
+  },
+  {
+    "key": "brazil-fa",
+    "name": "巴西足协",
+    "source_level": "S",
+    "url": "https://www.cbf.com.br"
+  },
+  {
+    "key": "reuters",
+    "name": "Reuters",
+    "source_level": "A",
+    "url": "https://www.reuters.com"
+  },
+  {
+    "key": "local-weather",
+    "name": "本地天气观察",
+    "source_level": "C",
+    "url": "https://example.com/weather"
+  },
+  {
+    "key": "social-rumor",
+    "name": "社媒传闻",
+    "source_level": "D",
+    "url": "https://example.com/social"
+  }
+]

@@ -45,6 +45,30 @@ class TeamEvent:
     direction: int
     strength: float
     time: str
+    source: str = "manual"
+    url: str | None = None
+    status: str = "confirmed"
+    action: str = "apply"
+
+
+@dataclass(frozen=True)
+class NewsSource:
+    key: str
+    name: str
+    source_level: str
+    url: str
+
+
+@dataclass(frozen=True)
+class RawNewsItem:
+    id: str
+    title: str
+    summary: str
+    source: str
+    team: str | None
+    status: str
+    published_at: str
+    url: str
 
 
 def read_json_file(name: str) -> Any:
@@ -125,6 +149,94 @@ def load_source_weights() -> dict[str, float]:
     return {level: float(value) for level, value in weights.items()}
 
 
+def load_news_sources(source_weights: dict[str, float]) -> dict[str, NewsSource]:
+    rows = read_json_file("news-sources.json")
+    sources = {row["key"]: NewsSource(**row) for row in rows}
+    if len(sources) != len(rows):
+        raise ValueError("新闻来源 key 不能重复")
+    for source in sources.values():
+        if source.source_level not in source_weights:
+            raise ValueError(f"新闻来源等级未知: {source.source_level}")
+    return sources
+
+
+def load_raw_news_items(team_profiles: dict[str, TeamProfile], news_sources: dict[str, NewsSource]) -> list[RawNewsItem]:
+    rows = read_json_file("raw-news.json")
+    items = [RawNewsItem(**row) for row in rows]
+    known_ids = {item.id for item in items}
+    if len(known_ids) != len(items):
+        raise ValueError("原始新闻 id 不能重复")
+    known_teams = set(team_profiles)
+    for item in items:
+        if item.source not in news_sources:
+            raise ValueError(f"原始新闻包含未知来源: {item.source}")
+        if item.team is not None and item.team not in known_teams:
+            raise ValueError(f"原始新闻包含未知球队: {item.team}")
+    return items
+
+
+def infer_event_factor(text: str) -> str:
+    if any(keyword in text for keyword in ("门将", "扑救")):
+        return "goalkeeper"
+    if any(keyword in text for keyword in ("后卫", "中卫", "防线", "防守")):
+        return "defense"
+    if any(keyword in text for keyword in ("赛程", "旅程", "天气", "高温", "恢复")):
+        return "path"
+    if any(keyword in text for keyword in ("前锋", "边锋", "边路", "进攻", "射手")):
+        return "attack"
+    return "squad"
+
+
+def infer_event_direction(text: str) -> int:
+    if any(keyword in text for keyword in ("恢复合练", "复出", "确认可用", "回归", "首发")):
+        return 1
+    if any(keyword in text for keyword in ("缺席", "停赛", "受伤", "单独训练", "待确认", "高温", "紧张")):
+        return -1
+    return 0
+
+
+def infer_event_strength(text: str) -> float:
+    if any(keyword in text for keyword in ("停赛", "缺席", "受伤")):
+        return 0.055
+    if any(keyword in text for keyword in ("主力", "核心", "连续两天")):
+        return 0.035
+    if any(keyword in text for keyword in ("高温", "天气", "恢复")):
+        return 0.02
+    return 0.015
+
+
+def action_for_news_item(item: RawNewsItem, source: NewsSource) -> str:
+    if item.status in {"unverified", "rumor"} or source.source_level == "D":
+        return "ignore"
+    if source.source_level == "C":
+        return "watch"
+    return "apply"
+
+
+def events_from_raw_news(items: list[RawNewsItem], news_sources: dict[str, NewsSource]) -> list[TeamEvent]:
+    events: list[TeamEvent] = []
+    for item in items:
+        source = news_sources[item.source]
+        text = f"{item.title} {item.summary}"
+        events.append(
+            TeamEvent(
+                title=item.title,
+                detail=item.summary,
+                team=item.team,
+                source_level=source.source_level,
+                factor=infer_event_factor(text),
+                direction=infer_event_direction(text),
+                strength=infer_event_strength(text),
+                time=item.published_at,
+                source=source.name,
+                url=item.url,
+                status=item.status,
+                action=action_for_news_item(item, source),
+            )
+        )
+    return events
+
+
 def load_third_place_combinations() -> dict[str, dict[str, str]]:
     data = read_json_file("third-place-combinations.json")
     combinations = data["combinations"]
@@ -140,8 +252,11 @@ def load_current_match() -> tuple[str, str]:
 
 TEAM_PROFILES = load_team_profiles()
 FIXTURES = load_fixtures(TEAM_PROFILES)
-EVENTS = load_events(TEAM_PROFILES)
 SOURCE_WEIGHTS = load_source_weights()
+NEWS_SOURCES = load_news_sources(SOURCE_WEIGHTS)
+RAW_NEWS_ITEMS = load_raw_news_items(TEAM_PROFILES, NEWS_SOURCES)
+MANUAL_EVENTS = load_events(TEAM_PROFILES)
+EVENTS = MANUAL_EVENTS + events_from_raw_news(RAW_NEWS_ITEMS, NEWS_SOURCES)
 THIRD_PLACE_COMBINATIONS = load_third_place_combinations()
 CURRENT_MATCH = load_current_match()
 
@@ -151,5 +266,8 @@ DATASET_META = {
     "groupCount": len(WORLD_CUP_GROUPS),
     "fixtureCount": len(FIXTURES),
     "eventCount": len(EVENTS),
+    "manualEventCount": len(MANUAL_EVENTS),
+    "rawNewsCount": len(RAW_NEWS_ITEMS),
+    "newsSourceCount": len(NEWS_SOURCES),
     "placeholderSlots": len([team for team in TEAM_PROFILES.values() if team.key.startswith("slot-")]),
 }

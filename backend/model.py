@@ -64,7 +64,7 @@ def event_factor_impacts() -> dict[str, dict[str, float]]:
     impacts = {team_key: {factor: 0.0 for factor in EVENT_FACTORS} for team_key in TEAM_PROFILES}
     for event in EVENTS:
         weight = SOURCE_WEIGHTS[event.source_level]
-        if weight <= 0 or event.team is None or event.factor not in EVENT_FACTORS:
+        if not event_enters_model(event) or event.factor not in EVENT_FACTORS:
             continue
         impacts[event.team][event.factor] += round(event.direction * event.strength * weight * 100, 2)
     return impacts
@@ -441,9 +441,15 @@ def signed_percent(value: float) -> str:
 
 def event_to_news_item(event) -> dict[str, str]:
     weight = SOURCE_WEIGHTS[event.source_level]
-    if weight == 0:
+    if event.action == "ignore" or weight == 0:
         impact = "不入模型"
         tone = "muted"
+    elif event.action == "watch":
+        impact = "待审核"
+        tone = "gold"
+    elif event.team is None:
+        impact = "全局备注"
+        tone = "green"
     elif weight < 0.5:
         impact = "轻微修正"
         tone = "gold"
@@ -462,9 +468,14 @@ def event_to_news_item(event) -> dict[str, str]:
 def event_summary() -> dict[str, int]:
     return {
         "watched": len(EVENTS),
-        "applied": len([event for event in EVENTS if SOURCE_WEIGHTS[event.source_level] > 0 and event.team is not None]),
-        "ignored": len([event for event in EVENTS if SOURCE_WEIGHTS[event.source_level] == 0]),
+        "applied": len([event for event in EVENTS if event_enters_model(event)]),
+        "ignored": len([event for event in EVENTS if event.action == "ignore" or SOURCE_WEIGHTS[event.source_level] == 0]),
+        "reviewRequired": len([event for event in EVENTS if event.action == "watch"]),
     }
+
+
+def event_enters_model(event) -> bool:
+    return event.action == "apply" and SOURCE_WEIGHTS[event.source_level] > 0 and event.team is not None
 
 
 def build_scenario_impacts(

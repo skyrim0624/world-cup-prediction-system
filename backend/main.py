@@ -5,8 +5,8 @@ from time import monotonic
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 
-from .data import DATASET_META, FIXTURES
-from .model import SIMULATION_COUNT, build_match_prediction, event_summary
+from .data import DATASET_META, EVENTS, FIXTURES, RAW_NEWS_ITEMS
+from .model import SIMULATION_COUNT, build_match_prediction, event_summary, event_to_news_item
 from .snapshot import read_prediction_snapshot
 
 
@@ -54,8 +54,34 @@ def model_status() -> dict[str, object]:
         "eventSummary": event_summary(),
         "knownGaps": [
             "官方 48 队名单和真实分组尚未替换当前槽位数据",
-            "新闻事件仍为本地结构化样例",
-            "暂未接自动抓取和多源交叉验证",
+            "新闻抓取仍由本地 raw-news JSON 承接，暂未接外部抓取任务",
+            "暂未接后台审核写入和多源交叉验证",
             "暂未接后台录入、支付和权限",
         ],
+    }
+
+
+@app.get("/api/events")
+def events() -> dict[str, object]:
+    items = []
+    for event in EVENTS:
+        news_item = event_to_news_item(event)
+        items.append(
+            {
+                **news_item,
+                "team": event.team,
+                "source": event.source,
+                "sourceLevel": event.source_level,
+                "status": event.status,
+                "action": event.action,
+                "factor": event.factor,
+                "direction": event.direction,
+                "strength": event.strength,
+                "url": event.url,
+            }
+        )
+    return {
+        "summary": event_summary(),
+        "rawNewsCount": len(RAW_NEWS_ITEMS),
+        "items": items,
     }

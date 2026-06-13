@@ -1,6 +1,6 @@
 import unittest
 
-from backend.data import DATASET_META, EVENTS, FIXTURES, TEAM_PROFILES, THIRD_PLACE_COMBINATIONS
+from backend.data import DATASET_META, EVENTS, FIXTURES, RAW_NEWS_ITEMS, TEAM_PROFILES, THIRD_PLACE_COMBINATIONS
 from backend.model import (
     ROUND_OF_16_MATCHES,
     apply_event_adjustments,
@@ -43,14 +43,16 @@ class PredictionModelTest(unittest.TestCase):
         self.assertEqual(len(group_names(TEAM_PROFILES)), 12)
         self.assertTrue(all(len([team for team in TEAM_PROFILES.values() if team.group == group]) == 4 for group in group_names(TEAM_PROFILES)))
         self.assertGreaterEqual(len(FIXTURES), 6)
-        self.assertGreaterEqual(len(EVENTS), 3)
+        self.assertGreaterEqual(len(EVENTS), 7)
+        self.assertGreaterEqual(len(RAW_NEWS_ITEMS), 4)
 
     def test_prediction_exposes_model_transparency_meta(self):
         prediction = build_match_prediction(1200)
         self.assertEqual(prediction["modelMeta"]["dataset"]["source"], "local-json")
-        self.assertEqual(prediction["modelMeta"]["events"]["watched"], 3)
-        self.assertEqual(prediction["modelMeta"]["events"]["applied"], 1)
-        self.assertEqual(prediction["modelMeta"]["events"]["ignored"], 1)
+        self.assertEqual(prediction["modelMeta"]["events"]["watched"], 7)
+        self.assertEqual(prediction["modelMeta"]["events"]["applied"], 3)
+        self.assertEqual(prediction["modelMeta"]["events"]["ignored"], 2)
+        self.assertEqual(prediction["modelMeta"]["events"]["reviewRequired"], 1)
 
     def test_team_factors_use_five_product_plates(self):
         prediction = build_match_prediction(1200)
