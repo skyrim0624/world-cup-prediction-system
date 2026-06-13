@@ -112,10 +112,24 @@ type TournamentBackup = {
   isComplete: boolean;
 };
 
+type DailyUpdateHealth = {
+  status: "missing" | "fresh" | "stale" | "failed" | string;
+  label: string;
+  hoursSinceUpdate: number | null;
+  message: string;
+};
+
 function formatDailyStatus(status?: string) {
   if (status === "success") return "成功";
   if (status === "failed") return "失败";
   return status ?? "待更新";
+}
+
+function dailyHealthTone(status?: string) {
+  if (status === "fresh") return "green";
+  if (status === "stale") return "gold";
+  if (status === "failed") return "red";
+  return "";
 }
 
 type AdminOverview = {
@@ -142,6 +156,7 @@ type AdminOverview = {
     path: string;
   } | null;
   dailyUpdateStatus: DailyUpdateStatus | null;
+  dailyUpdateHealth: DailyUpdateHealth;
   operations: {
     dailyUpdateCommand: string;
     snapshotRebuildEndpoint: string;
@@ -1219,6 +1234,7 @@ function AdminConsole() {
   const [tournamentImportText, setTournamentImportText] = useState("");
   const [tournamentRollbackId, setTournamentRollbackId] = useState("");
   const dailyStatus = overview?.dailyUpdateStatus ?? null;
+  const dailyHealth = overview?.dailyUpdateHealth;
 
   function adminHeaders() {
     const headers: Record<string, string> = { "Content-Type": "application/json" };
@@ -1468,6 +1484,10 @@ function AdminConsole() {
             <span>
               <b>{dailyStatus?.snapshot?.simulationCount.toLocaleString("zh-CN") ?? 0}</b>
               <em>模拟次数</em>
+            </span>
+            <span>
+              <b className={dailyHealthTone(dailyHealth?.status)}>{dailyHealth?.label ?? "未执行"}</b>
+              <em>日更健康</em>
             </span>
           </div>
           <button className="snapshot-button" disabled={snapshotPending} onClick={rebuildSnapshot}>
