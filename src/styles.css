@@ -1363,8 +1363,14 @@ button {
   gap: 12px;
 }
 
+.raw-news-form {
+  display: grid;
+  gap: 10px;
+}
+
 .fixture-mode,
-.fixture-inputs {
+.fixture-inputs,
+.raw-news-grid {
   display: grid;
   gap: 8px;
 }
@@ -1377,9 +1383,16 @@ button {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.raw-news-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .fixture-mode button,
 .fixture-form > button,
-.fixture-inputs input {
+.fixture-inputs input,
+.raw-news-form input,
+.raw-news-form textarea,
+.raw-news-form select {
   min-height: 42px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: var(--text);
@@ -1397,11 +1410,28 @@ button {
   font-weight: 900;
 }
 
-.fixture-inputs input {
+.raw-news-form > button {
+  min-height: 44px;
+  border: 1px solid rgba(24, 227, 208, 0.36);
+  color: var(--cyan);
+  background: rgba(0, 0, 0, 0.24);
+  font-weight: 900;
+}
+
+.fixture-inputs input,
+.raw-news-form input,
+.raw-news-form textarea,
+.raw-news-form select {
   width: 100%;
   min-width: 0;
   padding: 0 10px;
   font-weight: 900;
+}
+
+.raw-news-form textarea {
+  min-height: 82px;
+  padding: 10px;
+  resize: vertical;
 }
 
 .muted {
@@ -1940,7 +1970,8 @@ button {
 
   .admin-grid,
   .admin-metrics,
-  .fixture-inputs {
+  .fixture-inputs,
+  .raw-news-grid {
     grid-template-columns: 1fr;
   }
 

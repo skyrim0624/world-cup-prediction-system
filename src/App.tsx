@@ -1155,6 +1155,16 @@ function AdminConsole() {
     homeScore: "0",
     awayScore: "0",
   });
+  const [rawNewsForm, setRawNewsForm] = useState({
+    id: "",
+    title: "",
+    summary: "",
+    source: "reuters",
+    team: "",
+    status: "single_source" as ReviewStatus,
+    publishedAt: "刚刚",
+    url: "",
+  });
 
   async function loadAdminData() {
     const [overviewResponse, eventsResponse] = await Promise.all([
@@ -1252,6 +1262,34 @@ function AdminConsole() {
     }
   }
 
+  async function submitRawNews(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setMessage(null);
+    const id = rawNewsForm.id.trim() || `manual-${Date.now()}`;
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/raw-news`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          id,
+          title: rawNewsForm.title.trim(),
+          summary: rawNewsForm.summary.trim(),
+          source: rawNewsForm.source.trim(),
+          team: rawNewsForm.team.trim() || null,
+          status: rawNewsForm.status,
+          publishedAt: rawNewsForm.publishedAt.trim(),
+          url: rawNewsForm.url.trim(),
+        }),
+      });
+      if (!response.ok) throw new Error(`新闻录入接口返回 ${response.status}`);
+      await loadAdminData();
+      setRawNewsForm((current) => ({ ...current, id: "", title: "", summary: "", url: "" }));
+      setMessage("新闻线索已录入");
+    } catch {
+      setMessage("新闻线索录入失败");
+    }
+  }
+
   return (
     <main className="admin-shell">
       <header className="admin-topbar">
@@ -1310,6 +1348,29 @@ function AdminConsole() {
               <input value={fixtureForm.awayScore} onChange={(event) => setFixtureForm((current) => ({ ...current, awayScore: event.target.value }))} inputMode="numeric" aria-label="客队比分" />
             </div>
             <button type="submit">写入比分</button>
+          </form>
+        </article>
+
+        <article className="admin-card admin-card-wide">
+          <h2>新闻录入</h2>
+          <form className="raw-news-form" onSubmit={submitRawNews}>
+            <input value={rawNewsForm.id} onChange={(event) => setRawNewsForm((current) => ({ ...current, id: event.target.value }))} aria-label="新闻 id" placeholder="id 自动生成" />
+            <input value={rawNewsForm.title} onChange={(event) => setRawNewsForm((current) => ({ ...current, title: event.target.value }))} aria-label="新闻标题" placeholder="新闻标题" required />
+            <textarea value={rawNewsForm.summary} onChange={(event) => setRawNewsForm((current) => ({ ...current, summary: event.target.value }))} aria-label="新闻摘要" placeholder="新闻摘要" required />
+            <div className="raw-news-grid">
+              <input value={rawNewsForm.source} onChange={(event) => setRawNewsForm((current) => ({ ...current, source: event.target.value }))} aria-label="来源 key" required />
+              <input value={rawNewsForm.team} onChange={(event) => setRawNewsForm((current) => ({ ...current, team: event.target.value }))} aria-label="球队 key" placeholder="全局" />
+              <select value={rawNewsForm.status} onChange={(event) => setRawNewsForm((current) => ({ ...current, status: event.target.value as ReviewStatus }))} aria-label="新闻状态">
+                <option value="single_source">single_source</option>
+                <option value="confirmed">confirmed</option>
+                <option value="multi_source">multi_source</option>
+                <option value="unverified">unverified</option>
+                <option value="rumor">rumor</option>
+              </select>
+              <input value={rawNewsForm.publishedAt} onChange={(event) => setRawNewsForm((current) => ({ ...current, publishedAt: event.target.value }))} aria-label="发布时间" required />
+            </div>
+            <input value={rawNewsForm.url} onChange={(event) => setRawNewsForm((current) => ({ ...current, url: event.target.value }))} aria-label="新闻链接" placeholder="https://example.com/news" required />
+            <button type="submit">录入新闻</button>
           </form>
         </article>
 
