@@ -1262,6 +1262,30 @@ Elo / 实力评分
 - 新闻层已经具备最小自动交叉验证能力。
 - 后续外部抓取任务写入多来源 raw-news 后，可以自动把重复验证的低级别线索推入低权重模型流。
 
+### 2026-06-14：公开新闻 Feed 导入任务
+
+已完成：
+
+- 新增 `backend/news_feed.py`。
+- 新增 `parse_news_feed`，可解析 RSS item 和 Atom entry。
+- 新增 `import_news_feed`，把 Feed 条目写入 raw-news。
+- 导入条目默认 `status=single_source`，不会绕过来源评级、交叉验证和人工审核。
+- 导入器按 `url` 跳过重复新闻，适合定时任务重复执行。
+- 新增 `scripts/import_news_feed.py`。
+- 新增 `npm run import:news-feed`。
+- 新增 `docs/新闻Feed导入说明.md`。
+
+验证：
+
+- 新增 Feed 导入测试：RSS 两条新闻中，已存在 URL 被跳过，新 URL 被追加到 raw-news。
+- 新增 CLI 测试：`scripts/import_news_feed.py` 可读取临时 feed.xml 并写入临时 raw-news。
+- `python3 -m unittest discover -s tests -p test_news_feed.py` 通过，2 个 Feed 测试。
+
+当前判断：
+
+- 外部新闻抓取现在有可落地入口：抓取器只要输出 RSS/Atom 或本地 feed 文件，就能进入 raw-news → 多源验证 → 审核 → 快照重建链路。
+- 后续需要再接真实来源列表和定时任务。
+
 ## 十、当前交接摘要
 
 一句话定义：
@@ -1271,7 +1295,7 @@ Elo / 实力评分
 当前最重要的开发优先级：
 
 1. 从 FIFA 官方来源整理真实 48 队名单、分组和 72 场小组赛，生成导入 JSON 并走导入器替换当前样例数据。
-2. 接入外部新闻抓取任务，把多来源抓取结果写入 `raw-news.json` 或同结构数据源。
+2. 接真实新闻来源列表和定时任务，把多来源抓取结果写入 `raw-news.json`。
 3. 规划独立后台页，承载 raw-news 录入、审核、赛果和伤停信息，不继续挤压预测首页。
 4. 把单场详情升级为独立路由/页面，并接付费解锁边界。
 5. 最后接支付、用户权限和付费解锁入口。

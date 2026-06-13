@@ -5,6 +5,7 @@
     "test:model": "PYTHONWARNINGS=ignore::DeprecationWarning python3 -m unittest discover -s tests",
     "validate:data": "python3 scripts/validate_prediction_data.py",
     "import:tournament-data": "python3 scripts/import_tournament_data.py",
+    "import:news-feed": "python3 scripts/import_news_feed.py",
     "review:news": "python3 scripts/review_news_item.py",
     "update:snapshot": "python3 scripts/update_prediction_snapshot.py",
     "build": "tsc -b && vite build",
