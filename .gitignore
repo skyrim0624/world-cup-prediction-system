@@ -7,3 +7,4 @@ __pycache__/
 *.pyc
 backend/snapshots/*.json
 backend/data_files/backups/
+backend/data_files/admin-audit.jsonl

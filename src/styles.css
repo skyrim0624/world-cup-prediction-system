@@ -1358,6 +1358,60 @@ button {
   font-weight: 800;
 }
 
+.admin-auth-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 360px) minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+}
+
+.admin-auth-row input {
+  min-height: 44px;
+  min-width: 0;
+  padding: 0 12px;
+  border: 1px solid rgba(24, 227, 208, 0.28);
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.24);
+  font-weight: 900;
+}
+
+.admin-auth-row span {
+  color: var(--muted);
+  font-weight: 900;
+}
+
+.audit-list {
+  display: grid;
+  gap: 10px;
+}
+
+.audit-row {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  min-height: 54px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.audit-row strong {
+  color: var(--cyan);
+}
+
+.audit-row span {
+  min-width: 0;
+  color: #d9e6e5;
+  overflow-wrap: anywhere;
+}
+
+.audit-row em {
+  color: var(--muted);
+  font-style: normal;
+  font-weight: 800;
+}
+
 .fixture-form {
   display: grid;
   gap: 12px;
@@ -1970,6 +2024,8 @@ button {
 
   .admin-grid,
   .admin-metrics,
+  .admin-auth-row,
+  .audit-row,
   .fixture-inputs,
   .raw-news-grid {
     grid-template-columns: 1fr;

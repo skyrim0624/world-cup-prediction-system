@@ -1,4 +1,5 @@
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -75,6 +76,68 @@ class PredictionApiTest(unittest.TestCase):
             self.assertEqual(payload["operations"]["dailyUpdateCommand"], "npm run daily:update")
             self.assertEqual(payload["operations"]["liveScoreEndpoint"], "/api/fixtures/live")
             self.assertEqual(payload["reviewQueue"][0]["action"], "watch")
+
+    def test_admin_write_apis_require_token_when_configured(self):
+        previous_token = os.environ.get("WORLD_CUP_ADMIN_TOKEN")
+        os.environ["WORLD_CUP_ADMIN_TOKEN"] = "secret-token"
+        try:
+            client = TestClient(app)
+            response = client.post("/api/snapshot/rebuild", json={"simulations": 1200})
+        finally:
+            if previous_token is None:
+                os.environ.pop("WORLD_CUP_ADMIN_TOKEN", None)
+            else:
+                os.environ["WORLD_CUP_ADMIN_TOKEN"] = previous_token
+
+        self.assertEqual(response.status_code, 401)
+
+    def test_raw_news_write_appends_admin_audit_when_authorized(self):
+        previous_token = os.environ.get("WORLD_CUP_ADMIN_TOKEN")
+        os.environ["WORLD_CUP_ADMIN_TOKEN"] = "secret-token"
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            raw_news_path = root / "raw-news.json"
+            audit_path = root / "admin-audit.jsonl"
+            raw_news_path.write_text("[]", encoding="utf-8")
+            previous_review_path = getattr(main_module, "review_data_path", None)
+            previous_audit_path = getattr(main_module, "audit_log_path", None)
+            main_module.review_data_path = raw_news_path
+            main_module.audit_log_path = audit_path
+            try:
+                client = TestClient(app)
+                response = client.post(
+                    "/api/raw-news",
+                    headers={"X-Admin-Token": "secret-token"},
+                    json={
+                        "id": "manual-admin-audit",
+                        "title": "巴西赛前训练消息",
+                        "summary": "跟队记者称巴西主力边路恢复合练。",
+                        "source": "reuters",
+                        "team": "brazil",
+                        "status": "single_source",
+                        "publishedAt": "刚刚",
+                        "url": "https://example.com/admin-audit",
+                    },
+                )
+            finally:
+                if previous_review_path is None:
+                    delattr(main_module, "review_data_path")
+                else:
+                    main_module.review_data_path = previous_review_path
+                if previous_audit_path is None:
+                    delattr(main_module, "audit_log_path")
+                else:
+                    main_module.audit_log_path = previous_audit_path
+                main_module.reload_model_data()
+                if previous_token is None:
+                    os.environ.pop("WORLD_CUP_ADMIN_TOKEN", None)
+                else:
+                    os.environ["WORLD_CUP_ADMIN_TOKEN"] = previous_token
+
+            self.assertEqual(response.status_code, 200, response.text)
+            audit_rows = [json.loads(line) for line in audit_path.read_text(encoding="utf-8").splitlines()]
+            self.assertEqual(audit_rows[0]["action"], "raw-news:create")
+            self.assertEqual(audit_rows[0]["targetId"], "manual-admin-audit")
 
     def test_match_prediction_accepts_simulation_count(self):
         client = TestClient(app)

@@ -80,6 +80,13 @@ type SnapshotPredictionResponse = MatchPrediction & {
   };
 };
 
+type AdminAuditEntry = {
+  time: string;
+  action: string;
+  targetId: string;
+  details: Record<string, unknown>;
+};
+
 type AdminOverview = {
   fixtureStatus: {
     scheduled: number;
@@ -89,6 +96,8 @@ type AdminOverview = {
   eventSummary: EventReviewSummary;
   rawNewsCount: number;
   reviewQueue: EventReviewItem[];
+  authRequired: boolean;
+  recentAudit: AdminAuditEntry[];
   latestSnapshot: {
     type: string;
     generatedAt: string;
@@ -1145,6 +1154,7 @@ function ScenarioImpactList({ scenarios }: { scenarios: ScenarioImpact[] }) {
 function AdminConsole() {
   const [overview, setOverview] = useState<AdminOverview | null>(null);
   const [eventReview, setEventReview] = useState<EventReviewResponse | null>(null);
+  const [adminToken, setAdminToken] = useState(() => window.localStorage.getItem("worldCupAdminToken") ?? "");
   const [pendingId, setPendingId] = useState<string | null>(null);
   const [snapshotPending, setSnapshotPending] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
@@ -1165,6 +1175,23 @@ function AdminConsole() {
     publishedAt: "刚刚",
     url: "",
   });
+
+  function adminHeaders() {
+    const headers: Record<string, string> = { "Content-Type": "application/json" };
+    if (adminToken.trim()) {
+      headers["X-Admin-Token"] = adminToken.trim();
+    }
+    return headers;
+  }
+
+  function saveAdminToken(value: string) {
+    setAdminToken(value);
+    if (value.trim()) {
+      window.localStorage.setItem("worldCupAdminToken", value.trim());
+    } else {
+      window.localStorage.removeItem("worldCupAdminToken");
+    }
+  }
 
   async function loadAdminData() {
     const [overviewResponse, eventsResponse] = await Promise.all([
@@ -1206,7 +1233,7 @@ function AdminConsole() {
     try {
       const response = await fetch(`${API_BASE_URL}/api/events/review`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: adminHeaders(),
         body: JSON.stringify({ id: item.id, status, team: item.team }),
       });
       if (!response.ok) throw new Error(`审核接口返回 ${response.status}`);
@@ -1226,7 +1253,7 @@ function AdminConsole() {
     try {
       const response = await fetch(`${API_BASE_URL}/api/snapshot/rebuild`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: adminHeaders(),
         body: JSON.stringify({}),
       });
       if (!response.ok) throw new Error(`快照接口返回 ${response.status}`);
@@ -1246,7 +1273,7 @@ function AdminConsole() {
     try {
       const response = await fetch(`${API_BASE_URL}${endpoint}`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: adminHeaders(),
         body: JSON.stringify({
           home: fixtureForm.home.trim(),
           away: fixtureForm.away.trim(),
@@ -1269,7 +1296,7 @@ function AdminConsole() {
     try {
       const response = await fetch(`${API_BASE_URL}/api/raw-news`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: adminHeaders(),
         body: JSON.stringify({
           id,
           title: rawNewsForm.title.trim(),
@@ -1301,6 +1328,20 @@ function AdminConsole() {
       </header>
 
       <section className="admin-grid">
+        <article className="admin-card admin-card-wide">
+          <h2>后台权限</h2>
+          <div className="admin-auth-row">
+            <input
+              value={adminToken}
+              onChange={(event) => saveAdminToken(event.target.value)}
+              aria-label="后台 token"
+              placeholder={overview?.authRequired ? "输入后台 token" : "本地未启用 token"}
+              type="password"
+            />
+            <span>{overview?.authRequired ? "写操作需要 token" : "当前为本地开放模式"}</span>
+          </div>
+        </article>
+
         <article className="admin-card">
           <h2>赛程状态</h2>
           <div className="admin-metrics">
@@ -1384,6 +1425,23 @@ function AdminConsole() {
             onReview={submitReview}
             onRebuildSnapshot={rebuildSnapshot}
           />
+        </article>
+
+        <article className="admin-card admin-card-wide">
+          <h2>审计记录</h2>
+          <div className="audit-list">
+            {(overview?.recentAudit ?? []).length > 0 ? (
+              overview?.recentAudit.map((entry) => (
+                <article className="audit-row" key={`${entry.time}-${entry.action}-${entry.targetId}`}>
+                  <strong>{entry.action}</strong>
+                  <span>{entry.targetId}</span>
+                  <em>{formatUpdateTime(entry.time)}</em>
+                </article>
+              ))
+            ) : (
+              <p className="review-empty">暂无审计记录</p>
+            )}
+          </div>
         </article>
       </section>
     </main>

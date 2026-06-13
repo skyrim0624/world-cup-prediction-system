@@ -2,12 +2,14 @@ from __future__ import annotations
 
 from time import monotonic
 
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from . import data as data_state
 from .admin import build_admin_overview
+from .admin_audit import AUDIT_LOG_PATH, append_admin_audit
+from .admin_security import verify_admin_token
 from .event_review import RAW_NEWS_PATH, review_raw_news_item
 from .fixture_update import record_fixture_live_score, record_fixture_result
 from .model import (
@@ -29,6 +31,7 @@ prediction_cache: dict[int, tuple[float, dict[str, object]]] = {}
 review_data_path = RAW_NEWS_PATH
 snapshot_data_path = DEFAULT_SNAPSHOT_PATH
 fixtures_data_path = data_state.DATA_DIR / "fixtures.json"
+audit_log_path = AUDIT_LOG_PATH
 
 
 class EventReviewRequest(BaseModel):
@@ -101,14 +104,14 @@ def model_status() -> dict[str, object]:
         "knownGaps": [
             "官方 48 队名单和真实分组尚未替换当前槽位数据",
             "新闻抓取仍由本地 raw-news JSON 承接，暂未接外部定时任务",
-            "运营后台尚未接登录权限、完整新闻录入和支付权限",
+            "后台权限仍为轻量 token，暂未接用户账号、角色和支付权限",
         ],
     }
 
 
 @app.get("/api/admin/overview")
 def admin_overview() -> dict[str, object]:
-    return build_admin_overview(snapshot_data_path)
+    return build_admin_overview(snapshot_data_path, audit_log_path)
 
 
 @app.get("/api/upcoming-matches")
@@ -156,11 +159,12 @@ def events() -> dict[str, object]:
 
 
 @app.post("/api/events/review")
-def review_event(request: EventReviewRequest) -> dict[str, object]:
+def review_event(request: EventReviewRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
     try:
         updated = review_raw_news_item(review_data_path, request.id, request.status, request.team)
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error)) from error
+    append_admin_audit("event:review", request.id, {"status": request.status, "team": request.team}, audit_log_path)
     reload_model_data(review_data_path, fixtures_data_path)
     prediction_cache.clear()
     return {
@@ -170,7 +174,7 @@ def review_event(request: EventReviewRequest) -> dict[str, object]:
 
 
 @app.post("/api/raw-news")
-def create_raw_news(request: RawNewsCreateRequest) -> dict[str, object]:
+def create_raw_news(request: RawNewsCreateRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
     if request.source not in data_state.NEWS_SOURCES:
         raise HTTPException(status_code=400, detail=f"未知新闻来源: {request.source}")
     if request.team is not None and request.team not in data_state.TEAM_PROFILES:
@@ -190,6 +194,7 @@ def create_raw_news(request: RawNewsCreateRequest) -> dict[str, object]:
         created = append_raw_news_item(review_data_path, item)
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error)) from error
+    append_admin_audit("raw-news:create", request.id, {"source": request.source, "team": request.team}, audit_log_path)
     reload_model_data(review_data_path, fixtures_data_path)
     prediction_cache.clear()
     return {
@@ -199,15 +204,16 @@ def create_raw_news(request: RawNewsCreateRequest) -> dict[str, object]:
 
 
 @app.post("/api/snapshot/rebuild")
-def rebuild_snapshot(request: SnapshotRebuildRequest) -> dict[str, object]:
+def rebuild_snapshot(request: SnapshotRebuildRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
     reload_model_data(review_data_path, fixtures_data_path)
     payload = write_prediction_snapshot(snapshot_data_path, request.simulations)
+    append_admin_audit("snapshot:rebuild", str(snapshot_data_path), {"simulations": request.simulations}, audit_log_path)
     prediction_cache.clear()
     return payload
 
 
 @app.post("/api/fixtures/result")
-def update_fixture_result(request: FixtureResultRequest) -> dict[str, object]:
+def update_fixture_result(request: FixtureResultRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
     if request.home not in data_state.TEAM_PROFILES or request.away not in data_state.TEAM_PROFILES:
         raise HTTPException(status_code=400, detail="赛果包含未知球队")
     try:
@@ -220,6 +226,12 @@ def update_fixture_result(request: FixtureResultRequest) -> dict[str, object]:
         )
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error)) from error
+    append_admin_audit(
+        "fixture:result",
+        f"{request.home}-{request.away}",
+        {"homeScore": request.homeScore, "awayScore": request.awayScore},
+        audit_log_path,
+    )
     reload_model_data(review_data_path, fixtures_data_path)
     prediction_cache.clear()
     return {
@@ -229,7 +241,7 @@ def update_fixture_result(request: FixtureResultRequest) -> dict[str, object]:
 
 
 @app.post("/api/fixtures/live")
-def update_fixture_live_score(request: FixtureResultRequest) -> dict[str, object]:
+def update_fixture_live_score(request: FixtureResultRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
     if request.home not in data_state.TEAM_PROFILES or request.away not in data_state.TEAM_PROFILES:
         raise HTTPException(status_code=400, detail="进行中比分包含未知球队")
     try:
@@ -242,6 +254,12 @@ def update_fixture_live_score(request: FixtureResultRequest) -> dict[str, object
         )
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error)) from error
+    append_admin_audit(
+        "fixture:live",
+        f"{request.home}-{request.away}",
+        {"homeScore": request.homeScore, "awayScore": request.awayScore},
+        audit_log_path,
+    )
     reload_model_data(review_data_path, fixtures_data_path)
     prediction_cache.clear()
     return {
