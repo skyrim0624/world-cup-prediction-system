@@ -1052,6 +1052,28 @@ Elo / 实力评分
 - 新闻层已经从静态样例推进到可运营的数据流雏形。
 - 后续外部抓取任务只需要写入 `raw-news.json` 或同结构数据源，再由后台审核决定是否入模。
 
+### 2026-06-14：新闻审核写入命令
+
+已完成：
+
+- 新增 `backend/event_review.py`。
+- 新增 `review_raw_news_item`，可更新指定 raw news 的 `status` 和 `team`。
+- 新增 `scripts/review_news_item.py`。
+- 新增 `npm run review:news`。
+- 新增审核写入测试。
+
+验证：
+
+- 使用临时 raw-news 文件执行 `npm run review:news -- --id mexico-heat-watch --status confirmed --team brazil` 成功。
+- `npm run validate:data` 通过。
+- `npm run test:model` 通过，23 个测试。
+- `npm run build` 通过。
+
+当前判断：
+
+- 后台审核页面还未实现，但审核动作已有可复用后端函数和 CLI。
+- 后续后台 UI 应调用同一套逻辑，而不是另写一套审核规则。
+
 ## 十、当前交接摘要
 
 一句话定义：
@@ -1061,7 +1083,7 @@ Elo / 实力评分
 当前最重要的开发优先级：
 
 1. 准备真实 48 队名单、分组和赛程数据，替换当前槽位数据并保留 fallback。
-2. 补后台录入/审核页面，支持人工修正新闻事件和球队评分。
+2. 补后台录入/审核页面，调用现有 `review_raw_news_item` 审核逻辑。
 3. 接入外部新闻抓取任务，把抓取结果写入 `raw-news.json` 或同结构数据源。
 4. 接入定时任务或后台按钮，触发正式预测快照更新。
 5. 最后接支付、用户权限和付费解锁入口。
