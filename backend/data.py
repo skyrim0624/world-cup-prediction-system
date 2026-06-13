@@ -125,6 +125,14 @@ def load_source_weights() -> dict[str, float]:
     return {level: float(value) for level, value in weights.items()}
 
 
+def load_third_place_combinations() -> dict[str, dict[str, str]]:
+    data = read_json_file("third-place-combinations.json")
+    combinations = data["combinations"]
+    if len(combinations) != 495:
+        raise ValueError("小组第三组合表必须包含 495 种组合")
+    return combinations
+
+
 def load_current_match() -> tuple[str, str]:
     row = read_json_file("current-match.json")
     return row["home"], row["away"]
@@ -134,6 +142,7 @@ TEAM_PROFILES = load_team_profiles()
 FIXTURES = load_fixtures(TEAM_PROFILES)
 EVENTS = load_events(TEAM_PROFILES)
 SOURCE_WEIGHTS = load_source_weights()
+THIRD_PLACE_COMBINATIONS = load_third_place_combinations()
 CURRENT_MATCH = load_current_match()
 
 DATASET_META = {

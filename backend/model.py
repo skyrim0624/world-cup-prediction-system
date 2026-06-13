@@ -8,7 +8,17 @@ from math import exp, factorial
 from random import Random
 from typing import Literal
 
-from .data import CURRENT_MATCH, DATASET_META, EVENTS, FIXTURES, SOURCE_WEIGHTS, TEAM_PROFILES, Fixture, TeamProfile
+from .data import (
+    CURRENT_MATCH,
+    DATASET_META,
+    EVENTS,
+    FIXTURES,
+    SOURCE_WEIGHTS,
+    TEAM_PROFILES,
+    THIRD_PLACE_COMBINATIONS,
+    Fixture,
+    TeamProfile,
+)
 
 Outcome = Literal["home", "draw", "away"]
 
@@ -16,8 +26,7 @@ SIMULATION_COUNT = 8_000
 MAX_GOALS = 7
 EVENT_FACTORS = ("attack", "defense", "goalkeeper", "path", "squad")
 
-# NOTE: 固定路径来自 FIFA World Cup 26 Regulations Article 12.6-12.11。
-# Annexe C 的 495 种第三名组合后续会独立数据化；这里先用官方槽位约束做确定性匹配。
+# NOTE: 固定路径来自 FIFA World Cup 26 Regulations Article 12.6-12.11 和 Annexe C。
 ROUND_OF_32_MATCHES = (
     (73, ("runnerUp", "A"), ("runnerUp", "B")),
     (74, ("winner", "E"), ("third", "ABCDF")),
@@ -48,6 +57,7 @@ ROUND_OF_16_MATCHES = (
 )
 QUARTERFINAL_MATCHES = ((97, 89, 90), (98, 93, 94), (99, 91, 92), (100, 95, 96))
 SEMIFINAL_MATCHES = ((101, 97, 98), (102, 99, 100))
+THIRD_PLACE_WINNER_MATCHES = {"A": 79, "B": 85, "D": 81, "E": 74, "G": 82, "I": 77, "K": 87, "L": 80}
 
 
 def event_factor_impacts() -> dict[str, dict[str, float]]:
@@ -271,13 +281,21 @@ def assign_third_place_slots(
     third_place: list[str],
     teams: dict[str, TeamProfile],
 ) -> dict[int, str]:
+    third_by_group = {teams[team_key].group: team_key for team_key in third_place}
+    combination_key = "".join(sorted(third_by_group))
+    annex_assignment = THIRD_PLACE_COMBINATIONS.get(combination_key)
+    if annex_assignment is not None:
+        return {
+            THIRD_PLACE_WINNER_MATCHES[winner_group]: third_by_group[third_group]
+            for winner_group, third_group in annex_assignment.items()
+        }
+
     slots = [
         (match_no, seed[1])
         for match_no, _, seed in ROUND_OF_32_MATCHES
         if seed[0] == "third"
     ]
     ranked_groups = tuple(teams[team_key].group for team_key in third_place)
-    third_by_group = {teams[team_key].group: team_key for team_key in third_place}
     rank_index = {group: index for index, group in enumerate(ranked_groups)}
 
     def search(index: int, remaining_groups: tuple[str, ...]) -> dict[int, str] | None:

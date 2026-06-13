@@ -1,6 +1,6 @@
 import unittest
 
-from backend.data import DATASET_META, EVENTS, FIXTURES, TEAM_PROFILES
+from backend.data import DATASET_META, EVENTS, FIXTURES, TEAM_PROFILES, THIRD_PLACE_COMBINATIONS
 from backend.model import (
     ROUND_OF_16_MATCHES,
     apply_event_adjustments,
@@ -66,6 +66,13 @@ class PredictionModelTest(unittest.TestCase):
         standings = build_standings(FIXTURES)
         third_place = best_third_place_teams(standings, TEAM_PROFILES)
         self.assertEqual(len(third_place), 8)
+
+    def test_annex_c_third_place_table_is_loaded(self):
+        self.assertEqual(len(THIRD_PLACE_COMBINATIONS), 495)
+        self.assertEqual(
+            THIRD_PLACE_COMBINATIONS["EFGHIJKL"],
+            {"A": "E", "B": "J", "D": "I", "E": "F", "G": "H", "I": "G", "K": "L", "L": "K"},
+        )
 
     def test_round_of_32_uses_fifa_fixed_slots(self):
         standings = build_standings(FIXTURES)

@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .data import DATASET_META, FIXTURES
 from .model import SIMULATION_COUNT, build_match_prediction, event_summary
+from .snapshot import read_prediction_snapshot
 
 
 app = FastAPI(title="World Cup Prediction MVP")
@@ -27,7 +28,14 @@ def health() -> dict[str, str]:
 
 
 @app.get("/api/match-prediction")
-def match_prediction(simulations: int = Query(SIMULATION_COUNT, ge=1_000, le=50_000)) -> dict[str, object]:
+def match_prediction(
+    simulations: int = Query(SIMULATION_COUNT, ge=1_000, le=50_000),
+    use_snapshot: bool = Query(True, alias="useSnapshot"),
+) -> dict[str, object]:
+    if use_snapshot:
+        snapshot = read_prediction_snapshot()
+        if snapshot is not None:
+            return snapshot
     now = monotonic()
     cached = prediction_cache.get(simulations)
     if cached and now - cached[0] < PREDICTION_CACHE_TTL_SECONDS:
