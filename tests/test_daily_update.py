@@ -152,6 +152,49 @@ class DailyUpdateTest(unittest.TestCase):
             self.assertEqual(status["status"], "success")
             self.assertEqual(status["snapshot"]["simulationCount"], 1200)
 
+    def test_daily_update_script_writes_failed_status_when_feed_is_missing(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            raw_news_path = root / "raw-news.json"
+            snapshot_path = root / "latest-match-prediction.json"
+            status_path = root / "daily-update-status.json"
+            config_path = root / "feed-config.json"
+            raw_news_path.write_text("[]", encoding="utf-8")
+            config_path.write_text(
+                json.dumps(
+                    [{"input": str(root / "missing-feed.xml"), "source": "reuters", "team": "brazil"}],
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            result = subprocess.run(
+                [
+                    "python3",
+                    "scripts/run_daily_update.py",
+                    "--raw-news-path",
+                    str(raw_news_path),
+                    "--snapshot",
+                    str(snapshot_path),
+                    "--feed-config",
+                    str(config_path),
+                    "--status",
+                    str(status_path),
+                    "--simulations",
+                    "1200",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("日更流程失败", result.stderr)
+            status = json.loads(status_path.read_text(encoding="utf-8"))
+            self.assertEqual(status["status"], "failed")
+            self.assertIn("missing-feed.xml", status["error"])
+            self.assertIn("updatedAt", status)
+
 
 if __name__ == "__main__":
     unittest.main()

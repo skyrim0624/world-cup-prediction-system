@@ -1358,17 +1358,21 @@ Elo / 实力评分
 - 新增 `read_daily_update_status`，管理台 API 可读取最近一次日更状态。
 - `GET /api/admin/overview` 新增 `dailyUpdateStatus`。
 - `/admin` 的“日更快照”升级为“日更状态”，显示最近日更时间、执行状态、新增新闻和模拟次数。
+- 日更 CLI 失败时会写入 `status=failed`、错误原因和失败时间，避免后台误以为只是没执行。
+- `/admin` 会把失败状态显示为“失败”，并兼容没有 `feeds` / `snapshot` 的失败状态结构。
 - `.gitignore` 已忽略 `backend/data_files/daily-update-status.json`，避免运行状态进入版本库。
 
 验证：
 
 - 新增日更函数测试：执行日更后写入 status JSON，并包含 `status=success`、新增新闻数、快照路径和模拟次数。
 - 新增日更 CLI 测试：`scripts/run_daily_update.py --status ...` 可生成状态文件。
+- 新增日更失败测试：Feed 配置缺失时 CLI 非零退出，并写入失败状态和错误原因。
 - 新增 API 测试：`/api/admin/overview` 可返回 `dailyUpdateStatus`。
 - `npm run validate:data` 通过。
-- `npm run test:model` 通过，50 个测试。
+- `npm run test:model` 通过，51 个测试。
 - `npm run build` 通过。
 - 本地浏览器检查通过：`/admin` 在 1280px 和 390px 下显示日更状态、最近日更时间和 `1,200` 次模拟，无横向溢出；token 输入交互生效。
+- 本地浏览器检查通过：日更失败状态下 `/admin` 在 1280px 和 390px 下显示“失败”，无错误遮罩和横向溢出。
 
 当前判断：
 

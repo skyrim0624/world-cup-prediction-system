@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from dataclasses import dataclass
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -98,3 +99,14 @@ def read_daily_update_status(path: Path = DEFAULT_DAILY_STATUS_PATH) -> dict[str
     if not path.exists():
         return None
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def write_daily_update_failure_status(path: Path, error: Exception) -> dict[str, Any]:
+    payload = {
+        "status": "failed",
+        "updatedAt": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
+        "error": str(error),
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return payload

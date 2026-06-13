@@ -90,12 +90,13 @@ type AdminAuditEntry = {
 type DailyUpdateStatus = {
   status: string;
   updatedAt: string;
-  feeds: {
+  error?: string;
+  feeds?: {
     imported: number;
     skipped: number;
     items: unknown[];
   };
-  snapshot: {
+  snapshot?: {
     path: string;
     simulationCount: number;
     lockedResults: number;
@@ -103,6 +104,12 @@ type DailyUpdateStatus = {
     events: EventReviewSummary;
   };
 };
+
+function formatDailyStatus(status?: string) {
+  if (status === "success") return "成功";
+  if (status === "failed") return "失败";
+  return status ?? "待更新";
+}
 
 type AdminOverview = {
   fixtureStatus: {
@@ -1423,15 +1430,15 @@ function AdminConsole() {
           </div>
           <div className="daily-status">
             <span>
-              <b>{dailyStatus?.status === "success" ? "成功" : dailyStatus?.status ?? "待更新"}</b>
+              <b className={dailyStatus?.status === "failed" ? "red" : ""}>{formatDailyStatus(dailyStatus?.status)}</b>
               <em>执行状态</em>
             </span>
             <span>
-              <b>{dailyStatus?.feeds.imported ?? 0}</b>
+              <b>{dailyStatus?.feeds?.imported ?? 0}</b>
               <em>新增新闻</em>
             </span>
             <span>
-              <b>{dailyStatus?.snapshot.simulationCount.toLocaleString("zh-CN") ?? 0}</b>
+              <b>{dailyStatus?.snapshot?.simulationCount.toLocaleString("zh-CN") ?? 0}</b>
               <em>模拟次数</em>
             </span>
           </div>

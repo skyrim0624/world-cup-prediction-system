@@ -9,7 +9,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from backend.daily_update import DEFAULT_DAILY_STATUS_PATH, load_feed_specs, run_daily_update
+from backend.daily_update import DEFAULT_DAILY_STATUS_PATH, load_feed_specs, run_daily_update, write_daily_update_failure_status
 from backend.event_review import RAW_NEWS_PATH
 from backend.snapshot import DEFAULT_SNAPSHOT_PATH
 
@@ -24,14 +24,19 @@ def main() -> None:
     parser.add_argument("--status", type=Path, default=DEFAULT_DAILY_STATUS_PATH)
     args = parser.parse_args()
 
-    feed_specs = load_feed_specs(args.feed_config) if args.feed_config else []
-    report = run_daily_update(
-        raw_news_path=args.raw_news_path,
-        snapshot_path=args.snapshot,
-        feed_specs=feed_specs,
-        simulation_count=args.simulations,
-        status_path=args.status,
-    )
+    try:
+        feed_specs = load_feed_specs(args.feed_config) if args.feed_config else []
+        report = run_daily_update(
+            raw_news_path=args.raw_news_path,
+            snapshot_path=args.snapshot,
+            feed_specs=feed_specs,
+            simulation_count=args.simulations,
+            status_path=args.status,
+        )
+    except Exception as error:
+        write_daily_update_failure_status(args.status, error)
+        print(f"日更流程失败: {error}", file=sys.stderr)
+        raise SystemExit(1) from error
 
     if args.report:
         args.report.parent.mkdir(parents=True, exist_ok=True)
