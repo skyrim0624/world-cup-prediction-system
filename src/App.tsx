@@ -1,6 +1,7 @@
-import { CSSProperties, PointerEvent, useMemo, useRef, useState } from "react";
+import { CSSProperties, PointerEvent, useEffect, useMemo, useRef, useState } from "react";
 
 type TeamKey = "brazil" | "argentina" | "spain" | "france";
+type Tone = "green" | "blue" | "gold" | "orange" | "red" | "muted";
 
 type Team = {
   key: TeamKey;
@@ -19,10 +20,30 @@ type DragState = {
   baseY: number;
 };
 
+type NewsItem = {
+  title: string;
+  detail: string;
+  impact: string;
+  tone: Tone;
+  time: string;
+};
+
+type LivePrediction = {
+  scoreHome: number;
+  scoreAway: number;
+  minute: string;
+  addedTime: number;
+  homeWin: number;
+  draw: number;
+  awayWin: number;
+  updatedAt: string;
+  newsItems: NewsItem[];
+};
+
 const teams: Team[] = [
   {
     key: "brazil",
-    name: "Brazil",
+    name: "巴西",
     code: "BRA",
     score: 4,
     favorite: true,
@@ -30,32 +51,32 @@ const teams: Team[] = [
   },
   {
     key: "argentina",
-    name: "Argentina",
+    name: "阿根廷",
     code: "ARG",
     score: 3,
     factors: { overall: 86, attack: 87, defense: 81, goalkeeper: 83, path: 72, squad: 82 },
   },
   {
     key: "spain",
-    name: "Spain",
+    name: "西班牙",
     code: "ESP",
     factors: { overall: 91, attack: 88, defense: 86, goalkeeper: 84, path: 79, squad: 87 },
   },
   {
     key: "france",
-    name: "France",
+    name: "法国",
     code: "FRA",
     factors: { overall: 90, attack: 89, defense: 87, goalkeeper: 86, path: 74, squad: 89 },
   },
 ];
 
 const factorRows = [
-  { key: "overall", label: "Overall", value: 88, tone: "green" },
-  { key: "attack", label: "Attack", value: 90, tone: "green" },
-  { key: "defense", label: "Defense", value: 82, tone: "green" },
-  { key: "goalkeeper", label: "Goalkeeper", value: 85, tone: "blue" },
-  { key: "path", label: "Path", value: 76, tone: "gold" },
-  { key: "squad", label: "Squad", value: 84, tone: "green" },
+  { key: "overall", label: "综合", value: 88, tone: "green" },
+  { key: "attack", label: "进攻", value: 90, tone: "green" },
+  { key: "defense", label: "防守", value: 82, tone: "green" },
+  { key: "goalkeeper", label: "门将", value: 85, tone: "blue" },
+  { key: "path", label: "路径", value: 76, tone: "gold" },
+  { key: "squad", label: "阵容", value: 84, tone: "green" },
 ];
 
 const weightFactors = [
@@ -93,27 +114,92 @@ const modelLayers = [
 ];
 
 const sourceWeights = [
-  { level: "S", value: "1.00", label: "Official", tone: "green" },
-  { level: "A", value: "0.70", label: "Top Media", tone: "green" },
-  { level: "B", value: "0.40", label: "Reporter", tone: "gold" },
-  { level: "C", value: "0.20", label: "General", tone: "orange" },
-  { level: "D", value: "0.00", label: "Rumor", tone: "red" },
+  { level: "S", value: "1.00", label: "官方", tone: "green" },
+  { level: "A", value: "0.70", label: "顶级媒体", tone: "green" },
+  { level: "B", value: "0.40", label: "随队记者", tone: "gold" },
+  { level: "C", value: "0.20", label: "普通媒体", tone: "orange" },
+  { level: "D", value: "0.00", label: "传闻", tone: "red" },
 ];
 
-const newsItems = [
-  { title: "Official Injury", detail: "Key player doubtful (hamstring)", impact: "HIGH IMPACT", tone: "red", time: "1h ago" },
-  { title: "Reporter Training", detail: "Team held light training session", impact: "MEDIUM IMPACT", tone: "gold", time: "3h ago" },
-  { title: "Rumor Ignored", detail: "Transfer talk, not relevant", impact: "IGNORED", tone: "muted", time: "5h ago" },
+const fallbackNewsItems: NewsItem[] = [
+  { title: "官方伤病", detail: "核心球员腿筋存疑", impact: "高影响", tone: "red", time: "1 小时前" },
+  { title: "训练消息", detail: "球队今日进行轻量训练", impact: "中影响", tone: "gold", time: "3 小时前" },
+  { title: "传闻忽略", detail: "转会传闻，与比赛无关", impact: "已忽略", tone: "muted", time: "5 小时前" },
 ];
+
+function buildFallbackPrediction(tick: number): LivePrediction {
+  const homeDrift = [0, 1, -1, 2, 0, -2][tick % 6];
+  const drawDrift = [0, -1, 1, -1, 0, 1][tick % 6];
+  const homeWin = 58 + homeDrift;
+  const draw = 15 + drawDrift;
+  const awayWin = 100 - homeWin - draw;
+
+  return {
+    scoreHome: 4,
+    scoreAway: 3,
+    minute: "90:00",
+    addedTime: 6 + (tick % 2),
+    homeWin,
+    draw,
+    awayWin,
+    updatedAt: new Date().toISOString(),
+    newsItems: fallbackNewsItems.map((item, index) => ({
+      ...item,
+      time: tick === 0 ? item.time : `${Math.max(1, tick * 5 + index * 8)} 秒前`,
+    })),
+  };
+}
+
+function formatUpdateTime(value: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "未更新";
+  return date.toLocaleTimeString("zh-CN", { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
+}
 
 function App() {
   const [selectedTeam, setSelectedTeam] = useState<TeamKey>("brazil");
   const [layoutUnlocked, setLayoutUnlocked] = useState(false);
   const [positions, setPositions] = useState<Record<string, { x: number; y: number }>>({});
+  const [liveTick, setLiveTick] = useState(0);
+  const [apiPrediction, setApiPrediction] = useState<LivePrediction | null>(null);
+  const [dataMode, setDataMode] = useState<"api" | "demo">("demo");
   const dragRef = useRef<DragState | null>(null);
   const lastTapRef = useRef(0);
 
   const selected = useMemo(() => teams.find((team) => team.key === selectedTeam) ?? teams[0], [selectedTeam]);
+  const fallbackPrediction = useMemo(() => buildFallbackPrediction(liveTick), [liveTick]);
+  const livePrediction = apiPrediction ?? fallbackPrediction;
+  const dataModeLabel = dataMode === "api" ? "真实接口" : "演示动态";
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadPrediction() {
+      try {
+        const response = await fetch("/api/live-prediction", { cache: "no-store" });
+        if (!response.ok) throw new Error(`预测接口返回 ${response.status}`);
+        const data = (await response.json()) as LivePrediction;
+        if (!active) return;
+        setApiPrediction(data);
+        setDataMode("api");
+      } catch {
+        if (!active) return;
+        setApiPrediction(null);
+        setDataMode("demo");
+      }
+    }
+
+    loadPrediction();
+    const timer = window.setInterval(() => {
+      setLiveTick((value) => value + 1);
+      loadPrediction();
+    }, 5000);
+
+    return () => {
+      active = false;
+      window.clearInterval(timer);
+    };
+  }, []);
 
   function toggleLayoutLock() {
     setLayoutUnlocked((value) => !value);
@@ -170,9 +256,8 @@ function App() {
             <i />
             <i />
           </span>
-          <span>Forecast Console</span>
+          <span>世界杯预测终端</span>
         </div>
-        <button className="pro-button">Pro</button>
         <button className="menu-button" aria-label="打开菜单">
           <span />
           <span />
@@ -187,16 +272,16 @@ function App() {
             <TeamFlag team="brazil" />
             <span className="team-code">BRA</span>
           </div>
-          <strong className="score-value">4</strong>
+          <strong className="score-value">{livePrediction.scoreHome}</strong>
           <span className="score-separator">-</span>
-          <strong className="score-value">3</strong>
+          <strong className="score-value">{livePrediction.scoreAway}</strong>
           <div className="score-team away-team">
             <span className="team-code">ARG</span>
             <TeamFlag team="argentina" />
           </div>
           <div className="match-clock">
-            <span>90:00</span>
-            <em>+6</em>
+            <span>{livePrediction.minute}</span>
+            <em>+{livePrediction.addedTime}</em>
           </div>
         </div>
         <MiniPitch side="right" />
@@ -206,7 +291,7 @@ function App() {
         <DraggablePanel
           id="win"
           className="wide"
-          title="Live Win Probability"
+          title="实时胜平负概率"
           position={positions.win}
           layoutUnlocked={layoutUnlocked}
           onPointerDown={startDrag}
@@ -214,20 +299,25 @@ function App() {
           onPointerUp={endDrag}
         >
           <div className="probability-row">
-            <Probability label="Home" value={58} tone="green" />
-            <Probability label="Draw" value={15} tone="gold" />
-            <Probability label="Away" value={27} tone="blue" />
+            <Probability label="主胜" value={livePrediction.homeWin} tone="green" />
+            <Probability label="平局" value={livePrediction.draw} tone="gold" />
+            <Probability label="客胜" value={livePrediction.awayWin} tone="blue" />
           </div>
           <div className="engine-line">
             <span className="ai-badge">AI</span>
-            <span>Elo + Dixon-Coles + Monte Carlo</span>
+            <span className="engine-copy">
+              <strong>Elo + Dixon-Coles + 蒙特卡洛</strong>
+              <small>
+                数据源：{dataModeLabel} · 更新 {formatUpdateTime(livePrediction.updatedAt)}
+              </small>
+            </span>
             <span className="chevron">›</span>
           </div>
         </DraggablePanel>
 
         <DraggablePanel
           id="teams"
-          title="Select Team"
+          title="选择球队"
           position={positions.teams}
           layoutUnlocked={layoutUnlocked}
           onPointerDown={startDrag}
@@ -252,7 +342,7 @@ function App() {
         <DraggablePanel
           id="path"
           className="wide"
-          title="Path Simulation (Preview)"
+          title="晋级路径模拟"
           position={positions.path}
           layoutUnlocked={layoutUnlocked}
           onPointerDown={startDrag}
@@ -264,7 +354,7 @@ function App() {
 
         <DraggablePanel
           id="news"
-          title="News Risk"
+          title="新闻风险"
           position={positions.news}
           layoutUnlocked={layoutUnlocked}
           onPointerDown={startDrag}
@@ -272,7 +362,7 @@ function App() {
           onPointerUp={endDrag}
         >
           <div className="news-list">
-            {newsItems.map((item) => (
+            {livePrediction.newsItems.map((item) => (
               <article className={`news-item ${item.tone}`} key={item.title}>
                 <span className="news-icon">{item.tone === "red" ? "+" : item.tone === "gold" ? "!" : "?"}</span>
                 <div>
@@ -288,7 +378,7 @@ function App() {
 
         <DraggablePanel
           id="sources"
-          title="Source Weights"
+          title="来源权重"
           position={positions.sources}
           layoutUnlocked={layoutUnlocked}
           onPointerDown={startDrag}
@@ -337,7 +427,7 @@ function App() {
         <DraggablePanel
           id="factors"
           className="wide"
-          title={`Model Factors · ${selected.name}`}
+          title={`模型因子 · ${selected.name}`}
           position={positions.factors}
           layoutUnlocked={layoutUnlocked}
           onPointerDown={startDrag}
@@ -383,7 +473,7 @@ function App() {
 
       <button className={`move-hint ${layoutUnlocked ? "active" : ""}`} onClick={toggleLayoutLock}>
         <span>⌖</span>
-        {layoutUnlocked ? "Modules unlocked" : "Double tap to move"}
+        {layoutUnlocked ? "模块已解锁" : "双击移动模块"}
       </button>
     </main>
   );
@@ -466,11 +556,11 @@ function SegmentBar({ value, tone }: { value: number; tone: string }) {
 
 function PathSimulation() {
   const columns = [
-    ["Group", "▣▣▢▣", "▣▢▣▣", "▣▣▣▢", "▣▢▢▣"],
-    ["Round of 16", "▣▣▨▣", "▣▨▣▢", "▣▣▨▣"],
-    ["Quarter Final", "▣▨▣▥", "▣▣▥▢"],
-    ["Semi Final", "▥▣▨▥"],
-    ["Final", "🏆"],
+    ["小组赛", "▣▣▢▣", "▣▢▣▣", "▣▣▣▢", "▣▢▢▣"],
+    ["16 强", "▣▣▨▣", "▣▨▣▢", "▣▣▨▣"],
+    ["8 强", "▣▨▣▥", "▣▣▥▢"],
+    ["半决赛", "▥▣▨▥"],
+    ["决赛", "🏆"],
   ];
 
   return (
@@ -484,11 +574,11 @@ function PathSimulation() {
         </div>
       ))}
       <div className="path-legend">
-        <span className="legend-green">High Chance</span>
-        <span className="legend-gold">Medium</span>
-        <span className="legend-orange">Low</span>
-        <span className="legend-red">Very Low</span>
-        <span className="legend-gray">Eliminated</span>
+        <span className="legend-green">高机会</span>
+        <span className="legend-gold">中机会</span>
+        <span className="legend-orange">低机会</span>
+        <span className="legend-red">极低</span>
+        <span className="legend-gray">淘汰</span>
       </div>
     </div>
   );
