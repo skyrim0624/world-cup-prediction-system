@@ -16,6 +16,13 @@ class PredictionApiTest(unittest.TestCase):
         self.assertIn("knownGaps", payload)
         self.assertIn("完整 48 队赛程", payload["knownGaps"][0])
 
+    def test_match_prediction_accepts_simulation_count(self):
+        client = TestClient(app)
+        response = client.get("/api/match-prediction?simulations=1200")
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertEqual(payload["modelMeta"]["simulationCount"], 1200)
+
 
 if __name__ == "__main__":
     unittest.main()

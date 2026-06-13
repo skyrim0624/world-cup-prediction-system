@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
 
 from .data import DATASET_META, FIXTURES
@@ -23,8 +23,8 @@ def health() -> dict[str, str]:
 
 
 @app.get("/api/match-prediction")
-def match_prediction() -> dict[str, object]:
-    return build_match_prediction()
+def match_prediction(simulations: int = Query(SIMULATION_COUNT, ge=1_000, le=50_000)) -> dict[str, object]:
+    return build_match_prediction(simulations)
 
 
 @app.get("/api/model-status")

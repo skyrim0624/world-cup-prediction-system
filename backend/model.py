@@ -275,6 +275,7 @@ def build_scenario_impacts(
     away_key: str,
     probabilities: dict[str, float],
     teams: dict[str, TeamProfile],
+    simulation_count: int,
 ) -> list[dict[str, object]]:
     scenarios: list[tuple[Outcome, str, str]] = [
         ("home", f"{teams[home_key].name}胜", f"{teams[home_key].name}小组第一概率上升"),
@@ -283,7 +284,7 @@ def build_scenario_impacts(
     ]
     items = []
     for outcome, label, title in scenarios:
-        scenario = simulate_tournament(teams, outcome)
+        scenario = simulate_tournament(teams, outcome, simulation_count)
         home_shift = scenario[home_key]["champion"] - base[home_key]["champion"]
         away_shift = scenario[away_key]["champion"] - base[away_key]["champion"]
         if outcome == "draw":
@@ -323,13 +324,13 @@ def build_scenario_impacts(
     return items
 
 
-def build_match_prediction() -> dict[str, object]:
+def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str, object]:
     teams = apply_event_adjustments()
     home_key, away_key = CURRENT_MATCH
     current_fixture = next(fixture for fixture in FIXTURES if (fixture.home, fixture.away) == CURRENT_MATCH)
     probabilities = win_draw_loss(home_key, away_key, teams)
     distribution = score_distribution(home_key, away_key, teams)
-    base_tournament = simulate_tournament(teams)
+    base_tournament = simulate_tournament(teams, simulation_count=simulation_count)
 
     score_outcomes = [
         {
@@ -384,13 +385,13 @@ def build_match_prediction() -> dict[str, object]:
         "awayWin": round(probabilities["away"] * 100),
         "updatedAt": datetime.now(timezone.utc).isoformat(),
         "scoreOutcomes": score_outcomes,
-        "scenarioImpacts": build_scenario_impacts(base_tournament, home_key, away_key, probabilities, teams),
+        "scenarioImpacts": build_scenario_impacts(base_tournament, home_key, away_key, probabilities, teams, simulation_count),
         "analysis": analysis,
         "newsItems": [event_to_news_item(event) for event in EVENTS],
         "teams": response_teams,
         "modelMeta": {
             "engine": "Poisson + Monte Carlo",
-            "simulationCount": SIMULATION_COUNT,
+            "simulationCount": simulation_count,
             "lockedResults": len([fixture for fixture in FIXTURES if fixture.status == "finished"]),
             "dataset": DATASET_META,
             "events": event_summary(),
