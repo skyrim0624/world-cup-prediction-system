@@ -115,3 +115,39 @@
 - 同步做桌面和移动浏览器布局。
 - 页面第一版使用 mock 数据。
 - 必须保留核心业务模块：概率榜、路径模拟、五因子、新闻权重、今日变化。
+
+## MVP 实现记录：Forecast Console
+
+日期：2026-06-13
+
+本轮用户选定第三种视觉方向，即 `mobile-style-03-forecast-console.png` 的转播记分牌终端风格。MVP 已按真实 Web App 实现，不是包装图或静态展示图。
+
+已实现内容：
+
+- React + TypeScript + Vite 单页应用。
+- 顶部 Forecast Console 品牌栏、Pro 入口和菜单按钮。
+- 比分条：BRA 4 - 3 ARG、90:00、+6，并使用代码生成的国旗和战术小场图。
+- Live Win Probability：Home / Draw / Away 三项实时胜平负概率。
+- 底层模型提示：`Elo + Dixon-Coles + Monte Carlo`。
+- Select Team：巴西、阿根廷、西班牙、法国，点击后切换当前球队。
+- Path Simulation：小组赛到决赛路径预览。
+- News Risk：官方伤病、记者训练信息、无效传闻三类新闻风险。
+- Source Weights：S/A/B/C/D 五级新闻来源权重。
+- 三层模型：一层底层概率引擎、二层事件与新闻修正、三层产品解释盘面。
+- Model Factors：Overall、Attack、Defense、Goalkeeper、Path、Squad。
+- 预测权重因子：基础实力、攻防质量、晋级路径、阵容健康、主帅凝聚、关键人物、战术克制、定位球门将、旅程气候、市场舆论。
+- 双击或双击触控后进入模块移动模式，点击底部提示也可以切换。
+
+本轮验证：
+
+- `npm run build` 通过。
+- 使用内置浏览器打开 `http://localhost:5173/` 验证。
+- `127.0.0.1` 受旧 Service Worker 污染，因此本轮浏览器验证使用 `localhost` 这个干净 origin。
+- 桌面 1280px、移动 864px、窄屏 390px 均验证 `scrollWidth == clientWidth`，没有横向溢出。
+- 交互验证：点击 Argentina 后，`Model Factors` 标题同步变为 `Model Factors · Argentina`。
+- 交互验证：双击页面后，底部提示变为 `Modules unlocked`。
+
+当前有意保留的偏差：
+
+- 参考图原本只有单场实时预测模块，本轮按用户要求新增了“三层模型”和“预测权重因子”，因此页面长度会超过参考图。
+- MVP 先用 mock 数据和静态新闻样例，后续再接后端模拟、新闻抓取和真实权重更新。
