@@ -868,6 +868,28 @@ Elo / 实力评分
 - 模型已经具备“开发快跑 / 正式高精度更新”的基本运行方式。
 - 下一步应继续补真实 48 队赛程结构和事件维护能力。
 
+### 2026-06-14：每日预测快照生成
+
+已完成：
+
+- 新增 `backend/snapshot.py`，可把当前预测结果写成 JSON 快照。
+- 新增 `scripts/update_prediction_snapshot.py` 命令入口。
+- 新增 `npm run update:snapshot`。
+- 默认快照路径为 `backend/snapshots/latest-match-prediction.json`。
+- 快照文件加入 `.gitignore`，避免每日预测结果污染版本历史。
+- 快照包含 `snapshotMeta`，记录类型、生成时间和输出路径。
+
+验证：
+
+- `npm run test:model` 通过，覆盖 10 个模型/API/快照测试。
+- `npm run build` 通过。
+- `python3 scripts/update_prediction_snapshot.py --simulations 1200 --output /tmp/world-cup-latest.json` 成功生成快照。
+
+当前判断：
+
+- 产品已经具备“接口实时算”和“每日预计算快照”两种模式的基础。
+- 后续完整赛程和新闻抓取接入后，可以把快照命令放入定时任务。
+
 ## 十、当前交接摘要
 
 一句话定义：

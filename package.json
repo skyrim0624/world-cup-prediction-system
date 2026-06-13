@@ -3,6 +3,7 @@
     "dev": "vite --host 127.0.0.1",
     "dev:api": "python3 -m uvicorn backend.main:app --reload --host 127.0.0.1 --port 8000",
     "test:model": "PYTHONWARNINGS=ignore::DeprecationWarning python3 -m unittest discover -s tests",
+    "update:snapshot": "python3 scripts/update_prediction_snapshot.py",
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 127.0.0.1"
   },
