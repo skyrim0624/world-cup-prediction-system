@@ -79,17 +79,24 @@ class PredictionApiTest(unittest.TestCase):
                     "/api/events/review",
                     json={"id": "weather-watch", "status": "confirmed", "team": "brazil"},
                 )
+                events_response = client.get("/api/events")
             finally:
                 if previous_path is None:
                     delattr(main_module, "review_data_path")
                 else:
                     main_module.review_data_path = previous_path
+                main_module.reload_model_data()
 
             self.assertEqual(response.status_code, 200)
             payload = response.json()
             self.assertTrue(payload["requiresSnapshotRefresh"])
             self.assertEqual(payload["item"]["status"], "confirmed")
             self.assertEqual(payload["item"]["team"], "brazil")
+            reviewed_items = [item for item in events_response.json()["items"] if item.get("id") == "weather-watch"]
+            self.assertEqual(len(reviewed_items), 1)
+            reviewed_item = reviewed_items[0]
+            self.assertEqual(reviewed_item["status"], "confirmed")
+            self.assertEqual(reviewed_item["team"], "brazil")
 
             updated_rows = json.loads(raw_news_path.read_text(encoding="utf-8"))
             self.assertEqual(updated_rows[0]["status"], "confirmed")
@@ -178,6 +185,43 @@ class PredictionApiTest(unittest.TestCase):
             self.assertEqual(rows[0]["id"], "manual-brazil-lineup")
             self.assertEqual(rows[0]["published_at"], "刚刚")
             self.assertTrue(any(item["id"] == "manual-brazil-lineup" for item in events_response.json()["items"]))
+
+    def test_fixture_result_api_locks_finished_match_and_refreshes_model_status(self):
+        rows = [
+            {
+                "home": "brazil",
+                "away": "argentina",
+                "stage": "小组赛 E 组",
+                "kickoff": "6月15日 08:00",
+                "status": "scheduled",
+            }
+        ]
+        with tempfile.TemporaryDirectory() as temp_dir:
+            fixtures_path = Path(temp_dir) / "fixtures.json"
+            fixtures_path.write_text(json.dumps(rows, ensure_ascii=False), encoding="utf-8")
+            previous_fixtures_path = getattr(main_module, "fixtures_data_path", None)
+            main_module.fixtures_data_path = fixtures_path
+            try:
+                client = TestClient(app)
+                response = client.post(
+                    "/api/fixtures/result",
+                    json={"home": "brazil", "away": "argentina", "homeScore": 2, "awayScore": 1},
+                )
+                status_response = client.get("/api/model-status")
+            finally:
+                if previous_fixtures_path is None:
+                    delattr(main_module, "fixtures_data_path")
+                else:
+                    main_module.fixtures_data_path = previous_fixtures_path
+                main_module.reload_model_data()
+
+            self.assertEqual(response.status_code, 200)
+            payload = response.json()
+            self.assertEqual(payload["fixture"]["status"], "finished")
+            self.assertEqual(payload["fixture"]["home_score"], 2)
+            updated_rows = json.loads(fixtures_path.read_text(encoding="utf-8"))
+            self.assertEqual(updated_rows[0]["status"], "finished")
+            self.assertEqual(status_response.json()["lockedResults"], 1)
 
 
 if __name__ == "__main__":

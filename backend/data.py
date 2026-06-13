@@ -122,8 +122,11 @@ def complete_world_cup_slots(profiles: dict[str, TeamProfile]) -> dict[str, Team
     return completed
 
 
-def load_fixtures(team_profiles: dict[str, TeamProfile]) -> list[Fixture]:
-    rows = read_json_file("fixtures.json")
+def load_fixtures(team_profiles: dict[str, TeamProfile], path: Path | None = None) -> list[Fixture]:
+    if path is None:
+        rows = read_json_file("fixtures.json")
+    else:
+        rows = json.loads(path.read_text(encoding="utf-8"))
     fixtures = [Fixture(**row) for row in rows]
     known_teams = set(team_profiles)
     for fixture in fixtures:
@@ -275,9 +278,9 @@ def load_current_match() -> tuple[str, str]:
     return row["home"], row["away"]
 
 
-def load_runtime_dataset(raw_news_path: Path | None = None) -> RuntimeDataset:
+def load_runtime_dataset(raw_news_path: Path | None = None, fixtures_path: Path | None = None) -> RuntimeDataset:
     team_profiles = load_team_profiles()
-    fixtures = load_fixtures(team_profiles)
+    fixtures = load_fixtures(team_profiles, fixtures_path)
     source_weights = load_source_weights()
     news_sources = load_news_sources(source_weights)
     raw_news_items = load_raw_news_items(team_profiles, news_sources, raw_news_path)
@@ -326,8 +329,8 @@ def apply_runtime_dataset(dataset: RuntimeDataset) -> RuntimeDataset:
     return dataset
 
 
-def reload_runtime_data(raw_news_path: Path | None = None) -> RuntimeDataset:
-    return apply_runtime_dataset(load_runtime_dataset(raw_news_path))
+def reload_runtime_data(raw_news_path: Path | None = None, fixtures_path: Path | None = None) -> RuntimeDataset:
+    return apply_runtime_dataset(load_runtime_dataset(raw_news_path, fixtures_path))
 
 
 apply_runtime_dataset(load_runtime_dataset())

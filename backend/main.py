@@ -8,6 +8,7 @@ from pydantic import BaseModel
 
 from . import data as data_state
 from .event_review import RAW_NEWS_PATH, review_raw_news_item
+from .fixture_update import record_fixture_result
 from .model import SIMULATION_COUNT, build_match_prediction, event_summary, event_to_news_item, reload_model_data
 from .news_ingest import append_raw_news_item
 from .snapshot import DEFAULT_SNAPSHOT_PATH, read_prediction_snapshot, write_prediction_snapshot
@@ -18,6 +19,7 @@ PREDICTION_CACHE_TTL_SECONDS = 15
 prediction_cache: dict[int, tuple[float, dict[str, object]]] = {}
 review_data_path = RAW_NEWS_PATH
 snapshot_data_path = DEFAULT_SNAPSHOT_PATH
+fixtures_data_path = data_state.DATA_DIR / "fixtures.json"
 
 
 class EventReviewRequest(BaseModel):
@@ -39,6 +41,13 @@ class RawNewsCreateRequest(BaseModel):
     status: str
     publishedAt: str
     url: str
+
+
+class FixtureResultRequest(BaseModel):
+    home: str
+    away: str
+    homeScore: int
+    awayScore: int
 
 
 app.add_middleware(
@@ -120,6 +129,7 @@ def review_event(request: EventReviewRequest) -> dict[str, object]:
         updated = review_raw_news_item(review_data_path, request.id, request.status, request.team)
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error)) from error
+    reload_model_data(review_data_path, fixtures_data_path)
     prediction_cache.clear()
     return {
         "item": updated,
@@ -148,7 +158,7 @@ def create_raw_news(request: RawNewsCreateRequest) -> dict[str, object]:
         created = append_raw_news_item(review_data_path, item)
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error)) from error
-    reload_model_data(review_data_path)
+    reload_model_data(review_data_path, fixtures_data_path)
     prediction_cache.clear()
     return {
         "item": created,
@@ -158,7 +168,29 @@ def create_raw_news(request: RawNewsCreateRequest) -> dict[str, object]:
 
 @app.post("/api/snapshot/rebuild")
 def rebuild_snapshot(request: SnapshotRebuildRequest) -> dict[str, object]:
-    reload_model_data(review_data_path)
+    reload_model_data(review_data_path, fixtures_data_path)
     payload = write_prediction_snapshot(snapshot_data_path, request.simulations)
     prediction_cache.clear()
     return payload
+
+
+@app.post("/api/fixtures/result")
+def update_fixture_result(request: FixtureResultRequest) -> dict[str, object]:
+    if request.home not in data_state.TEAM_PROFILES or request.away not in data_state.TEAM_PROFILES:
+        raise HTTPException(status_code=400, detail="赛果包含未知球队")
+    try:
+        fixture = record_fixture_result(
+            fixtures_data_path,
+            request.home,
+            request.away,
+            request.homeScore,
+            request.awayScore,
+        )
+    except ValueError as error:
+        raise HTTPException(status_code=400, detail=str(error)) from error
+    reload_model_data(review_data_path, fixtures_data_path)
+    prediction_cache.clear()
+    return {
+        "fixture": fixture,
+        "requiresSnapshotRefresh": True,
+    }
