@@ -242,9 +242,39 @@ def action_for_news_item(item: RawNewsItem, source: NewsSource) -> str:
 
 def events_from_raw_news(items: list[RawNewsItem], news_sources: dict[str, NewsSource]) -> list[TeamEvent]:
     events: list[TeamEvent] = []
+    cross_verified_ids: set[str] = set()
+    grouped_items: dict[tuple[str | None, str, int], set[str]] = {}
+    item_signatures: dict[str, tuple[str | None, str, int]] = {}
+    for item in items:
+        source = news_sources[item.source]
+        if item.status != "single_source" or source.source_level != "C":
+            continue
+        text = f"{item.title} {item.summary}"
+        signature = (item.team, infer_event_factor(text), infer_event_direction(text))
+        item_signatures[item.id] = signature
+        grouped_items.setdefault(signature, set()).add(item.source)
+    for item in items:
+        signature = item_signatures.get(item.id)
+        if signature is not None and len(grouped_items[signature]) >= 2:
+            cross_verified_ids.add(item.id)
+
     for item in items:
         source = news_sources[item.source]
         text = f"{item.title} {item.summary}"
+        status = "multi_source" if item.id in cross_verified_ids else item.status
+        action = action_for_news_item(
+            RawNewsItem(
+                id=item.id,
+                title=item.title,
+                summary=item.summary,
+                source=item.source,
+                team=item.team,
+                status=status,
+                published_at=item.published_at,
+                url=item.url,
+            ),
+            source,
+        )
         events.append(
             TeamEvent(
                 title=item.title,
@@ -257,8 +287,8 @@ def events_from_raw_news(items: list[RawNewsItem], news_sources: dict[str, NewsS
                 time=item.published_at,
                 source=source.name,
                 url=item.url,
-                status=item.status,
-                action=action_for_news_item(item, source),
+                status=status,
+                action=action,
                 id=item.id,
             )
         )

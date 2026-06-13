@@ -10,6 +10,7 @@ from backend.data import (
     NewsSource,
     RawNewsItem,
     action_for_news_item,
+    events_from_raw_news,
 )
 from backend.model import (
     ROUND_OF_16_MATCHES,
@@ -133,6 +134,49 @@ class PredictionModelTest(unittest.TestCase):
             url="https://example.com/weather",
         )
         self.assertEqual(action_for_news_item(item, source), "apply")
+
+    def test_two_c_level_sources_cross_verify_same_event(self):
+        sources = {
+            "weather-a": NewsSource(
+                key="weather-a",
+                name="天气观察 A",
+                source_level="C",
+                url="https://example.com/a",
+            ),
+            "weather-b": NewsSource(
+                key="weather-b",
+                name="天气观察 B",
+                source_level="C",
+                url="https://example.com/b",
+            ),
+        }
+        items = [
+            RawNewsItem(
+                id="weather-a-heat",
+                title="比赛日高温待确认",
+                summary="本地天气观察提示巴西比赛日可能高温。",
+                source="weather-a",
+                team="brazil",
+                status="single_source",
+                published_at="6 小时前",
+                url="https://example.com/a",
+            ),
+            RawNewsItem(
+                id="weather-b-heat",
+                title="比赛日高温继续升温",
+                summary="另一家本地天气观察也提示巴西比赛日可能高温。",
+                source="weather-b",
+                team="brazil",
+                status="single_source",
+                published_at="5 小时前",
+                url="https://example.com/b",
+            ),
+        ]
+
+        events = events_from_raw_news(items, sources)
+
+        self.assertTrue(all(event.status == "multi_source" for event in events))
+        self.assertTrue(all(event.action == "apply" for event in events))
 
 
 if __name__ == "__main__":
