@@ -1,4 +1,5 @@
 import unittest
+from random import Random
 
 from backend.data import (
     DATASET_META,
@@ -7,6 +8,7 @@ from backend.data import (
     RAW_NEWS_ITEMS,
     TEAM_PROFILES,
     THIRD_PLACE_COMBINATIONS,
+    Fixture,
     NewsSource,
     RawNewsItem,
     action_for_news_item,
@@ -21,8 +23,10 @@ from backend.model import (
     build_match_prediction,
     build_standings,
     event_factor_impacts,
+    forced_outcome_score,
     group_names,
     rank_group,
+    sample_fixture_score,
     simulate_tournament,
     win_draw_loss,
 )
@@ -110,6 +114,23 @@ class PredictionModelTest(unittest.TestCase):
         sampler = build_score_sampler("brazil", "argentina", teams)
         self.assertGreater(len(sampler), 0)
         self.assertAlmostEqual(sampler[-1][0], 1.0, places=6)
+
+    def test_live_fixture_score_is_used_as_simulation_floor(self):
+        teams = apply_event_adjustments()
+        fixture = Fixture("brazil", "argentina", "小组赛 E 组", "进行中", "live", 2, 0)
+        rng = Random(20260614)
+
+        scores = [sample_fixture_score(fixture, teams, rng) for _ in range(20)]
+
+        self.assertTrue(all(home_score >= 2 for home_score, _ in scores))
+        self.assertTrue(all(away_score >= 0 for _, away_score in scores))
+
+    def test_forced_outcome_preserves_live_fixture_score(self):
+        fixture = Fixture("brazil", "argentina", "小组赛 E 组", "进行中", "live", 2, 0)
+
+        self.assertEqual(forced_outcome_score(fixture, "home"), (2, 0))
+        self.assertEqual(forced_outcome_score(fixture, "draw"), (2, 2))
+        self.assertEqual(forced_outcome_score(fixture, "away"), (2, 3))
 
     def test_events_generate_factor_impact_details(self):
         impacts = event_factor_impacts()

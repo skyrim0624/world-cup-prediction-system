@@ -134,6 +134,8 @@ def load_fixtures(team_profiles: dict[str, TeamProfile], path: Path | None = Non
             raise ValueError(f"赛程包含未知球队: {fixture.home} vs {fixture.away}")
         if fixture.status == "finished" and (fixture.home_score is None or fixture.away_score is None):
             raise ValueError(f"已完赛必须有比分: {fixture.home} vs {fixture.away}")
+        if fixture.status == "live" and (fixture.home_score is None or fixture.away_score is None):
+            raise ValueError(f"进行中比赛必须有当前比分: {fixture.home} vs {fixture.away}")
     return complete_group_fixtures(fixtures, team_profiles)
 
 

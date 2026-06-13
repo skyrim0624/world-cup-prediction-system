@@ -27,6 +27,7 @@ Outcome = Literal["home", "draw", "away"]
 SIMULATION_COUNT = 8_000
 MAX_GOALS = 7
 EVENT_FACTORS = ("attack", "defense", "goalkeeper", "path", "squad")
+LIVE_REMAINING_GOAL_RATE = 0.45
 
 # NOTE: 固定路径来自 FIFA World Cup 26 Regulations Article 12.6-12.11 和 Annexe C。
 ROUND_OF_32_MATCHES = (
@@ -138,6 +139,10 @@ def expected_goals(home: TeamProfile, away: TeamProfile) -> tuple[float, float]:
 
 def score_distribution(home_key: str, away_key: str, teams: dict[str, TeamProfile]) -> list[dict[str, float | str]]:
     home_lambda, away_lambda = expected_goals(teams[home_key], teams[away_key])
+    return score_distribution_from_lambdas(home_lambda, away_lambda)
+
+
+def score_distribution_from_lambdas(home_lambda: float, away_lambda: float) -> list[dict[str, float | str]]:
     distribution = []
     for home_goals in range(MAX_GOALS + 1):
         for away_goals in range(MAX_GOALS + 1):
@@ -167,7 +172,12 @@ def win_draw_loss(home_key: str, away_key: str, teams: dict[str, TeamProfile]) -
 
 
 def build_score_sampler(home_key: str, away_key: str, teams: dict[str, TeamProfile]) -> list[tuple[float, int, int]]:
-    distribution = score_distribution(home_key, away_key, teams)
+    home_lambda, away_lambda = expected_goals(teams[home_key], teams[away_key])
+    return build_score_sampler_from_lambdas(home_lambda, away_lambda)
+
+
+def build_score_sampler_from_lambdas(home_lambda: float, away_lambda: float) -> list[tuple[float, int, int]]:
+    distribution = score_distribution_from_lambdas(home_lambda, away_lambda)
     total = sum(float(item["probability"]) for item in distribution)
     cumulative = 0.0
     sampler = []
@@ -196,6 +206,40 @@ def sample_score_from_sampler(sampler: list[tuple[float, int, int]], rng: Random
         index = len(sampler) - 1
     _, home_goals, away_goals = sampler[index]
     return home_goals, away_goals
+
+
+def build_fixture_score_sampler(fixture: Fixture, teams: dict[str, TeamProfile]) -> list[tuple[float, int, int]]:
+    home_lambda, away_lambda = expected_goals(teams[fixture.home], teams[fixture.away])
+    if fixture.status == "live" and fixture.home_score is not None and fixture.away_score is not None:
+        return build_score_sampler_from_lambdas(
+            max(0.1, home_lambda * LIVE_REMAINING_GOAL_RATE),
+            max(0.1, away_lambda * LIVE_REMAINING_GOAL_RATE),
+        )
+    return build_score_sampler_from_lambdas(home_lambda, away_lambda)
+
+
+def sample_fixture_score(
+    fixture: Fixture,
+    teams: dict[str, TeamProfile],
+    rng: Random,
+    sampler: list[tuple[float, int, int]] | None = None,
+) -> tuple[int, int]:
+    sampler = sampler or build_fixture_score_sampler(fixture, teams)
+    home_goals, away_goals = sample_score_from_sampler(sampler, rng)
+    if fixture.status == "live" and fixture.home_score is not None and fixture.away_score is not None:
+        return fixture.home_score + home_goals, fixture.away_score + away_goals
+    return home_goals, away_goals
+
+
+def forced_outcome_score(fixture: Fixture, outcome: Outcome) -> tuple[int, int]:
+    base_home = fixture.home_score if fixture.status == "live" and fixture.home_score is not None else 0
+    base_away = fixture.away_score if fixture.status == "live" and fixture.away_score is not None else 0
+    if outcome == "home":
+        return max(base_home, base_away + 1), base_away
+    if outcome == "draw":
+        target = max(base_home, base_away)
+        return target, target
+    return base_home, max(base_away, base_home + 1)
 
 
 def build_standings(fixtures: list[Fixture]) -> dict[str, dict[str, int]]:
@@ -399,7 +443,7 @@ def simulate_tournament(
     rng = Random(20260614 + (0 if forced_current is None else {"home": 11, "draw": 22, "away": 33}[forced_current]))
     forced_match = forced_match or CURRENT_MATCH
     distribution_cache = {
-        (fixture.home, fixture.away): build_score_sampler(fixture.home, fixture.away, teams)
+        (fixture.home, fixture.away, fixture.status, fixture.home_score, fixture.away_score): build_fixture_score_sampler(fixture, teams)
         for fixture in FIXTURES
         if fixture.status != "finished"
     }
@@ -411,9 +455,10 @@ def simulate_tournament(
                 simulated_fixtures.append(fixture)
                 continue
             if (fixture.home, fixture.away) == forced_match and forced_current is not None:
-                score = {"home": (1, 0), "draw": (1, 1), "away": (0, 1)}[forced_current]
+                score = forced_outcome_score(fixture, forced_current)
             else:
-                score = sample_score_from_sampler(distribution_cache[(fixture.home, fixture.away)], rng)
+                cache_key = (fixture.home, fixture.away, fixture.status, fixture.home_score, fixture.away_score)
+                score = sample_fixture_score(fixture, teams, rng, distribution_cache[cache_key])
             simulated_fixtures.append(
                 Fixture(fixture.home, fixture.away, fixture.stage, fixture.kickoff, fixture.status, score[0], score[1])
             )

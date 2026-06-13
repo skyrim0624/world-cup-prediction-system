@@ -84,6 +84,13 @@ class TournamentDataImportTest(unittest.TestCase):
             self.assertEqual(json.loads((data_dir / "teams.json").read_text(encoding="utf-8")), original_teams)
             self.assertFalse(backup_dir.exists())
 
+    def test_apply_tournament_data_import_rejects_live_fixture_without_score(self):
+        payload = make_import_payload()
+        payload["fixtures"][0]["status"] = "live"
+
+        with self.assertRaisesRegex(ValueError, "进行中比赛必须有当前比分"):
+            apply_tournament_data_import(Path("/tmp/missing-data"), Path("/tmp/missing-backup"), payload)
+
     def test_import_tournament_data_script_runs_with_temp_paths(self):
         payload = make_import_payload()
         with tempfile.TemporaryDirectory() as temp_dir:

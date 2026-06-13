@@ -248,6 +248,43 @@ class PredictionApiTest(unittest.TestCase):
             self.assertEqual(updated_rows[0]["status"], "finished")
             self.assertEqual(status_response.json()["lockedResults"], 1)
 
+    def test_fixture_live_api_marks_in_progress_match_and_refreshes_model_status(self):
+        rows = [
+            {
+                "home": "brazil",
+                "away": "argentina",
+                "stage": "小组赛 E 组",
+                "kickoff": "6月15日 08:00",
+                "status": "scheduled",
+            }
+        ]
+        with tempfile.TemporaryDirectory() as temp_dir:
+            fixtures_path = Path(temp_dir) / "fixtures.json"
+            fixtures_path.write_text(json.dumps(rows, ensure_ascii=False), encoding="utf-8")
+            previous_fixtures_path = getattr(main_module, "fixtures_data_path", None)
+            main_module.fixtures_data_path = fixtures_path
+            try:
+                client = TestClient(app)
+                response = client.post(
+                    "/api/fixtures/live",
+                    json={"home": "brazil", "away": "argentina", "homeScore": 1, "awayScore": 0},
+                )
+                status_response = client.get("/api/model-status")
+            finally:
+                if previous_fixtures_path is None:
+                    delattr(main_module, "fixtures_data_path")
+                else:
+                    main_module.fixtures_data_path = previous_fixtures_path
+                main_module.reload_model_data()
+
+            self.assertEqual(response.status_code, 200)
+            payload = response.json()
+            self.assertEqual(payload["fixture"]["status"], "live")
+            self.assertEqual(payload["fixture"]["home_score"], 1)
+            updated_rows = json.loads(fixtures_path.read_text(encoding="utf-8"))
+            self.assertEqual(updated_rows[0]["status"], "live")
+            self.assertEqual(status_response.json()["liveMatches"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()

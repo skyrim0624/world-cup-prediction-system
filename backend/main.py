@@ -8,7 +8,7 @@ from pydantic import BaseModel
 
 from . import data as data_state
 from .event_review import RAW_NEWS_PATH, review_raw_news_item
-from .fixture_update import record_fixture_result
+from .fixture_update import record_fixture_live_score, record_fixture_result
 from .model import (
     SIMULATION_COUNT,
     build_match_detail,
@@ -95,11 +95,12 @@ def model_status() -> dict[str, object]:
         "dataset": data_state.DATASET_META,
         "simulationCount": SIMULATION_COUNT,
         "lockedResults": len([fixture for fixture in data_state.FIXTURES if fixture.status == "finished"]),
+        "liveMatches": len([fixture for fixture in data_state.FIXTURES if fixture.status == "live"]),
         "eventSummary": event_summary(),
         "knownGaps": [
             "官方 48 队名单和真实分组尚未替换当前槽位数据",
-            "新闻抓取仍由本地 raw-news JSON 承接，暂未接外部抓取任务",
-            "暂未接多源交叉验证、后台录入、支付和权限",
+            "新闻抓取仍由本地 raw-news JSON 承接，暂未接外部定时任务",
+            "暂未接独立后台、支付和权限",
         ],
     }
 
@@ -205,6 +206,28 @@ def update_fixture_result(request: FixtureResultRequest) -> dict[str, object]:
         raise HTTPException(status_code=400, detail="赛果包含未知球队")
     try:
         fixture = record_fixture_result(
+            fixtures_data_path,
+            request.home,
+            request.away,
+            request.homeScore,
+            request.awayScore,
+        )
+    except ValueError as error:
+        raise HTTPException(status_code=400, detail=str(error)) from error
+    reload_model_data(review_data_path, fixtures_data_path)
+    prediction_cache.clear()
+    return {
+        "fixture": fixture,
+        "requiresSnapshotRefresh": True,
+    }
+
+
+@app.post("/api/fixtures/live")
+def update_fixture_live_score(request: FixtureResultRequest) -> dict[str, object]:
+    if request.home not in data_state.TEAM_PROFILES or request.away not in data_state.TEAM_PROFILES:
+        raise HTTPException(status_code=400, detail="进行中比分包含未知球队")
+    try:
+        fixture = record_fixture_live_score(
             fixtures_data_path,
             request.home,
             request.away,

@@ -53,6 +53,8 @@ def validate_tournament_import_payload(payload: dict[str, Any]) -> dict[str, obj
         seen_pairs.add(pair)
         if fixture.get("status") == "finished" and ("home_score" not in fixture or "away_score" not in fixture):
             raise ValueError(f"已完赛必须有比分: {home} vs {away}")
+        if fixture.get("status") == "live" and ("home_score" not in fixture or "away_score" not in fixture):
+            raise ValueError(f"进行中比赛必须有当前比分: {home} vs {away}")
 
     return {
         "source": payload.get("source", "unknown"),
