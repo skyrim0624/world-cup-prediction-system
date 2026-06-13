@@ -554,6 +554,14 @@ button {
   clip-path: polygon(1.2rem 0, 100% 0, 100% calc(100% - 1.2rem), calc(100% - 1.2rem) 100%, 0 100%, 0 1.2rem);
 }
 
+.probability-row.compact .probability {
+  padding: 16px 18px;
+}
+
+.probability-row.compact .probability strong {
+  font-size: clamp(40px, 6vw, 58px);
+}
+
 .probability {
   padding: 22px 24px;
   border-right: 1px solid rgba(255, 255, 255, 0.09);
@@ -748,10 +756,18 @@ button {
   grid-template-columns: 156px minmax(0, 1fr) auto;
   gap: 16px;
   align-items: center;
+  width: 100%;
   min-height: 82px;
   padding: 14px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  color: inherit;
   background: rgba(0, 0, 0, 0.18);
+  text-align: left;
+}
+
+.upcoming-row.selected {
+  border-color: var(--cyan);
+  box-shadow: inset 0 0 0 1px rgba(24, 227, 208, 0.18);
 }
 
 .upcoming-teams {
@@ -800,6 +816,31 @@ button {
   color: var(--cyan);
   font-style: normal;
   font-weight: 900;
+}
+
+.match-detail-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.detail-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.detail-head strong {
+  color: #eefaf8;
+  font-size: 22px;
+}
+
+.detail-head span {
+  color: var(--muted);
+  font-weight: 800;
 }
 
 .path-preview {
@@ -1544,6 +1585,10 @@ button {
 
   .upcoming-probs {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .detail-head {
+    display: grid;
   }
 
   .path-column {

@@ -49,6 +49,17 @@ class PredictionApiTest(unittest.TestCase):
         self.assertIn("topScore", first)
         self.assertEqual(first["homeWin"] + first["draw"] + first["awayWin"], 100)
 
+    def test_match_detail_api_builds_prediction_for_any_scheduled_match(self):
+        client = TestClient(app)
+        response = client.get("/api/match-detail?home=spain&away=argentina&simulations=1200")
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertEqual(payload["homeTeam"], "spain")
+        self.assertEqual(payload["awayTeam"], "argentina")
+        self.assertEqual(len(payload["scoreOutcomes"]), 3)
+        self.assertEqual(len(payload["scenarioImpacts"]), 3)
+        self.assertEqual(payload["homeWin"] + payload["draw"] + payload["awayWin"], 100)
+
     def test_events_api_exposes_review_summary(self):
         client = TestClient(app)
         response = client.get("/api/events")

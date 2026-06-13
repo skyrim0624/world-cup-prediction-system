@@ -392,10 +392,12 @@ def simulate_tournament(
     teams: dict[str, TeamProfile],
     forced_current: Outcome | None = None,
     simulation_count: int = SIMULATION_COUNT,
+    forced_match: tuple[str, str] | None = None,
 ) -> dict[str, dict[str, float]]:
     stages = ("roundOf32", "roundOf16", "quarterfinal", "semifinal", "final", "champion")
     counts = defaultdict(lambda: {stage: 0 for stage in stages})
     rng = Random(20260614 + (0 if forced_current is None else {"home": 11, "draw": 22, "away": 33}[forced_current]))
+    forced_match = forced_match or CURRENT_MATCH
     distribution_cache = {
         (fixture.home, fixture.away): build_score_sampler(fixture.home, fixture.away, teams)
         for fixture in FIXTURES
@@ -408,7 +410,7 @@ def simulate_tournament(
             if fixture.status == "finished":
                 simulated_fixtures.append(fixture)
                 continue
-            if (fixture.home, fixture.away) == CURRENT_MATCH and forced_current is not None:
+            if (fixture.home, fixture.away) == forced_match and forced_current is not None:
                 score = {"home": (1, 0), "draw": (1, 1), "away": (0, 1)}[forced_current]
             else:
                 score = sample_score_from_sampler(distribution_cache[(fixture.home, fixture.away)], rng)
@@ -508,7 +510,7 @@ def build_scenario_impacts(
     ]
     items = []
     for outcome, label, title in scenarios:
-        scenario = simulate_tournament(teams, outcome, simulation_count)
+        scenario = simulate_tournament(teams, outcome, simulation_count, (home_key, away_key))
         home_shift = scenario[home_key]["champion"] - base[home_key]["champion"]
         away_shift = scenario[away_key]["champion"] - base[away_key]["champion"]
         if outcome == "draw":
@@ -546,6 +548,51 @@ def build_scenario_impacts(
             }
         )
     return items
+
+
+def score_outcomes_for_match(home_key: str, away_key: str, teams: dict[str, TeamProfile]) -> list[dict[str, object]]:
+    distribution = score_distribution(home_key, away_key, teams)
+    return [
+        {
+            "score": item["score"],
+            "probability": round(float(item["probability"]) * 100, 1),
+            "note": ["双方基础强度接近", "边路优势可能放大", "低比分胜局仍有空间"][index],
+            "tone": tone_for_probability(index),
+        }
+        for index, item in enumerate(distribution[:3])
+    ]
+
+
+def build_match_detail(home_key: str, away_key: str, simulation_count: int = 1200) -> dict[str, object]:
+    teams = apply_event_adjustments()
+    current_fixture = next((fixture for fixture in FIXTURES if (fixture.home, fixture.away) == (home_key, away_key)), None)
+    if current_fixture is None:
+        raise ValueError(f"找不到比赛: {home_key} vs {away_key}")
+
+    probabilities = win_draw_loss(home_key, away_key, teams)
+    home_win = round(probabilities["home"] * 100)
+    draw = round(probabilities["draw"] * 100)
+    away_win = 100 - home_win - draw
+    base_tournament = simulate_tournament(teams, simulation_count=simulation_count)
+
+    return {
+        "stage": current_fixture.stage,
+        "kickoff": current_fixture.kickoff,
+        "status": "未开赛" if current_fixture.status == "scheduled" else current_fixture.status,
+        "homeTeam": home_key,
+        "awayTeam": away_key,
+        "homeWin": home_win,
+        "draw": draw,
+        "awayWin": away_win,
+        "updatedAt": datetime.now(timezone.utc).isoformat(),
+        "scoreOutcomes": score_outcomes_for_match(home_key, away_key, teams),
+        "scenarioImpacts": build_scenario_impacts(base_tournament, home_key, away_key, probabilities, teams, simulation_count),
+        "analysis": [
+            f"{teams[home_key].name}单场胜率 {home_win}%，当前差距主要来自基础实力和攻防盘。",
+            f"平局概率 {draw}%，会继续放大小组排名和净胜球权重。",
+            "该场结果会被传导进小组排名、淘汰赛路径和冠军概率。",
+        ],
+    }
 
 
 def build_upcoming_match_predictions(limit: int = 12) -> dict[str, object]:
@@ -593,18 +640,7 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
     home_key, away_key = CURRENT_MATCH
     current_fixture = next(fixture for fixture in FIXTURES if (fixture.home, fixture.away) == CURRENT_MATCH)
     probabilities = win_draw_loss(home_key, away_key, teams)
-    distribution = score_distribution(home_key, away_key, teams)
     base_tournament = simulate_tournament(teams, simulation_count=simulation_count)
-
-    score_outcomes = [
-        {
-            "score": item["score"],
-            "probability": round(float(item["probability"]) * 100, 1),
-            "note": ["双方基础强度接近", "边路优势可能放大", "低比分胜局仍有空间"][index],
-            "tone": tone_for_probability(index),
-        }
-        for index, item in enumerate(distribution[:3])
-    ]
 
     response_teams = []
     for team_key, profile in teams.items():
@@ -641,7 +677,7 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
         "draw": round(probabilities["draw"] * 100),
         "awayWin": round(probabilities["away"] * 100),
         "updatedAt": datetime.now(timezone.utc).isoformat(),
-        "scoreOutcomes": score_outcomes,
+        "scoreOutcomes": score_outcomes_for_match(home_key, away_key, teams),
         "scenarioImpacts": build_scenario_impacts(base_tournament, home_key, away_key, probabilities, teams, simulation_count),
         "analysis": analysis,
         "newsItems": [event_to_news_item(event) for event in EVENTS],

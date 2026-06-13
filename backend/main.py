@@ -11,6 +11,7 @@ from .event_review import RAW_NEWS_PATH, review_raw_news_item
 from .fixture_update import record_fixture_result
 from .model import (
     SIMULATION_COUNT,
+    build_match_detail,
     build_match_prediction,
     build_upcoming_match_predictions,
     event_summary,
@@ -106,6 +107,18 @@ def model_status() -> dict[str, object]:
 @app.get("/api/upcoming-matches")
 def upcoming_matches(limit: int = Query(12, ge=1, le=72)) -> dict[str, object]:
     return build_upcoming_match_predictions(limit)
+
+
+@app.get("/api/match-detail")
+def match_detail(
+    home: str,
+    away: str,
+    simulations: int = Query(1200, ge=1_000, le=50_000),
+) -> dict[str, object]:
+    try:
+        return build_match_detail(home, away, simulations)
+    except ValueError as error:
+        raise HTTPException(status_code=404, detail=str(error)) from error
 
 
 @app.get("/api/events")

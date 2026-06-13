@@ -156,6 +156,21 @@ type MatchPrediction = {
   };
 };
 
+type MatchDetail = {
+  stage: string;
+  kickoff: string;
+  status: string;
+  homeTeam: TeamKey;
+  awayTeam: TeamKey;
+  homeWin: number;
+  draw: number;
+  awayWin: number;
+  updatedAt: string;
+  scoreOutcomes: ScoreOutcome[];
+  scenarioImpacts: ScenarioImpact[];
+  analysis: string[];
+};
+
 const teams: Team[] = [
   {
     key: "brazil",
@@ -397,6 +412,8 @@ function App() {
   const [forecastTick, setForecastTick] = useState(0);
   const [apiPrediction, setApiPrediction] = useState<MatchPrediction | null>(null);
   const [upcomingMatches, setUpcomingMatches] = useState<UpcomingMatchesResponse | null>(null);
+  const [selectedMatchKey, setSelectedMatchKey] = useState<string | null>(null);
+  const [matchDetail, setMatchDetail] = useState<MatchDetail | null>(null);
   const [eventReview, setEventReview] = useState<EventReviewResponse | null>(null);
   const [reviewPendingId, setReviewPendingId] = useState<string | null>(null);
   const [snapshotPending, setSnapshotPending] = useState(false);
@@ -525,6 +542,22 @@ function App() {
       setReviewMessage("快照重建失败");
     } finally {
       setSnapshotPending(false);
+    }
+  }
+
+  async function loadMatchDetail(match: UpcomingMatch) {
+    const key = `${match.homeTeam}-${match.awayTeam}`;
+    setSelectedMatchKey(key);
+    try {
+      const response = await fetch(
+        `${API_BASE_URL}/api/match-detail?home=${encodeURIComponent(match.homeTeam)}&away=${encodeURIComponent(match.awayTeam)}&simulations=${INTERACTIVE_SIMULATION_COUNT}`,
+        { cache: "no-store" },
+      );
+      if (!response.ok) throw new Error(`单场详情接口返回 ${response.status}`);
+      const data = (await response.json()) as MatchDetail;
+      setMatchDetail(data);
+    } catch {
+      setMatchDetail(null);
     }
   }
 
@@ -681,7 +714,20 @@ function App() {
           onPointerMove={moveDrag}
           onPointerUp={endDrag}
         >
-          <UpcomingMatchesPanel matches={upcomingMatches?.items ?? []} />
+          <UpcomingMatchesPanel matches={upcomingMatches?.items ?? []} selectedKey={selectedMatchKey} onSelect={loadMatchDetail} />
+        </DraggablePanel>
+
+        <DraggablePanel
+          id="matchDetail"
+          className="wide"
+          title="单场详情"
+          position={positions.matchDetail}
+          layoutUnlocked={layoutUnlocked}
+          onPointerDown={startDrag}
+          onPointerMove={moveDrag}
+          onPointerUp={endDrag}
+        >
+          <MatchDetailPanel detail={matchDetail} teamsData={teamsData} />
         </DraggablePanel>
 
         <DraggablePanel
@@ -962,35 +1008,85 @@ function SegmentBar({ value, tone }: { value: number; tone: string }) {
   );
 }
 
-function UpcomingMatchesPanel({ matches }: { matches: UpcomingMatch[] }) {
+function UpcomingMatchesPanel({
+  matches,
+  selectedKey,
+  onSelect,
+}: {
+  matches: UpcomingMatch[];
+  selectedKey: string | null;
+  onSelect: (match: UpcomingMatch) => void;
+}) {
   if (matches.length === 0) {
     return <p className="review-empty">未开赛预测等待 API 连接</p>;
   }
 
   return (
     <div className="upcoming-list">
-      {matches.map((match) => (
-        <article className="upcoming-row" key={`${match.homeTeam}-${match.awayTeam}-${match.kickoff}`}>
-          <div className="upcoming-teams">
-            <span>{match.homeCode}</span>
-            <b>VS</b>
-            <span>{match.awayCode}</span>
-          </div>
-          <div className="upcoming-copy">
-            <strong>
-              {match.homeName} / {match.awayName}
-            </strong>
-            <small>
-              {match.stage} · {match.kickoff} · 最可能 {match.topScore.score} / {match.topScore.probability.toFixed(1)}%
-            </small>
-          </div>
-          <div className="upcoming-probs">
-            <em>{match.homeWin}%</em>
-            <em>{match.draw}%</em>
-            <em>{match.awayWin}%</em>
-          </div>
-        </article>
-      ))}
+      {matches.map((match) => {
+        const key = `${match.homeTeam}-${match.awayTeam}`;
+        return (
+          <button className={`upcoming-row ${selectedKey === key ? "selected" : ""}`} key={`${key}-${match.kickoff}`} onClick={() => onSelect(match)}>
+            <div className="upcoming-teams">
+              <span>{match.homeCode}</span>
+              <b>VS</b>
+              <span>{match.awayCode}</span>
+            </div>
+            <div className="upcoming-copy">
+              <strong>
+                {match.homeName} / {match.awayName}
+              </strong>
+              <small>
+                {match.stage} · {match.kickoff} · 最可能 {match.topScore.score} / {match.topScore.probability.toFixed(1)}%
+              </small>
+            </div>
+            <div className="upcoming-probs">
+              <em>{match.homeWin}%</em>
+              <em>{match.draw}%</em>
+              <em>{match.awayWin}%</em>
+            </div>
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
+function MatchDetailPanel({ detail, teamsData }: { detail: MatchDetail | null; teamsData: Team[] }) {
+  if (!detail) {
+    return <p className="review-empty">从未开赛预测选择比赛</p>;
+  }
+
+  const homeTeam = teamsData.find((team) => team.key === detail.homeTeam);
+  const awayTeam = teamsData.find((team) => team.key === detail.awayTeam);
+
+  return (
+    <div className="match-detail-grid">
+      <div className="detail-head">
+        <strong>
+          {homeTeam?.name ?? detail.homeTeam} / {awayTeam?.name ?? detail.awayTeam}
+        </strong>
+        <span>
+          {detail.stage} · {detail.kickoff}
+        </span>
+      </div>
+      <div className="probability-row compact">
+        <Probability label={`${homeTeam?.name ?? detail.homeTeam}胜`} value={detail.homeWin} tone="green" />
+        <Probability label="平局" value={detail.draw} tone="gold" />
+        <Probability label={`${awayTeam?.name ?? detail.awayTeam}胜`} value={detail.awayWin} tone="blue" />
+      </div>
+      <div className="score-outcome-list">
+        {detail.scoreOutcomes.map((outcome) => (
+          <article className={`score-outcome ${outcome.tone}`} key={outcome.score}>
+            <strong>{outcome.score}</strong>
+            <div>
+              <b>{outcome.probability.toFixed(1)}%</b>
+              <span>{outcome.note}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+      <ScenarioImpactList scenarios={detail.scenarioImpacts} />
     </div>
   );
 }
