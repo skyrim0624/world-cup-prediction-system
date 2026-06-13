@@ -140,6 +140,7 @@ type MatchPrediction = {
     engine: string;
     simulationCount: number;
     lockedResults: number;
+    liveMatches?: number;
     dataset?: {
       source: string;
       teamCount: number;
@@ -431,7 +432,7 @@ function App() {
   const dataModeLabel = dataMode === "api" ? "真实模型" : "演示动态";
   const championBoard = [...teamsData].sort((left, right) => right.tournament.champion - left.tournament.champion);
   const modelSummary = matchPrediction.modelMeta
-    ? `${matchPrediction.modelMeta.simulationCount.toLocaleString("zh-CN")} 次模拟 · 已锁定 ${matchPrediction.modelMeta.lockedResults} 场赛果 · 事件 ${matchPrediction.modelMeta.events?.applied ?? 0} 入模 / ${matchPrediction.modelMeta.events?.ignored ?? 0} 忽略`
+    ? `${matchPrediction.modelMeta.simulationCount.toLocaleString("zh-CN")} 次模拟 · 已锁定 ${matchPrediction.modelMeta.lockedResults} 场赛果 · 进行中 ${matchPrediction.modelMeta.liveMatches ?? 0} 场 · 事件 ${matchPrediction.modelMeta.events?.applied ?? 0} 入模 / ${matchPrediction.modelMeta.events?.ignored ?? 0} 忽略`
     : "已结束比赛只作为后续权重因子";
 
   useEffect(() => {
