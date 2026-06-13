@@ -1214,6 +1214,34 @@ Elo / 实力评分
 - 预测入口链路现在成立：未开赛列表 → 单场详情 → 比分分布 → 整届概率传导。
 - 后续可以把单场详情升级成独立路由/页面，再接付费解锁。
 
+### 2026-06-14：正式赛事数据导入保护层
+
+已完成：
+
+- 新增 `backend/data_import.py`。
+- 新增 `validate_tournament_import_payload`，校验正式导入数据必须包含 48 支球队、12 个小组、每组 4 队和 72 场小组赛。
+- 校验球队 `key` / `code` 不能重复。
+- 校验小组赛引用球队必须存在，且不能跨组。
+- 校验同一对球队不能重复出现。
+- 校验 `finished` 比赛必须有比分。
+- 新增 `apply_tournament_data_import`，采用“先校验、再备份、再写入”的顺序。
+- 新增 `scripts/import_tournament_data.py`。
+- 新增 `npm run import:tournament-data`。
+- 新增 `docs/赛事数据导入格式.md`，记录导入 JSON 结构、命令和安全机制。
+- `.gitignore` 增加 `backend/data_files/backups/`，避免运行时备份误提交。
+
+验证：
+
+- 新增导入器测试：合法 48 队 / 72 场数据会写入 temp data dir 并生成备份。
+- 新增失败保护测试：球队不足 48 支时抛错，且不会修改原文件、不会创建备份目录。
+- 新增 CLI 测试：`scripts/import_tournament_data.py` 可读取临时导入 JSON 并写入 temp data dir。
+- `python3 -m unittest discover -s tests -p test_data_import.py` 通过，3 个导入测试。
+
+当前判断：
+
+- 真实赛事数据替换入口已经具备最低安全线。
+- 下一步拿到 FIFA 官方整理数据后，应先生成导入 JSON，运行 `npm run import:tournament-data`，再执行 `npm run validate:data`、`npm run test:model` 和 `npm run build`。
+
 ## 十、当前交接摘要
 
 一句话定义：
@@ -1222,7 +1250,7 @@ Elo / 实力评分
 
 当前最重要的开发优先级：
 
-1. 准备真实 48 队名单、分组和赛程数据，替换当前槽位数据并保留 fallback。
+1. 从 FIFA 官方来源整理真实 48 队名单、分组和 72 场小组赛，生成导入 JSON 并走导入器替换当前样例数据。
 2. 接入外部新闻抓取任务，把抓取结果写入 `raw-news.json` 或同结构数据源。
 3. 规划独立后台页，承载 raw-news 录入、审核、赛果和伤停信息，不继续挤压预测首页。
 4. 把单场详情升级为独立路由/页面，并接付费解锁边界。

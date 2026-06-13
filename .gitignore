@@ -6,3 +6,4 @@ tsconfig.tsbuildinfo
 __pycache__/
 *.pyc
 backend/snapshots/*.json
+backend/data_files/backups/
