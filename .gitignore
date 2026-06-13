@@ -3,3 +3,5 @@ dist/
 .npm-cache/
 .DS_Store
 tsconfig.tsbuildinfo
+__pycache__/
+*.pyc

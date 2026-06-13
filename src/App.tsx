@@ -63,6 +63,12 @@ type MatchPrediction = {
   scenarioImpacts: ScenarioImpact[];
   analysis: string[];
   newsItems: NewsItem[];
+  teams?: Team[];
+  modelMeta?: {
+    engine: string;
+    simulationCount: number;
+    lockedResults: number;
+  };
 };
 
 const teams: Team[] = [
@@ -233,13 +239,17 @@ function App() {
   const dragRef = useRef<DragState | null>(null);
   const lastTapRef = useRef(0);
 
-  const selected = useMemo(() => teams.find((team) => team.key === selectedTeam) ?? teams[0], [selectedTeam]);
+  const teamsData = apiPrediction?.teams?.length ? apiPrediction.teams : teams;
+  const selected = useMemo(() => teamsData.find((team) => team.key === selectedTeam) ?? teamsData[0], [selectedTeam, teamsData]);
   const fallbackPrediction = useMemo(() => buildFallbackPrediction(forecastTick), [forecastTick]);
   const matchPrediction = apiPrediction ?? fallbackPrediction;
-  const homeTeam = teams.find((team) => team.key === matchPrediction.homeTeam) ?? teams[0];
-  const awayTeam = teams.find((team) => team.key === matchPrediction.awayTeam) ?? teams[1];
-  const dataModeLabel = dataMode === "api" ? "真实接口" : "演示动态";
-  const championBoard = [...teams].sort((left, right) => right.tournament.champion - left.tournament.champion);
+  const homeTeam = teamsData.find((team) => team.key === matchPrediction.homeTeam) ?? teamsData[0];
+  const awayTeam = teamsData.find((team) => team.key === matchPrediction.awayTeam) ?? teamsData[1];
+  const dataModeLabel = dataMode === "api" ? "真实模型" : "演示动态";
+  const championBoard = [...teamsData].sort((left, right) => right.tournament.champion - left.tournament.champion);
+  const modelSummary = matchPrediction.modelMeta
+    ? `${matchPrediction.modelMeta.simulationCount.toLocaleString("zh-CN")} 次模拟 · 已锁定 ${matchPrediction.modelMeta.lockedResults} 场赛果`
+    : "已结束比赛只作为后续权重因子";
 
   useEffect(() => {
     let active = true;
@@ -378,9 +388,9 @@ function App() {
           <div className="engine-line">
             <span className="ai-badge">AI</span>
             <span className="engine-copy">
-              <strong>Elo + Dixon-Coles + 蒙特卡洛</strong>
+              <strong>{matchPrediction.modelMeta?.engine ?? "Elo + Dixon-Coles + 蒙特卡洛"}</strong>
               <small>
-                数据源：{dataModeLabel} · 已结束比赛只作为后续权重因子
+                数据源：{dataModeLabel} · {modelSummary}
               </small>
             </span>
             <span className="chevron">›</span>
@@ -424,7 +434,7 @@ function App() {
           onPointerUp={endDrag}
         >
           <div className="team-list">
-            {teams.map((team) => (
+            {teamsData.map((team) => (
               <button
                 className={`team-row ${selectedTeam === team.key ? "selected" : ""}`}
                 key={team.key}
