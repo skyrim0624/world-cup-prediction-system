@@ -1,0 +1,17 @@
+[
+  {
+    "input": "feeds/fifa.xml",
+    "source": "fifa",
+    "team": null
+  },
+  {
+    "input": "feeds/reuters-brazil.xml",
+    "source": "reuters",
+    "team": "brazil"
+  },
+  {
+    "input": "feeds/brazil-fa.xml",
+    "source": "brazil-fa",
+    "team": "brazil"
+  }
+]

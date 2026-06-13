@@ -79,6 +79,7 @@ def run_daily_update(
             "path": str(snapshot_path),
             "simulationCount": model_meta["simulationCount"],
             "lockedResults": model_meta["lockedResults"],
+            "liveMatches": model_meta["liveMatches"],
             "events": model_meta["events"],
         },
         "updatedAt": snapshot["updatedAt"],

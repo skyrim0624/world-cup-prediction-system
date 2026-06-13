@@ -51,6 +51,7 @@ class PredictionModelTest(unittest.TestCase):
         self.assertIn("modelMeta", prediction)
         self.assertGreater(len(prediction["scoreOutcomes"]), 0)
         self.assertEqual(prediction["modelMeta"]["lockedResults"], 3)
+        self.assertIn("liveMatches", prediction["modelMeta"])
 
     def test_dataset_is_loaded_from_local_json_files(self):
         self.assertEqual(DATASET_META["source"], "local-json")

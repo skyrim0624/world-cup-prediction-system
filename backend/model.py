@@ -731,6 +731,7 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
             "engine": "Poisson + Monte Carlo",
             "simulationCount": simulation_count,
             "lockedResults": len([fixture for fixture in FIXTURES if fixture.status == "finished"]),
+            "liveMatches": len([fixture for fixture in FIXTURES if fixture.status == "live"]),
             "dataset": DATASET_META,
             "events": event_summary(),
             "factorImpacts": event_factor_impacts(),
