@@ -2099,6 +2099,29 @@ Elo / 实力评分
 - 未接入球员进球、牌数、角球等 props。
 - 未做博主可截图预测卡和短文案导出。
 
+### 2026-06-14：Cloudflare Pages 线上验收版发布
+
+已完成：
+
+- 新建 Cloudflare Pages 项目 `world-cup-prediction-system`。
+- 发布前端静态验收版到 `https://world-cup-prediction-system.pages.dev/`。
+- 新增 `public/_redirects`，保证 `/match/...` 单场页深链可以直接打开。
+- 将浏览器标题从“世界杯预测终端”改为“世界杯预测工作台”。
+
+验证：
+
+- `npm run build` 通过。
+- `npm run test:model` 通过，当前 112 个测试。
+- Cloudflare 正式域名首页返回 200。
+- Cloudflare 单场深链 `/match/germany/curacao` 返回 200。
+- 浏览器线上验收：首页显示预测工作台、模型公平概率、市场价格源待接入、比分矩阵；无横向溢出。
+
+当前边界：
+
+- 这次发布的是前端静态验收版。
+- 线上还没有部署 FastAPI 后端，因此页面当前使用前端演示 / 回退数据。
+- 真模型 API、日更任务和支付接口上线，需要后续把后端部署为 Cloudflare Worker / Pages Functions 或其他在线 API 服务。
+
 ## 十、当前交接摘要
 
 一句话定义：
