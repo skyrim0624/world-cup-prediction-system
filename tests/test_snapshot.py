@@ -58,14 +58,36 @@ class PredictionSnapshotTest(unittest.TestCase):
 
     def test_build_probability_movers_compares_current_to_previous_snapshot(self):
         previous = {
+            "modelMeta": {
+                "lockedResults": 1,
+                "events": {"applied": 1},
+                "factorImpacts": {"brazil": {"attack": 0.0, "path": 0.0, "squad": 0.0}},
+                "fixtureContextImpacts": {"brazil": {"path": 0.0, "squad": 0.0}},
+            },
             "teams": [
-                {"key": "brazil", "name": "巴西", "code": "BRA", "tournament": {"champion": 10.0}},
+                {
+                    "key": "brazil",
+                    "name": "巴西",
+                    "code": "BRA",
+                    "tournament": {"champion": 10.0, "final": 18.0, "semifinal": 30.0, "quarterfinal": 42.0},
+                },
                 {"key": "france", "name": "法国", "code": "FRA", "tournament": {"champion": 12.0}},
             ]
         }
         current = {
+            "modelMeta": {
+                "lockedResults": 2,
+                "events": {"applied": 2},
+                "factorImpacts": {"brazil": {"attack": 1.4, "path": 0.0, "squad": 0.0}},
+                "fixtureContextImpacts": {"brazil": {"path": 0.7, "squad": 0.7}},
+            },
             "teams": [
-                {"key": "brazil", "name": "巴西", "code": "BRA", "tournament": {"champion": 13.2}},
+                {
+                    "key": "brazil",
+                    "name": "巴西",
+                    "code": "BRA",
+                    "tournament": {"champion": 13.2, "final": 20.2, "semifinal": 31.0, "quarterfinal": 42.5},
+                },
                 {"key": "france", "name": "法国", "code": "FRA", "tournament": {"champion": 9.9}},
             ]
         }
@@ -75,6 +97,10 @@ class PredictionSnapshotTest(unittest.TestCase):
         self.assertEqual(movers["baseline"], "previous_snapshot")
         self.assertEqual(movers["items"][0]["team"], "brazil")
         self.assertEqual(movers["items"][0]["change"], 3.2)
+        self.assertIn("状态盘上调 +1.4", movers["items"][0]["reasons"])
+        self.assertIn("路径盘上调 +0.7", movers["items"][0]["reasons"])
+        self.assertIn("决赛概率上升 +2.2%", movers["items"][0]["reasons"])
+        self.assertIn("已完赛果新增 1 场，路径重新模拟", movers["items"][0]["reasons"])
         self.assertEqual(movers["summary"]["largestDown"]["team"], "france")
 
     def test_write_prediction_snapshot_preserves_previous_snapshot_and_exposes_movers(self):

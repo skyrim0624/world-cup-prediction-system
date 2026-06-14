@@ -33,6 +33,8 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("今日概率变化", app_source)
         self.assertIn("DailyMoversPanel", app_source)
         self.assertIn("dailyMovers", app_source)
+        self.assertIn("reasons", app_source)
+        self.assertIn("mover-reasons", app_source)
 
 
 if __name__ == "__main__":

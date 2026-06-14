@@ -293,6 +293,7 @@ type DailyMover = {
   change: number;
   direction: "up" | "down";
   reason: string;
+  reasons?: string[];
 };
 
 type DailyMovers = {
@@ -2189,6 +2190,13 @@ function DailyMoversPanel({ movers }: { movers?: DailyMovers }) {
             <small>
               {item.previousChampion.toFixed(1)}% → {item.currentChampion.toFixed(1)}% · {item.reason}
             </small>
+            {item.reasons && item.reasons.length > 1 ? (
+              <ul className="mover-reasons">
+                {item.reasons.slice(1, 4).map((reason) => (
+                  <li key={reason}>{reason}</li>
+                ))}
+              </ul>
+            ) : null}
           </div>
           <b className={item.direction === "up" ? "green" : "red"}>{formatSignedPercent(item.change)}</b>
         </article>

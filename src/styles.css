@@ -1223,6 +1223,32 @@ button {
   line-height: 1.35;
 }
 
+.mover-reasons {
+  display: grid;
+  gap: 4px;
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  color: rgba(230, 255, 250, 0.78);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.mover-reasons li {
+  overflow-wrap: anywhere;
+}
+
+.mover-reasons li::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  vertical-align: 1px;
+}
+
 .mover-row b {
   font-size: 22px;
   white-space: nowrap;
