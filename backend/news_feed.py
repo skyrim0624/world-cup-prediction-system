@@ -66,7 +66,15 @@ def parse_news_feed(feed_text: str, source: str, team: str | None, status: str =
     return rows
 
 
-def import_news_feed(path: Path, feed_text: str, source: str, team: str | None = None) -> dict[str, int]:
+def import_news_feed(
+    path: Path,
+    feed_text: str,
+    source: str,
+    team: str | None = None,
+    known_sources: set[str] | None = None,
+) -> dict[str, int]:
+    if known_sources is not None and source not in known_sources:
+        raise ValueError(f"未知新闻来源: {source}")
     existing_rows = json.loads(path.read_text(encoding="utf-8"))
     existing_urls = {row.get("url") for row in existing_rows}
     imported_rows = []

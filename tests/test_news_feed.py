@@ -61,6 +61,16 @@ class NewsFeedImportTest(unittest.TestCase):
             self.assertEqual(rows[1]["team"], "france")
             self.assertEqual(rows[1]["status"], "single_source")
 
+    def test_import_news_feed_rejects_unknown_source_when_registry_is_provided(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "raw-news.json"
+            path.write_text("[]", encoding="utf-8")
+
+            with self.assertRaisesRegex(ValueError, "未知新闻来源"):
+                import_news_feed(path, RSS_FEED, source="unknown-source", team="france", known_sources={"reuters"})
+
+            self.assertEqual(json.loads(path.read_text(encoding="utf-8")), [])
+
     def test_import_news_feed_script_runs_with_temp_paths(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
@@ -90,6 +100,34 @@ class NewsFeedImportTest(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertIn("已导入新闻 Feed", result.stdout)
             self.assertEqual(len(json.loads(raw_news_path.read_text(encoding="utf-8"))), 2)
+
+    def test_import_news_feed_script_rejects_unknown_source(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            feed_path = root / "feed.xml"
+            raw_news_path = root / "raw-news.json"
+            feed_path.write_text(RSS_FEED, encoding="utf-8")
+            raw_news_path.write_text("[]", encoding="utf-8")
+
+            result = subprocess.run(
+                [
+                    "python3",
+                    "scripts/import_news_feed.py",
+                    "--input",
+                    str(feed_path),
+                    "--raw-news-path",
+                    str(raw_news_path),
+                    "--source",
+                    "unknown-source",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("未知新闻来源", result.stderr)
+            self.assertEqual(json.loads(raw_news_path.read_text(encoding="utf-8")), [])
 
 
 if __name__ == "__main__":

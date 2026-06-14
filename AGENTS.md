@@ -1524,6 +1524,31 @@ Elo / 实力评分
 - 旅行、城市转场和恢复时间已经不只是文档里的因子，而是进入了当前单场预测模型。
 - 这一步仍依赖赛程数据里有真实城市和场馆；当前样例数据还没有正式导入真实赛程城市。
 
+### 2026-06-14：新闻 Feed 来源校验
+
+已完成：
+
+- `import_news_feed` 新增 `known_sources` 校验参数。
+- `scripts/import_news_feed.py` 会使用 `backend/data_files/news-sources.json` 校验 `--source`。
+- 日更流水线导入 Feed 时也会校验来源，配置写错会失败而不是写入 raw-news。
+- 未知来源被拒绝时不会修改 `raw-news.json`。
+- `docs/新闻Feed导入说明.md` 已补充来源校验规则。
+
+验证：
+
+- 新增 Feed 导入测试：提供来源注册表时，未知来源会抛出 `未知新闻来源`，且 raw-news 保持不变。
+- 新增 CLI 测试：未知 `--source` 返回非 0，并且不写入 raw-news。
+- `test_news_feed.py` 4 个测试通过。
+- `test_daily_update.py` 7 个测试通过。
+- `npm run validate:data` 通过。
+- `npm run test:model` 通过，69 个测试。
+- `npm run build` 通过。
+
+当前判断：
+
+- 新闻导入现在不会绕过来源等级体系，日更配置错误会尽早失败。
+- 仍未完成的是把真实官方/权威媒体 Feed 列表接入配置，并定期刷新。
+
 ## 十、当前交接摘要
 
 一句话定义：

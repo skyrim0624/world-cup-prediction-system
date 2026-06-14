@@ -44,6 +44,12 @@ python3 scripts/import_news_feed.py \
 
 导入器按 `url` 跳过已存在条目，避免定时任务重复写入同一新闻。
 
+## 来源校验
+
+- CLI 和日更流水线都会校验 `source` 是否存在于 `backend/data_files/news-sources.json`。
+- 未知来源会直接失败，不会写入 `raw-news.json`。
+- 这样可以避免未评级来源绕过 S/A/B/C/D 来源权重体系。
+
 ## 后续流程
 
 1. 导入 Feed 到 raw-news。

@@ -6,6 +6,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+from . import data as data_state
 from .event_review import RAW_NEWS_PATH
 from .model import reload_model_data
 from .news_feed import import_news_feed
@@ -58,6 +59,7 @@ def run_daily_update(
             spec.input_path.read_text(encoding="utf-8"),
             source=spec.source,
             team=spec.team,
+            known_sources=set(data_state.NEWS_SOURCES),
         )
         total_imported += result["imported"]
         total_skipped += result["skipped"]
