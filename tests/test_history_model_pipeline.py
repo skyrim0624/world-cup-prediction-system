@@ -192,6 +192,7 @@ class HistoryModelPipelineTest(unittest.TestCase):
             self.assertEqual(report["scoreModelQuality"]["status"], "pass")
             self.assertEqual(report["probabilityCalibrationSource"], "scoreModelBacktest")
             self.assertEqual(report["scoringEnvironment"]["status"], "active")
+            self.assertEqual(report["advancedMetricDataQuality"]["status"], "pass")
             self.assertIn("teamQualitySummary", report)
             self.assertIn("brazil", report["teamQualitySummary"])
 

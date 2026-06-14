@@ -30,6 +30,7 @@ from .team_strength import (
     build_all_team_strength_profiles,
     load_team_metric_rows,
     professional_gap_coverage,
+    validate_team_metric_rows,
 )
 from .team_history import (
     audit_history_freshness,
@@ -1324,6 +1325,7 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
             "fixtureContextImpacts": fixture_context_factor_impacts(fixture_context),
             "matchupContext": matchup_context,
             "advancedMetrics": ADVANCED_METRIC_SOURCE,
+            "advancedMetricDataQuality": validate_team_metric_rows(metric_rows, TEAM_PROFILES),
             "advancedMetricImpacts": advanced_metric_impacts(metric_rows=metric_rows, history=history),
             "teamStrengthLayers": build_all_team_strength_profiles(TEAM_PROFILES, FIXTURES, metric_rows, history),
             "professionalGapCoverage": professional_gap_coverage(coverage_metric_rows),

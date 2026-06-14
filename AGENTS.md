@@ -3053,6 +3053,39 @@ direction * strength * sourceWeight * eventStatusConfidence * 100
 - 实现后 `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_history_model_pipeline.py' -v` 通过。
 - `npm run validate:data` 通过。
 
+### 2026-06-15：授权高阶指标结构校验
+
+本次目标：
+
+- xG、首发、球员模型、战术事件等高阶层未来会通过 `team-advanced-metrics.json` 接入；如果没有 schema 门禁，来路不明或字段不完整的数据可能被误当成专业数据。
+
+已完成：
+
+- 在 `backend/team_strength.py` 新增 `AUTHORIZED_METRIC_SECTIONS`。
+- 新增 `validate_team_metric_rows(metric_rows, teams)`。
+- 校验内容：
+  - 禁止未知球队 key。
+  - 每队高阶指标必须是对象。
+  - 启用任一授权高阶层时，必须有 row 级或 section 级 `source`。
+  - 数值字段必须是真数值，不能用字符串冒充。
+  - `starPlayers` 必须是数组。
+  - 每个核心球员必须有 `name`、`rating`、`availability`。
+- `modelMeta.advancedMetricDataQuality` 暴露结构校验结果。
+- 模型质量报告加入 `advancedMetricDataQuality`。
+- `scripts/validate_prediction_data.py` 加入授权高阶指标结构校验；未来只要文件存在且不合规，正式校验会失败。
+
+关键决策：
+
+- 当前没有授权高阶指标文件时，校验状态为 pass，但对应专业层仍保持 missing / neutral。
+- 不用代理字段冒充 xG、首发、球员状态；只有显式来源和合规字段才允许入模。
+
+验证：
+
+- 新增测试先失败，确认缺少 schema 校验函数。
+- 实现后 `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_team_strength_layers.py' -v` 通过。
+- `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_history_model_pipeline.py' -v` 通过。
+- `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_model.py' -v` 通过。
+
 #### 当前仍未完成的专业数据层
 
 没有授权数据前，以下仍保持缺失或中性：

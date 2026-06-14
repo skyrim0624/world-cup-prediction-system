@@ -90,6 +90,7 @@ class PredictionModelTest(unittest.TestCase):
         self.assertEqual(prediction["modelMeta"]["events"]["ignored"], 2)
         self.assertEqual(prediction["modelMeta"]["events"]["reviewRequired"], 1)
         self.assertEqual(prediction["modelMeta"]["advancedMetrics"]["source"], "verified_layered_inputs")
+        self.assertEqual(prediction["modelMeta"]["advancedMetricDataQuality"]["status"], "pass")
         self.assertEqual(prediction["modelMeta"]["historicalEloBlend"]["source"], "cc0_international_results_latest_elo")
         self.assertEqual(prediction["modelMeta"]["eventConfidenceWeights"]["single_source"], 0.45)
 

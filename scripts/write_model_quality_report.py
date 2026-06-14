@@ -28,6 +28,7 @@ from backend.team_strength import (
     build_all_team_strength_profiles,
     load_team_metric_rows,
     professional_gap_coverage,
+    validate_team_metric_rows,
 )
 
 DEFAULT_OUTPUT_PATH = Path("reports/model-quality-report.json")
@@ -97,6 +98,7 @@ def main() -> None:
         "probabilityCalibrationSource": "scoreModelBacktest",
         "calibration": calibration,
         "scoringEnvironment": scoring_environment,
+        "advancedMetricDataQuality": validate_team_metric_rows(metric_rows, TEAM_PROFILES),
         "professionalGapCoverage": professional_gap_coverage(
             {
                 **metric_rows,

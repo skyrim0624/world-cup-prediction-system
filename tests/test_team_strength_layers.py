@@ -7,6 +7,7 @@ from backend.team_strength import (
     TEAM_STRENGTH_LAYER_IDS,
     build_team_strength_profile,
     professional_gap_coverage,
+    validate_team_metric_rows,
 )
 
 
@@ -75,6 +76,18 @@ class TeamStrengthLayerTest(unittest.TestCase):
         self.assertGreater(enriched["brazil"]["goalkeeper"], neutral["brazil"]["goalkeeper"])
         self.assertGreater(enriched["brazil"]["squad"], neutral["brazil"]["squad"])
         self.assertGreater(enriched["brazil"]["overall"], neutral["brazil"]["overall"])
+
+    def test_authorized_advanced_metrics_must_have_valid_source_and_team_keys(self):
+        valid = validate_team_metric_rows(AUTHORIZED_METRICS, TEAM_PROFILES)
+        self.assertEqual(valid["status"], "pass")
+
+        unknown_team = validate_team_metric_rows({"unknown": AUTHORIZED_METRICS["brazil"]}, TEAM_PROFILES)
+        self.assertEqual(unknown_team["status"], "fail")
+        self.assertIn("unknown_team:unknown", unknown_team["errors"])
+
+        missing_source = validate_team_metric_rows({"brazil": {"attackQuality": {"npXgFor": 1.8}}}, TEAM_PROFILES)
+        self.assertEqual(missing_source["status"], "fail")
+        self.assertIn("missing_source:brazil:attackQuality", missing_source["errors"])
 
     def test_professional_gap_coverage_lists_nine_gaps_and_neutral_missing_layers(self):
         coverage = professional_gap_coverage(metric_rows={})

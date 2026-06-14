@@ -39,6 +39,14 @@ PROFESSIONAL_GAP_IDS = [
 ADJUSTMENT_KEYS = ("attack", "defense", "goalkeeper", "path", "squad")
 HISTORICAL_ELO_BLEND = 0.45
 MAX_HISTORICAL_ELO_DELTA = 85.0
+AUTHORIZED_METRIC_SECTIONS = {
+    "elitePerformance": ("top20XgDiff", "top20ResultIndex", "daysSinceTop20Win"),
+    "squadContinuity": ("lineupContinuity", "projectedXiStrength", "injuryReplacementDropoff"),
+    "attackQuality": ("npXgFor", "shotQuality", "boxEntries", "transitionXg", "setPieceXgFor"),
+    "defenseQuality": ("npXgAgainst", "bigChancesAllowed", "transitionXgAgainst", "setPieceXgAgainst"),
+    "goalkeeperQuality": ("postShotXgMinusGoalsAllowed", "claimCrossRate", "sweeperActions", "penaltySaveProfile"),
+    "tacticalProfile": ("pressingIntensity", "pressResistance", "directness", "setPieceMismatch", "aerialAdvantage"),
+}
 
 
 def clamp(value: float, lower: float, upper: float) -> float:
@@ -95,6 +103,61 @@ def load_team_metric_rows(path: Path = TEAM_ADVANCED_METRICS_PATH) -> dict[str, 
     if isinstance(payload, dict):
         return payload
     raise ValueError("team-advanced-metrics.json 必须是对象或包含 teams 对象")
+
+
+def validate_team_metric_rows(metric_rows: dict[str, Any], teams: dict[str, TeamProfile]) -> dict[str, Any]:
+    errors: list[str] = []
+    active_sections = 0
+    checked_rows = 0
+    for team_key, row in metric_rows.items():
+        if team_key.startswith("__"):
+            continue
+        checked_rows += 1
+        if team_key not in teams:
+            errors.append(f"unknown_team:{team_key}")
+            continue
+        if not isinstance(row, dict):
+            errors.append(f"invalid_row:{team_key}")
+            continue
+        row_source = row.get("source")
+        has_row_source = isinstance(row_source, str) and bool(row_source.strip())
+        for section_name, keys in AUTHORIZED_METRIC_SECTIONS.items():
+            section = nested_metrics(row, section_name)
+            if not has_any_metric(section, keys):
+                continue
+            active_sections += 1
+            section_source = section.get("source")
+            has_section_source = isinstance(section_source, str) and bool(section_source.strip())
+            if not has_row_source and not has_section_source:
+                errors.append(f"missing_source:{team_key}:{section_name}")
+            for key in keys:
+                if key in section and section.get(key) not in (None, "") and numeric(section.get(key)) is None:
+                    errors.append(f"invalid_numeric:{team_key}:{section_name}:{key}")
+        star_players = row.get("starPlayers")
+        if star_players is None:
+            continue
+        if not isinstance(star_players, list):
+            errors.append(f"invalid_star_players:{team_key}")
+            continue
+        if star_players and not has_row_source:
+            errors.append(f"missing_source:{team_key}:starPlayers")
+        for index, player in enumerate(star_players):
+            if not isinstance(player, dict):
+                errors.append(f"invalid_star_player:{team_key}:{index}")
+                continue
+            if not isinstance(player.get("name"), str) or not player.get("name"):
+                errors.append(f"missing_star_player_name:{team_key}:{index}")
+            if numeric(player.get("rating")) is None:
+                errors.append(f"missing_star_player_rating:{team_key}:{index}")
+            if numeric(player.get("availability")) is None:
+                errors.append(f"missing_star_player_availability:{team_key}:{index}")
+    return {
+        "status": "fail" if errors else "pass",
+        "source": "team_advanced_metrics_schema",
+        "checkedRows": checked_rows,
+        "activeSections": active_sections,
+        "errors": errors,
+    }
 
 
 def finished_team_matches(team_key: str, fixtures: list[Fixture]) -> list[Fixture]:

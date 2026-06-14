@@ -19,6 +19,7 @@ from backend.data import (
     THIRD_PLACE_COMBINATIONS,
 )
 from backend.model import advanced_metric_impacts
+from backend.team_strength import load_team_metric_rows, validate_team_metric_rows
 from backend.team_history import (
     audit_history_freshness,
     audit_score_model_quality,
@@ -52,6 +53,10 @@ def main() -> None:
     advanced_impacts = advanced_metric_impacts()
     if set(advanced_impacts) != set(TEAM_PROFILES):
         raise SystemExit("高阶指标必须覆盖全部球队")
+    metric_rows = load_team_metric_rows()
+    metric_quality = validate_team_metric_rows(metric_rows, TEAM_PROFILES)
+    if metric_quality.get("status") != "pass":
+        raise SystemExit(f"授权高阶指标结构错误: {', '.join(metric_quality.get('errors', [])[:8])}")
     history = load_team_match_history()
     if history.get("meta", {}).get("license") != "CC0-1.0":
         raise SystemExit("历史赛果必须声明 CC0-1.0 许可证")
