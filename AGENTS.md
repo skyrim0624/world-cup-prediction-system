@@ -1638,6 +1638,27 @@ Elo / 实力评分
 - 赛事数据不再只是 teams/fixtures 文件，系统可以说明当前数据来自哪里、何时整理、是否仍是样例。
 - 后续导入真实官方数据时，必须带上可核验 `sourceUrl`。
 
+### 2026-06-14：当前比赛上下文影响进入五大盘面
+
+已完成：
+
+- 后端 `modelMeta` 新增 `fixtureContextImpacts`，把当前比赛的短休、城市转场等上下文影响映射到 `path` 和 `squad`。
+- 前端五大盘面会把新闻事件影响 `factorImpacts` 和当前比赛上下文影响 `fixtureContextImpacts` 相加显示。
+- 当前比赛的旅行/恢复扣分不再只出现在 AI 分析文字里，也能在路径盘、人员盘中看到数值修正。
+
+验证：
+
+- 新增模型测试：主预测响应会返回巴西短休/转场造成的 `fixtureContextImpacts.brazil.path/squad < 0`。
+- `npm run validate:data` 通过。
+- `npm run test:model` 通过，73 个测试。
+- `npm run build` 通过。
+- 浏览器检查通过：通过临时注入 `fixtureContextImpacts`，首页五大盘面在 1280px 和 390px 下都显示路径盘、人员盘 `-1.5`，无错误遮罩和横向溢出。
+
+当前判断：
+
+- 动态因子解释更完整：比赛上下文会同时影响概率、AI 分析和五大盘面数值。
+- 后续仍需要导入真实城市/场馆/开赛时间，才能让这一因子在正式数据中稳定发挥作用。
+
 ## 十、当前交接摘要
 
 一句话定义：

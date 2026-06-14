@@ -1,6 +1,7 @@
 import unittest
 from random import Random
 
+import backend.model as model_module
 from backend.data import (
     DATASET_META,
     EVENTS,
@@ -197,6 +198,26 @@ class PredictionModelTest(unittest.TestCase):
         self.assertEqual(adjusted["brazil"].path, teams["brazil"].path - 2)
         self.assertEqual(adjusted["brazil"].squad, teams["brazil"].squad - 2)
         self.assertEqual(adjusted["argentina"].path, teams["argentina"].path)
+
+    def test_prediction_meta_exposes_fixture_context_plate_impacts(self):
+        original_fixtures = model_module.FIXTURES
+        original_current_match = model_module.CURRENT_MATCH
+        model_module.FIXTURES = [
+            Fixture("brazil", "spain", "小组赛 E 组", "2026-06-12T08:00:00-05:00", "finished", 1, 1, city="Los Angeles"),
+            Fixture("argentina", "france", "小组赛 E 组", "2026-06-10T08:00:00-05:00", "finished", 2, 0, city="Mexico City"),
+            Fixture("brazil", "argentina", "小组赛 E 组", "2026-06-15T08:00:00-05:00", "scheduled", city="Mexico City"),
+        ]
+        model_module.CURRENT_MATCH = ("brazil", "argentina")
+        try:
+            prediction = build_match_prediction(1200)
+        finally:
+            model_module.FIXTURES = original_fixtures
+            model_module.CURRENT_MATCH = original_current_match
+
+        impacts = prediction["modelMeta"]["fixtureContextImpacts"]
+        self.assertLess(impacts["brazil"]["path"], 0)
+        self.assertLess(impacts["brazil"]["squad"], 0)
+        self.assertEqual(impacts["argentina"]["path"], 0)
 
     def test_multi_source_c_level_news_can_enter_reviewed_model_flow(self):
         source = NewsSource(

@@ -201,6 +201,19 @@ def fixture_context_analysis(context: dict[str, dict[str, object]], teams: dict[
     return lines
 
 
+def fixture_context_factor_impacts(context: dict[str, dict[str, object]]) -> dict[str, dict[str, float]]:
+    impacts = {team_key: {factor: 0.0 for factor in EVENT_FACTORS} for team_key in TEAM_PROFILES}
+    for side in ("home", "away"):
+        side_context = context.get(side, {})
+        team_key = str(side_context.get("team") or "")
+        if team_key not in impacts:
+            continue
+        impact = float(side_context.get("impact") or 0)
+        impacts[team_key]["path"] += impact
+        impacts[team_key]["squad"] += impact
+    return impacts
+
+
 def profile_to_plates(profile: TeamProfile) -> dict[str, int]:
     return {
         "strength": round((profile.elo - 1000) / 10),
@@ -869,5 +882,6 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
             "dataset": DATASET_META,
             "events": event_summary(),
             "factorImpacts": event_factor_impacts(),
+            "fixtureContextImpacts": fixture_context_factor_impacts(fixture_context),
         },
     }

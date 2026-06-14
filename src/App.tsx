@@ -250,6 +250,7 @@ type MatchPrediction = {
       reviewRequired?: number;
     };
     factorImpacts?: FactorImpactMap;
+    fixtureContextImpacts?: FactorImpactMap;
   };
 };
 
@@ -479,13 +480,14 @@ function dataReadinessLabel(dataset?: DatasetMeta) {
   return "数据待补全";
 }
 
-function plateImpact(teamKey: TeamKey, plateKey: PlateKey, impacts?: FactorImpactMap) {
+function plateImpact(teamKey: TeamKey, plateKey: PlateKey, impacts?: FactorImpactMap, fixtureImpacts?: FactorImpactMap) {
   const teamImpacts = impacts?.[teamKey];
-  if (!teamImpacts) return 0;
-  if (plateKey === "form") return ((teamImpacts.attack ?? 0) + (teamImpacts.defense ?? 0)) / 2;
-  if (plateKey === "margin") return ((teamImpacts.goalkeeper ?? 0) + (teamImpacts.defense ?? 0)) / 2;
-  if (plateKey === "path") return teamImpacts.path ?? 0;
-  if (plateKey === "squad") return teamImpacts.squad ?? 0;
+  const contextImpacts = fixtureImpacts?.[teamKey];
+  const valueFor = (field: string) => (teamImpacts?.[field] ?? 0) + (contextImpacts?.[field] ?? 0);
+  if (plateKey === "form") return (valueFor("attack") + valueFor("defense")) / 2;
+  if (plateKey === "margin") return (valueFor("goalkeeper") + valueFor("defense")) / 2;
+  if (plateKey === "path") return valueFor("path");
+  if (plateKey === "squad") return valueFor("squad");
   return 0;
 }
 
@@ -1007,7 +1009,7 @@ function App() {
                 key={factor.key}
                 label={factor.label}
                 value={selected.factors[factor.key] ?? 0}
-                impact={plateImpact(selected.key, factor.key, matchPrediction.modelMeta?.factorImpacts)}
+                impact={plateImpact(selected.key, factor.key, matchPrediction.modelMeta?.factorImpacts, matchPrediction.modelMeta?.fixtureContextImpacts)}
                 tone={factor.tone}
               />
             ))}
