@@ -13,6 +13,7 @@ if str(PROJECT_ROOT) not in sys.path:
 from backend.data import FIXTURES, TEAM_PROFILES
 from backend.team_history import (
     audit_history_freshness,
+    audit_score_model_quality,
     build_calibration_profile,
     build_scoring_environment,
     calculate_elite_performance_metrics,
@@ -71,6 +72,7 @@ def main() -> None:
     history_freshness = audit_history_freshness(history, TEAM_PROFILES)
     scoring_environment = build_scoring_environment(history, TEAM_PROFILES)
     score_model_backtest = run_poisson_backtest(history, TEAM_PROFILES, scoring_environment, args.max_backtest_matches)
+    score_model_quality = audit_score_model_quality(score_model_backtest)
     calibration = build_calibration_profile(score_model_backtest)
     report = {
         "generatedAt": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
@@ -91,6 +93,7 @@ def main() -> None:
             for key, value in score_model_backtest.items()
             if key != "samples"
         },
+        "scoreModelQuality": score_model_quality,
         "probabilityCalibrationSource": "scoreModelBacktest",
         "calibration": calibration,
         "scoringEnvironment": scoring_environment,

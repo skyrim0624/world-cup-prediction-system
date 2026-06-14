@@ -33,6 +33,7 @@ from .team_strength import (
 )
 from .team_history import (
     audit_history_freshness,
+    audit_score_model_quality,
     apply_probability_calibration,
     build_calibration_profile,
     build_scoring_environment,
@@ -1053,6 +1054,7 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
     history = load_team_match_history()
     scoring_environment = build_scoring_environment(history, TEAM_PROFILES)
     score_model_backtest = run_poisson_backtest(history, TEAM_PROFILES, scoring_environment)
+    score_model_quality = audit_score_model_quality(score_model_backtest)
     calibration = build_calibration_profile(score_model_backtest)
     teams = apply_event_adjustments()
     current_fixture = next((fixture for fixture in FIXTURES if (fixture.home, fixture.away) == (home_key, away_key)), None)
@@ -1092,6 +1094,7 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
         "matchupContext": matchup_context,
         "probabilityCalibration": calibration_application_meta(calibration),
         "probabilityCalibrationSource": "scoreModelBacktest",
+        "scoreModelQuality": score_model_quality,
         "scoringEnvironment": scoring_environment,
         "scoreOutcomes": score_outcomes,
         "scoreMatrix": score_matrix_for_match(home_key, away_key, match_teams, scoring_environment=scoring_environment),
@@ -1223,6 +1226,7 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
     history_freshness = audit_history_freshness(history, TEAM_PROFILES)
     scoring_environment = build_scoring_environment(history, TEAM_PROFILES)
     score_model_backtest = run_poisson_backtest(history, TEAM_PROFILES, scoring_environment)
+    score_model_quality = audit_score_model_quality(score_model_backtest)
     calibration = build_calibration_profile(score_model_backtest)
     coverage_metric_rows = {
         **metric_rows,
@@ -1347,6 +1351,7 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
                 for key, value in score_model_backtest.items()
                 if key != "samples"
             },
+            "scoreModelQuality": score_model_quality,
             "calibration": calibration,
             "probabilityCalibrationSource": "scoreModelBacktest",
             "probabilityCalibrationApplied": calibration_application_meta(calibration),

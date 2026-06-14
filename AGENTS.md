@@ -3022,6 +3022,37 @@ direction * strength * sourceWeight * eventStatusConfidence * 100
 - 新增测试先失败，确认缺少确认状态权重函数。
 - 实现后 `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_model.py' -v` 通过。
 
+### 2026-06-15：Poisson 比分模型质量门禁
+
+本次目标：
+
+- 模型不能只生成质量报告，还要在质量明显退化时阻止正式数据校验通过。
+
+已完成：
+
+- 在 `backend/team_history.py` 新增 `SCORE_MODEL_QUALITY_LIMITS`。
+- 新增 `audit_score_model_quality(backtest)`。
+- 当前质量门槛：
+  - 回测样本不少于 200 场。
+  - Brier score 不高于 0.72。
+  - LogLoss 不高于 1.20。
+  - 总进球平均误差不高于 1.80。
+- `modelMeta.scoreModelQuality` 暴露质量审计。
+- 单场详情响应暴露 `scoreModelQuality`。
+- 模型质量报告加入 `scoreModelQuality`。
+- `scripts/validate_prediction_data.py` 加入 Poisson 比分模型质量门禁，不达标则失败。
+
+当前结果：
+
+- 当前 600 场 Poisson 回测：Brier 约 0.6176，LogLoss 约 1.0276，总进球平均误差约 1.3918。
+- 当前质量审计通过。
+
+验证：
+
+- 新增测试先失败，确认缺少质量审计函数。
+- 实现后 `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_history_model_pipeline.py' -v` 通过。
+- `npm run validate:data` 通过。
+
 #### 当前仍未完成的专业数据层
 
 没有授权数据前，以下仍保持缺失或中性：

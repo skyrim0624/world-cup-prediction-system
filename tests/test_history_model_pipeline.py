@@ -10,9 +10,10 @@ from backend.model import build_match_prediction
 from backend.team_history import (
     DEFAULT_TEAM_MATCH_HISTORY_PATH,
     apply_probability_calibration,
+    audit_history_freshness,
+    audit_score_model_quality,
     build_calibration_profile,
     build_scoring_environment,
-    audit_history_freshness,
     calculate_elite_performance_metrics,
     calculate_recent_form_metrics,
     load_team_match_history,
@@ -112,6 +113,9 @@ class HistoryModelPipelineTest(unittest.TestCase):
         self.assertGreater(backtest["brierScore"], 0)
         self.assertGreater(backtest["logLoss"], 0)
         self.assertIn("totalGoalsMeanError", backtest)
+        quality = audit_score_model_quality(backtest)
+        self.assertEqual(quality["status"], "pass")
+        self.assertEqual(quality["source"], "score_model_backtest")
 
     def test_scoring_environment_is_estimated_from_real_history(self):
         history = load_team_match_history(DEFAULT_TEAM_MATCH_HISTORY_PATH)
@@ -152,6 +156,7 @@ class HistoryModelPipelineTest(unittest.TestCase):
         self.assertGreaterEqual(meta["backtest"]["evaluatedMatches"], 120)
         self.assertIn("scoreModelBacktest", meta)
         self.assertGreaterEqual(meta["scoreModelBacktest"]["evaluatedMatches"], 120)
+        self.assertEqual(meta["scoreModelQuality"]["status"], "pass")
         self.assertIn("calibration", meta)
         self.assertEqual(meta["probabilityCalibrationSource"], "scoreModelBacktest")
         self.assertIn(meta["calibration"]["status"], {"active", "limited"})
@@ -184,6 +189,7 @@ class HistoryModelPipelineTest(unittest.TestCase):
             self.assertGreaterEqual(report["backtest"]["evaluatedMatches"], 200)
             self.assertIn("calibration", report)
             self.assertIn("scoreModelBacktest", report)
+            self.assertEqual(report["scoreModelQuality"]["status"], "pass")
             self.assertEqual(report["probabilityCalibrationSource"], "scoreModelBacktest")
             self.assertEqual(report["scoringEnvironment"]["status"], "active")
             self.assertIn("teamQualitySummary", report)

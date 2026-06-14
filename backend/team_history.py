@@ -12,6 +12,12 @@ DEFAULT_TEAM_MATCH_HISTORY_PATH = DATA_DIR / "team-match-history.json"
 OFFICIAL_MATCH_WEIGHT = 1.18
 FRIENDLY_MATCH_WEIGHT = 0.82
 MAX_BACKTEST_GOALS = 7
+SCORE_MODEL_QUALITY_LIMITS = {
+    "minMatches": 200,
+    "maxBrierScore": 0.72,
+    "maxLogLoss": 1.2,
+    "maxTotalGoalsMeanError": 1.8,
+}
 
 
 def clamp(value: float, lower: float, upper: float) -> float:
@@ -524,6 +530,40 @@ def run_poisson_backtest(
         "logLoss": round(log_total / count, 4),
         "totalGoalsMeanError": round(total_goal_error / count, 4),
         "samples": samples,
+    }
+
+
+def audit_score_model_quality(
+    backtest: dict[str, Any],
+    limits: dict[str, float | int] | None = None,
+) -> dict[str, Any]:
+    active_limits = {**SCORE_MODEL_QUALITY_LIMITS, **(limits or {})}
+    failures = []
+    evaluated_matches = int(backtest.get("evaluatedMatches") or 0)
+    brier_score = float(backtest.get("brierScore") or 0)
+    log_loss = float(backtest.get("logLoss") or 0)
+    total_goals_error = float(backtest.get("totalGoalsMeanError") or 0)
+    if backtest.get("status") != "active":
+        failures.append("backtest_not_active")
+    if evaluated_matches < int(active_limits["minMatches"]):
+        failures.append("insufficient_backtest_matches")
+    if brier_score > float(active_limits["maxBrierScore"]):
+        failures.append("brier_score_too_high")
+    if log_loss > float(active_limits["maxLogLoss"]):
+        failures.append("log_loss_too_high")
+    if total_goals_error > float(active_limits["maxTotalGoalsMeanError"]):
+        failures.append("total_goals_error_too_high")
+    return {
+        "status": "fail" if failures else "pass",
+        "source": "score_model_backtest",
+        "limits": active_limits,
+        "metrics": {
+            "evaluatedMatches": evaluated_matches,
+            "brierScore": brier_score,
+            "logLoss": log_loss,
+            "totalGoalsMeanError": total_goals_error,
+        },
+        "failures": failures,
     }
 
 

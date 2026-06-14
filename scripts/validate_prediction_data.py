@@ -19,7 +19,13 @@ from backend.data import (
     THIRD_PLACE_COMBINATIONS,
 )
 from backend.model import advanced_metric_impacts
-from backend.team_history import audit_history_freshness, build_scoring_environment, load_team_match_history
+from backend.team_history import (
+    audit_history_freshness,
+    audit_score_model_quality,
+    build_scoring_environment,
+    load_team_match_history,
+    run_poisson_backtest,
+)
 
 
 def main() -> None:
@@ -69,6 +75,10 @@ def main() -> None:
         raise SystemExit("历史进球环境必须可用")
     if int(scoring_environment.get("matches", 0)) < 900:
         raise SystemExit("历史进球环境样本不足")
+    score_model_backtest = run_poisson_backtest(history, TEAM_PROFILES, scoring_environment)
+    score_model_quality = audit_score_model_quality(score_model_backtest)
+    if score_model_quality.get("status") != "pass":
+        raise SystemExit(f"Poisson 比分模型回测未达标: {', '.join(score_model_quality.get('failures', []))}")
     if DATASET_META["newsSourceCount"] != len(NEWS_SOURCES):
         raise SystemExit("新闻来源统计不一致")
     if DATASET_META["rawNewsCount"] != len(RAW_NEWS_ITEMS):
@@ -82,7 +92,8 @@ def main() -> None:
     print(
         f"球队: {DATASET_META['teamCount']} · 小组: {len(groups)} · 赛程: {DATASET_META['fixtureCount']} · "
         f"事件: {len(EVENTS)} · 原始新闻: {len(RAW_NEWS_ITEMS)} · 历史赛果: {history['meta']['scoredMatches']} · "
-        f"进球环境样本: {scoring_environment['matches']} · 历史新鲜度: {history_freshness['oldestAgeDays']} 天"
+        f"进球环境样本: {scoring_environment['matches']} · 历史新鲜度: {history_freshness['oldestAgeDays']} 天 · "
+        f"比分模型 Brier: {score_model_backtest['brierScore']}"
     )
 
 
