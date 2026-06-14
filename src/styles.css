@@ -2283,6 +2283,186 @@ button {
   line-height: 1;
 }
 
+.prediction-run-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.run-head {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr);
+  gap: 14px;
+  align-items: stretch;
+}
+
+.run-head > div:first-child {
+  display: grid;
+  gap: 8px;
+  align-content: center;
+  min-height: 118px;
+  padding: 14px;
+  border: 1px solid rgba(24, 227, 208, 0.22);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.run-head span,
+.run-head em {
+  color: var(--muted);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.run-head strong {
+  color: #f3fffd;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.run-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.run-summary .admin-metric {
+  min-height: 118px;
+}
+
+.run-stage-list {
+  display: grid;
+  gap: 12px;
+}
+
+.run-stage {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.run-stage-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.run-stage-title strong,
+.run-table > strong {
+  color: #dff4f2;
+  font-size: 15px;
+}
+
+.run-stage-title span {
+  color: var(--cyan);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.run-step-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.run-step {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  min-height: 134px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #dff4f2;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.run-step.green { border-color: rgba(101, 230, 90, 0.32); }
+.run-step.gold { border-color: rgba(255, 198, 66, 0.34); }
+.run-step.blue { border-color: rgba(24, 227, 208, 0.3); }
+.run-step.muted { border-color: rgba(255, 255, 255, 0.08); }
+
+.run-step span {
+  color: currentColor;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.run-step strong {
+  color: #f3fffd;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.run-step p {
+  margin: 0;
+  color: #a8bbba;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.run-step code,
+.run-interface-row code,
+.run-intervention-row code {
+  color: var(--green);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.run-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+}
+
+.run-table {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.run-interface-row,
+.run-intervention-row {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) 70px;
+  gap: 8px;
+  align-items: center;
+  min-width: 0;
+  min-height: 54px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.run-intervention-row {
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1fr);
+}
+
+.run-interface-row span,
+.run-intervention-row span {
+  min-width: 0;
+  color: #d9e6e5;
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+
+.run-interface-row em {
+  justify-self: end;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.run-interface-row small,
+.run-intervention-row small {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
 .admin-command {
   display: grid;
   gap: 8px;
@@ -2896,6 +3076,16 @@ button {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .run-head,
+  .run-split {
+    grid-template-columns: 1fr;
+  }
+
+  .run-step-list,
+  .run-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .console-panel,
   .console-panel.wide {
     grid-column: auto;
@@ -3239,6 +3429,8 @@ button {
 
   .admin-grid,
   .admin-metrics,
+  .run-summary,
+  .run-step-list,
   .daily-status,
   .admin-auth-row,
   .backup-row,
@@ -3246,6 +3438,19 @@ button {
   .fixture-inputs,
   .raw-news-grid {
     grid-template-columns: 1fr;
+  }
+
+  .run-head strong {
+    font-size: 28px;
+  }
+
+  .run-interface-row,
+  .run-intervention-row {
+    grid-template-columns: 1fr;
+  }
+
+  .run-interface-row em {
+    justify-self: start;
   }
 
   .engine-line {

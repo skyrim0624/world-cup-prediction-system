@@ -109,6 +109,23 @@ function dailyHealthTone(status?: string) {
   return "";
 }
 
+function predictionRunStatusLabel(status: PredictionRunStatus) {
+  if (status === "ran") return "已执行";
+  if (status === "skipped") return "跳过";
+  if (status === "manual") return "待人工";
+  if (status === "available") return "可调用";
+  if (status === "snapshot") return "快照";
+  if (status === "live_compute") return "实时算";
+  return status;
+}
+
+function predictionRunStatusTone(status: PredictionRunStatus): Tone {
+  if (status === "ran" || status === "snapshot") return "green";
+  if (status === "manual" || status === "available") return "gold";
+  if (status === "skipped") return "muted";
+  return "blue";
+}
+
 type AdminOverview = {
   fixtureStatus: {
     scheduled: number;
@@ -144,6 +161,64 @@ type AdminOverview = {
     tournamentImportEndpoint: string;
     tournamentRollbackEndpoint: string;
   };
+};
+
+type PredictionRunStatus = "ran" | "skipped" | "manual" | "available" | "snapshot" | "live_compute" | string;
+
+type PredictionRunStep = {
+  id: string;
+  label: string;
+  functionName: string;
+  moduleName: string;
+  status: PredictionRunStatus;
+  detail: string;
+  interfacePath?: string | null;
+};
+
+type PredictionRunStage = {
+  id: string;
+  title: string;
+  status: PredictionRunStatus;
+  steps: PredictionRunStep[];
+};
+
+type PredictionRunInterface = {
+  method: string;
+  path: string;
+  status: PredictionRunStatus;
+  detail: string;
+};
+
+type PredictionInterventionPoint = {
+  label: string;
+  endpoint: string;
+  affects: string;
+};
+
+type PredictionRunMonitor = {
+  generatedAt: string;
+  match: {
+    homeTeam: string;
+    awayTeam: string;
+    homeName: string;
+    awayName: string;
+    homeCode: string;
+    awayCode: string;
+    stage: string;
+    kickoff: string;
+    status: string;
+  };
+  summary: {
+    totalSteps: number;
+    ranSteps: number;
+    skippedSteps: number;
+    manualSteps: number;
+    interventionPoints: number;
+    snapshotReady: boolean;
+  };
+  pipeline: PredictionRunStage[];
+  interfaces: PredictionRunInterface[];
+  interventionPoints: PredictionInterventionPoint[];
 };
 
 type ScoreOutcome = {
@@ -1423,6 +1498,7 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
 function AdminConsole() {
   const [overview, setOverview] = useState<AdminOverview | null>(null);
   const [eventReview, setEventReview] = useState<EventReviewResponse | null>(null);
+  const [predictionRun, setPredictionRun] = useState<PredictionRunMonitor | null>(null);
   const [adminToken, setAdminToken] = useState(() => window.localStorage.getItem("worldCupAdminToken") ?? "");
   const [pendingId, setPendingId] = useState<string | null>(null);
   const [snapshotPending, setSnapshotPending] = useState(false);
@@ -1467,14 +1543,17 @@ function AdminConsole() {
   }
 
   async function loadAdminData() {
-    const [overviewResponse, eventsResponse] = await Promise.all([
+    const [overviewResponse, eventsResponse, predictionRunResponse] = await Promise.all([
       fetch(`${API_BASE_URL}/api/admin/overview`, { cache: "no-store" }),
       fetch(`${API_BASE_URL}/api/events`, { cache: "no-store" }),
+      fetch(`${API_BASE_URL}/api/admin/prediction-run`, { cache: "no-store" }),
     ]);
     if (!overviewResponse.ok) throw new Error(`后台概览接口返回 ${overviewResponse.status}`);
     if (!eventsResponse.ok) throw new Error(`事件接口返回 ${eventsResponse.status}`);
+    if (!predictionRunResponse.ok) throw new Error(`预测追踪接口返回 ${predictionRunResponse.status}`);
     setOverview((await overviewResponse.json()) as AdminOverview);
     setEventReview((await eventsResponse.json()) as EventReviewResponse);
+    setPredictionRun((await predictionRunResponse.json()) as PredictionRunMonitor);
   }
 
   useEffect(() => {
@@ -1487,6 +1566,7 @@ function AdminConsole() {
         if (active) {
           setOverview(null);
           setEventReview(null);
+          setPredictionRun(null);
         }
       }
     }
@@ -1708,6 +1788,11 @@ function AdminConsole() {
           </button>
         </article>
 
+        <article className="admin-card admin-card-wide">
+          <h2>预测运行监管</h2>
+          <PredictionRunPanel monitor={predictionRun} />
+        </article>
+
         <article className="admin-card">
           <h2>比分写入</h2>
           <form className="fixture-form" onSubmit={submitFixtureScore}>
@@ -1821,6 +1906,77 @@ function AdminConsole() {
         </article>
       </section>
     </main>
+  );
+}
+
+function PredictionRunPanel({ monitor }: { monitor: PredictionRunMonitor | null }) {
+  if (!monitor) {
+    return <p className="review-empty">预测运行追踪等待 API 连接</p>;
+  }
+
+  return (
+    <div className="prediction-run-panel">
+      <div className="run-head">
+        <div>
+          <span>{monitor.match.stage}</span>
+          <strong>
+            {monitor.match.homeCode} / {monitor.match.awayCode}
+          </strong>
+          <em>{monitor.match.status === "scheduled" ? "未开赛" : monitor.match.status}</em>
+        </div>
+        <div className="run-summary">
+          <Metric label="已执行" value={monitor.summary.ranSteps} tone="green" />
+          <Metric label="跳过" value={monitor.summary.skippedSteps} tone="muted" />
+          <Metric label="待人工" value={monitor.summary.manualSteps} tone="gold" />
+          <Metric label="介入点" value={monitor.summary.interventionPoints} tone="blue" />
+        </div>
+      </div>
+
+      <div className="run-stage-list">
+        {monitor.pipeline.map((stage) => (
+          <section className="run-stage" key={stage.id}>
+            <div className="run-stage-title">
+              <strong>{stage.title}</strong>
+              <span>{predictionRunStatusLabel(stage.status)}</span>
+            </div>
+            <div className="run-step-list">
+              {stage.steps.map((step) => (
+                <div className={`run-step ${predictionRunStatusTone(step.status)}`} key={step.id}>
+                  <span>{predictionRunStatusLabel(step.status)}</span>
+                  <strong>{step.label}</strong>
+                  <p>{step.detail}</p>
+                  <code>{step.functionName}</code>
+                </div>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+
+      <div className="run-split">
+        <div className="run-table">
+          <strong>接口状态</strong>
+          {monitor.interfaces.map((item) => (
+            <div className="run-interface-row" key={`${item.method}-${item.path}`}>
+              <code>{item.method}</code>
+              <span>{item.path}</span>
+              <em className={predictionRunStatusTone(item.status)}>{predictionRunStatusLabel(item.status)}</em>
+              <small>{item.detail}</small>
+            </div>
+          ))}
+        </div>
+        <div className="run-table">
+          <strong>人工介入</strong>
+          {monitor.interventionPoints.map((item) => (
+            <div className="run-intervention-row" key={item.endpoint}>
+              <span>{item.label}</span>
+              <code>{item.endpoint}</code>
+              <small>{item.affects}</small>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 

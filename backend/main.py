@@ -8,7 +8,7 @@ from pydantic import BaseModel
 
 from . import data as data_state
 from .access import build_access_options, build_access_policy
-from .admin import build_admin_overview
+from .admin import build_admin_overview, build_prediction_run_monitor
 from .admin_audit import AUDIT_LOG_PATH, append_admin_audit
 from .admin_security import verify_admin_token
 from .data_import import apply_tournament_data_import, restore_tournament_backup
@@ -175,6 +175,11 @@ async def payment_order(order_id: str) -> dict[str, object]:
 @app.get("/api/admin/overview")
 async def admin_overview() -> dict[str, object]:
     return build_admin_overview(snapshot_data_path, audit_log_path, daily_status_path, tournament_backup_dir)
+
+
+@app.get("/api/admin/prediction-run")
+async def admin_prediction_run() -> dict[str, object]:
+    return build_prediction_run_monitor(snapshot_data_path, daily_status_path)
 
 
 @app.get("/api/upcoming-matches")

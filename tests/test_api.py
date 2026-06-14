@@ -227,6 +227,21 @@ class PredictionApiTest(unittest.TestCase):
             self.assertEqual(payload["operations"]["liveScoreEndpoint"], "/api/fixtures/live")
             self.assertEqual(payload["reviewQueue"][0]["action"], "watch")
 
+    def test_admin_prediction_run_api_returns_execution_trace(self):
+        client = TestClient(app)
+        response = client.get("/api/admin/prediction-run")
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        all_steps = [step for stage in payload["pipeline"] for step in stage["steps"]]
+        self.assertGreater(payload["summary"]["totalSteps"], 0)
+        self.assertTrue(any(step["functionName"] == "win_draw_loss" for step in all_steps))
+        self.assertTrue(any(step["functionName"] == "simulate_tournament" for step in all_steps))
+        self.assertTrue(any(step["status"] == "skipped" for step in all_steps))
+        self.assertTrue(any(item["path"] == "/api/match-prediction" for item in payload["interfaces"]))
+        self.assertTrue(any(item["endpoint"] == "/api/fixtures/result" for item in payload["interventionPoints"]))
+        self.assertIn("homeTeam", payload["match"])
+
     def test_admin_overview_api_returns_daily_update_status(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             status_path = Path(temp_dir) / "daily-update-status.json"
