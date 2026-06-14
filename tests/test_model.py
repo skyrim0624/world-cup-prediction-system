@@ -246,15 +246,21 @@ class PredictionModelTest(unittest.TestCase):
         self.assertEqual(impacts["argentina"]["path"], 0)
 
     def test_finished_match_records_lock_real_scores_as_dynamic_inputs(self):
-        records = build_finished_match_records(limit=2)
+        records = build_finished_match_records(limit=3)
 
-        self.assertEqual(records["count"], 2)
+        self.assertEqual(records["count"], 3)
         first = records["items"][0]
+        self.assertEqual(first["matchNo"], 6)
         self.assertEqual(first["status"], "finished")
         self.assertIsInstance(first["homeScore"], int)
         self.assertIsInstance(first["awayScore"], int)
         self.assertEqual(first["modelUse"], "locked_result_weight")
         self.assertIn("后续路径", first["modelUseLabel"])
+        third = records["items"][2]
+        self.assertEqual(third["homeName"], "巴西")
+        self.assertEqual(third["homeScore"], 1)
+        self.assertEqual(third["awayScore"], 1)
+        self.assertEqual(third["awayName"], "摩洛哥")
 
     def test_multi_source_c_level_news_can_enter_reviewed_model_flow(self):
         source = NewsSource(

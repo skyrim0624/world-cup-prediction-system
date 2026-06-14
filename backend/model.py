@@ -874,9 +874,15 @@ def build_upcoming_match_predictions(limit: int = 12) -> dict[str, object]:
 def build_finished_match_records(limit: int = 12) -> dict[str, object]:
     teams = TEAM_PROFILES
     items = []
-    for fixture in FIXTURES:
-        if fixture.status != "finished":
-            continue
+    finished_fixtures = [fixture for fixture in FIXTURES if fixture.status == "finished"]
+    finished_fixtures.sort(
+        key=lambda fixture: (
+            parse_fixture_kickoff(fixture.kickoff) or datetime.min.replace(tzinfo=timezone.utc),
+            fixture.match_no or 0,
+        ),
+        reverse=True,
+    )
+    for fixture in finished_fixtures:
         items.append(
             {
                 "stage": fixture.stage,

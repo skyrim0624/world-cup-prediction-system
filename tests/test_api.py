@@ -533,17 +533,23 @@ class PredictionApiTest(unittest.TestCase):
 
     def test_finished_matches_api_lists_locked_result_records(self):
         client = TestClient(app)
-        response = client.get("/api/finished-matches?limit=2")
+        response = client.get("/api/finished-matches?limit=3")
 
         self.assertEqual(response.status_code, 200)
         payload = response.json()
-        self.assertEqual(payload["count"], 2)
+        self.assertEqual(payload["count"], 3)
         first = payload["items"][0]
+        self.assertEqual(first["matchNo"], 6)
         self.assertEqual(first["status"], "finished")
         self.assertIsInstance(first["homeScore"], int)
         self.assertIsInstance(first["awayScore"], int)
         self.assertEqual(first["modelUse"], "locked_result_weight")
         self.assertIn("后续路径", first["modelUseLabel"])
+        third = payload["items"][2]
+        self.assertEqual(third["homeName"], "巴西")
+        self.assertEqual(third["homeScore"], 1)
+        self.assertEqual(third["awayScore"], 1)
+        self.assertEqual(third["awayName"], "摩洛哥")
 
     def test_match_detail_api_builds_prediction_for_any_scheduled_match(self):
         client = TestClient(app)
