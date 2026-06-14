@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from bisect import bisect_left
 from collections import defaultdict
 from dataclasses import replace
@@ -28,6 +29,7 @@ SIMULATION_COUNT = 8_000
 MAX_GOALS = 7
 EVENT_FACTORS = ("attack", "defense", "goalkeeper", "path", "squad")
 LIVE_REMAINING_GOAL_RATE = 0.45
+TOURNAMENT_YEAR = 2026
 
 # NOTE: 固定路径来自 FIFA World Cup 26 Regulations Article 12.6-12.11 和 Annexe C。
 ROUND_OF_32_MATCHES = (
@@ -88,6 +90,115 @@ def event_factor_impacts() -> dict[str, dict[str, float]]:
             continue
         impacts[event.team][event.factor] += round(event.direction * event.strength * weight * 100, 2)
     return impacts
+
+
+def parse_fixture_kickoff(kickoff: str) -> datetime | None:
+    normalized = kickoff.replace("Z", "+00:00")
+    try:
+        parsed = datetime.fromisoformat(normalized)
+        if parsed.tzinfo is None:
+            return parsed.replace(tzinfo=timezone.utc)
+        return parsed
+    except ValueError:
+        pass
+
+    match = re.search(r"(\d{1,2})月(\d{1,2})日\s+(\d{1,2}):(\d{2})", kickoff)
+    if not match:
+        return None
+    month, day, hour, minute = (int(part) for part in match.groups())
+    return datetime(TOURNAMENT_YEAR, month, day, hour, minute, tzinfo=timezone.utc)
+
+
+def fixture_context_for_team(team_key: str, fixture: Fixture, fixtures: list[Fixture]) -> dict[str, object]:
+    current_time = parse_fixture_kickoff(fixture.kickoff)
+    current_city = fixture.city
+    context = {
+        "team": team_key,
+        "restDays": None,
+        "previousCity": None,
+        "currentCity": current_city,
+        "cityChange": False,
+        "impact": 0,
+        "notes": [],
+    }
+    if current_time is None:
+        return context
+
+    previous_candidates = []
+    for candidate in fixtures:
+        if candidate is fixture or team_key not in {candidate.home, candidate.away}:
+            continue
+        candidate_time = parse_fixture_kickoff(candidate.kickoff)
+        if candidate_time is not None and candidate_time < current_time:
+            previous_candidates.append((candidate_time, candidate))
+    if not previous_candidates:
+        return context
+
+    previous_time, previous_fixture = max(previous_candidates, key=lambda item: item[0])
+    rest_days = round((current_time - previous_time).total_seconds() / 86400, 1)
+    previous_city = previous_fixture.city
+    city_change = bool(previous_city and current_city and previous_city != current_city)
+    impact = 0.0
+    notes: list[str] = []
+    if rest_days < 4:
+        impact -= min(2.4, (4 - rest_days) * 0.8)
+        notes.append(f"休息 {rest_days:g} 天")
+    if city_change:
+        impact -= 0.7
+        notes.append(f"{previous_city} 转场到 {current_city}")
+
+    context.update(
+        {
+            "restDays": rest_days,
+            "previousCity": previous_city,
+            "cityChange": city_change,
+            "impact": round(max(-3.0, impact), 1),
+            "notes": notes,
+        }
+    )
+    return context
+
+
+def build_fixture_context(fixture: Fixture, fixtures: list[Fixture] | None = None) -> dict[str, dict[str, object]]:
+    source_fixtures = fixtures or FIXTURES
+    return {
+        "home": fixture_context_for_team(fixture.home, fixture, source_fixtures),
+        "away": fixture_context_for_team(fixture.away, fixture, source_fixtures),
+    }
+
+
+def apply_fixture_context_adjustments(
+    teams: dict[str, TeamProfile],
+    fixture: Fixture,
+    context: dict[str, dict[str, object]] | None = None,
+) -> dict[str, TeamProfile]:
+    fixture_context = context or build_fixture_context(fixture)
+    adjusted = dict(teams)
+    for side in ("home", "away"):
+        side_context = fixture_context.get(side, {})
+        team_key = str(side_context.get("team") or (fixture.home if side == "home" else fixture.away))
+        impact = int(round(float(side_context.get("impact") or 0)))
+        if impact == 0 or team_key not in adjusted:
+            continue
+        team = adjusted[team_key]
+        adjusted[team_key] = replace(
+            team,
+            path=max(50, min(99, team.path + impact)),
+            squad=max(50, min(99, team.squad + impact)),
+        )
+    return adjusted
+
+
+def fixture_context_analysis(context: dict[str, dict[str, object]], teams: dict[str, TeamProfile]) -> list[str]:
+    lines = []
+    for side in ("home", "away"):
+        side_context = context.get(side, {})
+        impact = float(side_context.get("impact") or 0)
+        notes = side_context.get("notes") or []
+        team_key = str(side_context.get("team") or "")
+        if impact < 0 and team_key in teams and isinstance(notes, list) and notes:
+            lines.append(f"边际盘：{teams[team_key].name}{'、'.join(str(note) for note in notes)}，路径盘和人员盘小幅下调。")
+    return lines
 
 
 def profile_to_plates(profile: TeamProfile) -> dict[str, int]:
@@ -617,8 +728,10 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
     current_fixture = next((fixture for fixture in FIXTURES if (fixture.home, fixture.away) == (home_key, away_key)), None)
     if current_fixture is None:
         raise ValueError(f"找不到比赛: {home_key} vs {away_key}")
+    fixture_context = build_fixture_context(current_fixture)
+    match_teams = apply_fixture_context_adjustments(teams, current_fixture, fixture_context)
 
-    probabilities = win_draw_loss(home_key, away_key, teams)
+    probabilities = win_draw_loss(home_key, away_key, match_teams)
     home_win = round(probabilities["home"] * 100)
     draw = round(probabilities["draw"] * 100)
     away_win = 100 - home_win - draw
@@ -637,13 +750,15 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
         "draw": draw,
         "awayWin": away_win,
         "updatedAt": datetime.now(timezone.utc).isoformat(),
-        "scoreOutcomes": score_outcomes_for_match(home_key, away_key, teams),
+        "fixtureContext": fixture_context,
+        "scoreOutcomes": score_outcomes_for_match(home_key, away_key, match_teams),
         "scenarioImpacts": build_scenario_impacts(base_tournament, home_key, away_key, probabilities, teams, simulation_count),
         "analysis": [
             f"{teams[home_key].name}单场胜率 {home_win}%，当前差距主要来自基础实力和攻防盘。",
             f"平局概率 {draw}%，会继续放大小组排名和净胜球权重。",
             "该场结果会被传导进小组排名、淘汰赛路径和冠军概率。",
-        ],
+        ]
+        + fixture_context_analysis(fixture_context, teams),
     }
 
 
@@ -653,11 +768,13 @@ def build_upcoming_match_predictions(limit: int = 12) -> dict[str, object]:
     for fixture in FIXTURES:
         if fixture.status != "scheduled":
             continue
-        probabilities = win_draw_loss(fixture.home, fixture.away, teams)
+        fixture_context = build_fixture_context(fixture)
+        match_teams = apply_fixture_context_adjustments(teams, fixture, fixture_context)
+        probabilities = win_draw_loss(fixture.home, fixture.away, match_teams)
         home_win = round(probabilities["home"] * 100)
         draw = round(probabilities["draw"] * 100)
         away_win = 100 - home_win - draw
-        top_score = score_distribution(fixture.home, fixture.away, teams)[0]
+        top_score = score_distribution(fixture.home, fixture.away, match_teams)[0]
         items.append(
             {
                 "stage": fixture.stage,
@@ -675,6 +792,7 @@ def build_upcoming_match_predictions(limit: int = 12) -> dict[str, object]:
                 "homeWin": home_win,
                 "draw": draw,
                 "awayWin": away_win,
+                "fixtureContext": fixture_context,
                 "topScore": {
                     "score": top_score["score"],
                     "probability": round(float(top_score["probability"]) * 100, 1),
@@ -694,7 +812,9 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
     teams = apply_event_adjustments()
     home_key, away_key = CURRENT_MATCH
     current_fixture = next(fixture for fixture in FIXTURES if (fixture.home, fixture.away) == CURRENT_MATCH)
-    probabilities = win_draw_loss(home_key, away_key, teams)
+    fixture_context = build_fixture_context(current_fixture)
+    match_teams = apply_fixture_context_adjustments(teams, current_fixture, fixture_context)
+    probabilities = win_draw_loss(home_key, away_key, match_teams)
     base_tournament = simulate_tournament(teams, simulation_count=simulation_count)
 
     response_teams = []
@@ -720,7 +840,7 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
         f"{teams[home_key].name}单场胜率 {round(probabilities['home'] * 100)}%，优势来自基础实力和进攻盘。",
         f"平局概率 {round(probabilities['draw'] * 100)}%，会让小组第一继续依赖末轮赛果。",
         "已结束比赛已经锁定进积分表，伤病和停赛只按来源权重小幅修正。",
-    ]
+    ] + fixture_context_analysis(fixture_context, teams)
 
     return {
         "stage": current_fixture.stage,
@@ -735,7 +855,8 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
         "draw": round(probabilities["draw"] * 100),
         "awayWin": round(probabilities["away"] * 100),
         "updatedAt": datetime.now(timezone.utc).isoformat(),
-        "scoreOutcomes": score_outcomes_for_match(home_key, away_key, teams),
+        "fixtureContext": fixture_context,
+        "scoreOutcomes": score_outcomes_for_match(home_key, away_key, match_teams),
         "scenarioImpacts": build_scenario_impacts(base_tournament, home_key, away_key, probabilities, teams, simulation_count),
         "analysis": analysis,
         "newsItems": [event_to_news_item(event) for event in EVENTS],

@@ -17,7 +17,9 @@ from backend.data import (
 from backend.model import (
     ROUND_OF_16_MATCHES,
     apply_event_adjustments,
+    apply_fixture_context_adjustments,
     best_third_place_teams,
+    build_fixture_context,
     build_round_of_32_matches,
     build_score_sampler,
     build_match_prediction,
@@ -137,6 +139,64 @@ class PredictionModelTest(unittest.TestCase):
         impacts = event_factor_impacts()
         self.assertLess(impacts["brazil"]["attack"], 0)
         self.assertEqual(impacts["argentina"]["squad"], 0)
+
+    def test_fixture_context_detects_short_rest_and_city_change(self):
+        fixtures = [
+            Fixture(
+                "brazil",
+                "spain",
+                "小组赛 E 组",
+                "2026-06-12T08:00:00-05:00",
+                "finished",
+                1,
+                1,
+                city="Los Angeles",
+                stadium="SoFi Stadium",
+            ),
+            Fixture(
+                "argentina",
+                "france",
+                "小组赛 E 组",
+                "2026-06-10T08:00:00-05:00",
+                "finished",
+                2,
+                0,
+                city="Mexico City",
+                stadium="Estadio Azteca",
+            ),
+            Fixture(
+                "brazil",
+                "argentina",
+                "小组赛 E 组",
+                "2026-06-15T08:00:00-05:00",
+                "scheduled",
+                city="Mexico City",
+                stadium="Estadio Azteca",
+            ),
+        ]
+
+        context = build_fixture_context(fixtures[-1], fixtures)
+
+        self.assertEqual(context["home"]["restDays"], 3.0)
+        self.assertTrue(context["home"]["cityChange"])
+        self.assertLess(context["home"]["impact"], 0)
+        self.assertEqual(context["away"]["restDays"], 5.0)
+        self.assertFalse(context["away"]["cityChange"])
+        self.assertEqual(context["away"]["impact"], 0)
+
+    def test_fixture_context_adjustments_lower_path_and_squad_for_affected_team(self):
+        teams = apply_event_adjustments()
+        fixture = Fixture("brazil", "argentina", "小组赛 E 组", "2026-06-15T08:00:00-05:00", "scheduled")
+        context = {
+            "home": {"team": "brazil", "impact": -1.6},
+            "away": {"team": "argentina", "impact": 0},
+        }
+
+        adjusted = apply_fixture_context_adjustments(teams, fixture, context)
+
+        self.assertEqual(adjusted["brazil"].path, teams["brazil"].path - 2)
+        self.assertEqual(adjusted["brazil"].squad, teams["brazil"].squad - 2)
+        self.assertEqual(adjusted["argentina"].path, teams["argentina"].path)
 
     def test_multi_source_c_level_news_can_enter_reviewed_model_flow(self):
         source = NewsSource(
