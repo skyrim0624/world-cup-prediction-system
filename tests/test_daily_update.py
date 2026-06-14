@@ -195,6 +195,56 @@ class DailyUpdateTest(unittest.TestCase):
             self.assertIn("missing-feed.xml", status["error"])
             self.assertIn("updatedAt", status)
 
+    def test_daily_update_health_script_exits_zero_for_fresh_status(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            status_path = Path(temp_dir) / "daily-update-status.json"
+            status_path.write_text(
+                json.dumps({"status": "success", "updatedAt": "2026-06-14T08:00:00Z"}, ensure_ascii=False),
+                encoding="utf-8",
+            )
+
+            result = subprocess.run(
+                [
+                    "python3",
+                    "scripts/check_daily_update_health.py",
+                    "--status",
+                    str(status_path),
+                    "--now",
+                    "2026-06-14T18:00:00Z",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertIn("日更健康: 正常", result.stdout)
+
+    def test_daily_update_health_script_exits_nonzero_for_stale_status(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            status_path = Path(temp_dir) / "daily-update-status.json"
+            status_path.write_text(
+                json.dumps({"status": "success", "updatedAt": "2026-06-13T00:00:00Z"}, ensure_ascii=False),
+                encoding="utf-8",
+            )
+
+            result = subprocess.run(
+                [
+                    "python3",
+                    "scripts/check_daily_update_health.py",
+                    "--status",
+                    str(status_path),
+                    "--now",
+                    "2026-06-14T18:00:00Z",
+                ],
+                check=False,
+                capture_output=True,
+                text=True,
+            )
+
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("日更健康: 过期", result.stderr)
+
 
 if __name__ == "__main__":
     unittest.main()

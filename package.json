@@ -8,6 +8,7 @@
     "import:news-feed": "python3 scripts/import_news_feed.py",
     "review:news": "python3 scripts/review_news_item.py",
     "daily:update": "python3 scripts/run_daily_update.py",
+    "daily:check": "python3 scripts/check_daily_update_health.py",
     "update:snapshot": "python3 scripts/update_prediction_snapshot.py",
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 127.0.0.1"
