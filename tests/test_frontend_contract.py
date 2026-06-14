@@ -92,6 +92,8 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("grid-template-columns: repeat(5", styles)
         self.assertIn("grid-template-columns: repeat(2, minmax(0, 1fr))", styles)
         self.assertIn("width: min(100%, 460px)", styles)
+        self.assertIn("font-size: clamp(15px, 4vw, 18px)", styles)
+        self.assertIn("font-size: clamp(21px, 6vw, 26px)", styles)
 
     def test_team_flags_cover_tournament_teams_and_match_lists(self):
         source = app_source()

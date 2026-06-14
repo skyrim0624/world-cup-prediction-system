@@ -3718,17 +3718,19 @@ button {
 .user-page-shell .portal-topbar {
   grid-template-columns: minmax(0, 1fr);
   align-items: start;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .user-page-shell .portal-brand span {
-  font-size: clamp(23px, 6.8vw, 30px);
-  line-height: 1;
+  color: rgba(236, 255, 252, 0.86);
+  font-size: clamp(15px, 4vw, 18px);
+  line-height: 1.05;
 }
 
 .user-page-shell .portal-brand small {
-  margin-top: 2px;
-  font-size: 11px;
+  margin-top: 1px;
+  color: rgba(236, 255, 252, 0.58);
+  font-size: 9px;
   letter-spacing: 0;
   text-transform: none;
 }
