@@ -85,6 +85,15 @@ class FrontendContractTest(unittest.TestCase):
         self.assertNotIn("双击移动模块", home_source)
         self.assertNotIn("DraggablePanel", home_source)
 
+    def test_forecast_screen_keeps_goal_markets_above_bottom_nav(self):
+        source = app_source()
+        home_source = source_between(source, "function HomePredictionPage()", "function TeamFlag")
+        styles = Path("src/styles.css").read_text(encoding="utf-8")
+
+        self.assertIn("goalMarkets.slice(0, 2)", home_source)
+        self.assertNotIn("goalMarkets.slice(0, 4)", home_source)
+        self.assertIn("calc(100px + env(safe-area-inset-bottom))", styles)
+
     def test_matches_page_uses_beijing_time_without_venue_heading(self):
         source = app_source()
         home_source = source_between(source, "function HomePredictionPage()", "function TeamFlag")

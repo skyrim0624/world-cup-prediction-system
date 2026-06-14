@@ -956,7 +956,7 @@ function HomePredictionPage() {
                 <div className="section-title">
                   <span>进球概率</span>
                 </div>
-                <GoalMarketPanel markets={goalMarkets.slice(0, 4)} compact />
+                <GoalMarketPanel markets={goalMarkets.slice(0, 2)} compact />
               </div>
             </section>
           </div>
