@@ -4098,24 +4098,39 @@ button {
 }
 
 .user-page-shell .upcoming-row {
-  grid-template-columns: 116px minmax(0, 1fr);
+  grid-template-columns: 168px minmax(0, 1fr);
   min-height: 66px;
   gap: 8px;
   padding: 8px;
+  overflow: hidden;
 }
 
 .user-page-shell .upcoming-teams {
+  grid-template-columns: minmax(0, 1fr) 18px minmax(0, 1fr);
   gap: 5px;
+  min-width: 0;
   font-size: 14px;
 }
 
 .user-page-shell .upcoming-teams .flag {
+  flex: 0 0 auto;
   width: 25px;
   height: 17px;
 }
 
 .user-page-shell .upcoming-teams b {
   font-size: 13px;
+  text-align: center;
+}
+
+.user-page-shell .upcoming-teams span {
+  gap: 4px;
+}
+
+.user-page-shell .upcoming-teams em {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: clip;
 }
 
 .user-page-shell .upcoming-copy strong {
@@ -4138,6 +4153,16 @@ button {
 .user-page-shell .upcoming-probs em {
   min-height: 24px;
   font-size: 11px;
+}
+
+@media (max-width: 380px) {
+  .user-page-shell .upcoming-row {
+    grid-template-columns: 1fr;
+  }
+
+  .user-page-shell .upcoming-teams {
+    width: min(100%, 180px);
+  }
 }
 
 .user-page-shell .portal-standing-card .champion-row {
