@@ -19,7 +19,13 @@ from backend.team_history import (
     load_team_match_history,
     run_prediction_backtest,
 )
-from backend.team_strength import build_all_team_strength_profiles, load_team_metric_rows, professional_gap_coverage
+from backend.team_strength import (
+    HISTORICAL_ELO_BLEND,
+    MAX_HISTORICAL_ELO_DELTA,
+    build_all_team_strength_profiles,
+    load_team_metric_rows,
+    professional_gap_coverage,
+)
 
 DEFAULT_OUTPUT_PATH = Path("reports/model-quality-report.json")
 
@@ -65,6 +71,11 @@ def main() -> None:
     report = {
         "generatedAt": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
         "historicalData": history.get("meta", {}),
+        "historicalEloBlend": {
+            "source": "cc0_international_results_latest_elo",
+            "blend": HISTORICAL_ELO_BLEND,
+            "maxDelta": MAX_HISTORICAL_ELO_DELTA,
+        },
         "backtest": {
             key: value
             for key, value in backtest.items()

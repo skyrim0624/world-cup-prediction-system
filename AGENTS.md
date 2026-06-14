@@ -2840,6 +2840,37 @@ tests/test_squad_matchup.py
 - `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_history_model_pipeline.py' -v` 通过。
 - `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_model.py' -v` 通过。
 
+### 2026-06-15：历史 latestElo 融入球队强度底盘
+
+本次目标：
+
+- 让公开历史赛果滚动出来的 `latestElo` 真正影响球队底层 Elo，而不是只出现在报告或解释层。
+
+已完成：
+
+- 在 `backend/team_strength.py` 新增 `apply_historical_elo_baseline()`。
+- `apply_event_adjustments()` 先读取历史赛果，再把 48 队 `latestElo` 以有限权重融入球队底盘。
+- 融合公式：
+
+```text
+modelElo = staticElo + clamp((latestElo - staticElo) * 0.45, -85, 85)
+```
+
+- `modelMeta.historicalEloBlend` 暴露来源、融合权重和最大单次改变量。
+- 模型质量报告加入 `historicalEloBlend`。
+- 新增测试确认：入模 Elo 必须比静态 Elo 更接近历史 `latestElo`。
+
+关键决策：
+
+- 不让公开历史 Elo 完全覆盖 `teams.json` 的人工种子，因为后者还承载了项目早期设定和未授权高阶数据缺失时的保守先验。
+- 历史 Elo 融合发生在事件、近期状态和强队对抗调整之前，保证后续因子都建立在更新后的球队底盘上。
+
+验证：
+
+- 新增测试先失败，确认旧逻辑没有更新 Elo。
+- 实现后 `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_model.py' -v` 通过。
+- `npm run report:model-quality` 通过。
+
 #### 当前仍未完成的专业数据层
 
 没有授权数据前，以下仍保持缺失或中性：

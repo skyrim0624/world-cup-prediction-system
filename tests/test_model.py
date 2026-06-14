@@ -15,6 +15,7 @@ from backend.data import (
     action_for_news_item,
     events_from_raw_news,
 )
+from backend.team_history import load_team_match_history
 from backend.model import (
     ROUND_OF_16_MATCHES,
     advanced_metric_impacts,
@@ -87,6 +88,7 @@ class PredictionModelTest(unittest.TestCase):
         self.assertEqual(prediction["modelMeta"]["events"]["ignored"], 2)
         self.assertEqual(prediction["modelMeta"]["events"]["reviewRequired"], 1)
         self.assertEqual(prediction["modelMeta"]["advancedMetrics"]["source"], "verified_layered_inputs")
+        self.assertEqual(prediction["modelMeta"]["historicalEloBlend"]["source"], "cc0_international_results_latest_elo")
 
     def test_advanced_metrics_cover_all_teams_and_enter_model_meta(self):
         impacts = advanced_metric_impacts()
@@ -171,6 +173,15 @@ class PredictionModelTest(unittest.TestCase):
         )
 
         self.assertNotEqual((round(default_home, 3), round(default_away, 3)), (round(historical_home, 3), round(historical_away, 3)))
+
+    def test_historical_latest_elo_updates_team_strength_baseline(self):
+        history = load_team_match_history()
+        teams = apply_event_adjustments()
+        static_elo = TEAM_PROFILES["brazil"].elo
+        latest_elo = float(history["teams"]["brazil"]["latestElo"])
+
+        self.assertNotEqual(teams["brazil"].elo, static_elo)
+        self.assertLess(abs(teams["brazil"].elo - latest_elo), abs(static_elo - latest_elo))
 
     def test_live_fixture_score_is_used_as_simulation_floor(self):
         teams = apply_event_adjustments()

@@ -23,7 +23,10 @@ from .data import (
     TeamProfile,
 )
 from .team_strength import (
+    HISTORICAL_ELO_BLEND,
+    MAX_HISTORICAL_ELO_DELTA,
     aggregate_team_strength_adjustments,
+    apply_historical_elo_baseline,
     build_all_team_strength_profiles,
     load_team_metric_rows,
     professional_gap_coverage,
@@ -282,9 +285,10 @@ def profile_to_plates(profile: TeamProfile) -> dict[str, int]:
 
 
 def apply_event_adjustments() -> dict[str, TeamProfile]:
-    adjusted = dict(TEAM_PROFILES)
+    history = load_team_match_history()
+    adjusted = apply_historical_elo_baseline(TEAM_PROFILES, history)
     impacts = event_factor_impacts()
-    advanced_impacts = advanced_metric_impacts(adjusted)
+    advanced_impacts = advanced_metric_impacts(adjusted, history=history)
     for team_key, factor_impacts in impacts.items():
         team = adjusted[team_key]
         advanced = advanced_impacts.get(team_key, {})
@@ -1306,6 +1310,11 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
                 "matchedTeams": history.get("meta", {}).get("matchedTeams", 0),
                 "since": history.get("meta", {}).get("since"),
                 "until": history.get("meta", {}).get("until"),
+            },
+            "historicalEloBlend": {
+                "source": "cc0_international_results_latest_elo",
+                "blend": HISTORICAL_ELO_BLEND,
+                "maxDelta": MAX_HISTORICAL_ELO_DELTA,
             },
             "backtest": {
                 key: value

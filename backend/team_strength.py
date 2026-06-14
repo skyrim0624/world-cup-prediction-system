@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from dataclasses import replace
 from pathlib import Path
 from typing import Any
 
@@ -35,6 +36,8 @@ PROFESSIONAL_GAP_IDS = [
     "tacticalMatchup",
 ]
 ADJUSTMENT_KEYS = ("attack", "defense", "goalkeeper", "path", "squad")
+HISTORICAL_ELO_BLEND = 0.45
+MAX_HISTORICAL_ELO_DELTA = 85.0
 
 
 def clamp(value: float, lower: float, upper: float) -> float:
@@ -142,6 +145,24 @@ def base_strength_layer(team: TeamProfile, row: dict[str, Any], history_team: di
     else:
         source = "teams_json_verified_seed"
     return build_layer("baseStrength", "基础强度层", "active", source, metrics, adjustment)
+
+
+def apply_historical_elo_baseline(
+    teams: dict[str, TeamProfile],
+    history: dict[str, Any],
+    blend: float = HISTORICAL_ELO_BLEND,
+) -> dict[str, TeamProfile]:
+    history_teams = history.get("teams") if isinstance(history.get("teams"), dict) else {}
+    adjusted: dict[str, TeamProfile] = {}
+    for team_key, team in teams.items():
+        history_team = history_teams.get(team_key) if isinstance(history_teams.get(team_key), dict) else {}
+        latest_elo = numeric(history_team.get("latestElo")) if isinstance(history_team, dict) else None
+        if latest_elo is None:
+            adjusted[team_key] = team
+            continue
+        delta = clamp((latest_elo - team.elo) * blend, -MAX_HISTORICAL_ELO_DELTA, MAX_HISTORICAL_ELO_DELTA)
+        adjusted[team_key] = replace(team, elo=int(round(team.elo + delta)))
+    return adjusted
 
 
 def recent_form_layer(
