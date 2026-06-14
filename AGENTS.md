@@ -2154,7 +2154,7 @@ Elo / 实力评分
 - 重新执行前端生产构建，并将包含 48 队本地国旗资源的版本部署到 Cloudflare Pages。
 - 部署目标项目：`world-cup-prediction-system`。
 - 正式验收地址：`https://world-cup-prediction-system.pages.dev/`。
-- 本次 Cloudflare Pages 预览地址：`https://ae7a771e.world-cup-prediction-system.pages.dev/`。
+- Cloudflare Pages 每次手动部署都会生成一次性预览地址，客户验收以正式地址为准。
 
 验证：
 
