@@ -14,6 +14,7 @@ from backend.team_history import (
     calculate_elite_performance_metrics,
     calculate_recent_form_metrics,
     load_team_match_history,
+    run_poisson_backtest,
     run_prediction_backtest,
 )
 
@@ -64,6 +65,18 @@ class HistoryModelPipelineTest(unittest.TestCase):
         self.assertGreaterEqual(len(calibration["bins"]), 4)
         self.assertIn(calibration["status"], {"active", "limited"})
 
+    def test_poisson_score_model_backtest_runs_on_real_history(self):
+        history = load_team_match_history(DEFAULT_TEAM_MATCH_HISTORY_PATH)
+        environment = build_scoring_environment(history, TEAM_PROFILES, max_matches=1600)
+
+        backtest = run_poisson_backtest(history, TEAM_PROFILES, environment, max_matches=320)
+
+        self.assertEqual(backtest["status"], "active")
+        self.assertGreaterEqual(backtest["evaluatedMatches"], 120)
+        self.assertGreater(backtest["brierScore"], 0)
+        self.assertGreater(backtest["logLoss"], 0)
+        self.assertIn("totalGoalsMeanError", backtest)
+
     def test_scoring_environment_is_estimated_from_real_history(self):
         history = load_team_match_history(DEFAULT_TEAM_MATCH_HISTORY_PATH)
 
@@ -100,6 +113,8 @@ class HistoryModelPipelineTest(unittest.TestCase):
         self.assertGreaterEqual(meta["historicalData"]["scoredMatches"], 900)
         self.assertIn("backtest", meta)
         self.assertGreaterEqual(meta["backtest"]["evaluatedMatches"], 120)
+        self.assertIn("scoreModelBacktest", meta)
+        self.assertGreaterEqual(meta["scoreModelBacktest"]["evaluatedMatches"], 120)
         self.assertIn("calibration", meta)
         self.assertIn(meta["calibration"]["status"], {"active", "limited"})
         self.assertEqual(meta["probabilityCalibrationApplied"]["status"], "active")
@@ -129,6 +144,7 @@ class HistoryModelPipelineTest(unittest.TestCase):
             self.assertEqual(report["historicalData"]["license"], "CC0-1.0")
             self.assertGreaterEqual(report["backtest"]["evaluatedMatches"], 200)
             self.assertIn("calibration", report)
+            self.assertIn("scoreModelBacktest", report)
             self.assertEqual(report["scoringEnvironment"]["status"], "active")
             self.assertIn("teamQualitySummary", report)
             self.assertIn("brazil", report["teamQualitySummary"])

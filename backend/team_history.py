@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 from datetime import date, datetime
-from math import log
+from math import exp, factorial, log
 from pathlib import Path
 from typing import Any
 
@@ -11,6 +11,7 @@ from .data import DATA_DIR, TeamProfile
 DEFAULT_TEAM_MATCH_HISTORY_PATH = DATA_DIR / "team-match-history.json"
 OFFICIAL_MATCH_WEIGHT = 1.18
 FRIENDLY_MATCH_WEIGHT = 0.82
+MAX_BACKTEST_GOALS = 7
 
 
 def clamp(value: float, lower: float, upper: float) -> float:
@@ -351,6 +352,101 @@ def build_scoring_environment(
         "totalGoalsPerMatch": round((home_goals + away_goals) / match_count, 3),
         "drawRate": round(draws / match_count, 3),
         "homeAdvantageGoals": round(non_neutral_edge - neutral_edge, 3),
+    }
+
+
+def poisson_probability(lam: float, goals: int) -> float:
+    return (lam**goals * exp(-lam)) / factorial(goals)
+
+
+def poisson_probabilities_from_elos(
+    home_elo: float,
+    away_elo: float,
+    neutral: bool,
+    scoring_environment: dict[str, Any],
+) -> dict[str, float]:
+    if scoring_environment.get("status") == "active" and neutral:
+        base_home = float(scoring_environment.get("neutralHomeGoalsPerMatch") or 1.28)
+        base_away = float(scoring_environment.get("neutralAwayGoalsPerMatch") or 1.12)
+    elif scoring_environment.get("status") == "active":
+        base_home = float(scoring_environment.get("homeGoalsPerMatch") or 1.35)
+        base_away = float(scoring_environment.get("awayGoalsPerMatch") or 1.22)
+    else:
+        base_home = 1.35
+        base_away = 1.22
+    elo_gap = home_elo - away_elo
+    home_lambda = clamp(base_home * exp(elo_gap / 760), 0.35, 3.25)
+    away_lambda = clamp(base_away * exp(-elo_gap / 760), 0.35, 3.25)
+    home = draw = away = 0.0
+    for home_goals in range(MAX_BACKTEST_GOALS + 1):
+        for away_goals in range(MAX_BACKTEST_GOALS + 1):
+            probability = poisson_probability(home_lambda, home_goals) * poisson_probability(away_lambda, away_goals)
+            if home_goals > away_goals:
+                home += probability
+            elif home_goals == away_goals:
+                draw += probability
+            else:
+                away += probability
+    total = home + draw + away
+    return {
+        "home": home / total,
+        "draw": draw / total,
+        "away": away / total,
+        "expectedTotalGoals": home_lambda + away_lambda,
+    }
+
+
+def run_poisson_backtest(
+    history: dict[str, Any],
+    teams: dict[str, TeamProfile],
+    scoring_environment: dict[str, Any],
+    max_matches: int = 600,
+) -> dict[str, Any]:
+    team_keys = set(teams)
+    eligible = [
+        row
+        for row in history.get("matches", [])
+        if row.get("home") in team_keys and row.get("away") in team_keys
+    ]
+    rows = eligible[-max_matches:]
+    if not rows:
+        return {
+            "status": "missing",
+            "source": "cc0_international_results_poisson",
+            "evaluatedMatches": 0,
+            "brierScore": 0,
+            "logLoss": 0,
+            "totalGoalsMeanError": 0,
+            "samples": [],
+        }
+
+    brier_total = log_total = total_goal_error = 0.0
+    samples = []
+    for row in rows:
+        probabilities = poisson_probabilities_from_elos(
+            float(row["homeEloBefore"]),
+            float(row["awayEloBefore"]),
+            bool(row.get("neutral")),
+            scoring_environment,
+        )
+        actual = match_outcome(row)
+        brier_total += brier_for(probabilities, actual)
+        log_total += -log(max(probabilities[actual], 1e-9))
+        actual_total_goals = int(row["homeScore"]) + int(row["awayScore"])
+        total_goal_error += abs(float(probabilities["expectedTotalGoals"]) - actual_total_goals)
+        confidence = max(probabilities[key] for key in ("home", "draw", "away"))
+        correct = actual == max(("home", "draw", "away"), key=lambda key: probabilities[key])
+        samples.append({"confidence": confidence, "correct": correct, "actual": actual, "probability": probabilities[actual]})
+
+    count = len(rows)
+    return {
+        "status": "active",
+        "source": "cc0_international_results_poisson",
+        "evaluatedMatches": count,
+        "brierScore": round(brier_total / count, 4),
+        "logLoss": round(log_total / count, 4),
+        "totalGoalsMeanError": round(total_goal_error / count, 4),
+        "samples": samples,
     }
 
 

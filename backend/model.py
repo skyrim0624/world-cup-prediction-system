@@ -37,6 +37,7 @@ from .team_history import (
     build_scoring_environment,
     calibration_application_meta,
     load_team_match_history,
+    run_poisson_backtest,
     run_prediction_backtest,
 )
 from .squad_matchup import apply_matchup_adjustments, build_tactical_matchup
@@ -1205,6 +1206,7 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
     backtest = run_prediction_backtest(history, TEAM_PROFILES)
     calibration = build_calibration_profile(backtest)
     scoring_environment = build_scoring_environment(history, TEAM_PROFILES)
+    score_model_backtest = run_poisson_backtest(history, TEAM_PROFILES, scoring_environment)
     coverage_metric_rows = {
         **metric_rows,
         "__meta__": {
@@ -1319,6 +1321,11 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
             "backtest": {
                 key: value
                 for key, value in backtest.items()
+                if key != "samples"
+            },
+            "scoreModelBacktest": {
+                key: value
+                for key, value in score_model_backtest.items()
                 if key != "samples"
             },
             "calibration": calibration,

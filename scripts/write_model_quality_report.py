@@ -17,6 +17,7 @@ from backend.team_history import (
     calculate_elite_performance_metrics,
     calculate_recent_form_metrics,
     load_team_match_history,
+    run_poisson_backtest,
     run_prediction_backtest,
 )
 from backend.team_strength import (
@@ -68,6 +69,7 @@ def main() -> None:
     backtest = run_prediction_backtest(history, TEAM_PROFILES, args.max_backtest_matches)
     calibration = build_calibration_profile(backtest)
     scoring_environment = build_scoring_environment(history, TEAM_PROFILES)
+    score_model_backtest = run_poisson_backtest(history, TEAM_PROFILES, scoring_environment, args.max_backtest_matches)
     report = {
         "generatedAt": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
         "historicalData": history.get("meta", {}),
@@ -79,6 +81,11 @@ def main() -> None:
         "backtest": {
             key: value
             for key, value in backtest.items()
+            if key != "samples"
+        },
+        "scoreModelBacktest": {
+            key: value
+            for key, value in score_model_backtest.items()
             if key != "samples"
         },
         "calibration": calibration,

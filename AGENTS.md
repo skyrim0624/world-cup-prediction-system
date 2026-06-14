@@ -2871,6 +2871,33 @@ modelElo = staticElo + clamp((latestElo - staticElo) * 0.45, -85, 85)
 - 实现后 `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_model.py' -v` 通过。
 - `npm run report:model-quality` 通过。
 
+### 2026-06-15：Poisson 比分模型独立历史回测
+
+本次目标：
+
+- 当前产品输出比分分布、最可能比分、大小球和 BTTS；这些不能只依赖 Elo 胜平负回测，需要单独验证 Poisson 进球模型。
+
+已完成：
+
+- 在 `backend/team_history.py` 新增 `run_poisson_backtest()`。
+- 回测逻辑使用历史赛果里的赛前滚动 Elo、是否中立场、历史进球环境，生成 Poisson 期望进球。
+- 对每场历史比赛输出胜 / 平 / 负概率，并计算：
+  - `brierScore`
+  - `logLoss`
+  - `totalGoalsMeanError`
+- `modelMeta.scoreModelBacktest` 暴露比分模型回测摘要。
+- `reports/model-quality-report.json` 加入 `scoreModelBacktest`。
+
+关键决策：
+
+- Poisson 回测独立放在 `team_history.py`，不反向依赖 `model.py`，避免模型主链路和验证工具互相循环引用。
+- 这一层仍然只验证公开比分 + Elo 能解释到什么程度；真实 xG 进入前，不把它写成事件级射门质量模型。
+
+验证：
+
+- 新增测试先失败，确认缺少 Poisson 回测函数。
+- 实现后 `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_history_model_pipeline.py' -v` 通过。
+
 #### 当前仍未完成的专业数据层
 
 没有授权数据前，以下仍保持缺失或中性：
