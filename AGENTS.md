@@ -2983,6 +2983,45 @@ modelElo = staticElo + clamp((latestElo - staticElo) * 0.45, -85, 85)
 - 实现后 `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_history_model_pipeline.py' -v` 通过。
 - `npm run validate:data` 通过。
 
+### 2026-06-15：事件确认状态权重接入
+
+本次目标：
+
+- 新闻 / 事件不能只看来源等级，还必须看确认状态；同样是 B 级来源，confirmed 和 single_source 不应该有同样的入模幅度。
+
+已完成：
+
+- 在 `backend/model.py` 新增 `EVENT_STATUS_CONFIDENCE`。
+- 新增 `event_confidence_weight(event)`。
+- `event_factor_impacts()` 从：
+
+```text
+direction * strength * sourceWeight * 100
+```
+
+改为：
+
+```text
+direction * strength * sourceWeight * eventStatusConfidence * 100
+```
+
+- 当前确认状态权重：
+  - confirmed：1.0
+  - multi_source：0.75
+  - single_source：0.45
+  - unverified / rumor：0.0
+- `modelMeta.eventConfidenceWeights` 暴露这组权重，方便解释事件为什么只小幅修正。
+
+关键决策：
+
+- 这次只改变“已经允许入模的事件”的修正幅度，不改变原有 S/A/B/C/D 来源等级和 action 审核流程。
+- 单源消息不是完全无效，但只能小幅影响；未证实和传闻仍不进入模型。
+
+验证：
+
+- 新增测试先失败，确认缺少确认状态权重函数。
+- 实现后 `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_model.py' -v` 通过。
+
 #### 当前仍未完成的专业数据层
 
 没有授权数据前，以下仍保持缺失或中性：

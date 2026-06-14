@@ -12,6 +12,7 @@ from backend.data import (
     Fixture,
     NewsSource,
     RawNewsItem,
+    TeamEvent,
     action_for_news_item,
     events_from_raw_news,
 )
@@ -28,6 +29,7 @@ from backend.model import (
     build_score_sampler,
     build_match_prediction,
     build_standings,
+    event_confidence_weight,
     event_factor_impacts,
     expected_goals,
     forced_outcome_score,
@@ -89,6 +91,7 @@ class PredictionModelTest(unittest.TestCase):
         self.assertEqual(prediction["modelMeta"]["events"]["reviewRequired"], 1)
         self.assertEqual(prediction["modelMeta"]["advancedMetrics"]["source"], "verified_layered_inputs")
         self.assertEqual(prediction["modelMeta"]["historicalEloBlend"]["source"], "cc0_international_results_latest_elo")
+        self.assertEqual(prediction["modelMeta"]["eventConfidenceWeights"]["single_source"], 0.45)
 
     def test_advanced_metrics_cover_all_teams_and_enter_model_meta(self):
         impacts = advanced_metric_impacts()
@@ -204,6 +207,21 @@ class PredictionModelTest(unittest.TestCase):
         impacts = event_factor_impacts()
         self.assertLess(impacts["brazil"]["attack"], 0)
         self.assertEqual(impacts["argentina"]["squad"], 0)
+
+    def test_event_confirmation_status_scales_model_impact(self):
+        confirmed = TeamEvent("确认伤情", "", "brazil", "B", "attack", -1, 0.05, "now", status="confirmed")
+        single_source = TeamEvent("单源伤情", "", "brazil", "B", "attack", -1, 0.05, "now", status="single_source")
+        self.assertGreater(event_confidence_weight(confirmed), event_confidence_weight(single_source))
+
+        original_events = model_module.EVENTS
+        model_module.EVENTS = [confirmed, single_source]
+        try:
+            impacts = event_factor_impacts()
+        finally:
+            model_module.EVENTS = original_events
+
+        self.assertLess(impacts["brazil"]["attack"], -2.0)
+        self.assertGreater(impacts["brazil"]["attack"], -4.0)
 
     def test_fixture_context_detects_short_rest_and_city_change(self):
         fixtures = [

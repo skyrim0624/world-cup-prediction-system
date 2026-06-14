@@ -48,6 +48,13 @@ Outcome = Literal["home", "draw", "away"]
 SIMULATION_COUNT = 8_000
 MAX_GOALS = 7
 EVENT_FACTORS = ("attack", "defense", "goalkeeper", "path", "squad")
+EVENT_STATUS_CONFIDENCE = {
+    "confirmed": 1.0,
+    "multi_source": 0.75,
+    "single_source": 0.45,
+    "unverified": 0.0,
+    "rumor": 0.0,
+}
 LIVE_REMAINING_GOAL_RATE = 0.45
 TOURNAMENT_YEAR = 2026
 ADVANCED_METRIC_SOURCE = {
@@ -116,8 +123,12 @@ def event_factor_impacts() -> dict[str, dict[str, float]]:
         weight = SOURCE_WEIGHTS[event.source_level]
         if not event_enters_model(event) or event.factor not in EVENT_FACTORS:
             continue
-        impacts[event.team][event.factor] += round(event.direction * event.strength * weight * 100, 2)
+        impacts[event.team][event.factor] += round(event.direction * event.strength * weight * event_confidence_weight(event) * 100, 2)
     return impacts
+
+
+def event_confidence_weight(event) -> float:
+    return EVENT_STATUS_CONFIDENCE.get(str(getattr(event, "status", "single_source")), 0.35)
 
 
 def clamp(value: float, lower: float, upper: float) -> float:
@@ -1304,6 +1315,7 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
             "liveMatches": len([fixture for fixture in FIXTURES if fixture.status == "live"]),
             "dataset": DATASET_META,
             "events": event_summary(),
+            "eventConfidenceWeights": EVENT_STATUS_CONFIDENCE,
             "factorImpacts": event_factor_impacts(),
             "fixtureContextImpacts": fixture_context_factor_impacts(fixture_context),
             "matchupContext": matchup_context,
