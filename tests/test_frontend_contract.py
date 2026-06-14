@@ -100,6 +100,8 @@ class FrontendContractTest(unittest.TestCase):
         self.assertNotIn("赛果记录", home_source)
         self.assertIn("app-bottom-nav", styles)
         self.assertIn("grid-template-columns: repeat(4, minmax(0, 1fr))", styles)
+        self.assertIn("display: inline-flex", styles)
+        self.assertIn("align-items: flex-end", styles)
         self.assertIn("grid-template-columns: repeat(2, minmax(0, 1fr))", styles)
         self.assertIn("width: min(100%, 460px)", styles)
         self.assertIn("font-size: clamp(15px, 4vw, 18px)", styles)
