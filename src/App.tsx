@@ -491,6 +491,108 @@ const PAYMENT_STATUS_POLL_MS = 4000;
 const API_BASE_URL = import.meta.env.DEV ? "http://127.0.0.1:8000" : "";
 const SINGLE_MATCH_ROUTE_PREFIX = "/match/";
 
+const TEAM_FLAG_ASSET_BY_KEY: Record<TeamKey, string> = {
+  mexico: "mx",
+  "south-africa": "za",
+  "south-korea": "kr",
+  czechia: "cz",
+  canada: "ca",
+  "bosnia-herzegovina": "ba",
+  qatar: "qa",
+  switzerland: "ch",
+  brazil: "br",
+  morocco: "ma",
+  haiti: "ht",
+  scotland: "gb-sct",
+  usa: "us",
+  paraguay: "py",
+  australia: "au",
+  turkiye: "tr",
+  germany: "de",
+  curacao: "cw",
+  "cote-divoire": "ci",
+  ecuador: "ec",
+  netherlands: "nl",
+  japan: "jp",
+  tunisia: "tn",
+  sweden: "se",
+  belgium: "be",
+  egypt: "eg",
+  iran: "ir",
+  "new-zealand": "nz",
+  spain: "es",
+  "cape-verde": "cv",
+  "saudi-arabia": "sa",
+  uruguay: "uy",
+  france: "fr",
+  senegal: "sn",
+  iraq: "iq",
+  norway: "no",
+  argentina: "ar",
+  algeria: "dz",
+  austria: "at",
+  jordan: "jo",
+  portugal: "pt",
+  "dr-congo": "cd",
+  uzbekistan: "uz",
+  colombia: "co",
+  england: "gb-eng",
+  croatia: "hr",
+  ghana: "gh",
+  panama: "pa",
+};
+
+const TEAM_FLAG_ASSET_BY_CODE: Record<string, string> = {
+  MEX: "mx",
+  RSA: "za",
+  KOR: "kr",
+  CZE: "cz",
+  CAN: "ca",
+  BIH: "ba",
+  QAT: "qa",
+  SUI: "ch",
+  BRA: "br",
+  MAR: "ma",
+  HAI: "ht",
+  SCO: "gb-sct",
+  USA: "us",
+  PAR: "py",
+  AUS: "au",
+  TUR: "tr",
+  GER: "de",
+  CUW: "cw",
+  CIV: "ci",
+  ECU: "ec",
+  NED: "nl",
+  JPN: "jp",
+  TUN: "tn",
+  SWE: "se",
+  BEL: "be",
+  EGY: "eg",
+  IRN: "ir",
+  NZL: "nz",
+  ESP: "es",
+  CPV: "cv",
+  KSA: "sa",
+  URU: "uy",
+  FRA: "fr",
+  SEN: "sn",
+  IRQ: "iq",
+  NOR: "no",
+  ARG: "ar",
+  ALG: "dz",
+  AUT: "at",
+  JOR: "jo",
+  POR: "pt",
+  COD: "cd",
+  UZB: "uz",
+  COL: "co",
+  ENG: "gb-eng",
+  CRO: "hr",
+  GHA: "gh",
+  PAN: "pa",
+};
+
 const fallbackNewsItems: NewsItem[] = [
   { title: "官方名单", detail: "两队暂无新增停赛，核心阵容可用", impact: "可入模型", tone: "green", time: "1 小时前" },
   { title: "训练信息", detail: "巴西边路主力单独训练，出场仍待确认", impact: "轻微修正", tone: "gold", time: "3 小时前" },
@@ -842,9 +944,15 @@ function HomePredictionPage() {
         <a className="hero-match-card" href={matchPagePath(matchPrediction.homeTeam, matchPrediction.awayTeam)}>
           <span>{matchPrediction.stage}</span>
           <div className="hero-match-teams">
-            <strong>{homeTeam.code}</strong>
+            <span className="hero-team-code">
+              <TeamFlag team={homeTeam.key} code={homeTeam.code} />
+              <strong>{homeTeam.code}</strong>
+            </span>
             <b>VS</b>
-            <strong>{awayTeam.code}</strong>
+            <span className="hero-team-code away">
+              <TeamFlag team={awayTeam.key} code={awayTeam.code} />
+              <strong>{awayTeam.code}</strong>
+            </span>
           </div>
           <div className="hero-match-detail">
             <em>{matchPrediction.kickoff}</em>
@@ -1007,11 +1115,13 @@ function HomePredictionPage() {
 }
 
 function TeamFlag({ team, code }: { team: TeamKey; code?: string }) {
-  const knownFlags = new Set(["brazil", "argentina", "spain", "france", "england", "portugal", "germany", "netherlands"]);
-  const className = knownFlags.has(team) ? `flag flag-${team}` : "flag flag-generic";
+  const flagAsset = TEAM_FLAG_ASSET_BY_KEY[team] ?? (code ? TEAM_FLAG_ASSET_BY_CODE[code.toUpperCase()] : undefined);
+  const flagSource = flagAsset ? `/assets/flags/${flagAsset}.png` : null;
+  const fallbackCode = code?.slice(0, 3).toUpperCase() ?? team.slice(0, 3).toUpperCase();
+
   return (
-    <span className={className} aria-hidden="true">
-      {knownFlags.has(team) ? null : code?.slice(0, 3)}
+    <span className={`flag ${flagSource ? "" : "flag-generic"}`} aria-label={`${fallbackCode} 国旗`}>
+      {flagSource ? <img src={flagSource} alt="" loading="lazy" /> : <span>{fallbackCode}</span>}
     </span>
   );
 }
@@ -1177,9 +1287,15 @@ function UpcomingMatchesPanel({
         return (
           <button className={`upcoming-row ${selectedKey === key ? "selected" : ""}`} key={`${key}-${match.kickoff}`} onClick={() => onSelect(match)}>
             <div className="upcoming-teams">
-              <span>{match.homeCode}</span>
+              <span>
+                <TeamFlag team={match.homeTeam} code={match.homeCode} />
+                <em>{match.homeCode}</em>
+              </span>
               <b>VS</b>
-              <span>{match.awayCode}</span>
+              <span>
+                <TeamFlag team={match.awayTeam} code={match.awayCode} />
+                <em>{match.awayCode}</em>
+              </span>
             </div>
             <div className="upcoming-copy">
               <strong>
@@ -1257,9 +1373,13 @@ function MatchDetailPanel({ detail, teamsData }: { detail: MatchDetail | null; t
   return (
     <div className="match-detail-grid">
       <div className="detail-head">
-        <strong>
-          {homeTeam?.name ?? detail.homeTeam} / {awayTeam?.name ?? detail.awayTeam}
-        </strong>
+        <div className="detail-title">
+          <TeamFlag team={detail.homeTeam} code={detail.homeCode} />
+          <strong>
+            {homeTeam?.name ?? detail.homeTeam} / {awayTeam?.name ?? detail.awayTeam}
+          </strong>
+          <TeamFlag team={detail.awayTeam} code={detail.awayCode} />
+        </div>
         <span>
           {[detail.stage, detail.kickoff, venue].filter(Boolean).join(" · ")}
         </span>

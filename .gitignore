@@ -1,6 +1,11 @@
 node_modules/
 dist/
 .npm-cache/
+.venv/
+.env
+.env.*
+!.env.example
+.wrangler/
 .DS_Store
 tsconfig.tsbuildinfo
 __pycache__/

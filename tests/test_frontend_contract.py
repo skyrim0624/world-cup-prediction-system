@@ -1,3 +1,5 @@
+import json
+import re
 from pathlib import Path
 import unittest
 
@@ -78,6 +80,23 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("赛果记录", home_source)
         self.assertIn("/assets/world-cup-hero.png", styles)
         self.assertIn("featured-photo-card", styles)
+
+    def test_team_flags_cover_tournament_teams_and_match_lists(self):
+        source = app_source()
+        teams = json.loads(Path("backend/data_files/teams.json").read_text(encoding="utf-8"))
+
+        self.assertIn("TEAM_FLAG_ASSET_BY_KEY", source)
+        self.assertIn("flagSource", source)
+        self.assertIn("src={flagSource}", source)
+        self.assertIn("TeamFlag team={homeTeam.key} code={homeTeam.code}", source)
+        self.assertIn("TeamFlag team={awayTeam.key} code={awayTeam.code}", source)
+        self.assertIn("TeamFlag team={match.homeTeam} code={match.homeCode}", source)
+        self.assertIn("TeamFlag team={match.awayTeam} code={match.awayCode}", source)
+        self.assertIn("TeamFlag team={detail.homeTeam} code={detail.homeCode}", source)
+        self.assertIn("TeamFlag team={detail.awayTeam} code={detail.awayCode}", source)
+        self.assertNotIn("knownFlags", source)
+        for team in teams:
+            self.assertRegex(source, rf'["\']?{re.escape(team["key"])}["\']?:')
 
     def test_single_match_page_is_paid_conversion_page_with_locked_content(self):
         source = app_source()

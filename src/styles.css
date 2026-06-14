@@ -326,13 +326,30 @@ button {
   gap: 12px;
 }
 
+.hero-team-code {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 10px;
+}
+
+.hero-team-code.away {
+  justify-content: end;
+}
+
+.hero-team-code .flag {
+  width: 46px;
+  height: 31px;
+  border-radius: 3px;
+}
+
 .hero-match-teams strong {
   font-size: clamp(36px, 4vw, 54px);
   font-weight: 900;
   line-height: 1;
 }
 
-.hero-match-teams strong:last-child {
+.hero-team-code.away strong {
   text-align: right;
 }
 
@@ -608,7 +625,8 @@ button {
 .flag {
   position: relative;
   z-index: 1;
-  display: inline-block;
+  display: inline-grid;
+  place-items: center;
   width: 68px;
   height: 46px;
   overflow: hidden;
@@ -616,6 +634,13 @@ button {
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
   flex: 0 0 auto;
+}
+
+.flag img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .flag-brazil {
@@ -733,6 +758,10 @@ button {
   font-size: 13px;
   font-weight: 900;
   letter-spacing: 0.04em;
+}
+
+.flag-generic span {
+  padding-top: 1px;
 }
 
 .module-grid {
@@ -1446,6 +1475,29 @@ button {
   font-weight: 900;
 }
 
+.upcoming-teams span {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 8px;
+}
+
+.upcoming-teams span:last-child {
+  justify-content: end;
+}
+
+.upcoming-teams .flag {
+  width: 34px;
+  height: 23px;
+  border-radius: 2px;
+}
+
+.upcoming-teams em {
+  color: #eefaf8;
+  font-style: normal;
+  white-space: nowrap;
+}
+
 .upcoming-teams b {
   color: var(--gold);
   font-size: 18px;
@@ -1633,6 +1685,26 @@ button {
 .detail-head strong {
   color: #eefaf8;
   font-size: 22px;
+}
+
+.detail-title {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 10px;
+}
+
+.detail-title .flag {
+  width: 38px;
+  height: 26px;
+  border-radius: 2px;
+}
+
+.detail-title strong {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .detail-head span {
