@@ -2300,6 +2300,8 @@ Elo / 实力评分
 - 本地后台 `http://localhost:5175/admin` 浏览器检查通过：监管面板、函数名、接口状态、人工介入点均可见。
 - 本地 390px 手机视口无横向溢出，监管面板单列显示正常。
 - 当前页控制台按 `localhost:5175` 过滤无相关 error / warn。
+- API 已部署到 `https://world-cup-prediction-api.loveice0624.workers.dev`，`/api/admin/prediction-run` 返回 200。
+- 前端已部署到 `https://world-cup-prediction-system.pages.dev/admin`，线上桌面和 390px 手机视口检查通过。
 
 ## 十、当前交接摘要
 
