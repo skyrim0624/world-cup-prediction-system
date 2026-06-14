@@ -87,6 +87,20 @@ class PredictionApiTest(unittest.TestCase):
         self.assertIn("真实新闻 Feed 配置已接入", payload["knownGaps"][1])
         self.assertIn("支付已有客户接口框架", payload["knownGaps"][2])
 
+    def test_local_vite_fallback_port_is_allowed_by_cors(self):
+        client = TestClient(app)
+
+        response = client.options(
+            "/api/health",
+            headers={
+                "Origin": "http://127.0.0.1:5175",
+                "Access-Control-Request-Method": "GET",
+            },
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.headers["access-control-allow-origin"], "http://127.0.0.1:5175")
+
     def test_model_status_exposes_tournament_provenance(self):
         payload = make_compatible_import_payload()
         with tempfile.TemporaryDirectory() as temp_dir:

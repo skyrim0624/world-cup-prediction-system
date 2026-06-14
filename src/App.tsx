@@ -1,8 +1,7 @@
-import { CSSProperties, FormEvent, PointerEvent, useEffect, useMemo, useRef, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState, type ReactNode } from "react";
 
 type TeamKey = string;
 type Tone = "green" | "blue" | "gold" | "orange" | "red" | "muted";
-type PlateKey = "strength" | "form" | "path" | "squad" | "margin";
 type FactorImpactMap = Record<string, Record<string, number>>;
 
 type Team = {
@@ -17,14 +16,6 @@ type Team = {
     quarterfinal: number;
     change: number;
   };
-};
-
-type DragState = {
-  key: string;
-  startX: number;
-  startY: number;
-  baseX: number;
-  baseY: number;
 };
 
 type NewsItem = {
@@ -61,23 +52,6 @@ type EventReviewResponse = {
   summary: EventReviewSummary;
   rawNewsCount: number;
   items: EventReviewItem[];
-};
-
-type EventReviewWriteResponse = {
-  item: {
-    id: string;
-    status: ReviewStatus;
-    team: TeamKey | null;
-  };
-  requiresSnapshotRefresh: boolean;
-};
-
-type SnapshotPredictionResponse = MatchPrediction & {
-  snapshotMeta: {
-    type: string;
-    generatedAt: string;
-    path: string;
-  };
 };
 
 type AdminAuditEntry = {
@@ -275,6 +249,15 @@ type PaymentOrder = {
   expiresAt: string;
 };
 
+type AccessDecision = {
+  allowed: boolean;
+  reason: string;
+  orderId?: string;
+  productKey?: string | null;
+  paymentStatus?: string | null;
+  requiredProducts: string[];
+};
+
 type ScenarioImpact = {
   label: string;
   probability: number;
@@ -436,27 +419,6 @@ const teams: Team[] = [
   },
 ];
 
-const factorRows = [
-  { key: "strength", label: "实力盘", tone: "green" },
-  { key: "form", label: "状态盘", tone: "blue" },
-  { key: "path", label: "路径盘", tone: "gold" },
-  { key: "squad", label: "人员盘", tone: "green" },
-  { key: "margin", label: "边际盘", tone: "orange" },
-] satisfies Array<{ key: PlateKey; label: string; tone: Tone }>;
-
-const weightFactors = [
-  { label: "基础实力", value: 22, note: "Elo / SPI / 长期评级" },
-  { label: "攻防质量", value: 16, note: "xG / 射门质量 / 防守压制" },
-  { label: "晋级路径", value: 16, note: "小组名次 / 半区难度" },
-  { label: "阵容健康", value: 12, note: "伤病 / 停赛 / 替补深度" },
-  { label: "主帅凝聚", value: 10, note: "临场调整 / 更衣室秩序" },
-  { label: "关键人物", value: 8, note: "核心球员影响与可替代性" },
-  { label: "战术克制", value: 6, note: "高压 / 低位 / 反击适配" },
-  { label: "定位球门将", value: 5, note: "定位球 / 点球 / 门将" },
-  { label: "旅程气候", value: 3, note: "飞行 / 时区 / 高温高原" },
-  { label: "市场舆论", value: 2, note: "市场热度 / 媒体偏差" },
-];
-
 const modelLayers = [
   {
     layer: "一层模型",
@@ -478,16 +440,9 @@ const modelLayers = [
   },
 ];
 
-const sourceWeights = [
-  { level: "S", value: "1.00", label: "官方", tone: "green" },
-  { level: "A", value: "0.70", label: "顶级媒体", tone: "green" },
-  { level: "B", value: "0.40", label: "随队记者", tone: "gold" },
-  { level: "C", value: "0.20", label: "普通媒体", tone: "orange" },
-  { level: "D", value: "0.00", label: "传闻", tone: "red" },
-];
-
 const INTERACTIVE_SIMULATION_COUNT = 1200;
 const FORECAST_REFRESH_MS = 15000;
+const PAYMENT_STATUS_POLL_MS = 4000;
 const API_BASE_URL = import.meta.env.DEV ? "http://127.0.0.1:8000" : "";
 const SINGLE_MATCH_ROUTE_PREFIX = "/match/";
 
@@ -580,47 +535,6 @@ function dataReadinessLabel(dataset?: DatasetMeta) {
   return "数据待补全";
 }
 
-function plateImpact(teamKey: TeamKey, plateKey: PlateKey, impacts?: FactorImpactMap, fixtureImpacts?: FactorImpactMap) {
-  const teamImpacts = impacts?.[teamKey];
-  const contextImpacts = fixtureImpacts?.[teamKey];
-  const valueFor = (field: string) => (teamImpacts?.[field] ?? 0) + (contextImpacts?.[field] ?? 0);
-  if (plateKey === "form") return (valueFor("attack") + valueFor("defense")) / 2;
-  if (plateKey === "margin") return (valueFor("goalkeeper") + valueFor("defense")) / 2;
-  if (plateKey === "path") return valueFor("path");
-  if (plateKey === "squad") return valueFor("squad");
-  return 0;
-}
-
-function actionAfterReview(status: ReviewStatus, sourceLevel: string) {
-  if (status === "unverified" || status === "rumor" || sourceLevel === "D") return "ignore";
-  if (sourceLevel === "C" && (status === "confirmed" || status === "multi_source")) return "apply";
-  if (sourceLevel === "C") return "watch";
-  return "apply";
-}
-
-function decorateReviewedItem(item: EventReviewItem, status: ReviewStatus, team: TeamKey | null): EventReviewItem {
-  const action = actionAfterReview(status, item.sourceLevel);
-  if (action === "ignore") {
-    return { ...item, status, team, action, impact: "不入模型", tone: "muted" };
-  }
-  if (action === "watch") {
-    return { ...item, status, team, action, impact: "待审核", tone: "gold" };
-  }
-  if (!team) {
-    return { ...item, status, team, action, impact: "全局备注", tone: "green" };
-  }
-  return { ...item, status, team, action, impact: item.sourceLevel === "C" ? "轻微修正" : "可入模型", tone: item.direction < 0 ? "orange" : "green" };
-}
-
-function summarizeReviewItems(items: EventReviewItem[]): EventReviewSummary {
-  return {
-    watched: items.length,
-    applied: items.filter((item) => item.action === "apply" && item.team).length,
-    ignored: items.filter((item) => item.action === "ignore").length,
-    reviewRequired: items.filter((item) => item.action === "watch").length,
-  };
-}
-
 function matchRouteParams(pathname: string) {
   if (!pathname.startsWith(SINGLE_MATCH_ROUTE_PREFIX)) return null;
   const [, , home, away] = pathname.split("/");
@@ -645,26 +559,20 @@ function App() {
     return <SingleMatchPage home={singleMatchRoute.home} away={singleMatchRoute.away} />;
   }
 
-  const [selectedTeam, setSelectedTeam] = useState<TeamKey>("brazil");
-  const [layoutUnlocked, setLayoutUnlocked] = useState(false);
-  const [positions, setPositions] = useState<Record<string, { x: number; y: number }>>({});
+  return <HomePredictionPage />;
+}
+
+function HomePredictionPage() {
   const [forecastTick, setForecastTick] = useState(0);
   const [apiPrediction, setApiPrediction] = useState<MatchPrediction | null>(null);
   const [upcomingMatches, setUpcomingMatches] = useState<UpcomingMatchesResponse | null>(null);
   const [finishedMatches, setFinishedMatches] = useState<FinishedMatchesResponse | null>(null);
   const [selectedMatchKey, setSelectedMatchKey] = useState<string | null>(null);
   const [matchDetail, setMatchDetail] = useState<MatchDetail | null>(null);
-  const [eventReview, setEventReview] = useState<EventReviewResponse | null>(null);
   const [accessOptions, setAccessOptions] = useState<AccessOptions | null>(null);
-  const [reviewPendingId, setReviewPendingId] = useState<string | null>(null);
-  const [snapshotPending, setSnapshotPending] = useState(false);
-  const [reviewMessage, setReviewMessage] = useState<string | null>(null);
   const [dataMode, setDataMode] = useState<"api" | "demo">("demo");
-  const dragRef = useRef<DragState | null>(null);
-  const lastTapRef = useRef(0);
 
   const teamsData = apiPrediction?.teams?.length ? apiPrediction.teams : teams;
-  const selected = useMemo(() => teamsData.find((team) => team.key === selectedTeam) ?? teamsData[0], [selectedTeam, teamsData]);
   const fallbackPrediction = useMemo(() => buildFallbackPrediction(forecastTick), [forecastTick]);
   const matchPrediction = apiPrediction ?? fallbackPrediction;
   const homeTeam = teamsData.find((team) => team.key === matchPrediction.homeTeam) ?? teamsData[0];
@@ -693,19 +601,6 @@ function App() {
         if (!active) return;
         setApiPrediction(null);
         setDataMode("demo");
-      }
-    }
-
-    async function loadEventReview() {
-      try {
-        const response = await fetch(`${API_BASE_URL}/api/events`, { cache: "no-store" });
-        if (!response.ok) throw new Error(`事件接口返回 ${response.status}`);
-        const data = (await response.json()) as EventReviewResponse;
-        if (!active) return;
-        setEventReview(data);
-      } catch {
-        if (!active) return;
-        setEventReview(null);
       }
     }
 
@@ -749,14 +644,12 @@ function App() {
     }
 
     loadPrediction();
-    loadEventReview();
     loadUpcomingMatches();
     loadFinishedMatches();
     loadAccessOptions();
     const timer = window.setInterval(() => {
       setForecastTick((value) => value + 1);
       loadPrediction();
-      loadEventReview();
       loadUpcomingMatches();
       loadFinishedMatches();
       loadAccessOptions();
@@ -767,55 +660,6 @@ function App() {
       window.clearInterval(timer);
     };
   }, []);
-
-  async function submitEventReview(item: EventReviewItem, status: ReviewStatus) {
-    if (!item.id || reviewPendingId) return;
-    setReviewPendingId(item.id);
-    setReviewMessage(null);
-    try {
-      const response = await fetch(`${API_BASE_URL}/api/events/review`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ id: item.id, status, team: item.team }),
-      });
-      if (!response.ok) throw new Error(`审核接口返回 ${response.status}`);
-      const result = (await response.json()) as EventReviewWriteResponse;
-      setEventReview((current) => {
-        if (!current) return current;
-        const items = current.items.map((currentItem) =>
-          currentItem.id === result.item.id ? decorateReviewedItem(currentItem, result.item.status, result.item.team) : currentItem,
-        );
-        return { ...current, summary: summarizeReviewItems(items), items };
-      });
-      setReviewMessage(result.requiresSnapshotRefresh ? "已写入，重建快照后进入正式预测" : "已写入");
-    } catch {
-      setReviewMessage("审核写入失败");
-    } finally {
-      setReviewPendingId(null);
-    }
-  }
-
-  async function rebuildSnapshot() {
-    if (snapshotPending) return;
-    setSnapshotPending(true);
-    setReviewMessage(null);
-    try {
-      const response = await fetch(`${API_BASE_URL}/api/snapshot/rebuild`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({}),
-      });
-      if (!response.ok) throw new Error(`快照接口返回 ${response.status}`);
-      const data = (await response.json()) as SnapshotPredictionResponse;
-      setApiPrediction(data);
-      setDataMode("api");
-      setReviewMessage(`快照已重建 · ${data.modelMeta?.simulationCount.toLocaleString("zh-CN") ?? 0} 次模拟`);
-    } catch {
-      setReviewMessage("快照重建失败");
-    } finally {
-      setSnapshotPending(false);
-    }
-  }
 
   async function loadMatchDetail(match: UpcomingMatch) {
     const key = `${match.homeTeam}-${match.awayTeam}`;
@@ -833,52 +677,8 @@ function App() {
     }
   }
 
-  function toggleLayoutLock() {
-    setLayoutUnlocked((value) => !value);
-  }
-
-  function handleTouchToggle() {
-    const now = Date.now();
-    if (now - lastTapRef.current < 320) {
-      toggleLayoutLock();
-    }
-    lastTapRef.current = now;
-  }
-
-  function startDrag(key: string, event: PointerEvent<HTMLElement>) {
-    if (!layoutUnlocked) return;
-    const current = positions[key] ?? { x: 0, y: 0 };
-    dragRef.current = {
-      key,
-      startX: event.clientX,
-      startY: event.clientY,
-      baseX: current.x,
-      baseY: current.y,
-    };
-    event.currentTarget.setPointerCapture(event.pointerId);
-  }
-
-  function moveDrag(event: PointerEvent<HTMLElement>) {
-    const drag = dragRef.current;
-    if (!drag) return;
-    setPositions((current) => ({
-      ...current,
-      [drag.key]: {
-        x: drag.baseX + event.clientX - drag.startX,
-        y: drag.baseY + event.clientY - drag.startY,
-      },
-    }));
-  }
-
-  function endDrag(event: PointerEvent<HTMLElement>) {
-    if (dragRef.current) {
-      event.currentTarget.releasePointerCapture(event.pointerId);
-    }
-    dragRef.current = null;
-  }
-
   return (
-    <main className="console-shell" onDoubleClick={toggleLayoutLock} onTouchEnd={handleTouchToggle}>
+    <main className="console-shell user-page-shell">
       <div className="ambient-grid" />
       <header className="topbar">
         <div className="brand">
@@ -888,13 +688,13 @@ function App() {
             <i />
             <i />
           </span>
-          <span>世界杯预测终端</span>
+          <span>世界杯预测</span>
         </div>
-        <button className="menu-button" aria-label="打开菜单">
-          <span />
-          <span />
-          <span />
-        </button>
+        <nav className="top-links" aria-label="用户预测页">
+          <a href="#matches">未开赛</a>
+          <a href="#trend">走势</a>
+          <a href="#access">解锁</a>
+        </nav>
       </header>
 
       <section className="scoreboard" aria-label="未开赛对阵预测">
@@ -923,16 +723,9 @@ function App() {
       </section>
 
       <div className="module-grid">
-        <DraggablePanel
-          id="match"
-          className="wide"
-          title="赛前胜平负概率"
-          position={positions.match}
-          layoutUnlocked={layoutUnlocked}
-          onPointerDown={startDrag}
-          onPointerMove={moveDrag}
-          onPointerUp={endDrag}
-        >
+        <section className="console-panel wide prediction-hero-panel">
+          <div className="panel-kicker">用户预测页 · 免费预览</div>
+          <h2>今日重点比赛</h2>
           <div className="probability-row">
             <Probability label={`${homeTeam.name}胜`} value={matchPrediction.homeWin} tone="green" />
             <Probability label="平局" value={matchPrediction.draw} tone="gold" />
@@ -946,26 +739,21 @@ function App() {
                 数据源：{dataModeLabel} · {modelSummary}
               </small>
             </span>
-            <span className="chevron">›</span>
+            <a className="primary-link" href={matchPagePath(matchPrediction.homeTeam, matchPrediction.awayTeam)}>
+              解锁完整预测
+            </a>
           </div>
           <div className="analysis-list">
-            {matchPrediction.analysis.map((item) => (
+            {matchPrediction.analysis.slice(0, 2).map((item) => (
               <p key={item}>{item}</p>
             ))}
           </div>
-        </DraggablePanel>
+        </section>
 
-        <DraggablePanel
-          id="scores"
-          title="最可能比分"
-          position={positions.scores}
-          layoutUnlocked={layoutUnlocked}
-          onPointerDown={startDrag}
-          onPointerMove={moveDrag}
-          onPointerUp={endDrag}
-        >
+        <section className="console-panel">
+          <h2>免费预览比分</h2>
           <div className="score-outcome-list">
-            {matchPrediction.scoreOutcomes.map((outcome) => (
+            {matchPrediction.scoreOutcomes.slice(0, 1).map((outcome) => (
               <article className={`score-outcome ${outcome.tone}`} key={outcome.score}>
                 <strong>{outcome.score}</strong>
                 <div>
@@ -975,119 +763,39 @@ function App() {
               </article>
             ))}
           </div>
-        </DraggablePanel>
+          <p className="locked-note">完整比分分布在单场页解锁。</p>
+        </section>
 
-        <DraggablePanel
-          id="upcoming"
-          className="wide"
-          title="未开赛预测"
-          position={positions.upcoming}
-          layoutUnlocked={layoutUnlocked}
-          onPointerDown={startDrag}
-          onPointerMove={moveDrag}
-          onPointerUp={endDrag}
-        >
+        <section id="matches" className="console-panel wide">
+          <h2>未开赛预测</h2>
           <UpcomingMatchesPanel matches={upcomingMatches?.items ?? []} selectedKey={selectedMatchKey} onSelect={loadMatchDetail} />
-        </DraggablePanel>
+        </section>
 
-        <DraggablePanel
-          id="finished"
-          className="wide"
-          title="已结束比赛记录"
-          position={positions.finished}
-          layoutUnlocked={layoutUnlocked}
-          onPointerDown={startDrag}
-          onPointerMove={moveDrag}
-          onPointerUp={endDrag}
-        >
-          <FinishedMatchesPanel records={finishedMatches?.items ?? []} />
-        </DraggablePanel>
-
-        <DraggablePanel
-          id="matchDetail"
-          className="wide"
-          title="单场详情"
-          position={positions.matchDetail}
-          layoutUnlocked={layoutUnlocked}
-          onPointerDown={startDrag}
-          onPointerMove={moveDrag}
-          onPointerUp={endDrag}
-        >
+        <section className="console-panel wide">
+          <h2>单场快速预览</h2>
           <MatchDetailPanel detail={matchDetail} teamsData={teamsData} />
-        </DraggablePanel>
+        </section>
 
-        <DraggablePanel
-          id="teams"
-          title="选择球队"
-          position={positions.teams}
-          layoutUnlocked={layoutUnlocked}
-          onPointerDown={startDrag}
-          onPointerMove={moveDrag}
-          onPointerUp={endDrag}
-        >
-          <div className="team-list">
-            {teamsData.map((team) => (
-              <button
-                className={`team-row ${selectedTeam === team.key ? "selected" : ""}`}
-                key={team.key}
-                onClick={() => setSelectedTeam(team.key)}
-              >
-                <TeamFlag team={team.key} code={team.code} />
-                <span>{team.name}</span>
-                <span className="star">{selectedTeam === team.key ? "★" : "☆"}</span>
-              </button>
-            ))}
-          </div>
-        </DraggablePanel>
-
-        <DraggablePanel
-          id="impact"
-          className="wide"
-          title="整届概率传导"
-          position={positions.impact}
-          layoutUnlocked={layoutUnlocked}
-          onPointerDown={startDrag}
-          onPointerMove={moveDrag}
-          onPointerUp={endDrag}
-        >
-          <ScenarioImpactList scenarios={matchPrediction.scenarioImpacts} />
-        </DraggablePanel>
-
-        <DraggablePanel
-          id="champion"
-          title="冠军概率榜"
-          position={positions.champion}
-          layoutUnlocked={layoutUnlocked}
-          onPointerDown={startDrag}
-          onPointerMove={moveDrag}
-          onPointerUp={endDrag}
-        >
-          <ChampionBoard teams={championBoard} />
-        </DraggablePanel>
-
-        <DraggablePanel
-          id="movers"
-          title="今日概率变化"
-          position={positions.movers}
-          layoutUnlocked={layoutUnlocked}
-          onPointerDown={startDrag}
-          onPointerMove={moveDrag}
-          onPointerUp={endDrag}
-        >
+        <section id="trend" className="console-panel">
+          <h2>今日概率变化</h2>
           <DailyMoversPanel movers={matchPrediction.dailyMovers} />
-        </DraggablePanel>
+        </section>
 
-        <DraggablePanel
-          id="news"
-          title="新闻影响"
-          position={positions.news}
-          layoutUnlocked={layoutUnlocked}
-          onPointerDown={startDrag}
-          onPointerMove={moveDrag}
-          onPointerUp={endDrag}
-        >
+        <section className="console-panel">
+          <h2>冠军概率榜</h2>
+          <ChampionBoard teams={championBoard.slice(0, 8)} />
+          <p className="locked-note">完整 48 队榜单随赛事全周期解锁。</p>
+        </section>
+
+        <section className="console-panel wide">
+          <h2>已结束比赛记录</h2>
+          <FinishedMatchesPanel records={finishedMatches?.items ?? []} />
+        </section>
+
+        <section className="console-panel">
+          <h2>新闻影响摘要</h2>
           <div className="news-list">
-            {matchPrediction.newsItems.map((item) => (
+            {matchPrediction.newsItems.slice(0, 3).map((item) => (
               <article className={`news-item ${item.tone}`} key={item.title}>
                 <span className="news-icon">{item.tone === "red" ? "+" : item.tone === "gold" ? "!" : "?"}</span>
                 <div>
@@ -1099,60 +807,11 @@ function App() {
               </article>
             ))}
           </div>
-        </DraggablePanel>
+        </section>
 
-        <DraggablePanel
-          id="sources"
-          title="来源权重"
-          position={positions.sources}
-          layoutUnlocked={layoutUnlocked}
-          onPointerDown={startDrag}
-          onPointerMove={moveDrag}
-          onPointerUp={endDrag}
-        >
-          <div className="source-list">
-            {sourceWeights.map((source) => (
-              <div className={`source-row ${source.tone}`} key={source.level}>
-                <span className="source-level">{source.level}</span>
-                <strong>{source.value}</strong>
-                <SegmentBar value={Number(source.value) * 100} tone={source.tone} />
-                <span>{source.label}</span>
-              </div>
-            ))}
-          </div>
-        </DraggablePanel>
-
-        <DraggablePanel
-          id="review"
-          className="wide"
-          title="事件审核"
-          position={positions.review}
-          layoutUnlocked={layoutUnlocked}
-          onPointerDown={startDrag}
-          onPointerMove={moveDrag}
-          onPointerUp={endDrag}
-        >
-          <EventReviewPanel
-            eventReview={eventReview}
-            pendingId={reviewPendingId}
-            snapshotPending={snapshotPending}
-            message={reviewMessage}
-            onReview={submitEventReview}
-            onRebuildSnapshot={rebuildSnapshot}
-          />
-        </DraggablePanel>
-
-        <DraggablePanel
-          id="layers"
-          className="wide"
-          title="三层模型"
-          position={positions.layers}
-          layoutUnlocked={layoutUnlocked}
-          onPointerDown={startDrag}
-          onPointerMove={moveDrag}
-          onPointerUp={endDrag}
-        >
-          <div className="layer-grid">
+        <section className="console-panel">
+          <h2>模型说明</h2>
+          <div className="layer-grid compact">
             {modelLayers.map((layer, index) => (
               <article className="layer-card" key={layer.layer}>
                 <span>{`0${index + 1}`}</span>
@@ -1167,114 +826,14 @@ function App() {
               </article>
             ))}
           </div>
-        </DraggablePanel>
+        </section>
 
-        <DraggablePanel
-          id="factors"
-          className="wide"
-          title={`五大盘面 · ${selected.name}`}
-          position={positions.factors}
-          layoutUnlocked={layoutUnlocked}
-          onPointerDown={startDrag}
-          onPointerMove={moveDrag}
-          onPointerUp={endDrag}
-        >
-          <div className="factor-grid">
-            {factorRows.map((factor) => (
-              <FactorBar
-                key={factor.key}
-                label={factor.label}
-                value={selected.factors[factor.key] ?? 0}
-                impact={plateImpact(selected.key, factor.key, matchPrediction.modelMeta?.factorImpacts, matchPrediction.modelMeta?.fixtureContextImpacts)}
-                tone={factor.tone}
-              />
-            ))}
-          </div>
-        </DraggablePanel>
-
-        <DraggablePanel
-          id="weights"
-          className="wide"
-          title="预测权重因子"
-          position={positions.weights}
-          layoutUnlocked={layoutUnlocked}
-          onPointerDown={startDrag}
-          onPointerMove={moveDrag}
-          onPointerUp={endDrag}
-        >
-          <div className="weight-grid">
-            {weightFactors.map((factor) => (
-              <article className="weight-card" key={factor.label}>
-                <div>
-                  <strong>{factor.label}</strong>
-                  <span>{factor.note}</span>
-                </div>
-                <b>{factor.value}</b>
-                <SegmentBar value={factor.value * 4} tone={factor.value >= 12 ? "green" : factor.value >= 6 ? "gold" : "orange"} />
-              </article>
-            ))}
-          </div>
-        </DraggablePanel>
-
-        <DraggablePanel
-          id="access"
-          className="wide"
-          title="付费解锁"
-          position={positions.access}
-          layoutUnlocked={layoutUnlocked}
-          onPointerDown={startDrag}
-          onPointerMove={moveDrag}
-          onPointerUp={endDrag}
-        >
-          <AccessPanel options={accessOptions} />
-        </DraggablePanel>
+        <section id="access" className="console-panel wide">
+          <h2>付费解锁</h2>
+          <AccessPanel options={accessOptions} contentKey="tournament_probabilities" />
+        </section>
       </div>
-
-      <button className={`move-hint ${layoutUnlocked ? "active" : ""}`} onClick={toggleLayoutLock}>
-        <span>⌖</span>
-        {layoutUnlocked ? "模块已解锁" : "双击移动模块"}
-      </button>
     </main>
-  );
-}
-
-function DraggablePanel({
-  id,
-  title,
-  className = "",
-  position,
-  layoutUnlocked,
-  children,
-  onPointerDown,
-  onPointerMove,
-  onPointerUp,
-}: {
-  id: string;
-  title: string;
-  className?: string;
-  position?: { x: number; y: number };
-  layoutUnlocked: boolean;
-  children: React.ReactNode;
-  onPointerDown: (key: string, event: PointerEvent<HTMLElement>) => void;
-  onPointerMove: (event: PointerEvent<HTMLElement>) => void;
-  onPointerUp: (event: PointerEvent<HTMLElement>) => void;
-}) {
-  const style = {
-    transform: position ? `translate(${position.x}px, ${position.y}px)` : undefined,
-    cursor: layoutUnlocked ? "grab" : undefined,
-  } satisfies CSSProperties;
-
-  return (
-    <section
-      className={`console-panel ${className}`}
-      style={style}
-      onPointerDown={(event) => onPointerDown(id, event)}
-      onPointerMove={onPointerMove}
-      onPointerUp={onPointerUp}
-    >
-      <h2>{title}</h2>
-      {children}
-    </section>
   );
 }
 
@@ -1475,10 +1034,19 @@ function paymentStatusLabel(status: string) {
   return "待处理";
 }
 
-function AccessPanel({ options }: { options: AccessOptions | null }) {
+function AccessPanel({
+  options,
+  contentKey,
+  onAccessChange,
+}: {
+  options: AccessOptions | null;
+  contentKey?: string;
+  onAccessChange?: (allowed: boolean) => void;
+}) {
   const [paymentConfig, setPaymentConfig] = useState<PaymentConfig | null>(null);
   const [selectedProvider, setSelectedProvider] = useState<PaymentProviderKey>("wechat");
   const [paymentOrder, setPaymentOrder] = useState<PaymentOrder | null>(null);
+  const [unlockDecisions, setUnlockDecisions] = useState<Record<string, AccessDecision>>({});
   const [paymentMessage, setPaymentMessage] = useState<string | null>(null);
   const [creatingProductKey, setCreatingProductKey] = useState<string | null>(null);
 
@@ -1505,10 +1073,32 @@ function AccessPanel({ options }: { options: AccessOptions | null }) {
     };
   }, []);
 
+  async function checkPaymentAccess(orderId: string) {
+    if (!contentKey) return;
+    const response = await fetch(`${API_BASE_URL}/api/access-decision?orderId=${encodeURIComponent(orderId)}&contentKey=${encodeURIComponent(contentKey)}`, {
+      cache: "no-store",
+    });
+    if (!response.ok) throw new Error(`权限接口返回 ${response.status}`);
+    const decision = (await response.json()) as AccessDecision;
+    setUnlockDecisions((current) => ({ ...current, [contentKey]: decision }));
+    onAccessChange?.(decision.allowed);
+  }
+
+  async function pollPaymentOrder(orderId: string) {
+    const response = await fetch(`${API_BASE_URL}/api/payments/orders/${encodeURIComponent(orderId)}`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`订单查询接口返回 ${response.status}`);
+    const order = (await response.json()) as PaymentOrder;
+    setPaymentOrder(order);
+    if (order.status === "paid") {
+      await checkPaymentAccess(order.orderId);
+    }
+  }
+
   async function createScanPaymentOrder(productKey: string) {
     if (creatingProductKey) return;
     setCreatingProductKey(productKey);
     setPaymentMessage(null);
+    onAccessChange?.(false);
     try {
       const response = await fetch(`${API_BASE_URL}/api/payments/orders`, {
         method: "POST",
@@ -1517,7 +1107,9 @@ function AccessPanel({ options }: { options: AccessOptions | null }) {
       });
       const payload = await response.json().catch(() => null);
       if (!response.ok) throw new Error(payload?.detail ?? `支付订单接口返回 ${response.status}`);
-      setPaymentOrder(payload as PaymentOrder);
+      const order = payload as PaymentOrder;
+      setPaymentOrder(order);
+      await checkPaymentAccess(order.orderId);
     } catch (error) {
       setPaymentOrder(null);
       setPaymentMessage(error instanceof Error ? error.message : "支付订单创建失败");
@@ -1525,6 +1117,22 @@ function AccessPanel({ options }: { options: AccessOptions | null }) {
       setCreatingProductKey(null);
     }
   }
+
+  useEffect(() => {
+    if (!paymentOrder?.orderId) return;
+    let active = true;
+    const orderId = paymentOrder.orderId;
+    const timer = window.setInterval(() => {
+      if (!active) return;
+      pollPaymentOrder(orderId).catch((error) => {
+        if (active) setPaymentMessage(error instanceof Error ? error.message : "订单状态查询失败");
+      });
+    }, PAYMENT_STATUS_POLL_MS);
+    return () => {
+      active = false;
+      window.clearInterval(timer);
+    };
+  }, [paymentOrder?.orderId, contentKey]);
 
   if (!options) {
     return <p className="review-empty">付费配置等待 API 连接</p>;
@@ -1535,6 +1143,7 @@ function AccessPanel({ options }: { options: AccessOptions | null }) {
     { provider: "alipay", label: "支付宝支付", paymentMethod: "scan_qr", configured: false, missingConfig: [] },
   ];
   const currentProvider = providers.find((provider) => provider.provider === selectedProvider) ?? providers[0];
+  const currentDecision = contentKey ? unlockDecisions[contentKey] : null;
 
   return (
     <div className="access-panel">
@@ -1582,7 +1191,32 @@ function AccessPanel({ options }: { options: AccessOptions | null }) {
           {paymentOrder.qrCodeUrl ? <img src={paymentOrder.qrCodeUrl} alt="扫码付款二维码" /> : <em>二维码待生成</em>}
         </div>
       ) : null}
+      {currentDecision?.allowed ? <p className="unlock-message green">已解锁完整预测</p> : null}
+      {currentDecision && !currentDecision.allowed ? <p className="unlock-message">支付确认后自动解锁完整内容</p> : null}
       {paymentMessage ? <p className="review-message">{paymentMessage}</p> : null}
+    </div>
+  );
+}
+
+function LockedContent({
+  unlocked,
+  title,
+  preview,
+  children,
+}: {
+  unlocked: boolean;
+  title: string;
+  preview: string;
+  children: ReactNode;
+}) {
+  if (unlocked) {
+    return <>{children}</>;
+  }
+  return (
+    <div className="locked-content">
+      <strong>{title}</strong>
+      <p>{preview}</p>
+      <em>解锁后查看完整预测</em>
     </div>
   );
 }
@@ -1591,6 +1225,7 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
   const [detail, setDetail] = useState<MatchDetail | null>(null);
   const [accessOptions, setAccessOptions] = useState<AccessOptions | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [matchUnlocked, setMatchUnlocked] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -1686,6 +1321,7 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
 
       <div className="module-grid">
         <section className="console-panel wide">
+          <div className="panel-kicker">免费预览</div>
           <h2>赛前胜平负概率</h2>
           {detail ? (
             <>
@@ -1695,7 +1331,7 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
                 <Probability label={`${awayName}胜`} value={detail.awayWin} tone="blue" />
               </div>
               <div className="analysis-list">
-                {detail.analysis.map((item) => (
+                {detail.analysis.slice(0, 1).map((item) => (
                   <p key={item}>{item}</p>
                 ))}
               </div>
@@ -1706,10 +1342,10 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
         </section>
 
         <section className="console-panel">
-          <h2>最可能比分</h2>
+          <h2>免费预览比分</h2>
           {detail ? (
             <div className="score-outcome-list">
-              {detail.scoreOutcomes.map((outcome) => (
+              {detail.scoreOutcomes.slice(0, 1).map((outcome) => (
                 <article className={`score-outcome ${outcome.tone}`} key={outcome.score}>
                   <strong>{outcome.score}</strong>
                   <div>
@@ -1722,16 +1358,42 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
           ) : (
             <p className="review-empty">比分分布等待单场预测</p>
           )}
+          <p className="locked-note">完整比分分布需要解锁。</p>
         </section>
 
-        <section className="console-panel">
+        <section className="console-panel conversion-panel">
           <h2>付费解锁</h2>
-          <AccessPanel options={accessOptions} />
+          <AccessPanel options={accessOptions} contentKey="match_prediction" onAccessChange={setMatchUnlocked} />
         </section>
 
         <section className="console-panel wide">
-          <h2>整届概率传导</h2>
-          {detail ? <ScenarioImpactList scenarios={detail.scenarioImpacts} /> : <p className="review-empty">路径传导等待单场预测</p>}
+          <div className="panel-kicker">完整预测</div>
+          <h2>单场完整预测</h2>
+          {detail ? (
+            <LockedContent unlocked={matchUnlocked} title="完整预测" preview="包含比分分布 Top 3、整届概率传导和完整 AI 分析。">
+              <div className="match-full-content">
+                <div className="score-outcome-list">
+                  {detail.scoreOutcomes.map((outcome) => (
+                    <article className={`score-outcome ${outcome.tone}`} key={outcome.score}>
+                      <strong>{outcome.score}</strong>
+                      <div>
+                        <b>{outcome.probability.toFixed(1)}%</b>
+                        <span>{outcome.note}</span>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+                <div className="analysis-list">
+                  {detail.analysis.map((item) => (
+                    <p key={item}>{item}</p>
+                  ))}
+                </div>
+                <ScenarioImpactList scenarios={detail.scenarioImpacts} />
+              </div>
+            </LockedContent>
+          ) : (
+            <p className="review-empty">路径传导等待单场预测</p>
+          )}
         </section>
       </div>
     </main>
@@ -2283,20 +1945,6 @@ function EventReviewPanel({
         ))}
       </div>
       {message ? <p className="review-message">{message}</p> : null}
-    </div>
-  );
-}
-
-function FactorBar({ label, value, impact, tone }: { label: string; value: number; impact: number; tone: string }) {
-  return (
-    <div className="factor-row">
-      <span className={`factor-icon ${tone}`} />
-      <strong>{label}</strong>
-      <div className="bar-track">
-        <i className={tone} style={{ width: `${value}%` }} />
-      </div>
-      <b>{value}</b>
-      <em className={impact > 0 ? "green" : impact < 0 ? "red" : "muted"}>{formatSignedNumber(impact)}</em>
     </div>
   );
 }
