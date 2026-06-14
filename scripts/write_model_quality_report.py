@@ -12,6 +12,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from backend.data import FIXTURES, TEAM_PROFILES
 from backend.team_history import (
+    audit_history_freshness,
     build_calibration_profile,
     build_scoring_environment,
     calculate_elite_performance_metrics,
@@ -67,12 +68,14 @@ def main() -> None:
     history = load_team_match_history()
     metric_rows = load_team_metric_rows()
     backtest = run_prediction_backtest(history, TEAM_PROFILES, args.max_backtest_matches)
+    history_freshness = audit_history_freshness(history, TEAM_PROFILES)
     scoring_environment = build_scoring_environment(history, TEAM_PROFILES)
     score_model_backtest = run_poisson_backtest(history, TEAM_PROFILES, scoring_environment, args.max_backtest_matches)
     calibration = build_calibration_profile(score_model_backtest)
     report = {
         "generatedAt": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
         "historicalData": history.get("meta", {}),
+        "historyFreshness": history_freshness,
         "historicalEloBlend": {
             "source": "cc0_international_results_latest_elo",
             "blend": HISTORICAL_ELO_BLEND,

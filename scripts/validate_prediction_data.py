@@ -19,7 +19,7 @@ from backend.data import (
     THIRD_PLACE_COMBINATIONS,
 )
 from backend.model import advanced_metric_impacts
-from backend.team_history import build_scoring_environment, load_team_match_history
+from backend.team_history import audit_history_freshness, build_scoring_environment, load_team_match_history
 
 
 def main() -> None:
@@ -60,6 +60,10 @@ def main() -> None:
             raise SystemExit(f"历史 Elo 缺失: {team_key}")
         if not row.get("latestEloDate"):
             raise SystemExit(f"历史 Elo 日期缺失: {team_key}")
+    history_freshness = audit_history_freshness(history, TEAM_PROFILES)
+    if history_freshness.get("status") != "current":
+        stale_teams = ", ".join(str(item.get("team")) for item in history_freshness.get("staleTeams", [])[:8])
+        raise SystemExit(f"历史 Elo 数据过期: {stale_teams}")
     scoring_environment = build_scoring_environment(history, TEAM_PROFILES)
     if scoring_environment.get("status") != "active":
         raise SystemExit("历史进球环境必须可用")
@@ -78,7 +82,7 @@ def main() -> None:
     print(
         f"球队: {DATASET_META['teamCount']} · 小组: {len(groups)} · 赛程: {DATASET_META['fixtureCount']} · "
         f"事件: {len(EVENTS)} · 原始新闻: {len(RAW_NEWS_ITEMS)} · 历史赛果: {history['meta']['scoredMatches']} · "
-        f"进球环境样本: {scoring_environment['matches']}"
+        f"进球环境样本: {scoring_environment['matches']} · 历史新鲜度: {history_freshness['oldestAgeDays']} 天"
     )
 
 

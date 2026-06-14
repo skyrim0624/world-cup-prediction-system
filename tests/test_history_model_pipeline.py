@@ -2,6 +2,7 @@ import json
 import subprocess
 import tempfile
 import unittest
+from datetime import date
 from pathlib import Path
 
 from backend.data import TEAM_PROFILES
@@ -11,6 +12,7 @@ from backend.team_history import (
     apply_probability_calibration,
     build_calibration_profile,
     build_scoring_environment,
+    audit_history_freshness,
     calculate_elite_performance_metrics,
     calculate_recent_form_metrics,
     load_team_match_history,
@@ -30,6 +32,16 @@ class HistoryModelPipelineTest(unittest.TestCase):
         self.assertTrue(all(team["scoredMatches"] >= 8 for team in history["teams"].values()))
         self.assertTrue(all(isinstance(team.get("latestElo"), (int, float)) for team in history["teams"].values()))
         self.assertTrue(all(team.get("latestEloDate") for team in history["teams"].values()))
+
+    def test_history_freshness_audit_catches_stale_elo_inputs(self):
+        history = load_team_match_history(DEFAULT_TEAM_MATCH_HISTORY_PATH)
+
+        audit = audit_history_freshness(history, TEAM_PROFILES, reference_date=date(2026, 6, 15), max_stale_days=120)
+
+        self.assertEqual(audit["status"], "current")
+        self.assertEqual(audit["teamCount"], 48)
+        self.assertGreaterEqual(audit["oldestAgeDays"], 0)
+        self.assertEqual(audit["staleTeams"], [])
 
     def test_recent_form_uses_opponent_adjusted_real_results(self):
         history = load_team_match_history(DEFAULT_TEAM_MATCH_HISTORY_PATH)
@@ -135,6 +147,7 @@ class HistoryModelPipelineTest(unittest.TestCase):
 
         self.assertIn("historicalData", meta)
         self.assertGreaterEqual(meta["historicalData"]["scoredMatches"], 900)
+        self.assertEqual(meta["historyFreshness"]["status"], "current")
         self.assertIn("backtest", meta)
         self.assertGreaterEqual(meta["backtest"]["evaluatedMatches"], 120)
         self.assertIn("scoreModelBacktest", meta)
@@ -167,6 +180,7 @@ class HistoryModelPipelineTest(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             report = json.loads(output.read_text(encoding="utf-8"))
             self.assertEqual(report["historicalData"]["license"], "CC0-1.0")
+            self.assertEqual(report["historyFreshness"]["status"], "current")
             self.assertGreaterEqual(report["backtest"]["evaluatedMatches"], 200)
             self.assertIn("calibration", report)
             self.assertIn("scoreModelBacktest", report)

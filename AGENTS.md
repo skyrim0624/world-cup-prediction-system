@@ -2949,6 +2949,40 @@ modelElo = staticElo + clamp((latestElo - staticElo) * 0.45, -85, 85)
 - 实现后 `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_history_model_pipeline.py' -v` 通过。
 - `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_team_strength_layers.py' -v` 通过。
 
+### 2026-06-15：历史数据新鲜度审计
+
+本次目标：
+
+- 历史赛果不仅要有样本量，还要足够新；否则模型会用旧 Elo 跑出看似精确、实际滞后的概率。
+
+已完成：
+
+- 在 `backend/team_history.py` 新增 `audit_history_freshness()`。
+- 逐队检查 `latestEloDate`。
+- 输出：
+  - `status`
+  - `referenceDate`
+  - `maxStaleDays`
+  - `newestDate`
+  - `oldestDate`
+  - `newestAgeDays`
+  - `oldestAgeDays`
+  - `staleTeams`
+- `modelMeta.historyFreshness` 暴露当前历史 Elo 新鲜度。
+- 模型质量报告加入 `historyFreshness`。
+- `scripts/validate_prediction_data.py` 增加正式校验：超过 120 天的历史 Elo 输入不允许通过。
+
+当前结果：
+
+- 当前 48 队历史 Elo 最新日期校验通过。
+- 当前最旧球队历史 Elo 年龄为 76 天，低于 120 天门槛。
+
+验证：
+
+- 新增测试先失败，确认缺少历史新鲜度审计。
+- 实现后 `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_history_model_pipeline.py' -v` 通过。
+- `npm run validate:data` 通过。
+
 #### 当前仍未完成的专业数据层
 
 没有授权数据前，以下仍保持缺失或中性：

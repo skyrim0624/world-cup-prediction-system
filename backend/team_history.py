@@ -46,6 +46,53 @@ def parse_match_date(value: str) -> date:
     return datetime.fromisoformat(value).date()
 
 
+def audit_history_freshness(
+    history: dict[str, Any],
+    teams: dict[str, TeamProfile],
+    reference_date: date | None = None,
+    max_stale_days: int = 120,
+) -> dict[str, Any]:
+    reference = reference_date or date.today()
+    history_teams = history.get("teams") if isinstance(history.get("teams"), dict) else {}
+    stale_teams = []
+    ages = []
+    newest_date: date | None = None
+    oldest_date: date | None = None
+    for team_key, team in teams.items():
+        row = history_teams.get(team_key) if isinstance(history_teams.get(team_key), dict) else {}
+        latest_value = row.get("latestEloDate") if isinstance(row, dict) else None
+        if not isinstance(latest_value, str) or not latest_value:
+            stale_teams.append({"team": team_key, "name": team.name, "reason": "missing_latest_elo_date"})
+            continue
+        latest_date = parse_match_date(latest_value)
+        age_days = (reference - latest_date).days
+        ages.append(age_days)
+        newest_date = latest_date if newest_date is None or latest_date > newest_date else newest_date
+        oldest_date = latest_date if oldest_date is None or latest_date < oldest_date else oldest_date
+        if age_days > max_stale_days:
+            stale_teams.append(
+                {
+                    "team": team_key,
+                    "name": team.name,
+                    "latestEloDate": latest_value,
+                    "ageDays": age_days,
+                    "maxStaleDays": max_stale_days,
+                }
+            )
+    return {
+        "status": "stale" if stale_teams else "current",
+        "source": "team_match_history_latest_elo_date",
+        "referenceDate": reference.isoformat(),
+        "maxStaleDays": max_stale_days,
+        "teamCount": len(teams),
+        "newestDate": newest_date.isoformat() if newest_date else None,
+        "oldestDate": oldest_date.isoformat() if oldest_date else None,
+        "newestAgeDays": min(ages) if ages else None,
+        "oldestAgeDays": max(ages) if ages else None,
+        "staleTeams": stale_teams,
+    }
+
+
 def match_weight(row: dict[str, Any]) -> float:
     tournament = str(row.get("tournament") or "")
     if tournament == "Friendly":

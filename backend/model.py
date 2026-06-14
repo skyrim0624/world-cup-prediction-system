@@ -32,6 +32,7 @@ from .team_strength import (
     professional_gap_coverage,
 )
 from .team_history import (
+    audit_history_freshness,
     apply_probability_calibration,
     build_calibration_profile,
     build_scoring_environment,
@@ -1208,6 +1209,7 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
     metric_rows = load_team_metric_rows()
     history = load_team_match_history()
     backtest = run_prediction_backtest(history, TEAM_PROFILES)
+    history_freshness = audit_history_freshness(history, TEAM_PROFILES)
     scoring_environment = build_scoring_environment(history, TEAM_PROFILES)
     score_model_backtest = run_poisson_backtest(history, TEAM_PROFILES, scoring_environment)
     calibration = build_calibration_profile(score_model_backtest)
@@ -1317,6 +1319,7 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
                 "since": history.get("meta", {}).get("since"),
                 "until": history.get("meta", {}).get("until"),
             },
+            "historyFreshness": history_freshness,
             "historicalEloBlend": {
                 "source": "cc0_international_results_latest_elo",
                 "blend": HISTORICAL_ELO_BLEND,
