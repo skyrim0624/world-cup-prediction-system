@@ -7,6 +7,7 @@ from typing import Any
 
 from .data import DATA_DIR, Fixture, TeamProfile
 from .team_history import (
+    build_scoring_environment,
     calculate_elite_performance_metrics,
     calculate_recent_form_metrics,
     load_team_match_history,
@@ -170,8 +171,9 @@ def recent_form_layer(
     fixtures: list[Fixture],
     teams: dict[str, TeamProfile],
     history: dict[str, Any],
+    scoring_environment: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    metrics = calculate_recent_form_metrics(team_key, history, teams)
+    metrics = calculate_recent_form_metrics(team_key, history, teams, scoring_environment=scoring_environment)
     if metrics.get("status") == "active":
         return build_layer(
             "recentForm",
@@ -186,6 +188,7 @@ def recent_form_layer(
                 "weightedGoalDifferencePerMatch": metrics["weightedGoalDifferencePerMatch"],
                 "weightedGoalsForPerMatch": metrics["weightedGoalsForPerMatch"],
                 "weightedGoalsAgainstPerMatch": metrics["weightedGoalsAgainstPerMatch"],
+                "goalBaseline": metrics["goalBaseline"],
             },
             metrics["adjustments"],
         )
@@ -396,6 +399,7 @@ def build_team_strength_profile(
     fixtures: list[Fixture],
     metric_rows: dict[str, Any] | None = None,
     history: dict[str, Any] | None = None,
+    scoring_environment: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     rows = metric_rows or {}
     active_history = history if history is not None else load_team_match_history()
@@ -406,7 +410,7 @@ def build_team_strength_profile(
     team = teams[team_key]
     layers = {
         "baseStrength": base_strength_layer(team, row, history_team),
-        "recentForm": recent_form_layer(team_key, fixtures, teams, active_history),
+        "recentForm": recent_form_layer(team_key, fixtures, teams, active_history, scoring_environment),
         "elitePerformance": elite_performance_history_layer(team_key, teams, active_history, row),
         "squadContinuity": squad_continuity_layer(row),
         "attackQuality": attack_quality_layer(row),
@@ -444,8 +448,9 @@ def build_all_team_strength_profiles(
     history: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     active_history = history if history is not None else load_team_match_history()
+    scoring_environment = build_scoring_environment(active_history, teams)
     return {
-        team_key: build_team_strength_profile(team_key, teams, fixtures, metric_rows, active_history)
+        team_key: build_team_strength_profile(team_key, teams, fixtures, metric_rows, active_history, scoring_environment)
         for team_key in teams
     }
 

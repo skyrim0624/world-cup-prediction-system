@@ -2922,6 +2922,33 @@ modelElo = staticElo + clamp((latestElo - staticElo) * 0.45, -85, 85)
 - 新增测试先失败，确认旧逻辑没有声明 Poisson 校准源。
 - 实现后 `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_history_model_pipeline.py' -v` 通过。
 
+### 2026-06-15：近期状态层改用历史进球环境基准
+
+本次目标：
+
+- 近期战绩层不能继续用固定 `1.35 / 1.15` 判断进攻和防守好坏；既然已经接入历史进球环境，近期状态也应该用同一套数据基准。
+
+已完成：
+
+- 在 `backend/team_history.py` 新增 `goal_baseline_from_scoring_environment()`。
+- `calculate_recent_form_metrics()` 支持传入 `scoring_environment`。
+- 近期状态攻击修正改用 `goalBaseline.attackReference`。
+- 近期状态防守修正改用 `goalBaseline.defenseReference`。
+- `recentForm` 层 metrics 暴露 `goalBaseline`，可以审计当前攻防修正基准。
+- `build_all_team_strength_profiles()` 一次性计算历史进球环境，并传给 48 队近期状态层，避免每队重复计算。
+
+关键决策：
+
+- `attackReference` 使用历史总进球 / 2。
+- `defenseReference` 使用 `attackReference * 0.9`，保留强队防守评价应该严于平均队的口径。
+- 如果历史进球环境缺失，才回退固定基准；正式数据校验会阻止缺失环境通过。
+
+验证：
+
+- 新增测试先失败，确认旧函数不接受 scoring environment。
+- 实现后 `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_history_model_pipeline.py' -v` 通过。
+- `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_team_strength_layers.py' -v` 通过。
+
 #### 当前仍未完成的专业数据层
 
 没有授权数据前，以下仍保持缺失或中性：

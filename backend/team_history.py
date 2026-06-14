@@ -86,18 +86,45 @@ def empty_adjustments() -> dict[str, float]:
     return {"attack": 0.0, "defense": 0.0, "goalkeeper": 0.0, "path": 0.0, "squad": 0.0}
 
 
+def goal_baseline_from_scoring_environment(scoring_environment: dict[str, Any] | None) -> dict[str, Any]:
+    environment = scoring_environment or {}
+    if environment.get("status") != "active":
+        return {
+            "source": "fixed_fallback",
+            "attackReference": 1.35,
+            "defenseReference": 1.15,
+        }
+    total_goals = numeric_total = environment.get("totalGoalsPerMatch")
+    if not isinstance(numeric_total, (int, float)):
+        home_goals = environment.get("neutralHomeGoalsPerMatch") or environment.get("homeGoalsPerMatch")
+        away_goals = environment.get("neutralAwayGoalsPerMatch") or environment.get("awayGoalsPerMatch")
+        if isinstance(home_goals, (int, float)) and isinstance(away_goals, (int, float)):
+            total_goals = float(home_goals) + float(away_goals)
+        else:
+            total_goals = 2.57
+    team_goal_reference = clamp(float(total_goals) / 2, 0.85, 1.75)
+    return {
+        "source": "scoring_environment",
+        "attackReference": round(team_goal_reference, 3),
+        "defenseReference": round(clamp(team_goal_reference * 0.9, 0.75, 1.55), 3),
+    }
+
+
 def calculate_recent_form_metrics(
     team_key: str,
     history: dict[str, Any],
     teams: dict[str, TeamProfile],
     window_matches: int = 18,
+    scoring_environment: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
+    goal_baseline = goal_baseline_from_scoring_environment(scoring_environment or build_scoring_environment(history, teams))
     rows = team_match_rows(team_key, history)[-window_matches:]
     if not rows:
         return {
             "status": "neutral",
             "source": "cc0_international_results",
             "matches": 0,
+            "goalBaseline": goal_baseline,
             "adjustments": empty_adjustments(),
         }
 
@@ -125,8 +152,10 @@ def calculate_recent_form_metrics(
     gf_per_match = weighted_gf / total_weight
     ga_per_match = weighted_ga / total_weight
     adjustments = empty_adjustments()
-    adjustments["attack"] = round(clamp((gf_per_match - 1.35) * 0.55 + max(adjusted_points, 0) * 0.35, -1.4, 1.4), 2)
-    adjustments["defense"] = round(clamp((1.15 - ga_per_match) * 0.55 + max(adjusted_points, 0) * 0.25, -1.4, 1.4), 2)
+    attack_reference = float(goal_baseline["attackReference"])
+    defense_reference = float(goal_baseline["defenseReference"])
+    adjustments["attack"] = round(clamp((gf_per_match - attack_reference) * 0.55 + max(adjusted_points, 0) * 0.35, -1.4, 1.4), 2)
+    adjustments["defense"] = round(clamp((defense_reference - ga_per_match) * 0.55 + max(adjusted_points, 0) * 0.25, -1.4, 1.4), 2)
     adjustments["path"] = round(clamp(adjusted_points * 0.22 + gd_per_match * 0.08, -0.65, 0.65), 2)
     return {
         "status": "active",
@@ -138,6 +167,7 @@ def calculate_recent_form_metrics(
         "weightedGoalDifferencePerMatch": round(gd_per_match, 3),
         "weightedGoalsForPerMatch": round(gf_per_match, 3),
         "weightedGoalsAgainstPerMatch": round(ga_per_match, 3),
+        "goalBaseline": goal_baseline,
         "adjustments": adjustments,
     }
 

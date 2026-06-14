@@ -42,6 +42,30 @@ class HistoryModelPipelineTest(unittest.TestCase):
         self.assertIn("weightedGoalDifferencePerMatch", metrics)
         self.assertNotEqual(metrics["adjustments"]["attack"], 0.0)
 
+    def test_recent_form_goal_adjustments_use_scoring_environment_baseline(self):
+        history = load_team_match_history(DEFAULT_TEAM_MATCH_HISTORY_PATH)
+        low_scoring = {"status": "active", "totalGoalsPerMatch": 2.0}
+        high_scoring = {"status": "active", "totalGoalsPerMatch": 3.4}
+
+        low_metrics = calculate_recent_form_metrics(
+            "brazil",
+            history,
+            TEAM_PROFILES,
+            window_matches=18,
+            scoring_environment=low_scoring,
+        )
+        high_metrics = calculate_recent_form_metrics(
+            "brazil",
+            history,
+            TEAM_PROFILES,
+            window_matches=18,
+            scoring_environment=high_scoring,
+        )
+
+        self.assertGreater(low_metrics["adjustments"]["attack"], high_metrics["adjustments"]["attack"])
+        self.assertLess(low_metrics["adjustments"]["defense"], high_metrics["adjustments"]["defense"])
+        self.assertEqual(low_metrics["goalBaseline"]["source"], "scoring_environment")
+
     def test_elite_performance_uses_top_opponent_real_results(self):
         history = load_team_match_history(DEFAULT_TEAM_MATCH_HISTORY_PATH)
 
