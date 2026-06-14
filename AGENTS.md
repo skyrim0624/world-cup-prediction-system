@@ -2324,6 +2324,7 @@ Elo / 实力评分
 - 管理员后台“事件状态”补充展示多源确认、单源线索和忽略数量。
 - 后台读取接口 `/api/admin/overview`、`/api/admin/prediction-run` 和 `/api/events` 接入同一套 `WORLD_CUP_ADMIN_TOKEN` 门禁。
 - `/admin` 首屏改为 Token 输入页，验证通过后才展示控制面板。
+- `admin_security` 支持从 Cloudflare Python Worker 的 ASGI `scope.env` 读取 `WORLD_CUP_ADMIN_TOKEN`，避免 Worker secret 已设置但 Python `os.environ` 读不到。
 - 文档同步更新：`docs/日更流程说明.md`、`docs/新闻抓取系统开发记录.md`、`docs/赛事数据导入格式.md`。
 
 边界：
