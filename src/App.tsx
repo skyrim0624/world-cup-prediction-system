@@ -215,31 +215,6 @@ type UpcomingMatchesResponse = {
   items: UpcomingMatch[];
 };
 
-type FinishedMatch = {
-  stage: string;
-  kickoff: string;
-  matchNo?: number | null;
-  city?: string | null;
-  stadium?: string | null;
-  status: string;
-  homeTeam: TeamKey;
-  awayTeam: TeamKey;
-  homeName: string;
-  awayName: string;
-  homeCode: string;
-  awayCode: string;
-  homeScore: number;
-  awayScore: number;
-  modelUse: string;
-  modelUseLabel: string;
-};
-
-type FinishedMatchesResponse = {
-  updatedAt: string;
-  count: number;
-  items: FinishedMatch[];
-};
-
 type AccessProduct = {
   key: string;
   name: string;
@@ -401,8 +376,6 @@ type MatchDetail = {
   analysis: string[];
 };
 
-type DatasetMeta = NonNullable<MatchPrediction["modelMeta"]>["dataset"];
-
 function fixtureVenueLabel(fixture: { city?: string | null; stadium?: string | null }) {
   return [fixture.stadium, fixture.city].filter(Boolean).join(" · ");
 }
@@ -463,27 +436,6 @@ const teams: Team[] = [
     code: "NED",
     factors: { strength: 82, form: 83, path: 69, squad: 80, margin: 83 },
     tournament: { champion: 7.1, final: 15.8, semifinal: 28.6, quarterfinal: 51.9, change: -0.3 },
-  },
-];
-
-const modelLayers = [
-  {
-    layer: "一层模型",
-    title: "赛前概率引擎",
-    points: ["Elo 实力评分", "Dixon-Coles 比分分布", "50,000 次蒙特卡洛"],
-    metric: "单场概率",
-  },
-  {
-    layer: "二层模型",
-    title: "事件与赛果修正",
-    points: ["已完赛锁定", "伤病停赛", "来源权威等级"],
-    metric: "动态权重",
-  },
-  {
-    layer: "三层模型",
-    title: "整届路径传导",
-    points: ["小组名次", "淘汰赛路径", "晋级 / 夺冠概率"],
-    metric: "用户解释",
   },
 ];
 
@@ -604,9 +556,9 @@ const TEAM_FLAG_ASSET_BY_CODE: Record<string, string> = {
 };
 
 const fallbackNewsItems: NewsItem[] = [
-  { title: "官方名单", detail: "两队暂无新增停赛，核心阵容可用", impact: "可入模型", tone: "green", time: "1 小时前" },
-  { title: "训练信息", detail: "巴西边路主力单独训练，出场仍待确认", impact: "轻微修正", tone: "gold", time: "3 小时前" },
-  { title: "社媒传闻", detail: "未证实更衣室消息，不改变概率", impact: "已忽略", tone: "muted", time: "5 小时前" },
+  { title: "官方名单", detail: "两队暂无新增停赛，核心阵容可用", impact: "利好稳定", tone: "green", time: "1 小时前" },
+  { title: "训练信息", detail: "巴西边路主力单独训练，出场仍待确认", impact: "小幅风险", tone: "gold", time: "3 小时前" },
+  { title: "社媒传闻", detail: "未证实更衣室消息，暂不采信", impact: "不采信", tone: "muted", time: "5 小时前" },
 ];
 
 const fallbackGoalMarkets: GoalMarket[] = [
@@ -637,8 +589,8 @@ const fallbackScoreMatrix: ScoreMatrixCell[] = [
 
 const fallbackMarketSource: MarketSource = {
   status: "pending",
-  label: "市场价格源待接入",
-  detail: "后续接入授权价格源后，再展示模型概率与市场价格差值。",
+  label: "市场热度暂不展示",
+  detail: "授权数据确认后，再开放市场热度参考。",
 };
 
 function buildFallbackPrediction(tick: number): MatchPrediction {
@@ -729,6 +681,16 @@ function formatSignedNumber(value: number) {
   return `${value > 0 ? "+" : ""}${value.toFixed(1)}`;
 }
 
+function userNewsImpactLabel(value: string) {
+  if (value.includes("不入模型") || value.includes("已忽略")) return "不采信";
+  if (value.includes("入模") || value.includes("可入模型")) return "已确认";
+  return value.replace(/模型/g, "判断");
+}
+
+function userNewsDetail(value: string) {
+  return value.replace("不改变概率", "暂不采信").replace(/模型/g, "判断");
+}
+
 function fairPriceLabel(value: number) {
   if (!value) return "--";
   return value.toFixed(2);
@@ -746,24 +708,12 @@ function goalMarketsFallback(): GoalMarket[] {
   return fallbackGoalMarkets;
 }
 
-function marketSourceFallback(source?: MarketSource) {
-  return source ?? fallbackMarketSource;
-}
-
 function creatorTopicsFallback(homeName: string, awayName: string, topScore?: string): CreatorTopic[] {
   return [
     { title: `${topScore ?? "最可能比分"} 的内容切入`, detail: `解释 ${homeName} / ${awayName} 的进球期望和比分集中区间。` },
     { title: "路径影响怎么讲", detail: "把单场结果接到小组名次、潜在淘汰赛对手和夺冠概率变化。" },
-    { title: "市场分歧怎么讲", detail: "先看模型公平概率，等授权市场价格源接入后再比较差值。" },
+    { title: "赛果影响怎么讲", detail: "先看胜平负和比分，再解释这场比赛怎样改变小组路径。" },
   ];
-}
-
-function dataReadinessLabel(dataset?: DatasetMeta) {
-  if (!dataset) return "数据待确认";
-  const placeholderSlots = dataset.placeholderSlots ?? 0;
-  if (placeholderSlots > 0) return `样例数据 · 占位 ${placeholderSlots} 队`;
-  if (dataset.teamCount === 48 && dataset.fixtureCount >= 72) return "正式数据就绪";
-  return "数据待补全";
 }
 
 function matchRouteParams(pathname: string) {
@@ -802,11 +752,7 @@ function HomePredictionPage() {
   const [forecastTick, setForecastTick] = useState(0);
   const [apiPrediction, setApiPrediction] = useState<MatchPrediction | null>(null);
   const [upcomingMatches, setUpcomingMatches] = useState<UpcomingMatchesResponse | null>(null);
-  const [finishedMatches, setFinishedMatches] = useState<FinishedMatchesResponse | null>(null);
-  const [selectedMatchKey, setSelectedMatchKey] = useState<string | null>(null);
-  const [matchDetail, setMatchDetail] = useState<MatchDetail | null>(null);
   const [accessOptions, setAccessOptions] = useState<AccessOptions | null>(null);
-  const [dataMode, setDataMode] = useState<"api" | "demo">("demo");
   const [activeScreen, setActiveScreen] = useState<UserScreenKey>(() => userScreenFromHash());
 
   const teamsData = apiPrediction?.teams?.length ? apiPrediction.teams : teams;
@@ -815,14 +761,9 @@ function HomePredictionPage() {
   const homeTeam = teamsData.find((team) => team.key === matchPrediction.homeTeam) ?? teamsData[0];
   const awayTeam = teamsData.find((team) => team.key === matchPrediction.awayTeam) ?? teamsData[1];
   const mainVenue = fixtureVenueLabel(matchPrediction);
-  const dataModeLabel = dataMode === "api" ? `真实模型 · ${dataReadinessLabel(matchPrediction.modelMeta?.dataset)}` : "演示动态";
   const championBoard = [...teamsData].sort((left, right) => right.tournament.champion - left.tournament.champion);
-  const modelSummary = matchPrediction.modelMeta
-    ? `${matchPrediction.modelMeta.simulationCount.toLocaleString("zh-CN")} 次模拟 · 已锁定 ${matchPrediction.modelMeta.lockedResults} 场赛果 · 进行中 ${matchPrediction.modelMeta.liveMatches ?? 0} 场 · 事件 ${matchPrediction.modelMeta.events?.applied ?? 0} 入模 / ${matchPrediction.modelMeta.events?.ignored ?? 0} 忽略`
-    : "已结束比赛只作为后续权重因子";
   const topScore = matchPrediction.scoreOutcomes[0];
   const goalMarkets = matchPrediction.goalMarkets?.length ? matchPrediction.goalMarkets : goalMarketsFallback();
-  const marketSource = marketSourceFallback(matchPrediction.marketSource);
 
   useEffect(() => {
     let active = true;
@@ -836,11 +777,9 @@ function HomePredictionPage() {
         const data = (await response.json()) as MatchPrediction;
         if (!active) return;
         setApiPrediction(data);
-        setDataMode("api");
       } catch {
         if (!active) return;
         setApiPrediction(null);
-        setDataMode("demo");
       }
     }
 
@@ -854,19 +793,6 @@ function HomePredictionPage() {
       } catch {
         if (!active) return;
         setUpcomingMatches(null);
-      }
-    }
-
-    async function loadFinishedMatches() {
-      try {
-        const response = await fetch(`${API_BASE_URL}/api/finished-matches?limit=6`, { cache: "no-store" });
-        if (!response.ok) throw new Error(`完赛记录接口返回 ${response.status}`);
-        const data = (await response.json()) as FinishedMatchesResponse;
-        if (!active) return;
-        setFinishedMatches(data);
-      } catch {
-        if (!active) return;
-        setFinishedMatches(null);
       }
     }
 
@@ -885,13 +811,11 @@ function HomePredictionPage() {
 
     loadPrediction();
     loadUpcomingMatches();
-    loadFinishedMatches();
     loadAccessOptions();
     const timer = window.setInterval(() => {
       setForecastTick((value) => value + 1);
       loadPrediction();
       loadUpcomingMatches();
-      loadFinishedMatches();
       loadAccessOptions();
     }, FORECAST_REFRESH_MS);
 
@@ -914,20 +838,8 @@ function HomePredictionPage() {
     };
   }, []);
 
-  async function loadMatchDetail(match: UpcomingMatch) {
-    const key = `${match.homeTeam}-${match.awayTeam}`;
-    setSelectedMatchKey(key);
-    try {
-      const response = await fetch(
-        `${API_BASE_URL}/api/match-detail?home=${encodeURIComponent(match.homeTeam)}&away=${encodeURIComponent(match.awayTeam)}&simulations=${INTERACTIVE_SIMULATION_COUNT}`,
-        { cache: "no-store" },
-      );
-      if (!response.ok) throw new Error(`单场详情接口返回 ${response.status}`);
-      const data = (await response.json()) as MatchDetail;
-      setMatchDetail(data);
-    } catch {
-      setMatchDetail(null);
-    }
+  function openMatchPage(match: UpcomingMatch) {
+    window.location.href = matchPagePath(match.homeTeam, match.awayTeam);
   }
 
   function openScreen(screenKey: UserScreenKey) {
@@ -944,10 +856,9 @@ function HomePredictionPage() {
       <div className="ambient-grid" />
       <header className="topbar portal-topbar">
         <div className="brand portal-brand">
-          <span>世界杯预测工作台</span>
-          <small>World Cup Forecast Desk</small>
+          <span>世界杯预测</span>
+          <small>{formatUpdateTime(matchPrediction.updatedAt)} 更新</small>
         </div>
-        <span className="app-status-pill">{dataModeLabel}</span>
       </header>
 
       <section className="app-screen" aria-labelledby="active-screen-title">
@@ -979,7 +890,7 @@ function HomePredictionPage() {
               <div className="forecast-lead app-forecast-lead">
                 <span>最可能比分</span>
                 <strong>{topScore?.score ?? "--"}</strong>
-                <em>{topScore ? `${topScore.probability.toFixed(1)}%` : "等待模型输出"}</em>
+                <em>{topScore ? `${topScore.probability.toFixed(1)}%` : "预测生成中"}</em>
               </div>
               <div className="probability-row portal-probability-row app-probability-row">
                 <Probability label={`${homeTeam.name}胜`} value={matchPrediction.homeWin} tone="green" />
@@ -992,23 +903,12 @@ function HomePredictionPage() {
                   <p key={item}>{item}</p>
                 ))}
               </div>
-              <div className="engine-line">
-                <span className="ai-badge">AI</span>
-                <span className="engine-copy">
-                  <strong>{matchPrediction.modelMeta?.engine ?? "Elo + Dixon-Coles + 蒙特卡洛"}</strong>
-                  <small>{modelSummary}</small>
-                </span>
-                <a className="primary-link" href={matchPagePath(matchPrediction.homeTeam, matchPrediction.awayTeam)}>
-                  单场页
-                </a>
+              <div className="app-mini-market">
+                <div className="section-title">
+                  <span>进球概率</span>
+                </div>
+                <GoalMarketPanel markets={goalMarkets.slice(0, 4)} compact />
               </div>
-            </section>
-
-            <section className="console-panel">
-              <div className="section-title">
-                <span>进球概率</span>
-              </div>
-              <GoalMarketPanel markets={goalMarkets.slice(0, 4)} compact />
             </section>
           </div>
         ) : null}
@@ -1019,13 +919,7 @@ function HomePredictionPage() {
               <div className="section-title">
                 <span>未开赛比赛池</span>
               </div>
-              <UpcomingMatchesPanel matches={upcomingMatches?.items ?? []} selectedKey={selectedMatchKey} onSelect={loadMatchDetail} />
-            </section>
-            <section className="console-panel">
-              <div className="section-title">
-                <span>单场快速预览</span>
-              </div>
-              <MatchDetailPanel detail={matchDetail} teamsData={teamsData} />
+              <UpcomingMatchesPanel matches={(upcomingMatches?.items ?? []).slice(0, 4)} onSelect={openMatchPage} />
             </section>
           </div>
         ) : null}
@@ -1036,20 +930,14 @@ function HomePredictionPage() {
               <div className="section-title">
                 <span>冠军概率榜</span>
               </div>
-              <ChampionBoard teams={championBoard.slice(0, 8)} />
-              <p className="locked-note">完整 48 队榜单随赛事全周期解锁。</p>
+              <ChampionBoard teams={championBoard.slice(0, 5)} />
+              <p className="locked-note">完整榜单解锁后查看。</p>
             </section>
             <section className="console-panel">
               <div className="section-title">
                 <span>今日概率变化</span>
               </div>
               <DailyMoversPanel movers={matchPrediction.dailyMovers} />
-            </section>
-            <section className="console-panel">
-              <div className="section-title">
-                <span>路径传导</span>
-              </div>
-              <ScenarioImpactList scenarios={matchPrediction.scenarioImpacts} />
             </section>
           </div>
         ) : null}
@@ -1061,24 +949,24 @@ function HomePredictionPage() {
                 <span>新闻影响摘要</span>
               </div>
               <div className="news-list">
-                {matchPrediction.newsItems.slice(0, 4).map((item) => (
+                {matchPrediction.newsItems.slice(0, 3).map((item) => (
                   <article className={`news-item ${item.tone}`} key={item.title}>
                     <span className="news-icon">{item.tone === "red" ? "+" : item.tone === "gold" ? "!" : "?"}</span>
                     <div>
                       <strong>{item.title}</strong>
-                      <p>{item.detail}</p>
+                      <p>{userNewsDetail(item.detail)}</p>
                       <small>{item.time}</small>
                     </div>
-                    <em>{item.impact}</em>
+                    <em>{userNewsImpactLabel(item.impact)}</em>
                   </article>
                 ))}
               </div>
             </section>
             <section className="console-panel">
               <div className="section-title">
-                <span>模型方法</span>
+                <span>判断依据</span>
               </div>
-              <ModelMethodPanel modelSummary={modelSummary} marketSource={marketSource} />
+              <UserMethodPanel />
             </section>
           </div>
         ) : null}
@@ -1090,12 +978,6 @@ function HomePredictionPage() {
                 <span>付费解锁</span>
               </div>
               <AccessPanel options={accessOptions} contentKey="tournament_probabilities" />
-            </section>
-            <section className="console-panel">
-              <div className="section-title">
-                <span>赛果记录</span>
-              </div>
-              <FinishedMatchesPanel records={finishedMatches?.items ?? []} />
             </section>
           </div>
         ) : null}
@@ -1158,7 +1040,7 @@ function SegmentBar({ value, tone }: { value: number; tone: string }) {
 
 function CompactScoreList({ outcomes }: { outcomes: ScoreOutcome[] }) {
   if (outcomes.length === 0) {
-    return <p className="review-empty">比分分布等待模型输出</p>;
+    return <p className="review-empty">比分预测生成中</p>;
   }
   return (
     <div className="compact-score-list" aria-label="最可能比分 Top 3">
@@ -1192,7 +1074,7 @@ function FairPricePanel({ prices }: { prices: FairPrice[] }) {
 
 function GoalMarketPanel({ markets, compact = false }: { markets: GoalMarket[]; compact?: boolean }) {
   if (markets.length === 0) {
-    return <p className="review-empty">进球市场视角等待模型输出</p>;
+    return <p className="review-empty">进球预测生成中</p>;
   }
   return (
     <div className={`goal-market-grid ${compact ? "compact" : ""}`}>
@@ -1268,15 +1150,13 @@ function CreatorTopicsPanel({ topics }: { topics: CreatorTopic[] }) {
 
 function UpcomingMatchesPanel({
   matches,
-  selectedKey,
   onSelect,
 }: {
   matches: UpcomingMatch[];
-  selectedKey: string | null;
   onSelect: (match: UpcomingMatch) => void;
 }) {
   if (matches.length === 0) {
-    return <p className="review-empty">未开赛预测等待 API 连接</p>;
+    return <p className="review-empty">暂无未开赛比赛</p>;
   }
 
   return (
@@ -1284,7 +1164,7 @@ function UpcomingMatchesPanel({
       {matches.map((match) => {
         const key = `${match.homeTeam}-${match.awayTeam}`;
         return (
-          <button className={`upcoming-row ${selectedKey === key ? "selected" : ""}`} key={`${key}-${match.kickoff}`} onClick={() => onSelect(match)}>
+          <button className="upcoming-row" key={`${key}-${match.kickoff}`} onClick={() => onSelect(match)}>
             <div className="upcoming-teams">
               <span>
                 <TeamFlag team={match.homeTeam} code={match.homeCode} />
@@ -1312,41 +1192,6 @@ function UpcomingMatchesPanel({
           </button>
         );
       })}
-    </div>
-  );
-}
-
-function FinishedMatchesPanel({ records }: { records: FinishedMatch[] }) {
-  if (records.length === 0) {
-    return <p className="review-empty">已结束比赛记录等待 API 连接</p>;
-  }
-
-  return (
-    <div className="finished-list">
-      {records.map((match) => (
-        <article className="finished-row" key={`${match.homeTeam}-${match.awayTeam}-${match.kickoff}`}>
-          <div className="finished-result">
-            <div className="finished-side">
-              <TeamFlag team={match.homeTeam} code={match.homeCode} />
-              <span>{match.homeCode}</span>
-            </div>
-            <strong>
-              {match.homeScore} - {match.awayScore}
-            </strong>
-            <div className="finished-side away">
-              <span>{match.awayCode}</span>
-              <TeamFlag team={match.awayTeam} code={match.awayCode} />
-            </div>
-          </div>
-          <div className="finished-copy">
-            <strong>
-              {match.homeName} / {match.awayName}
-            </strong>
-            <small>{[match.stage, match.kickoff, fixtureVenueLabel(match)].filter(Boolean).join(" · ")}</small>
-          </div>
-          <em>{match.modelUseLabel}</em>
-        </article>
-      ))}
     </div>
   );
 }
@@ -1432,45 +1277,36 @@ function ScenarioImpactList({ scenarios }: { scenarios: ScenarioImpact[] }) {
   );
 }
 
-function ModelMethodPanel({ modelSummary, marketSource }: { modelSummary: string; marketSource: MarketSource }) {
+function UserMethodPanel() {
+  const methodItems = [
+    { title: "实力", detail: "球队长期强度和攻防质量" },
+    { title: "状态", detail: "近期表现、阵容连续性" },
+    { title: "路径", detail: "小组名次和潜在对手" },
+    { title: "人员", detail: "伤停、停赛、核心球员风险" },
+  ];
+
   return (
-    <div className="model-method-panel">
-      <div className="market-source-box">
-        <strong>{marketSource.label}</strong>
-        <p>{marketSource.detail}</p>
-      </div>
-      <div className="model-summary-strip">
-        <b>当前模型</b>
-        <span>{modelSummary}</span>
-      </div>
-      <div className="layer-grid compact">
-        {modelLayers.map((layer) => (
-          <article className="layer-card" key={layer.layer}>
-            <span>{layer.layer}</span>
-            <h3>{layer.title}</h3>
-            <ul>
-              {layer.points.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-            <em>{layer.metric}</em>
-          </article>
-        ))}
-      </div>
+    <div className="user-method-panel">
+      {methodItems.map((item) => (
+        <article key={item.title}>
+          <strong>{item.title}</strong>
+          <span>{item.detail}</span>
+        </article>
+      ))}
     </div>
   );
 }
 
 function accessStatusLabel(status: string) {
   if (status === "available") return "可解锁";
-  if (status === "payment_pending") return "支付待接入";
-  return "待配置";
+  if (status === "payment_pending") return "暂未开放";
+  return "暂未开放";
 }
 
 function paymentStatusLabel(status: string) {
   if (status === "pending_payment") return "等待扫码付款";
-  if (status === "customer_interface_ready") return "客户接口已就绪";
-  if (status === "provider_config_required") return "客户接口待配置";
+  if (status === "customer_interface_ready") return "准备支付";
+  if (status === "provider_config_required") return "暂未开放";
   if (status === "paid") return "支付完成";
   return "待处理";
 }
@@ -1553,7 +1389,7 @@ function AccessPanel({
       await checkPaymentAccess(order.orderId);
     } catch (error) {
       setPaymentOrder(null);
-      setPaymentMessage(error instanceof Error ? error.message : "支付订单创建失败");
+      setPaymentMessage(error instanceof Error && error.message.includes("未知") ? error.message : "支付暂未开放");
     } finally {
       setCreatingProductKey(null);
     }
@@ -1576,7 +1412,7 @@ function AccessPanel({
   }, [paymentOrder?.orderId, contentKey]);
 
   if (!options) {
-    return <p className="review-empty">付费配置等待 API 连接</p>;
+    return <p className="review-empty">解锁信息暂时不可用</p>;
   }
 
   const providers = paymentConfig?.providers ?? [
@@ -1589,7 +1425,7 @@ function AccessPanel({
   return (
     <div className="access-panel">
       <div className="access-summary">
-        <strong>{paymentConfig?.ready ? "客户支付接口已配置" : "扫码付款待配置"}</strong>
+        <strong>{paymentConfig?.ready ? "扫码支付" : "支付暂未开放"}</strong>
         <span>{paymentConfig?.disclaimer ?? options.disclaimer}</span>
       </div>
       <div className="payment-provider-row" aria-label="扫码付款渠道">
@@ -1603,7 +1439,7 @@ function AccessPanel({
             {provider.label}
           </button>
         ))}
-        <span>{currentProvider?.configured ? "可创建订单意图" : `${currentProvider?.label ?? "支付"}客户接口待配置`}</span>
+        <span>{currentProvider?.configured ? "选择后生成二维码" : "该渠道暂未开放"}</span>
       </div>
       <div className="access-list">
         {options.products.map((product) => (
@@ -1612,7 +1448,7 @@ function AccessPanel({
             <span>{product.scope}</span>
             <small>{product.amountLabel ?? "待定价"}</small>
             <button type="button" disabled={creatingProductKey === product.key} onClick={() => createScanPaymentOrder(product.key)}>
-              {creatingProductKey === product.key ? "创建中" : "创建扫码订单"}
+              {creatingProductKey === product.key ? "处理中" : "解锁"}
             </button>
             <em>{accessStatusLabel(product.status)}</em>
           </article>
@@ -1627,7 +1463,7 @@ function AccessPanel({
             <span>
               {paymentOrder.productName} · {paymentOrder.amountLabel} · 到期 {formatUpdateTime(paymentOrder.expiresAt)}
             </span>
-            <p>{paymentOrder.nextAction}</p>
+            <p>{paymentOrder.qrCodeUrl ? paymentOrder.nextAction : "支付二维码暂未开放"}</p>
           </div>
           {paymentOrder.qrCodeUrl ? <img src={paymentOrder.qrCodeUrl} alt="扫码付款二维码" /> : <em>二维码待生成</em>}
         </div>
@@ -1725,7 +1561,6 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
         { label: "平局", probability: detail?.draw ?? 0, fairDecimal: detail?.draw ? Number((100 / detail.draw).toFixed(2)) : 0, note: "90 分钟模型公平概率", tone: "gold" as Tone },
         { label: `${awayName}胜`, probability: detail?.awayWin ?? 0, fairDecimal: detail?.awayWin ? Number((100 / detail.awayWin).toFixed(2)) : 0, note: "90 分钟模型公平概率", tone: "blue" as Tone },
       ];
-  const detailMarketSource = marketSourceFallback(detail?.marketSource);
   const detailCreatorTopics = detail?.creatorTopics?.length
     ? detail.creatorTopics
     : creatorTopicsFallback(homeName, awayName, detail?.scoreOutcomes[0]?.score);
@@ -1840,10 +1675,6 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
                 <div className="match-detail-splits">
                   <FairPricePanel prices={detailFairPrices} />
                   <GoalMarketPanel markets={detailGoalMarkets} compact />
-                </div>
-                <div className="market-source-box">
-                  <strong>{detailMarketSource.label}</strong>
-                  <p>{detailMarketSource.detail}</p>
                 </div>
                 <ScoreMatrix cells={detailScoreMatrix} />
                 <div className="analysis-list">

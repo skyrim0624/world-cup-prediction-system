@@ -3711,14 +3711,26 @@ button {
 }
 
 .user-page-shell {
-  width: min(100%, 820px);
-  padding-bottom: calc(104px + env(safe-area-inset-bottom));
+  width: min(100%, 460px);
+  padding: 14px 12px calc(76px + env(safe-area-inset-bottom));
 }
 
 .user-page-shell .portal-topbar {
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
+}
+
+.user-page-shell .portal-brand span {
+  font-size: clamp(23px, 6.8vw, 30px);
+  line-height: 1;
+}
+
+.user-page-shell .portal-brand small {
+  margin-top: 2px;
+  font-size: 11px;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .app-status-pill {
@@ -3737,34 +3749,34 @@ button {
 
 .app-screen {
   display: grid;
-  gap: 12px;
+  gap: 8px;
 }
 
 .app-screen-head {
   display: grid;
   gap: 2px;
-  padding: 6px 4px 0;
+  padding: 0 2px;
 }
 
 .app-screen-head span {
   color: var(--green);
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 900;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .app-screen-head h1 {
   margin: 0;
   color: #ffffff;
-  font-size: clamp(26px, 8vw, 42px);
+  font-size: clamp(21px, 6vw, 26px);
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 1.08;
 }
 
 .app-screen-stack {
   display: grid;
-  gap: 14px;
+  gap: 8px;
   animation: app-screen-enter 180ms ease-out;
 }
 
@@ -3788,14 +3800,14 @@ button {
 
 .app-hero-card {
   display: grid;
-  gap: 14px;
-  padding: 16px;
+  gap: 8px;
+  padding: 10px;
 }
 
 .app-match-summary {
   display: grid;
-  gap: 4px;
-  padding: 14px;
+  gap: 3px;
+  padding: 8px 9px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
   color: var(--text);
@@ -3808,23 +3820,23 @@ button {
 .app-match-summary span,
 .app-match-summary small {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 900;
-  line-height: 1.35;
+  line-height: 1.2;
 }
 
 .app-match-teams {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .app-match-teams > span {
   display: flex;
   align-items: center;
   min-width: 0;
-  gap: 8px;
+  gap: 6px;
 }
 
 .app-match-teams > span:last-child {
@@ -3832,14 +3844,14 @@ button {
 }
 
 .app-match-teams .flag {
-  width: 38px;
-  height: 26px;
+  width: 30px;
+  height: 20px;
 }
 
 .app-match-teams b,
 .app-match-teams strong {
   color: #ffffff;
-  font-size: clamp(28px, 8.4vw, 42px);
+  font-size: clamp(22px, 6.8vw, 30px);
   font-weight: 900;
   line-height: 1;
   white-space: nowrap;
@@ -3852,6 +3864,8 @@ button {
 .app-forecast-lead {
   grid-template-columns: minmax(0, 1fr) auto auto;
   margin-bottom: 0;
+  min-height: 40px;
+  padding: 7px 9px;
 }
 
 .app-probability-row {
@@ -3860,7 +3874,7 @@ button {
 
 .app-probability-row .probability {
   min-width: 0;
-  padding: 11px 8px;
+  padding: 8px 6px;
   border-right: 1px solid rgba(255, 255, 255, 0.09);
   border-bottom: 0;
 }
@@ -3870,49 +3884,104 @@ button {
 }
 
 .app-probability-row .probability span {
-  font-size: clamp(12px, 3.6vw, 15px);
+  font-size: clamp(10px, 3.1vw, 12px);
   line-height: 1.15;
 }
 
 .app-probability-row .probability strong {
-  margin: 3px 0 8px;
-  font-size: clamp(28px, 9vw, 42px);
+  margin: 2px 0 6px;
+  font-size: clamp(22px, 7vw, 30px);
 }
 
 .app-probability-row .segment-bar {
-  gap: 3px;
+  gap: 2px;
 }
 
 .app-probability-row .segment-bar i {
-  height: 8px;
+  height: 6px;
 }
 
 .app-screen .compact-score-list {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
+  gap: 6px;
 }
 
 .app-screen .compact-score {
-  min-height: 72px;
-  padding: 9px;
+  min-height: 50px;
+  padding: 6px;
 }
 
 .app-screen .compact-score strong {
-  font-size: clamp(22px, 6.4vw, 30px);
+  font-size: clamp(18px, 5vw, 22px);
+}
+
+.app-screen .compact-score span,
+.app-screen .compact-score em {
+  font-size: 10px;
+}
+
+.app-mini-market {
+  display: grid;
+  gap: 7px;
+}
+
+.app-mini-market .section-title {
+  margin-bottom: 0;
+}
+
+.app-mini-market .section-title::before,
+.app-mini-market .section-title::after {
+  height: 6px;
 }
 
 .app-screen .goal-market-grid.compact,
 .forecast-screen .goal-market-grid.compact {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
 }
 
 .app-screen .goal-market-card {
-  min-height: 118px;
-  padding: 12px;
+  min-height: 64px;
+  padding: 6px 7px;
 }
 
 .app-screen .goal-market-card strong {
-  font-size: clamp(26px, 7vw, 34px);
+  font-size: clamp(18px, 5.8vw, 24px);
+}
+
+.app-screen .goal-market-card span,
+.app-screen .goal-market-card small,
+.app-screen .goal-market-card em {
+  font-size: 10px;
+  line-height: 1.15;
+}
+
+.user-method-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.user-method-panel article {
+  display: grid;
+  gap: 4px;
+  min-height: 72px;
+  padding: 10px;
+  border: 1px solid rgba(126, 255, 238, 0.18);
+  border-radius: 7px;
+  background: rgba(0, 73, 188, 0.28);
+}
+
+.user-method-panel strong {
+  color: var(--green);
+  font-size: 15px;
+  line-height: 1.1;
+}
+
+.user-method-panel span {
+  color: rgba(232, 255, 252, 0.78);
+  font-size: 12px;
+  line-height: 1.3;
 }
 
 .model-method-panel {
@@ -3946,12 +4015,12 @@ button {
 .app-bottom-nav {
   position: fixed;
   right: 50%;
-  bottom: max(10px, env(safe-area-inset-bottom));
+  bottom: max(8px, env(safe-area-inset-bottom));
   z-index: 50;
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  width: min(calc(100% - 20px), 520px);
-  padding: 8px;
+  width: min(calc(100% - 18px), 440px);
+  padding: 6px;
   border: 1px solid rgba(126, 255, 238, 0.22);
   border-radius: 20px;
   background: rgba(2, 52, 150, 0.88);
@@ -3963,7 +4032,7 @@ button {
 .app-bottom-nav button {
   display: grid;
   min-width: 0;
-  min-height: 58px;
+  min-height: 50px;
   place-items: center;
   gap: 3px;
   border: 0;
@@ -3990,14 +4059,207 @@ button {
 }
 
 .app-bottom-nav span {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 900;
   line-height: 1;
 }
 
+.user-page-shell .console-panel {
+  padding: 10px;
+}
+
+.user-page-shell .section-title {
+  gap: 7px;
+  margin-bottom: 8px;
+}
+
+.user-page-shell .section-title span {
+  min-height: 20px;
+  font-size: 13px;
+}
+
+.user-page-shell .analysis-list {
+  gap: 6px;
+  margin-top: 0;
+}
+
+.user-page-shell .analysis-list p {
+  padding: 6px 8px;
+  font-size: 11px;
+  line-height: 1.32;
+}
+
+.user-page-shell .upcoming-list,
+.user-page-shell .champion-list,
+.user-page-shell .news-list {
+  gap: 8px;
+}
+
+.user-page-shell .upcoming-row {
+  grid-template-columns: 116px minmax(0, 1fr);
+  min-height: 66px;
+  gap: 8px;
+  padding: 8px;
+}
+
+.user-page-shell .upcoming-teams {
+  gap: 5px;
+  font-size: 14px;
+}
+
+.user-page-shell .upcoming-teams .flag {
+  width: 25px;
+  height: 17px;
+}
+
+.user-page-shell .upcoming-teams b {
+  font-size: 13px;
+}
+
+.user-page-shell .upcoming-copy strong {
+  font-size: 13px;
+  line-height: 1.15;
+}
+
+.user-page-shell .upcoming-copy small {
+  margin-top: 3px;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.user-page-shell .upcoming-probs {
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.user-page-shell .upcoming-probs em {
+  min-height: 24px;
+  font-size: 11px;
+}
+
+.user-page-shell .portal-standing-card .champion-row {
+  min-height: 48px;
+  padding: 7px 8px;
+}
+
+.user-page-shell .portal-standing-card .champion-row .flag {
+  width: 28px;
+  height: 19px;
+}
+
+.user-page-shell .portal-standing-card .champion-row strong {
+  font-size: 14px;
+}
+
+.user-page-shell .portal-standing-card .champion-row small {
+  font-size: 10px;
+}
+
+.user-page-shell .portal-standing-card .champion-probability b {
+  font-size: 18px;
+}
+
+.user-page-shell .locked-note {
+  margin-top: 7px;
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.user-page-shell .news-item {
+  grid-template-columns: 24px minmax(0, 1fr) auto;
+  gap: 8px;
+  min-height: 60px;
+  padding: 8px;
+}
+
+.user-page-shell .news-item strong {
+  font-size: 13px;
+}
+
+.user-page-shell .news-item p,
+.user-page-shell .news-item small,
+.user-page-shell .news-item em {
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.user-page-shell .news-item em {
+  grid-column: auto;
+  justify-self: end;
+}
+
+.user-page-shell .news-icon {
+  width: 24px;
+  height: 24px;
+  font-size: 13px;
+}
+
+.user-page-shell .access-panel {
+  gap: 8px;
+}
+
+.user-page-shell .access-summary {
+  padding: 9px;
+}
+
+.user-page-shell .access-summary strong {
+  font-size: 15px;
+}
+
+.user-page-shell .access-summary span {
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.user-page-shell .payment-provider-row {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.user-page-shell .payment-provider-row span {
+  grid-column: 1 / -1;
+  padding: 0;
+  font-size: 11px;
+}
+
+.user-page-shell .payment-provider-row button,
+.user-page-shell .access-card button {
+  min-height: 36px;
+  font-size: 12px;
+}
+
+.user-page-shell .access-list {
+  gap: 7px;
+}
+
+.user-page-shell .access-card {
+  grid-template-columns: minmax(0, 1fr) auto;
+  min-height: 0;
+  gap: 6px;
+  padding: 8px;
+}
+
+.user-page-shell .access-card strong {
+  font-size: 13px;
+}
+
+.user-page-shell .access-card span,
+.user-page-shell .access-card small,
+.user-page-shell .access-card em {
+  font-size: 11px;
+}
+
+.user-page-shell .access-card button {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  min-width: 74px;
+}
+
 @media (max-width: 900px) {
   .user-page-shell {
-    padding-bottom: calc(108px + env(safe-area-inset-bottom));
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
   }
 
   .user-page-shell .portal-topbar {
@@ -4023,7 +4285,7 @@ button {
   }
 
   .app-bottom-nav button {
-    min-height: 54px;
+    min-height: 50px;
     border-radius: 12px;
   }
 
@@ -4032,6 +4294,6 @@ button {
   }
 
   .app-hero-card {
-    padding: 14px;
+    padding: 10px;
   }
 }

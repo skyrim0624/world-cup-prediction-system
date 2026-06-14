@@ -35,11 +35,18 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("matchPagePath", source)
         self.assertIn("打开单场页", source)
 
-    def test_homepage_renders_finished_match_records(self):
+    def test_homepage_keeps_operations_content_out_of_public_app(self):
         source = app_source()
-        self.assertIn("/api/finished-matches", source)
-        self.assertIn("赛果记录", source)
-        self.assertIn("FinishedMatchesPanel", source)
+        home_source = source_between(source, "function HomePredictionPage()", "function TeamFlag")
+
+        self.assertNotIn("/api/finished-matches", home_source)
+        self.assertNotIn("赛果记录", home_source)
+        self.assertNotIn("FinishedMatchesPanel", home_source)
+        self.assertNotIn("真实模型", home_source)
+        self.assertNotIn("入模", home_source)
+        self.assertNotIn("忽略", home_source)
+        self.assertNotIn("次模拟", home_source)
+        self.assertNotIn("市场价格源待接入", source)
 
     def test_homepage_renders_daily_probability_movers(self):
         source = app_source()
@@ -58,11 +65,11 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("预测功能导航", home_source)
         self.assertIn('hash: "matches"', source)
         self.assertIn("进球概率", home_source)
-        self.assertIn("marketSourceFallback", home_source)
-        self.assertIn("市场价格源待接入", source)
         self.assertIn("新闻与方法", home_source)
-        self.assertIn("模型方法", home_source)
-        self.assertIn("路径传导", home_source)
+        self.assertIn("判断依据", home_source)
+        self.assertIn("UserMethodPanel", source)
+        self.assertNotIn("模型方法", home_source)
+        self.assertNotIn("路径传导", home_source)
         self.assertNotIn("EventReviewPanel", home_source)
         self.assertNotIn("onRebuildSnapshot", home_source)
         self.assertNotIn("双击移动模块", home_source)
@@ -73,15 +80,18 @@ class FrontendContractTest(unittest.TestCase):
         styles = Path("src/styles.css").read_text(encoding="utf-8")
         home_source = source_between(source, "function HomePredictionPage()", "function UpcomingMatchesPanel")
 
-        self.assertIn("World Cup Forecast Desk", home_source)
+        self.assertIn("世界杯预测", home_source)
         self.assertIn("app-screen", home_source)
         self.assertIn("app-screen-stack", home_source)
         self.assertIn("app-probability-row", home_source)
         self.assertIn("section-title", home_source)
-        self.assertIn("赛果记录", home_source)
+        self.assertIn("app-mini-market", home_source)
+        self.assertNotIn("World Cup Forecast Desk", home_source)
+        self.assertNotIn("赛果记录", home_source)
         self.assertIn("app-bottom-nav", styles)
         self.assertIn("grid-template-columns: repeat(5", styles)
         self.assertIn("grid-template-columns: repeat(2, minmax(0, 1fr))", styles)
+        self.assertIn("width: min(100%, 460px)", styles)
 
     def test_team_flags_cover_tournament_teams_and_match_lists(self):
         source = app_source()
