@@ -83,20 +83,26 @@ class PaymentOrderCreateRequest(BaseModel):
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5173", "http://127.0.0.1:5174", "http://localhost:5173", "http://localhost:5174"],
-    allow_origin_regex=r"^http://(127\.0\.0\.1|localhost):517[0-9]$",
+    allow_origins=[
+        "http://127.0.0.1:5173",
+        "http://127.0.0.1:5174",
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "https://world-cup-prediction-system.pages.dev",
+    ],
+    allow_origin_regex=r"^(http://(127\.0\.0\.1|localhost):517[0-9]|https://[a-z0-9-]+\.world-cup-prediction-system\.pages\.dev)$",
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
 
 
 @app.get("/api/health")
-def health() -> dict[str, str]:
+async def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
 @app.get("/api/match-prediction")
-def match_prediction(
+async def match_prediction(
     simulations: int = Query(SIMULATION_COUNT, ge=1_000, le=50_000),
     use_snapshot: bool = Query(True, alias="useSnapshot"),
 ) -> dict[str, object]:
@@ -115,7 +121,7 @@ def match_prediction(
 
 
 @app.get("/api/model-status")
-def model_status() -> dict[str, object]:
+async def model_status() -> dict[str, object]:
     return {
         "dataset": data_state.DATASET_META,
         "simulationCount": SIMULATION_COUNT,
@@ -131,27 +137,27 @@ def model_status() -> dict[str, object]:
 
 
 @app.get("/api/access-options")
-def access_options() -> dict[str, object]:
+async def access_options() -> dict[str, object]:
     return build_access_options(payment_configured=False)
 
 
 @app.get("/api/access-policy")
-def access_policy() -> dict[str, object]:
+async def access_policy() -> dict[str, object]:
     return build_access_policy(payment_configured=False)
 
 
 @app.get("/api/access-decision")
-def access_decision(orderId: str, contentKey: str) -> dict[str, object]:
+async def access_decision(orderId: str, contentKey: str) -> dict[str, object]:
     return build_order_access_decision(orderId, contentKey, payment_orders_path)
 
 
 @app.get("/api/payments/config")
-def payment_config() -> dict[str, object]:
+async def payment_config() -> dict[str, object]:
     return build_payment_config()
 
 
 @app.post("/api/payments/orders")
-def create_order(request: PaymentOrderCreateRequest) -> dict[str, object]:
+async def create_order(request: PaymentOrderCreateRequest) -> dict[str, object]:
     try:
         return create_payment_order(request.productKey, request.provider, storage_path=payment_orders_path)
     except ValueError as error:
@@ -159,7 +165,7 @@ def create_order(request: PaymentOrderCreateRequest) -> dict[str, object]:
 
 
 @app.get("/api/payments/orders/{order_id}")
-def payment_order(order_id: str) -> dict[str, object]:
+async def payment_order(order_id: str) -> dict[str, object]:
     try:
         return get_payment_order(order_id, payment_orders_path)
     except KeyError as error:
@@ -167,22 +173,22 @@ def payment_order(order_id: str) -> dict[str, object]:
 
 
 @app.get("/api/admin/overview")
-def admin_overview() -> dict[str, object]:
+async def admin_overview() -> dict[str, object]:
     return build_admin_overview(snapshot_data_path, audit_log_path, daily_status_path, tournament_backup_dir)
 
 
 @app.get("/api/upcoming-matches")
-def upcoming_matches(limit: int = Query(12, ge=1, le=72)) -> dict[str, object]:
+async def upcoming_matches(limit: int = Query(12, ge=1, le=72)) -> dict[str, object]:
     return build_upcoming_match_predictions(limit)
 
 
 @app.get("/api/finished-matches")
-def finished_matches(limit: int = Query(12, ge=1, le=72)) -> dict[str, object]:
+async def finished_matches(limit: int = Query(12, ge=1, le=72)) -> dict[str, object]:
     return build_finished_match_records(limit)
 
 
 @app.get("/api/match-detail")
-def match_detail(
+async def match_detail(
     home: str,
     away: str,
     simulations: int = Query(1200, ge=1_000, le=50_000),
@@ -196,7 +202,7 @@ def match_detail(
 
 
 @app.get("/api/events")
-def events() -> dict[str, object]:
+async def events() -> dict[str, object]:
     items = []
     for event in data_state.EVENTS:
         news_item = event_to_news_item(event)
@@ -223,7 +229,7 @@ def events() -> dict[str, object]:
 
 
 @app.post("/api/events/review")
-def review_event(request: EventReviewRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
+async def review_event(request: EventReviewRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
     try:
         updated = review_raw_news_item(review_data_path, request.id, request.status, request.team)
     except ValueError as error:
@@ -238,7 +244,7 @@ def review_event(request: EventReviewRequest, _: None = Depends(verify_admin_tok
 
 
 @app.post("/api/raw-news")
-def create_raw_news(request: RawNewsCreateRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
+async def create_raw_news(request: RawNewsCreateRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
     if request.source not in data_state.NEWS_SOURCES:
         raise HTTPException(status_code=400, detail=f"未知新闻来源: {request.source}")
     if request.team is not None and request.team not in data_state.TEAM_PROFILES:
@@ -268,7 +274,7 @@ def create_raw_news(request: RawNewsCreateRequest, _: None = Depends(verify_admi
 
 
 @app.post("/api/snapshot/rebuild")
-def rebuild_snapshot(request: SnapshotRebuildRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
+async def rebuild_snapshot(request: SnapshotRebuildRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
     reload_model_data(review_data_path, fixtures_data_path)
     payload = write_prediction_snapshot(snapshot_data_path, request.simulations)
     append_admin_audit("snapshot:rebuild", str(snapshot_data_path), {"simulations": request.simulations}, audit_log_path)
@@ -277,7 +283,7 @@ def rebuild_snapshot(request: SnapshotRebuildRequest, _: None = Depends(verify_a
 
 
 @app.post("/api/fixtures/result")
-def update_fixture_result(request: FixtureResultRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
+async def update_fixture_result(request: FixtureResultRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
     if request.home not in data_state.TEAM_PROFILES or request.away not in data_state.TEAM_PROFILES:
         raise HTTPException(status_code=400, detail="赛果包含未知球队")
     try:
@@ -305,7 +311,7 @@ def update_fixture_result(request: FixtureResultRequest, _: None = Depends(verif
 
 
 @app.post("/api/fixtures/live")
-def update_fixture_live_score(request: FixtureResultRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
+async def update_fixture_live_score(request: FixtureResultRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
     if request.home not in data_state.TEAM_PROFILES or request.away not in data_state.TEAM_PROFILES:
         raise HTTPException(status_code=400, detail="进行中比分包含未知球队")
     try:
@@ -333,7 +339,7 @@ def update_fixture_live_score(request: FixtureResultRequest, _: None = Depends(v
 
 
 @app.post("/api/admin/tournament-data/import")
-def import_tournament_data(payload: dict[str, object], _: None = Depends(verify_admin_token)) -> dict[str, object]:
+async def import_tournament_data(payload: dict[str, object], _: None = Depends(verify_admin_token)) -> dict[str, object]:
     try:
         result = apply_tournament_data_import(runtime_data_dir, tournament_backup_dir, payload)
     except ValueError as error:
@@ -350,7 +356,7 @@ def import_tournament_data(payload: dict[str, object], _: None = Depends(verify_
 
 
 @app.post("/api/admin/tournament-data/rollback")
-def rollback_tournament_data(request: TournamentRollbackRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
+async def rollback_tournament_data(request: TournamentRollbackRequest, _: None = Depends(verify_admin_token)) -> dict[str, object]:
     try:
         result = restore_tournament_backup(runtime_data_dir, tournament_backup_dir, request.backupId)
     except ValueError as error:

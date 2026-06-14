@@ -17,6 +17,7 @@ def source_between(source: str, start: str, end: str) -> str:
 class FrontendContractTest(unittest.TestCase):
     def test_homepage_renders_paid_access_boundary(self):
         source = app_source()
+        self.assertIn("VITE_API_BASE_URL", source)
         self.assertIn("/api/access-options", source)
         self.assertIn("/api/payments/config", source)
         self.assertIn("/api/payments/orders", source)

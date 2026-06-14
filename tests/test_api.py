@@ -101,6 +101,20 @@ class PredictionApiTest(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.headers["access-control-allow-origin"], "http://127.0.0.1:5175")
 
+    def test_cloudflare_pages_origin_is_allowed_by_cors(self):
+        client = TestClient(app)
+
+        response = client.options(
+            "/api/health",
+            headers={
+                "Origin": "https://world-cup-prediction-system.pages.dev",
+                "Access-Control-Request-Method": "GET",
+            },
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.headers["access-control-allow-origin"], "https://world-cup-prediction-system.pages.dev")
+
     def test_model_status_exposes_tournament_provenance(self):
         payload = make_compatible_import_payload()
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -468,7 +482,7 @@ class PredictionApiTest(unittest.TestCase):
 
     def test_match_prediction_accepts_simulation_count(self):
         client = TestClient(app)
-        response = client.get("/api/match-prediction?simulations=1200")
+        response = client.get("/api/match-prediction?simulations=1200&useSnapshot=false")
         self.assertEqual(response.status_code, 200)
         payload = response.json()
         self.assertEqual(payload["modelMeta"]["simulationCount"], 1200)
@@ -483,8 +497,8 @@ class PredictionApiTest(unittest.TestCase):
 
     def test_match_prediction_reuses_short_cache(self):
         client = TestClient(app)
-        first = client.get("/api/match-prediction?simulations=1200").json()
-        second = client.get("/api/match-prediction?simulations=1200").json()
+        first = client.get("/api/match-prediction?simulations=1200&useSnapshot=false").json()
+        second = client.get("/api/match-prediction?simulations=1200&useSnapshot=false").json()
         self.assertEqual(first["updatedAt"], second["updatedAt"])
 
     def test_upcoming_matches_api_lists_scheduled_match_predictions(self):

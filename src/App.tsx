@@ -488,7 +488,7 @@ const modelLayers = [
 const INTERACTIVE_SIMULATION_COUNT = 1200;
 const FORECAST_REFRESH_MS = 15000;
 const PAYMENT_STATUS_POLL_MS = 4000;
-const API_BASE_URL = import.meta.env.DEV ? "http://127.0.0.1:8000" : "";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? (import.meta.env.DEV ? "http://127.0.0.1:8000" : "");
 const SINGLE_MATCH_ROUTE_PREFIX = "/match/";
 
 const TEAM_FLAG_ASSET_BY_KEY: Record<TeamKey, string> = {

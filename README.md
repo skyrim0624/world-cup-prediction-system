@@ -9,9 +9,10 @@ GitHub 仓库：[skyrim0624/world-cup-prediction-system](https://github.com/skyr
 ## 当前状态
 
 - 前端：React + TypeScript + Vite，已部署到 Cloudflare Pages。
-- 后端：Python + FastAPI，已有 Poisson 单场比分模型、蒙特卡洛路径模拟、事件权重、后台录入和付费订单接口。
-- 数据：当前是 2026 赛制骨架 + 样例球队/赛程/事件，可替换为真实授权数据。
-- 线上版本：目前 Cloudflare Pages 是静态前端验收版，生产 API、日更任务、支付回调和用户权限仍需下一阶段部署。
+- 后端：Python + FastAPI，已通过 Cloudflare Python Worker 部署为线上 API。
+- API 地址：`https://world-cup-prediction-api.loveice0624.workers.dev/`。
+- 数据：当前已导入 48 队、72 场小组赛、已结束赛果样例、事件权重和新闻源配置，可替换为客户授权数据。
+- 线上版本：前端已接生产 API，未开赛比赛池、已结束赛果、单场详情、模型状态和付费配置均从线上 API 读取。
 - 产品边界：这是概率分析产品，不是投注建议产品；不承诺命中，不使用未授权商业数据，不暗示内幕信息。
 
 ## 预测方法
@@ -206,7 +207,7 @@ GitHub 仓库：[skyrim0624/world-cup-prediction-system](https://github.com/skyr
 ### 9. 当前模型限制
 
 - 球队评分仍是自建 MVP 参数，不代表授权商业评级。
-- 线上 Cloudflare Pages 当前是静态前端验收版，生产 API 尚未部署。
+- 线上前端已接 Cloudflare Python Worker API。
 - 市场价格源尚未接入，页面只展示模型公平概率。
 - 新闻自动抓取和赛果自动更新已有接口和脚本，但正式运营还需要稳定数据源与部署环境。
 - 模型输出是概率分析，不是确定结论，也不是投注建议。
@@ -246,7 +247,7 @@ GitHub 仓库：[skyrim0624/world-cup-prediction-system](https://github.com/skyr
 
 ```bash
 npm install
-pip install -r requirements.txt
+uv sync
 npm run dev:api
 npm run dev
 ```
@@ -267,13 +268,20 @@ npm run daily:check
 npm run update:snapshot
 ```
 
+线上部署：
+
+```bash
+npm run deploy:api
+npm run deploy:web
+```
+
 ## 后续优先级
 
-1. 把 FastAPI 后端部署到正式 API 环境，前端接真实生产接口。
-2. 接入真实 2026 官方赛程、比分、积分、红黄牌和首发数据。
-3. 完成新闻源自动抓取、多源交叉验证和后台审核流。
-4. 接入授权市场价格源，只作为市场热度和偏差参考。
-5. 完成微信 / 支付宝支付、用户权限和付费解锁。
+1. 接入客户授权的真实赛果、积分、红黄牌和首发数据源。
+2. 把支付订单从 Worker 文件包内 JSON 迁移到 D1 / KV / 外部数据库，避免正式订单依赖临时文件写入。
+3. 接入客户提供的微信 / 支付宝创建订单、二维码、查单和回调验签接口。
+4. 完成新闻源自动抓取、多源交叉验证和后台审核流的正式运营部署。
+5. 接入授权市场价格源，只作为市场热度和偏差参考。
 6. 给专业博主补截图导出、单场长图和每日选题包。
 
 ## 合规边界

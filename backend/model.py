@@ -893,6 +893,57 @@ def creator_topics_for_match(home_key: str, away_key: str, teams: dict[str, Team
     ]
 
 
+def build_lightweight_scenario_impacts(
+    home_key: str,
+    away_key: str,
+    probabilities: dict[str, float],
+    teams: dict[str, TeamProfile],
+) -> list[dict[str, object]]:
+    home_name = teams[home_key].name
+    away_name = teams[away_key].name
+    home_probability = round(probabilities["home"] * 100)
+    draw_probability = round(probabilities["draw"] * 100)
+    away_probability = 100 - home_probability - draw_probability
+    return [
+        {
+            "label": f"{home_name}胜",
+            "probability": home_probability,
+            "title": f"{home_name}小组路径改善",
+            "details": [
+                f"{home_name}小组排名和出线路径上调",
+                f"{away_name}后续容错率下降",
+                "冠军概率变化随下一次整届快照刷新",
+            ],
+            "championShift": "等待快照重算",
+            "tone": "green",
+        },
+        {
+            "label": "打平",
+            "probability": draw_probability,
+            "title": "两队路径保持胶着",
+            "details": [
+                "小组第一仍取决于后续赛果和净胜球",
+                "两队直接拉开的概率有限",
+                "整届影响会在日更快照中重算",
+            ],
+            "championShift": "等待快照重算",
+            "tone": "gold",
+        },
+        {
+            "label": f"{away_name}胜",
+            "probability": away_probability,
+            "title": f"{away_name}小组路径改善",
+            "details": [
+                f"{away_name}小组排名和出线路径上调",
+                f"{home_name}潜在淘汰赛路径变难",
+                "冠军概率变化随下一次整届快照刷新",
+            ],
+            "championShift": "等待快照重算",
+            "tone": "blue",
+        },
+    ]
+
+
 def build_match_detail(home_key: str, away_key: str, simulation_count: int = 1200) -> dict[str, object]:
     teams = apply_event_adjustments()
     current_fixture = next((fixture for fixture in FIXTURES if (fixture.home, fixture.away) == (home_key, away_key)), None)
@@ -907,7 +958,6 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
     home_win = round(probabilities["home"] * 100)
     draw = round(probabilities["draw"] * 100)
     away_win = 100 - home_win - draw
-    base_tournament = simulate_tournament(teams, simulation_count=simulation_count)
     score_outcomes = score_outcomes_for_match(home_key, away_key, match_teams)
 
     return {
@@ -937,7 +987,7 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
             "label": "市场价格源待接入",
             "detail": "后续接入授权市场价格后，再展示模型概率与市场价格差值。",
         },
-        "scenarioImpacts": build_scenario_impacts(base_tournament, home_key, away_key, probabilities, teams, simulation_count),
+        "scenarioImpacts": build_lightweight_scenario_impacts(home_key, away_key, probabilities, teams),
         "creatorTopics": creator_topics_for_match(home_key, away_key, teams, str(score_outcomes[0]["score"])),
         "analysis": [
             f"{teams[home_key].name}单场胜率 {home_win}%，当前差距主要来自基础实力和攻防盘。",

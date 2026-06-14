@@ -6,6 +6,8 @@ dist/
 .env.*
 !.env.example
 .wrangler/
+.venv-workers/
+python_modules/
 .DS_Store
 tsconfig.tsbuildinfo
 __pycache__/

@@ -10,7 +10,7 @@ def admin_auth_required() -> bool:
     return bool(os.environ.get("WORLD_CUP_ADMIN_TOKEN"))
 
 
-def verify_admin_token(x_admin_token: str | None = Header(default=None)) -> None:
+async def verify_admin_token(x_admin_token: str | None = Header(default=None)) -> None:
     expected = os.environ.get("WORLD_CUP_ADMIN_TOKEN")
     if not expected:
         return

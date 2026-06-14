@@ -1,0 +1,15 @@
+[project]
+name = "world-cup-prediction-api"
+version = "0.1.0"
+description = "FastAPI backend for the 2026 World Cup prediction system."
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.128.0",
+  "uvicorn>=0.40.0"
+]
+
+[dependency-groups]
+dev = [
+  "workers-py>=1.12.0",
+  "workers-runtime-sdk>=1.2.0"
+]

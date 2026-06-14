@@ -10,6 +10,8 @@
     "daily:update": "python3 scripts/run_daily_update.py --feed-config backend/data_files/daily-feed-sources.json --score-config backend/data_files/score-sources.json",
     "daily:check": "python3 scripts/check_daily_update_health.py",
     "update:snapshot": "python3 scripts/update_prediction_snapshot.py",
+    "deploy:api": "npm run update:snapshot && bash scripts/deploy-cloudflare-api.sh",
+    "deploy:web": "VITE_API_BASE_URL=https://world-cup-prediction-api.loveice0624.workers.dev npm run build && npx wrangler pages deploy dist --project-name world-cup-prediction-system --branch main",
     "build": "tsc -b && vite build",
     "preview": "vite preview --host 127.0.0.1"
   },

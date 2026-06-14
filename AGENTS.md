@@ -2171,6 +2171,49 @@ Elo / 实力评分
 - 线上仍是 Cloudflare Pages 静态前端验收版。
 - 后端 API 尚未部署到线上，因此动态列表会显示 API 待连接状态；这不影响本次国旗静态资源上线。
 
+### 2026-06-14：完整前后端线上部署修正
+
+背景：
+
+- 用户指出“部署上线”不应只部署前端静态验收版，而应交付完整前后端一体预测工具。
+- 复核后确认这个质疑成立：后端 FastAPI 已有完整接口，但此前没有部署到线上，因此未开赛比赛池、赛果记录和单场详情仍会在正式站显示 API 待连接。
+
+已完成：
+
+- 新增 Cloudflare Python Worker 部署入口 `worker/entry.py`，用 ASGI 桥接现有 `backend.main:app`。
+- 新增 `wrangler.jsonc` 和 `pyproject.toml`，将后端作为 `world-cup-prediction-api` Worker 部署。
+- 删除旧 `requirements.txt`，迁移到 `pyproject.toml`；本地 Python 环境改用 `uv sync`。
+- 新增 `scripts/deploy-cloudflare-api.sh` 和 `npm run deploy:api`，部署前会同步 Python Worker 依赖并把 `backend/` 复制进 `python_modules`。
+- `npm run deploy:api` 先执行 `npm run update:snapshot`，生成 50,000 次模拟快照，避免 Worker 在线实时跑整届蒙特卡洛导致 CPU 超限。
+- 将 FastAPI endpoint 和后台 token 依赖改为 `async def`，避免 Cloudflare Python Worker 因同步 endpoint 触发 threadpool 而报 `can't start new thread`。
+- 将 `/api/match-detail` 改为轻量单场详情：保留胜平负、比分分布、进球市场和路径说明，不在 Worker 上实时跑整届模拟。
+- 前端 `API_BASE_URL` 改为读取 `VITE_API_BASE_URL`，生产构建指向 `https://world-cup-prediction-api.loveice0624.workers.dev`。
+- `npm run deploy:web` 注入生产 API 地址并重新部署 Cloudflare Pages。
+- README 更新为当前 Cloudflare Pages + Cloudflare Python Worker 的完整线上状态。
+
+线上地址：
+
+- 前端正式地址：`https://world-cup-prediction-system.pages.dev/`
+- 后端 API 地址：`https://world-cup-prediction-api.loveice0624.workers.dev/`
+
+验证：
+
+- `python3 -m unittest discover -s tests -p 'test_api.py'` 通过，当前 27 个 API 测试。
+- `python3 -m unittest discover -s tests -p 'test_model.py'` 通过，当前 23 个模型测试。
+- `python3 -m unittest discover -s tests -p 'test_frontend_contract.py'` 通过，当前 9 个前端契约测试。
+- `python3 -m unittest discover -s tests -p 'test_snapshot.py'` 通过，当前 8 个快照测试。
+- `npm run deploy:api` 成功部署 Worker，当前 API 健康检查 `/api/health` 返回 200。
+- `/api/model-status`、`/api/upcoming-matches`、`/api/finished-matches`、`/api/payments/config`、`/api/match-prediction`、`/api/match-detail` 均在线返回 200。
+- 正式前端浏览器联调通过：首页请求 `access-options`、`upcoming-matches`、`match-prediction`、`payments/config`、`finished-matches` 全部 200；无 console error；等待 API 连接提示为 0；桌面和 390px 手机无横向溢出。
+- 正式单场页 `/match/germany/curacao` 浏览器联调通过：`match-detail`、`access-options`、`payments/config` 全部 200；德国 / 库拉索内容和国旗显示正常；等待 API 连接提示为 0。
+
+当前边界：
+
+- Worker 上不实时跑整届 50,000 次蒙特卡洛；整届概率通过部署前生成的快照提供。
+- 单场详情页使用轻量路径传导说明，完整冠军概率变化随日更快照重算。
+- 支付仍是客户微信 / 支付宝接口框架，客户未提供接口前只能显示“待配置”，不能真实收款。
+- 后台写入型接口在 Worker 文件系统上不适合作为长期正式数据库；正式运营前应迁移订单、审核记录、赛果写入到 D1 / KV / 外部数据库。
+
 ## 十、当前交接摘要
 
 一句话定义：
