@@ -85,6 +85,7 @@ class PredictionApiTest(unittest.TestCase):
         self.assertIn("knownGaps", payload)
         self.assertIn("官方可核验赛程", payload["knownGaps"][0])
         self.assertIn("真实 Feed", payload["knownGaps"][1])
+        self.assertIn("支付已有客户接口框架", payload["knownGaps"][2])
 
     def test_model_status_exposes_tournament_provenance(self):
         payload = make_compatible_import_payload()

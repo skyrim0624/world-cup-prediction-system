@@ -26,7 +26,7 @@ from .model import (
     reload_model_data,
 )
 from .news_ingest import append_raw_news_item
-from .payments import build_payment_config, create_payment_order, get_payment_order
+from .payments import build_order_access_decision, build_payment_config, create_payment_order, get_payment_order
 from .snapshot import DEFAULT_SNAPSHOT_PATH, read_prediction_snapshot, write_prediction_snapshot
 
 
@@ -40,6 +40,7 @@ audit_log_path = AUDIT_LOG_PATH
 daily_status_path = DEFAULT_DAILY_STATUS_PATH
 runtime_data_dir = data_state.DATA_DIR
 tournament_backup_dir = data_state.DATA_DIR / "backups"
+payment_orders_path = data_state.DATA_DIR / "payment-orders.json"
 
 
 class EventReviewRequest(BaseModel):
@@ -121,7 +122,7 @@ def model_status() -> dict[str, object]:
         "knownGaps": [
             "官方可核验赛程、真实分组和 48 队名单尚未替换当前样例数据",
             "新闻 Feed 导入和来源校验已就绪，但真实 Feed 列表与外部定时调度尚未接入",
-            "后台权限仍为轻量 token，暂未接用户账号、角色和支付权限",
+            "后台权限仍为轻量 token，支付已有客户接口框架和订单访问判断，但暂未接用户账号、角色和正式数据库订单表",
         ],
     }
 
@@ -136,6 +137,11 @@ def access_policy() -> dict[str, object]:
     return build_access_policy(payment_configured=False)
 
 
+@app.get("/api/access-decision")
+def access_decision(orderId: str, contentKey: str) -> dict[str, object]:
+    return build_order_access_decision(orderId, contentKey, payment_orders_path)
+
+
 @app.get("/api/payments/config")
 def payment_config() -> dict[str, object]:
     return build_payment_config()
@@ -144,7 +150,7 @@ def payment_config() -> dict[str, object]:
 @app.post("/api/payments/orders")
 def create_order(request: PaymentOrderCreateRequest) -> dict[str, object]:
     try:
-        return create_payment_order(request.productKey, request.provider)
+        return create_payment_order(request.productKey, request.provider, storage_path=payment_orders_path)
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error)) from error
 
@@ -152,7 +158,7 @@ def create_order(request: PaymentOrderCreateRequest) -> dict[str, object]:
 @app.get("/api/payments/orders/{order_id}")
 def payment_order(order_id: str) -> dict[str, object]:
     try:
-        return get_payment_order(order_id)
+        return get_payment_order(order_id, payment_orders_path)
     except KeyError as error:
         raise HTTPException(status_code=404, detail="支付订单不存在") from error
 
