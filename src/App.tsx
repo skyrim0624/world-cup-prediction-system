@@ -711,6 +711,13 @@ function HomePredictionPage() {
   const championBoard = [...teamsData].sort((left, right) => right.tournament.champion - left.tournament.champion);
   const topScore = matchPrediction.scoreOutcomes[0];
   const goalMarkets = matchPrediction.goalMarkets?.length ? matchPrediction.goalMarkets : goalMarketsFallback();
+  const predictionOutcomes = [
+    { label: `${homeTeam.name}胜`, value: matchPrediction.homeWin, tone: "green" as Tone },
+    { label: "平局", value: matchPrediction.draw, tone: "gold" as Tone },
+    { label: `${awayTeam.name}胜`, value: matchPrediction.awayWin, tone: "blue" as Tone },
+  ].sort((left, right) => right.value - left.value);
+  const primaryOutcome = predictionOutcomes[0];
+  const secondaryOutcomes = predictionOutcomes.slice(1);
 
   useEffect(() => {
     let active = true;
@@ -816,15 +823,25 @@ function HomePredictionPage() {
                 </div>
                 <small>{[matchPrediction.kickoff, mainVenue].filter(Boolean).join(" · ")}</small>
               </a>
-              <div className="forecast-lead app-forecast-lead">
-                <span>最可能比分</span>
-                <strong>{topScore?.score ?? "--"}</strong>
-                <em>{topScore ? `${topScore.probability.toFixed(1)}%` : "预测生成中"}</em>
+              <div className="app-prediction-focus">
+                <div className={`app-main-outcome ${primaryOutcome.tone}`}>
+                  <span>主判断</span>
+                  <strong>{primaryOutcome.label}</strong>
+                  <b>{primaryOutcome.value}%</b>
+                </div>
+                <div className="app-score-chip">
+                  <span>最可能比分</span>
+                  <strong>{topScore?.score ?? "--"}</strong>
+                  <em>{topScore ? `${topScore.probability.toFixed(1)}%` : "生成中"}</em>
+                </div>
               </div>
-              <div className="probability-row portal-probability-row app-probability-row">
-                <Probability label={`${homeTeam.name}胜`} value={matchPrediction.homeWin} tone="green" />
-                <Probability label="平局" value={matchPrediction.draw} tone="gold" />
-                <Probability label={`${awayTeam.name}胜`} value={matchPrediction.awayWin} tone="blue" />
+              <div className="app-supporting-probs" aria-label="其它赛果概率">
+                {secondaryOutcomes.map((outcome) => (
+                  <article className={outcome.tone} key={outcome.label}>
+                    <span>{outcome.label}</span>
+                    <strong>{outcome.value}%</strong>
+                  </article>
+                ))}
               </div>
               <CompactScoreList outcomes={matchPrediction.scoreOutcomes.slice(0, 3)} />
               <div className="analysis-list compact-analysis">
@@ -956,9 +973,10 @@ function CompactScoreList({ outcomes }: { outcomes: ScoreOutcome[] }) {
   }
   return (
     <div className="compact-score-list" aria-label="最可能比分 Top 3">
+      <span className="compact-score-kicker">比分备选</span>
       {outcomes.map((outcome, index) => (
         <article className={`compact-score ${outcome.tone}`} key={outcome.score}>
-          <span>{`Top ${index + 1}`}</span>
+          <span>{index === 0 ? "首选" : "备选"}</span>
           <strong>{outcome.score}</strong>
           <em>{outcome.probability.toFixed(1)}%</em>
         </article>
