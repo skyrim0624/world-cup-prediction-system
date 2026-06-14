@@ -849,8 +849,6 @@ function HomePredictionPage() {
     window.history.pushState(null, "", `${window.location.pathname}${window.location.search}#${screen.hash}`);
   }
 
-  const activeScreenConfig = USER_SCREENS.find((screen) => screen.key === activeScreen) ?? USER_SCREENS[0];
-
   return (
     <main className="console-shell user-page-shell">
       <div className="ambient-grid" />
@@ -863,7 +861,6 @@ function HomePredictionPage() {
 
       <section className="app-screen" aria-labelledby="active-screen-title">
         <div className="app-screen-head">
-          <span>{activeScreenConfig.label}</span>
           <h1 id="active-screen-title">
             {activeScreen === "forecast" ? "今日重点预测" : activeScreen === "matches" ? "未开赛比赛" : activeScreen === "board" ? "概率榜单" : activeScreen === "news" ? "新闻与方法" : "付费解锁"}
           </h1>

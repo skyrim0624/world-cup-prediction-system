@@ -3645,16 +3645,7 @@ button {
 
 .app-screen-head {
   display: grid;
-  gap: 2px;
   padding: 0 2px;
-}
-
-.app-screen-head span {
-  color: var(--green);
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .app-screen-head h1 {

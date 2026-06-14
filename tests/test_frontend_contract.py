@@ -66,6 +66,7 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("app-bottom-nav", home_source)
         self.assertIn("预测功能导航", home_source)
         self.assertIn('hash: "matches"', source)
+        self.assertNotIn("activeScreenConfig.label", home_source)
         self.assertIn("进球概率", home_source)
         self.assertIn("新闻与方法", home_source)
         self.assertIn("判断依据", home_source)
