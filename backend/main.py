@@ -123,7 +123,7 @@ def model_status() -> dict[str, object]:
         "eventSummary": event_summary(),
         "knownGaps": [
             "小组赛真实赛程已导入，淘汰赛具体球队对阵仍需根据小组赛结果动态生成",
-            "真实新闻 Feed 配置已接入，仍需在部署环境配置 cron/CI 定时触发",
+            "真实新闻 Feed 配置已接入，赛果源和 GitHub Actions 定时日更已补齐，仍需客户授权接口替换生产源",
             "后台权限仍为轻量 token，支付已有客户接口框架和订单访问判断，但暂未接用户账号、角色和正式数据库订单表",
         ],
     }

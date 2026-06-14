@@ -22,6 +22,24 @@ RSS_FEED = """<?xml version="1.0" encoding="UTF-8" ?>
 </rss>
 """
 
+ESPN_SCOREBOARD = {
+    "events": [
+        {
+            "id": "760421",
+            "status": {"type": {"state": "post", "completed": True}},
+            "competitions": [
+                {
+                    "status": {"type": {"state": "post", "completed": True}},
+                    "competitors": [
+                        {"homeAway": "home", "score": "2", "team": {"abbreviation": "AUS"}},
+                        {"homeAway": "away", "score": "0", "team": {"abbreviation": "TUR"}},
+                    ],
+                }
+            ],
+        }
+    ]
+}
+
 
 class DailyUpdateTest(unittest.TestCase):
     def tearDown(self):
@@ -149,6 +167,46 @@ class DailyUpdateTest(unittest.TestCase):
             self.assertEqual(report["feeds"]["imported"], 1)
             self.assertEqual(report["feeds"]["items"][0]["url"], f"data:text/xml,{quote(RSS_FEED)}")
             self.assertEqual(rows[0]["source"], "bbc")
+
+    def test_run_daily_update_applies_score_sources_before_snapshot(self):
+        from backend.daily_update import ScoreSourceSpec, run_daily_update
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            raw_news_path = root / "raw-news.json"
+            fixtures_path = root / "fixtures.json"
+            snapshot_path = root / "latest-match-prediction.json"
+            raw_news_path.write_text("[]", encoding="utf-8")
+
+            fixtures = json.loads(Path("backend/data_files/fixtures.json").read_text(encoding="utf-8"))
+            for fixture in fixtures:
+                if fixture["home"] == "australia" and fixture["away"] == "turkiye":
+                    fixture["status"] = "scheduled"
+                    fixture.pop("home_score", None)
+                    fixture.pop("away_score", None)
+            fixtures_path.write_text(json.dumps(fixtures, ensure_ascii=False), encoding="utf-8")
+
+            score_path = root / "scores.json"
+            score_path.write_text(json.dumps(ESPN_SCOREBOARD, ensure_ascii=False), encoding="utf-8")
+
+            report = run_daily_update(
+                raw_news_path=raw_news_path,
+                snapshot_path=snapshot_path,
+                fixtures_path=fixtures_path,
+                score_specs=[ScoreSourceSpec(input_path=score_path, source="espn", format="espn_scoreboard")],
+                simulation_count=1200,
+            )
+
+            updated_fixtures = json.loads(fixtures_path.read_text(encoding="utf-8"))
+            australia_fixture = next(
+                fixture for fixture in updated_fixtures if fixture["home"] == "australia" and fixture["away"] == "turkiye"
+            )
+            snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
+            self.assertEqual(report["scores"]["updated"], 1)
+            self.assertEqual(australia_fixture["status"], "finished")
+            self.assertEqual(australia_fixture["home_score"], 2)
+            self.assertEqual(australia_fixture["away_score"], 0)
+            self.assertGreaterEqual(snapshot["modelMeta"]["lockedResults"], 8)
 
     def test_package_daily_update_uses_real_feed_config(self):
         package = json.loads(Path("package.json").read_text(encoding="utf-8"))

@@ -1959,6 +1959,32 @@ Elo / 实力评分
 - 用户提到的“面对强队胜率”和“足球高阶数据”可以加入模型，并且现在已有可替换的权重入口。
 - 当前实现使用自建公开代理指标；如果客户后续提供授权 xG / xGA / 事件数据，可以直接替换代理数据源，提高预测质量。
 
+### 2026-06-14：CI 定时日更与真实赛果源自动更新
+
+已完成：
+
+- 新增 `backend/score_feed.py`，支持解析 ESPN scoreboard JSON。
+- 新增 `ScoreSourceSpec` 和 `load_score_source_specs`，让日更流程可以读取赛果源配置。
+- 新增默认赛果源配置 `backend/data_files/score-sources.json`。
+- `run_daily_update` 新增 `score_specs`，会在模型重载和快照生成前，把完赛 / 进行中比分写回 `fixtures.json`。
+- `npm run daily:update` 默认同时读取新闻 Feed 配置和赛果源配置。
+- 新增 `.github/workflows/daily-update.yml`，每 3 小时执行 `npm run validate:data`、`npm run daily:update`、`npm run daily:check`。
+- GitHub Actions 如果发现赛程、新闻或快照变化，会自动提交 `chore: daily prediction update`。
+- `/api/model-status` 的已知缺口同步更新，不再把 cron / CI 写成未完成项。
+
+验证：
+
+- 按 TDD 先让赛果源测试因缺少 `backend.score_feed` 失败。
+- 按 TDD 先让部署测试因缺少 `.github/workflows/daily-update.yml` 失败。
+- 新增日更集成测试：`run_daily_update` 会先应用 score source，再生成快照。
+- 针对性测试通过：`test_score_feed.py`、`test_deployment.py`、`test_daily_update.py`。
+
+当前判断：
+
+- “部署环境里配置 cron / CI，定时跑 `npm run daily:update`”已补齐。
+- “接真实赛果自动更新源”已补齐为可替换的 scoreboard 配置和适配器。
+- 当前默认源适合 MVP 和开发环境；正式商用如果客户提供官方或授权接口，应把 `score-sources.json` 切到客户接口。
+
 ## 十、当前交接摘要
 
 一句话定义：
@@ -1967,11 +1993,11 @@ Elo / 实力评分
 
 当前最重要的开发优先级：
 
-1. 接真实赛果更新源或日常手动更新流程，让已结束比赛持续锁定进模型。
-2. 在部署环境配置 cron / CI 定时触发 `npm run daily:update`，让外部 Feed 和快照自动更新。
-3. 扩展 `/admin` 后台，补真实外部调度配置和用户账号 / 角色体系。
-4. 把单场详情按产品包做可控的内容解锁。
-5. 接客户提供的微信 / 支付宝支付接口、订单记录、用户权限和访问记录。
+1. 扩展 `/admin` 后台，补真实外部调度配置和用户账号 / 角色体系。
+2. 把单场详情按产品包做可控的内容解锁。
+3. 接客户提供的微信 / 支付宝支付接口、订单记录、用户权限和访问记录。
+4. 如果客户提供官方或授权赛果接口，把 `score-sources.json` 从 ESPN 开发源切到客户接口。
+5. 持续替换自建球队评分和高阶代理指标，接入授权 xG / xGA / 事件数据。
 
 当前最重要的风险：
 

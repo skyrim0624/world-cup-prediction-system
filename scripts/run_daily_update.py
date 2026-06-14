@@ -9,7 +9,13 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from backend.daily_update import DEFAULT_DAILY_STATUS_PATH, load_feed_specs, run_daily_update, write_daily_update_failure_status
+from backend.daily_update import (
+    DEFAULT_DAILY_STATUS_PATH,
+    load_feed_specs,
+    load_score_source_specs,
+    run_daily_update,
+    write_daily_update_failure_status,
+)
 from backend.event_review import RAW_NEWS_PATH
 from backend.snapshot import DEFAULT_SNAPSHOT_PATH
 
@@ -19,6 +25,7 @@ def main() -> None:
     parser.add_argument("--raw-news-path", type=Path, default=RAW_NEWS_PATH)
     parser.add_argument("--snapshot", type=Path, default=DEFAULT_SNAPSHOT_PATH)
     parser.add_argument("--feed-config", type=Path, default=None)
+    parser.add_argument("--score-config", type=Path, default=None)
     parser.add_argument("--simulations", type=int, default=50_000)
     parser.add_argument("--report", type=Path, default=None)
     parser.add_argument("--status", type=Path, default=DEFAULT_DAILY_STATUS_PATH)
@@ -26,10 +33,12 @@ def main() -> None:
 
     try:
         feed_specs = load_feed_specs(args.feed_config) if args.feed_config else []
+        score_specs = load_score_source_specs(args.score_config) if args.score_config else []
         report = run_daily_update(
             raw_news_path=args.raw_news_path,
             snapshot_path=args.snapshot,
             feed_specs=feed_specs,
+            score_specs=score_specs,
             simulation_count=args.simulations,
             status_path=args.status,
         )
@@ -45,6 +54,9 @@ def main() -> None:
     print("日更流程完成")
     print(f"新闻新增: {report['feeds']['imported']}")
     print(f"新闻跳过: {report['feeds']['skipped']}")
+    print(f"赛果更新: {report['scores']['updated']}")
+    print(f"赛果锁定: {report['scores']['finished']}")
+    print(f"进行中更新: {report['scores']['live']}")
     print(f"快照路径: {report['snapshot']['path']}")
     print(f"模拟次数: {report['snapshot']['simulationCount']}")
     print(f"锁定赛果: {report['snapshot']['lockedResults']}")

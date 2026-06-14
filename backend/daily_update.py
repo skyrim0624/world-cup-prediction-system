@@ -11,15 +11,25 @@ from . import data as data_state
 from .event_review import RAW_NEWS_PATH
 from .model import reload_model_data
 from .news_feed import import_news_feed
+from .score_feed import apply_score_source_updates
 from .snapshot import DEFAULT_SNAPSHOT_PATH, write_prediction_snapshot
 
 DEFAULT_DAILY_STATUS_PATH = RAW_NEWS_PATH.parent / "daily-update-status.json"
+DEFAULT_SCORE_SOURCE_CONFIG_PATH = RAW_NEWS_PATH.parent / "score-sources.json"
 
 
 @dataclass(frozen=True)
 class FeedSpec:
     source: str
     team: str | None = None
+    input_path: Path | None = None
+    url: str | None = None
+
+
+@dataclass(frozen=True)
+class ScoreSourceSpec:
+    source: str
+    format: str
     input_path: Path | None = None
     url: str | None = None
 
@@ -45,6 +55,20 @@ def load_feed_specs(config_path: Path) -> list[FeedSpec]:
     return specs
 
 
+def load_score_source_specs(config_path: Path) -> list[ScoreSourceSpec]:
+    rows = json.loads(config_path.read_text(encoding="utf-8"))
+    specs: list[ScoreSourceSpec] = []
+    for row in rows:
+        input_path = Path(row["input"]) if row.get("input") else None
+        if input_path is not None and not input_path.is_absolute():
+            input_path = config_path.parent / input_path
+        url = row.get("url")
+        if input_path is None and not isinstance(url, str):
+            raise ValueError("赛果源配置必须包含 input 或 url")
+        specs.append(ScoreSourceSpec(source=row["source"], format=row["format"], input_path=input_path, url=url))
+    return specs
+
+
 def read_feed_text(spec: FeedSpec) -> str:
     if spec.input_path is not None:
         return spec.input_path.read_text(encoding="utf-8")
@@ -54,18 +78,30 @@ def read_feed_text(spec: FeedSpec) -> str:
         return response.read().decode("utf-8", errors="replace")
 
 
+def read_score_source_text(spec: ScoreSourceSpec) -> str:
+    if spec.input_path is not None:
+        return spec.input_path.read_text(encoding="utf-8")
+    if spec.url is None:
+        raise ValueError("赛果源配置缺少 input 或 url")
+    with urlopen(spec.url, timeout=20) as response:
+        return response.read().decode("utf-8", errors="replace")
+
+
 def run_daily_update(
     raw_news_path: Path = RAW_NEWS_PATH,
     snapshot_path: Path = DEFAULT_SNAPSHOT_PATH,
     feed_specs: list[FeedSpec] | None = None,
+    score_specs: list[ScoreSourceSpec] | None = None,
     simulation_count: int = 50_000,
     fixtures_path: Path | None = None,
     status_path: Path | None = None,
 ) -> dict[str, Any]:
     ensure_json_array_file(raw_news_path)
+    active_fixtures_path = fixtures_path or data_state.DATA_DIR / "fixtures.json"
     total_imported = 0
     total_skipped = 0
     feed_reports = []
+    score_payloads = []
 
     for spec in feed_specs or []:
         result = import_news_feed(
@@ -87,7 +123,28 @@ def run_daily_update(
             }
         )
 
-    reload_model_data(raw_news_path=raw_news_path, fixtures_path=fixtures_path)
+    for spec in score_specs or []:
+        score_payloads.append(
+            {
+                "input": str(spec.input_path) if spec.input_path is not None else None,
+                "url": spec.url,
+                "source": spec.source,
+                "format": spec.format,
+                "content": read_score_source_text(spec),
+            }
+        )
+
+    code_to_team = {profile.code.upper(): key for key, profile in data_state.TEAM_PROFILES.items()}
+    score_report = apply_score_source_updates(active_fixtures_path, score_payloads, code_to_team) if score_payloads else {
+        "updated": 0,
+        "finished": 0,
+        "live": 0,
+        "skipped": 0,
+        "unknownTeams": 0,
+        "items": [],
+    }
+
+    reload_model_data(raw_news_path=raw_news_path, fixtures_path=active_fixtures_path)
     snapshot = write_prediction_snapshot(snapshot_path, simulation_count)
     model_meta = snapshot["modelMeta"]
     report = {
@@ -97,6 +154,7 @@ def run_daily_update(
             "skipped": total_skipped,
             "items": feed_reports,
         },
+        "scores": score_report,
         "snapshot": {
             "path": str(snapshot_path),
             "simulationCount": model_meta["simulationCount"],
