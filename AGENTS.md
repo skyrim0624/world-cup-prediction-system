@@ -2237,8 +2237,11 @@ Elo / 实力评分
 
 - `npm run test:model` 通过，当前 114 个测试。
 - `npm run build` 通过。
+- `npm run deploy:web` 成功部署到 Cloudflare Pages。
+- 正式地址 `https://world-cup-prediction-system.pages.dev/` 手机视口验收通过。
 - 本地 390px 手机视口检查通过：无横向溢出，底部导航 5 个入口可切换，主屏不出现“赔率”。
 - 本地 1280px 桌面视口检查通过：无横向溢出，底部导航居中显示。
+- 线上接口请求 `match-prediction`、`upcoming-matches`、`finished-matches`、`access-options` 均返回 200。
 
 当前判断：
 
