@@ -131,6 +131,40 @@ class TournamentDataImportTest(unittest.TestCase):
             self.assertEqual(fixtures[0]["city"], "Mexico City")
             self.assertEqual(fixtures[0]["stadium"], "Estadio Azteca")
 
+    def test_apply_tournament_data_import_writes_current_match_and_backup(self):
+        payload = make_import_payload()
+        payload["currentMatch"] = {"home": "a-1", "away": "a-2"}
+        with tempfile.TemporaryDirectory() as temp_dir:
+            data_dir = Path(temp_dir) / "data"
+            backup_dir = Path(temp_dir) / "backups"
+            data_dir.mkdir()
+            current_match = {"home": "old-home", "away": "old-away"}
+            (data_dir / "teams.json").write_text("[]", encoding="utf-8")
+            (data_dir / "fixtures.json").write_text("[]", encoding="utf-8")
+            (data_dir / "current-match.json").write_text(json.dumps(current_match), encoding="utf-8")
+
+            result = apply_tournament_data_import(data_dir, backup_dir, payload)
+
+            self.assertEqual(json.loads((data_dir / "current-match.json").read_text(encoding="utf-8")), payload["currentMatch"])
+            self.assertEqual(json.loads((Path(result["backupDir"]) / "current-match.json").read_text(encoding="utf-8")), current_match)
+
+    def test_apply_tournament_data_import_rejects_current_match_outside_new_fixtures(self):
+        payload = make_import_payload()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            data_dir = Path(temp_dir) / "data"
+            backup_dir = Path(temp_dir) / "backups"
+            data_dir.mkdir()
+            original_teams = [{"key": "existing"}]
+            (data_dir / "teams.json").write_text(json.dumps(original_teams), encoding="utf-8")
+            (data_dir / "fixtures.json").write_text("[]", encoding="utf-8")
+            (data_dir / "current-match.json").write_text(json.dumps({"home": "legacy", "away": "other"}), encoding="utf-8")
+
+            with self.assertRaisesRegex(ValueError, "当前主预测比赛不在导入赛程中"):
+                apply_tournament_data_import(data_dir, backup_dir, payload)
+
+            self.assertEqual(json.loads((data_dir / "teams.json").read_text(encoding="utf-8")), original_teams)
+            self.assertFalse(backup_dir.exists())
+
     def test_restore_tournament_backup_restores_files_and_backs_up_current_state(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
@@ -142,12 +176,16 @@ class TournamentDataImportTest(unittest.TestCase):
             backup_dir.mkdir(parents=True)
             current_teams = [{"key": "current"}]
             current_fixtures = [{"home": "current", "away": "other"}]
+            current_match = {"home": "current", "away": "other"}
             restored_teams = [{"key": "restored"}]
             restored_fixtures = [{"home": "restored", "away": "other"}]
+            restored_match = {"home": "restored", "away": "other"}
             (data_dir / "teams.json").write_text(json.dumps(current_teams), encoding="utf-8")
             (data_dir / "fixtures.json").write_text(json.dumps(current_fixtures), encoding="utf-8")
+            (data_dir / "current-match.json").write_text(json.dumps(current_match), encoding="utf-8")
             (backup_dir / "teams.json").write_text(json.dumps(restored_teams), encoding="utf-8")
             (backup_dir / "fixtures.json").write_text(json.dumps(restored_fixtures), encoding="utf-8")
+            (backup_dir / "current-match.json").write_text(json.dumps(restored_match), encoding="utf-8")
 
             result = restore_tournament_backup(data_dir, backup_root, backup_id)
 
@@ -155,7 +193,9 @@ class TournamentDataImportTest(unittest.TestCase):
             self.assertEqual(result["restoredBackupId"], backup_id)
             self.assertEqual(json.loads((data_dir / "teams.json").read_text(encoding="utf-8")), restored_teams)
             self.assertEqual(json.loads((data_dir / "fixtures.json").read_text(encoding="utf-8")), restored_fixtures)
+            self.assertEqual(json.loads((data_dir / "current-match.json").read_text(encoding="utf-8")), restored_match)
             self.assertEqual(json.loads((rollback_backup / "teams.json").read_text(encoding="utf-8")), current_teams)
+            self.assertEqual(json.loads((rollback_backup / "current-match.json").read_text(encoding="utf-8")), current_match)
 
     def test_restore_tournament_backup_rejects_path_traversal(self):
         with tempfile.TemporaryDirectory() as temp_dir:

@@ -1570,6 +1570,31 @@ Elo / 实力评分
 - 前台现在不会只用“真实模型”一词掩盖样例数据状态。
 - 仍未完成的是导入真实官方名单和赛程，让提示从“样例数据”切换为“正式数据就绪”。
 
+### 2026-06-14：赛事导入同步 current-match 防护
+
+已完成：
+
+- 赛事导入 payload 支持可选 `currentMatch`。
+- 如果提供 `currentMatch`，导入器会校验该对阵存在于新赛程，并同步写入 `backend/data_files/current-match.json`。
+- 如果不提供 `currentMatch`，但当前目录已有 `current-match.json`，导入器会校验旧主预测比赛仍存在于新赛程；不存在则拒绝导入。
+- 赛事备份会一起保存 `current-match.json`。
+- 回滚备份如果带 `current-match.json`，会一起恢复主预测场次。
+- `docs/赛事数据导入格式.md` 已补充 `currentMatch` 规则。
+
+验证：
+
+- 新增导入测试：payload 提供 `currentMatch` 时会写入新主预测场次，并在备份中保留旧主预测场次。
+- 新增导入测试：旧主预测比赛不在新赛程中时拒绝导入，且不写入 teams。
+- 增强回滚测试：备份中的 `current-match.json` 会被恢复，回滚前的 current-match 会进入新备份。
+- `npm run validate:data` 通过。
+- `npm run test:model` 通过，71 个测试。
+- `npm run build` 通过。
+
+当前判断：
+
+- 后续导入真实官方赛程时，不会再因为旧样例主预测场次不存在而让首页崩掉。
+- 真实官方赛程本身仍需从可靠来源整理；第三方赛程之间存在冲突，不能直接无脑导入。
+
 ## 十、当前交接摘要
 
 一句话定义：
