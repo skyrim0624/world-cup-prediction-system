@@ -85,6 +85,19 @@ class FrontendContractTest(unittest.TestCase):
         self.assertNotIn("双击移动模块", home_source)
         self.assertNotIn("DraggablePanel", home_source)
 
+    def test_matches_page_uses_beijing_time_without_venue_heading(self):
+        source = app_source()
+        home_source = source_between(source, "function HomePredictionPage()", "function TeamFlag")
+        upcoming_source = source_between(source, "function UpcomingMatchesPanel", "function MatchDetailPanel")
+
+        self.assertIn("formatKickoffForUser", source)
+        self.assertIn("北京时间", source)
+        self.assertIn("formatKickoffForUser(match.kickoff)", upcoming_source)
+        self.assertNotIn("fixtureVenueLabel", source)
+        self.assertNotIn("未开赛比赛池", home_source)
+        self.assertNotIn("stadium", upcoming_source)
+        self.assertNotIn("city", upcoming_source)
+
     def test_public_homepage_uses_world_cup_portal_visual_language(self):
         source = app_source()
         styles = Path("src/styles.css").read_text(encoding="utf-8")

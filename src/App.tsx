@@ -321,10 +321,6 @@ type MatchDetail = {
   analysis: string[];
 };
 
-function fixtureVenueLabel(fixture: { city?: string | null; stadium?: string | null }) {
-  return [fixture.stadium, fixture.city].filter(Boolean).join(" · ");
-}
-
 const teams: Team[] = [
   {
     key: "brazil",
@@ -386,6 +382,7 @@ const teams: Team[] = [
 
 const INTERACTIVE_SIMULATION_COUNT = 1200;
 const FORECAST_REFRESH_MS = 15000;
+const TOURNAMENT_YEAR = 2026;
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? (import.meta.env.DEV ? "http://127.0.0.1:8000" : "");
 const SINGLE_MATCH_ROUTE_PREFIX = "/match/";
 
@@ -615,6 +612,38 @@ function formatUpdateTime(value: string) {
   return date.toLocaleTimeString("zh-CN", { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
 }
 
+function formatKickoffForUser(value: string) {
+  if (!value || value === "待定" || value === "进行中" || value === "已结束") return value;
+  if (value.includes("北京时间")) return value;
+
+  const easternMatch = value.match(/(\d{1,2})月(\d{1,2})日\s+(\d{1,2}):(\d{2})\s*ET/i);
+  if (easternMatch) {
+    const [, month, day, hour, minute] = easternMatch;
+    const beijingDate = new Date(Date.UTC(TOURNAMENT_YEAR, Number(month) - 1, Number(day), Number(hour) + 12, Number(minute)));
+    const beijingMonth = beijingDate.getUTCMonth() + 1;
+    const beijingDay = beijingDate.getUTCDate();
+    const beijingHour = String(beijingDate.getUTCHours()).padStart(2, "0");
+    const beijingMinute = String(beijingDate.getUTCMinutes()).padStart(2, "0");
+    return `${beijingMonth}月${beijingDay}日 ${beijingHour}:${beijingMinute} 北京时间`;
+  }
+
+  const date = new Date(value);
+  if (!Number.isNaN(date.getTime())) {
+    const parts = new Intl.DateTimeFormat("zh-CN", {
+      timeZone: "Asia/Shanghai",
+      month: "numeric",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    }).formatToParts(date);
+    const part = (type: string) => parts.find((item) => item.type === type)?.value ?? "";
+    return `${part("month")}月${part("day")}日 ${part("hour")}:${part("minute")} 北京时间`;
+  }
+
+  return value.replace(/\s*ET\b/i, "");
+}
+
 function formatSignedPercent(value: number) {
   return `${value > 0 ? "+" : ""}${value.toFixed(1)}%`;
 }
@@ -707,7 +736,6 @@ function HomePredictionPage() {
   const matchPrediction = apiPrediction ?? fallbackPrediction;
   const homeTeam = teamsData.find((team) => team.key === matchPrediction.homeTeam) ?? teamsData[0];
   const awayTeam = teamsData.find((team) => team.key === matchPrediction.awayTeam) ?? teamsData[1];
-  const mainVenue = fixtureVenueLabel(matchPrediction);
   const championBoard = [...teamsData].sort((left, right) => right.tournament.champion - left.tournament.champion);
   const topScore = matchPrediction.scoreOutcomes[0];
   const goalMarkets = matchPrediction.goalMarkets?.length ? matchPrediction.goalMarkets : goalMarketsFallback();
@@ -821,7 +849,7 @@ function HomePredictionPage() {
                     <b>{awayTeam.code}</b>
                   </span>
                 </div>
-                <small>{[matchPrediction.kickoff, mainVenue].filter(Boolean).join(" · ")}</small>
+                <small>{formatKickoffForUser(matchPrediction.kickoff)}</small>
               </a>
               <div className="app-prediction-focus">
                 <div className={`app-main-outcome ${primaryOutcome.tone}`}>
@@ -862,9 +890,6 @@ function HomePredictionPage() {
         {activeScreen === "matches" ? (
           <div className="app-screen-stack">
             <section className="console-panel">
-              <div className="section-title">
-                <span>未开赛比赛池</span>
-              </div>
               <UpcomingMatchesPanel matches={(upcomingMatches?.items ?? []).slice(0, 4)} onSelect={openMatchPage} />
             </section>
           </div>
@@ -1111,7 +1136,7 @@ function UpcomingMatchesPanel({
                 {match.homeName} / {match.awayName}
               </strong>
               <small>
-                {[match.stage, match.kickoff, fixtureVenueLabel(match), `最可能 ${match.topScore.score} / ${match.topScore.probability.toFixed(1)}%`].filter(Boolean).join(" · ")}
+                {[match.stage, formatKickoffForUser(match.kickoff), `最可能 ${match.topScore.score} / ${match.topScore.probability.toFixed(1)}%`].filter(Boolean).join(" · ")}
               </small>
             </div>
             <div className="upcoming-probs">
@@ -1133,7 +1158,6 @@ function MatchDetailPanel({ detail, teamsData }: { detail: MatchDetail | null; t
 
   const homeTeam = teamsData.find((team) => team.key === detail.homeTeam);
   const awayTeam = teamsData.find((team) => team.key === detail.awayTeam);
-  const venue = fixtureVenueLabel(detail);
   const scoreMatrix = detail.scoreMatrix?.length ? detail.scoreMatrix : scoreMatrixFallbackFromOutcomes(detail.scoreOutcomes);
   const goalMarkets = detail.goalMarkets?.length ? detail.goalMarkets : goalMarketsFallback();
   const fairPrices = detail.fairPrices?.length
@@ -1155,7 +1179,7 @@ function MatchDetailPanel({ detail, teamsData }: { detail: MatchDetail | null; t
           <TeamFlag team={detail.awayTeam} code={detail.awayCode} />
         </div>
         <span>
-          {[detail.stage, detail.kickoff, venue].filter(Boolean).join(" · ")}
+          {[detail.stage, formatKickoffForUser(detail.kickoff)].filter(Boolean).join(" · ")}
         </span>
         <a href={matchPagePath(detail.homeTeam, detail.awayTeam)}>打开单场页</a>
       </div>
@@ -1264,7 +1288,6 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
   const awayName = detail?.awayName ?? awayTeam?.name ?? away;
   const homeCode = detail?.homeCode ?? homeTeam?.code ?? home.slice(0, 3).toUpperCase();
   const awayCode = detail?.awayCode ?? awayTeam?.code ?? away.slice(0, 3).toUpperCase();
-  const venue = detail ? fixtureVenueLabel(detail) : "";
   const detailScoreMatrix = detail ? (detail.scoreMatrix?.length ? detail.scoreMatrix : scoreMatrixFallbackFromOutcomes(detail.scoreOutcomes)) : [];
   const detailGoalMarkets = detail?.goalMarkets?.length ? detail.goalMarkets : goalMarketsFallback();
   const detailFairPrices = detail?.fairPrices?.length
@@ -1309,12 +1332,11 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
             <TeamFlag team={detail?.awayTeam ?? away} code={awayCode} />
           </div>
           <div className="match-clock forecast-clock">
-            <span>{detail?.kickoff ?? "加载中"}</span>
+            <span>{detail ? formatKickoffForUser(detail.kickoff) : "加载中"}</span>
             <em>{detail?.status ?? "待载入"}</em>
           </div>
           <div className="match-meta">
             <span>{detail?.stage ?? "单场预测"}</span>
-            {venue ? <span>{venue}</span> : null}
             {detail ? <b>预测更新 {formatUpdateTime(detail.updatedAt)}</b> : null}
           </div>
         </div>
