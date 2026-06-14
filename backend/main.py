@@ -26,6 +26,7 @@ from .model import (
     reload_model_data,
 )
 from .news_ingest import append_raw_news_item
+from .payments import build_payment_config, create_payment_order, get_payment_order
 from .snapshot import DEFAULT_SNAPSHOT_PATH, read_prediction_snapshot, write_prediction_snapshot
 
 
@@ -71,6 +72,11 @@ class FixtureResultRequest(BaseModel):
 
 class TournamentRollbackRequest(BaseModel):
     backupId: str
+
+
+class PaymentOrderCreateRequest(BaseModel):
+    productKey: str
+    provider: str
 
 
 app.add_middleware(
@@ -128,6 +134,27 @@ def access_options() -> dict[str, object]:
 @app.get("/api/access-policy")
 def access_policy() -> dict[str, object]:
     return build_access_policy(payment_configured=False)
+
+
+@app.get("/api/payments/config")
+def payment_config() -> dict[str, object]:
+    return build_payment_config()
+
+
+@app.post("/api/payments/orders")
+def create_order(request: PaymentOrderCreateRequest) -> dict[str, object]:
+    try:
+        return create_payment_order(request.productKey, request.provider)
+    except ValueError as error:
+        raise HTTPException(status_code=400, detail=str(error)) from error
+
+
+@app.get("/api/payments/orders/{order_id}")
+def payment_order(order_id: str) -> dict[str, object]:
+    try:
+        return get_payment_order(order_id)
+    except KeyError as error:
+        raise HTTPException(status_code=404, detail="支付订单不存在") from error
 
 
 @app.get("/api/admin/overview")

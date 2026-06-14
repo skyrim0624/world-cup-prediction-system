@@ -6,18 +6,21 @@ ACCESS_PRODUCTS = [
         "key": "single_match",
         "name": "单场预测",
         "scope": "解锁一场未开赛比赛的胜平负、比分分布和路径传导",
+        "amountLabel": "待定价",
         "status": "payment_pending",
     },
     {
         "key": "tournament_pass",
         "name": "赛事全周期",
         "scope": "解锁整届赛事的冠军概率榜、路径变化和日更摘要",
+        "amountLabel": "待定价",
         "status": "payment_pending",
     },
     {
         "key": "match_pack",
         "name": "重点场次包",
         "scope": "解锁一组重点比赛的赛前预测和赛后路径复盘",
+        "amountLabel": "待定价",
         "status": "payment_pending",
     },
 ]

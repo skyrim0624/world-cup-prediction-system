@@ -1752,6 +1752,44 @@ Elo / 实力评分
 - 客户要求的“单场比赛预测页”已经从首页模块升级为可单独打开的页面。
 - 下一步可以在这个独立页上接真实付费裁剪，而不是继续把所有内容堆在首页。
 
+### 2026-06-14：客户微信 / 支付宝支付接口框架
+
+已完成：
+
+- 按客户最新口径收窄支付方向：微信支付和支付宝支付使用客户提供的接口，我们只搭支付框架和适配层。
+- 新增 `backend/payments.py`，定义微信支付、支付宝支付两个扫码渠道。
+- 新增 `GET /api/payments/config`，返回客户支付接口配置状态。
+- 新增 `POST /api/payments/orders`，创建本地支付订单意图。
+- 新增 `GET /api/payments/orders/{order_id}`，查询本地订单状态。
+- 支付配置字段改为客户接口：
+  - `CUSTOMER_WECHAT_PAY_CREATE_URL`
+  - `CUSTOMER_WECHAT_PAY_STATUS_URL`
+  - `CUSTOMER_WECHAT_PAY_NOTIFY_SECRET`
+  - `CUSTOMER_ALIPAY_PAY_CREATE_URL`
+  - `CUSTOMER_ALIPAY_PAY_STATUS_URL`
+  - `CUSTOMER_ALIPAY_PAY_NOTIFY_SECRET`
+- 前端 `付费解锁` 模块新增微信支付 / 支付宝支付切换、扫码订单创建入口和订单状态提示。
+- 产品价格暂时展示 `待定价`，避免替客户自行定价。
+- 当前不生成测试二维码、不伪造支付成功；客户接口缺失时返回 `provider_config_required`，客户接口配置齐全但未确认字段协议时返回 `customer_interface_ready`。
+
+验证：
+
+- 按 TDD 先让支付接口测试因 `/api/payments/config`、`/api/payments/orders` 缺失失败，再实现并跑绿。
+- 新增支付测试：客户微信 / 支付宝接口配置状态、创建订单、查询订单、未知产品 / 未知渠道拒绝、客户接口配置齐全时不伪造二维码。
+- 新增前端契约测试：首页必须接入 `/api/payments/config`、`/api/payments/orders`，并出现微信支付、支付宝支付、扫码付款。
+- `test_payments.py` 通过，5 个测试。
+- `test_frontend_contract.py` 通过，2 个测试。
+- `npm run test:model` 通过，86 个测试。
+- `npm run validate:data` 通过。
+- `npm run build` 通过。
+- Browser 插件调用失败，错误为 `browser.documentation is not a function`；已使用 Playwright + 本机 Chrome 复测。
+- Playwright 复测桌面 1280px 和手机 390px：微信 / 支付宝扫码入口可见，创建订单后显示客户接口待配置和二维码待生成，无横向溢出，不出现支付完成假状态。
+
+当前判断：
+
+- 支付系统已经从“付费边界”推进到“客户支付接口适配框架”。
+- 后续重点只应围绕客户接口文档、客户二维码返回字段、查单字段、支付通知验签、订单持久化和权限裁剪推进。
+
 ## 十、当前交接摘要
 
 一句话定义：
@@ -1764,7 +1802,7 @@ Elo / 实力评分
 2. 接真实新闻来源列表，把外部抓取任务接到 `npm run daily:update` 的 Feed 配置和报告输出。
 3. 扩展 `/admin` 后台，补真实外部调度配置和用户账号 / 角色体系。
 4. 把单场详情升级为独立路由/页面，并按产品包做可控的内容解锁。
-5. 接真实支付网关、订单记录、用户权限和访问记录。
+5. 接客户提供的微信 / 支付宝支付接口、订单记录、用户权限和访问记录。
 
 当前最重要的风险：
 

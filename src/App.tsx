@@ -208,6 +208,7 @@ type AccessProduct = {
   key: string;
   name: string;
   scope: string;
+  amountLabel?: string;
   status: string;
 };
 
@@ -215,6 +216,38 @@ type AccessOptions = {
   paymentConfigured: boolean;
   products: AccessProduct[];
   disclaimer: string;
+};
+
+type PaymentProviderKey = "wechat" | "alipay";
+
+type PaymentProviderConfig = {
+  provider: PaymentProviderKey;
+  label: string;
+  paymentMethod: string;
+  configured: boolean;
+  missingConfig: string[];
+};
+
+type PaymentConfig = {
+  ready: boolean;
+  providers: PaymentProviderConfig[];
+  disclaimer: string;
+};
+
+type PaymentOrder = {
+  orderId: string;
+  productKey: string;
+  productName: string;
+  amountLabel: string;
+  provider: PaymentProviderKey;
+  providerLabel: string;
+  paymentMethod: string;
+  status: string;
+  qrCodeUrl: string | null;
+  missingConfig: string[];
+  nextAction: string;
+  createdAt: string;
+  expiresAt: string;
 };
 
 type ScenarioImpact = {
@@ -1305,26 +1338,122 @@ function accessStatusLabel(status: string) {
   return "待配置";
 }
 
+function paymentStatusLabel(status: string) {
+  if (status === "pending_payment") return "等待扫码付款";
+  if (status === "customer_interface_ready") return "客户接口已就绪";
+  if (status === "provider_config_required") return "客户接口待配置";
+  if (status === "paid") return "支付完成";
+  return "待处理";
+}
+
 function AccessPanel({ options }: { options: AccessOptions | null }) {
+  const [paymentConfig, setPaymentConfig] = useState<PaymentConfig | null>(null);
+  const [selectedProvider, setSelectedProvider] = useState<PaymentProviderKey>("wechat");
+  const [paymentOrder, setPaymentOrder] = useState<PaymentOrder | null>(null);
+  const [paymentMessage, setPaymentMessage] = useState<string | null>(null);
+  const [creatingProductKey, setCreatingProductKey] = useState<string | null>(null);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadPaymentConfig() {
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/payments/config`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`支付配置接口返回 ${response.status}`);
+        const data = (await response.json()) as PaymentConfig;
+        if (!active) return;
+        setPaymentConfig(data);
+        if (data.providers.length > 0) setSelectedProvider(data.providers[0].provider);
+      } catch {
+        if (!active) return;
+        setPaymentConfig(null);
+      }
+    }
+
+    loadPaymentConfig();
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  async function createScanPaymentOrder(productKey: string) {
+    if (creatingProductKey) return;
+    setCreatingProductKey(productKey);
+    setPaymentMessage(null);
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/payments/orders`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ productKey, provider: selectedProvider }),
+      });
+      const payload = await response.json().catch(() => null);
+      if (!response.ok) throw new Error(payload?.detail ?? `支付订单接口返回 ${response.status}`);
+      setPaymentOrder(payload as PaymentOrder);
+    } catch (error) {
+      setPaymentOrder(null);
+      setPaymentMessage(error instanceof Error ? error.message : "支付订单创建失败");
+    } finally {
+      setCreatingProductKey(null);
+    }
+  }
+
   if (!options) {
     return <p className="review-empty">付费配置等待 API 连接</p>;
   }
 
+  const providers = paymentConfig?.providers ?? [
+    { provider: "wechat", label: "微信支付", paymentMethod: "scan_qr", configured: false, missingConfig: [] },
+    { provider: "alipay", label: "支付宝支付", paymentMethod: "scan_qr", configured: false, missingConfig: [] },
+  ];
+  const currentProvider = providers.find((provider) => provider.provider === selectedProvider) ?? providers[0];
+
   return (
     <div className="access-panel">
       <div className="access-summary">
-        <strong>{options.paymentConfigured ? "支付已接入" : "支付待接入"}</strong>
-        <span>{options.disclaimer}</span>
+        <strong>{paymentConfig?.ready ? "客户支付接口已配置" : "扫码付款待配置"}</strong>
+        <span>{paymentConfig?.disclaimer ?? options.disclaimer}</span>
+      </div>
+      <div className="payment-provider-row" aria-label="扫码付款渠道">
+        {providers.map((provider) => (
+          <button
+            type="button"
+            className={provider.provider === selectedProvider ? "selected" : ""}
+            key={provider.provider}
+            onClick={() => setSelectedProvider(provider.provider)}
+          >
+            {provider.label}
+          </button>
+        ))}
+        <span>{currentProvider?.configured ? "可创建订单意图" : `${currentProvider?.label ?? "支付"}客户接口待配置`}</span>
       </div>
       <div className="access-list">
         {options.products.map((product) => (
           <article className="access-card" key={product.key}>
             <strong>{product.name}</strong>
             <span>{product.scope}</span>
+            <small>{product.amountLabel ?? "待定价"}</small>
+            <button type="button" disabled={creatingProductKey === product.key} onClick={() => createScanPaymentOrder(product.key)}>
+              {creatingProductKey === product.key ? "创建中" : "创建扫码订单"}
+            </button>
             <em>{accessStatusLabel(product.status)}</em>
           </article>
         ))}
       </div>
+      {paymentOrder ? (
+        <div className="payment-order-box">
+          <div>
+            <strong>
+              {paymentOrder.providerLabel} · {paymentStatusLabel(paymentOrder.status)}
+            </strong>
+            <span>
+              {paymentOrder.productName} · {paymentOrder.amountLabel} · 到期 {formatUpdateTime(paymentOrder.expiresAt)}
+            </span>
+            <p>{paymentOrder.nextAction}</p>
+          </div>
+          {paymentOrder.qrCodeUrl ? <img src={paymentOrder.qrCodeUrl} alt="扫码付款二维码" /> : <em>二维码待生成</em>}
+        </div>
+      ) : null}
+      {paymentMessage ? <p className="review-message">{paymentMessage}</p> : null}
     </div>
   );
 }
