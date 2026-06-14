@@ -1,19 +1,19 @@
 :root {
   color-scheme: dark;
-  --bg: #075bd8;
-  --panel: rgba(4, 91, 201, 0.78);
-  --panel-strong: rgba(3, 78, 184, 0.92);
-  --line: rgba(112, 255, 244, 0.3);
-  --line-strong: rgba(119, 255, 233, 0.78);
+  --bg: #0427a8;
+  --panel: rgba(0, 76, 211, 0.9);
+  --panel-strong: rgba(0, 58, 180, 0.96);
+  --line: rgba(73, 255, 236, 0.42);
+  --line-strong: rgba(126, 255, 80, 0.86);
   --text: #f4fffb;
-  --muted: #b9dcf3;
-  --cyan: #2ee7ff;
-  --green: #9eff5f;
-  --blue: #7cf5ff;
-  --gold: #fff05a;
+  --muted: #d9f1ff;
+  --cyan: #33f7ff;
+  --green: #7dff4f;
+  --blue: #74f8ff;
+  --gold: #ffe54c;
   --orange: #ffb13b;
   --red: #ff5f75;
-  --shadow: 0 20px 70px rgba(0, 45, 132, 0.34);
+  --shadow: 0 20px 70px rgba(0, 20, 92, 0.54);
   font-family:
     "DIN Alternate",
     "Arial Narrow",
@@ -39,8 +39,8 @@ body {
   margin: 0;
   color: var(--text);
   background:
-    radial-gradient(circle at 78% 0%, rgba(92, 236, 255, 0.22), transparent 34%),
-    linear-gradient(180deg, #0457df 0%, #0555d8 46%, #0862dc 100%);
+    linear-gradient(135deg, rgba(126, 255, 80, 0.14) 0%, transparent 28%),
+    linear-gradient(180deg, #075bf2 0%, #043bc4 44%, #021b87 100%);
 }
 
 button {
@@ -61,10 +61,10 @@ button {
   position: fixed;
   inset: 0;
   z-index: -2;
-  opacity: 0.38;
+  opacity: 0.26;
   background:
-    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(105, 247, 255, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(105, 247, 255, 0.16) 1px, transparent 1px);
   background-size: 22px 22px;
   mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
 }
@@ -75,9 +75,9 @@ button {
   inset: 0;
   z-index: -3;
   background:
-    linear-gradient(155deg, rgba(151, 255, 92, 0.18) 0%, transparent 24%),
-    linear-gradient(22deg, rgba(46, 231, 255, 0.22) 0%, transparent 42%),
-    linear-gradient(180deg, rgba(2, 47, 156, 0.22) 0%, transparent 44%);
+    linear-gradient(155deg, rgba(126, 255, 80, 0.2) 0%, transparent 23%),
+    linear-gradient(22deg, rgba(51, 247, 255, 0.2) 0%, transparent 39%),
+    linear-gradient(180deg, rgba(0, 20, 96, 0.26) 0%, transparent 48%);
 }
 
 .topbar {
@@ -788,12 +788,12 @@ button {
 .user-page-shell .console-panel,
 .match-page-shell .console-panel {
   border-radius: 8px;
-  border-color: rgba(151, 255, 238, 0.22);
+  border-color: rgba(95, 255, 238, 0.42);
   background:
-    linear-gradient(180deg, rgba(22, 177, 231, 0.13), rgba(4, 76, 196, 0.12)),
-    rgba(2, 81, 204, 0.66);
+    linear-gradient(180deg, rgba(47, 251, 255, 0.18), rgba(8, 70, 212, 0.08)),
+    rgba(0, 71, 210, 0.86);
   clip-path: none;
-  box-shadow: 0 18px 54px rgba(0, 55, 170, 0.2), inset 0 0 30px rgba(82, 225, 255, 0.06);
+  box-shadow: 0 18px 54px rgba(0, 18, 92, 0.34), inset 0 0 32px rgba(89, 255, 235, 0.1);
 }
 
 .user-page-shell .console-panel::after,
@@ -807,7 +807,7 @@ button {
   position: absolute;
   inset: 10px;
   pointer-events: none;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(123, 255, 245, 0.09);
   clip-path: inherit;
 }
 
@@ -837,7 +837,7 @@ button {
   content: "";
   height: 10px;
   opacity: 0.82;
-  background: repeating-linear-gradient(110deg, rgba(255, 255, 255, 0.78) 0 2px, transparent 2px 6px);
+  background: repeating-linear-gradient(110deg, rgba(51, 247, 255, 0.82) 0 2px, transparent 2px 6px);
 }
 
 .section-title span {
@@ -888,9 +888,9 @@ button {
 .probability-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border: 1px solid rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(51, 247, 255, 0.22);
   border-radius: 8px;
-  background: rgba(0, 70, 185, 0.34);
+  background: rgba(0, 46, 158, 0.52);
   clip-path: none;
   overflow: hidden;
 }
@@ -913,7 +913,7 @@ button {
 
 .probability {
   padding: 22px 24px;
-  border-right: 1px solid rgba(255, 255, 255, 0.09);
+  border-right: 1px solid rgba(51, 247, 255, 0.16);
 }
 
 .probability:last-child {
@@ -1076,16 +1076,16 @@ button {
   gap: 12px;
   margin: 0 0 14px;
   padding: 13px 14px;
-  border: 1px solid rgba(255, 240, 90, 0.22);
+  border: 1px solid rgba(255, 229, 76, 0.42);
   border-radius: 7px;
   background:
-    linear-gradient(90deg, rgba(255, 240, 90, 0.12), transparent 58%),
-    rgba(0, 73, 188, 0.34);
+    linear-gradient(90deg, rgba(255, 229, 76, 0.18), rgba(51, 247, 255, 0.06) 58%),
+    rgba(0, 54, 184, 0.68);
 }
 
 .forecast-lead span,
 .forecast-lead em {
-  color: var(--muted);
+  color: rgba(217, 241, 255, 0.94);
   font-size: 13px;
   font-style: normal;
   font-weight: 900;
@@ -1110,14 +1110,14 @@ button {
   gap: 4px;
   min-height: 84px;
   padding: 11px;
-  border: 1px solid rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(51, 247, 255, 0.22);
   border-radius: 7px;
-  background: rgba(0, 73, 188, 0.34);
+  background: rgba(0, 52, 176, 0.58);
 }
 
 .compact-score span,
 .compact-score em {
-  color: var(--muted);
+  color: rgba(217, 241, 255, 0.9);
   font-size: 12px;
   font-style: normal;
   font-weight: 900;
@@ -1218,11 +1218,11 @@ button {
   gap: 5px;
   min-height: 104px;
   padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(51, 247, 255, 0.24);
   border-radius: 7px;
   background:
-    linear-gradient(135deg, color-mix(in srgb, currentColor 12%, transparent), transparent 56%),
-    rgba(0, 73, 188, 0.34);
+    linear-gradient(135deg, color-mix(in srgb, currentColor 18%, transparent), transparent 58%),
+    rgba(0, 54, 180, 0.68);
 }
 
 .goal-market-card span,
@@ -1244,7 +1244,7 @@ button {
 }
 
 .goal-market-card small {
-  color: var(--muted);
+  color: rgba(217, 241, 255, 0.9);
   font-size: 12px;
   line-height: 1.35;
 }
@@ -1253,7 +1253,8 @@ button {
   width: fit-content;
   padding: 5px 7px;
   border: 1px solid currentColor;
-  color: #eefaf8;
+  color: #ffffff;
+  background: rgba(0, 20, 92, 0.18);
   font-size: 12px;
 }
 
@@ -3722,14 +3723,15 @@ button {
 }
 
 .user-page-shell .portal-brand span {
-  color: rgba(236, 255, 252, 0.86);
+  color: rgba(246, 255, 252, 0.96);
   font-size: clamp(15px, 4vw, 18px);
   line-height: 1.05;
+  text-shadow: 0 0 14px rgba(51, 247, 255, 0.18);
 }
 
 .user-page-shell .portal-brand small {
   margin-top: 1px;
-  color: rgba(236, 255, 252, 0.58);
+  color: rgba(217, 241, 255, 0.72);
   font-size: 9px;
   letter-spacing: 0;
   text-transform: none;
@@ -3774,6 +3776,7 @@ button {
   font-size: clamp(21px, 6vw, 26px);
   font-weight: 900;
   line-height: 1.08;
+  text-shadow: 0 2px 0 rgba(0, 18, 92, 0.28), 0 0 18px rgba(51, 247, 255, 0.22);
 }
 
 .app-screen-stack {
@@ -3810,18 +3813,18 @@ button {
   display: grid;
   gap: 3px;
   padding: 8px 9px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(126, 255, 80, 0.34);
   border-radius: 8px;
   color: var(--text);
   background:
-    linear-gradient(90deg, rgba(158, 255, 95, 0.14), rgba(46, 231, 255, 0.06)),
-    rgba(0, 73, 188, 0.38);
+    linear-gradient(90deg, rgba(126, 255, 80, 0.18), rgba(51, 247, 255, 0.08)),
+    rgba(0, 62, 194, 0.74);
   text-decoration: none;
 }
 
 .app-match-summary span,
 .app-match-summary small {
-  color: var(--muted);
+  color: rgba(217, 241, 255, 0.92);
   font-size: 11px;
   font-weight: 900;
   line-height: 1.2;
@@ -3860,7 +3863,7 @@ button {
 }
 
 .app-match-teams strong {
-  color: rgba(232, 255, 252, 0.7);
+  color: rgba(255, 229, 76, 0.9);
 }
 
 .app-forecast-lead {
@@ -4023,10 +4026,10 @@ button {
   grid-template-columns: repeat(5, minmax(0, 1fr));
   width: min(calc(100% - 18px), 440px);
   padding: 6px;
-  border: 1px solid rgba(126, 255, 238, 0.22);
+  border: 1px solid rgba(126, 255, 238, 0.42);
   border-radius: 20px;
-  background: rgba(2, 52, 150, 0.88);
-  box-shadow: 0 16px 50px rgba(0, 22, 92, 0.36), inset 0 0 24px rgba(126, 255, 238, 0.08);
+  background: rgba(1, 35, 132, 0.96);
+  box-shadow: 0 16px 50px rgba(0, 12, 70, 0.52), inset 0 0 28px rgba(126, 255, 238, 0.12);
   backdrop-filter: blur(18px);
   transform: translateX(50%);
 }
@@ -4039,7 +4042,7 @@ button {
   gap: 3px;
   border: 0;
   border-radius: 14px;
-  color: rgba(232, 255, 252, 0.72);
+  color: rgba(217, 241, 255, 0.88);
   background: transparent;
   cursor: pointer;
   touch-action: manipulation;
@@ -4053,6 +4056,7 @@ button {
 .app-bottom-nav button.active {
   color: #061c27;
   background: linear-gradient(135deg, var(--green), var(--cyan));
+  box-shadow: 0 0 22px rgba(126, 255, 80, 0.22);
 }
 
 .app-bottom-nav button:focus-visible {
@@ -4087,8 +4091,10 @@ button {
 
 .user-page-shell .analysis-list p {
   padding: 6px 8px;
+  color: #ffffff;
   font-size: 11px;
   line-height: 1.32;
+  background: rgba(0, 44, 156, 0.5);
 }
 
 .user-page-shell .upcoming-list,
@@ -4103,6 +4109,8 @@ button {
   gap: 8px;
   padding: 8px;
   overflow: hidden;
+  border-color: rgba(51, 247, 255, 0.24);
+  background: rgba(0, 54, 180, 0.66);
 }
 
 .user-page-shell .upcoming-teams {
@@ -4140,6 +4148,7 @@ button {
 
 .user-page-shell .upcoming-copy small {
   margin-top: 3px;
+  color: rgba(217, 241, 255, 0.86);
   font-size: 11px;
   line-height: 1.25;
 }
@@ -4152,6 +4161,8 @@ button {
 
 .user-page-shell .upcoming-probs em {
   min-height: 24px;
+  color: var(--cyan);
+  background: rgba(0, 24, 106, 0.18);
   font-size: 11px;
 }
 
