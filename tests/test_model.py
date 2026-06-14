@@ -56,7 +56,7 @@ class PredictionModelTest(unittest.TestCase):
         self.assertIn("liveMatches", prediction["modelMeta"])
 
     def test_dataset_is_loaded_from_local_json_files(self):
-        self.assertEqual(DATASET_META["source"], "local-json")
+        self.assertEqual(DATASET_META["source"], "local-sample")
         self.assertEqual(len(TEAM_PROFILES), 48)
         self.assertEqual(len(group_names(TEAM_PROFILES)), 12)
         self.assertTrue(all(len([team for team in TEAM_PROFILES.values() if team.group == group]) == 4 for group in group_names(TEAM_PROFILES)))
@@ -66,7 +66,7 @@ class PredictionModelTest(unittest.TestCase):
 
     def test_prediction_exposes_model_transparency_meta(self):
         prediction = build_match_prediction(1200)
-        self.assertEqual(prediction["modelMeta"]["dataset"]["source"], "local-json")
+        self.assertEqual(prediction["modelMeta"]["dataset"]["source"], "local-sample")
         self.assertEqual(prediction["modelMeta"]["events"]["watched"], 7)
         self.assertEqual(prediction["modelMeta"]["events"]["applied"], 3)
         self.assertEqual(prediction["modelMeta"]["events"]["ignored"], 2)

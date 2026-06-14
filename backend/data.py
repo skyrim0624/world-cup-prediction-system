@@ -8,6 +8,7 @@ from typing import Any
 
 DATA_DIR = Path(__file__).with_name("data_files")
 WORLD_CUP_GROUPS = tuple("ABCDEFGHIJKL")
+TOURNAMENT_PROVENANCE_FILE = "tournament-provenance.json"
 
 
 @dataclass(frozen=True)
@@ -316,6 +317,13 @@ def load_current_match() -> tuple[str, str]:
     return row["home"], row["away"]
 
 
+def load_tournament_provenance(teams_path: Path | None = None) -> dict[str, object]:
+    provenance_path = (teams_path.parent if teams_path is not None else DATA_DIR) / TOURNAMENT_PROVENANCE_FILE
+    if not provenance_path.exists():
+        return {"source": "local-json"}
+    return json.loads(provenance_path.read_text(encoding="utf-8"))
+
+
 def load_runtime_dataset(
     raw_news_path: Path | None = None,
     fixtures_path: Path | None = None,
@@ -330,8 +338,10 @@ def load_runtime_dataset(
     events = manual_events + events_from_raw_news(raw_news_items, news_sources)
     third_place_combinations = load_third_place_combinations()
     current_match = load_current_match()
+    tournament_provenance = load_tournament_provenance(teams_path)
     dataset_meta = {
-        "source": "local-json",
+        "source": tournament_provenance.get("source", "local-json"),
+        "tournamentSource": tournament_provenance,
         "teamCount": len(team_profiles),
         "groupCount": len(WORLD_CUP_GROUPS),
         "fixtureCount": len(fixtures),

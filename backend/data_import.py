@@ -10,6 +10,7 @@ from .data import WORLD_CUP_GROUPS
 
 
 CURRENT_MATCH_FILE = "current-match.json"
+TOURNAMENT_PROVENANCE_FILE = "tournament-provenance.json"
 
 
 def validate_fixture_metadata(fixture: dict[str, Any]) -> None:
@@ -93,6 +94,15 @@ def validate_current_match(current_match: Any, fixtures: list[dict[str, Any]]) -
     return {"home": home, "away": away}
 
 
+def build_tournament_provenance(payload: dict[str, Any]) -> dict[str, object]:
+    provenance = {
+        "source": payload.get("source", "unknown"),
+        "retrievedAt": payload.get("retrievedAt"),
+        "sourceUrl": payload.get("sourceUrl"),
+    }
+    return {key: value for key, value in provenance.items() if value is not None}
+
+
 def resolve_current_match_for_import(data_dir: Path, payload: dict[str, Any]) -> dict[str, str] | None:
     fixtures = payload["fixtures"]
     if payload.get("currentMatch") is not None:
@@ -109,12 +119,15 @@ def create_current_tournament_backup(data_dir: Path, backup_root: Path) -> Path:
     teams_path = data_dir / "teams.json"
     fixtures_path = data_dir / "fixtures.json"
     current_match_path = data_dir / CURRENT_MATCH_FILE
+    provenance_path = data_dir / TOURNAMENT_PROVENANCE_FILE
     backup_dir = backup_root / datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
     backup_dir.mkdir(parents=True, exist_ok=False)
     shutil.copy2(teams_path, backup_dir / "teams.json")
     shutil.copy2(fixtures_path, backup_dir / "fixtures.json")
     if current_match_path.exists():
         shutil.copy2(current_match_path, backup_dir / CURRENT_MATCH_FILE)
+    if provenance_path.exists():
+        shutil.copy2(provenance_path, backup_dir / TOURNAMENT_PROVENANCE_FILE)
     return backup_dir
 
 
@@ -147,12 +160,14 @@ def apply_tournament_data_import(data_dir: Path, backup_root: Path, payload: dic
     teams_path = data_dir / "teams.json"
     fixtures_path = data_dir / "fixtures.json"
     current_match_path = data_dir / CURRENT_MATCH_FILE
+    provenance_path = data_dir / TOURNAMENT_PROVENANCE_FILE
     backup_dir = create_current_tournament_backup(data_dir, backup_root)
 
     teams_path.write_text(json.dumps(payload["teams"], ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     fixtures_path.write_text(json.dumps(payload["fixtures"], ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if current_match is not None:
         current_match_path.write_text(json.dumps(current_match, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    provenance_path.write_text(json.dumps(build_tournament_provenance(payload), ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return {
         **summary,
         "backupDir": str(backup_dir),
@@ -173,6 +188,7 @@ def restore_tournament_backup(data_dir: Path, backup_root: Path, backup_id: str)
     backup_teams_path = backup_dir / "teams.json"
     backup_fixtures_path = backup_dir / "fixtures.json"
     backup_current_match_path = backup_dir / CURRENT_MATCH_FILE
+    backup_provenance_path = backup_dir / TOURNAMENT_PROVENANCE_FILE
     if not backup_teams_path.exists() or not backup_fixtures_path.exists():
         raise ValueError(f"备份不完整: {backup_id}")
 
@@ -181,6 +197,8 @@ def restore_tournament_backup(data_dir: Path, backup_root: Path, backup_id: str)
     shutil.copy2(backup_fixtures_path, data_dir / "fixtures.json")
     if backup_current_match_path.exists():
         shutil.copy2(backup_current_match_path, data_dir / CURRENT_MATCH_FILE)
+    if backup_provenance_path.exists():
+        shutil.copy2(backup_provenance_path, data_dir / TOURNAMENT_PROVENANCE_FILE)
     return {
         "restoredBackupId": backup_id,
         "sourceBackupDir": str(backup_dir),

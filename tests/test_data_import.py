@@ -56,6 +56,7 @@ def make_import_payload() -> dict[str, object]:
 class TournamentDataImportTest(unittest.TestCase):
     def test_apply_tournament_data_import_writes_files_and_backup(self):
         payload = make_import_payload()
+        payload["sourceUrl"] = "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026"
         with tempfile.TemporaryDirectory() as temp_dir:
             data_dir = Path(temp_dir) / "data"
             backup_dir = Path(temp_dir) / "backups"
@@ -69,6 +70,10 @@ class TournamentDataImportTest(unittest.TestCase):
             self.assertEqual(result["fixtureCount"], 72)
             self.assertEqual(len(json.loads((data_dir / "teams.json").read_text(encoding="utf-8"))), 48)
             self.assertEqual(len(json.loads((data_dir / "fixtures.json").read_text(encoding="utf-8"))), 72)
+            provenance = json.loads((data_dir / "tournament-provenance.json").read_text(encoding="utf-8"))
+            self.assertEqual(provenance["source"], "fifa-official-test")
+            self.assertEqual(provenance["retrievedAt"], "2026-06-14T00:00:00Z")
+            self.assertEqual(provenance["sourceUrl"], "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026")
             self.assertTrue(Path(result["backupDir"]).joinpath("teams.json").exists())
             self.assertTrue(Path(result["backupDir"]).joinpath("fixtures.json").exists())
 
@@ -142,11 +147,13 @@ class TournamentDataImportTest(unittest.TestCase):
             (data_dir / "teams.json").write_text("[]", encoding="utf-8")
             (data_dir / "fixtures.json").write_text("[]", encoding="utf-8")
             (data_dir / "current-match.json").write_text(json.dumps(current_match), encoding="utf-8")
+            (data_dir / "tournament-provenance.json").write_text(json.dumps({"source": "old-source"}), encoding="utf-8")
 
             result = apply_tournament_data_import(data_dir, backup_dir, payload)
 
             self.assertEqual(json.loads((data_dir / "current-match.json").read_text(encoding="utf-8")), payload["currentMatch"])
             self.assertEqual(json.loads((Path(result["backupDir"]) / "current-match.json").read_text(encoding="utf-8")), current_match)
+            self.assertEqual(json.loads((Path(result["backupDir"]) / "tournament-provenance.json").read_text(encoding="utf-8")), {"source": "old-source"})
 
     def test_apply_tournament_data_import_rejects_current_match_outside_new_fixtures(self):
         payload = make_import_payload()

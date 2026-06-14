@@ -1615,6 +1615,29 @@ Elo / 实力评分
 
 - 系统自检口径不再低估已完成的 Feed/来源校验能力，也不再模糊真实赛程导入的核心风险。
 
+### 2026-06-14：赛事数据来源证明落盘
+
+已完成：
+
+- 新增 `backend/data_files/tournament-provenance.json`，当前标记为 `local-sample`，明确样例数据不能作为正式世界杯赛程或名单。
+- 赛事导入会把 payload 里的 `source`、`retrievedAt`、`sourceUrl` 写入 `tournament-provenance.json`。
+- 赛事备份和回滚会同步处理 `tournament-provenance.json`。
+- 运行态 `DATASET_META` 和 `/api/model-status` 会暴露 `tournamentSource`。
+- `docs/赛事数据导入格式.md` 已补充 provenance 字段和恢复规则。
+
+验证：
+
+- 新增导入测试：导入后会写入 `tournament-provenance.json`，并在备份中保留旧 provenance。
+- 新增 API 测试：临时数据目录的 provenance 会出现在 `/api/model-status.dataset.tournamentSource`。
+- `npm run validate:data` 通过。
+- `npm run test:model` 通过，72 个测试。
+- `npm run build` 通过。
+
+当前判断：
+
+- 赛事数据不再只是 teams/fixtures 文件，系统可以说明当前数据来自哪里、何时整理、是否仍是样例。
+- 后续导入真实官方数据时，必须带上可核验 `sourceUrl`。
+
 ## 十、当前交接摘要
 
 一句话定义：

@@ -80,11 +80,48 @@ class PredictionApiTest(unittest.TestCase):
         response = client.get("/api/model-status")
         self.assertEqual(response.status_code, 200)
         payload = response.json()
-        self.assertEqual(payload["dataset"]["source"], "local-json")
+        self.assertEqual(payload["dataset"]["source"], "local-sample")
         self.assertGreaterEqual(payload["dataset"]["teamCount"], 8)
         self.assertIn("knownGaps", payload)
         self.assertIn("官方可核验赛程", payload["knownGaps"][0])
         self.assertIn("真实 Feed", payload["knownGaps"][1])
+
+    def test_model_status_exposes_tournament_provenance(self):
+        payload = make_compatible_import_payload()
+        with tempfile.TemporaryDirectory() as temp_dir:
+            data_dir = Path(temp_dir)
+            teams_path = data_dir / "teams.json"
+            fixtures_path = data_dir / "fixtures.json"
+            provenance_path = data_dir / "tournament-provenance.json"
+            teams_path.write_text(json.dumps(payload["teams"], ensure_ascii=False), encoding="utf-8")
+            fixtures_path.write_text(json.dumps(payload["fixtures"], ensure_ascii=False), encoding="utf-8")
+            provenance_path.write_text(
+                json.dumps(
+                    {
+                        "source": "fifa-official-test",
+                        "retrievedAt": "2026-06-14T00:00:00Z",
+                        "sourceUrl": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026",
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+            previous_fixtures_path = getattr(main_module, "fixtures_data_path", None)
+            main_module.fixtures_data_path = fixtures_path
+            try:
+                main_module.reload_model_data(main_module.review_data_path, fixtures_path, teams_path)
+                client = TestClient(app)
+                response = client.get("/api/model-status")
+            finally:
+                if previous_fixtures_path is None:
+                    delattr(main_module, "fixtures_data_path")
+                else:
+                    main_module.fixtures_data_path = previous_fixtures_path
+                main_module.reload_model_data()
+
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(response.json()["dataset"]["tournamentSource"]["source"], "fifa-official-test")
+            self.assertEqual(response.json()["dataset"]["tournamentSource"]["sourceUrl"], "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026")
 
     def test_admin_overview_api_returns_operational_status(self):
         rows = [
