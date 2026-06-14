@@ -1993,110 +1993,6 @@ button {
   font-weight: 900;
 }
 
-.mover-list {
-  display: grid;
-  gap: 12px;
-}
-
-.mover-summary {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.mover-summary span {
-  display: grid;
-  min-height: 58px;
-  place-items: center;
-  border: 1px solid rgba(126, 255, 238, 0.16);
-  background: rgba(0, 83, 188, 0.3);
-  color: var(--muted);
-  font-weight: 900;
-}
-
-.mover-summary b {
-  margin-left: 6px;
-  font-size: 24px;
-}
-
-.mover-row {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 12px;
-  min-height: 72px;
-  padding: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background:
-    linear-gradient(90deg, rgba(46, 231, 255, 0.08), transparent 50%),
-    rgba(0, 83, 188, 0.28);
-}
-
-.user-page-shell .mover-row,
-.match-page-shell .mover-row,
-.user-page-shell .mover-summary span,
-.match-page-shell .mover-summary span {
-  border-radius: 7px;
-  background-color: rgba(0, 73, 188, 0.32);
-}
-
-.mover-row.up {
-  border-color: rgba(158, 255, 95, 0.28);
-}
-
-.mover-row.down {
-  border-color: rgba(255, 95, 117, 0.3);
-}
-
-.mover-row .flag {
-  width: 42px;
-  height: 28px;
-}
-
-.mover-row strong {
-  display: block;
-  color: #f4fffb;
-  font-size: 19px;
-}
-
-.mover-row small {
-  display: block;
-  margin-top: 4px;
-  color: var(--muted);
-  line-height: 1.35;
-}
-
-.mover-reasons {
-  display: grid;
-  gap: 4px;
-  margin: 8px 0 0;
-  padding: 0;
-  list-style: none;
-  color: rgba(230, 255, 250, 0.78);
-  font-size: 13px;
-  line-height: 1.35;
-}
-
-.mover-reasons li {
-  overflow-wrap: anywhere;
-}
-
-.mover-reasons li::before {
-  content: "";
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  margin-right: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  vertical-align: 1px;
-}
-
-.mover-row b {
-  font-size: 22px;
-  white-space: nowrap;
-}
-
 .news-list,
 .source-list {
   display: grid;
@@ -3686,15 +3582,6 @@ button {
 
   .champion-probability em {
     font-size: 11px;
-  }
-
-  .mover-row {
-    grid-template-columns: auto minmax(0, 1fr);
-  }
-
-  .mover-row b {
-    grid-column: 2;
-    justify-self: start;
   }
 
   .team-row span:nth-child(2) {

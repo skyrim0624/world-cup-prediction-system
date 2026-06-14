@@ -933,12 +933,6 @@ function HomePredictionPage() {
               <ChampionBoard teams={championBoard.slice(0, 5)} />
               <p className="locked-note">完整榜单解锁后查看。</p>
             </section>
-            <section className="console-panel">
-              <div className="section-title">
-                <span>今日概率变化</span>
-              </div>
-              <DailyMoversPanel movers={matchPrediction.dailyMovers} />
-            </section>
           </div>
         ) : null}
 
@@ -2125,47 +2119,6 @@ function ChampionBoard({ teams }: { teams: Team[] }) {
             <b>{team.tournament.champion}%</b>
             <em className={team.tournament.change >= 0 ? "green" : "red"}>{formatSignedPercent(team.tournament.change)}</em>
           </div>
-        </article>
-      ))}
-    </div>
-  );
-}
-
-function DailyMoversPanel({ movers }: { movers?: DailyMovers }) {
-  if (!movers) {
-    return <p className="review-empty">等待下一次日更快照生成今日变化</p>;
-  }
-  if (movers.items.length === 0) {
-    return <p className="review-empty">{movers.baseline === "previous_snapshot" ? "上一快照暂无冠军概率变化" : "等待下一次日更快照生成今日变化"}</p>;
-  }
-
-  return (
-    <div className="mover-list">
-      <div className="mover-summary">
-        <span>
-          上调 <b className="green">{movers.summary.up}</b>
-        </span>
-        <span>
-          下调 <b className="red">{movers.summary.down}</b>
-        </span>
-      </div>
-      {movers.items.slice(0, 6).map((item) => (
-        <article className={`mover-row ${item.direction}`} key={item.team}>
-          <TeamFlag team={item.team} code={item.code} />
-          <div>
-            <strong>{item.name}</strong>
-            <small>
-              {item.previousChampion.toFixed(1)}% → {item.currentChampion.toFixed(1)}% · {item.reason}
-            </small>
-            {item.reasons && item.reasons.length > 1 ? (
-              <ul className="mover-reasons">
-                {item.reasons.slice(1, 4).map((reason) => (
-                  <li key={reason}>{reason}</li>
-                ))}
-              </ul>
-            ) : null}
-          </div>
-          <b className={item.direction === "up" ? "green" : "red"}>{formatSignedPercent(item.change)}</b>
         </article>
       ))}
     </div>

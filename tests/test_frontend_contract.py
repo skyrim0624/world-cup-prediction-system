@@ -48,13 +48,15 @@ class FrontendContractTest(unittest.TestCase):
         self.assertNotIn("次模拟", home_source)
         self.assertNotIn("市场价格源待接入", source)
 
-    def test_homepage_renders_daily_probability_movers(self):
+    def test_board_page_omits_daily_probability_placeholder(self):
         source = app_source()
-        self.assertIn("今日概率变化", source)
-        self.assertIn("DailyMoversPanel", source)
+        home_source = source_between(source, "function HomePredictionPage()", "function UpcomingMatchesPanel")
+
+        self.assertIn("冠军概率榜", home_source)
+        self.assertNotIn("今日概率变化", home_source)
+        self.assertNotIn("DailyMoversPanel", source)
+        self.assertNotIn("等待下一次日更快照生成今日变化", source)
         self.assertIn("dailyMovers", source)
-        self.assertIn("reasons", source)
-        self.assertIn("mover-reasons", source)
 
     def test_public_homepage_is_user_prediction_page_not_ops_console(self):
         source = app_source()
