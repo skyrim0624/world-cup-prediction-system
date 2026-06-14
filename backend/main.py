@@ -15,6 +15,7 @@ from .daily_update import DEFAULT_DAILY_STATUS_PATH
 from .event_review import RAW_NEWS_PATH, review_raw_news_item
 from .fixture_update import record_fixture_live_score, record_fixture_result
 from .model import (
+    FinishedMatchPredictionError,
     SIMULATION_COUNT,
     build_match_detail,
     build_match_prediction,
@@ -136,6 +137,8 @@ def match_detail(
 ) -> dict[str, object]:
     try:
         return build_match_detail(home, away, simulations)
+    except FinishedMatchPredictionError as error:
+        raise HTTPException(status_code=409, detail=str(error)) from error
     except ValueError as error:
         raise HTTPException(status_code=404, detail=str(error)) from error
 

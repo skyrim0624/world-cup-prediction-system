@@ -65,6 +65,10 @@ SEMIFINAL_MATCHES = ((101, 97, 98), (102, 99, 100))
 THIRD_PLACE_WINNER_MATCHES = {"A": 79, "B": 85, "D": 81, "E": 74, "G": 82, "I": 77, "K": 87, "L": 80}
 
 
+class FinishedMatchPredictionError(ValueError):
+    pass
+
+
 def reload_model_data(
     raw_news_path: Path | None = None,
     fixtures_path: Path | None = None,
@@ -741,6 +745,8 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
     current_fixture = next((fixture for fixture in FIXTURES if (fixture.home, fixture.away) == (home_key, away_key)), None)
     if current_fixture is None:
         raise ValueError(f"找不到比赛: {home_key} vs {away_key}")
+    if current_fixture.status == "finished":
+        raise FinishedMatchPredictionError("已结束比赛不再预测，赛果已锁定为后续路径和权重因子")
     fixture_context = build_fixture_context(current_fixture)
     match_teams = apply_fixture_context_adjustments(teams, current_fixture, fixture_context)
 

@@ -503,6 +503,13 @@ class PredictionApiTest(unittest.TestCase):
         self.assertEqual(len(payload["scenarioImpacts"]), 3)
         self.assertEqual(payload["homeWin"] + payload["draw"] + payload["awayWin"], 100)
 
+    def test_match_detail_api_rejects_finished_match_prediction(self):
+        client = TestClient(app)
+        response = client.get("/api/match-detail?home=spain&away=france&simulations=1200")
+
+        self.assertEqual(response.status_code, 409)
+        self.assertIn("已结束比赛不再预测", response.json()["detail"])
+
     def test_events_api_exposes_review_summary(self):
         client = TestClient(app)
         response = client.get("/api/events")
