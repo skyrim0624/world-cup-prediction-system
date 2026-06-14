@@ -1,9 +1,9 @@
-import { Fragment, FormEvent, useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
-import { CalendarDays, LockKeyhole, Newspaper, Target, Trophy, type LucideIcon } from "lucide-react";
+import { Fragment, FormEvent, useEffect, useMemo, useState, type CSSProperties } from "react";
+import { CalendarDays, Newspaper, Target, Trophy, type LucideIcon } from "lucide-react";
 
 type TeamKey = string;
 type Tone = "green" | "blue" | "gold" | "orange" | "red" | "muted";
-type UserScreenKey = "forecast" | "matches" | "board" | "news" | "access";
+type UserScreenKey = "forecast" | "matches" | "board" | "news";
 type FactorImpactMap = Record<string, Record<string, number>>;
 type CustomStyle = CSSProperties & Record<string, string | number>;
 
@@ -215,61 +215,6 @@ type UpcomingMatchesResponse = {
   items: UpcomingMatch[];
 };
 
-type AccessProduct = {
-  key: string;
-  name: string;
-  scope: string;
-  amountLabel?: string;
-  status: string;
-};
-
-type AccessOptions = {
-  paymentConfigured: boolean;
-  products: AccessProduct[];
-  disclaimer: string;
-};
-
-type PaymentProviderKey = "wechat" | "alipay";
-
-type PaymentProviderConfig = {
-  provider: PaymentProviderKey;
-  label: string;
-  paymentMethod: string;
-  configured: boolean;
-  missingConfig: string[];
-};
-
-type PaymentConfig = {
-  ready: boolean;
-  providers: PaymentProviderConfig[];
-  disclaimer: string;
-};
-
-type PaymentOrder = {
-  orderId: string;
-  productKey: string;
-  productName: string;
-  amountLabel: string;
-  provider: PaymentProviderKey;
-  providerLabel: string;
-  paymentMethod: string;
-  status: string;
-  qrCodeUrl: string | null;
-  missingConfig: string[];
-  nextAction: string;
-  createdAt: string;
-  expiresAt: string;
-};
-
-type AccessDecision = {
-  allowed: boolean;
-  reason: string;
-  orderId?: string;
-  productKey?: string | null;
-  paymentStatus?: string | null;
-  requiredProducts: string[];
-};
-
 type ScenarioImpact = {
   label: string;
   probability: number;
@@ -441,7 +386,6 @@ const teams: Team[] = [
 
 const INTERACTIVE_SIMULATION_COUNT = 1200;
 const FORECAST_REFRESH_MS = 15000;
-const PAYMENT_STATUS_POLL_MS = 4000;
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? (import.meta.env.DEV ? "http://127.0.0.1:8000" : "");
 const SINGLE_MATCH_ROUTE_PREFIX = "/match/";
 
@@ -450,7 +394,6 @@ const USER_SCREENS: { key: UserScreenKey; hash: string; label: string; Icon: Luc
   { key: "matches", hash: "matches", label: "赛程", Icon: CalendarDays },
   { key: "board", hash: "board", label: "榜单", Icon: Trophy },
   { key: "news", hash: "news", label: "新闻", Icon: Newspaper },
-  { key: "access", hash: "access", label: "解锁", Icon: LockKeyhole },
 ];
 
 const TEAM_FLAG_ASSET_BY_KEY: Record<TeamKey, string> = {
@@ -728,7 +671,12 @@ function matchRouteParams(pathname: string) {
 
 function userScreenFromHash(): UserScreenKey {
   const hash = window.location.hash.replace("#", "");
-  return USER_SCREENS.find((screen) => screen.hash === hash || screen.key === hash)?.key ?? "forecast";
+  const screen = USER_SCREENS.find((item) => item.hash === hash || item.key === hash);
+  if (screen) return screen.key;
+  if (hash) {
+    window.history.replaceState(null, "", "#forecast");
+  }
+  return "forecast";
 }
 
 function matchPagePath(home: TeamKey, away: TeamKey) {
@@ -752,7 +700,6 @@ function HomePredictionPage() {
   const [forecastTick, setForecastTick] = useState(0);
   const [apiPrediction, setApiPrediction] = useState<MatchPrediction | null>(null);
   const [upcomingMatches, setUpcomingMatches] = useState<UpcomingMatchesResponse | null>(null);
-  const [accessOptions, setAccessOptions] = useState<AccessOptions | null>(null);
   const [activeScreen, setActiveScreen] = useState<UserScreenKey>(() => userScreenFromHash());
 
   const teamsData = apiPrediction?.teams?.length ? apiPrediction.teams : teams;
@@ -796,27 +743,12 @@ function HomePredictionPage() {
       }
     }
 
-    async function loadAccessOptions() {
-      try {
-        const response = await fetch(`${API_BASE_URL}/api/access-options`, { cache: "no-store" });
-        if (!response.ok) throw new Error(`付费接口返回 ${response.status}`);
-        const data = (await response.json()) as AccessOptions;
-        if (!active) return;
-        setAccessOptions(data);
-      } catch {
-        if (!active) return;
-        setAccessOptions(null);
-      }
-    }
-
     loadPrediction();
     loadUpcomingMatches();
-    loadAccessOptions();
     const timer = window.setInterval(() => {
       setForecastTick((value) => value + 1);
       loadPrediction();
       loadUpcomingMatches();
-      loadAccessOptions();
     }, FORECAST_REFRESH_MS);
 
     return () => {
@@ -862,7 +794,7 @@ function HomePredictionPage() {
       <section className="app-screen" aria-labelledby="active-screen-title">
         <div className="app-screen-head">
           <h1 id="active-screen-title">
-            {activeScreen === "forecast" ? "今日重点预测" : activeScreen === "matches" ? "未开赛比赛" : activeScreen === "board" ? "概率榜单" : activeScreen === "news" ? "新闻与方法" : "付费解锁"}
+            {activeScreen === "forecast" ? "今日重点预测" : activeScreen === "matches" ? "未开赛比赛" : activeScreen === "board" ? "概率榜单" : "新闻与方法"}
           </h1>
         </div>
 
@@ -928,7 +860,6 @@ function HomePredictionPage() {
                 <span>冠军概率榜</span>
               </div>
               <ChampionBoard teams={championBoard.slice(0, 5)} />
-              <p className="locked-note">完整榜单解锁后查看。</p>
             </section>
           </div>
         ) : null}
@@ -962,16 +893,6 @@ function HomePredictionPage() {
           </div>
         ) : null}
 
-        {activeScreen === "access" ? (
-          <div className="app-screen-stack">
-            <section className="console-panel">
-              <div className="section-title">
-                <span>付费解锁</span>
-              </div>
-              <AccessPanel options={accessOptions} contentKey="tournament_probabilities" />
-            </section>
-          </div>
-        ) : null}
       </section>
 
       <nav className="app-bottom-nav" aria-label="预测功能导航">
@@ -1288,212 +1209,9 @@ function UserMethodPanel() {
   );
 }
 
-function accessStatusLabel(status: string) {
-  if (status === "available") return "可解锁";
-  if (status === "payment_pending") return "暂未开放";
-  return "暂未开放";
-}
-
-function paymentStatusLabel(status: string) {
-  if (status === "pending_payment") return "等待扫码付款";
-  if (status === "customer_interface_ready") return "准备支付";
-  if (status === "provider_config_required") return "暂未开放";
-  if (status === "paid") return "支付完成";
-  return "待处理";
-}
-
-function AccessPanel({
-  options,
-  contentKey,
-  onAccessChange,
-}: {
-  options: AccessOptions | null;
-  contentKey?: string;
-  onAccessChange?: (allowed: boolean) => void;
-}) {
-  const [paymentConfig, setPaymentConfig] = useState<PaymentConfig | null>(null);
-  const [selectedProvider, setSelectedProvider] = useState<PaymentProviderKey>("wechat");
-  const [paymentOrder, setPaymentOrder] = useState<PaymentOrder | null>(null);
-  const [unlockDecisions, setUnlockDecisions] = useState<Record<string, AccessDecision>>({});
-  const [paymentMessage, setPaymentMessage] = useState<string | null>(null);
-  const [creatingProductKey, setCreatingProductKey] = useState<string | null>(null);
-
-  useEffect(() => {
-    let active = true;
-
-    async function loadPaymentConfig() {
-      try {
-        const response = await fetch(`${API_BASE_URL}/api/payments/config`, { cache: "no-store" });
-        if (!response.ok) throw new Error(`支付配置接口返回 ${response.status}`);
-        const data = (await response.json()) as PaymentConfig;
-        if (!active) return;
-        setPaymentConfig(data);
-        if (data.providers.length > 0) setSelectedProvider(data.providers[0].provider);
-      } catch {
-        if (!active) return;
-        setPaymentConfig(null);
-      }
-    }
-
-    loadPaymentConfig();
-    return () => {
-      active = false;
-    };
-  }, []);
-
-  async function checkPaymentAccess(orderId: string) {
-    if (!contentKey) return;
-    const response = await fetch(`${API_BASE_URL}/api/access-decision?orderId=${encodeURIComponent(orderId)}&contentKey=${encodeURIComponent(contentKey)}`, {
-      cache: "no-store",
-    });
-    if (!response.ok) throw new Error(`权限接口返回 ${response.status}`);
-    const decision = (await response.json()) as AccessDecision;
-    setUnlockDecisions((current) => ({ ...current, [contentKey]: decision }));
-    onAccessChange?.(decision.allowed);
-  }
-
-  async function pollPaymentOrder(orderId: string) {
-    const response = await fetch(`${API_BASE_URL}/api/payments/orders/${encodeURIComponent(orderId)}`, { cache: "no-store" });
-    if (!response.ok) throw new Error(`订单查询接口返回 ${response.status}`);
-    const order = (await response.json()) as PaymentOrder;
-    setPaymentOrder(order);
-    if (order.status === "paid") {
-      await checkPaymentAccess(order.orderId);
-    }
-  }
-
-  async function createScanPaymentOrder(productKey: string) {
-    if (creatingProductKey) return;
-    setCreatingProductKey(productKey);
-    setPaymentMessage(null);
-    onAccessChange?.(false);
-    try {
-      const response = await fetch(`${API_BASE_URL}/api/payments/orders`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ productKey, provider: selectedProvider }),
-      });
-      const payload = await response.json().catch(() => null);
-      if (!response.ok) throw new Error(payload?.detail ?? `支付订单接口返回 ${response.status}`);
-      const order = payload as PaymentOrder;
-      setPaymentOrder(order);
-      await checkPaymentAccess(order.orderId);
-    } catch (error) {
-      setPaymentOrder(null);
-      setPaymentMessage(error instanceof Error && error.message.includes("未知") ? error.message : "支付暂未开放");
-    } finally {
-      setCreatingProductKey(null);
-    }
-  }
-
-  useEffect(() => {
-    if (!paymentOrder?.orderId) return;
-    let active = true;
-    const orderId = paymentOrder.orderId;
-    const timer = window.setInterval(() => {
-      if (!active) return;
-      pollPaymentOrder(orderId).catch((error) => {
-        if (active) setPaymentMessage(error instanceof Error ? error.message : "订单状态查询失败");
-      });
-    }, PAYMENT_STATUS_POLL_MS);
-    return () => {
-      active = false;
-      window.clearInterval(timer);
-    };
-  }, [paymentOrder?.orderId, contentKey]);
-
-  if (!options) {
-    return <p className="review-empty">解锁信息暂时不可用</p>;
-  }
-
-  const providers = paymentConfig?.providers ?? [
-    { provider: "wechat", label: "微信支付", paymentMethod: "scan_qr", configured: false, missingConfig: [] },
-    { provider: "alipay", label: "支付宝支付", paymentMethod: "scan_qr", configured: false, missingConfig: [] },
-  ];
-  const currentProvider = providers.find((provider) => provider.provider === selectedProvider) ?? providers[0];
-  const currentDecision = contentKey ? unlockDecisions[contentKey] : null;
-
-  return (
-    <div className="access-panel">
-      <div className="access-summary">
-        <strong>{paymentConfig?.ready ? "扫码支付" : "支付暂未开放"}</strong>
-        <span>{paymentConfig?.disclaimer ?? options.disclaimer}</span>
-      </div>
-      <div className="payment-provider-row" aria-label="扫码付款渠道">
-        {providers.map((provider) => (
-          <button
-            type="button"
-            className={provider.provider === selectedProvider ? "selected" : ""}
-            key={provider.provider}
-            onClick={() => setSelectedProvider(provider.provider)}
-          >
-            {provider.label}
-          </button>
-        ))}
-        <span>{currentProvider?.configured ? "选择后生成二维码" : "该渠道暂未开放"}</span>
-      </div>
-      <div className="access-list">
-        {options.products.map((product) => (
-          <article className="access-card" key={product.key}>
-            <strong>{product.name}</strong>
-            <span>{product.scope}</span>
-            <small>{product.amountLabel ?? "待定价"}</small>
-            <button type="button" disabled={creatingProductKey === product.key} onClick={() => createScanPaymentOrder(product.key)}>
-              {creatingProductKey === product.key ? "处理中" : "解锁"}
-            </button>
-            <em>{accessStatusLabel(product.status)}</em>
-          </article>
-        ))}
-      </div>
-      {paymentOrder ? (
-        <div className="payment-order-box">
-          <div>
-            <strong>
-              {paymentOrder.providerLabel} · {paymentStatusLabel(paymentOrder.status)}
-            </strong>
-            <span>
-              {paymentOrder.productName} · {paymentOrder.amountLabel} · 到期 {formatUpdateTime(paymentOrder.expiresAt)}
-            </span>
-            <p>{paymentOrder.qrCodeUrl ? paymentOrder.nextAction : "支付二维码暂未开放"}</p>
-          </div>
-          {paymentOrder.qrCodeUrl ? <img src={paymentOrder.qrCodeUrl} alt="扫码付款二维码" /> : <em>二维码待生成</em>}
-        </div>
-      ) : null}
-      {currentDecision?.allowed ? <p className="unlock-message green">已解锁完整预测</p> : null}
-      {currentDecision && !currentDecision.allowed ? <p className="unlock-message">支付确认后自动解锁完整内容</p> : null}
-      {paymentMessage ? <p className="review-message">{paymentMessage}</p> : null}
-    </div>
-  );
-}
-
-function LockedContent({
-  unlocked,
-  title,
-  preview,
-  children,
-}: {
-  unlocked: boolean;
-  title: string;
-  preview: string;
-  children: ReactNode;
-}) {
-  if (unlocked) {
-    return <>{children}</>;
-  }
-  return (
-    <div className="locked-content">
-      <strong>{title}</strong>
-      <p>{preview}</p>
-      <em>解锁后查看完整预测</em>
-    </div>
-  );
-}
-
 function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
   const [detail, setDetail] = useState<MatchDetail | null>(null);
-  const [accessOptions, setAccessOptions] = useState<AccessOptions | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
-  const [matchUnlocked, setMatchUnlocked] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -1516,21 +1234,7 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
       }
     }
 
-    async function loadAccessOptions() {
-      try {
-        const response = await fetch(`${API_BASE_URL}/api/access-options`, { cache: "no-store" });
-        if (!response.ok) throw new Error(`付费接口返回 ${response.status}`);
-        const data = (await response.json()) as AccessOptions;
-        if (!active) return;
-        setAccessOptions(data);
-      } catch {
-        if (!active) return;
-        setAccessOptions(null);
-      }
-    }
-
     loadDetail();
-    loadAccessOptions();
     return () => {
       active = false;
     };
@@ -1601,7 +1305,6 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
 
       <div className="module-grid">
         <section className="console-panel wide">
-          <div className="panel-kicker">免费预览</div>
           <h2>赛前胜平负概率</h2>
           {detail ? (
             <>
@@ -1622,10 +1325,10 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
         </section>
 
         <section className="console-panel">
-          <h2>免费预览比分</h2>
+          <h2>比分预测</h2>
           {detail ? (
             <div className="score-outcome-list">
-              {detail.scoreOutcomes.slice(0, 1).map((outcome) => (
+              {detail.scoreOutcomes.slice(0, 3).map((outcome) => (
                 <article className={`score-outcome ${outcome.tone}`} key={outcome.score}>
                   <strong>{outcome.score}</strong>
                   <div>
@@ -1638,45 +1341,36 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
           ) : (
             <p className="review-empty">比分分布等待单场预测</p>
           )}
-          <p className="locked-note">完整比分分布需要解锁。</p>
-        </section>
-
-        <section className="console-panel conversion-panel">
-          <h2>付费解锁</h2>
-          <AccessPanel options={accessOptions} contentKey="match_prediction" onAccessChange={setMatchUnlocked} />
         </section>
 
         <section className="console-panel wide">
-          <div className="panel-kicker">完整预测</div>
-          <h2>单场完整预测</h2>
+          <h2>单场预测细节</h2>
           {detail ? (
-            <LockedContent unlocked={matchUnlocked} title="完整预测" preview="包含比分矩阵、进球市场、模型公平概率、路径传导和博主素材。">
-              <div className="match-full-content">
-                <div className="score-outcome-list">
-                  {detail.scoreOutcomes.map((outcome) => (
-                    <article className={`score-outcome ${outcome.tone}`} key={outcome.score}>
-                      <strong>{outcome.score}</strong>
-                      <div>
-                        <b>{outcome.probability.toFixed(1)}%</b>
-                        <span>{outcome.note}</span>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-                <div className="match-detail-splits">
-                  <FairPricePanel prices={detailFairPrices} />
-                  <GoalMarketPanel markets={detailGoalMarkets} compact />
-                </div>
-                <ScoreMatrix cells={detailScoreMatrix} />
-                <div className="analysis-list">
-                  {detail.analysis.map((item) => (
-                    <p key={item}>{item}</p>
-                  ))}
-                </div>
-                <ScenarioImpactList scenarios={detail.scenarioImpacts} />
-                <CreatorTopicsPanel topics={detailCreatorTopics} />
+            <div className="match-full-content">
+              <div className="score-outcome-list">
+                {detail.scoreOutcomes.map((outcome) => (
+                  <article className={`score-outcome ${outcome.tone}`} key={outcome.score}>
+                    <strong>{outcome.score}</strong>
+                    <div>
+                      <b>{outcome.probability.toFixed(1)}%</b>
+                      <span>{outcome.note}</span>
+                    </div>
+                  </article>
+                ))}
               </div>
-            </LockedContent>
+              <div className="match-detail-splits">
+                <FairPricePanel prices={detailFairPrices} />
+                <GoalMarketPanel markets={detailGoalMarkets} compact />
+              </div>
+              <ScoreMatrix cells={detailScoreMatrix} />
+              <div className="analysis-list">
+                {detail.analysis.map((item) => (
+                  <p key={item}>{item}</p>
+                ))}
+              </div>
+              <ScenarioImpactList scenarios={detail.scenarioImpacts} />
+              <CreatorTopicsPanel topics={detailCreatorTopics} />
+            </div>
           ) : (
             <p className="review-empty">路径传导等待单场预测</p>
           )}

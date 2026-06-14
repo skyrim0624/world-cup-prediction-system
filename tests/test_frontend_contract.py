@@ -15,17 +15,24 @@ def source_between(source: str, start: str, end: str) -> str:
 
 
 class FrontendContractTest(unittest.TestCase):
-    def test_homepage_renders_paid_access_boundary(self):
+    def test_public_app_hides_paid_access_boundary(self):
         source = app_source()
+        home_source = source_between(source, "function HomePredictionPage()", "function TeamFlag")
+        single_match_source = source_between(source, "function SingleMatchPage", "function AdminConsole")
+
         self.assertIn("VITE_API_BASE_URL", source)
-        self.assertIn("/api/access-options", source)
-        self.assertIn("/api/payments/config", source)
-        self.assertIn("/api/payments/orders", source)
-        self.assertIn("付费解锁", source)
-        self.assertIn("微信支付", source)
-        self.assertIn("支付宝支付", source)
-        self.assertIn("扫码付款", source)
-        self.assertIn("AccessPanel", source)
+        self.assertNotIn("/api/access-options", home_source)
+        self.assertNotIn("/api/payments/config", source)
+        self.assertNotIn("/api/payments/orders", source)
+        self.assertNotIn("/api/access-decision", source)
+        self.assertNotIn("付费解锁", source)
+        self.assertNotIn("微信支付", source)
+        self.assertNotIn("支付宝支付", source)
+        self.assertNotIn("扫码付款", source)
+        self.assertNotIn("AccessPanel", source)
+        self.assertNotIn("LockedContent", source)
+        self.assertNotIn("解锁", home_source)
+        self.assertNotIn("解锁", single_match_source)
 
     def test_app_exposes_single_match_page_route(self):
         source = app_source()
@@ -92,7 +99,7 @@ class FrontendContractTest(unittest.TestCase):
         self.assertNotIn("World Cup Forecast Desk", home_source)
         self.assertNotIn("赛果记录", home_source)
         self.assertIn("app-bottom-nav", styles)
-        self.assertIn("grid-template-columns: repeat(5", styles)
+        self.assertIn("grid-template-columns: repeat(4, minmax(0, 1fr))", styles)
         self.assertIn("grid-template-columns: repeat(2, minmax(0, 1fr))", styles)
         self.assertIn("width: min(100%, 460px)", styles)
         self.assertIn("font-size: clamp(15px, 4vw, 18px)", styles)
@@ -115,24 +122,29 @@ class FrontendContractTest(unittest.TestCase):
         for team in teams:
             self.assertRegex(source, rf'["\']?{re.escape(team["key"])}["\']?:')
 
-    def test_single_match_page_is_paid_conversion_page_with_locked_content(self):
+    def test_single_match_page_shows_prediction_without_paid_gate(self):
         source = app_source()
         single_match_source = source_between(source, "function SingleMatchPage", "function AdminConsole")
 
-        self.assertIn("免费预览", single_match_source)
-        self.assertIn("完整预测", single_match_source)
-        self.assertIn("LockedContent", single_match_source)
-        self.assertIn('contentKey="match_prediction"', single_match_source)
-        self.assertIn("AccessPanel", single_match_source)
+        self.assertIn("赛前胜平负概率", single_match_source)
+        self.assertIn("比分预测", single_match_source)
+        self.assertIn("单场预测细节", single_match_source)
+        self.assertIn("match-full-content", single_match_source)
+        self.assertNotIn("免费预览", single_match_source)
+        self.assertNotIn("付费解锁", single_match_source)
+        self.assertNotIn("完整比分分布需要解锁", single_match_source)
+        self.assertNotIn("LockedContent", single_match_source)
+        self.assertNotIn('contentKey="match_prediction"', single_match_source)
+        self.assertNotIn("AccessPanel", single_match_source)
 
-    def test_payment_flow_polls_order_and_checks_access_decision(self):
+    def test_public_frontend_omits_payment_flow(self):
         source = app_source()
 
-        self.assertIn("PAYMENT_STATUS_POLL_MS", source)
-        self.assertIn("pollPaymentOrder", source)
-        self.assertIn("/api/payments/orders/", source)
-        self.assertIn("/api/access-decision", source)
-        self.assertIn("unlockDecisions", source)
+        self.assertNotIn("PAYMENT_STATUS_POLL_MS", source)
+        self.assertNotIn("pollPaymentOrder", source)
+        self.assertNotIn("/api/payments/orders/", source)
+        self.assertNotIn("/api/access-decision", source)
+        self.assertNotIn("unlockDecisions", source)
 
 
 if __name__ == "__main__":
