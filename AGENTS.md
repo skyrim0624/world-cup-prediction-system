@@ -2898,6 +2898,30 @@ modelElo = staticElo + clamp((latestElo - staticElo) * 0.45, -85, 85)
 - 新增测试先失败，确认缺少 Poisson 回测函数。
 - 实现后 `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_history_model_pipeline.py' -v` 通过。
 
+### 2026-06-15：概率校准源切换为 Poisson 回测
+
+本次目标：
+
+- 产品主预测使用 Poisson 比分模型输出胜 / 平 / 负和比分概率，所以概率校准也必须基于 Poisson 回测，而不是另一个 Elo 胜平负近似模型。
+
+已完成：
+
+- 首页预测、单场详情、即将开赛列表的 `calibration` 改为来自 `run_poisson_backtest()`。
+- `modelMeta.probabilityCalibrationSource` 明确标记为 `scoreModelBacktest`。
+- 单场详情和即将开赛列表也暴露 `probabilityCalibrationSource`。
+- 模型质量报告里的 `calibration` 同步改为来自 `scoreModelBacktest`。
+- 报告增加 `probabilityCalibrationSource`，避免接口和报告口径分叉。
+
+关键决策：
+
+- 继续保留原 `backtest`，用于观察 Elo 胜平负先验的表现。
+- 真正用于修正当前胜 / 平 / 负输出的校准分桶，必须来自当前主比分模型的历史表现。
+
+验证：
+
+- 新增测试先失败，确认旧逻辑没有声明 Poisson 校准源。
+- 实现后 `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_history_model_pipeline.py' -v` 通过。
+
 #### 当前仍未完成的专业数据层
 
 没有授权数据前，以下仍保持缺失或中性：

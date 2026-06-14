@@ -67,9 +67,9 @@ def main() -> None:
     history = load_team_match_history()
     metric_rows = load_team_metric_rows()
     backtest = run_prediction_backtest(history, TEAM_PROFILES, args.max_backtest_matches)
-    calibration = build_calibration_profile(backtest)
     scoring_environment = build_scoring_environment(history, TEAM_PROFILES)
     score_model_backtest = run_poisson_backtest(history, TEAM_PROFILES, scoring_environment, args.max_backtest_matches)
+    calibration = build_calibration_profile(score_model_backtest)
     report = {
         "generatedAt": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
         "historicalData": history.get("meta", {}),
@@ -88,6 +88,7 @@ def main() -> None:
             for key, value in score_model_backtest.items()
             if key != "samples"
         },
+        "probabilityCalibrationSource": "scoreModelBacktest",
         "calibration": calibration,
         "scoringEnvironment": scoring_environment,
         "professionalGapCoverage": professional_gap_coverage(

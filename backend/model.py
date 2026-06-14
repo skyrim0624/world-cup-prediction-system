@@ -1039,8 +1039,9 @@ def build_lightweight_scenario_impacts(
 def build_match_detail(home_key: str, away_key: str, simulation_count: int = 1200) -> dict[str, object]:
     metric_rows = load_team_metric_rows()
     history = load_team_match_history()
-    calibration = build_calibration_profile(run_prediction_backtest(history, TEAM_PROFILES))
     scoring_environment = build_scoring_environment(history, TEAM_PROFILES)
+    score_model_backtest = run_poisson_backtest(history, TEAM_PROFILES, scoring_environment)
+    calibration = build_calibration_profile(score_model_backtest)
     teams = apply_event_adjustments()
     current_fixture = next((fixture for fixture in FIXTURES if (fixture.home, fixture.away) == (home_key, away_key)), None)
     if current_fixture is None:
@@ -1078,6 +1079,7 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
         "fixtureContext": fixture_context,
         "matchupContext": matchup_context,
         "probabilityCalibration": calibration_application_meta(calibration),
+        "probabilityCalibrationSource": "scoreModelBacktest",
         "scoringEnvironment": scoring_environment,
         "scoreOutcomes": score_outcomes,
         "scoreMatrix": score_matrix_for_match(home_key, away_key, match_teams, scoring_environment=scoring_environment),
@@ -1102,8 +1104,9 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
 def build_upcoming_match_predictions(limit: int = 12) -> dict[str, object]:
     metric_rows = load_team_metric_rows()
     history = load_team_match_history()
-    calibration = build_calibration_profile(run_prediction_backtest(history, TEAM_PROFILES))
     scoring_environment = build_scoring_environment(history, TEAM_PROFILES)
+    score_model_backtest = run_poisson_backtest(history, TEAM_PROFILES, scoring_environment)
+    calibration = build_calibration_profile(score_model_backtest)
     teams = apply_event_adjustments()
     items = []
     scheduled_fixtures = [fixture for fixture in FIXTURES if fixture.status == "scheduled"]
@@ -1143,6 +1146,7 @@ def build_upcoming_match_predictions(limit: int = 12) -> dict[str, object]:
                 "fixtureContext": fixture_context,
                 "matchupContext": matchup_context,
                 "probabilityCalibration": calibration_application_meta(calibration),
+                "probabilityCalibrationSource": "scoreModelBacktest",
                 "scoringEnvironment": scoring_environment,
                 "topScore": {
                     "score": top_score["score"],
@@ -1204,9 +1208,9 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
     metric_rows = load_team_metric_rows()
     history = load_team_match_history()
     backtest = run_prediction_backtest(history, TEAM_PROFILES)
-    calibration = build_calibration_profile(backtest)
     scoring_environment = build_scoring_environment(history, TEAM_PROFILES)
     score_model_backtest = run_poisson_backtest(history, TEAM_PROFILES, scoring_environment)
+    calibration = build_calibration_profile(score_model_backtest)
     coverage_metric_rows = {
         **metric_rows,
         "__meta__": {
@@ -1329,6 +1333,7 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
                 if key != "samples"
             },
             "calibration": calibration,
+            "probabilityCalibrationSource": "scoreModelBacktest",
             "probabilityCalibrationApplied": calibration_application_meta(calibration),
             "scoringEnvironment": scoring_environment,
         },
