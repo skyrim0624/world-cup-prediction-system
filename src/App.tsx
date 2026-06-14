@@ -179,6 +179,9 @@ type ScoreOutcome = {
 type UpcomingMatch = {
   stage: string;
   kickoff: string;
+  matchNo?: number | null;
+  city?: string | null;
+  stadium?: string | null;
   status: string;
   homeTeam: TeamKey;
   awayTeam: TeamKey;
@@ -213,6 +216,9 @@ type ScenarioImpact = {
 type MatchPrediction = {
   stage: string;
   kickoff: string;
+  matchNo?: number | null;
+  city?: string | null;
+  stadium?: string | null;
   status: string;
   homeTeam: TeamKey;
   awayTeam: TeamKey;
@@ -249,6 +255,9 @@ type MatchPrediction = {
 type MatchDetail = {
   stage: string;
   kickoff: string;
+  matchNo?: number | null;
+  city?: string | null;
+  stadium?: string | null;
   status: string;
   homeTeam: TeamKey;
   awayTeam: TeamKey;
@@ -260,6 +269,10 @@ type MatchDetail = {
   scenarioImpacts: ScenarioImpact[];
   analysis: string[];
 };
+
+function fixtureVenueLabel(fixture: { city?: string | null; stadium?: string | null }) {
+  return [fixture.stadium, fixture.city].filter(Boolean).join(" · ");
+}
 
 const teams: Team[] = [
   {
@@ -522,6 +535,7 @@ function App() {
   const matchPrediction = apiPrediction ?? fallbackPrediction;
   const homeTeam = teamsData.find((team) => team.key === matchPrediction.homeTeam) ?? teamsData[0];
   const awayTeam = teamsData.find((team) => team.key === matchPrediction.awayTeam) ?? teamsData[1];
+  const mainVenue = fixtureVenueLabel(matchPrediction);
   const dataModeLabel = dataMode === "api" ? "真实模型" : "演示动态";
   const championBoard = [...teamsData].sort((left, right) => right.tournament.champion - left.tournament.champion);
   const modelSummary = matchPrediction.modelMeta
@@ -737,6 +751,7 @@ function App() {
           </div>
           <div className="match-meta">
             <span>{matchPrediction.stage}</span>
+            {mainVenue ? <span>{mainVenue}</span> : null}
             <b>预测更新 {formatUpdateTime(matchPrediction.updatedAt)}</b>
           </div>
         </div>
@@ -1131,7 +1146,7 @@ function UpcomingMatchesPanel({
                 {match.homeName} / {match.awayName}
               </strong>
               <small>
-                {match.stage} · {match.kickoff} · 最可能 {match.topScore.score} / {match.topScore.probability.toFixed(1)}%
+                {[match.stage, match.kickoff, fixtureVenueLabel(match), `最可能 ${match.topScore.score} / ${match.topScore.probability.toFixed(1)}%`].filter(Boolean).join(" · ")}
               </small>
             </div>
             <div className="upcoming-probs">
@@ -1153,6 +1168,7 @@ function MatchDetailPanel({ detail, teamsData }: { detail: MatchDetail | null; t
 
   const homeTeam = teamsData.find((team) => team.key === detail.homeTeam);
   const awayTeam = teamsData.find((team) => team.key === detail.awayTeam);
+  const venue = fixtureVenueLabel(detail);
 
   return (
     <div className="match-detail-grid">
@@ -1161,7 +1177,7 @@ function MatchDetailPanel({ detail, teamsData }: { detail: MatchDetail | null; t
           {homeTeam?.name ?? detail.homeTeam} / {awayTeam?.name ?? detail.awayTeam}
         </strong>
         <span>
-          {detail.stage} · {detail.kickoff}
+          {[detail.stage, detail.kickoff, venue].filter(Boolean).join(" · ")}
         </span>
       </div>
       <div className="probability-row compact">

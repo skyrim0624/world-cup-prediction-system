@@ -9,6 +9,14 @@ from typing import Any
 from .data import WORLD_CUP_GROUPS
 
 
+def validate_fixture_metadata(fixture: dict[str, Any]) -> None:
+    if "match_no" in fixture and type(fixture["match_no"]) is not int:
+        raise ValueError("match_no 必须是数字")
+    for field in ("city", "stadium"):
+        if field in fixture and type(fixture[field]) is not str:
+            raise ValueError(f"{field} 必须是文本")
+
+
 def validate_tournament_import_payload(payload: dict[str, Any]) -> dict[str, object]:
     teams = payload.get("teams")
     fixtures = payload.get("fixtures")
@@ -41,6 +49,7 @@ def validate_tournament_import_payload(payload: dict[str, Any]) -> dict[str, obj
     seen_pairs: set[tuple[str, str]] = set()
     team_group = {team["key"]: team["group"] for team in teams}
     for fixture in fixtures:
+        validate_fixture_metadata(fixture)
         home = fixture.get("home")
         away = fixture.get("away")
         if home not in known_teams or away not in known_teams:

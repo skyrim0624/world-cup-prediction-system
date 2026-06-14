@@ -33,6 +33,9 @@ class Fixture:
     status: str
     home_score: int | None = None
     away_score: int | None = None
+    match_no: int | None = None
+    city: str | None = None
+    stadium: str | None = None
 
 
 @dataclass(frozen=True)

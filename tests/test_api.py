@@ -419,6 +419,41 @@ class PredictionApiTest(unittest.TestCase):
         self.assertIn("topScore", first)
         self.assertEqual(first["homeWin"] + first["draw"] + first["awayWin"], 100)
 
+    def test_upcoming_matches_api_preserves_fixture_venue_metadata(self):
+        rows = [
+            {
+                "home": "brazil",
+                "away": "argentina",
+                "stage": "小组赛 E 组",
+                "kickoff": "2026-06-15T08:00:00-05:00",
+                "status": "scheduled",
+                "match_no": 31,
+                "city": "Mexico City",
+                "stadium": "Estadio Azteca",
+            }
+        ]
+        with tempfile.TemporaryDirectory() as temp_dir:
+            fixtures_path = Path(temp_dir) / "fixtures.json"
+            fixtures_path.write_text(json.dumps(rows, ensure_ascii=False), encoding="utf-8")
+            previous_fixtures_path = getattr(main_module, "fixtures_data_path", None)
+            main_module.fixtures_data_path = fixtures_path
+            try:
+                main_module.reload_model_data(main_module.review_data_path, fixtures_path)
+                client = TestClient(app)
+                response = client.get("/api/upcoming-matches?limit=1")
+            finally:
+                if previous_fixtures_path is None:
+                    delattr(main_module, "fixtures_data_path")
+                else:
+                    main_module.fixtures_data_path = previous_fixtures_path
+                main_module.reload_model_data()
+
+            self.assertEqual(response.status_code, 200)
+            item = response.json()["items"][0]
+            self.assertEqual(item["matchNo"], 31)
+            self.assertEqual(item["city"], "Mexico City")
+            self.assertEqual(item["stadium"], "Estadio Azteca")
+
     def test_match_detail_api_builds_prediction_for_any_scheduled_match(self):
         client = TestClient(app)
         response = client.get("/api/match-detail?home=spain&away=argentina&simulations=1200")

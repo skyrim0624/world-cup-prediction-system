@@ -4,7 +4,12 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from backend.data_import import apply_tournament_data_import, list_tournament_backups, restore_tournament_backup
+from backend.data_import import (
+    apply_tournament_data_import,
+    list_tournament_backups,
+    restore_tournament_backup,
+    validate_tournament_import_payload,
+)
 
 
 def make_team(group: str, slot: int) -> dict[str, object]:
@@ -90,6 +95,41 @@ class TournamentDataImportTest(unittest.TestCase):
 
         with self.assertRaisesRegex(ValueError, "进行中比赛必须有当前比分"):
             apply_tournament_data_import(Path("/tmp/missing-data"), Path("/tmp/missing-backup"), payload)
+
+    def test_apply_tournament_data_import_rejects_invalid_fixture_metadata(self):
+        invalid_cases = [
+            ("match_no", "31", "match_no 必须是数字"),
+            ("city", 31, "city 必须是文本"),
+            ("stadium", [], "stadium 必须是文本"),
+        ]
+
+        for field, value, message in invalid_cases:
+            with self.subTest(field=field):
+                payload = make_import_payload()
+                payload["fixtures"][0][field] = value
+
+                with self.assertRaisesRegex(ValueError, message):
+                    validate_tournament_import_payload(payload)
+
+    def test_apply_tournament_data_import_preserves_fixture_metadata(self):
+        payload = make_import_payload()
+        payload["fixtures"][0]["match_no"] = 31
+        payload["fixtures"][0]["city"] = "Mexico City"
+        payload["fixtures"][0]["stadium"] = "Estadio Azteca"
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            data_dir = Path(temp_dir) / "data"
+            backup_dir = Path(temp_dir) / "backups"
+            data_dir.mkdir()
+            (data_dir / "teams.json").write_text("[]", encoding="utf-8")
+            (data_dir / "fixtures.json").write_text("[]", encoding="utf-8")
+
+            apply_tournament_data_import(data_dir, backup_dir, payload)
+
+            fixtures = json.loads((data_dir / "fixtures.json").read_text(encoding="utf-8"))
+            self.assertEqual(fixtures[0]["match_no"], 31)
+            self.assertEqual(fixtures[0]["city"], "Mexico City")
+            self.assertEqual(fixtures[0]["stadium"], "Estadio Azteca")
 
     def test_restore_tournament_backup_restores_files_and_backs_up_current_state(self):
         with tempfile.TemporaryDirectory() as temp_dir:

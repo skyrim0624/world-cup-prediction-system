@@ -627,6 +627,9 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
     return {
         "stage": current_fixture.stage,
         "kickoff": current_fixture.kickoff,
+        "matchNo": current_fixture.match_no,
+        "city": current_fixture.city,
+        "stadium": current_fixture.stadium,
         "status": "未开赛" if current_fixture.status == "scheduled" else current_fixture.status,
         "homeTeam": home_key,
         "awayTeam": away_key,
@@ -659,6 +662,9 @@ def build_upcoming_match_predictions(limit: int = 12) -> dict[str, object]:
             {
                 "stage": fixture.stage,
                 "kickoff": fixture.kickoff,
+                "matchNo": fixture.match_no,
+                "city": fixture.city,
+                "stadium": fixture.stadium,
                 "status": fixture.status,
                 "homeTeam": fixture.home,
                 "awayTeam": fixture.away,
@@ -719,6 +725,9 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
     return {
         "stage": current_fixture.stage,
         "kickoff": current_fixture.kickoff,
+        "matchNo": current_fixture.match_no,
+        "city": current_fixture.city,
+        "stadium": current_fixture.stadium,
         "status": "未开赛",
         "homeTeam": home_key,
         "awayTeam": away_key,
