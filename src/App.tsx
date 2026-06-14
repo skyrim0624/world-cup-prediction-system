@@ -241,6 +241,7 @@ type MatchPrediction = {
       teamCount: number;
       fixtureCount: number;
       eventCount: number;
+      placeholderSlots?: number;
     };
     events?: {
       watched: number;
@@ -269,6 +270,8 @@ type MatchDetail = {
   scenarioImpacts: ScenarioImpact[];
   analysis: string[];
 };
+
+type DatasetMeta = NonNullable<MatchPrediction["modelMeta"]>["dataset"];
 
 function fixtureVenueLabel(fixture: { city?: string | null; stadium?: string | null }) {
   return [fixture.stadium, fixture.city].filter(Boolean).join(" · ");
@@ -468,6 +471,14 @@ function formatSignedNumber(value: number) {
   return `${value > 0 ? "+" : ""}${value.toFixed(1)}`;
 }
 
+function dataReadinessLabel(dataset?: DatasetMeta) {
+  if (!dataset) return "数据待确认";
+  const placeholderSlots = dataset.placeholderSlots ?? 0;
+  if (placeholderSlots > 0) return `样例数据 · 占位 ${placeholderSlots} 队`;
+  if (dataset.teamCount === 48 && dataset.fixtureCount >= 72) return "正式数据就绪";
+  return "数据待补全";
+}
+
 function plateImpact(teamKey: TeamKey, plateKey: PlateKey, impacts?: FactorImpactMap) {
   const teamImpacts = impacts?.[teamKey];
   if (!teamImpacts) return 0;
@@ -536,7 +547,7 @@ function App() {
   const homeTeam = teamsData.find((team) => team.key === matchPrediction.homeTeam) ?? teamsData[0];
   const awayTeam = teamsData.find((team) => team.key === matchPrediction.awayTeam) ?? teamsData[1];
   const mainVenue = fixtureVenueLabel(matchPrediction);
-  const dataModeLabel = dataMode === "api" ? "真实模型" : "演示动态";
+  const dataModeLabel = dataMode === "api" ? `真实模型 · ${dataReadinessLabel(matchPrediction.modelMeta?.dataset)}` : "演示动态";
   const championBoard = [...teamsData].sort((left, right) => right.tournament.champion - left.tournament.champion);
   const modelSummary = matchPrediction.modelMeta
     ? `${matchPrediction.modelMeta.simulationCount.toLocaleString("zh-CN")} 次模拟 · 已锁定 ${matchPrediction.modelMeta.lockedResults} 场赛果 · 进行中 ${matchPrediction.modelMeta.liveMatches ?? 0} 场 · 事件 ${matchPrediction.modelMeta.events?.applied ?? 0} 入模 / ${matchPrediction.modelMeta.events?.ignored ?? 0} 忽略`
