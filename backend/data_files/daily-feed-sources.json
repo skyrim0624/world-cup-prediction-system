@@ -1,0 +1,17 @@
+[
+  {
+    "source": "bbc",
+    "url": "http://newsrss.bbc.co.uk/rss/sportonline_uk_edition/football/rss.xml",
+    "team": null
+  },
+  {
+    "source": "espn",
+    "url": "https://www.espn.com/espn/rss/soccer/news",
+    "team": null
+  },
+  {
+    "source": "guardian",
+    "url": "https://www.theguardian.com/football/world-cup-2026/rss",
+    "team": null
+  }
+]

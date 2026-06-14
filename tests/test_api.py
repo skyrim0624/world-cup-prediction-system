@@ -80,11 +80,11 @@ class PredictionApiTest(unittest.TestCase):
         response = client.get("/api/model-status")
         self.assertEqual(response.status_code, 200)
         payload = response.json()
-        self.assertEqual(payload["dataset"]["source"], "local-sample")
-        self.assertGreaterEqual(payload["dataset"]["teamCount"], 8)
+        self.assertEqual(payload["dataset"]["source"], "fifa-official-match-schedule-2026")
+        self.assertEqual(payload["dataset"]["teamCount"], 48)
         self.assertIn("knownGaps", payload)
-        self.assertIn("官方可核验赛程", payload["knownGaps"][0])
-        self.assertIn("真实 Feed", payload["knownGaps"][1])
+        self.assertIn("小组赛真实赛程", payload["knownGaps"][0])
+        self.assertIn("真实新闻 Feed 配置已接入", payload["knownGaps"][1])
         self.assertIn("支付已有客户接口框架", payload["knownGaps"][2])
 
     def test_model_status_exposes_tournament_provenance(self):
@@ -148,29 +148,29 @@ class PredictionApiTest(unittest.TestCase):
     def test_admin_overview_api_returns_operational_status(self):
         rows = [
             {
-                "home": "brazil",
-                "away": "argentina",
+                "home": "germany",
+                "away": "curacao",
                 "stage": "小组赛 E 组",
                 "kickoff": "6月15日 08:00",
                 "status": "scheduled",
             },
             {
-                "home": "spain",
-                "away": "france",
-                "stage": "小组赛 F 组",
+                "home": "cote-divoire",
+                "away": "ecuador",
+                "stage": "小组赛 E 组",
                 "kickoff": "进行中",
                 "status": "live",
                 "home_score": 1,
                 "away_score": 0,
             },
             {
-                "home": "england",
-                "away": "portugal",
-                "stage": "小组赛 B 组",
+                "home": "mexico",
+                "away": "south-africa",
+                "stage": "小组赛 A 组",
                 "kickoff": "已结束",
                 "status": "finished",
                 "home_score": 2,
-                "away_score": 2,
+                "away_score": 0,
             },
         ]
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -533,18 +533,22 @@ class PredictionApiTest(unittest.TestCase):
 
     def test_match_detail_api_builds_prediction_for_any_scheduled_match(self):
         client = TestClient(app)
-        response = client.get("/api/match-detail?home=spain&away=argentina&simulations=1200")
+        response = client.get("/api/match-detail?home=germany&away=curacao&simulations=1200")
         self.assertEqual(response.status_code, 200)
         payload = response.json()
-        self.assertEqual(payload["homeTeam"], "spain")
-        self.assertEqual(payload["awayTeam"], "argentina")
+        self.assertEqual(payload["homeTeam"], "germany")
+        self.assertEqual(payload["awayTeam"], "curacao")
+        self.assertEqual(payload["homeName"], "德国")
+        self.assertEqual(payload["awayName"], "库拉索")
+        self.assertEqual(payload["homeCode"], "GER")
+        self.assertEqual(payload["awayCode"], "CUW")
         self.assertEqual(len(payload["scoreOutcomes"]), 3)
         self.assertEqual(len(payload["scenarioImpacts"]), 3)
         self.assertEqual(payload["homeWin"] + payload["draw"] + payload["awayWin"], 100)
 
     def test_match_detail_api_rejects_finished_match_prediction(self):
         client = TestClient(app)
-        response = client.get("/api/match-detail?home=spain&away=france&simulations=1200")
+        response = client.get("/api/match-detail?home=mexico&away=south-africa&simulations=1200")
 
         self.assertEqual(response.status_code, 409)
         self.assertIn("已结束比赛不再预测", response.json()["detail"])

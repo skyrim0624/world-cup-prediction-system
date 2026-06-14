@@ -1,6 +1,8 @@
 {
-  "source": "local-sample",
+  "source": "fifa-official-match-schedule-2026",
   "retrievedAt": "2026-06-14T00:00:00Z",
-  "sourceUrl": "local mock data",
-  "note": "样例数据用于模型和界面验证，不能作为正式世界杯赛程或名单。"
+  "sourceUrl": "https://digitalhub.fifa.com/m/1be9ce37eb98fcc5/original/FWC26-Match-Schedule_English.pdf",
+  "secondarySourceUrl": "https://www.foxsports.com/stories/soccer/how-watch-2026-fifa-world-cup-full-schedule-dates-every-match",
+  "timezone": "ET",
+  "note": "球队、分组、match number 与开球时间按 FIFA 官方赛程 PDF；场馆/日期和已结束比分用公开赛程页与赛果页交叉核验。评分仍为自建 MVP 参数，不代表授权商业评级。"
 }

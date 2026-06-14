@@ -30,6 +30,10 @@ MAX_GOALS = 7
 EVENT_FACTORS = ("attack", "defense", "goalkeeper", "path", "squad")
 LIVE_REMAINING_GOAL_RATE = 0.45
 TOURNAMENT_YEAR = 2026
+ADVANCED_METRIC_SOURCE = {
+    "source": "self_built_public_proxy",
+    "description": "基于公开强弱评分、近期强队对抗代理、非点球 xG 代理和防守 xGA 代理生成；可被授权 Opta/StatsBomb/Wyscout 数据替换。",
+}
 
 # NOTE: 固定路径来自 FIFA World Cup 26 Regulations Article 12.6-12.11 和 Annexe C。
 ROUND_OF_32_MATCHES = (
@@ -93,6 +97,35 @@ def event_factor_impacts() -> dict[str, dict[str, float]]:
         if not event_enters_model(event) or event.factor not in EVENT_FACTORS:
             continue
         impacts[event.team][event.factor] += round(event.direction * event.strength * weight * 100, 2)
+    return impacts
+
+
+def clamp(value: float, lower: float, upper: float) -> float:
+    return max(lower, min(upper, value))
+
+
+def advanced_metric_impacts(teams: dict[str, TeamProfile] | None = None) -> dict[str, dict[str, float]]:
+    source_teams = teams or TEAM_PROFILES
+    impacts: dict[str, dict[str, float]] = {}
+    for team_key, team in source_teams.items():
+        strong_opponent_win_rate = round(clamp(0.18 + (team.elo - 1600) / 760, 0.12, 0.72), 2)
+        strong_opponent_points = round(clamp(0.7 + (team.elo - 1600) / 420, 0.45, 2.25), 2)
+        non_penalty_xg_for = round(clamp(0.55 + team.attack / 70 + (team.elo - 1700) / 1200, 0.75, 2.35), 2)
+        non_penalty_xg_against = round(clamp(2.55 - team.defense / 62 - (team.goalkeeper - 75) / 180, 0.65, 1.85), 2)
+        attack_delta = round(clamp((non_penalty_xg_for - 1.55) * 1.4 + (strong_opponent_win_rate - 0.42) * 1.2, -2.0, 2.0), 2)
+        defense_delta = round(clamp((1.28 - non_penalty_xg_against) * 1.3 + (strong_opponent_points - 1.25) * 0.45, -2.0, 2.0), 2)
+        path_delta = round(clamp((strong_opponent_points - 1.2) * 0.35, -1.0, 1.0), 2)
+        overall = round(attack_delta + defense_delta + path_delta, 2)
+        impacts[team_key] = {
+            "strongOpponentWinRate": strong_opponent_win_rate,
+            "strongOpponentPointsPerMatch": strong_opponent_points,
+            "nonPenaltyXgForProxy": non_penalty_xg_for,
+            "nonPenaltyXgAgainstProxy": non_penalty_xg_against,
+            "attack": attack_delta,
+            "defense": defense_delta,
+            "path": path_delta,
+            "overall": overall,
+        }
     return impacts
 
 
@@ -231,12 +264,14 @@ def profile_to_plates(profile: TeamProfile) -> dict[str, int]:
 def apply_event_adjustments() -> dict[str, TeamProfile]:
     adjusted = dict(TEAM_PROFILES)
     impacts = event_factor_impacts()
+    advanced_impacts = advanced_metric_impacts(adjusted)
     for team_key, factor_impacts in impacts.items():
         team = adjusted[team_key]
-        attack_delta = int(round(factor_impacts["attack"]))
-        defense_delta = int(round(factor_impacts["defense"]))
+        advanced = advanced_impacts.get(team_key, {})
+        attack_delta = int(round(factor_impacts["attack"] + float(advanced.get("attack", 0.0))))
+        defense_delta = int(round(factor_impacts["defense"] + float(advanced.get("defense", 0.0))))
         goalkeeper_delta = int(round(factor_impacts["goalkeeper"]))
-        path_delta = int(round(factor_impacts["path"]))
+        path_delta = int(round(factor_impacts["path"] + float(advanced.get("path", 0.0))))
         squad_delta = int(round(factor_impacts["squad"]))
         adjusted[team_key] = replace(
             team,
@@ -765,6 +800,10 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
         "status": "未开赛" if current_fixture.status == "scheduled" else current_fixture.status,
         "homeTeam": home_key,
         "awayTeam": away_key,
+        "homeName": teams[home_key].name,
+        "awayName": teams[away_key].name,
+        "homeCode": teams[home_key].code,
+        "awayCode": teams[away_key].code,
         "homeWin": home_win,
         "draw": draw,
         "awayWin": away_win,
@@ -784,9 +823,14 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
 def build_upcoming_match_predictions(limit: int = 12) -> dict[str, object]:
     teams = apply_event_adjustments()
     items = []
-    for fixture in FIXTURES:
-        if fixture.status != "scheduled":
-            continue
+    scheduled_fixtures = [fixture for fixture in FIXTURES if fixture.status == "scheduled"]
+    scheduled_fixtures.sort(
+        key=lambda fixture: (
+            parse_fixture_kickoff(fixture.kickoff) or datetime.max.replace(tzinfo=timezone.utc),
+            fixture.match_no or 999,
+        )
+    )
+    for fixture in scheduled_fixtures:
         fixture_context = build_fixture_context(fixture)
         match_teams = apply_fixture_context_adjustments(teams, fixture, fixture_context)
         probabilities = win_draw_loss(fixture.home, fixture.away, match_teams)
@@ -927,5 +971,7 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
             "events": event_summary(),
             "factorImpacts": event_factor_impacts(),
             "fixtureContextImpacts": fixture_context_factor_impacts(fixture_context),
+            "advancedMetrics": ADVANCED_METRIC_SOURCE,
+            "advancedMetricImpacts": advanced_metric_impacts(),
         },
     }

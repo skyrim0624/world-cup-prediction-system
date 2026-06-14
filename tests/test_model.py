@@ -17,6 +17,7 @@ from backend.data import (
 )
 from backend.model import (
     ROUND_OF_16_MATCHES,
+    advanced_metric_impacts,
     apply_event_adjustments,
     apply_fixture_context_adjustments,
     best_third_place_teams,
@@ -54,25 +55,40 @@ class PredictionModelTest(unittest.TestCase):
         self.assertIn("teams", prediction)
         self.assertIn("modelMeta", prediction)
         self.assertGreater(len(prediction["scoreOutcomes"]), 0)
-        self.assertEqual(prediction["modelMeta"]["lockedResults"], 3)
+        self.assertEqual(prediction["modelMeta"]["lockedResults"], 8)
         self.assertIn("liveMatches", prediction["modelMeta"])
 
     def test_dataset_is_loaded_from_local_json_files(self):
-        self.assertEqual(DATASET_META["source"], "local-sample")
+        self.assertEqual(DATASET_META["source"], "fifa-official-match-schedule-2026")
         self.assertEqual(len(TEAM_PROFILES), 48)
+        self.assertEqual(DATASET_META["placeholderSlots"], 0)
+        self.assertFalse(any(team.key.startswith("slot-") for team in TEAM_PROFILES.values()))
         self.assertEqual(len(group_names(TEAM_PROFILES)), 12)
         self.assertTrue(all(len([team for team in TEAM_PROFILES.values() if team.group == group]) == 4 for group in group_names(TEAM_PROFILES)))
-        self.assertGreaterEqual(len(FIXTURES), 6)
+        self.assertEqual(len(FIXTURES), 72)
+        self.assertTrue(all(fixture.match_no is not None for fixture in FIXTURES))
         self.assertGreaterEqual(len(EVENTS), 7)
         self.assertGreaterEqual(len(RAW_NEWS_ITEMS), 4)
 
     def test_prediction_exposes_model_transparency_meta(self):
         prediction = build_match_prediction(1200)
-        self.assertEqual(prediction["modelMeta"]["dataset"]["source"], "local-sample")
+        self.assertEqual(prediction["modelMeta"]["dataset"]["source"], "fifa-official-match-schedule-2026")
         self.assertEqual(prediction["modelMeta"]["events"]["watched"], 7)
         self.assertEqual(prediction["modelMeta"]["events"]["applied"], 3)
         self.assertEqual(prediction["modelMeta"]["events"]["ignored"], 2)
         self.assertEqual(prediction["modelMeta"]["events"]["reviewRequired"], 1)
+        self.assertEqual(prediction["modelMeta"]["advancedMetrics"]["source"], "self_built_public_proxy")
+
+    def test_advanced_metrics_cover_all_teams_and_enter_model_meta(self):
+        impacts = advanced_metric_impacts()
+        prediction = build_match_prediction(1200)
+
+        self.assertEqual(set(impacts), set(TEAM_PROFILES))
+        self.assertIn("strongOpponentWinRate", impacts["brazil"])
+        self.assertIn("nonPenaltyXgForProxy", impacts["brazil"])
+        self.assertIn("nonPenaltyXgAgainstProxy", impacts["brazil"])
+        self.assertGreater(impacts["brazil"]["overall"], 0)
+        self.assertEqual(prediction["modelMeta"]["advancedMetricImpacts"]["brazil"]["overall"], impacts["brazil"]["overall"])
 
     def test_team_factors_use_five_product_plates(self):
         prediction = build_match_prediction(1200)

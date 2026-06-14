@@ -18,6 +18,24 @@
     "url": "https://www.reuters.com"
   },
   {
+    "key": "bbc",
+    "name": "BBC Sport Football",
+    "source_level": "A",
+    "url": "https://www.bbc.com/sport/football"
+  },
+  {
+    "key": "espn",
+    "name": "ESPN Soccer",
+    "source_level": "A",
+    "url": "https://www.espn.com/soccer/"
+  },
+  {
+    "key": "guardian",
+    "name": "The Guardian Football",
+    "source_level": "A",
+    "url": "https://www.theguardian.com/football"
+  },
+  {
     "key": "local-weather",
     "name": "本地天气观察",
     "source_level": "C",

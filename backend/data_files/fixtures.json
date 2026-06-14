@@ -1,92 +1,738 @@
 [
   {
-    "home": "spain",
-    "away": "france",
-    "stage": "小组赛 E 组",
-    "kickoff": "6月12日 08:00",
+    "match_no": 1,
+    "home": "mexico",
+    "away": "south-africa",
+    "stage": "小组赛 A 组",
+    "kickoff": "6月11日 15:00 ET",
     "status": "finished",
-    "home_score": 2,
-    "away_score": 1
-  },
-  {
-    "home": "brazil",
-    "away": "spain",
-    "stage": "小组赛 E 组",
-    "kickoff": "6月13日 08:00",
-    "status": "finished",
-    "home_score": 1,
-    "away_score": 1
-  },
-  {
-    "home": "argentina",
-    "away": "france",
-    "stage": "小组赛 E 组",
-    "kickoff": "6月14日 08:00",
-    "status": "finished",
+    "city": "Mexico City",
+    "stadium": "Mexico City Stadium",
     "home_score": 2,
     "away_score": 0
   },
   {
+    "match_no": 2,
+    "home": "south-korea",
+    "away": "czechia",
+    "stage": "小组赛 A 组",
+    "kickoff": "6月11日 22:00 ET",
+    "status": "finished",
+    "city": "Guadalajara",
+    "stadium": "Guadalajara Stadium",
+    "home_score": 2,
+    "away_score": 1
+  },
+  {
+    "match_no": 3,
+    "home": "canada",
+    "away": "bosnia-herzegovina",
+    "stage": "小组赛 B 组",
+    "kickoff": "6月12日 15:00 ET",
+    "status": "finished",
+    "city": "Toronto",
+    "stadium": "Toronto Stadium",
+    "home_score": 1,
+    "away_score": 1
+  },
+  {
+    "match_no": 4,
+    "home": "usa",
+    "away": "paraguay",
+    "stage": "小组赛 D 组",
+    "kickoff": "6月12日 21:00 ET",
+    "status": "finished",
+    "city": "Los Angeles",
+    "stadium": "Los Angeles Stadium",
+    "home_score": 4,
+    "away_score": 1
+  },
+  {
+    "match_no": 5,
+    "home": "haiti",
+    "away": "scotland",
+    "stage": "小组赛 C 组",
+    "kickoff": "6月13日 21:00 ET",
+    "status": "finished",
+    "city": "Boston",
+    "stadium": "Boston Stadium",
+    "home_score": 0,
+    "away_score": 1
+  },
+  {
+    "match_no": 6,
+    "home": "australia",
+    "away": "turkiye",
+    "stage": "小组赛 D 组",
+    "kickoff": "6月14日 00:00 ET",
+    "status": "finished",
+    "city": "Vancouver",
+    "stadium": "BC Place Vancouver",
+    "home_score": 2,
+    "away_score": 0
+  },
+  {
+    "match_no": 7,
     "home": "brazil",
-    "away": "argentina",
+    "away": "morocco",
+    "stage": "小组赛 C 组",
+    "kickoff": "6月13日 18:00 ET",
+    "status": "finished",
+    "city": "New York/New Jersey",
+    "stadium": "New York New Jersey Stadium",
+    "home_score": 1,
+    "away_score": 1
+  },
+  {
+    "match_no": 8,
+    "home": "qatar",
+    "away": "switzerland",
+    "stage": "小组赛 B 组",
+    "kickoff": "6月13日 15:00 ET",
+    "status": "finished",
+    "city": "San Francisco Bay Area",
+    "stadium": "San Francisco Bay Stadium",
+    "home_score": 1,
+    "away_score": 1
+  },
+  {
+    "match_no": 9,
+    "home": "cote-divoire",
+    "away": "ecuador",
     "stage": "小组赛 E 组",
-    "kickoff": "6月15日 08:00",
-    "status": "scheduled"
+    "kickoff": "6月14日 19:00 ET",
+    "status": "scheduled",
+    "city": "Philadelphia",
+    "stadium": "Philadelphia Stadium"
   },
   {
-    "home": "spain",
-    "away": "argentina",
-    "stage": "小组赛 E 组",
-    "kickoff": "6月18日 08:00",
-    "status": "scheduled"
-  },
-  {
-    "home": "brazil",
-    "away": "france",
-    "stage": "小组赛 E 组",
-    "kickoff": "6月18日 11:00",
-    "status": "scheduled"
-  },
-  {
-    "home": "england",
-    "away": "portugal",
-    "stage": "小组赛 F 组",
-    "kickoff": "6月12日 11:00",
-    "status": "scheduled"
-  },
-  {
+    "match_no": 10,
     "home": "germany",
-    "away": "netherlands",
-    "stage": "小组赛 F 组",
-    "kickoff": "6月13日 11:00",
-    "status": "scheduled"
+    "away": "curacao",
+    "stage": "小组赛 E 组",
+    "kickoff": "6月14日 13:00 ET",
+    "status": "scheduled",
+    "city": "Houston",
+    "stadium": "Houston Stadium"
   },
   {
+    "match_no": 11,
+    "home": "netherlands",
+    "away": "japan",
+    "stage": "小组赛 F 组",
+    "kickoff": "6月14日 16:00 ET",
+    "status": "scheduled",
+    "city": "Dallas",
+    "stadium": "Dallas Stadium"
+  },
+  {
+    "match_no": 12,
+    "home": "sweden",
+    "away": "tunisia",
+    "stage": "小组赛 F 组",
+    "kickoff": "6月14日 22:00 ET",
+    "status": "scheduled",
+    "city": "Monterrey",
+    "stadium": "Monterrey Stadium"
+  },
+  {
+    "match_no": 13,
+    "home": "saudi-arabia",
+    "away": "uruguay",
+    "stage": "小组赛 H 组",
+    "kickoff": "6月15日 18:00 ET",
+    "status": "scheduled",
+    "city": "Miami",
+    "stadium": "Miami Stadium"
+  },
+  {
+    "match_no": 14,
+    "home": "spain",
+    "away": "cape-verde",
+    "stage": "小组赛 H 组",
+    "kickoff": "6月15日 12:00 ET",
+    "status": "scheduled",
+    "city": "Atlanta",
+    "stadium": "Atlanta Stadium"
+  },
+  {
+    "match_no": 15,
+    "home": "iran",
+    "away": "new-zealand",
+    "stage": "小组赛 G 组",
+    "kickoff": "6月15日 21:00 ET",
+    "status": "scheduled",
+    "city": "Los Angeles",
+    "stadium": "Los Angeles Stadium"
+  },
+  {
+    "match_no": 16,
+    "home": "belgium",
+    "away": "egypt",
+    "stage": "小组赛 G 组",
+    "kickoff": "6月15日 15:00 ET",
+    "status": "scheduled",
+    "city": "Seattle",
+    "stadium": "Seattle Stadium"
+  },
+  {
+    "match_no": 17,
+    "home": "france",
+    "away": "senegal",
+    "stage": "小组赛 I 组",
+    "kickoff": "6月16日 15:00 ET",
+    "status": "scheduled",
+    "city": "New York/New Jersey",
+    "stadium": "New York New Jersey Stadium"
+  },
+  {
+    "match_no": 18,
+    "home": "iraq",
+    "away": "norway",
+    "stage": "小组赛 I 组",
+    "kickoff": "6月16日 18:00 ET",
+    "status": "scheduled",
+    "city": "Boston",
+    "stadium": "Boston Stadium"
+  },
+  {
+    "match_no": 19,
+    "home": "argentina",
+    "away": "algeria",
+    "stage": "小组赛 J 组",
+    "kickoff": "6月16日 21:00 ET",
+    "status": "scheduled",
+    "city": "Kansas City",
+    "stadium": "Kansas City Stadium"
+  },
+  {
+    "match_no": 20,
+    "home": "austria",
+    "away": "jordan",
+    "stage": "小组赛 J 组",
+    "kickoff": "6月16日 00:00 ET",
+    "status": "scheduled",
+    "city": "San Francisco Bay Area",
+    "stadium": "San Francisco Bay Stadium"
+  },
+  {
+    "match_no": 21,
+    "home": "ghana",
+    "away": "panama",
+    "stage": "小组赛 L 组",
+    "kickoff": "6月17日 19:00 ET",
+    "status": "scheduled",
+    "city": "Toronto",
+    "stadium": "Toronto Stadium"
+  },
+  {
+    "match_no": 22,
     "home": "england",
-    "away": "germany",
-    "stage": "小组赛 F 组",
-    "kickoff": "6月16日 08:00",
-    "status": "scheduled"
+    "away": "croatia",
+    "stage": "小组赛 L 组",
+    "kickoff": "6月17日 16:00 ET",
+    "status": "scheduled",
+    "city": "Dallas",
+    "stadium": "Dallas Stadium"
   },
   {
+    "match_no": 23,
     "home": "portugal",
-    "away": "netherlands",
-    "stage": "小组赛 F 组",
-    "kickoff": "6月16日 11:00",
-    "status": "scheduled"
+    "away": "dr-congo",
+    "stage": "小组赛 K 组",
+    "kickoff": "6月17日 13:00 ET",
+    "status": "scheduled",
+    "city": "Houston",
+    "stadium": "Houston Stadium"
   },
   {
+    "match_no": 24,
+    "home": "uzbekistan",
+    "away": "colombia",
+    "stage": "小组赛 K 组",
+    "kickoff": "6月17日 22:00 ET",
+    "status": "scheduled",
+    "city": "Mexico City",
+    "stadium": "Mexico City Stadium"
+  },
+  {
+    "match_no": 25,
+    "home": "czechia",
+    "away": "south-africa",
+    "stage": "小组赛 A 组",
+    "kickoff": "6月18日 12:00 ET",
+    "status": "scheduled",
+    "city": "Atlanta",
+    "stadium": "Atlanta Stadium"
+  },
+  {
+    "match_no": 26,
+    "home": "switzerland",
+    "away": "bosnia-herzegovina",
+    "stage": "小组赛 B 组",
+    "kickoff": "6月18日 15:00 ET",
+    "status": "scheduled",
+    "city": "Los Angeles",
+    "stadium": "Los Angeles Stadium"
+  },
+  {
+    "match_no": 27,
+    "home": "canada",
+    "away": "qatar",
+    "stage": "小组赛 B 组",
+    "kickoff": "6月18日 18:00 ET",
+    "status": "scheduled",
+    "city": "Vancouver",
+    "stadium": "BC Place Vancouver"
+  },
+  {
+    "match_no": 28,
+    "home": "mexico",
+    "away": "south-korea",
+    "stage": "小组赛 A 组",
+    "kickoff": "6月18日 21:00 ET",
+    "status": "scheduled",
+    "city": "Guadalajara",
+    "stadium": "Guadalajara Stadium"
+  },
+  {
+    "match_no": 29,
+    "home": "brazil",
+    "away": "haiti",
+    "stage": "小组赛 C 组",
+    "kickoff": "6月19日 20:30 ET",
+    "status": "scheduled",
+    "city": "Philadelphia",
+    "stadium": "Philadelphia Stadium"
+  },
+  {
+    "match_no": 30,
+    "home": "scotland",
+    "away": "morocco",
+    "stage": "小组赛 C 组",
+    "kickoff": "6月19日 18:00 ET",
+    "status": "scheduled",
+    "city": "Boston",
+    "stadium": "Boston Stadium"
+  },
+  {
+    "match_no": 31,
+    "home": "turkiye",
+    "away": "paraguay",
+    "stage": "小组赛 D 组",
+    "kickoff": "6月19日 23:00 ET",
+    "status": "scheduled",
+    "city": "San Francisco Bay Area",
+    "stadium": "San Francisco Bay Stadium"
+  },
+  {
+    "match_no": 32,
+    "home": "usa",
+    "away": "australia",
+    "stage": "小组赛 D 组",
+    "kickoff": "6月19日 15:00 ET",
+    "status": "scheduled",
+    "city": "Seattle",
+    "stadium": "Seattle Stadium"
+  },
+  {
+    "match_no": 33,
+    "home": "germany",
+    "away": "cote-divoire",
+    "stage": "小组赛 E 组",
+    "kickoff": "6月20日 16:00 ET",
+    "status": "scheduled",
+    "city": "Toronto",
+    "stadium": "Toronto Stadium"
+  },
+  {
+    "match_no": 34,
+    "home": "ecuador",
+    "away": "curacao",
+    "stage": "小组赛 E 组",
+    "kickoff": "6月20日 20:00 ET",
+    "status": "scheduled",
+    "city": "Kansas City",
+    "stadium": "Kansas City Stadium"
+  },
+  {
+    "match_no": 35,
+    "home": "netherlands",
+    "away": "sweden",
+    "stage": "小组赛 F 组",
+    "kickoff": "6月20日 13:00 ET",
+    "status": "scheduled",
+    "city": "Houston",
+    "stadium": "Houston Stadium"
+  },
+  {
+    "match_no": 36,
+    "home": "tunisia",
+    "away": "japan",
+    "stage": "小组赛 F 组",
+    "kickoff": "6月20日 00:00 ET",
+    "status": "scheduled",
+    "city": "Monterrey",
+    "stadium": "Monterrey Stadium"
+  },
+  {
+    "match_no": 37,
+    "home": "uruguay",
+    "away": "cape-verde",
+    "stage": "小组赛 H 组",
+    "kickoff": "6月21日 18:00 ET",
+    "status": "scheduled",
+    "city": "Miami",
+    "stadium": "Miami Stadium"
+  },
+  {
+    "match_no": 38,
+    "home": "spain",
+    "away": "saudi-arabia",
+    "stage": "小组赛 H 组",
+    "kickoff": "6月21日 12:00 ET",
+    "status": "scheduled",
+    "city": "Atlanta",
+    "stadium": "Atlanta Stadium"
+  },
+  {
+    "match_no": 39,
+    "home": "belgium",
+    "away": "iran",
+    "stage": "小组赛 G 组",
+    "kickoff": "6月21日 15:00 ET",
+    "status": "scheduled",
+    "city": "Los Angeles",
+    "stadium": "Los Angeles Stadium"
+  },
+  {
+    "match_no": 40,
+    "home": "new-zealand",
+    "away": "egypt",
+    "stage": "小组赛 G 组",
+    "kickoff": "6月21日 21:00 ET",
+    "status": "scheduled",
+    "city": "Vancouver",
+    "stadium": "BC Place Vancouver"
+  },
+  {
+    "match_no": 41,
+    "home": "norway",
+    "away": "senegal",
+    "stage": "小组赛 I 组",
+    "kickoff": "6月22日 20:00 ET",
+    "status": "scheduled",
+    "city": "New York/New Jersey",
+    "stadium": "New York New Jersey Stadium"
+  },
+  {
+    "match_no": 42,
+    "home": "france",
+    "away": "iraq",
+    "stage": "小组赛 I 组",
+    "kickoff": "6月22日 17:00 ET",
+    "status": "scheduled",
+    "city": "Philadelphia",
+    "stadium": "Philadelphia Stadium"
+  },
+  {
+    "match_no": 43,
+    "home": "argentina",
+    "away": "austria",
+    "stage": "小组赛 J 组",
+    "kickoff": "6月22日 13:00 ET",
+    "status": "scheduled",
+    "city": "Dallas",
+    "stadium": "Dallas Stadium"
+  },
+  {
+    "match_no": 44,
+    "home": "jordan",
+    "away": "algeria",
+    "stage": "小组赛 J 组",
+    "kickoff": "6月22日 23:00 ET",
+    "status": "scheduled",
+    "city": "San Francisco Bay Area",
+    "stadium": "San Francisco Bay Stadium"
+  },
+  {
+    "match_no": 45,
     "home": "england",
-    "away": "netherlands",
-    "stage": "小组赛 F 组",
-    "kickoff": "6月20日 08:00",
-    "status": "scheduled"
+    "away": "ghana",
+    "stage": "小组赛 L 组",
+    "kickoff": "6月23日 16:00 ET",
+    "status": "scheduled",
+    "city": "Boston",
+    "stadium": "Boston Stadium"
   },
   {
+    "match_no": 46,
+    "home": "panama",
+    "away": "croatia",
+    "stage": "小组赛 L 组",
+    "kickoff": "6月23日 19:00 ET",
+    "status": "scheduled",
+    "city": "Toronto",
+    "stadium": "Toronto Stadium"
+  },
+  {
+    "match_no": 47,
     "home": "portugal",
+    "away": "uzbekistan",
+    "stage": "小组赛 K 组",
+    "kickoff": "6月23日 13:00 ET",
+    "status": "scheduled",
+    "city": "Houston",
+    "stadium": "Houston Stadium"
+  },
+  {
+    "match_no": 48,
+    "home": "colombia",
+    "away": "dr-congo",
+    "stage": "小组赛 K 组",
+    "kickoff": "6月23日 22:00 ET",
+    "status": "scheduled",
+    "city": "Guadalajara",
+    "stadium": "Guadalajara Stadium"
+  },
+  {
+    "match_no": 49,
+    "home": "scotland",
+    "away": "brazil",
+    "stage": "小组赛 C 组",
+    "kickoff": "6月24日 18:00 ET",
+    "status": "scheduled",
+    "city": "Miami",
+    "stadium": "Miami Stadium"
+  },
+  {
+    "match_no": 50,
+    "home": "morocco",
+    "away": "haiti",
+    "stage": "小组赛 C 组",
+    "kickoff": "6月24日 18:00 ET",
+    "status": "scheduled",
+    "city": "Atlanta",
+    "stadium": "Atlanta Stadium"
+  },
+  {
+    "match_no": 51,
+    "home": "switzerland",
+    "away": "canada",
+    "stage": "小组赛 B 组",
+    "kickoff": "6月24日 15:00 ET",
+    "status": "scheduled",
+    "city": "Vancouver",
+    "stadium": "BC Place Vancouver"
+  },
+  {
+    "match_no": 52,
+    "home": "bosnia-herzegovina",
+    "away": "qatar",
+    "stage": "小组赛 B 组",
+    "kickoff": "6月24日 15:00 ET",
+    "status": "scheduled",
+    "city": "Seattle",
+    "stadium": "Seattle Stadium"
+  },
+  {
+    "match_no": 53,
+    "home": "czechia",
+    "away": "mexico",
+    "stage": "小组赛 A 组",
+    "kickoff": "6月24日 21:00 ET",
+    "status": "scheduled",
+    "city": "Mexico City",
+    "stadium": "Mexico City Stadium"
+  },
+  {
+    "match_no": 54,
+    "home": "south-africa",
+    "away": "south-korea",
+    "stage": "小组赛 A 组",
+    "kickoff": "6月24日 21:00 ET",
+    "status": "scheduled",
+    "city": "Monterrey",
+    "stadium": "Monterrey Stadium"
+  },
+  {
+    "match_no": 55,
+    "home": "curacao",
+    "away": "cote-divoire",
+    "stage": "小组赛 E 组",
+    "kickoff": "6月25日 16:00 ET",
+    "status": "scheduled",
+    "city": "Philadelphia",
+    "stadium": "Philadelphia Stadium"
+  },
+  {
+    "match_no": 56,
+    "home": "ecuador",
     "away": "germany",
+    "stage": "小组赛 E 组",
+    "kickoff": "6月25日 16:00 ET",
+    "status": "scheduled",
+    "city": "New York/New Jersey",
+    "stadium": "New York New Jersey Stadium"
+  },
+  {
+    "match_no": 57,
+    "home": "japan",
+    "away": "sweden",
     "stage": "小组赛 F 组",
-    "kickoff": "6月20日 11:00",
-    "status": "scheduled"
+    "kickoff": "6月25日 19:00 ET",
+    "status": "scheduled",
+    "city": "Dallas",
+    "stadium": "Dallas Stadium"
+  },
+  {
+    "match_no": 58,
+    "home": "tunisia",
+    "away": "netherlands",
+    "stage": "小组赛 F 组",
+    "kickoff": "6月25日 19:00 ET",
+    "status": "scheduled",
+    "city": "Kansas City",
+    "stadium": "Kansas City Stadium"
+  },
+  {
+    "match_no": 59,
+    "home": "turkiye",
+    "away": "usa",
+    "stage": "小组赛 D 组",
+    "kickoff": "6月25日 22:00 ET",
+    "status": "scheduled",
+    "city": "Los Angeles",
+    "stadium": "Los Angeles Stadium"
+  },
+  {
+    "match_no": 60,
+    "home": "paraguay",
+    "away": "australia",
+    "stage": "小组赛 D 组",
+    "kickoff": "6月25日 22:00 ET",
+    "status": "scheduled",
+    "city": "San Francisco Bay Area",
+    "stadium": "San Francisco Bay Stadium"
+  },
+  {
+    "match_no": 61,
+    "home": "norway",
+    "away": "france",
+    "stage": "小组赛 I 组",
+    "kickoff": "6月26日 15:00 ET",
+    "status": "scheduled",
+    "city": "Boston",
+    "stadium": "Boston Stadium"
+  },
+  {
+    "match_no": 62,
+    "home": "senegal",
+    "away": "iraq",
+    "stage": "小组赛 I 组",
+    "kickoff": "6月26日 15:00 ET",
+    "status": "scheduled",
+    "city": "Toronto",
+    "stadium": "Toronto Stadium"
+  },
+  {
+    "match_no": 63,
+    "home": "egypt",
+    "away": "iran",
+    "stage": "小组赛 G 组",
+    "kickoff": "6月26日 23:00 ET",
+    "status": "scheduled",
+    "city": "Seattle",
+    "stadium": "Seattle Stadium"
+  },
+  {
+    "match_no": 64,
+    "home": "new-zealand",
+    "away": "belgium",
+    "stage": "小组赛 G 组",
+    "kickoff": "6月26日 23:00 ET",
+    "status": "scheduled",
+    "city": "Vancouver",
+    "stadium": "BC Place Vancouver"
+  },
+  {
+    "match_no": 65,
+    "home": "cape-verde",
+    "away": "saudi-arabia",
+    "stage": "小组赛 H 组",
+    "kickoff": "6月26日 20:00 ET",
+    "status": "scheduled",
+    "city": "Houston",
+    "stadium": "Houston Stadium"
+  },
+  {
+    "match_no": 66,
+    "home": "uruguay",
+    "away": "spain",
+    "stage": "小组赛 H 组",
+    "kickoff": "6月26日 20:00 ET",
+    "status": "scheduled",
+    "city": "Guadalajara",
+    "stadium": "Guadalajara Stadium"
+  },
+  {
+    "match_no": 67,
+    "home": "panama",
+    "away": "england",
+    "stage": "小组赛 L 组",
+    "kickoff": "6月27日 17:00 ET",
+    "status": "scheduled",
+    "city": "New York/New Jersey",
+    "stadium": "New York New Jersey Stadium"
+  },
+  {
+    "match_no": 68,
+    "home": "croatia",
+    "away": "ghana",
+    "stage": "小组赛 L 组",
+    "kickoff": "6月27日 17:00 ET",
+    "status": "scheduled",
+    "city": "Philadelphia",
+    "stadium": "Philadelphia Stadium"
+  },
+  {
+    "match_no": 69,
+    "home": "algeria",
+    "away": "austria",
+    "stage": "小组赛 J 组",
+    "kickoff": "6月27日 22:00 ET",
+    "status": "scheduled",
+    "city": "Kansas City",
+    "stadium": "Kansas City Stadium"
+  },
+  {
+    "match_no": 70,
+    "home": "jordan",
+    "away": "argentina",
+    "stage": "小组赛 J 组",
+    "kickoff": "6月27日 22:00 ET",
+    "status": "scheduled",
+    "city": "Dallas",
+    "stadium": "Dallas Stadium"
+  },
+  {
+    "match_no": 71,
+    "home": "colombia",
+    "away": "portugal",
+    "stage": "小组赛 K 组",
+    "kickoff": "6月27日 19:30 ET",
+    "status": "scheduled",
+    "city": "Miami",
+    "stadium": "Miami Stadium"
+  },
+  {
+    "match_no": 72,
+    "home": "dr-congo",
+    "away": "uzbekistan",
+    "stage": "小组赛 K 组",
+    "kickoff": "6月27日 19:30 ET",
+    "status": "scheduled",
+    "city": "Atlanta",
+    "stadium": "Atlanta Stadium"
   }
 ]

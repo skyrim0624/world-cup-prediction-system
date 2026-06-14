@@ -17,6 +17,20 @@ npm run import:news-feed -- \
   --team brazil
 ```
 
+当前默认日更 Feed 配置在：
+
+```text
+backend/data_files/daily-feed-sources.json
+```
+
+已接入的外部来源：
+
+- BBC Sport Football。
+- ESPN Soccer。
+- The Guardian World Cup 2026。
+
+这些 Feed 进入 raw-news 后仍然按来源等级和事件审核流程处理，不会直接绕过模型。
+
 可选指定 raw-news 路径：
 
 ```bash

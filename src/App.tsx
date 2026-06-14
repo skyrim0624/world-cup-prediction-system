@@ -358,6 +358,10 @@ type MatchDetail = {
   status: string;
   homeTeam: TeamKey;
   awayTeam: TeamKey;
+  homeName?: string;
+  awayName?: string;
+  homeCode?: string;
+  awayCode?: string;
   homeWin: number;
   draw: number;
   awayWin: number;
@@ -1631,6 +1635,10 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
 
   const homeTeam = teams.find((team) => team.key === (detail?.homeTeam ?? home));
   const awayTeam = teams.find((team) => team.key === (detail?.awayTeam ?? away));
+  const homeName = detail?.homeName ?? homeTeam?.name ?? home;
+  const awayName = detail?.awayName ?? awayTeam?.name ?? away;
+  const homeCode = detail?.homeCode ?? homeTeam?.code ?? home.slice(0, 3).toUpperCase();
+  const awayCode = detail?.awayCode ?? awayTeam?.code ?? away.slice(0, 3).toUpperCase();
   const venue = detail ? fixtureVenueLabel(detail) : "";
 
   return (
@@ -1655,13 +1663,13 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
         <MiniPitch side="left" />
         <div className="score-strip match-strip">
           <div className="score-team home-team">
-            <TeamFlag team={detail?.homeTeam ?? home} code={homeTeam?.code ?? home.slice(0, 3)} />
-            <span className="team-code">{homeTeam?.code ?? home.slice(0, 3).toUpperCase()}</span>
+            <TeamFlag team={detail?.homeTeam ?? home} code={homeCode} />
+            <span className="team-code">{homeCode}</span>
           </div>
           <strong className="versus-mark">VS</strong>
           <div className="score-team away-team">
-            <span className="team-code">{awayTeam?.code ?? away.slice(0, 3).toUpperCase()}</span>
-            <TeamFlag team={detail?.awayTeam ?? away} code={awayTeam?.code ?? away.slice(0, 3)} />
+            <span className="team-code">{awayCode}</span>
+            <TeamFlag team={detail?.awayTeam ?? away} code={awayCode} />
           </div>
           <div className="match-clock forecast-clock">
             <span>{detail?.kickoff ?? "加载中"}</span>
@@ -1682,9 +1690,9 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
           {detail ? (
             <>
               <div className="probability-row">
-                <Probability label={`${homeTeam?.name ?? home}胜`} value={detail.homeWin} tone="green" />
+                <Probability label={`${homeName}胜`} value={detail.homeWin} tone="green" />
                 <Probability label="平局" value={detail.draw} tone="gold" />
-                <Probability label={`${awayTeam?.name ?? away}胜`} value={detail.awayWin} tone="blue" />
+                <Probability label={`${awayName}胜`} value={detail.awayWin} tone="blue" />
               </div>
               <div className="analysis-list">
                 {detail.analysis.map((item) => (

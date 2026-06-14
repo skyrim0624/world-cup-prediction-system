@@ -1908,6 +1908,57 @@ Elo / 实力评分
 - 今日变化榜从“数值变化”升级为“数值 + 盘面 / 路径 / 赛果 / 事件解释”。
 - 这更接近客户要求的动态预测模型：用户不仅看谁涨跌，还能看涨跌原因。
 
+### 2026-06-14：真实小组赛赛程导入
+
+已完成：
+
+- 从 FIFA 官方 2026 世界杯赛程 PDF 整理并导入 48 队、12 组、72 场小组赛。
+- `backend/data_files/teams.json` 从 8 队样例替换为完整 48 队结构。
+- `backend/data_files/fixtures.json` 从样例赛程替换为真实小组赛赛程，包含 match number、分组、开赛时间、城市和场馆。
+- 当前锁定 8 场已结束赛果，已结束比赛继续作为路径和动态权重因子，不再返回单场预测。
+- `current-match.json` 从旧样例 `BRA vs ARG` 切换为 `Germany vs Curaçao`。
+- `tournament-provenance.json` 记录官方来源、交叉核验来源、时区和数据说明。
+- `/api/upcoming-matches` 改为按开球时间排序，避免真实 match number 顺序和开球顺序不一致时前端展示错位。
+- `/api/model-status` 的已知缺口更新为：小组赛真实赛程已导入，淘汰赛具体球队对阵仍需根据小组赛结果动态生成。
+
+验证：
+
+- `npm run validate:data` 通过：48 队、12 组、72 场赛程、7 条事件、4 条原始新闻。
+- `npm run test:model` 通过，100 个测试。
+- `npm run build` 通过。
+
+当前仍未完成：
+
+- 淘汰赛阶段仍按官方固定 slot 和小组赛结果动态生成，尚不存在真实球队对阵。
+- 已结束比分需要继续接真实赛果更新源，否则后续赛程会停在当前锁定状态。
+- 球队评分仍为自建 MVP 参数，不代表授权商业评级。
+
+### 2026-06-14：外部新闻 Feed 与高阶指标代理入模
+
+已完成：
+
+- 日更 Feed 配置从本地文件扩展为支持远程 RSS / Atom URL。
+- 新增默认 Feed 配置 `backend/data_files/daily-feed-sources.json`。
+- `npm run daily:update` 默认接入 BBC Sport Football、ESPN Soccer、The Guardian World Cup 2026。
+- `news-sources.json` 新增 BBC、ESPN、The Guardian，按 A 级来源进入来源权重体系。
+- 新增 `advanced_metric_impacts`：把强队胜率代理、强队场均积分代理、非点球 xG 代理、防守 xGA 代理转为小幅攻防和路径修正。
+- `modelMeta` 暴露 `advancedMetrics` 与 `advancedMetricImpacts`，便于前端、后台或后续授权数据源接入。
+- 数据校验脚本新增四个硬门槛：0 占位队、72 场都有 match number、存在真实 Feed 配置、高阶指标覆盖全部 48 队。
+
+验证：
+
+- 按 TDD 先让模型测试因 `advanced_metric_impacts` 缺失失败。
+- 按 TDD 先让日更测试因 Feed `url` 不支持和默认配置缺失失败。
+- 实现后，针对性测试通过。
+- `npm run test:model` 通过，103 个测试。
+- `npm run validate:data` 通过。
+- `npm run build` 通过。
+
+当前判断：
+
+- 用户提到的“面对强队胜率”和“足球高阶数据”可以加入模型，并且现在已有可替换的权重入口。
+- 当前实现使用自建公开代理指标；如果客户后续提供授权 xG / xGA / 事件数据，可以直接替换代理数据源，提高预测质量。
+
 ## 十、当前交接摘要
 
 一句话定义：
@@ -1916,10 +1967,10 @@ Elo / 实力评分
 
 当前最重要的开发优先级：
 
-1. 从 FIFA 官方来源整理真实 48 队名单、分组和 72 场小组赛，生成导入 JSON 并走导入器替换当前样例数据。
-2. 接真实新闻来源列表，把外部抓取任务接到 `npm run daily:update` 的 Feed 配置和报告输出。
+1. 接真实赛果更新源或日常手动更新流程，让已结束比赛持续锁定进模型。
+2. 在部署环境配置 cron / CI 定时触发 `npm run daily:update`，让外部 Feed 和快照自动更新。
 3. 扩展 `/admin` 后台，补真实外部调度配置和用户账号 / 角色体系。
-4. 把单场详情升级为独立路由/页面，并按产品包做可控的内容解锁。
+4. 把单场详情按产品包做可控的内容解锁。
 5. 接客户提供的微信 / 支付宝支付接口、订单记录、用户权限和访问记录。
 
 当前最重要的风险：

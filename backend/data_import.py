@@ -99,6 +99,9 @@ def build_tournament_provenance(payload: dict[str, Any]) -> dict[str, object]:
         "source": payload.get("source", "unknown"),
         "retrievedAt": payload.get("retrievedAt"),
         "sourceUrl": payload.get("sourceUrl"),
+        "secondarySourceUrl": payload.get("secondarySourceUrl"),
+        "timezone": payload.get("timezone"),
+        "note": payload.get("note"),
     }
     return {key: value for key, value in provenance.items() if value is not None}
 

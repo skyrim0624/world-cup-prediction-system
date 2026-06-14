@@ -122,8 +122,8 @@ def model_status() -> dict[str, object]:
         "liveMatches": len([fixture for fixture in data_state.FIXTURES if fixture.status == "live"]),
         "eventSummary": event_summary(),
         "knownGaps": [
-            "官方可核验赛程、真实分组和 48 队名单尚未替换当前样例数据",
-            "新闻 Feed 导入和来源校验已就绪，但真实 Feed 列表与外部定时调度尚未接入",
+            "小组赛真实赛程已导入，淘汰赛具体球队对阵仍需根据小组赛结果动态生成",
+            "真实新闻 Feed 配置已接入，仍需在部署环境配置 cron/CI 定时触发",
             "后台权限仍为轻量 token，支付已有客户接口框架和订单访问判断，但暂未接用户账号、角色和正式数据库订单表",
         ],
     }

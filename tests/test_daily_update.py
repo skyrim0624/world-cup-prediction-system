@@ -2,6 +2,7 @@ import json
 import subprocess
 import tempfile
 import unittest
+from urllib.parse import quote
 from pathlib import Path
 
 from backend.model import reload_model_data
@@ -119,6 +120,45 @@ class DailyUpdateTest(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertIn("日更流程完成", result.stdout)
             self.assertTrue(snapshot_path.exists())
+
+    def test_run_daily_update_imports_remote_feed_url_from_config(self):
+        from backend.daily_update import load_feed_specs, run_daily_update
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            raw_news_path = root / "raw-news.json"
+            snapshot_path = root / "latest-match-prediction.json"
+            config_path = root / "feed-config.json"
+            raw_news_path.write_text("[]", encoding="utf-8")
+            config_path.write_text(
+                json.dumps(
+                    [{"url": f"data:text/xml,{quote(RSS_FEED)}", "source": "bbc", "team": "brazil"}],
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            report = run_daily_update(
+                raw_news_path=raw_news_path,
+                snapshot_path=snapshot_path,
+                feed_specs=load_feed_specs(config_path),
+                simulation_count=1200,
+            )
+
+            rows = json.loads(raw_news_path.read_text(encoding="utf-8"))
+            self.assertEqual(report["feeds"]["imported"], 1)
+            self.assertEqual(report["feeds"]["items"][0]["url"], f"data:text/xml,{quote(RSS_FEED)}")
+            self.assertEqual(rows[0]["source"], "bbc")
+
+    def test_package_daily_update_uses_real_feed_config(self):
+        package = json.loads(Path("package.json").read_text(encoding="utf-8"))
+        config_path = Path("backend/data_files/daily-feed-sources.json")
+        config = json.loads(config_path.read_text(encoding="utf-8"))
+
+        self.assertIn("--feed-config backend/data_files/daily-feed-sources.json", package["scripts"]["daily:update"])
+        self.assertGreaterEqual(len(config), 3)
+        self.assertTrue(all(row.get("url", "").startswith(("http://", "https://")) for row in config))
+        self.assertTrue({"bbc", "espn", "guardian"}.issubset({row["source"] for row in config}))
 
     def test_daily_update_script_writes_status_path(self):
         with tempfile.TemporaryDirectory() as temp_dir:
