@@ -1,7 +1,9 @@
 import { Fragment, FormEvent, useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
+import { CalendarDays, LockKeyhole, Newspaper, Target, Trophy, type LucideIcon } from "lucide-react";
 
 type TeamKey = string;
 type Tone = "green" | "blue" | "gold" | "orange" | "red" | "muted";
+type UserScreenKey = "forecast" | "matches" | "board" | "news" | "access";
 type FactorImpactMap = Record<string, Record<string, number>>;
 type CustomStyle = CSSProperties & Record<string, string | number>;
 
@@ -491,6 +493,14 @@ const PAYMENT_STATUS_POLL_MS = 4000;
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? (import.meta.env.DEV ? "http://127.0.0.1:8000" : "");
 const SINGLE_MATCH_ROUTE_PREFIX = "/match/";
 
+const USER_SCREENS: { key: UserScreenKey; hash: string; label: string; Icon: LucideIcon }[] = [
+  { key: "forecast", hash: "forecast", label: "预测", Icon: Target },
+  { key: "matches", hash: "matches", label: "赛程", Icon: CalendarDays },
+  { key: "board", hash: "board", label: "榜单", Icon: Trophy },
+  { key: "news", hash: "news", label: "新闻", Icon: Newspaper },
+  { key: "access", hash: "access", label: "解锁", Icon: LockKeyhole },
+];
+
 const TEAM_FLAG_ASSET_BY_KEY: Record<TeamKey, string> = {
   mexico: "mx",
   "south-africa": "za",
@@ -766,6 +776,11 @@ function matchRouteParams(pathname: string) {
   };
 }
 
+function userScreenFromHash(): UserScreenKey {
+  const hash = window.location.hash.replace("#", "");
+  return USER_SCREENS.find((screen) => screen.hash === hash || screen.key === hash)?.key ?? "forecast";
+}
+
 function matchPagePath(home: TeamKey, away: TeamKey) {
   return `${SINGLE_MATCH_ROUTE_PREFIX}${encodeURIComponent(home)}/${encodeURIComponent(away)}`;
 }
@@ -792,6 +807,7 @@ function HomePredictionPage() {
   const [matchDetail, setMatchDetail] = useState<MatchDetail | null>(null);
   const [accessOptions, setAccessOptions] = useState<AccessOptions | null>(null);
   const [dataMode, setDataMode] = useState<"api" | "demo">("demo");
+  const [activeScreen, setActiveScreen] = useState<UserScreenKey>(() => userScreenFromHash());
 
   const teamsData = apiPrediction?.teams?.length ? apiPrediction.teams : teams;
   const fallbackPrediction = useMemo(() => buildFallbackPrediction(forecastTick), [forecastTick]);
@@ -805,19 +821,8 @@ function HomePredictionPage() {
     ? `${matchPrediction.modelMeta.simulationCount.toLocaleString("zh-CN")} 次模拟 · 已锁定 ${matchPrediction.modelMeta.lockedResults} 场赛果 · 进行中 ${matchPrediction.modelMeta.liveMatches ?? 0} 场 · 事件 ${matchPrediction.modelMeta.events?.applied ?? 0} 入模 / ${matchPrediction.modelMeta.events?.ignored ?? 0} 忽略`
     : "已结束比赛只作为后续权重因子";
   const topScore = matchPrediction.scoreOutcomes[0];
-  const scoreMatrix = matchPrediction.scoreMatrix?.length ? matchPrediction.scoreMatrix : scoreMatrixFallbackFromOutcomes(matchPrediction.scoreOutcomes);
   const goalMarkets = matchPrediction.goalMarkets?.length ? matchPrediction.goalMarkets : goalMarketsFallback();
-  const fairPrices = matchPrediction.fairPrices?.length
-    ? matchPrediction.fairPrices
-    : [
-        { label: `${homeTeam.name}胜`, probability: matchPrediction.homeWin, fairDecimal: Number((100 / matchPrediction.homeWin).toFixed(2)), note: "90 分钟模型公平概率", tone: "green" as Tone },
-        { label: "平局", probability: matchPrediction.draw, fairDecimal: Number((100 / matchPrediction.draw).toFixed(2)), note: "90 分钟模型公平概率", tone: "gold" as Tone },
-        { label: `${awayTeam.name}胜`, probability: matchPrediction.awayWin, fairDecimal: Number((100 / matchPrediction.awayWin).toFixed(2)), note: "90 分钟模型公平概率", tone: "blue" as Tone },
-      ];
   const marketSource = marketSourceFallback(matchPrediction.marketSource);
-  const creatorTopics = matchPrediction.creatorTopics?.length
-    ? matchPrediction.creatorTopics
-    : creatorTopicsFallback(homeTeam.name, awayTeam.name, topScore?.score);
 
   useEffect(() => {
     let active = true;
@@ -896,6 +901,19 @@ function HomePredictionPage() {
     };
   }, []);
 
+  useEffect(() => {
+    function syncScreenFromLocation() {
+      setActiveScreen(userScreenFromHash());
+    }
+
+    window.addEventListener("hashchange", syncScreenFromLocation);
+    window.addEventListener("popstate", syncScreenFromLocation);
+    return () => {
+      window.removeEventListener("hashchange", syncScreenFromLocation);
+      window.removeEventListener("popstate", syncScreenFromLocation);
+    };
+  }, []);
+
   async function loadMatchDetail(match: UpcomingMatch) {
     const key = `${match.homeTeam}-${match.awayTeam}`;
     setSelectedMatchKey(key);
@@ -912,6 +930,15 @@ function HomePredictionPage() {
     }
   }
 
+  function openScreen(screenKey: UserScreenKey) {
+    const screen = USER_SCREENS.find((item) => item.key === screenKey);
+    if (!screen) return;
+    setActiveScreen(screenKey);
+    window.history.pushState(null, "", `${window.location.pathname}${window.location.search}#${screen.hash}`);
+  }
+
+  const activeScreenConfig = USER_SCREENS.find((screen) => screen.key === activeScreen) ?? USER_SCREENS[0];
+
   return (
     <main className="console-shell user-page-shell">
       <div className="ambient-grid" />
@@ -920,196 +947,168 @@ function HomePredictionPage() {
           <span>世界杯预测工作台</span>
           <small>World Cup Forecast Desk</small>
         </div>
-        <nav className="top-links" aria-label="用户预测页">
-          <a href="#featured">重点</a>
-          <a href="#market">市场</a>
-          <a href="#impact">路径</a>
-          <a href="#topics">选题</a>
-          <a href="#access">解锁</a>
-        </nav>
+        <span className="app-status-pill">{dataModeLabel}</span>
       </header>
 
-      <section className="worldcup-hero" aria-label="2026 美加墨世界杯预测">
-        <div className="hero-copy">
-          <span className="hero-eyebrow">FIFA World Cup 2026</span>
-          <h1>
-            今日<span>预测工作台</span>
+      <section className="app-screen" aria-labelledby="active-screen-title">
+        <div className="app-screen-head">
+          <span>{activeScreenConfig.label}</span>
+          <h1 id="active-screen-title">
+            {activeScreen === "forecast" ? "今日重点预测" : activeScreen === "matches" ? "未开赛比赛" : activeScreen === "board" ? "概率榜单" : activeScreen === "news" ? "新闻与方法" : "付费解锁"}
           </h1>
-          <p>比分分布、模型公平概率、路径传导和内容选题集中看。</p>
-          <div className="hero-meta-row">
-            <strong>{dataModeLabel}</strong>
-            <em>{modelSummary}</em>
-          </div>
         </div>
-        <a className="hero-match-card" href={matchPagePath(matchPrediction.homeTeam, matchPrediction.awayTeam)}>
-          <span>{matchPrediction.stage}</span>
-          <div className="hero-match-teams">
-            <span className="hero-team-code">
-              <TeamFlag team={homeTeam.key} code={homeTeam.code} />
-              <strong>{homeTeam.code}</strong>
-            </span>
-            <b>VS</b>
-            <span className="hero-team-code away">
-              <TeamFlag team={awayTeam.key} code={awayTeam.code} />
-              <strong>{awayTeam.code}</strong>
-            </span>
+
+        {activeScreen === "forecast" ? (
+          <div className="app-screen-stack forecast-screen">
+            <section className="console-panel app-hero-card">
+              <a className="app-match-summary" href={matchPagePath(matchPrediction.homeTeam, matchPrediction.awayTeam)}>
+                <span>{matchPrediction.stage}</span>
+                <div className="app-match-teams">
+                  <span>
+                    <TeamFlag team={homeTeam.key} code={homeTeam.code} />
+                    <b>{homeTeam.code}</b>
+                  </span>
+                  <strong>VS</strong>
+                  <span>
+                    <TeamFlag team={awayTeam.key} code={awayTeam.code} />
+                    <b>{awayTeam.code}</b>
+                  </span>
+                </div>
+                <small>{[matchPrediction.kickoff, mainVenue].filter(Boolean).join(" · ")}</small>
+              </a>
+              <div className="forecast-lead app-forecast-lead">
+                <span>最可能比分</span>
+                <strong>{topScore?.score ?? "--"}</strong>
+                <em>{topScore ? `${topScore.probability.toFixed(1)}%` : "等待模型输出"}</em>
+              </div>
+              <div className="probability-row portal-probability-row app-probability-row">
+                <Probability label={`${homeTeam.name}胜`} value={matchPrediction.homeWin} tone="green" />
+                <Probability label="平局" value={matchPrediction.draw} tone="gold" />
+                <Probability label={`${awayTeam.name}胜`} value={matchPrediction.awayWin} tone="blue" />
+              </div>
+              <CompactScoreList outcomes={matchPrediction.scoreOutcomes.slice(0, 3)} />
+              <div className="analysis-list compact-analysis">
+                {matchPrediction.analysis.slice(0, 2).map((item) => (
+                  <p key={item}>{item}</p>
+                ))}
+              </div>
+              <div className="engine-line">
+                <span className="ai-badge">AI</span>
+                <span className="engine-copy">
+                  <strong>{matchPrediction.modelMeta?.engine ?? "Elo + Dixon-Coles + 蒙特卡洛"}</strong>
+                  <small>{modelSummary}</small>
+                </span>
+                <a className="primary-link" href={matchPagePath(matchPrediction.homeTeam, matchPrediction.awayTeam)}>
+                  单场页
+                </a>
+              </div>
+            </section>
+
+            <section className="console-panel">
+              <div className="section-title">
+                <span>进球概率</span>
+              </div>
+              <GoalMarketPanel markets={goalMarkets.slice(0, 4)} compact />
+            </section>
           </div>
-          <div className="hero-match-detail">
-            <em>{matchPrediction.kickoff}</em>
-            <em>最可能 {topScore?.score ?? "--"}</em>
+        ) : null}
+
+        {activeScreen === "matches" ? (
+          <div className="app-screen-stack">
+            <section className="console-panel">
+              <div className="section-title">
+                <span>未开赛比赛池</span>
+              </div>
+              <UpcomingMatchesPanel matches={upcomingMatches?.items ?? []} selectedKey={selectedMatchKey} onSelect={loadMatchDetail} />
+            </section>
+            <section className="console-panel">
+              <div className="section-title">
+                <span>单场快速预览</span>
+              </div>
+              <MatchDetailPanel detail={matchDetail} teamsData={teamsData} />
+            </section>
           </div>
-          <small>进入单场预测页</small>
-        </a>
+        ) : null}
+
+        {activeScreen === "board" ? (
+          <div className="app-screen-stack">
+            <section className="console-panel portal-standing-card">
+              <div className="section-title">
+                <span>冠军概率榜</span>
+              </div>
+              <ChampionBoard teams={championBoard.slice(0, 8)} />
+              <p className="locked-note">完整 48 队榜单随赛事全周期解锁。</p>
+            </section>
+            <section className="console-panel">
+              <div className="section-title">
+                <span>今日概率变化</span>
+              </div>
+              <DailyMoversPanel movers={matchPrediction.dailyMovers} />
+            </section>
+            <section className="console-panel">
+              <div className="section-title">
+                <span>路径传导</span>
+              </div>
+              <ScenarioImpactList scenarios={matchPrediction.scenarioImpacts} />
+            </section>
+          </div>
+        ) : null}
+
+        {activeScreen === "news" ? (
+          <div className="app-screen-stack">
+            <section className="console-panel">
+              <div className="section-title">
+                <span>新闻影响摘要</span>
+              </div>
+              <div className="news-list">
+                {matchPrediction.newsItems.slice(0, 4).map((item) => (
+                  <article className={`news-item ${item.tone}`} key={item.title}>
+                    <span className="news-icon">{item.tone === "red" ? "+" : item.tone === "gold" ? "!" : "?"}</span>
+                    <div>
+                      <strong>{item.title}</strong>
+                      <p>{item.detail}</p>
+                      <small>{item.time}</small>
+                    </div>
+                    <em>{item.impact}</em>
+                  </article>
+                ))}
+              </div>
+            </section>
+            <section className="console-panel">
+              <div className="section-title">
+                <span>模型方法</span>
+              </div>
+              <ModelMethodPanel modelSummary={modelSummary} marketSource={marketSource} />
+            </section>
+          </div>
+        ) : null}
+
+        {activeScreen === "access" ? (
+          <div className="app-screen-stack">
+            <section className="console-panel">
+              <div className="section-title">
+                <span>付费解锁</span>
+              </div>
+              <AccessPanel options={accessOptions} contentKey="tournament_probabilities" />
+            </section>
+            <section className="console-panel">
+              <div className="section-title">
+                <span>赛果记录</span>
+              </div>
+              <FinishedMatchesPanel records={finishedMatches?.items ?? []} />
+            </section>
+          </div>
+        ) : null}
       </section>
 
-      <div className="portal-grid">
-        <section id="featured" className="console-panel prediction-hero-panel portal-feature-card">
-          <div className="section-title">
-            <span>今日重点比赛</span>
-          </div>
-          <div className="featured-photo-card">
-            <div className="featured-photo-copy">
-              <span>免费预览</span>
-              <strong>
-                {homeTeam.name} vs {awayTeam.name}
-              </strong>
-              <small>{[matchPrediction.stage, matchPrediction.kickoff, mainVenue].filter(Boolean).join(" · ")}</small>
-            </div>
-          </div>
-          <div className="forecast-lead">
-            <span>最可能比分</span>
-            <strong>{topScore?.score ?? "--"}</strong>
-            <em>{topScore ? `${topScore.probability.toFixed(1)}%` : "等待模型输出"}</em>
-          </div>
-          <div className="probability-row portal-probability-row">
-            <Probability label={`${homeTeam.name}胜`} value={matchPrediction.homeWin} tone="green" />
-            <Probability label="平局" value={matchPrediction.draw} tone="gold" />
-            <Probability label={`${awayTeam.name}胜`} value={matchPrediction.awayWin} tone="blue" />
-          </div>
-          <CompactScoreList outcomes={matchPrediction.scoreOutcomes.slice(0, 3)} />
-          <div className="engine-line">
-            <span className="ai-badge">AI</span>
-            <span className="engine-copy">
-              <strong>{matchPrediction.modelMeta?.engine ?? "Elo + Dixon-Coles + 蒙特卡洛"}</strong>
-              <small>
-                数据源：{dataModeLabel} · {modelSummary}
-              </small>
-            </span>
-            <a className="primary-link" href={matchPagePath(matchPrediction.homeTeam, matchPrediction.awayTeam)}>
-              单场页
-            </a>
-          </div>
-        </section>
-
-        <section id="market" className="console-panel market-desk-card">
-          <div className="section-title">
-            <span>模型公平概率</span>
-          </div>
-          <FairPricePanel prices={fairPrices} />
-          <div className="market-source-box">
-            <strong>{marketSource.label || "市场价格源待接入"}</strong>
-            <p>{marketSource.detail}</p>
-          </div>
-          <GoalMarketPanel markets={goalMarkets.slice(0, 4)} compact />
-        </section>
-
-        <section id="topics" className="console-panel topic-card">
-          <div className="section-title">
-            <span>今日可讲选题</span>
-          </div>
-          <CreatorTopicsPanel topics={creatorTopics} />
-          <div className="analysis-list compact-analysis">
-            {matchPrediction.analysis.slice(0, 2).map((item) => (
-              <p key={item}>{item}</p>
-            ))}
-          </div>
-        </section>
-      </div>
-
-      <div className="module-grid portal-module-grid">
-        <section className="console-panel">
-          <div className="section-title">
-            <span>比分矩阵</span>
-          </div>
-          <ScoreMatrix cells={scoreMatrix} />
-        </section>
-
-        <section className="console-panel">
-          <div className="section-title">
-            <span>进球市场视角</span>
-          </div>
-          <GoalMarketPanel markets={goalMarkets} />
-        </section>
-
-        <section id="impact" className="console-panel wide">
-          <div className="section-title">
-            <span>路径传导</span>
-          </div>
-          <ScenarioImpactList scenarios={matchPrediction.scenarioImpacts} />
-        </section>
-
-        <section className="console-panel wide">
-          <div className="section-title">
-            <span>未开赛比赛池</span>
-          </div>
-          <UpcomingMatchesPanel matches={upcomingMatches?.items ?? []} selectedKey={selectedMatchKey} onSelect={loadMatchDetail} />
-        </section>
-
-        <section className="console-panel wide">
-          <div className="section-title">
-            <span>单场快速预览</span>
-          </div>
-          <MatchDetailPanel detail={matchDetail} teamsData={teamsData} />
-        </section>
-
-        <section className="console-panel">
-          <div className="section-title">
-            <span>今日概率变化</span>
-          </div>
-          <DailyMoversPanel movers={matchPrediction.dailyMovers} />
-        </section>
-
-        <section className="console-panel portal-standing-card">
-          <div className="section-title">
-            <span>冠军概率榜</span>
-          </div>
-          <ChampionBoard teams={championBoard.slice(0, 6)} />
-          <p className="locked-note">完整 48 队榜单随赛事全周期解锁。</p>
-        </section>
-
-        <section className="console-panel">
-          <div className="section-title">
-            <span>新闻影响摘要</span>
-          </div>
-          <div className="news-list">
-            {matchPrediction.newsItems.slice(0, 3).map((item) => (
-              <article className={`news-item ${item.tone}`} key={item.title}>
-                <span className="news-icon">{item.tone === "red" ? "+" : item.tone === "gold" ? "!" : "?"}</span>
-                <div>
-                  <strong>{item.title}</strong>
-                  <p>{item.detail}</p>
-                  <small>{item.time}</small>
-                </div>
-                <em>{item.impact}</em>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section id="finished" className="console-panel">
-          <div className="section-title">
-            <span>赛果记录</span>
-          </div>
-          <FinishedMatchesPanel records={finishedMatches?.items ?? []} />
-        </section>
-
-        <section id="access" className="console-panel wide">
-          <div className="section-title">
-            <span>付费解锁</span>
-          </div>
-          <AccessPanel options={accessOptions} contentKey="tournament_probabilities" />
-        </section>
-      </div>
+      <nav className="app-bottom-nav" aria-label="预测功能导航">
+        {USER_SCREENS.map(({ key, label, Icon }) => (
+          <button type="button" className={activeScreen === key ? "active" : ""} aria-current={activeScreen === key ? "page" : undefined} key={key} onClick={() => openScreen(key)}>
+            <Icon aria-hidden="true" size={20} strokeWidth={2.4} />
+            <span>{label}</span>
+          </button>
+        ))}
+      </nav>
     </main>
   );
 }
@@ -1429,6 +1428,35 @@ function ScenarioImpactList({ scenarios }: { scenarios: ScenarioImpact[] }) {
           <em>夺冠概率变化 {scenario.championShift}</em>
         </article>
       ))}
+    </div>
+  );
+}
+
+function ModelMethodPanel({ modelSummary, marketSource }: { modelSummary: string; marketSource: MarketSource }) {
+  return (
+    <div className="model-method-panel">
+      <div className="market-source-box">
+        <strong>{marketSource.label}</strong>
+        <p>{marketSource.detail}</p>
+      </div>
+      <div className="model-summary-strip">
+        <b>当前模型</b>
+        <span>{modelSummary}</span>
+      </div>
+      <div className="layer-grid compact">
+        {modelLayers.map((layer) => (
+          <article className="layer-card" key={layer.layer}>
+            <span>{layer.layer}</span>
+            <h3>{layer.title}</h3>
+            <ul>
+              {layer.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+            <em>{layer.metric}</em>
+          </article>
+        ))}
+      </div>
     </div>
   );
 }
