@@ -83,7 +83,8 @@ class PredictionApiTest(unittest.TestCase):
         self.assertEqual(payload["dataset"]["source"], "local-json")
         self.assertGreaterEqual(payload["dataset"]["teamCount"], 8)
         self.assertIn("knownGaps", payload)
-        self.assertIn("官方 48 队名单", payload["knownGaps"][0])
+        self.assertIn("官方可核验赛程", payload["knownGaps"][0])
+        self.assertIn("真实 Feed", payload["knownGaps"][1])
 
     def test_admin_overview_api_returns_operational_status(self):
         rows = [

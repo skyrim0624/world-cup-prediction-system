@@ -111,8 +111,8 @@ def model_status() -> dict[str, object]:
         "liveMatches": len([fixture for fixture in data_state.FIXTURES if fixture.status == "live"]),
         "eventSummary": event_summary(),
         "knownGaps": [
-            "官方 48 队名单和真实分组尚未替换当前槽位数据",
-            "新闻抓取仍由本地 raw-news JSON 承接，暂未接外部定时任务",
+            "官方可核验赛程、真实分组和 48 队名单尚未替换当前样例数据",
+            "新闻 Feed 导入和来源校验已就绪，但真实 Feed 列表与外部定时调度尚未接入",
             "后台权限仍为轻量 token，暂未接用户账号、角色和支付权限",
         ],
     }
