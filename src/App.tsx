@@ -204,6 +204,19 @@ type UpcomingMatchesResponse = {
   items: UpcomingMatch[];
 };
 
+type AccessProduct = {
+  key: string;
+  name: string;
+  scope: string;
+  status: string;
+};
+
+type AccessOptions = {
+  paymentConfigured: boolean;
+  products: AccessProduct[];
+  disclaimer: string;
+};
+
 type ScenarioImpact = {
   label: string;
   probability: number;
@@ -535,6 +548,7 @@ function App() {
   const [selectedMatchKey, setSelectedMatchKey] = useState<string | null>(null);
   const [matchDetail, setMatchDetail] = useState<MatchDetail | null>(null);
   const [eventReview, setEventReview] = useState<EventReviewResponse | null>(null);
+  const [accessOptions, setAccessOptions] = useState<AccessOptions | null>(null);
   const [reviewPendingId, setReviewPendingId] = useState<string | null>(null);
   const [snapshotPending, setSnapshotPending] = useState(false);
   const [reviewMessage, setReviewMessage] = useState<string | null>(null);
@@ -601,14 +615,29 @@ function App() {
       }
     }
 
+    async function loadAccessOptions() {
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/access-options`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`付费接口返回 ${response.status}`);
+        const data = (await response.json()) as AccessOptions;
+        if (!active) return;
+        setAccessOptions(data);
+      } catch {
+        if (!active) return;
+        setAccessOptions(null);
+      }
+    }
+
     loadPrediction();
     loadEventReview();
     loadUpcomingMatches();
+    loadAccessOptions();
     const timer = window.setInterval(() => {
       setForecastTick((value) => value + 1);
       loadPrediction();
       loadEventReview();
       loadUpcomingMatches();
+      loadAccessOptions();
     }, FORECAST_REFRESH_MS);
 
     return () => {
@@ -1039,6 +1068,19 @@ function App() {
             ))}
           </div>
         </DraggablePanel>
+
+        <DraggablePanel
+          id="access"
+          className="wide"
+          title="付费解锁"
+          position={positions.access}
+          layoutUnlocked={layoutUnlocked}
+          onPointerDown={startDrag}
+          onPointerMove={moveDrag}
+          onPointerUp={endDrag}
+        >
+          <AccessPanel options={accessOptions} />
+        </DraggablePanel>
       </div>
 
       <button className={`move-hint ${layoutUnlocked ? "active" : ""}`} onClick={toggleLayoutLock}>
@@ -1232,6 +1274,36 @@ function ScenarioImpactList({ scenarios }: { scenarios: ScenarioImpact[] }) {
           <em>夺冠概率变化 {scenario.championShift}</em>
         </article>
       ))}
+    </div>
+  );
+}
+
+function accessStatusLabel(status: string) {
+  if (status === "available") return "可解锁";
+  if (status === "payment_pending") return "支付待接入";
+  return "待配置";
+}
+
+function AccessPanel({ options }: { options: AccessOptions | null }) {
+  if (!options) {
+    return <p className="review-empty">付费配置等待 API 连接</p>;
+  }
+
+  return (
+    <div className="access-panel">
+      <div className="access-summary">
+        <strong>{options.paymentConfigured ? "支付已接入" : "支付待接入"}</strong>
+        <span>{options.disclaimer}</span>
+      </div>
+      <div className="access-list">
+        {options.products.map((product) => (
+          <article className="access-card" key={product.key}>
+            <strong>{product.name}</strong>
+            <span>{product.scope}</span>
+            <em>{accessStatusLabel(product.status)}</em>
+          </article>
+        ))}
+      </div>
     </div>
   );
 }

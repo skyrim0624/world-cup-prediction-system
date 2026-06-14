@@ -1740,6 +1740,76 @@ button {
   grid-column: 1 / -1;
 }
 
+.access-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.access-summary {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 16px;
+  border: 1px solid rgba(24, 227, 208, 0.22);
+  background: rgba(24, 227, 208, 0.06);
+}
+
+.access-summary strong {
+  color: #eefaf8;
+  font-size: 20px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.access-summary span {
+  max-width: 560px;
+  color: #a9b8b8;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: right;
+}
+
+.access-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.access-card {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-height: 132px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.access-card strong {
+  color: #eefaf8;
+  font-size: 19px;
+  font-weight: 900;
+}
+
+.access-card span {
+  color: #9db1b0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.access-card em {
+  align-self: end;
+  width: max-content;
+  margin-top: 8px;
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 198, 66, 0.34);
+  color: var(--gold);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 800;
+}
+
 .move-hint {
   display: flex;
   align-items: center;
@@ -1981,8 +2051,18 @@ button {
   .layer-grid,
   .factor-grid,
   .scenario-grid,
-  .weight-grid {
+  .weight-grid,
+  .access-list {
     grid-template-columns: 1fr;
+  }
+
+  .access-summary {
+    display: grid;
+  }
+
+  .access-summary span {
+    max-width: none;
+    text-align: left;
   }
 
   .factor-row {

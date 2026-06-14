@@ -123,6 +123,16 @@ class PredictionApiTest(unittest.TestCase):
             self.assertEqual(response.json()["dataset"]["tournamentSource"]["source"], "fifa-official-test")
             self.assertEqual(response.json()["dataset"]["tournamentSource"]["sourceUrl"], "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026")
 
+    def test_access_options_expose_paid_unlock_boundary(self):
+        client = TestClient(app)
+        response = client.get("/api/access-options")
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertFalse(payload["paymentConfigured"])
+        self.assertEqual([product["key"] for product in payload["products"]], ["single_match", "tournament_pass", "match_pack"])
+        self.assertTrue(all(product["status"] == "payment_pending" for product in payload["products"]))
+        self.assertIn("概率分析", payload["disclaimer"])
+
     def test_admin_overview_api_returns_operational_status(self):
         rows = [
             {
