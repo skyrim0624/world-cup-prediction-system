@@ -403,6 +403,7 @@ const sourceWeights = [
 const INTERACTIVE_SIMULATION_COUNT = 1200;
 const FORECAST_REFRESH_MS = 15000;
 const API_BASE_URL = import.meta.env.DEV ? "http://127.0.0.1:8000" : "";
+const SINGLE_MATCH_ROUTE_PREFIX = "/match/";
 
 const fallbackNewsItems: NewsItem[] = [
   { title: "官方名单", detail: "两队暂无新增停赛，核心阵容可用", impact: "可入模型", tone: "green", time: "1 小时前" },
@@ -534,9 +535,28 @@ function summarizeReviewItems(items: EventReviewItem[]): EventReviewSummary {
   };
 }
 
+function matchRouteParams(pathname: string) {
+  if (!pathname.startsWith(SINGLE_MATCH_ROUTE_PREFIX)) return null;
+  const [, , home, away] = pathname.split("/");
+  if (!home || !away) return null;
+  return {
+    home: decodeURIComponent(home),
+    away: decodeURIComponent(away),
+  };
+}
+
+function matchPagePath(home: TeamKey, away: TeamKey) {
+  return `${SINGLE_MATCH_ROUTE_PREFIX}${encodeURIComponent(home)}/${encodeURIComponent(away)}`;
+}
+
 function App() {
   if (window.location.pathname === "/admin") {
     return <AdminConsole />;
+  }
+
+  const singleMatchRoute = matchRouteParams(window.location.pathname);
+  if (singleMatchRoute) {
+    return <SingleMatchPage home={singleMatchRoute.home} away={singleMatchRoute.away} />;
   }
 
   const [selectedTeam, setSelectedTeam] = useState<TeamKey>("brazil");
@@ -1234,6 +1254,7 @@ function MatchDetailPanel({ detail, teamsData }: { detail: MatchDetail | null; t
         <span>
           {[detail.stage, detail.kickoff, venue].filter(Boolean).join(" · ")}
         </span>
+        <a href={matchPagePath(detail.homeTeam, detail.awayTeam)}>打开单场页</a>
       </div>
       <div className="probability-row compact">
         <Probability label={`${homeTeam?.name ?? detail.homeTeam}胜`} value={detail.homeWin} tone="green" />
@@ -1305,6 +1326,153 @@ function AccessPanel({ options }: { options: AccessOptions | null }) {
         ))}
       </div>
     </div>
+  );
+}
+
+function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
+  const [detail, setDetail] = useState<MatchDetail | null>(null);
+  const [accessOptions, setAccessOptions] = useState<AccessOptions | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadDetail() {
+      try {
+        const response = await fetch(
+          `${API_BASE_URL}/api/match-detail?home=${encodeURIComponent(home)}&away=${encodeURIComponent(away)}&simulations=${INTERACTIVE_SIMULATION_COUNT}`,
+          { cache: "no-store" },
+        );
+        const payload = await response.json().catch(() => null);
+        if (!response.ok) throw new Error(payload?.detail ?? `单场详情接口返回 ${response.status}`);
+        if (!active) return;
+        setDetail(payload as MatchDetail);
+        setErrorMessage(null);
+      } catch (error) {
+        if (!active) return;
+        setDetail(null);
+        setErrorMessage(error instanceof Error ? error.message : "单场预测加载失败");
+      }
+    }
+
+    async function loadAccessOptions() {
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/access-options`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`付费接口返回 ${response.status}`);
+        const data = (await response.json()) as AccessOptions;
+        if (!active) return;
+        setAccessOptions(data);
+      } catch {
+        if (!active) return;
+        setAccessOptions(null);
+      }
+    }
+
+    loadDetail();
+    loadAccessOptions();
+    return () => {
+      active = false;
+    };
+  }, [home, away]);
+
+  const homeTeam = teams.find((team) => team.key === (detail?.homeTeam ?? home));
+  const awayTeam = teams.find((team) => team.key === (detail?.awayTeam ?? away));
+  const venue = detail ? fixtureVenueLabel(detail) : "";
+
+  return (
+    <main className="console-shell match-page-shell">
+      <div className="ambient-grid" />
+      <header className="topbar">
+        <div className="brand">
+          <span className="signal-mark" aria-hidden="true">
+            <i />
+            <i />
+            <i />
+            <i />
+          </span>
+          <span>单场预测</span>
+        </div>
+        <a className="back-link" href="/">
+          返回预测页
+        </a>
+      </header>
+
+      <section className="scoreboard" aria-label="单场预测对阵">
+        <MiniPitch side="left" />
+        <div className="score-strip match-strip">
+          <div className="score-team home-team">
+            <TeamFlag team={detail?.homeTeam ?? home} code={homeTeam?.code ?? home.slice(0, 3)} />
+            <span className="team-code">{homeTeam?.code ?? home.slice(0, 3).toUpperCase()}</span>
+          </div>
+          <strong className="versus-mark">VS</strong>
+          <div className="score-team away-team">
+            <span className="team-code">{awayTeam?.code ?? away.slice(0, 3).toUpperCase()}</span>
+            <TeamFlag team={detail?.awayTeam ?? away} code={awayTeam?.code ?? away.slice(0, 3)} />
+          </div>
+          <div className="match-clock forecast-clock">
+            <span>{detail?.kickoff ?? "加载中"}</span>
+            <em>{detail?.status ?? "待载入"}</em>
+          </div>
+          <div className="match-meta">
+            <span>{detail?.stage ?? "单场预测"}</span>
+            {venue ? <span>{venue}</span> : null}
+            {detail ? <b>预测更新 {formatUpdateTime(detail.updatedAt)}</b> : null}
+          </div>
+        </div>
+        <MiniPitch side="right" />
+      </section>
+
+      <div className="module-grid">
+        <section className="console-panel wide">
+          <h2>赛前胜平负概率</h2>
+          {detail ? (
+            <>
+              <div className="probability-row">
+                <Probability label={`${homeTeam?.name ?? home}胜`} value={detail.homeWin} tone="green" />
+                <Probability label="平局" value={detail.draw} tone="gold" />
+                <Probability label={`${awayTeam?.name ?? away}胜`} value={detail.awayWin} tone="blue" />
+              </div>
+              <div className="analysis-list">
+                {detail.analysis.map((item) => (
+                  <p key={item}>{item}</p>
+                ))}
+              </div>
+            </>
+          ) : (
+            <p className="review-empty">{errorMessage ?? "单场预测加载中"}</p>
+          )}
+        </section>
+
+        <section className="console-panel">
+          <h2>最可能比分</h2>
+          {detail ? (
+            <div className="score-outcome-list">
+              {detail.scoreOutcomes.map((outcome) => (
+                <article className={`score-outcome ${outcome.tone}`} key={outcome.score}>
+                  <strong>{outcome.score}</strong>
+                  <div>
+                    <b>{outcome.probability.toFixed(1)}%</b>
+                    <span>{outcome.note}</span>
+                  </div>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <p className="review-empty">比分分布等待单场预测</p>
+          )}
+        </section>
+
+        <section className="console-panel">
+          <h2>付费解锁</h2>
+          <AccessPanel options={accessOptions} />
+        </section>
+
+        <section className="console-panel wide">
+          <h2>整届概率传导</h2>
+          {detail ? <ScenarioImpactList scenarios={detail.scenarioImpacts} /> : <p className="review-empty">路径传导等待单场预测</p>}
+        </section>
+      </div>
+    </main>
   );
 }
 

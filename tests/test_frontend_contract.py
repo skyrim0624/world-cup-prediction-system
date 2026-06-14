@@ -9,6 +9,14 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("付费解锁", app_source)
         self.assertIn("AccessPanel", app_source)
 
+    def test_app_exposes_single_match_page_route(self):
+        app_source = Path("src/App.tsx").read_text(encoding="utf-8")
+        self.assertIn("/match/", app_source)
+        self.assertIn("/api/match-detail", app_source)
+        self.assertIn("SingleMatchPage", app_source)
+        self.assertIn("matchPagePath", app_source)
+        self.assertIn("打开单场页", app_source)
+
 
 if __name__ == "__main__":
     unittest.main()
