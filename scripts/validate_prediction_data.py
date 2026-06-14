@@ -19,6 +19,7 @@ from backend.data import (
     THIRD_PLACE_COMBINATIONS,
 )
 from backend.model import advanced_metric_impacts
+from backend.team_history import build_scoring_environment, load_team_match_history
 
 
 def main() -> None:
@@ -45,6 +46,25 @@ def main() -> None:
     advanced_impacts = advanced_metric_impacts()
     if set(advanced_impacts) != set(TEAM_PROFILES):
         raise SystemExit("高阶指标必须覆盖全部球队")
+    history = load_team_match_history()
+    if history.get("meta", {}).get("license") != "CC0-1.0":
+        raise SystemExit("历史赛果必须声明 CC0-1.0 许可证")
+    if history.get("meta", {}).get("matchedTeams") != 48:
+        raise SystemExit("历史赛果必须覆盖 48 支球队")
+    if int(history.get("meta", {}).get("scoredMatches", 0)) < 900:
+        raise SystemExit("历史赛果样本不足")
+    if set(history.get("teams", {})) != set(TEAM_PROFILES):
+        raise SystemExit("历史赛果球队列表必须覆盖全部球队")
+    for team_key, row in history.get("teams", {}).items():
+        if not isinstance(row.get("latestElo"), (int, float)):
+            raise SystemExit(f"历史 Elo 缺失: {team_key}")
+        if not row.get("latestEloDate"):
+            raise SystemExit(f"历史 Elo 日期缺失: {team_key}")
+    scoring_environment = build_scoring_environment(history, TEAM_PROFILES)
+    if scoring_environment.get("status") != "active":
+        raise SystemExit("历史进球环境必须可用")
+    if int(scoring_environment.get("matches", 0)) < 900:
+        raise SystemExit("历史进球环境样本不足")
     if DATASET_META["newsSourceCount"] != len(NEWS_SOURCES):
         raise SystemExit("新闻来源统计不一致")
     if DATASET_META["rawNewsCount"] != len(RAW_NEWS_ITEMS):
@@ -57,7 +77,8 @@ def main() -> None:
     print("数据校验通过")
     print(
         f"球队: {DATASET_META['teamCount']} · 小组: {len(groups)} · 赛程: {DATASET_META['fixtureCount']} · "
-        f"事件: {len(EVENTS)} · 原始新闻: {len(RAW_NEWS_ITEMS)}"
+        f"事件: {len(EVENTS)} · 原始新闻: {len(RAW_NEWS_ITEMS)} · 历史赛果: {history['meta']['scoredMatches']} · "
+        f"进球环境样本: {scoring_environment['matches']}"
     )
 
 

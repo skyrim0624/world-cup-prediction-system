@@ -2339,6 +2339,519 @@ Elo / 实力评分
 - `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_daily_update.py' -k fifa_official -v` 通过。
 - `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_api.py' -k admin_overview -v` 通过。
 
+### 2026-06-15：高阶球队强度分层与专业缺口补全
+
+客户反馈：
+
+- 现有 `elo / attack / defense / goalkeeper / path / squad` 六个核心变量适合做前台盘面，但作为底层预测特征过于笼统。
+- 不希望用泛泛数据或编造数据填充模型，而是要把更专业的 8 个球队强度衡量层和 9 个专业系统差距真正写成函数，能在有真实数据时影响预测。
+
+本次原则：
+
+- 不伪造 xG、球员、首发、市场、战术、回测或贝叶斯数据。
+- 已有真实输入只使用本地球队档案、官方赛程 / 赛果、已审核新闻事件和显式接入的授权高阶指标。
+- 缺失的专业数据必须明确返回 `missing_authorized_data` 或 `neutral`，调整值为 0，不允许用“代理数”冒充真实高阶数据。
+- 新增函数必须进入 `build_match_prediction()` 的 `modelMeta`，后台和后续 API 调用方可以看到每层是否接入、是否影响模型。
+
+#### 已落地的 8 个球队强度细化层
+
+新增文件：
+
+```text
+backend/team_strength.py
+```
+
+统一入口：
+
+```text
+build_team_strength_profile(team_key, teams, fixtures, metric_rows)
+build_all_team_strength_profiles(teams, fixtures, metric_rows)
+aggregate_team_strength_adjustments(teams, fixtures, metric_rows)
+```
+
+8 层定义：
+
+1. `baseStrength`：基础强度层。  
+   输入：本地球队档案中的 `elo / attack / defense / goalkeeper / path / squad`，以及可选授权字段 `fifaRating / independentElo / opponentAdjustedRating / marketPrior`。  
+   当前作用：本地球队档案作为基础底盘，不额外制造调整；未来如果接入授权 FIFA rating、独立 Elo 或市场先验，会小幅修正攻防和路径。
+
+2. `recentForm`：近期战绩层。  
+   输入：当前 `fixtures.json` 中已完赛且带比分的官方赛果。  
+   当前作用：根据已完赛比赛计算 `pointsPerMatch / goalsForPerMatch / goalsAgainstPerMatch / goalDifferencePerMatch`，并小幅修正 `attack / defense / path`。没有已完赛比赛时返回 `neutral_no_finished_fixtures`。
+
+3. `elitePerformance`：强队对抗层。  
+   输入：授权字段 `top20XgDiff / top20ResultIndex / daysSinceTop20Win`。  
+   当前作用：有真实强队样本时修正 `attack / defense / path`；没有该数据时不影响模型。
+
+4. `squadContinuity`：阵容相似性层。  
+   输入：授权字段 `lineupContinuity / projectedXiStrength / injuryReplacementDropoff`。  
+   当前作用：衡量预计首发与已验证强表现阵容的重合度、预计首发强度和伤停替代落差，修正 `squad / attack / defense`。
+
+5. `attackQuality`：进攻质量层。  
+   输入：授权事件数据字段 `npXgFor / shotQuality / boxEntries / transitionXg / setPieceXgFor`。  
+   当前作用：有真实 xG / 射门质量时修正 `attack`；没有授权事件数据时缺失，不使用代理 xG。
+
+6. `defenseQuality`：防守质量层。  
+   输入：授权事件数据字段 `npXgAgainst / bigChancesAllowed / transitionXgAgainst / setPieceXgAgainst`。  
+   当前作用：有真实防守过程数据时修正 `defense`；没有授权事件数据时缺失。
+
+7. `goalkeeperQuality`：门将层。  
+   输入：授权字段 `postShotXgMinusGoalsAllowed / claimCrossRate / sweeperActions / penaltySaveProfile`。  
+   当前作用：衡量扑救超预期、处理传中、出击覆盖和点球能力，修正 `goalkeeper / defense`。
+
+8. `tacticalProfile`：战术匹配层。  
+   输入：授权字段 `pressingIntensity / pressResistance / directness / setPieceMismatch / aerialAdvantage`。  
+   当前作用：衡量压迫、抗压、定位球和空中优势，修正 `attack / defense / path`。
+
+#### 已落地的 9 个专业系统差距覆盖函数
+
+统一入口：
+
+```text
+professional_gap_coverage(metric_rows)
+```
+
+9 个缺口：
+
+1. `eventXgData`：真实 xG / xGA / 射门质量。  
+   当前状态：如果没有授权 `attackQuality / defenseQuality` 字段，状态为 `missing`，模型影响为 `neutral`。
+
+2. `playerModel`：球员级模型。  
+   当前状态：依赖预计首发、球员评分、伤停替代落差；未接入时不影响模型。
+
+3. `lineupPrediction`：首发预测。  
+   当前状态：依赖 `lineupContinuity`；未接入官方首发或可信首发预测前不影响模型。
+
+4. `eliteSampleAdjustment`：强队样本修正。  
+   当前状态：依赖 Top 级对手结果和过程质量字段；有数据时进入 `elitePerformance`。
+
+5. `marketCalibration`：授权市场校准。  
+   当前状态：只接受显式授权 `marketPrior`；未接入时不使用市场赔率或非授权抓取。
+
+6. `backtesting`：系统性回测。  
+   当前状态：预留 `__meta__.backtesting`；未接入历史预测和真实赛果评估前只显示缺口，不调整概率。
+
+7. `probabilityCalibration`：概率校准。  
+   当前状态：预留 `__meta__.probabilityCalibration`；未接入 Brier score、log loss、校准曲线前不做温度缩放。
+
+8. `bayesianUpdating`：动态贝叶斯更新。  
+   当前状态：预留 `__meta__.bayesianUpdating`；未接入赛前 / 首发 / 实时事件分布前不改变现有确定性参数。
+
+9. `tacticalMatchup`：战术 matchup 模型。  
+   当前状态：依赖 `tacticalProfile`；没有真实压迫、抗压、阵型、定位球和空中优势数据时不影响模型。
+
+#### 模型接入点
+
+已修改：
+
+```text
+backend/model.py
+```
+
+关键变化：
+
+- `ADVANCED_METRIC_SOURCE.source` 从 `self_built_public_proxy` 改为 `verified_layered_inputs`。
+- `advanced_metric_impacts()` 不再生成伪 xG 代理字段，而是汇总 `team_strength.py` 的 8 层真实 / 授权输入调整。
+- `apply_event_adjustments()` 现在会接收分层引擎输出的 `attack / defense / goalkeeper / path / squad` 调整。
+- `build_match_prediction()` 的 `modelMeta` 新增：
+
+```text
+modelMeta.teamStrengthLayers
+modelMeta.professionalGapCoverage
+```
+
+含义：
+
+- `teamStrengthLayers`：48 队逐队输出 8 层强度、数据来源、状态、缺失字段和实际调整值。
+- `professionalGapCoverage`：输出 9 个专业缺口是否已真实接入，缺失项显示 `modelEffect = neutral`。
+
+已修改后台监管：
+
+```text
+backend/admin.py
+```
+
+- `/api/admin/prediction-run` 的运行链路新增 `build_team_strength_profile`。
+- `/api/admin/prediction-run` 的运行链路新增 `professional_gap_coverage`。
+- 管理员可以看到 8 层强度细化和 9 类专业缺口不是文档概念，而是预测链路中的函数步骤。
+
+#### 当前真实接入与未接入边界
+
+当前真实接入：
+
+- 本地 48 队基础球队档案。
+- 官方赛程 / 已完赛比分。
+- 事件和新闻来源等级。
+- 赛程上下文：短休、城市转场、场馆字段。
+
+当前未接入且不伪造：
+
+- 授权 xG / xGA / shot quality。
+- 球员级评分和俱乐部状态。
+- 官方完整首发和预计首发模型。
+- 授权市场价格源。
+- 历史回测数据库和概率校准参数。
+- 动态贝叶斯实时更新。
+- 真实战术事件数据和阵型 matchup 数据。
+
+#### 参考依据
+
+- FIFA 官方排名规则采用 SUM / Elo 变体，按赛前积分、比赛重要性、结果和预期结果加减分；因此 FIFA ranking 可作为基础强度来源之一，但不能替代过程数据、阵容数据和概率校准。
+- FIFA 已选择 Stats Perform 作为官方 betting data / streaming rights distributor，Opta / RunningBall 负责官方数据分发；因此市场、球员统计、实时事件和 match tracker 类数据必须按授权边界接入，不能抓取或伪造。
+
+#### 验证
+
+- 新增 `tests/test_team_strength_layers.py`。
+- 新增测试覆盖：
+  - 8 个球队强度层都能输出。
+  - 缺授权数据时状态为 `missing` 或 `neutral`，调整值为 0。
+  - 注入显式授权测试字段时，`advanced_metric_impacts()` 会真实改变球队调整。
+  - 9 个专业缺口都能输出覆盖状态。
+  - `build_match_prediction()` 的 `modelMeta` 暴露 `teamStrengthLayers` 和 `professionalGapCoverage`。
+- `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_team_strength_layers.py' -v` 通过。
+- `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_model.py' -v` 通过。
+
+### 2026-06-15：七步完善真实历史数据、强队对抗、回测校准、球星与阵容克制
+
+客户纠正：
+
+- 上一版 8+9 只是框架和缺口状态，不能称为“补全”。
+- 需要继续把这七步做成真实后端模型能力：公开历史赛果、近期战绩、强队对抗、xG/阵容接入口、回测、校准、模型接入。
+- 还需要纳入球星强度、阵容克制关系等能解释球队强弱和单场 matchup 的函数。
+
+#### 第 1 步：接入真实公开历史赛果
+
+新增数据源：
+
+```text
+martj42/international_results
+license: CC0-1.0
+source file: https://raw.githubusercontent.com/martj42/international_results/master/results.csv
+```
+
+新增脚本：
+
+```text
+scripts/import_team_match_history.py
+npm run import:history
+```
+
+导入逻辑：
+
+- 下载 49,477 行国际男足赛果 CSV。
+- 过滤 `home_score / away_score = NA` 的未赛比赛。
+- 对全量国家队比赛按时间顺序滚动计算赛前 Elo。
+- 同时保存每支本届 48 队截至 `until` 的最新历史滚动 Elo 和对应比赛日期。
+- 使用 `backend/data_files/team-name-map.json` 将本项目 48 队映射到公开数据集英文队名。
+- 只导出 2018-01-01 到 2026-06-15、且至少涉及本项目 48 队之一的已完赛比赛。
+
+新增数据文件：
+
+```text
+backend/data_files/team-name-map.json
+backend/data_files/team-match-history.json
+```
+
+当前历史样本：
+
+```text
+scoredMatches: 3736
+matchedTeams: 48
+license: CC0-1.0
+per-team latestElo: present
+```
+
+这些 `latestElo` 会进入 `baseStrength` 层，用来校正 `teams.json` 的静态底盘评分。
+
+#### 第 2 步：近期战绩从真实历史赛果计算
+
+新增模块：
+
+```text
+backend/team_history.py
+```
+
+关键函数：
+
+```text
+calculate_recent_form_metrics(team_key, history, teams, window_matches=18)
+```
+
+计算内容：
+
+- 最近 18 场国家队比赛。
+- 按比赛时间做指数衰减，越近权重越高。
+- 正式比赛权重大于友谊赛。
+- 使用导入时滚动计算的赛前 Elo 生成对手强度预期分。
+- 输出 `pointsPerMatch / expectedPointsPerMatch / opponentAdjustedPointsPerMatch / weightedGoalDifferencePerMatch / weightedGoalsForPerMatch / weightedGoalsAgainstPerMatch`。
+- 真实进入 `attack / defense / path` 调整。
+
+#### 第 3 步：强队对抗从真实历史赛果计算
+
+关键函数：
+
+```text
+calculate_elite_performance_metrics(team_key, history, teams, elite_percentile=0.25)
+```
+
+计算内容：
+
+- “强队”不手工指定，而是按历史赛前 Elo 前 25% 自动判定。
+- 统计近 6 年面对强队时的结果、预期结果、净胜球、进球、失球、强队胜场和距离上次强队胜利天数。
+- 输出 `eliteResultIndex / eliteExpectedIndex / eliteAdjustedIndex / eliteGoalDifferencePerMatch / daysSinceEliteWin`。
+- 真实进入 `attack / defense / path` 调整。
+
+#### 第 4 步：xG / 阵容 / 球星接入口
+
+仍不伪造：
+
+- 当前没有授权 xG / xGA / shot quality。
+- 当前没有授权球员评分、官方完整首发或俱乐部负荷数据。
+
+已做成真实接入口：
+
+```text
+backend/team_strength.py
+backend/squad_matchup.py
+```
+
+可接字段：
+
+```text
+attackQuality.npXgFor
+attackQuality.shotQuality
+defenseQuality.npXgAgainst
+squadContinuity.lineupContinuity
+squadContinuity.projectedXiStrength
+squadContinuity.injuryReplacementDropoff
+starPlayers[].rating
+starPlayers[].availability
+starPlayers[].role
+```
+
+球星强度函数：
+
+```text
+build_star_power_profile(team_key, metric_rows)
+```
+
+规则：
+
+- 没有显式可信球员数据时返回 `missing_authorized_player_data`，调整为 0。
+- 有 `starPlayers` 时按角色影响 `attack / defense / goalkeeper / squad`。
+- 球星数据会汇入 `squadContinuity` 层。
+
+#### 第 5 步：回测
+
+关键函数：
+
+```text
+run_prediction_backtest(history, teams, max_matches=600)
+```
+
+计算内容：
+
+- 使用 48 队之间的历史比赛。
+- 使用赛前滚动 Elo 生成三项概率：主胜、平局、客胜。
+- 计算 `brierScore` 和 `logLoss`。
+- 保留样本置信度、是否命中和真实结果，用于校准。
+
+当前用途：
+
+- 不声称模型已经达到专业准确率。
+- 先建立可重复的回测基线，以后每次模型升级必须能对比 Brier score / log loss。
+
+#### 第 6 步：概率校准
+
+关键函数：
+
+```text
+build_calibration_profile(backtest, bin_count=5)
+apply_probability_calibration(probabilities, calibration)
+```
+
+计算内容：
+
+- 按预测置信度分桶。
+- 每个桶输出 `predicted / observed / gap / count`。
+- 输出整体 `calibrationError`。
+- `apply_probability_calibration` 会根据分桶 gap 对最高概率项做温和上 / 下调，并重新归一化，避免模型过度自信。
+
+当前用途：
+
+- 把“模型是否过度自信”量化出来。
+- 胜平负概率已经使用历史回测分桶做温和校准。
+- 后续如果样本和特征更完整，可以升级为温度缩放或分队伍/分赛事校准。
+
+#### 第 7 步：模型接入
+
+已接入：
+
+```text
+backend/model.py
+```
+
+新增 `modelMeta`：
+
+```text
+modelMeta.historicalData
+modelMeta.backtest
+modelMeta.calibration
+modelMeta.probabilityCalibrationApplied
+modelMeta.teamStrengthLayers
+modelMeta.professionalGapCoverage
+modelMeta.matchupContext
+```
+
+实际影响：
+
+- `advanced_metric_impacts()` 现在会读取历史赛果，使用近期战绩和强队对抗调整球队长期参数。
+- `build_match_prediction()`、`build_match_detail()` 和 `build_upcoming_match_predictions()` 会使用历史回测校准后的胜平负概率。
+- `build_match_prediction()` 和 `build_match_detail()` 会使用 `build_tactical_matchup()` 计算单场阵容克制关系。
+- `apply_matchup_adjustments()` 会把单场 matchup 调整写入当场 `attack / defense / path`，影响胜平负和比分分布。
+- `build_upcoming_match_predictions()` 也接入 matchup，不只是主预测场次。
+
+#### 阵容克制关系
+
+新增模块：
+
+```text
+backend/squad_matchup.py
+```
+
+关键函数：
+
+```text
+build_tactical_matchup(fixture, teams, metric_rows)
+apply_matchup_adjustments(teams, fixture, matchup)
+```
+
+当前可计算 matchup：
+
+- `attackVsDefense`：本队进攻与对手防守的错位。
+- `pressVsBuildout`：本队压迫与对手抗压出球。
+- `buildoutVsPress`：本队抗压出球与对手压迫。
+- `directnessEdge`：直接进攻倾向与对手防守。
+- `setPieceEdge`：定位球错位。
+- `aerialEdge`：空中优势。
+- `goalkeeperDrag`：对手门将对本队进攻的压制。
+
+有授权战术数据时使用 `tacticalProfile`，没有时使用球队档案里的 attack / defense / goalkeeper / squad 做保守 matchup。
+
+#### 数据校验
+
+已更新：
+
+```text
+scripts/validate_prediction_data.py
+```
+
+新增校验：
+
+- 历史赛果必须声明 `CC0-1.0`。
+- 历史赛果必须覆盖 48 队。
+- 历史赛果样本不得少于 900 场。
+- 历史赛果球队列表必须与 `teams.json` 一致。
+- 48 队每队必须有 `latestElo` 和 `latestEloDate`。
+
+#### 模型质量报告
+
+新增脚本：
+
+```text
+scripts/write_model_quality_report.py
+npm run report:model-quality
+```
+
+报告内容：
+
+- 历史数据来源、许可证、样本数。
+- 回测场次、Brier score、log loss。
+- 概率校准分桶和 calibration error。
+- 历史进球环境：总样本、中立场样本、主客/中立场进球基准、平局率。
+- 9 个专业缺口当前覆盖状态。
+- 48 队 8 层强度细化。
+- 48 队近期战绩和强队对抗摘要。
+
+运行产物默认写入：
+
+```text
+reports/model-quality-report.json
+```
+
+该文件加入 `.gitignore`，作为可重复生成的本地质量报告，不默认提交。
+
+#### 新增测试
+
+```text
+tests/test_history_model_pipeline.py
+tests/test_squad_matchup.py
+```
+
+覆盖：
+
+- 公开历史数据文件存在且覆盖 48 队。
+- 近期战绩使用真实历史赛果和对手强度修正。
+- 强队对抗使用真实历史赛果和滚动 Elo。
+- 回测和校准可运行。
+- 胜平负概率会应用历史校准，不只是暴露校准元数据。
+- Poisson 进球期望会使用真实历史赛果估计出的进球环境，而不是只用固定常数。
+- 模型质量报告脚本可运行并输出可审计 JSON。
+- `modelMeta` 暴露历史数据、回测和校准。
+- `modelMeta` 暴露历史进球环境，方便审查比分概率和大小球概率的基准。
+- 球星数据缺失时中性，有显式授权字段时改变人员层。
+- 阵容克制关系能改变单场球队参数。
+- 单场详情暴露 `matchupContext`。
+
+### 2026-06-15：历史进球环境接入 Poisson 主链路
+
+本次目标：
+
+- 继续补全七步计划里的真实数据闭环，避免单场比分概率仍依赖硬编码进球基准。
+
+已完成：
+
+- 在 `backend/team_history.py` 新增 `build_scoring_environment()`。
+- 从公开历史赛果估计：
+  - 总样本场次。
+  - 中立场样本场次。
+  - 主队进球 / 场。
+  - 客队进球 / 场。
+  - 中立场主队进球 / 场。
+  - 中立场客队进球 / 场。
+  - 总进球 / 场。
+  - 平局率。
+  - 非中立场相对中立场的主场进球优势。
+- `expected_goals()` 支持传入历史进球环境。
+- `score_distribution()`、`win_draw_loss()`、`calibrated_win_draw_loss()`、`build_score_sampler()`、`simulate_tournament()` 全链路接入同一份历史进球环境。
+- 首页预测、单场详情、即将开赛列表都使用同一份 scoring environment。
+- `modelMeta.scoringEnvironment` 和单场详情 `scoringEnvironment` 暴露进球环境，方便追溯比分概率来源。
+- 模型质量报告加入 `scoringEnvironment`。
+- 数据校验脚本加入历史进球环境门槛：必须 active，且样本不少于 900 场。
+
+关键决策：
+
+- 世界杯比赛默认更接近中立场，所以 Poisson 基准优先使用 `neutralHomeGoalsPerMatch` 和 `neutralAwayGoalsPerMatch`。
+- 如果历史进球环境不可用，才回退到原有常数；这种情况会在数据校验里失败，不允许作为正式数据通过。
+- 该层只使用公开历史比分，不冒充真实 xG；真实 xG / xGA 仍等待授权数据源。
+
+验证：
+
+- `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_history_model_pipeline.py' -v` 通过。
+- `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_model.py' -v` 通过。
+
+#### 当前仍未完成的专业数据层
+
+没有授权数据前，以下仍保持缺失或中性：
+
+- 真实事件级 xG / xGA。
+- 官方完整首发和球员级俱乐部状态。
+- 授权市场价格源。
+- 实时贝叶斯更新。
+- 更细的战术事件数据，例如压迫成功率、传控抗压、定位球 xG、空中对抗等。
+
+但这些现在都有正式字段、函数和状态检测；一旦导入可信数据，会真实影响模型，而不是只写文档。
+
 ## 十、当前交接摘要
 
 一句话定义：

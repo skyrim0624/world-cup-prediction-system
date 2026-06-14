@@ -28,6 +28,7 @@ from backend.model import (
     build_match_prediction,
     build_standings,
     event_factor_impacts,
+    expected_goals,
     forced_outcome_score,
     group_names,
     rank_group,
@@ -85,17 +86,18 @@ class PredictionModelTest(unittest.TestCase):
         self.assertEqual(prediction["modelMeta"]["events"]["applied"], 3)
         self.assertEqual(prediction["modelMeta"]["events"]["ignored"], 2)
         self.assertEqual(prediction["modelMeta"]["events"]["reviewRequired"], 1)
-        self.assertEqual(prediction["modelMeta"]["advancedMetrics"]["source"], "self_built_public_proxy")
+        self.assertEqual(prediction["modelMeta"]["advancedMetrics"]["source"], "verified_layered_inputs")
 
     def test_advanced_metrics_cover_all_teams_and_enter_model_meta(self):
         impacts = advanced_metric_impacts()
         prediction = build_match_prediction(1200)
 
         self.assertEqual(set(impacts), set(TEAM_PROFILES))
-        self.assertIn("strongOpponentWinRate", impacts["brazil"])
-        self.assertIn("nonPenaltyXgForProxy", impacts["brazil"])
-        self.assertIn("nonPenaltyXgAgainstProxy", impacts["brazil"])
-        self.assertGreater(impacts["brazil"]["overall"], 0)
+        self.assertIn("elo", impacts["brazil"])
+        self.assertIn("attack", impacts["brazil"])
+        self.assertIn("defense", impacts["brazil"])
+        self.assertIn("goalkeeper", impacts["brazil"])
+        self.assertIn("squad", impacts["brazil"])
         self.assertEqual(prediction["modelMeta"]["advancedMetricImpacts"]["brazil"]["overall"], impacts["brazil"]["overall"])
 
     def test_team_factors_use_five_product_plates(self):
@@ -152,6 +154,23 @@ class PredictionModelTest(unittest.TestCase):
         sampler = build_score_sampler("brazil", "argentina", teams)
         self.assertGreater(len(sampler), 0)
         self.assertAlmostEqual(sampler[-1][0], 1.0, places=6)
+
+    def test_expected_goals_can_use_historical_scoring_environment(self):
+        teams = apply_event_adjustments()
+        default_home, default_away = expected_goals(teams["brazil"], teams["argentina"])
+        historical_home, historical_away = expected_goals(
+            teams["brazil"],
+            teams["argentina"],
+            {
+                "status": "active",
+                "neutralHomeGoalsPerMatch": 1.05,
+                "neutralAwayGoalsPerMatch": 0.95,
+                "homeGoalsPerMatch": 1.2,
+                "awayGoalsPerMatch": 1.0,
+            },
+        )
+
+        self.assertNotEqual((round(default_home, 3), round(default_away, 3)), (round(historical_home, 3), round(historical_away, 3)))
 
     def test_live_fixture_score_is_used_as_simulation_floor(self):
         teams = apply_event_adjustments()

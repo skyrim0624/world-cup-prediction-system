@@ -22,6 +22,21 @@ from .data import (
     Fixture,
     TeamProfile,
 )
+from .team_strength import (
+    aggregate_team_strength_adjustments,
+    build_all_team_strength_profiles,
+    load_team_metric_rows,
+    professional_gap_coverage,
+)
+from .team_history import (
+    apply_probability_calibration,
+    build_calibration_profile,
+    build_scoring_environment,
+    calibration_application_meta,
+    load_team_match_history,
+    run_prediction_backtest,
+)
+from .squad_matchup import apply_matchup_adjustments, build_tactical_matchup
 
 Outcome = Literal["home", "draw", "away"]
 
@@ -31,8 +46,8 @@ EVENT_FACTORS = ("attack", "defense", "goalkeeper", "path", "squad")
 LIVE_REMAINING_GOAL_RATE = 0.45
 TOURNAMENT_YEAR = 2026
 ADVANCED_METRIC_SOURCE = {
-    "source": "self_built_public_proxy",
-    "description": "基于公开强弱评分、近期强队对抗代理、非点球 xG 代理和防守 xGA 代理生成；可被授权 Opta/StatsBomb/Wyscout 数据替换。",
+    "source": "verified_layered_inputs",
+    "description": "只使用本地球队档案、官方已完赛果和显式接入的授权高阶指标；缺失层保持中性，不用代理数冒充真实 xG、首发、市场或战术数据。",
 }
 
 # NOTE: 固定路径来自 FIFA World Cup 26 Regulations Article 12.6-12.11 和 Annexe C。
@@ -104,26 +119,31 @@ def clamp(value: float, lower: float, upper: float) -> float:
     return max(lower, min(upper, value))
 
 
-def advanced_metric_impacts(teams: dict[str, TeamProfile] | None = None) -> dict[str, dict[str, float]]:
+def advanced_metric_impacts(
+    teams: dict[str, TeamProfile] | None = None,
+    metric_rows: dict[str, object] | None = None,
+    history: dict[str, object] | None = None,
+) -> dict[str, dict[str, float]]:
     source_teams = teams or TEAM_PROFILES
+    rows = load_team_metric_rows() if metric_rows is None else metric_rows
+    active_history = load_team_match_history() if history is None else history
+    layer_adjustments = aggregate_team_strength_adjustments(source_teams, FIXTURES, rows, active_history)
     impacts: dict[str, dict[str, float]] = {}
     for team_key, team in source_teams.items():
-        strong_opponent_win_rate = round(clamp(0.18 + (team.elo - 1600) / 760, 0.12, 0.72), 2)
-        strong_opponent_points = round(clamp(0.7 + (team.elo - 1600) / 420, 0.45, 2.25), 2)
-        non_penalty_xg_for = round(clamp(0.55 + team.attack / 70 + (team.elo - 1700) / 1200, 0.75, 2.35), 2)
-        non_penalty_xg_against = round(clamp(2.55 - team.defense / 62 - (team.goalkeeper - 75) / 180, 0.65, 1.85), 2)
-        attack_delta = round(clamp((non_penalty_xg_for - 1.55) * 1.4 + (strong_opponent_win_rate - 0.42) * 1.2, -2.0, 2.0), 2)
-        defense_delta = round(clamp((1.28 - non_penalty_xg_against) * 1.3 + (strong_opponent_points - 1.25) * 0.45, -2.0, 2.0), 2)
-        path_delta = round(clamp((strong_opponent_points - 1.2) * 0.35, -1.0, 1.0), 2)
-        overall = round(attack_delta + defense_delta + path_delta, 2)
+        adjustments = layer_adjustments.get(team_key, {})
+        attack_delta = round(float(adjustments.get("attack") or 0.0), 2)
+        defense_delta = round(float(adjustments.get("defense") or 0.0), 2)
+        goalkeeper_delta = round(float(adjustments.get("goalkeeper") or 0.0), 2)
+        path_delta = round(float(adjustments.get("path") or 0.0), 2)
+        squad_delta = round(float(adjustments.get("squad") or 0.0), 2)
+        overall = round(attack_delta + defense_delta + goalkeeper_delta + path_delta + squad_delta, 2)
         impacts[team_key] = {
-            "strongOpponentWinRate": strong_opponent_win_rate,
-            "strongOpponentPointsPerMatch": strong_opponent_points,
-            "nonPenaltyXgForProxy": non_penalty_xg_for,
-            "nonPenaltyXgAgainstProxy": non_penalty_xg_against,
+            "elo": team.elo,
             "attack": attack_delta,
             "defense": defense_delta,
+            "goalkeeper": goalkeeper_delta,
             "path": path_delta,
+            "squad": squad_delta,
             "overall": overall,
         }
     return impacts
@@ -270,9 +290,9 @@ def apply_event_adjustments() -> dict[str, TeamProfile]:
         advanced = advanced_impacts.get(team_key, {})
         attack_delta = int(round(factor_impacts["attack"] + float(advanced.get("attack", 0.0))))
         defense_delta = int(round(factor_impacts["defense"] + float(advanced.get("defense", 0.0))))
-        goalkeeper_delta = int(round(factor_impacts["goalkeeper"]))
+        goalkeeper_delta = int(round(factor_impacts["goalkeeper"] + float(advanced.get("goalkeeper", 0.0))))
         path_delta = int(round(factor_impacts["path"] + float(advanced.get("path", 0.0))))
-        squad_delta = int(round(factor_impacts["squad"]))
+        squad_delta = int(round(factor_impacts["squad"] + float(advanced.get("squad", 0.0))))
         adjusted[team_key] = replace(
             team,
             attack=max(50, min(99, team.attack + attack_delta)),
@@ -288,7 +308,7 @@ def poisson_probability(lam: float, goals: int) -> float:
     return (lam**goals * exp(-lam)) / factorial(goals)
 
 
-def expected_goals(home: TeamProfile, away: TeamProfile) -> tuple[float, float]:
+def expected_goals(home: TeamProfile, away: TeamProfile, scoring_environment: dict[str, object] | None = None) -> tuple[float, float]:
     elo_gap = home.elo - away.elo
     home_attack = home.attack / 86
     away_attack = away.attack / 86
@@ -298,14 +318,26 @@ def expected_goals(home: TeamProfile, away: TeamProfile) -> tuple[float, float]:
     away_squad = away.squad / 85
     home_goalkeeper_drag = 2.02 - away.goalkeeper / 86
     away_goalkeeper_drag = 2.02 - home.goalkeeper / 86
+    scoring_environment = scoring_environment or {}
+    if scoring_environment.get("status") == "active":
+        base_home = float(scoring_environment.get("neutralHomeGoalsPerMatch") or scoring_environment.get("homeGoalsPerMatch") or 1.35)
+        base_away = float(scoring_environment.get("neutralAwayGoalsPerMatch") or scoring_environment.get("awayGoalsPerMatch") or 1.22)
+    else:
+        base_home = 1.35
+        base_away = 1.22
 
-    home_lambda = 1.35 * exp(elo_gap / 760) * home_attack * home_against * home_squad * home_goalkeeper_drag
-    away_lambda = 1.22 * exp(-elo_gap / 760) * away_attack * away_against * away_squad * away_goalkeeper_drag
+    home_lambda = base_home * exp(elo_gap / 760) * home_attack * home_against * home_squad * home_goalkeeper_drag
+    away_lambda = base_away * exp(-elo_gap / 760) * away_attack * away_against * away_squad * away_goalkeeper_drag
     return max(0.35, min(3.25, home_lambda)), max(0.35, min(3.25, away_lambda))
 
 
-def score_distribution(home_key: str, away_key: str, teams: dict[str, TeamProfile]) -> list[dict[str, float | str]]:
-    home_lambda, away_lambda = expected_goals(teams[home_key], teams[away_key])
+def score_distribution(
+    home_key: str,
+    away_key: str,
+    teams: dict[str, TeamProfile],
+    scoring_environment: dict[str, object] | None = None,
+) -> list[dict[str, float | str]]:
+    home_lambda, away_lambda = expected_goals(teams[home_key], teams[away_key], scoring_environment)
     return score_distribution_from_lambdas(home_lambda, away_lambda)
 
 
@@ -325,8 +357,13 @@ def score_distribution_from_lambdas(home_lambda: float, away_lambda: float) -> l
     return sorted(distribution, key=lambda item: float(item["probability"]), reverse=True)
 
 
-def win_draw_loss(home_key: str, away_key: str, teams: dict[str, TeamProfile]) -> dict[str, float]:
-    distribution = score_distribution(home_key, away_key, teams)
+def win_draw_loss(
+    home_key: str,
+    away_key: str,
+    teams: dict[str, TeamProfile],
+    scoring_environment: dict[str, object] | None = None,
+) -> dict[str, float]:
+    distribution = score_distribution(home_key, away_key, teams, scoring_environment)
     home = sum(float(item["probability"]) for item in distribution if int(item["homeGoals"]) > int(item["awayGoals"]))
     draw = sum(float(item["probability"]) for item in distribution if int(item["homeGoals"]) == int(item["awayGoals"]))
     away = sum(float(item["probability"]) for item in distribution if int(item["homeGoals"]) < int(item["awayGoals"]))
@@ -338,8 +375,23 @@ def win_draw_loss(home_key: str, away_key: str, teams: dict[str, TeamProfile]) -
     }
 
 
-def build_score_sampler(home_key: str, away_key: str, teams: dict[str, TeamProfile]) -> list[tuple[float, int, int]]:
-    home_lambda, away_lambda = expected_goals(teams[home_key], teams[away_key])
+def calibrated_win_draw_loss(
+    home_key: str,
+    away_key: str,
+    teams: dict[str, TeamProfile],
+    calibration: dict[str, object] | None,
+    scoring_environment: dict[str, object] | None = None,
+) -> dict[str, float]:
+    return apply_probability_calibration(win_draw_loss(home_key, away_key, teams, scoring_environment), calibration)
+
+
+def build_score_sampler(
+    home_key: str,
+    away_key: str,
+    teams: dict[str, TeamProfile],
+    scoring_environment: dict[str, object] | None = None,
+) -> list[tuple[float, int, int]]:
+    home_lambda, away_lambda = expected_goals(teams[home_key], teams[away_key], scoring_environment)
     return build_score_sampler_from_lambdas(home_lambda, away_lambda)
 
 
@@ -375,8 +427,12 @@ def sample_score_from_sampler(sampler: list[tuple[float, int, int]], rng: Random
     return home_goals, away_goals
 
 
-def build_fixture_score_sampler(fixture: Fixture, teams: dict[str, TeamProfile]) -> list[tuple[float, int, int]]:
-    home_lambda, away_lambda = expected_goals(teams[fixture.home], teams[fixture.away])
+def build_fixture_score_sampler(
+    fixture: Fixture,
+    teams: dict[str, TeamProfile],
+    scoring_environment: dict[str, object] | None = None,
+) -> list[tuple[float, int, int]]:
+    home_lambda, away_lambda = expected_goals(teams[fixture.home], teams[fixture.away], scoring_environment)
     if fixture.status == "live" and fixture.home_score is not None and fixture.away_score is not None:
         return build_score_sampler_from_lambdas(
             max(0.1, home_lambda * LIVE_REMAINING_GOAL_RATE),
@@ -604,13 +660,18 @@ def simulate_tournament(
     forced_current: Outcome | None = None,
     simulation_count: int = SIMULATION_COUNT,
     forced_match: tuple[str, str] | None = None,
+    scoring_environment: dict[str, object] | None = None,
 ) -> dict[str, dict[str, float]]:
     stages = ("roundOf32", "roundOf16", "quarterfinal", "semifinal", "final", "champion")
     counts = defaultdict(lambda: {stage: 0 for stage in stages})
     rng = Random(20260614 + (0 if forced_current is None else {"home": 11, "draw": 22, "away": 33}[forced_current]))
     forced_match = forced_match or CURRENT_MATCH
     distribution_cache = {
-        (fixture.home, fixture.away, fixture.status, fixture.home_score, fixture.away_score): build_fixture_score_sampler(fixture, teams)
+        (fixture.home, fixture.away, fixture.status, fixture.home_score, fixture.away_score): build_fixture_score_sampler(
+            fixture,
+            teams,
+            scoring_environment,
+        )
         for fixture in FIXTURES
         if fixture.status != "finished"
     }
@@ -717,6 +778,7 @@ def build_scenario_impacts(
     probabilities: dict[str, float],
     teams: dict[str, TeamProfile],
     simulation_count: int,
+    scoring_environment: dict[str, object] | None = None,
 ) -> list[dict[str, object]]:
     scenarios: list[tuple[Outcome, str, str]] = [
         ("home", f"{teams[home_key].name}胜", f"{teams[home_key].name}小组第一概率上升"),
@@ -725,7 +787,13 @@ def build_scenario_impacts(
     ]
     items = []
     for outcome, label, title in scenarios:
-        scenario = simulate_tournament(teams, outcome, simulation_count, (home_key, away_key))
+        scenario = simulate_tournament(
+            teams,
+            outcome,
+            simulation_count,
+            (home_key, away_key),
+            scoring_environment,
+        )
         home_shift = scenario[home_key]["champion"] - base[home_key]["champion"]
         away_shift = scenario[away_key]["champion"] - base[away_key]["champion"]
         if outcome == "draw":
@@ -765,8 +833,13 @@ def build_scenario_impacts(
     return items
 
 
-def score_outcomes_for_match(home_key: str, away_key: str, teams: dict[str, TeamProfile]) -> list[dict[str, object]]:
-    distribution = score_distribution(home_key, away_key, teams)
+def score_outcomes_for_match(
+    home_key: str,
+    away_key: str,
+    teams: dict[str, TeamProfile],
+    scoring_environment: dict[str, object] | None = None,
+) -> list[dict[str, object]]:
+    distribution = score_distribution(home_key, away_key, teams, scoring_environment)
     return [
         {
             "score": item["score"],
@@ -778,8 +851,14 @@ def score_outcomes_for_match(home_key: str, away_key: str, teams: dict[str, Team
     ]
 
 
-def score_matrix_for_match(home_key: str, away_key: str, teams: dict[str, TeamProfile], max_goals: int = 4) -> list[dict[str, object]]:
-    distribution = score_distribution(home_key, away_key, teams)
+def score_matrix_for_match(
+    home_key: str,
+    away_key: str,
+    teams: dict[str, TeamProfile],
+    max_goals: int = 4,
+    scoring_environment: dict[str, object] | None = None,
+) -> list[dict[str, object]]:
+    distribution = score_distribution(home_key, away_key, teams, scoring_environment)
     cells = [
         item
         for item in distribution
@@ -810,8 +889,13 @@ def fair_decimal(probability: float) -> float:
     return round(1 / probability, 2)
 
 
-def goal_markets_for_match(home_key: str, away_key: str, teams: dict[str, TeamProfile]) -> list[dict[str, object]]:
-    distribution = score_distribution(home_key, away_key, teams)
+def goal_markets_for_match(
+    home_key: str,
+    away_key: str,
+    teams: dict[str, TeamProfile],
+    scoring_environment: dict[str, object] | None = None,
+) -> list[dict[str, object]]:
+    distribution = score_distribution(home_key, away_key, teams, scoring_environment)
     over_25 = sum(float(item["probability"]) for item in distribution if int(item["homeGoals"]) + int(item["awayGoals"]) >= 3)
     under_25 = 1 - over_25
     btts_yes = sum(float(item["probability"]) for item in distribution if int(item["homeGoals"]) > 0 and int(item["awayGoals"]) > 0)
@@ -948,6 +1032,10 @@ def build_lightweight_scenario_impacts(
 
 
 def build_match_detail(home_key: str, away_key: str, simulation_count: int = 1200) -> dict[str, object]:
+    metric_rows = load_team_metric_rows()
+    history = load_team_match_history()
+    calibration = build_calibration_profile(run_prediction_backtest(history, TEAM_PROFILES))
+    scoring_environment = build_scoring_environment(history, TEAM_PROFILES)
     teams = apply_event_adjustments()
     current_fixture = next((fixture for fixture in FIXTURES if (fixture.home, fixture.away) == (home_key, away_key)), None)
     if current_fixture is None:
@@ -956,12 +1044,14 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
         raise FinishedMatchPredictionError("已结束比赛不再预测，赛果已锁定为后续路径和权重因子")
     fixture_context = build_fixture_context(current_fixture)
     match_teams = apply_fixture_context_adjustments(teams, current_fixture, fixture_context)
+    matchup_context = build_tactical_matchup(current_fixture, match_teams, metric_rows)
+    match_teams = apply_matchup_adjustments(match_teams, current_fixture, matchup_context)
 
-    probabilities = win_draw_loss(home_key, away_key, match_teams)
+    probabilities = calibrated_win_draw_loss(home_key, away_key, match_teams, calibration, scoring_environment)
     home_win = round(probabilities["home"] * 100)
     draw = round(probabilities["draw"] * 100)
     away_win = 100 - home_win - draw
-    score_outcomes = score_outcomes_for_match(home_key, away_key, match_teams)
+    score_outcomes = score_outcomes_for_match(home_key, away_key, match_teams, scoring_environment)
 
     return {
         "stage": current_fixture.stage,
@@ -981,9 +1071,12 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
         "awayWin": away_win,
         "updatedAt": datetime.now(timezone.utc).isoformat(),
         "fixtureContext": fixture_context,
+        "matchupContext": matchup_context,
+        "probabilityCalibration": calibration_application_meta(calibration),
+        "scoringEnvironment": scoring_environment,
         "scoreOutcomes": score_outcomes,
-        "scoreMatrix": score_matrix_for_match(home_key, away_key, match_teams),
-        "goalMarkets": goal_markets_for_match(home_key, away_key, match_teams),
+        "scoreMatrix": score_matrix_for_match(home_key, away_key, match_teams, scoring_environment=scoring_environment),
+        "goalMarkets": goal_markets_for_match(home_key, away_key, match_teams, scoring_environment),
         "fairPrices": fair_prices_for_match(home_key, away_key, probabilities, teams),
         "marketSource": {
             "status": "pending",
@@ -1002,6 +1095,10 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
 
 
 def build_upcoming_match_predictions(limit: int = 12) -> dict[str, object]:
+    metric_rows = load_team_metric_rows()
+    history = load_team_match_history()
+    calibration = build_calibration_profile(run_prediction_backtest(history, TEAM_PROFILES))
+    scoring_environment = build_scoring_environment(history, TEAM_PROFILES)
     teams = apply_event_adjustments()
     items = []
     scheduled_fixtures = [fixture for fixture in FIXTURES if fixture.status == "scheduled"]
@@ -1014,11 +1111,13 @@ def build_upcoming_match_predictions(limit: int = 12) -> dict[str, object]:
     for fixture in scheduled_fixtures:
         fixture_context = build_fixture_context(fixture)
         match_teams = apply_fixture_context_adjustments(teams, fixture, fixture_context)
-        probabilities = win_draw_loss(fixture.home, fixture.away, match_teams)
+        matchup_context = build_tactical_matchup(fixture, match_teams, metric_rows)
+        match_teams = apply_matchup_adjustments(match_teams, fixture, matchup_context)
+        probabilities = calibrated_win_draw_loss(fixture.home, fixture.away, match_teams, calibration, scoring_environment)
         home_win = round(probabilities["home"] * 100)
         draw = round(probabilities["draw"] * 100)
         away_win = 100 - home_win - draw
-        top_score = score_distribution(fixture.home, fixture.away, match_teams)[0]
+        top_score = score_distribution(fixture.home, fixture.away, match_teams, scoring_environment)[0]
         items.append(
             {
                 "stage": fixture.stage,
@@ -1037,6 +1136,9 @@ def build_upcoming_match_predictions(limit: int = 12) -> dict[str, object]:
                 "draw": draw,
                 "awayWin": away_win,
                 "fixtureContext": fixture_context,
+                "matchupContext": matchup_context,
+                "probabilityCalibration": calibration_application_meta(calibration),
+                "scoringEnvironment": scoring_environment,
                 "topScore": {
                     "score": top_score["score"],
                     "probability": round(float(top_score["probability"]) * 100, 1),
@@ -1094,15 +1196,30 @@ def build_finished_match_records(limit: int = 12) -> dict[str, object]:
 
 
 def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str, object]:
+    metric_rows = load_team_metric_rows()
+    history = load_team_match_history()
+    backtest = run_prediction_backtest(history, TEAM_PROFILES)
+    calibration = build_calibration_profile(backtest)
+    scoring_environment = build_scoring_environment(history, TEAM_PROFILES)
+    coverage_metric_rows = {
+        **metric_rows,
+        "__meta__": {
+            "eliteSampleAdjustment": {"source": "cc0_international_results"},
+            "backtesting": backtest,
+            "probabilityCalibration": calibration,
+        },
+    }
     teams = apply_event_adjustments()
     home_key, away_key = CURRENT_MATCH
     current_fixture = next(fixture for fixture in FIXTURES if (fixture.home, fixture.away) == CURRENT_MATCH)
     fixture_context = build_fixture_context(current_fixture)
     match_teams = apply_fixture_context_adjustments(teams, current_fixture, fixture_context)
-    probabilities = win_draw_loss(home_key, away_key, match_teams)
-    base_tournament = simulate_tournament(teams, simulation_count=simulation_count)
-    baseline_tournament = simulate_tournament(TEAM_PROFILES, simulation_count=simulation_count)
-    score_outcomes = score_outcomes_for_match(home_key, away_key, match_teams)
+    matchup_context = build_tactical_matchup(current_fixture, match_teams, metric_rows)
+    match_teams = apply_matchup_adjustments(match_teams, current_fixture, matchup_context)
+    probabilities = calibrated_win_draw_loss(home_key, away_key, match_teams, calibration, scoring_environment)
+    base_tournament = simulate_tournament(teams, simulation_count=simulation_count, scoring_environment=scoring_environment)
+    baseline_tournament = simulate_tournament(TEAM_PROFILES, simulation_count=simulation_count, scoring_environment=scoring_environment)
+    score_outcomes = score_outcomes_for_match(home_key, away_key, match_teams, scoring_environment)
 
     response_teams = []
     for team_key, profile in teams.items():
@@ -1144,16 +1261,25 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
         "awayWin": round(probabilities["away"] * 100),
         "updatedAt": datetime.now(timezone.utc).isoformat(),
         "fixtureContext": fixture_context,
+        "matchupContext": matchup_context,
         "scoreOutcomes": score_outcomes,
-        "scoreMatrix": score_matrix_for_match(home_key, away_key, match_teams),
-        "goalMarkets": goal_markets_for_match(home_key, away_key, match_teams),
+        "scoreMatrix": score_matrix_for_match(home_key, away_key, match_teams, scoring_environment=scoring_environment),
+        "goalMarkets": goal_markets_for_match(home_key, away_key, match_teams, scoring_environment),
         "fairPrices": fair_prices_for_match(home_key, away_key, probabilities, teams),
         "marketSource": {
             "status": "pending",
             "label": "市场价格源待接入",
             "detail": "后续接入授权市场价格后，再展示模型概率与市场价格差值。",
         },
-        "scenarioImpacts": build_scenario_impacts(base_tournament, home_key, away_key, probabilities, teams, simulation_count),
+        "scenarioImpacts": build_scenario_impacts(
+            base_tournament,
+            home_key,
+            away_key,
+            probabilities,
+            teams,
+            simulation_count,
+            scoring_environment,
+        ),
         "creatorTopics": creator_topics_for_match(home_key, away_key, teams, str(score_outcomes[0]["score"])),
         "analysis": analysis,
         "newsItems": [event_to_news_item(event) for event in EVENTS],
@@ -1168,7 +1294,26 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
             "events": event_summary(),
             "factorImpacts": event_factor_impacts(),
             "fixtureContextImpacts": fixture_context_factor_impacts(fixture_context),
+            "matchupContext": matchup_context,
             "advancedMetrics": ADVANCED_METRIC_SOURCE,
-            "advancedMetricImpacts": advanced_metric_impacts(),
+            "advancedMetricImpacts": advanced_metric_impacts(metric_rows=metric_rows, history=history),
+            "teamStrengthLayers": build_all_team_strength_profiles(TEAM_PROFILES, FIXTURES, metric_rows, history),
+            "professionalGapCoverage": professional_gap_coverage(coverage_metric_rows),
+            "historicalData": {
+                "source": history.get("meta", {}).get("source"),
+                "license": history.get("meta", {}).get("license"),
+                "scoredMatches": history.get("meta", {}).get("scoredMatches", 0),
+                "matchedTeams": history.get("meta", {}).get("matchedTeams", 0),
+                "since": history.get("meta", {}).get("since"),
+                "until": history.get("meta", {}).get("until"),
+            },
+            "backtest": {
+                key: value
+                for key, value in backtest.items()
+                if key != "samples"
+            },
+            "calibration": calibration,
+            "probabilityCalibrationApplied": calibration_application_meta(calibration),
+            "scoringEnvironment": scoring_environment,
         },
     }

@@ -17,3 +17,4 @@ backend/data_files/backups/
 backend/data_files/admin-audit.jsonl
 backend/data_files/daily-update-status.json
 backend/data_files/payment-orders.json
+reports/*.json
