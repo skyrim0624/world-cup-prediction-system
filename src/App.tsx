@@ -1,8 +1,9 @@
-import { FormEvent, useEffect, useMemo, useState, type ReactNode } from "react";
+import { Fragment, FormEvent, useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
 
 type TeamKey = string;
 type Tone = "green" | "blue" | "gold" | "orange" | "red" | "muted";
 type FactorImpactMap = Record<string, Record<string, number>>;
+type CustomStyle = CSSProperties & Record<string, string | number>;
 
 type Team = {
   key: TeamKey;
@@ -148,6 +149,40 @@ type ScoreOutcome = {
   probability: number;
   note: string;
   tone: Tone;
+};
+
+type ScoreMatrixCell = {
+  score: string;
+  homeGoals: number;
+  awayGoals: number;
+  probability: number;
+};
+
+type GoalMarket = {
+  label: string;
+  probability: number;
+  fairDecimal: number;
+  note: string;
+  tone: Tone;
+};
+
+type FairPrice = {
+  label: string;
+  probability: number;
+  fairDecimal: number;
+  note: string;
+  tone: Tone;
+};
+
+type MarketSource = {
+  status: string;
+  label: string;
+  detail: string;
+};
+
+type CreatorTopic = {
+  title: string;
+  detail: string;
 };
 
 type UpcomingMatch = {
@@ -304,7 +339,12 @@ type MatchPrediction = {
   awayWin: number;
   updatedAt: string;
   scoreOutcomes: ScoreOutcome[];
+  scoreMatrix?: ScoreMatrixCell[];
+  goalMarkets?: GoalMarket[];
+  fairPrices?: FairPrice[];
+  marketSource?: MarketSource;
   scenarioImpacts: ScenarioImpact[];
+  creatorTopics?: CreatorTopic[];
   analysis: string[];
   newsItems: NewsItem[];
   teams?: Team[];
@@ -350,7 +390,12 @@ type MatchDetail = {
   awayWin: number;
   updatedAt: string;
   scoreOutcomes: ScoreOutcome[];
+  scoreMatrix?: ScoreMatrixCell[];
+  goalMarkets?: GoalMarket[];
+  fairPrices?: FairPrice[];
+  marketSource?: MarketSource;
   scenarioImpacts: ScenarioImpact[];
+  creatorTopics?: CreatorTopic[];
   analysis: string[];
 };
 
@@ -452,6 +497,38 @@ const fallbackNewsItems: NewsItem[] = [
   { title: "社媒传闻", detail: "未证实更衣室消息，不改变概率", impact: "已忽略", tone: "muted", time: "5 小时前" },
 ];
 
+const fallbackGoalMarkets: GoalMarket[] = [
+  { label: "大 2.5", probability: 43.8, fairDecimal: 2.28, note: "总进球至少 3", tone: "blue" },
+  { label: "小 2.5", probability: 56.2, fairDecimal: 1.78, note: "总进球不超过 2", tone: "green" },
+  { label: "BTTS 是", probability: 53.6, fairDecimal: 1.87, note: "双方都有进球", tone: "gold" },
+  { label: "BTTS 否", probability: 46.4, fairDecimal: 2.16, note: "至少一队零进球", tone: "blue" },
+];
+
+const fallbackScoreMatrix: ScoreMatrixCell[] = [
+  { score: "0-0", homeGoals: 0, awayGoals: 0, probability: 7.8 },
+  { score: "0-1", homeGoals: 0, awayGoals: 1, probability: 8.4 },
+  { score: "0-2", homeGoals: 0, awayGoals: 2, probability: 4.6 },
+  { score: "0-3", homeGoals: 0, awayGoals: 3, probability: 1.6 },
+  { score: "1-0", homeGoals: 1, awayGoals: 0, probability: 10.7 },
+  { score: "1-1", homeGoals: 1, awayGoals: 1, probability: 14.6 },
+  { score: "1-2", homeGoals: 1, awayGoals: 2, probability: 8.1 },
+  { score: "1-3", homeGoals: 1, awayGoals: 3, probability: 2.7 },
+  { score: "2-0", homeGoals: 2, awayGoals: 0, probability: 7.4 },
+  { score: "2-1", homeGoals: 2, awayGoals: 1, probability: 12.8 },
+  { score: "2-2", homeGoals: 2, awayGoals: 2, probability: 7.2 },
+  { score: "2-3", homeGoals: 2, awayGoals: 3, probability: 2.4 },
+  { score: "3-0", homeGoals: 3, awayGoals: 0, probability: 3.1 },
+  { score: "3-1", homeGoals: 3, awayGoals: 1, probability: 5.8 },
+  { score: "3-2", homeGoals: 3, awayGoals: 2, probability: 3.2 },
+  { score: "3-3", homeGoals: 3, awayGoals: 3, probability: 1.1 },
+];
+
+const fallbackMarketSource: MarketSource = {
+  status: "pending",
+  label: "市场价格源待接入",
+  detail: "后续接入授权价格源后，再展示模型概率与市场价格差值。",
+};
+
 function buildFallbackPrediction(tick: number): MatchPrediction {
   const homeDrift = [0, 1, -1, 2, 0, -2][tick % 6];
   const drawDrift = [0, -1, 1, -1, 0, 1][tick % 6];
@@ -474,6 +551,14 @@ function buildFallbackPrediction(tick: number): MatchPrediction {
       { score: "2-1", probability: 12.8 + homeDrift * 0.2, note: "巴西边路优势放大", tone: "green" },
       { score: "1-0", probability: 10.7, note: "低比分胜局仍有空间", tone: "blue" },
     ],
+    scoreMatrix: fallbackScoreMatrix,
+    goalMarkets: fallbackGoalMarkets,
+    fairPrices: [
+      { label: "巴西胜", probability: homeWin, fairDecimal: Number((100 / homeWin).toFixed(2)), note: "90 分钟模型公平概率", tone: "green" },
+      { label: "平局", probability: draw, fairDecimal: Number((100 / draw).toFixed(2)), note: "90 分钟模型公平概率", tone: "gold" },
+      { label: "阿根廷胜", probability: awayWin, fairDecimal: Number((100 / awayWin).toFixed(2)), note: "90 分钟模型公平概率", tone: "blue" },
+    ],
+    marketSource: fallbackMarketSource,
     scenarioImpacts: [
       {
         label: "巴西胜",
@@ -509,6 +594,11 @@ function buildFallbackPrediction(tick: number): MatchPrediction {
       ...item,
       time: tick === 0 ? item.time : `${Math.max(1, tick * 5 + index * 8)} 秒前`,
     })),
+    creatorTopics: [
+      { title: "1-1 为什么是最可能比分？", detail: "从双方进球期望和低比分集中度解释。" },
+      { title: "巴西赢球会怎样改变半区？", detail: "把小组第一、潜在 32 强对手和冠军概率串起来。" },
+      { title: "小 2.5 与 BTTS 的分歧点", detail: "用比分矩阵说明双方进球与总进球不一定同向。" },
+    ],
   };
 }
 
@@ -525,6 +615,35 @@ function formatSignedPercent(value: number) {
 function formatSignedNumber(value: number) {
   if (Math.abs(value) < 0.05) return "0";
   return `${value > 0 ? "+" : ""}${value.toFixed(1)}`;
+}
+
+function fairPriceLabel(value: number) {
+  if (!value) return "--";
+  return value.toFixed(2);
+}
+
+function scoreMatrixFallbackFromOutcomes(outcomes: ScoreOutcome[]): ScoreMatrixCell[] {
+  if (outcomes.length === 0) return fallbackScoreMatrix;
+  return fallbackScoreMatrix.map((cell) => {
+    const matching = outcomes.find((outcome) => outcome.score === cell.score);
+    return matching ? { ...cell, probability: matching.probability } : cell;
+  });
+}
+
+function goalMarketsFallback(): GoalMarket[] {
+  return fallbackGoalMarkets;
+}
+
+function marketSourceFallback(source?: MarketSource) {
+  return source ?? fallbackMarketSource;
+}
+
+function creatorTopicsFallback(homeName: string, awayName: string, topScore?: string): CreatorTopic[] {
+  return [
+    { title: `${topScore ?? "最可能比分"} 的内容切入`, detail: `解释 ${homeName} / ${awayName} 的进球期望和比分集中区间。` },
+    { title: "路径影响怎么讲", detail: "把单场结果接到小组名次、潜在淘汰赛对手和夺冠概率变化。" },
+    { title: "市场分歧怎么讲", detail: "先看模型公平概率，等授权市场价格源接入后再比较差值。" },
+  ];
 }
 
 function dataReadinessLabel(dataset?: DatasetMeta) {
@@ -584,6 +703,19 @@ function HomePredictionPage() {
     ? `${matchPrediction.modelMeta.simulationCount.toLocaleString("zh-CN")} 次模拟 · 已锁定 ${matchPrediction.modelMeta.lockedResults} 场赛果 · 进行中 ${matchPrediction.modelMeta.liveMatches ?? 0} 场 · 事件 ${matchPrediction.modelMeta.events?.applied ?? 0} 入模 / ${matchPrediction.modelMeta.events?.ignored ?? 0} 忽略`
     : "已结束比赛只作为后续权重因子";
   const topScore = matchPrediction.scoreOutcomes[0];
+  const scoreMatrix = matchPrediction.scoreMatrix?.length ? matchPrediction.scoreMatrix : scoreMatrixFallbackFromOutcomes(matchPrediction.scoreOutcomes);
+  const goalMarkets = matchPrediction.goalMarkets?.length ? matchPrediction.goalMarkets : goalMarketsFallback();
+  const fairPrices = matchPrediction.fairPrices?.length
+    ? matchPrediction.fairPrices
+    : [
+        { label: `${homeTeam.name}胜`, probability: matchPrediction.homeWin, fairDecimal: Number((100 / matchPrediction.homeWin).toFixed(2)), note: "90 分钟模型公平概率", tone: "green" as Tone },
+        { label: "平局", probability: matchPrediction.draw, fairDecimal: Number((100 / matchPrediction.draw).toFixed(2)), note: "90 分钟模型公平概率", tone: "gold" as Tone },
+        { label: `${awayTeam.name}胜`, probability: matchPrediction.awayWin, fairDecimal: Number((100 / matchPrediction.awayWin).toFixed(2)), note: "90 分钟模型公平概率", tone: "blue" as Tone },
+      ];
+  const marketSource = marketSourceFallback(matchPrediction.marketSource);
+  const creatorTopics = matchPrediction.creatorTopics?.length
+    ? matchPrediction.creatorTopics
+    : creatorTopicsFallback(homeTeam.name, awayTeam.name, topScore?.score);
 
   useEffect(() => {
     let active = true;
@@ -683,14 +815,14 @@ function HomePredictionPage() {
       <div className="ambient-grid" />
       <header className="topbar portal-topbar">
         <div className="brand portal-brand">
-          <span>世界杯预测</span>
-          <small>World Cup Forecast</small>
+          <span>世界杯预测工作台</span>
+          <small>World Cup Forecast Desk</small>
         </div>
         <nav className="top-links" aria-label="用户预测页">
           <a href="#featured">重点</a>
-          <a href="#matches">未开赛</a>
-          <a href="#finished">赛果</a>
-          <a href="#trend">走势</a>
+          <a href="#market">市场</a>
+          <a href="#impact">路径</a>
+          <a href="#topics">选题</a>
           <a href="#access">解锁</a>
         </nav>
       </header>
@@ -699,9 +831,9 @@ function HomePredictionPage() {
         <div className="hero-copy">
           <span className="hero-eyebrow">FIFA World Cup 2026</span>
           <h1>
-            2026<span>美加墨</span>世界杯
+            今日<span>预测工作台</span>
           </h1>
-          <p>北京时间：6月12日-7月20日</p>
+          <p>比分分布、模型公平概率、路径传导和内容选题集中看。</p>
           <div className="hero-meta-row">
             <strong>{dataModeLabel}</strong>
             <em>{modelSummary}</em>
@@ -716,9 +848,9 @@ function HomePredictionPage() {
           </div>
           <div className="hero-match-detail">
             <em>{matchPrediction.kickoff}</em>
-            <em>{matchPrediction.status}</em>
+            <em>最可能 {topScore?.score ?? "--"}</em>
           </div>
-          <small>进入单场完整预测</small>
+          <small>进入单场预测页</small>
         </a>
       </section>
 
@@ -733,14 +865,20 @@ function HomePredictionPage() {
               <strong>
                 {homeTeam.name} vs {awayTeam.name}
               </strong>
-              <small>{[matchPrediction.kickoff, mainVenue].filter(Boolean).join(" · ")}</small>
+              <small>{[matchPrediction.stage, matchPrediction.kickoff, mainVenue].filter(Boolean).join(" · ")}</small>
             </div>
+          </div>
+          <div className="forecast-lead">
+            <span>最可能比分</span>
+            <strong>{topScore?.score ?? "--"}</strong>
+            <em>{topScore ? `${topScore.probability.toFixed(1)}%` : "等待模型输出"}</em>
           </div>
           <div className="probability-row portal-probability-row">
             <Probability label={`${homeTeam.name}胜`} value={matchPrediction.homeWin} tone="green" />
             <Probability label="平局" value={matchPrediction.draw} tone="gold" />
             <Probability label={`${awayTeam.name}胜`} value={matchPrediction.awayWin} tone="blue" />
           </div>
+          <CompactScoreList outcomes={matchPrediction.scoreOutcomes.slice(0, 3)} />
           <div className="engine-line">
             <span className="ai-badge">AI</span>
             <span className="engine-copy">
@@ -750,67 +888,61 @@ function HomePredictionPage() {
               </small>
             </span>
             <a className="primary-link" href={matchPagePath(matchPrediction.homeTeam, matchPrediction.awayTeam)}>
-              解锁完整预测
+              单场页
             </a>
           </div>
-          <div className="analysis-list">
+        </section>
+
+        <section id="market" className="console-panel market-desk-card">
+          <div className="section-title">
+            <span>模型公平概率</span>
+          </div>
+          <FairPricePanel prices={fairPrices} />
+          <div className="market-source-box">
+            <strong>{marketSource.label || "市场价格源待接入"}</strong>
+            <p>{marketSource.detail}</p>
+          </div>
+          <GoalMarketPanel markets={goalMarkets.slice(0, 4)} compact />
+        </section>
+
+        <section id="topics" className="console-panel topic-card">
+          <div className="section-title">
+            <span>今日可讲选题</span>
+          </div>
+          <CreatorTopicsPanel topics={creatorTopics} />
+          <div className="analysis-list compact-analysis">
             {matchPrediction.analysis.slice(0, 2).map((item) => (
               <p key={item}>{item}</p>
             ))}
           </div>
-        </section>
-
-        <section className="console-panel portal-standing-card">
-          <div className="section-title">
-            <span>冠军概率榜</span>
-          </div>
-          <ChampionBoard teams={championBoard.slice(0, 6)} />
-          <p className="locked-note">完整 48 队榜单随赛事全周期解锁。</p>
-        </section>
-
-        <section className="console-panel portal-schedule-card">
-          <div className="section-title">
-            <span>全部赛程</span>
-          </div>
-          <FinishedMatchesPanel records={finishedMatches?.items ?? []} />
         </section>
       </div>
 
       <div className="module-grid portal-module-grid">
         <section className="console-panel">
           <div className="section-title">
-            <span>免费预览比分</span>
+            <span>比分矩阵</span>
           </div>
-          <div className="score-outcome-list">
-            {matchPrediction.scoreOutcomes.slice(0, 1).map((outcome) => (
-              <article className={`score-outcome ${outcome.tone}`} key={outcome.score}>
-                <strong>{outcome.score}</strong>
-                <div>
-                  <b>{outcome.probability.toFixed(1)}%</b>
-                  <span>{outcome.note}</span>
-                </div>
-              </article>
-            ))}
-          </div>
-          <p className="locked-note">完整比分分布在单场页解锁。</p>
+          <ScoreMatrix cells={scoreMatrix} />
         </section>
 
         <section className="console-panel">
           <div className="section-title">
-            <span>单场比分走向</span>
+            <span>进球市场视角</span>
           </div>
-          <article className="score-outcome portal-top-score">
-            <strong>{topScore?.score ?? "--"}</strong>
-            <div>
-              <b>{topScore ? `${topScore.probability.toFixed(1)}%` : "--"}</b>
-              <span>{topScore?.note ?? "等待模型输出"}</span>
-            </div>
-          </article>
+          <GoalMarketPanel markets={goalMarkets} />
         </section>
 
-        <section id="matches" className="console-panel wide">
+        <section id="impact" className="console-panel wide">
           <div className="section-title">
-            <span>未开赛预测</span>
+            <span>路径传导</span>
+          </div>
+          <ScenarioImpactList scenarios={matchPrediction.scenarioImpacts} />
+        </section>
+
+        <section className="console-panel wide">
+          <div className="section-title">
+            <span>未开赛比赛池</span>
           </div>
           <UpcomingMatchesPanel matches={upcomingMatches?.items ?? []} selectedKey={selectedMatchKey} onSelect={loadMatchDetail} />
         </section>
@@ -822,11 +954,19 @@ function HomePredictionPage() {
           <MatchDetailPanel detail={matchDetail} teamsData={teamsData} />
         </section>
 
-        <section id="trend" className="console-panel">
+        <section className="console-panel">
           <div className="section-title">
             <span>今日概率变化</span>
           </div>
           <DailyMoversPanel movers={matchPrediction.dailyMovers} />
+        </section>
+
+        <section className="console-panel portal-standing-card">
+          <div className="section-title">
+            <span>冠军概率榜</span>
+          </div>
+          <ChampionBoard teams={championBoard.slice(0, 6)} />
+          <p className="locked-note">完整 48 队榜单随赛事全周期解锁。</p>
         </section>
 
         <section className="console-panel">
@@ -848,25 +988,11 @@ function HomePredictionPage() {
           </div>
         </section>
 
-        <section className="console-panel">
+        <section id="finished" className="console-panel">
           <div className="section-title">
-            <span>模型说明</span>
+            <span>赛果记录</span>
           </div>
-          <div className="layer-grid compact">
-            {modelLayers.map((layer, index) => (
-              <article className="layer-card" key={layer.layer}>
-                <span>{`0${index + 1}`}</span>
-                <strong>{layer.layer}</strong>
-                <h3>{layer.title}</h3>
-                <ul>
-                  {layer.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-                <em>{layer.metric}</em>
-              </article>
-            ))}
-          </div>
+          <FinishedMatchesPanel records={finishedMatches?.items ?? []} />
         </section>
 
         <section id="access" className="console-panel wide">
@@ -918,6 +1044,116 @@ function SegmentBar({ value, tone }: { value: number; tone: string }) {
         <i className={index < filled ? "filled" : ""} key={index} />
       ))}
     </span>
+  );
+}
+
+function CompactScoreList({ outcomes }: { outcomes: ScoreOutcome[] }) {
+  if (outcomes.length === 0) {
+    return <p className="review-empty">比分分布等待模型输出</p>;
+  }
+  return (
+    <div className="compact-score-list" aria-label="最可能比分 Top 3">
+      {outcomes.map((outcome, index) => (
+        <article className={`compact-score ${outcome.tone}`} key={outcome.score}>
+          <span>{`Top ${index + 1}`}</span>
+          <strong>{outcome.score}</strong>
+          <em>{outcome.probability.toFixed(1)}%</em>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function FairPricePanel({ prices }: { prices: FairPrice[] }) {
+  return (
+    <div className="fair-price-list">
+      {prices.map((price) => (
+        <article className={`fair-price-row ${price.tone}`} key={price.label}>
+          <div>
+            <strong>{price.label}</strong>
+            <span>{price.note}</span>
+          </div>
+          <b>{price.probability.toFixed(1)}%</b>
+          <em>{fairPriceLabel(price.fairDecimal)}</em>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function GoalMarketPanel({ markets, compact = false }: { markets: GoalMarket[]; compact?: boolean }) {
+  if (markets.length === 0) {
+    return <p className="review-empty">进球市场视角等待模型输出</p>;
+  }
+  return (
+    <div className={`goal-market-grid ${compact ? "compact" : ""}`}>
+      {markets.map((market) => (
+        <article className={`goal-market-card ${market.tone}`} key={market.label}>
+          <span>{market.label}</span>
+          <strong>{market.probability.toFixed(1)}%</strong>
+          <small>{market.note}</small>
+          <em>公平价 {fairPriceLabel(market.fairDecimal)}</em>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function ScoreMatrix({ cells }: { cells: ScoreMatrixCell[] }) {
+  const visibleCells = cells.filter((cell) => cell.homeGoals <= 4 && cell.awayGoals <= 4);
+  const maxHome = Math.max(3, ...visibleCells.map((cell) => cell.homeGoals));
+  const maxAway = Math.max(3, ...visibleCells.map((cell) => cell.awayGoals));
+  const homeGoals = Array.from({ length: maxHome + 1 }, (_, index) => index);
+  const awayGoals = Array.from({ length: maxAway + 1 }, (_, index) => index);
+  const cellMap = new Map(visibleCells.map((cell) => [`${cell.homeGoals}-${cell.awayGoals}`, cell]));
+
+  return (
+    <div className="score-matrix" style={{ "--matrix-columns": awayGoals.length + 1 } as CustomStyle}>
+      <span className="matrix-axis">主/客</span>
+      {awayGoals.map((awayGoal) => (
+        <span className="matrix-head" key={`away-${awayGoal}`}>
+          {awayGoal}
+        </span>
+      ))}
+      {homeGoals.map((homeGoal) => (
+        <Fragment key={`row-${homeGoal}`}>
+          <span className="matrix-head">{homeGoal}</span>
+          {awayGoals.map((awayGoal) => {
+            const cell = cellMap.get(`${homeGoal}-${awayGoal}`);
+            const probability = cell?.probability ?? 0;
+            return (
+              <span
+                className="matrix-cell"
+                key={`${homeGoal}-${awayGoal}`}
+                style={{ "--heat": Math.min(probability / 16, 1).toFixed(2) } as CustomStyle}
+              >
+                <b>{`${homeGoal}-${awayGoal}`}</b>
+                <em>{probability.toFixed(1)}%</em>
+              </span>
+            );
+          })}
+        </Fragment>
+      ))}
+    </div>
+  );
+}
+
+function CreatorTopicsPanel({ topics }: { topics: CreatorTopic[] }) {
+  if (topics.length === 0) {
+    return <p className="review-empty">今日选题等待模型输出</p>;
+  }
+  return (
+    <div className="creator-topic-list">
+      {topics.slice(0, 3).map((topic, index) => (
+        <article className="creator-topic" key={topic.title}>
+          <span>{`0${index + 1}`}</span>
+          <div>
+            <strong>{topic.title}</strong>
+            <p>{topic.detail}</p>
+          </div>
+        </article>
+      ))}
+    </div>
   );
 }
 
@@ -1008,6 +1244,15 @@ function MatchDetailPanel({ detail, teamsData }: { detail: MatchDetail | null; t
   const homeTeam = teamsData.find((team) => team.key === detail.homeTeam);
   const awayTeam = teamsData.find((team) => team.key === detail.awayTeam);
   const venue = fixtureVenueLabel(detail);
+  const scoreMatrix = detail.scoreMatrix?.length ? detail.scoreMatrix : scoreMatrixFallbackFromOutcomes(detail.scoreOutcomes);
+  const goalMarkets = detail.goalMarkets?.length ? detail.goalMarkets : goalMarketsFallback();
+  const fairPrices = detail.fairPrices?.length
+    ? detail.fairPrices
+    : [
+        { label: `${homeTeam?.name ?? detail.homeTeam}胜`, probability: detail.homeWin, fairDecimal: Number((100 / detail.homeWin).toFixed(2)), note: "90 分钟模型公平概率", tone: "green" as Tone },
+        { label: "平局", probability: detail.draw, fairDecimal: Number((100 / detail.draw).toFixed(2)), note: "90 分钟模型公平概率", tone: "gold" as Tone },
+        { label: `${awayTeam?.name ?? detail.awayTeam}胜`, probability: detail.awayWin, fairDecimal: Number((100 / detail.awayWin).toFixed(2)), note: "90 分钟模型公平概率", tone: "blue" as Tone },
+      ];
 
   return (
     <div className="match-detail-grid">
@@ -1036,6 +1281,11 @@ function MatchDetailPanel({ detail, teamsData }: { detail: MatchDetail | null; t
           </article>
         ))}
       </div>
+      <div className="match-detail-splits">
+        <FairPricePanel prices={fairPrices} />
+        <GoalMarketPanel markets={goalMarkets} compact />
+      </div>
+      <ScoreMatrix cells={scoreMatrix} />
       <ScenarioImpactList scenarios={detail.scenarioImpacts} />
     </div>
   );
@@ -1318,6 +1568,19 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
   const homeCode = detail?.homeCode ?? homeTeam?.code ?? home.slice(0, 3).toUpperCase();
   const awayCode = detail?.awayCode ?? awayTeam?.code ?? away.slice(0, 3).toUpperCase();
   const venue = detail ? fixtureVenueLabel(detail) : "";
+  const detailScoreMatrix = detail ? (detail.scoreMatrix?.length ? detail.scoreMatrix : scoreMatrixFallbackFromOutcomes(detail.scoreOutcomes)) : [];
+  const detailGoalMarkets = detail?.goalMarkets?.length ? detail.goalMarkets : goalMarketsFallback();
+  const detailFairPrices = detail?.fairPrices?.length
+    ? detail.fairPrices
+    : [
+        { label: `${homeName}胜`, probability: detail?.homeWin ?? 0, fairDecimal: detail?.homeWin ? Number((100 / detail.homeWin).toFixed(2)) : 0, note: "90 分钟模型公平概率", tone: "green" as Tone },
+        { label: "平局", probability: detail?.draw ?? 0, fairDecimal: detail?.draw ? Number((100 / detail.draw).toFixed(2)) : 0, note: "90 分钟模型公平概率", tone: "gold" as Tone },
+        { label: `${awayName}胜`, probability: detail?.awayWin ?? 0, fairDecimal: detail?.awayWin ? Number((100 / detail.awayWin).toFixed(2)) : 0, note: "90 分钟模型公平概率", tone: "blue" as Tone },
+      ];
+  const detailMarketSource = marketSourceFallback(detail?.marketSource);
+  const detailCreatorTopics = detail?.creatorTopics?.length
+    ? detail.creatorTopics
+    : creatorTopicsFallback(homeName, awayName, detail?.scoreOutcomes[0]?.score);
 
   return (
     <main className="console-shell match-page-shell">
@@ -1413,7 +1676,7 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
           <div className="panel-kicker">完整预测</div>
           <h2>单场完整预测</h2>
           {detail ? (
-            <LockedContent unlocked={matchUnlocked} title="完整预测" preview="包含比分分布 Top 3、整届概率传导和完整 AI 分析。">
+            <LockedContent unlocked={matchUnlocked} title="完整预测" preview="包含比分矩阵、进球市场、模型公平概率、路径传导和博主素材。">
               <div className="match-full-content">
                 <div className="score-outcome-list">
                   {detail.scoreOutcomes.map((outcome) => (
@@ -1426,12 +1689,22 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
                     </article>
                   ))}
                 </div>
+                <div className="match-detail-splits">
+                  <FairPricePanel prices={detailFairPrices} />
+                  <GoalMarketPanel markets={detailGoalMarkets} compact />
+                </div>
+                <div className="market-source-box">
+                  <strong>{detailMarketSource.label}</strong>
+                  <p>{detailMarketSource.detail}</p>
+                </div>
+                <ScoreMatrix cells={detailScoreMatrix} />
                 <div className="analysis-list">
                   {detail.analysis.map((item) => (
                     <p key={item}>{item}</p>
                   ))}
                 </div>
                 <ScenarioImpactList scenarios={detail.scenarioImpacts} />
+                <CreatorTopicsPanel topics={detailCreatorTopics} />
               </div>
             </LockedContent>
           ) : (

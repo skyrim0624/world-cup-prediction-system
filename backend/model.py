@@ -775,6 +775,124 @@ def score_outcomes_for_match(home_key: str, away_key: str, teams: dict[str, Team
     ]
 
 
+def score_matrix_for_match(home_key: str, away_key: str, teams: dict[str, TeamProfile], max_goals: int = 4) -> list[dict[str, object]]:
+    distribution = score_distribution(home_key, away_key, teams)
+    cells = [
+        item
+        for item in distribution
+        if int(item["homeGoals"]) <= max_goals and int(item["awayGoals"]) <= max_goals
+    ]
+    return [
+        {
+            "score": item["score"],
+            "homeGoals": int(item["homeGoals"]),
+            "awayGoals": int(item["awayGoals"]),
+            "probability": round(float(item["probability"]) * 100, 1),
+        }
+        for item in sorted(cells, key=lambda item: (int(item["homeGoals"]), int(item["awayGoals"])))
+    ]
+
+
+def market_tone(probability: float) -> str:
+    if probability >= 0.56:
+        return "green"
+    if probability >= 0.52:
+        return "gold"
+    return "blue"
+
+
+def fair_decimal(probability: float) -> float:
+    if probability <= 0:
+        return 0
+    return round(1 / probability, 2)
+
+
+def goal_markets_for_match(home_key: str, away_key: str, teams: dict[str, TeamProfile]) -> list[dict[str, object]]:
+    distribution = score_distribution(home_key, away_key, teams)
+    over_25 = sum(float(item["probability"]) for item in distribution if int(item["homeGoals"]) + int(item["awayGoals"]) >= 3)
+    under_25 = 1 - over_25
+    btts_yes = sum(float(item["probability"]) for item in distribution if int(item["homeGoals"]) > 0 and int(item["awayGoals"]) > 0)
+    btts_no = 1 - btts_yes
+    return [
+        {
+            "label": "大 2.5",
+            "probability": round(over_25 * 100, 1),
+            "fairDecimal": fair_decimal(over_25),
+            "note": "总进球至少 3",
+            "tone": market_tone(over_25),
+        },
+        {
+            "label": "小 2.5",
+            "probability": round(under_25 * 100, 1),
+            "fairDecimal": fair_decimal(under_25),
+            "note": "总进球不超过 2",
+            "tone": market_tone(under_25),
+        },
+        {
+            "label": "BTTS 是",
+            "probability": round(btts_yes * 100, 1),
+            "fairDecimal": fair_decimal(btts_yes),
+            "note": "双方都有进球",
+            "tone": market_tone(btts_yes),
+        },
+        {
+            "label": "BTTS 否",
+            "probability": round(btts_no * 100, 1),
+            "fairDecimal": fair_decimal(btts_no),
+            "note": "至少一队零进球",
+            "tone": market_tone(btts_no),
+        },
+    ]
+
+
+def fair_prices_for_match(
+    home_key: str,
+    away_key: str,
+    probabilities: dict[str, float],
+    teams: dict[str, TeamProfile],
+) -> list[dict[str, object]]:
+    return [
+        {
+            "label": f"{teams[home_key].name}胜",
+            "probability": round(probabilities["home"] * 100, 1),
+            "fairDecimal": fair_decimal(probabilities["home"]),
+            "note": "90 分钟模型公平概率",
+            "tone": "green",
+        },
+        {
+            "label": "平局",
+            "probability": round(probabilities["draw"] * 100, 1),
+            "fairDecimal": fair_decimal(probabilities["draw"]),
+            "note": "90 分钟模型公平概率",
+            "tone": "gold",
+        },
+        {
+            "label": f"{teams[away_key].name}胜",
+            "probability": round(probabilities["away"] * 100, 1),
+            "fairDecimal": fair_decimal(probabilities["away"]),
+            "note": "90 分钟模型公平概率",
+            "tone": "blue",
+        },
+    ]
+
+
+def creator_topics_for_match(home_key: str, away_key: str, teams: dict[str, TeamProfile], top_score: str) -> list[dict[str, str]]:
+    return [
+        {
+            "title": f"{top_score} 为什么是最可能比分？",
+            "detail": "从进球期望、双方防守质量和小组赛动机解释。",
+        },
+        {
+            "title": f"{teams[home_key].name}赢球会怎样改变半区？",
+            "detail": "把单场结果传导到小组第一、潜在 32 强对手和冠军概率。",
+        },
+        {
+            "title": "大小球和 BTTS 的分歧点在哪里？",
+            "detail": "用比分矩阵解释低比分集中度与双方进球概率。",
+        },
+    ]
+
+
 def build_match_detail(home_key: str, away_key: str, simulation_count: int = 1200) -> dict[str, object]:
     teams = apply_event_adjustments()
     current_fixture = next((fixture for fixture in FIXTURES if (fixture.home, fixture.away) == (home_key, away_key)), None)
@@ -790,6 +908,7 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
     draw = round(probabilities["draw"] * 100)
     away_win = 100 - home_win - draw
     base_tournament = simulate_tournament(teams, simulation_count=simulation_count)
+    score_outcomes = score_outcomes_for_match(home_key, away_key, match_teams)
 
     return {
         "stage": current_fixture.stage,
@@ -809,8 +928,17 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
         "awayWin": away_win,
         "updatedAt": datetime.now(timezone.utc).isoformat(),
         "fixtureContext": fixture_context,
-        "scoreOutcomes": score_outcomes_for_match(home_key, away_key, match_teams),
+        "scoreOutcomes": score_outcomes,
+        "scoreMatrix": score_matrix_for_match(home_key, away_key, match_teams),
+        "goalMarkets": goal_markets_for_match(home_key, away_key, match_teams),
+        "fairPrices": fair_prices_for_match(home_key, away_key, probabilities, teams),
+        "marketSource": {
+            "status": "pending",
+            "label": "市场价格源待接入",
+            "detail": "后续接入授权市场价格后，再展示模型概率与市场价格差值。",
+        },
         "scenarioImpacts": build_scenario_impacts(base_tournament, home_key, away_key, probabilities, teams, simulation_count),
+        "creatorTopics": creator_topics_for_match(home_key, away_key, teams, str(score_outcomes[0]["score"])),
         "analysis": [
             f"{teams[home_key].name}单场胜率 {home_win}%，当前差距主要来自基础实力和攻防盘。",
             f"平局概率 {draw}%，会继续放大小组排名和净胜球权重。",
@@ -921,6 +1049,7 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
     probabilities = win_draw_loss(home_key, away_key, match_teams)
     base_tournament = simulate_tournament(teams, simulation_count=simulation_count)
     baseline_tournament = simulate_tournament(TEAM_PROFILES, simulation_count=simulation_count)
+    score_outcomes = score_outcomes_for_match(home_key, away_key, match_teams)
 
     response_teams = []
     for team_key, profile in teams.items():
@@ -962,8 +1091,17 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
         "awayWin": round(probabilities["away"] * 100),
         "updatedAt": datetime.now(timezone.utc).isoformat(),
         "fixtureContext": fixture_context,
-        "scoreOutcomes": score_outcomes_for_match(home_key, away_key, match_teams),
+        "scoreOutcomes": score_outcomes,
+        "scoreMatrix": score_matrix_for_match(home_key, away_key, match_teams),
+        "goalMarkets": goal_markets_for_match(home_key, away_key, match_teams),
+        "fairPrices": fair_prices_for_match(home_key, away_key, probabilities, teams),
+        "marketSource": {
+            "status": "pending",
+            "label": "市场价格源待接入",
+            "detail": "后续接入授权市场价格后，再展示模型概率与市场价格差值。",
+        },
         "scenarioImpacts": build_scenario_impacts(base_tournament, home_key, away_key, probabilities, teams, simulation_count),
+        "creatorTopics": creator_topics_for_match(home_key, away_key, teams, str(score_outcomes[0]["score"])),
         "analysis": analysis,
         "newsItems": [event_to_news_item(event) for event in EVENTS],
         "teams": response_teams,

@@ -473,6 +473,11 @@ class PredictionApiTest(unittest.TestCase):
         payload = response.json()
         self.assertEqual(payload["modelMeta"]["simulationCount"], 1200)
         self.assertEqual(payload["modelMeta"]["changeBaseline"], "unadjusted_model")
+        self.assertIn("scoreMatrix", payload)
+        self.assertIn("goalMarkets", payload)
+        self.assertIn("fairPrices", payload)
+        self.assertIn("marketSource", payload)
+        self.assertIn("creatorTopics", payload)
         self.assertIn("dailyMovers", payload)
         self.assertEqual(payload["dailyMovers"]["baseline"], "no_previous_snapshot")
 
@@ -563,6 +568,11 @@ class PredictionApiTest(unittest.TestCase):
         self.assertEqual(payload["homeCode"], "GER")
         self.assertEqual(payload["awayCode"], "CUW")
         self.assertEqual(len(payload["scoreOutcomes"]), 3)
+        self.assertGreater(len(payload["scoreMatrix"]), 0)
+        self.assertEqual(len(payload["goalMarkets"]), 4)
+        self.assertEqual(len(payload["fairPrices"]), 3)
+        self.assertEqual(payload["marketSource"]["status"], "pending")
+        self.assertEqual(len(payload["creatorTopics"]), 3)
         self.assertEqual(len(payload["scenarioImpacts"]), 3)
         self.assertEqual(payload["homeWin"] + payload["draw"] + payload["awayWin"], 100)
 

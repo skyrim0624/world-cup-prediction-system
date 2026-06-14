@@ -51,10 +51,18 @@ class PredictionModelTest(unittest.TestCase):
     def test_prediction_response_has_core_fields(self):
         prediction = build_match_prediction(1200)
         self.assertIn("scoreOutcomes", prediction)
+        self.assertIn("scoreMatrix", prediction)
+        self.assertIn("goalMarkets", prediction)
+        self.assertIn("fairPrices", prediction)
+        self.assertIn("marketSource", prediction)
+        self.assertIn("creatorTopics", prediction)
         self.assertIn("scenarioImpacts", prediction)
         self.assertIn("teams", prediction)
         self.assertIn("modelMeta", prediction)
         self.assertGreater(len(prediction["scoreOutcomes"]), 0)
+        self.assertGreater(len(prediction["scoreMatrix"]), 0)
+        self.assertEqual(len(prediction["goalMarkets"]), 4)
+        self.assertEqual(len(prediction["fairPrices"]), 3)
         self.assertEqual(prediction["modelMeta"]["lockedResults"], 8)
         self.assertIn("liveMatches", prediction["modelMeta"])
 

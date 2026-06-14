@@ -1040,6 +1040,292 @@ button {
   min-height: 149px;
 }
 
+.forecast-lead {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 14px;
+  padding: 13px 14px;
+  border: 1px solid rgba(255, 240, 90, 0.22);
+  border-radius: 7px;
+  background:
+    linear-gradient(90deg, rgba(255, 240, 90, 0.12), transparent 58%),
+    rgba(0, 73, 188, 0.34);
+}
+
+.forecast-lead span,
+.forecast-lead em {
+  color: var(--muted);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.forecast-lead strong {
+  color: var(--gold);
+  font-size: clamp(34px, 4.4vw, 54px);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.compact-score-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.compact-score {
+  display: grid;
+  gap: 4px;
+  min-height: 84px;
+  padding: 11px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 7px;
+  background: rgba(0, 73, 188, 0.34);
+}
+
+.compact-score span,
+.compact-score em {
+  color: var(--muted);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.compact-score strong {
+  color: currentColor;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.fair-price-list {
+  display: grid;
+  gap: 10px;
+}
+
+.fair-price-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding: 11px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  background: rgba(0, 73, 188, 0.34);
+}
+
+.fair-price-row strong,
+.fair-price-row span {
+  display: block;
+}
+
+.fair-price-row strong {
+  color: #f4fffb;
+  font-size: 17px;
+}
+
+.fair-price-row span {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.fair-price-row b {
+  color: currentColor;
+  font-size: 24px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.fair-price-row em {
+  min-width: 54px;
+  padding: 6px 7px;
+  border: 1px solid currentColor;
+  color: #f4fffb;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 900;
+  text-align: center;
+}
+
+.market-source-box {
+  display: grid;
+  gap: 6px;
+  margin: 12px 0;
+  padding: 12px;
+  border: 1px solid rgba(255, 177, 59, 0.28);
+  border-radius: 7px;
+  background: rgba(255, 177, 59, 0.08);
+}
+
+.market-source-box strong {
+  color: var(--orange);
+  font-size: 16px;
+}
+
+.market-source-box p {
+  margin: 0;
+  color: rgba(232, 255, 252, 0.78);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.goal-market-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.goal-market-grid.compact {
+  grid-template-columns: 1fr;
+}
+
+.goal-market-card {
+  display: grid;
+  gap: 5px;
+  min-height: 104px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, currentColor 12%, transparent), transparent 56%),
+    rgba(0, 73, 188, 0.34);
+}
+
+.goal-market-card span,
+.goal-market-card small,
+.goal-market-card em {
+  font-style: normal;
+  font-weight: 900;
+}
+
+.goal-market-card span {
+  color: currentColor;
+  font-size: 14px;
+}
+
+.goal-market-card strong {
+  color: #f4fffb;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.goal-market-card small {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.goal-market-card em {
+  width: fit-content;
+  padding: 5px 7px;
+  border: 1px solid currentColor;
+  color: #eefaf8;
+  font-size: 12px;
+}
+
+.score-matrix {
+  display: grid;
+  grid-template-columns: repeat(var(--matrix-columns), minmax(52px, 1fr));
+  gap: 7px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.matrix-axis,
+.matrix-head,
+.matrix-cell {
+  display: grid;
+  min-height: 42px;
+  place-items: center;
+  border-radius: 6px;
+  font-weight: 900;
+}
+
+.matrix-axis,
+.matrix-head {
+  border: 1px solid rgba(126, 255, 238, 0.14);
+  color: var(--muted);
+  background: rgba(0, 73, 188, 0.28);
+  font-size: 12px;
+}
+
+.matrix-cell {
+  gap: 2px;
+  min-height: 58px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f4fffb;
+  background:
+    linear-gradient(180deg, rgba(255, 240, 90, calc(var(--heat) * 0.34)), rgba(46, 231, 255, calc(var(--heat) * 0.18))),
+    rgba(0, 73, 188, 0.32);
+}
+
+.matrix-cell b {
+  color: var(--gold);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.matrix-cell em {
+  color: rgba(232, 255, 252, 0.78);
+  font-size: 11px;
+  font-style: normal;
+}
+
+.creator-topic-list {
+  display: grid;
+  gap: 12px;
+}
+
+.creator-topic {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 12px;
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  background: rgba(0, 73, 188, 0.34);
+}
+
+.creator-topic > span {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 1px solid rgba(158, 255, 95, 0.42);
+  color: var(--green);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.creator-topic strong {
+  display: block;
+  color: #f4fffb;
+  font-size: 18px;
+  line-height: 1.22;
+}
+
+.creator-topic p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.compact-analysis p {
+  font-size: 14px;
+}
+
+.match-detail-splits {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(260px, 1.1fr);
+  gap: 14px;
+}
+
 .locked-note {
   margin: 12px 0 0;
   color: var(--muted);
@@ -2884,6 +3170,22 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .forecast-lead,
+  .fair-price-row {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .compact-score-list,
+  .goal-market-grid,
+  .match-detail-splits {
+    grid-template-columns: 1fr;
+  }
+
+  .score-matrix {
+    grid-template-columns: repeat(var(--matrix-columns), minmax(58px, 1fr));
+  }
+
   .probability {
     border-right: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.09);
@@ -3102,6 +3404,32 @@ button {
 
   .section-title span {
     font-size: 15px;
+  }
+
+  .forecast-lead strong {
+    font-size: 36px;
+  }
+
+  .compact-score strong,
+  .goal-market-card strong {
+    font-size: 26px;
+  }
+
+  .fair-price-row {
+    gap: 8px;
+  }
+
+  .fair-price-row b {
+    font-size: 22px;
+  }
+
+  .score-matrix {
+    grid-template-columns: repeat(var(--matrix-columns), minmax(54px, 1fr));
+    gap: 6px;
+  }
+
+  .matrix-cell {
+    min-height: 54px;
   }
 
   .brand span:last-child {
