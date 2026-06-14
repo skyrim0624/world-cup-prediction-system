@@ -39,9 +39,8 @@ body {
   margin: 0;
   color: var(--text);
   background:
-    linear-gradient(115deg, rgba(126, 255, 238, 0.17) 0%, transparent 34%),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 92px),
-    linear-gradient(180deg, #0d63e8 0%, #075bd8 46%, #0498c0 100%);
+    radial-gradient(circle at 78% 0%, rgba(92, 236, 255, 0.22), transparent 34%),
+    linear-gradient(180deg, #0457df 0%, #0555d8 46%, #0862dc 100%);
 }
 
 button {
@@ -54,7 +53,7 @@ button {
   width: min(100%, 1440px);
   min-height: 100vh;
   margin: 0 auto;
-  padding: 24px 24px 42px;
+  padding: 18px 24px 42px;
   overflow: hidden;
 }
 
@@ -175,6 +174,205 @@ button {
   font-weight: 900;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.portal-topbar {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 10px;
+}
+
+.portal-brand {
+  display: grid;
+  gap: 2px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.portal-brand span {
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 900;
+}
+
+.portal-brand small {
+  color: rgba(236, 255, 252, 0.72);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.user-page-shell .top-links a {
+  min-height: 34px;
+  border: 0;
+  color: rgba(242, 255, 253, 0.9);
+  background: transparent;
+  font-size: 14px;
+}
+
+.worldcup-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 390px);
+  align-items: end;
+  min-height: 250px;
+  margin: 0 -24px 22px;
+  padding: 34px clamp(24px, 6vw, 86px) 38px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(0, 82, 216, 0.96) 0%, rgba(0, 82, 216, 0.74) 42%, rgba(0, 82, 216, 0.18) 78%),
+    url("/assets/world-cup-hero.png") center right / cover no-repeat;
+  box-shadow: inset 0 -80px 120px rgba(0, 67, 185, 0.42);
+}
+
+.worldcup-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(160, 255, 79, 0.92), rgba(44, 221, 255, 0.82), transparent);
+}
+
+.hero-copy,
+.hero-match-card {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  display: block;
+  color: #ffffff;
+  font-size: clamp(15px, 1.5vw, 20px);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.hero-copy h1 {
+  margin: 10px 0 12px;
+  color: #ffffff;
+  font-size: clamp(42px, 6.4vw, 78px);
+  font-weight: 900;
+  line-height: 0.96;
+  text-shadow: 0 8px 30px rgba(0, 34, 133, 0.24);
+}
+
+.hero-copy h1 span {
+  color: var(--green);
+  text-decoration: underline;
+  text-decoration-thickness: 5px;
+  text-underline-offset: 7px;
+}
+
+.hero-copy p {
+  margin: 0 0 24px;
+  color: #f4fffb;
+  font-size: clamp(18px, 2.2vw, 25px);
+  font-weight: 900;
+}
+
+.hero-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 720px;
+}
+
+.hero-meta-row strong,
+.hero-meta-row em {
+  display: inline-grid;
+  min-height: 32px;
+  align-items: center;
+  padding: 0 12px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(0, 66, 183, 0.46);
+  color: rgba(243, 255, 253, 0.92);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.hero-meta-row em {
+  max-width: min(100%, 560px);
+  color: rgba(222, 249, 250, 0.86);
+  overflow-wrap: anywhere;
+}
+
+.hero-match-card {
+  display: grid;
+  gap: 10px;
+  justify-self: end;
+  width: min(100%, 370px);
+  padding: 18px;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 255, 240, 0.32);
+  background: rgba(0, 71, 184, 0.54);
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow: 0 18px 50px rgba(0, 43, 139, 0.22);
+  backdrop-filter: blur(8px);
+}
+
+.hero-match-card > span {
+  color: var(--green);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.hero-match-teams {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-match-teams strong {
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.hero-match-teams strong:last-child {
+  text-align: right;
+}
+
+.hero-match-teams b {
+  color: var(--gold);
+  font-size: 24px;
+}
+
+.hero-match-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hero-match-detail em,
+.hero-match-card small {
+  width: fit-content;
+  padding: 6px 9px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(240, 255, 252, 0.88);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.hero-match-card small {
+  background: linear-gradient(90deg, var(--green), var(--cyan));
+  color: #062050;
+}
+
+.portal-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 1.08fr) minmax(280px, 0.74fr) minmax(300px, 0.82fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.portal-module-grid {
+  margin-top: 20px;
 }
 
 .back-link {
@@ -558,6 +756,23 @@ button {
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 80ms linear;
 }
 
+.user-page-shell .console-panel,
+.match-page-shell .console-panel {
+  border-radius: 8px;
+  border-color: rgba(151, 255, 238, 0.22);
+  background:
+    linear-gradient(180deg, rgba(22, 177, 231, 0.13), rgba(4, 76, 196, 0.12)),
+    rgba(2, 81, 204, 0.66);
+  clip-path: none;
+  box-shadow: 0 18px 54px rgba(0, 55, 170, 0.2), inset 0 0 30px rgba(82, 225, 255, 0.06);
+}
+
+.user-page-shell .console-panel::after,
+.match-page-shell .console-panel::after {
+  border-radius: 6px;
+  clip-path: none;
+}
+
 .console-panel::after {
   content: "";
   position: absolute;
@@ -579,6 +794,37 @@ button {
   letter-spacing: 0.01em;
 }
 
+.section-title {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  color: #ffffff;
+}
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  height: 10px;
+  opacity: 0.82;
+  background: repeating-linear-gradient(110deg, rgba(255, 255, 255, 0.78) 0 2px, transparent 2px 6px);
+}
+
+.section-title span {
+  display: inline-grid;
+  min-height: 28px;
+  align-items: center;
+  justify-self: center;
+  padding: 0 4px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+}
+
 .panel-kicker {
   width: max-content;
   max-width: 100%;
@@ -596,7 +842,8 @@ button {
   min-height: 44px;
   place-items: center;
   padding: 0 14px;
-  border: 1px solid rgba(158, 255, 95, 0.52);
+  border: 0;
+  border-radius: 6px;
   color: #061c27;
   background: linear-gradient(135deg, var(--green), var(--cyan));
   font-size: 14px;
@@ -613,8 +860,18 @@ button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   border: 1px solid rgba(255, 255, 255, 0.11);
-  background: rgba(0, 0, 0, 0.22);
-  clip-path: polygon(1.2rem 0, 100% 0, 100% calc(100% - 1.2rem), calc(100% - 1.2rem) 100%, 0 100%, 0 1.2rem);
+  border-radius: 8px;
+  background: rgba(0, 70, 185, 0.34);
+  clip-path: none;
+  overflow: hidden;
+}
+
+.portal-probability-row .probability {
+  padding: 16px 14px;
+}
+
+.portal-probability-row .probability strong {
+  font-size: clamp(40px, 4.8vw, 58px);
 }
 
 .probability-row.compact .probability {
@@ -684,7 +941,8 @@ button {
   margin-top: 18px;
   padding: 14px 18px;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(0, 0, 0, 0.24);
+  border-radius: 8px;
+  background: rgba(0, 62, 171, 0.32);
   color: #b8c5c5;
   font-size: clamp(16px, 2vw, 22px);
 }
@@ -729,11 +987,57 @@ button {
 .analysis-list p {
   margin: 0;
   padding: 12px 14px;
-  border-left: 3px solid rgba(24, 227, 208, 0.66);
-  background: rgba(24, 227, 208, 0.06);
-  color: #c8d8d7;
+  border-left: 3px solid rgba(166, 255, 88, 0.74);
+  border-radius: 0 6px 6px 0;
+  background: rgba(0, 80, 196, 0.26);
+  color: #e5f9ff;
   font-size: clamp(15px, 1.8vw, 18px);
   line-height: 1.55;
+}
+
+.featured-photo-card {
+  position: relative;
+  min-height: 226px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, transparent 32%, rgba(0, 42, 140, 0.84) 100%),
+    url("/assets/world-cup-hero.png") center right / cover no-repeat;
+}
+
+.featured-photo-copy {
+  position: absolute;
+  inset: auto 0 0;
+  display: grid;
+  gap: 5px;
+  padding: 18px;
+}
+
+.featured-photo-copy span {
+  width: fit-content;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #ff4359;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.featured-photo-copy strong {
+  color: #ffffff;
+  font-size: clamp(22px, 2.6vw, 34px);
+  font-weight: 900;
+}
+
+.featured-photo-copy small {
+  color: rgba(238, 255, 252, 0.82);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.portal-top-score {
+  min-height: 149px;
 }
 
 .locked-note {
@@ -835,6 +1139,12 @@ button {
   text-align: left;
 }
 
+.user-page-shell .upcoming-row,
+.match-page-shell .upcoming-row {
+  border-radius: 7px;
+  background: rgba(0, 73, 188, 0.34);
+}
+
 .upcoming-row.selected {
   border-color: var(--cyan);
   box-shadow: inset 0 0 0 1px rgba(24, 227, 208, 0.18);
@@ -904,6 +1214,56 @@ button {
   background:
     linear-gradient(90deg, rgba(46, 231, 255, 0.1), transparent 42%),
     rgba(0, 83, 188, 0.32);
+}
+
+.portal-schedule-card .finished-list {
+  gap: 10px;
+}
+
+.portal-schedule-card .finished-row {
+  grid-template-columns: 1fr;
+  min-height: 0;
+  gap: 10px;
+  padding: 10px 12px;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  background: rgba(0, 73, 188, 0.32);
+}
+
+.portal-schedule-card .finished-result {
+  gap: 8px;
+}
+
+.portal-schedule-card .finished-side {
+  font-size: 15px;
+}
+
+.portal-schedule-card .finished-side .flag {
+  width: 30px;
+  height: 20px;
+  border-radius: 2px;
+}
+
+.portal-schedule-card .finished-result > strong {
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.portal-schedule-card .finished-copy strong {
+  font-size: 15px;
+}
+
+.portal-schedule-card .finished-copy small {
+  font-size: 12px;
+}
+
+.portal-schedule-card .finished-row em {
+  justify-self: start;
+  max-width: none;
+  padding: 4px 7px;
+  border-color: rgba(158, 255, 95, 0.36);
+  font-size: 12px;
+  text-align: left;
 }
 
 .finished-result {
@@ -1109,6 +1469,14 @@ button {
     rgba(0, 0, 0, 0.18);
 }
 
+.user-page-shell .scenario-card,
+.match-page-shell .scenario-card,
+.user-page-shell .score-outcome,
+.match-page-shell .score-outcome {
+  border-radius: 7px;
+  background-color: rgba(0, 73, 188, 0.32);
+}
+
 .scenario-head {
   display: flex;
   align-items: center;
@@ -1173,6 +1541,44 @@ button {
   padding: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(0, 0, 0, 0.18);
+}
+
+.portal-standing-card .champion-list {
+  gap: 9px;
+}
+
+.portal-standing-card .champion-row {
+  min-height: 58px;
+  padding: 9px 10px;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-radius: 7px;
+  background: rgba(0, 73, 188, 0.32);
+}
+
+.portal-standing-card .champion-row > span {
+  color: #fff069;
+  font-size: 17px;
+}
+
+.portal-standing-card .champion-row .flag {
+  width: 34px;
+  height: 23px;
+}
+
+.portal-standing-card .champion-row strong {
+  font-size: 16px;
+}
+
+.portal-standing-card .champion-row small {
+  font-size: 12px;
+}
+
+.portal-standing-card .champion-probability {
+  min-width: 60px;
+}
+
+.portal-standing-card .champion-probability b {
+  font-size: 22px;
 }
 
 .champion-row > div:not(.champion-probability) {
@@ -1267,6 +1673,14 @@ button {
     rgba(0, 83, 188, 0.28);
 }
 
+.user-page-shell .mover-row,
+.match-page-shell .mover-row,
+.user-page-shell .mover-summary span,
+.match-page-shell .mover-summary span {
+  border-radius: 7px;
+  background-color: rgba(0, 73, 188, 0.32);
+}
+
 .mover-row.up {
   border-color: rgba(158, 255, 95, 0.28);
 }
@@ -1338,6 +1752,12 @@ button {
   padding: 14px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(0, 0, 0, 0.18);
+}
+
+.user-page-shell .news-item,
+.match-page-shell .news-item {
+  border-radius: 7px;
+  background: rgba(0, 73, 188, 0.32);
 }
 
 .news-item strong {
@@ -1897,6 +2317,12 @@ button {
   background: rgba(0, 0, 0, 0.2);
 }
 
+.user-page-shell .layer-card,
+.match-page-shell .layer-card {
+  border-radius: 7px;
+  background: rgba(0, 73, 188, 0.32);
+}
+
 .layer-card span {
   color: var(--cyan);
   font-size: 16px;
@@ -2043,6 +2469,16 @@ button {
   padding: 14px 16px;
   border: 1px solid rgba(24, 227, 208, 0.22);
   background: rgba(24, 227, 208, 0.06);
+}
+
+.user-page-shell .access-summary,
+.match-page-shell .access-summary,
+.user-page-shell .payment-provider-row,
+.match-page-shell .payment-provider-row,
+.user-page-shell .access-card,
+.match-page-shell .access-card {
+  border-radius: 7px;
+  background-color: rgba(0, 73, 188, 0.32);
 }
 
 .access-summary strong {
@@ -2278,6 +2714,16 @@ button {
   }
 }
 
+@media (max-width: 1160px) {
+  .portal-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.88fr);
+  }
+
+  .portal-schedule-card {
+    grid-column: 1 / -1;
+  }
+}
+
 @media (max-width: 900px) {
   .console-shell {
     padding: 18px 18px 34px;
@@ -2291,6 +2737,32 @@ button {
     justify-content: flex-start;
     overflow-x: auto;
     padding-bottom: 2px;
+  }
+
+  .worldcup-hero {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    min-height: 0;
+    margin: 0 -18px 18px;
+    padding: 30px 18px 34px;
+    background-position: 64% center;
+  }
+
+  .hero-match-card {
+    justify-self: start;
+  }
+
+  .hero-meta-row em {
+    max-width: 100%;
+  }
+
+  .portal-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .portal-schedule-card {
+    grid-column: auto;
   }
 
   .brand {
@@ -2392,6 +2864,10 @@ button {
   .module-grid {
     grid-template-columns: 1fr;
     margin-top: 48px;
+  }
+
+  .portal-module-grid {
+    margin-top: 16px;
   }
 
   .admin-grid {
@@ -2585,6 +3061,47 @@ button {
 
   .topbar {
     gap: 6px;
+  }
+
+  .portal-brand span {
+    font-size: 22px;
+  }
+
+  .portal-brand small {
+    font-size: 11px;
+  }
+
+  .worldcup-hero {
+    margin: 0 -12px 16px;
+    padding: 24px 12px 30px;
+    background:
+      linear-gradient(90deg, rgba(0, 82, 216, 0.96) 0%, rgba(0, 82, 216, 0.74) 58%, rgba(0, 82, 216, 0.24) 100%),
+      url("/assets/world-cup-hero.png") 66% center / cover no-repeat;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(36px, 14vw, 52px);
+  }
+
+  .hero-copy p {
+    font-size: 17px;
+  }
+
+  .hero-match-card {
+    width: 100%;
+    padding: 14px;
+  }
+
+  .hero-match-teams strong {
+    font-size: 34px;
+  }
+
+  .section-title {
+    gap: 7px;
+  }
+
+  .section-title span {
+    font-size: 15px;
   }
 
   .brand span:last-child {

@@ -59,6 +59,21 @@ class FrontendContractTest(unittest.TestCase):
         self.assertNotIn("双击移动模块", home_source)
         self.assertNotIn("DraggablePanel", home_source)
 
+    def test_public_homepage_uses_world_cup_portal_visual_language(self):
+        source = app_source()
+        styles = Path("src/styles.css").read_text(encoding="utf-8")
+        home_source = source_between(source, "function HomePredictionPage()", "function UpcomingMatchesPanel")
+
+        self.assertIn("worldcup-hero", home_source)
+        self.assertIn("2026", home_source)
+        self.assertIn("美加墨", home_source)
+        self.assertIn("FIFA World Cup 2026", home_source)
+        self.assertIn("portal-grid", home_source)
+        self.assertIn("section-title", home_source)
+        self.assertIn("全部赛程", home_source)
+        self.assertIn("/assets/world-cup-hero.png", styles)
+        self.assertIn("featured-photo-card", styles)
+
     def test_single_match_page_is_paid_conversion_page_with_locked_content(self):
         source = app_source()
         single_match_source = source_between(source, "function SingleMatchPage", "function AdminConsole")

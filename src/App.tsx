@@ -583,6 +583,7 @@ function HomePredictionPage() {
   const modelSummary = matchPrediction.modelMeta
     ? `${matchPrediction.modelMeta.simulationCount.toLocaleString("zh-CN")} 次模拟 · 已锁定 ${matchPrediction.modelMeta.lockedResults} 场赛果 · 进行中 ${matchPrediction.modelMeta.liveMatches ?? 0} 场 · 事件 ${matchPrediction.modelMeta.events?.applied ?? 0} 入模 / ${matchPrediction.modelMeta.events?.ignored ?? 0} 忽略`
     : "已结束比赛只作为后续权重因子";
+  const topScore = matchPrediction.scoreOutcomes[0];
 
   useEffect(() => {
     let active = true;
@@ -680,53 +681,62 @@ function HomePredictionPage() {
   return (
     <main className="console-shell user-page-shell">
       <div className="ambient-grid" />
-      <header className="topbar">
-        <div className="brand">
-          <span className="signal-mark" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-            <i />
-          </span>
+      <header className="topbar portal-topbar">
+        <div className="brand portal-brand">
           <span>世界杯预测</span>
+          <small>World Cup Forecast</small>
         </div>
         <nav className="top-links" aria-label="用户预测页">
+          <a href="#featured">重点</a>
           <a href="#matches">未开赛</a>
+          <a href="#finished">赛果</a>
           <a href="#trend">走势</a>
           <a href="#access">解锁</a>
         </nav>
       </header>
 
-      <section className="scoreboard" aria-label="未开赛对阵预测">
-        <MiniPitch side="left" />
-        <div className="score-strip match-strip">
-          <div className="score-team home-team">
-            <TeamFlag team={homeTeam.key} code={homeTeam.code} />
-            <span className="team-code">{homeTeam.code}</span>
-          </div>
-          <strong className="versus-mark">VS</strong>
-          <div className="score-team away-team">
-            <span className="team-code">{awayTeam.code}</span>
-            <TeamFlag team={awayTeam.key} code={awayTeam.code} />
-          </div>
-          <div className="match-clock forecast-clock">
-            <span>{matchPrediction.kickoff}</span>
-            <em>{matchPrediction.status}</em>
-          </div>
-          <div className="match-meta">
-            <span>{matchPrediction.stage}</span>
-            {mainVenue ? <span>{mainVenue}</span> : null}
-            <b>预测更新 {formatUpdateTime(matchPrediction.updatedAt)}</b>
+      <section className="worldcup-hero" aria-label="2026 美加墨世界杯预测">
+        <div className="hero-copy">
+          <span className="hero-eyebrow">FIFA World Cup 2026</span>
+          <h1>
+            2026<span>美加墨</span>世界杯
+          </h1>
+          <p>北京时间：6月12日-7月20日</p>
+          <div className="hero-meta-row">
+            <strong>{dataModeLabel}</strong>
+            <em>{modelSummary}</em>
           </div>
         </div>
-        <MiniPitch side="right" />
+        <a className="hero-match-card" href={matchPagePath(matchPrediction.homeTeam, matchPrediction.awayTeam)}>
+          <span>{matchPrediction.stage}</span>
+          <div className="hero-match-teams">
+            <strong>{homeTeam.code}</strong>
+            <b>VS</b>
+            <strong>{awayTeam.code}</strong>
+          </div>
+          <div className="hero-match-detail">
+            <em>{matchPrediction.kickoff}</em>
+            <em>{matchPrediction.status}</em>
+          </div>
+          <small>进入单场完整预测</small>
+        </a>
       </section>
 
-      <div className="module-grid">
-        <section className="console-panel wide prediction-hero-panel">
-          <div className="panel-kicker">用户预测页 · 免费预览</div>
-          <h2>今日重点比赛</h2>
-          <div className="probability-row">
+      <div className="portal-grid">
+        <section id="featured" className="console-panel prediction-hero-panel portal-feature-card">
+          <div className="section-title">
+            <span>今日重点比赛</span>
+          </div>
+          <div className="featured-photo-card">
+            <div className="featured-photo-copy">
+              <span>免费预览</span>
+              <strong>
+                {homeTeam.name} vs {awayTeam.name}
+              </strong>
+              <small>{[matchPrediction.kickoff, mainVenue].filter(Boolean).join(" · ")}</small>
+            </div>
+          </div>
+          <div className="probability-row portal-probability-row">
             <Probability label={`${homeTeam.name}胜`} value={matchPrediction.homeWin} tone="green" />
             <Probability label="平局" value={matchPrediction.draw} tone="gold" />
             <Probability label={`${awayTeam.name}胜`} value={matchPrediction.awayWin} tone="blue" />
@@ -750,8 +760,27 @@ function HomePredictionPage() {
           </div>
         </section>
 
+        <section className="console-panel portal-standing-card">
+          <div className="section-title">
+            <span>冠军概率榜</span>
+          </div>
+          <ChampionBoard teams={championBoard.slice(0, 6)} />
+          <p className="locked-note">完整 48 队榜单随赛事全周期解锁。</p>
+        </section>
+
+        <section className="console-panel portal-schedule-card">
+          <div className="section-title">
+            <span>全部赛程</span>
+          </div>
+          <FinishedMatchesPanel records={finishedMatches?.items ?? []} />
+        </section>
+      </div>
+
+      <div className="module-grid portal-module-grid">
         <section className="console-panel">
-          <h2>免费预览比分</h2>
+          <div className="section-title">
+            <span>免费预览比分</span>
+          </div>
           <div className="score-outcome-list">
             {matchPrediction.scoreOutcomes.slice(0, 1).map((outcome) => (
               <article className={`score-outcome ${outcome.tone}`} key={outcome.score}>
@@ -766,34 +795,44 @@ function HomePredictionPage() {
           <p className="locked-note">完整比分分布在单场页解锁。</p>
         </section>
 
+        <section className="console-panel">
+          <div className="section-title">
+            <span>单场比分走向</span>
+          </div>
+          <article className="score-outcome portal-top-score">
+            <strong>{topScore?.score ?? "--"}</strong>
+            <div>
+              <b>{topScore ? `${topScore.probability.toFixed(1)}%` : "--"}</b>
+              <span>{topScore?.note ?? "等待模型输出"}</span>
+            </div>
+          </article>
+        </section>
+
         <section id="matches" className="console-panel wide">
-          <h2>未开赛预测</h2>
+          <div className="section-title">
+            <span>未开赛预测</span>
+          </div>
           <UpcomingMatchesPanel matches={upcomingMatches?.items ?? []} selectedKey={selectedMatchKey} onSelect={loadMatchDetail} />
         </section>
 
         <section className="console-panel wide">
-          <h2>单场快速预览</h2>
+          <div className="section-title">
+            <span>单场快速预览</span>
+          </div>
           <MatchDetailPanel detail={matchDetail} teamsData={teamsData} />
         </section>
 
         <section id="trend" className="console-panel">
-          <h2>今日概率变化</h2>
+          <div className="section-title">
+            <span>今日概率变化</span>
+          </div>
           <DailyMoversPanel movers={matchPrediction.dailyMovers} />
         </section>
 
         <section className="console-panel">
-          <h2>冠军概率榜</h2>
-          <ChampionBoard teams={championBoard.slice(0, 8)} />
-          <p className="locked-note">完整 48 队榜单随赛事全周期解锁。</p>
-        </section>
-
-        <section className="console-panel wide">
-          <h2>已结束比赛记录</h2>
-          <FinishedMatchesPanel records={finishedMatches?.items ?? []} />
-        </section>
-
-        <section className="console-panel">
-          <h2>新闻影响摘要</h2>
+          <div className="section-title">
+            <span>新闻影响摘要</span>
+          </div>
           <div className="news-list">
             {matchPrediction.newsItems.slice(0, 3).map((item) => (
               <article className={`news-item ${item.tone}`} key={item.title}>
@@ -810,7 +849,9 @@ function HomePredictionPage() {
         </section>
 
         <section className="console-panel">
-          <h2>模型说明</h2>
+          <div className="section-title">
+            <span>模型说明</span>
+          </div>
           <div className="layer-grid compact">
             {modelLayers.map((layer, index) => (
               <article className="layer-card" key={layer.layer}>
@@ -829,7 +870,9 @@ function HomePredictionPage() {
         </section>
 
         <section id="access" className="console-panel wide">
-          <h2>付费解锁</h2>
+          <div className="section-title">
+            <span>付费解锁</span>
+          </div>
           <AccessPanel options={accessOptions} contentKey="tournament_probabilities" />
         </section>
       </div>
