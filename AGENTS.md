@@ -2303,6 +2303,41 @@ Elo / 实力评分
 - API 已部署到 `https://world-cup-prediction-api.loveice0624.workers.dev`，`/api/admin/prediction-run` 返回 200。
 - 前端已部署到 `https://world-cup-prediction-system.pages.dev/admin`，线上桌面和 390px 手机视口检查通过。
 
+### 2026-06-14：FIFA 官方赛果源与新闻运营状态
+
+客户安排：
+
+- 现在先做后续优先级第 1 点和第 4 点。
+- 微信 / 支付宝支付与订单迁移安排到明天上午。
+- 授权市场价格源、博主截图导出、单场长图和每日选题包暂不做。
+
+已完成：
+
+- 将默认赛果源从 ESPN 开发源切到 FIFA 官方公开日历接口。
+- `score-sources.json` 使用 `https://api.fifa.com/api/v3/calendar/matches?locale=en&IdCompetition=17&IdSeason=285023&count=200`。
+- 新增 `fifa_calendar_matches` 解析器，支持 `MatchNumber`、球队缩写、比分、比赛状态、阵型、场馆和天气元数据。
+- 赛果更新优先按 `match_no` 和球队缩写匹配本地赛程。
+- 日更状态新增官方元数据观察统计：阵型/首发相关字段、纪律字段、天气字段、场馆字段。
+- 积分来源标记为 `computed_from_official_fifa_results`，表示小组积分由官方赛果在模型内推导。
+- 日更报告新增 `newsVerification`，展示单源线索、多源确认、人工确认、待审、入模和忽略数量。
+- `event_summary` 新增 `singleSource`、`multiSource`、`confirmed`。
+- 管理员后台“事件状态”补充展示多源确认、单源线索和忽略数量。
+- 后台读取接口 `/api/admin/overview`、`/api/admin/prediction-run` 和 `/api/events` 接入同一套 `WORLD_CUP_ADMIN_TOKEN` 门禁。
+- `/admin` 首屏改为 Token 输入页，验证通过后才展示控制面板。
+- 文档同步更新：`docs/日更流程说明.md`、`docs/新闻抓取系统开发记录.md`、`docs/赛事数据导入格式.md`。
+
+边界：
+
+- FIFA 官方日历接口可以稳定拿到赛程、比分、比赛状态、场馆、天气和部分阵型字段。
+- 当前接口没有稳定暴露红黄牌事件明细和完整首发名单；这两类不伪造，先走后台补录或后续专项官方接口。
+- FIFA 没有可直接使用的稳定 RSS；新闻自动抓取继续用已配置的 BBC / ESPN / Guardian 等公开 Feed，官方公告可通过后台录入进入同一审核流。
+
+验证：
+
+- `PYTHONPATH=. python3 tests/test_score_feed.py` 通过。
+- `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_daily_update.py' -k fifa_official -v` 通过。
+- `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_api.py' -k admin_overview -v` 通过。
+
 ## 十、当前交接摘要
 
 一句话定义：
@@ -2314,8 +2349,8 @@ Elo / 实力评分
 1. 等客户提供微信 / 支付宝接口文档后，接真实创建订单、二维码字段、查单字段和支付回调验签。
 2. 补用户 / 设备 / 订单绑定，避免订单只能停留在本地意图层。
 3. 把本地 JSON 订单迁移为正式数据库订单表和访问记录。
-4. 如果客户提供官方或授权赛果接口，把 `score-sources.json` 从 ESPN 开发源切到客户接口。
-5. 持续替换自建球队评分和高阶代理指标，接入授权 xG / xGA / 事件数据。
+4. 持续替换自建球队评分和高阶代理指标，接入授权 xG / xGA / 事件数据。
+5. 如找到 FIFA 官方红黄牌 / 完整首发专项接口，再把后台补录项升级为自动接入。
 
 当前最重要的风险：
 

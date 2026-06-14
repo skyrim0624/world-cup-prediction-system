@@ -223,6 +223,7 @@ class PredictionApiTest(unittest.TestCase):
             self.assertEqual(payload["fixtureStatus"]["live"], 1)
             self.assertEqual(payload["fixtureStatus"]["finished"], 1)
             self.assertEqual(payload["eventSummary"]["reviewRequired"], 1)
+            self.assertIn("multiSource", payload["eventSummary"])
             self.assertEqual(payload["operations"]["dailyUpdateCommand"], "npm run daily:update")
             self.assertEqual(payload["operations"]["liveScoreEndpoint"], "/api/fixtures/live")
             self.assertEqual(payload["reviewQueue"][0]["action"], "watch")
@@ -242,6 +243,39 @@ class PredictionApiTest(unittest.TestCase):
         self.assertTrue(any(item["endpoint"] == "/api/fixtures/result" for item in payload["interventionPoints"]))
         self.assertIn("homeTeam", payload["match"])
 
+    def test_admin_read_apis_require_token_when_configured(self):
+        previous_token = os.environ.get("WORLD_CUP_ADMIN_TOKEN")
+        os.environ["WORLD_CUP_ADMIN_TOKEN"] = "secret-token"
+        try:
+            client = TestClient(app)
+            overview_response = client.get("/api/admin/overview")
+            prediction_run_response = client.get("/api/admin/prediction-run")
+            events_response = client.get("/api/events")
+        finally:
+            if previous_token is None:
+                os.environ.pop("WORLD_CUP_ADMIN_TOKEN", None)
+            else:
+                os.environ["WORLD_CUP_ADMIN_TOKEN"] = previous_token
+
+        self.assertEqual(overview_response.status_code, 401)
+        self.assertEqual(prediction_run_response.status_code, 401)
+        self.assertEqual(events_response.status_code, 401)
+
+    def test_admin_read_apis_accept_configured_token(self):
+        previous_token = os.environ.get("WORLD_CUP_ADMIN_TOKEN")
+        os.environ["WORLD_CUP_ADMIN_TOKEN"] = "secret-token"
+        try:
+            client = TestClient(app)
+            response = client.get("/api/admin/overview", headers={"X-Admin-Token": "secret-token"})
+        finally:
+            if previous_token is None:
+                os.environ.pop("WORLD_CUP_ADMIN_TOKEN", None)
+            else:
+                os.environ["WORLD_CUP_ADMIN_TOKEN"] = previous_token
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("fixtureStatus", response.json())
+
     def test_admin_overview_api_returns_daily_update_status(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             status_path = Path(temp_dir) / "daily-update-status.json"
@@ -256,7 +290,13 @@ class PredictionApiTest(unittest.TestCase):
                             "simulationCount": 50000,
                             "lockedResults": 4,
                             "liveMatches": 1,
-                            "events": {"applied": 5, "watched": 2, "ignored": 1, "reviewRequired": 1},
+                            "events": {"applied": 5, "watched": 2, "ignored": 1, "reviewRequired": 1, "multiSource": 2},
+                        },
+                        "newsVerification": {
+                            "multiSource": 2,
+                            "singleSource": 3,
+                            "reviewRequired": 1,
+                            "ignored": 1,
                         },
                     },
                     ensure_ascii=False,
@@ -279,6 +319,7 @@ class PredictionApiTest(unittest.TestCase):
             self.assertEqual(payload["dailyUpdateStatus"]["status"], "success")
             self.assertEqual(payload["dailyUpdateStatus"]["feeds"]["imported"], 2)
             self.assertEqual(payload["dailyUpdateStatus"]["snapshot"]["liveMatches"], 1)
+            self.assertEqual(payload["dailyUpdateStatus"]["newsVerification"]["multiSource"], 2)
 
     def test_admin_overview_api_returns_tournament_backups(self):
         with tempfile.TemporaryDirectory() as temp_dir:

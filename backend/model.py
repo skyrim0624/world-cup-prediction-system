@@ -700,6 +700,9 @@ def event_summary() -> dict[str, int]:
         "applied": len([event for event in EVENTS if event_enters_model(event)]),
         "ignored": len([event for event in EVENTS if event.action == "ignore" or SOURCE_WEIGHTS[event.source_level] == 0]),
         "reviewRequired": len([event for event in EVENTS if event.action == "watch"]),
+        "singleSource": len([event for event in EVENTS if event.status == "single_source"]),
+        "multiSource": len([event for event in EVENTS if event.status == "multi_source"]),
+        "confirmed": len([event for event in EVENTS if event.status == "confirmed"]),
     }
 
 

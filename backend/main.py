@@ -173,12 +173,12 @@ async def payment_order(order_id: str) -> dict[str, object]:
 
 
 @app.get("/api/admin/overview")
-async def admin_overview() -> dict[str, object]:
+async def admin_overview(_: None = Depends(verify_admin_token)) -> dict[str, object]:
     return build_admin_overview(snapshot_data_path, audit_log_path, daily_status_path, tournament_backup_dir)
 
 
 @app.get("/api/admin/prediction-run")
-async def admin_prediction_run() -> dict[str, object]:
+async def admin_prediction_run(_: None = Depends(verify_admin_token)) -> dict[str, object]:
     return build_prediction_run_monitor(snapshot_data_path, daily_status_path)
 
 
@@ -207,7 +207,7 @@ async def match_detail(
 
 
 @app.get("/api/events")
-async def events() -> dict[str, object]:
+async def events(_: None = Depends(verify_admin_token)) -> dict[str, object]:
     items = []
     for event in data_state.EVENTS:
         news_item = event_to_news_item(event)

@@ -30,12 +30,16 @@ type NewsItem = {
 };
 
 type ReviewStatus = "confirmed" | "multi_source" | "single_source" | "unverified" | "rumor";
+type AdminAccessState = "checking" | "locked" | "ready";
 
 type EventReviewSummary = {
   watched: number;
   applied: number;
   ignored: number;
   reviewRequired: number;
+  singleSource: number;
+  multiSource: number;
+  confirmed: number;
 };
 
 type EventReviewItem = NewsItem & {
@@ -79,6 +83,15 @@ type DailyUpdateStatus = {
     lockedResults: number;
     liveMatches: number;
     events: EventReviewSummary;
+  };
+  newsVerification?: {
+    rawNews: number;
+    singleSource: number;
+    multiSource: number;
+    confirmed: number;
+    reviewRequired: number;
+    ignored: number;
+    applied: number;
   };
 };
 
@@ -1500,6 +1513,8 @@ function AdminConsole() {
   const [eventReview, setEventReview] = useState<EventReviewResponse | null>(null);
   const [predictionRun, setPredictionRun] = useState<PredictionRunMonitor | null>(null);
   const [adminToken, setAdminToken] = useState(() => window.localStorage.getItem("worldCupAdminToken") ?? "");
+  const [adminAccess, setAdminAccess] = useState<AdminAccessState>("checking");
+  const [authError, setAuthError] = useState<string | null>(null);
   const [pendingId, setPendingId] = useState<string | null>(null);
   const [snapshotPending, setSnapshotPending] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
@@ -1525,10 +1540,10 @@ function AdminConsole() {
   const dailyStatus = overview?.dailyUpdateStatus ?? null;
   const dailyHealth = overview?.dailyUpdateHealth;
 
-  function adminHeaders() {
+  function adminHeaders(token = adminToken) {
     const headers: Record<string, string> = { "Content-Type": "application/json" };
-    if (adminToken.trim()) {
-      headers["X-Admin-Token"] = adminToken.trim();
+    if (token.trim()) {
+      headers["X-Admin-Token"] = token.trim();
     }
     return headers;
   }
@@ -1542,11 +1557,12 @@ function AdminConsole() {
     }
   }
 
-  async function loadAdminData() {
+  async function loadAdminData(token = adminToken) {
+    const headers = adminHeaders(token);
     const [overviewResponse, eventsResponse, predictionRunResponse] = await Promise.all([
-      fetch(`${API_BASE_URL}/api/admin/overview`, { cache: "no-store" }),
-      fetch(`${API_BASE_URL}/api/events`, { cache: "no-store" }),
-      fetch(`${API_BASE_URL}/api/admin/prediction-run`, { cache: "no-store" }),
+      fetch(`${API_BASE_URL}/api/admin/overview`, { cache: "no-store", headers }),
+      fetch(`${API_BASE_URL}/api/events`, { cache: "no-store", headers }),
+      fetch(`${API_BASE_URL}/api/admin/prediction-run`, { cache: "no-store", headers }),
     ]);
     if (!overviewResponse.ok) throw new Error(`后台概览接口返回 ${overviewResponse.status}`);
     if (!eventsResponse.ok) throw new Error(`事件接口返回 ${eventsResponse.status}`);
@@ -1561,23 +1577,62 @@ function AdminConsole() {
 
     async function run() {
       try {
-        await loadAdminData();
+        await loadAdminData(adminToken);
+        if (active) {
+          setAdminAccess("ready");
+          setAuthError(null);
+        }
+        return true;
       } catch {
         if (active) {
           setOverview(null);
           setEventReview(null);
           setPredictionRun(null);
+          setAdminAccess("locked");
         }
+        return false;
       }
     }
 
-    run();
-    const timer = window.setInterval(run, FORECAST_REFRESH_MS);
+    void run();
     return () => {
       active = false;
-      window.clearInterval(timer);
     };
   }, []);
+
+  useEffect(() => {
+    if (adminAccess !== "ready") return undefined;
+    const timer = window.setInterval(() => {
+      void loadAdminData(adminToken);
+    }, FORECAST_REFRESH_MS);
+    return () => window.clearInterval(timer);
+  }, [adminAccess, adminToken]);
+
+  async function submitAdminLogin(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setAdminAccess("checking");
+    setAuthError(null);
+    try {
+      await loadAdminData(adminToken);
+      saveAdminToken(adminToken);
+      setAdminAccess("ready");
+    } catch {
+      setOverview(null);
+      setEventReview(null);
+      setPredictionRun(null);
+      setAdminAccess("locked");
+      setAuthError("Token 不正确");
+    }
+  }
+
+  function logoutAdmin() {
+    saveAdminToken("");
+    setOverview(null);
+    setEventReview(null);
+    setPredictionRun(null);
+    setAuthError(null);
+    setAdminAccess("locked");
+  }
 
   async function submitReview(item: EventReviewItem, status: ReviewStatus) {
     if (!item.id || pendingId) return;
@@ -1707,6 +1762,40 @@ function AdminConsole() {
     }
   }
 
+  if (adminAccess !== "ready") {
+    return (
+      <main className="admin-shell">
+        <header className="admin-topbar">
+          <div>
+            <span>World Cup Ops</span>
+            <h1>预测运营后台</h1>
+          </div>
+          <a href="/">返回预测页</a>
+        </header>
+
+        <section className="admin-login-panel">
+          <article className="admin-card">
+            <h2>后台 Token</h2>
+            <form className="admin-login-form" onSubmit={submitAdminLogin}>
+              <input
+                value={adminToken}
+                onChange={(event) => saveAdminToken(event.target.value)}
+                aria-label="后台 token"
+                placeholder="输入后台 Token"
+                type="password"
+                autoComplete="current-password"
+              />
+              <button type="submit" disabled={adminAccess === "checking"}>
+                {adminAccess === "checking" ? "验证中" : "进入控制面板"}
+              </button>
+            </form>
+            {authError ? <p className="admin-auth-error">{authError}</p> : null}
+          </article>
+        </section>
+      </main>
+    );
+  }
+
   return (
     <main className="admin-shell">
       <header className="admin-topbar">
@@ -1725,10 +1814,11 @@ function AdminConsole() {
               value={adminToken}
               onChange={(event) => saveAdminToken(event.target.value)}
               aria-label="后台 token"
-              placeholder={overview?.authRequired ? "输入后台 token" : "本地未启用 token"}
+              placeholder="后台 Token"
               type="password"
             />
-            <span>{overview?.authRequired ? "写操作需要 token" : "当前为本地开放模式"}</span>
+            <span>{overview?.authRequired ? "已通过 Token 验证" : "本地未启用 Token"}</span>
+            <button type="button" onClick={logoutAdmin}>退出后台</button>
           </div>
         </article>
 
@@ -1747,6 +1837,9 @@ function AdminConsole() {
             <Metric label="原始新闻" value={overview?.rawNewsCount ?? 0} tone="blue" />
             <Metric label="待审" value={overview?.eventSummary.reviewRequired ?? 0} tone="gold" />
             <Metric label="入模" value={overview?.eventSummary.applied ?? 0} tone="green" />
+            <Metric label="多源确认" value={overview?.eventSummary.multiSource ?? 0} tone="green" />
+            <Metric label="单源线索" value={overview?.eventSummary.singleSource ?? 0} tone="blue" />
+            <Metric label="忽略" value={overview?.eventSummary.ignored ?? 0} tone="muted" />
           </div>
         </article>
 

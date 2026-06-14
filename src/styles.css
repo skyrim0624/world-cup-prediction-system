@@ -2235,6 +2235,12 @@ button {
   gap: 16px;
 }
 
+.admin-login-panel {
+  display: grid;
+  width: min(100%, 520px);
+  margin: 56px auto 0;
+}
+
 .admin-card {
   display: grid;
   gap: 14px;
@@ -2518,12 +2524,18 @@ button {
 
 .admin-auth-row {
   display: grid;
-  grid-template-columns: minmax(220px, 360px) minmax(0, 1fr);
+  grid-template-columns: minmax(220px, 360px) minmax(0, 1fr) auto;
   gap: 12px;
   align-items: center;
 }
 
-.admin-auth-row input {
+.admin-login-form {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-auth-row input,
+.admin-login-form input {
   min-height: 44px;
   min-width: 0;
   padding: 0 12px;
@@ -2535,6 +2547,25 @@ button {
 
 .admin-auth-row span {
   color: var(--muted);
+  font-weight: 900;
+}
+
+.admin-auth-row button,
+.admin-login-form button {
+  min-height: 44px;
+  border: 1px solid rgba(24, 227, 208, 0.36);
+  color: var(--cyan);
+  background: rgba(0, 0, 0, 0.24);
+  font-weight: 900;
+}
+
+.admin-login-form button:disabled {
+  opacity: 0.55;
+}
+
+.admin-auth-error {
+  margin: 0;
+  color: #ff8c7a;
   font-weight: 900;
 }
 

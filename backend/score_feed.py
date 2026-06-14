@@ -11,6 +11,12 @@ def parse_score(value: Any) -> int:
     return int(value)
 
 
+def parse_optional_score(value: Any) -> int | None:
+    if value in (None, ""):
+        return None
+    return int(value)
+
+
 def event_status(event: dict[str, Any], competition: dict[str, Any]) -> str:
     status = competition.get("status") or event.get("status") or {}
     status_type = status.get("type") or {}
@@ -50,7 +56,69 @@ def parse_espn_scoreboard(feed_text: str) -> list[dict[str, Any]]:
     return rows
 
 
+def has_nested_key(value: Any, keywords: tuple[str, ...]) -> bool:
+    if isinstance(value, dict):
+        for key, child in value.items():
+            lowered = str(key).lower()
+            if any(keyword in lowered for keyword in keywords):
+                return True
+            if has_nested_key(child, keywords):
+                return True
+    if isinstance(value, list):
+        return any(has_nested_key(child, keywords) for child in value)
+    return False
+
+
+def fifa_match_status(match: dict[str, Any], home_score: int | None, away_score: int | None) -> str:
+    if home_score is None or away_score is None:
+        return "scheduled"
+
+    match_status = "" if match.get("MatchStatus") is None else str(match.get("MatchStatus"))
+    result_type = "" if match.get("ResultType") is None else str(match.get("ResultType"))
+    if match_status == "0" or result_type not in {"", "0"}:
+        return "finished"
+    if match.get("MatchTime") or match.get("Minute") or match.get("Period"):
+        return "live"
+    return "scheduled"
+
+
+def fifa_match_metadata(match: dict[str, Any]) -> dict[str, bool]:
+    home = match.get("Home") or {}
+    away = match.get("Away") or {}
+    return {
+        "lineupObserved": bool(home.get("Tactics") or away.get("Tactics") or has_nested_key(match, ("lineup", "starting"))),
+        "disciplineObserved": has_nested_key(match, ("card", "booking", "discipline")),
+        "weatherObserved": bool(match.get("Weather")),
+        "stadiumObserved": bool(match.get("Stadium")),
+    }
+
+
+def parse_fifa_calendar_matches(feed_text: str) -> list[dict[str, Any]]:
+    payload = json.loads(feed_text)
+    rows: list[dict[str, Any]] = []
+    for match in payload.get("Results", []):
+        home = match.get("Home") or {}
+        away = match.get("Away") or {}
+        home_score = parse_optional_score(match.get("HomeTeamScore", home.get("Score")))
+        away_score = parse_optional_score(match.get("AwayTeamScore", away.get("Score")))
+        rows.append(
+            {
+                "sourceEventId": str(match.get("IdMatch") or ""),
+                "matchNumber": match.get("MatchNumber"),
+                "homeCode": str(home.get("Abbreviation") or "").upper(),
+                "awayCode": str(away.get("Abbreviation") or "").upper(),
+                "homeScore": home_score,
+                "awayScore": away_score,
+                "status": fifa_match_status(match, home_score, away_score),
+                "metadata": fifa_match_metadata(match),
+            }
+        )
+    return rows
+
+
 def parse_score_source(content: str, format_name: str) -> list[dict[str, Any]]:
+    if format_name == "fifa_calendar_matches":
+        return parse_fifa_calendar_matches(content)
     if format_name == "espn_scoreboard":
         return parse_espn_scoreboard(content)
     raise ValueError(f"不支持的赛果源格式: {format_name}")
@@ -58,6 +126,19 @@ def parse_score_source(content: str, format_name: str) -> list[dict[str, Any]]:
 
 def fixture_matches(fixture: dict[str, Any], home: str, away: str) -> bool:
     return fixture.get("home") == home and fixture.get("away") == away
+
+
+def fixture_matches_match_number(fixture: dict[str, Any], row: dict[str, Any]) -> bool:
+    match_number = row.get("matchNumber")
+    return match_number is not None and fixture.get("match_no") == match_number
+
+
+OBSERVED_METADATA_KEYS = {
+    "lineupObserved": "lineupsObserved",
+    "disciplineObserved": "disciplineObserved",
+    "weatherObserved": "weatherObserved",
+    "stadiumObserved": "stadiumsObserved",
+}
 
 
 def apply_score_source_updates(
@@ -72,8 +153,14 @@ def apply_score_source_updates(
         "live": 0,
         "skipped": 0,
         "unknownTeams": 0,
+        "lineupsObserved": 0,
+        "disciplineObserved": 0,
+        "weatherObserved": 0,
+        "stadiumsObserved": 0,
+        "standingsSource": "computed_from_local_fixtures",
         "items": [],
     }
+    official_fifa_updated = False
 
     for source_payload in source_payloads:
         parsed_rows = parse_score_source(source_payload["content"], source_payload["format"])
@@ -86,8 +173,18 @@ def apply_score_source_updates(
             "updated": 0,
             "skipped": 0,
             "unknownTeams": 0,
+            "lineupsObserved": 0,
+            "disciplineObserved": 0,
+            "weatherObserved": 0,
+            "stadiumsObserved": 0,
         }
         for row in parsed_rows:
+            metadata = row.get("metadata") or {}
+            for metadata_key, report_key in OBSERVED_METADATA_KEYS.items():
+                if metadata.get(metadata_key):
+                    report[report_key] += 1
+                    item_report[report_key] += 1
+
             status = row["status"]
             if status not in {"finished", "live"}:
                 report["skipped"] += 1
@@ -103,18 +200,32 @@ def apply_score_source_updates(
 
             matched = False
             for fixture in fixtures:
-                if fixture_matches(fixture, home, away):
+                if fixture_matches_match_number(fixture, row) and fixture_matches(fixture, home, away):
                     fixture["status"] = status
                     fixture["home_score"] = row["homeScore"]
                     fixture["away_score"] = row["awayScore"]
                     matched = True
                     break
-                if fixture_matches(fixture, away, home):
+                if fixture_matches_match_number(fixture, row) and fixture_matches(fixture, away, home):
                     fixture["status"] = status
                     fixture["home_score"] = row["awayScore"]
                     fixture["away_score"] = row["homeScore"]
                     matched = True
                     break
+            if not matched:
+                for fixture in fixtures:
+                    if fixture_matches(fixture, home, away):
+                        fixture["status"] = status
+                        fixture["home_score"] = row["homeScore"]
+                        fixture["away_score"] = row["awayScore"]
+                        matched = True
+                        break
+                    if fixture_matches(fixture, away, home):
+                        fixture["status"] = status
+                        fixture["home_score"] = row["awayScore"]
+                        fixture["away_score"] = row["homeScore"]
+                        matched = True
+                        break
 
             if not matched:
                 report["skipped"] += 1
@@ -124,8 +235,13 @@ def apply_score_source_updates(
             report["updated"] += 1
             report[status] += 1
             item_report["updated"] += 1
+            if source_payload.get("source") == "fifa":
+                official_fifa_updated = True
 
         report["items"].append(item_report)
+
+    if official_fifa_updated:
+        report["standingsSource"] = "computed_from_official_fifa_results"
 
     if report["updated"]:
         fixtures_path.write_text(json.dumps(fixtures, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

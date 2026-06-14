@@ -5,17 +5,18 @@ from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
-from urllib.request import urlopen
+from urllib.request import Request, urlopen
 
 from . import data as data_state
 from .event_review import RAW_NEWS_PATH
-from .model import reload_model_data
+from .model import event_summary, reload_model_data
 from .news_feed import import_news_feed
 from .score_feed import apply_score_source_updates
 from .snapshot import DEFAULT_SNAPSHOT_PATH, write_prediction_snapshot
 
 DEFAULT_DAILY_STATUS_PATH = RAW_NEWS_PATH.parent / "daily-update-status.json"
 DEFAULT_SCORE_SOURCE_CONFIG_PATH = RAW_NEWS_PATH.parent / "score-sources.json"
+REQUEST_HEADERS = {"User-Agent": "world-cup-prediction-system/0.1"}
 
 
 @dataclass(frozen=True)
@@ -74,7 +75,7 @@ def read_feed_text(spec: FeedSpec) -> str:
         return spec.input_path.read_text(encoding="utf-8")
     if spec.url is None:
         raise ValueError("Feed 配置缺少 input 或 url")
-    with urlopen(spec.url, timeout=20) as response:
+    with urlopen(Request(spec.url, headers=REQUEST_HEADERS), timeout=20) as response:
         return response.read().decode("utf-8", errors="replace")
 
 
@@ -83,7 +84,7 @@ def read_score_source_text(spec: ScoreSourceSpec) -> str:
         return spec.input_path.read_text(encoding="utf-8")
     if spec.url is None:
         raise ValueError("赛果源配置缺少 input 或 url")
-    with urlopen(spec.url, timeout=20) as response:
+    with urlopen(Request(spec.url, headers=REQUEST_HEADERS), timeout=20) as response:
         return response.read().decode("utf-8", errors="replace")
 
 
@@ -145,6 +146,7 @@ def run_daily_update(
     }
 
     reload_model_data(raw_news_path=raw_news_path, fixtures_path=active_fixtures_path)
+    events = event_summary()
     snapshot = write_prediction_snapshot(snapshot_path, simulation_count)
     model_meta = snapshot["modelMeta"]
     report = {
@@ -155,6 +157,15 @@ def run_daily_update(
             "items": feed_reports,
         },
         "scores": score_report,
+        "newsVerification": {
+            "rawNews": len(data_state.RAW_NEWS_ITEMS),
+            "singleSource": events["singleSource"],
+            "multiSource": events["multiSource"],
+            "confirmed": events["confirmed"],
+            "reviewRequired": events["reviewRequired"],
+            "ignored": events["ignored"],
+            "applied": events["applied"],
+        },
         "snapshot": {
             "path": str(snapshot_path),
             "simulationCount": model_meta["simulationCount"],
