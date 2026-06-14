@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 from . import data as data_state
-from .access import build_access_options
+from .access import build_access_options, build_access_policy
 from .admin import build_admin_overview
 from .admin_audit import AUDIT_LOG_PATH, append_admin_audit
 from .admin_security import verify_admin_token
@@ -123,6 +123,11 @@ def model_status() -> dict[str, object]:
 @app.get("/api/access-options")
 def access_options() -> dict[str, object]:
     return build_access_options(payment_configured=False)
+
+
+@app.get("/api/access-policy")
+def access_policy() -> dict[str, object]:
+    return build_access_policy(payment_configured=False)
 
 
 @app.get("/api/admin/overview")

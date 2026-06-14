@@ -1703,6 +1703,31 @@ Elo / 实力评分
 - 客户最初要求的“收费查看能力”已经有了清晰产品边界和前端入口，但还不是正式支付系统。
 - 下一步必须接真实用户账号、订单、支付网关和权限校验，才能把 `payment_pending` 改成可用状态。
 
+### 2026-06-14：产品权限结构
+
+已完成：
+
+- `backend/access.py` 新增 `ACCESS_CONTENT`，把可收费内容拆成单场预测、整届概率、重点场次包三类内容门槛。
+- 新增 `build_access_policy`，输出内容门槛和可解锁产品关系。
+- 新增 `build_access_decision`，用于判断某个产品能否访问某类内容。
+- 新增 `GET /api/access-policy`，前端、后台或未来支付系统可以读取同一套权限策略。
+- 当前 `paymentConfigured=false` 时，即使产品范围匹配也返回 `payment_pending`，不把未接支付误判为已解锁。
+
+验证：
+
+- 新增权限单元测试：单场预测包只能解锁单场内容，不能解锁整届概率。
+- 新增权限单元测试：支付未配置时访问判断返回 `payment_pending`。
+- 新增 API 测试：`/api/access-policy` 返回内容门槛和所需产品。
+- `npm run test:model` 通过，80 个测试。
+- `npm run validate:data` 通过。
+- `npm run build` 通过。
+- 重启本地 API 后，`/api/access-policy` 返回 200。
+
+当前判断：
+
+- 产品包文案和权限判断已经拆开，后续接真实订单和支付回调时可以复用 `build_access_decision`。
+- 仍未完成真实用户身份、订单、支付回调验签和内容裁剪。
+
 ## 十、当前交接摘要
 
 一句话定义：

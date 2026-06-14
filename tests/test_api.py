@@ -133,6 +133,17 @@ class PredictionApiTest(unittest.TestCase):
         self.assertTrue(all(product["status"] == "payment_pending" for product in payload["products"]))
         self.assertIn("概率分析", payload["disclaimer"])
 
+    def test_access_policy_exposes_content_gates(self):
+        client = TestClient(app)
+        response = client.get("/api/access-policy")
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertFalse(payload["paymentConfigured"])
+        self.assertEqual(payload["content"][0]["contentKey"], "match_prediction")
+        self.assertIn("single_match", payload["content"][0]["requiredProducts"])
+        self.assertEqual(payload["content"][1]["contentKey"], "tournament_probabilities")
+        self.assertEqual(payload["content"][1]["requiredProducts"], ["tournament_pass"])
+
     def test_admin_overview_api_returns_operational_status(self):
         rows = [
             {
