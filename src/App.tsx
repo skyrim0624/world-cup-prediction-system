@@ -1826,8 +1826,10 @@ function ChampionBoard({ teams }: { teams: Team[] }) {
               决赛 {team.tournament.final}% · 四强 {team.tournament.semifinal}%
             </small>
           </div>
-          <b>{team.tournament.champion}%</b>
-          <em className={team.tournament.change >= 0 ? "green" : "red"}>{formatSignedPercent(team.tournament.change)}</em>
+          <div className="champion-probability">
+            <b>{team.tournament.champion}%</b>
+            <em className={team.tournament.change >= 0 ? "green" : "red"}>{formatSignedPercent(team.tournament.change)}</em>
+          </div>
         </article>
       ))}
     </div>

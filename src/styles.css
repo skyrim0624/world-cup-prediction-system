@@ -1166,13 +1166,17 @@ button {
 
 .champion-row {
   display: grid;
-  grid-template-columns: 28px auto minmax(0, 1fr) auto auto;
+  grid-template-columns: 28px auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 12px;
   min-height: 76px;
   padding: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(0, 0, 0, 0.18);
+}
+
+.champion-row > div:not(.champion-probability) {
+  min-width: 0;
 }
 
 .champion-row > span {
@@ -1190,6 +1194,9 @@ button {
   display: block;
   color: #eefaf8;
   font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .champion-row small {
@@ -1197,16 +1204,25 @@ button {
   margin-top: 3px;
   color: #95a8a7;
   font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.champion-row b {
+.champion-probability {
+  display: grid;
+  justify-items: end;
+  gap: 4px;
+  min-width: 70px;
+}
+
+.champion-probability b {
   color: var(--gold);
   font-size: 28px;
   line-height: 1;
 }
 
-.champion-row em {
-  min-width: 54px;
+.champion-probability em {
   text-align: right;
   font-style: normal;
   font-weight: 900;
@@ -2535,11 +2551,30 @@ button {
   }
 
   .champion-row {
-    grid-template-columns: 24px auto minmax(0, 1fr) auto;
+    grid-template-columns: 24px 40px minmax(0, 1fr) minmax(58px, auto);
+    gap: 10px;
   }
 
-  .champion-row em {
+  .champion-row .flag {
+    width: 40px;
+    height: 28px;
+  }
+
+  .champion-row strong {
+    font-size: 18px;
+  }
+
+  .champion-row small {
+    font-size: 12px;
+  }
+
+  .champion-probability {
     grid-column: 4;
+    min-width: 58px;
+  }
+
+  .champion-probability b {
+    font-size: 24px;
   }
 }
 
@@ -2698,17 +2733,41 @@ button {
   }
 
   .champion-row {
-    grid-template-columns: 22px auto minmax(0, 1fr);
+    grid-template-columns: 22px 34px minmax(0, 1fr) minmax(52px, auto);
+    gap: 8px;
+    min-height: 64px;
+    padding: 10px 8px;
   }
 
-  .champion-row b,
-  .champion-row em {
-    grid-column: 3;
-    justify-self: start;
+  .champion-row > span {
+    font-size: 18px;
   }
 
-  .champion-row b {
-    margin-top: 6px;
+  .champion-row .flag {
+    width: 34px;
+    height: 24px;
+  }
+
+  .champion-row strong {
+    font-size: clamp(16px, 5vw, 20px);
+  }
+
+  .champion-row small {
+    font-size: 11px;
+  }
+
+  .champion-probability {
+    grid-column: 4;
+    justify-items: end;
+    min-width: 52px;
+  }
+
+  .champion-probability b {
+    font-size: 20px;
+  }
+
+  .champion-probability em {
+    font-size: 11px;
   }
 
   .mover-row {
