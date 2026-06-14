@@ -284,6 +284,28 @@ type ScenarioImpact = {
   tone: Tone;
 };
 
+type DailyMover = {
+  team: TeamKey;
+  name: string;
+  code: string;
+  previousChampion: number;
+  currentChampion: number;
+  change: number;
+  direction: "up" | "down";
+  reason: string;
+};
+
+type DailyMovers = {
+  baseline: "previous_snapshot" | "no_previous_snapshot" | string;
+  items: DailyMover[];
+  summary: {
+    up: number;
+    down: number;
+    largestUp: DailyMover | null;
+    largestDown: DailyMover | null;
+  };
+};
+
 type MatchPrediction = {
   stage: string;
   kickoff: string;
@@ -302,6 +324,7 @@ type MatchPrediction = {
   analysis: string[];
   newsItems: NewsItem[];
   teams?: Team[];
+  dailyMovers?: DailyMovers;
   modelMeta?: {
     engine: string;
     simulationCount: number;
@@ -1035,6 +1058,18 @@ function App() {
           onPointerUp={endDrag}
         >
           <ChampionBoard teams={championBoard} />
+        </DraggablePanel>
+
+        <DraggablePanel
+          id="movers"
+          title="今日概率变化"
+          position={positions.movers}
+          layoutUnlocked={layoutUnlocked}
+          onPointerDown={startDrag}
+          onPointerMove={moveDrag}
+          onPointerUp={endDrag}
+        >
+          <DailyMoversPanel movers={matchPrediction.dailyMovers} />
         </DraggablePanel>
 
         <DraggablePanel
@@ -2122,6 +2157,40 @@ function ChampionBoard({ teams }: { teams: Team[] }) {
           </div>
           <b>{team.tournament.champion}%</b>
           <em className={team.tournament.change >= 0 ? "green" : "red"}>{formatSignedPercent(team.tournament.change)}</em>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function DailyMoversPanel({ movers }: { movers?: DailyMovers }) {
+  if (!movers) {
+    return <p className="review-empty">等待下一次日更快照生成今日变化</p>;
+  }
+  if (movers.items.length === 0) {
+    return <p className="review-empty">{movers.baseline === "previous_snapshot" ? "上一快照暂无冠军概率变化" : "等待下一次日更快照生成今日变化"}</p>;
+  }
+
+  return (
+    <div className="mover-list">
+      <div className="mover-summary">
+        <span>
+          上调 <b className="green">{movers.summary.up}</b>
+        </span>
+        <span>
+          下调 <b className="red">{movers.summary.down}</b>
+        </span>
+      </div>
+      {movers.items.slice(0, 6).map((item) => (
+        <article className={`mover-row ${item.direction}`} key={item.team}>
+          <TeamFlag team={item.team} code={item.code} />
+          <div>
+            <strong>{item.name}</strong>
+            <small>
+              {item.previousChampion.toFixed(1)}% → {item.currentChampion.toFixed(1)}% · {item.reason}
+            </small>
+          </div>
+          <b className={item.direction === "up" ? "green" : "red"}>{formatSignedPercent(item.change)}</b>
         </article>
       ))}
     </div>

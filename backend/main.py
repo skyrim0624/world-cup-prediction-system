@@ -28,7 +28,7 @@ from .model import (
 )
 from .news_ingest import append_raw_news_item
 from .payments import build_order_access_decision, build_payment_config, create_payment_order, get_payment_order
-from .snapshot import DEFAULT_SNAPSHOT_PATH, read_prediction_snapshot, write_prediction_snapshot
+from .snapshot import DEFAULT_SNAPSHOT_PATH, build_probability_movers, read_prediction_snapshot, write_prediction_snapshot
 
 
 app = FastAPI(title="World Cup Prediction MVP")
@@ -108,6 +108,7 @@ def match_prediction(
     if cached and now - cached[0] < PREDICTION_CACHE_TTL_SECONDS:
         return cached[1]
     prediction = build_match_prediction(simulations)
+    prediction["dailyMovers"] = build_probability_movers(prediction, None)
     prediction_cache[simulations] = (now, prediction)
     return prediction
 

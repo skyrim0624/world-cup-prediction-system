@@ -88,6 +88,7 @@ def run_daily_update(
             "lockedResults": model_meta["lockedResults"],
             "liveMatches": model_meta["liveMatches"],
             "events": model_meta["events"],
+            "movers": snapshot.get("dailyMovers", {}).get("summary", {}),
         },
         "updatedAt": snapshot["updatedAt"],
     }

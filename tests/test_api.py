@@ -459,6 +459,8 @@ class PredictionApiTest(unittest.TestCase):
         payload = response.json()
         self.assertEqual(payload["modelMeta"]["simulationCount"], 1200)
         self.assertEqual(payload["modelMeta"]["changeBaseline"], "unadjusted_model")
+        self.assertIn("dailyMovers", payload)
+        self.assertEqual(payload["dailyMovers"]["baseline"], "no_previous_snapshot")
 
     def test_match_prediction_reuses_short_cache(self):
         client = TestClient(app)
