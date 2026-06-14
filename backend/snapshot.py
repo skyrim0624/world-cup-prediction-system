@@ -8,12 +8,19 @@ from .model import build_match_prediction
 
 
 DEFAULT_SNAPSHOT_PATH = Path(__file__).with_name("snapshots") / "latest-match-prediction.json"
+REQUIRED_MODEL_META_FIELDS = {"simulationCount", "changeBaseline", "lockedResults", "dataset", "events"}
 
 
 def read_prediction_snapshot(path: Path = DEFAULT_SNAPSHOT_PATH) -> dict[str, object] | None:
     if not path.exists():
         return None
-    return json.loads(path.read_text(encoding="utf-8"))
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    model_meta = payload.get("modelMeta")
+    if not isinstance(model_meta, dict):
+        return None
+    if not REQUIRED_MODEL_META_FIELDS.issubset(model_meta):
+        return None
+    return payload
 
 
 def write_prediction_snapshot(path: Path = DEFAULT_SNAPSHOT_PATH, simulation_count: int = 50_000) -> dict[str, object]:

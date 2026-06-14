@@ -79,6 +79,15 @@ class PredictionModelTest(unittest.TestCase):
         first_team = prediction["teams"][0]
         self.assertEqual(set(first_team["factors"]), {"strength", "form", "path", "squad", "margin"})
 
+    def test_champion_change_uses_unadjusted_model_baseline(self):
+        prediction = build_match_prediction(1200)
+        baseline = simulate_tournament(TEAM_PROFILES, simulation_count=1200)
+        first_team = prediction["teams"][0]
+        expected_change = round(first_team["tournament"]["champion"] - baseline[first_team["key"]]["champion"], 1)
+
+        self.assertEqual(first_team["tournament"]["change"], expected_change)
+        self.assertEqual(prediction["modelMeta"]["changeBaseline"], "unadjusted_model")
+
     def test_group_ranking_only_uses_teams_from_that_group(self):
         standings = build_standings(FIXTURES)
         ranked = rank_group(standings, "E")

@@ -23,6 +23,28 @@ class PredictionSnapshotTest(unittest.TestCase):
             written = write_prediction_snapshot(output_path, simulation_count=1200)
             loaded = read_prediction_snapshot(output_path)
             self.assertEqual(loaded["updatedAt"], written["updatedAt"])
+            self.assertEqual(loaded["modelMeta"]["changeBaseline"], "unadjusted_model")
+
+    def test_read_prediction_snapshot_rejects_stale_payload_without_change_baseline(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output_path = Path(temp_dir) / "stale.json"
+            output_path.write_text(
+                json.dumps(
+                    {
+                        "updatedAt": "2026-06-14T00:00:00Z",
+                        "modelMeta": {
+                            "simulationCount": 1200,
+                            "lockedResults": 3,
+                            "dataset": {},
+                            "events": {},
+                        },
+                    },
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            self.assertIsNone(read_prediction_snapshot(output_path))
 
     def test_read_prediction_snapshot_returns_none_when_missing(self):
         with tempfile.TemporaryDirectory() as temp_dir:

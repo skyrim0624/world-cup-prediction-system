@@ -870,10 +870,12 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
     match_teams = apply_fixture_context_adjustments(teams, current_fixture, fixture_context)
     probabilities = win_draw_loss(home_key, away_key, match_teams)
     base_tournament = simulate_tournament(teams, simulation_count=simulation_count)
+    baseline_tournament = simulate_tournament(TEAM_PROFILES, simulation_count=simulation_count)
 
     response_teams = []
     for team_key, profile in teams.items():
         tournament = base_tournament[team_key]
+        baseline = baseline_tournament[team_key]
         response_teams.append(
             {
                 "key": profile.key,
@@ -885,7 +887,7 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
                     "final": tournament["final"],
                     "semifinal": tournament["semifinal"],
                     "quarterfinal": tournament["quarterfinal"],
-                    "change": round(tournament["champion"] - TEAM_PROFILES[team_key].path / 8, 1),
+                    "change": round(tournament["champion"] - baseline["champion"], 1),
                 },
             }
         )
@@ -918,6 +920,7 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
         "modelMeta": {
             "engine": "Poisson + Monte Carlo",
             "simulationCount": simulation_count,
+            "changeBaseline": "unadjusted_model",
             "lockedResults": len([fixture for fixture in FIXTURES if fixture.status == "finished"]),
             "liveMatches": len([fixture for fixture in FIXTURES if fixture.status == "live"]),
             "dataset": DATASET_META,

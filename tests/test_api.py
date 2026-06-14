@@ -458,6 +458,7 @@ class PredictionApiTest(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         payload = response.json()
         self.assertEqual(payload["modelMeta"]["simulationCount"], 1200)
+        self.assertEqual(payload["modelMeta"]["changeBaseline"], "unadjusted_model")
 
     def test_match_prediction_reuses_short_cache(self):
         client = TestClient(app)
