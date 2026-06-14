@@ -514,6 +514,20 @@ class PredictionApiTest(unittest.TestCase):
             self.assertEqual(item["city"], "Mexico City")
             self.assertEqual(item["stadium"], "Estadio Azteca")
 
+    def test_finished_matches_api_lists_locked_result_records(self):
+        client = TestClient(app)
+        response = client.get("/api/finished-matches?limit=2")
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertEqual(payload["count"], 2)
+        first = payload["items"][0]
+        self.assertEqual(first["status"], "finished")
+        self.assertIsInstance(first["homeScore"], int)
+        self.assertIsInstance(first["awayScore"], int)
+        self.assertEqual(first["modelUse"], "locked_result_weight")
+        self.assertIn("后续路径", first["modelUseLabel"])
+
     def test_match_detail_api_builds_prediction_for_any_scheduled_match(self):
         client = TestClient(app)
         response = client.get("/api/match-detail?home=spain&away=argentina&simulations=1200")

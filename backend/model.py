@@ -827,6 +827,41 @@ def build_upcoming_match_predictions(limit: int = 12) -> dict[str, object]:
     }
 
 
+def build_finished_match_records(limit: int = 12) -> dict[str, object]:
+    teams = TEAM_PROFILES
+    items = []
+    for fixture in FIXTURES:
+        if fixture.status != "finished":
+            continue
+        items.append(
+            {
+                "stage": fixture.stage,
+                "kickoff": fixture.kickoff,
+                "matchNo": fixture.match_no,
+                "city": fixture.city,
+                "stadium": fixture.stadium,
+                "status": fixture.status,
+                "homeTeam": fixture.home,
+                "awayTeam": fixture.away,
+                "homeName": teams[fixture.home].name,
+                "awayName": teams[fixture.away].name,
+                "homeCode": teams[fixture.home].code,
+                "awayCode": teams[fixture.away].code,
+                "homeScore": fixture.home_score,
+                "awayScore": fixture.away_score,
+                "modelUse": "locked_result_weight",
+                "modelUseLabel": "已锁定为后续路径和动态权重因子",
+            }
+        )
+        if len(items) >= limit:
+            break
+    return {
+        "updatedAt": datetime.now(timezone.utc).isoformat(),
+        "count": len(items),
+        "items": items,
+    }
+
+
 def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str, object]:
     teams = apply_event_adjustments()
     home_key, away_key = CURRENT_MATCH

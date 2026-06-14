@@ -21,6 +21,7 @@ from backend.model import (
     apply_fixture_context_adjustments,
     best_third_place_teams,
     build_fixture_context,
+    build_finished_match_records,
     build_round_of_32_matches,
     build_score_sampler,
     build_match_prediction,
@@ -218,6 +219,17 @@ class PredictionModelTest(unittest.TestCase):
         self.assertLess(impacts["brazil"]["path"], 0)
         self.assertLess(impacts["brazil"]["squad"], 0)
         self.assertEqual(impacts["argentina"]["path"], 0)
+
+    def test_finished_match_records_lock_real_scores_as_dynamic_inputs(self):
+        records = build_finished_match_records(limit=2)
+
+        self.assertEqual(records["count"], 2)
+        first = records["items"][0]
+        self.assertEqual(first["status"], "finished")
+        self.assertIsInstance(first["homeScore"], int)
+        self.assertIsInstance(first["awayScore"], int)
+        self.assertEqual(first["modelUse"], "locked_result_weight")
+        self.assertIn("后续路径", first["modelUseLabel"])
 
     def test_multi_source_c_level_news_can_enter_reviewed_model_flow(self):
         source = NewsSource(

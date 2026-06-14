@@ -1818,6 +1818,33 @@ Elo / 实力评分
 - 支付系统已经具备“产品包 → 订单 → 支付状态 → 内容权限”的最小后端链路。
 - 仍未完成客户回调验签、查单写入、正式数据库订单表、用户绑定和前端内容裁剪。
 
+### 2026-06-14：蓝绿色主题与已结束比赛记录
+
+已完成：
+
+- 按客户参考图方向，把前台主体视觉从深绿黑终端感调整为高饱和蓝色 / 蓝绿色世界杯专题感。
+- 主背景、顶部对阵卡、主要面板、战术小场图和菜单按钮统一改为蓝青主色，保留黄绿高亮。
+- 新增 `GET /api/finished-matches`，输出已结束比赛记录。
+- 新增 `build_finished_match_records`，完赛记录返回真实比分、球队、比赛阶段、时间、场馆字段和模型用途说明。
+- 首页新增 `已结束比赛记录` 模块，展示 ESP 2-1 FRA、BRA 1-1 ESP、ARG 2-0 FRA 等已锁定赛果。
+- 已结束比赛在前台明确标注为“已锁定为后续路径和动态权重因子”，不再表达成可预测对象。
+- 新增内联 SVG favicon，去掉浏览器自动请求 `/favicon.ico` 带来的无关 404。
+
+验证：
+
+- 按 TDD 先让模型、API、前端契约测试分别因缺少 `build_finished_match_records`、`/api/finished-matches`、`FinishedMatchesPanel` 失败，再实现并跑绿。
+- `npm run test:model` 通过，94 个测试。
+- `npm run validate:data` 通过。
+- `npm run build` 通过。
+- 重启本地 API 后，`/api/finished-matches?limit=2` 返回 200。
+- Browser 插件调用失败，错误为 `browser.documentation is not a function`；已用 Playwright + 本机 Chrome 复测。
+- Playwright 复测桌面 1280px 和手机 390px：蓝绿色主题生效，已结束比赛记录可见，无错误遮罩，无控制台错误，无横向溢出。
+
+当前判断：
+
+- 首页现在同时展示“未开赛预测入口”和“已结束赛果记录”，产品语义更完整。
+- 已结束比赛已经从底层锁定逻辑延伸到前台可见记录，符合“已开始 / 已结束比赛作为动态权重因子”的框架。
+
 ## 十、当前交接摘要
 
 一句话定义：

@@ -204,6 +204,31 @@ type UpcomingMatchesResponse = {
   items: UpcomingMatch[];
 };
 
+type FinishedMatch = {
+  stage: string;
+  kickoff: string;
+  matchNo?: number | null;
+  city?: string | null;
+  stadium?: string | null;
+  status: string;
+  homeTeam: TeamKey;
+  awayTeam: TeamKey;
+  homeName: string;
+  awayName: string;
+  homeCode: string;
+  awayCode: string;
+  homeScore: number;
+  awayScore: number;
+  modelUse: string;
+  modelUseLabel: string;
+};
+
+type FinishedMatchesResponse = {
+  updatedAt: string;
+  count: number;
+  items: FinishedMatch[];
+};
+
 type AccessProduct = {
   key: string;
   name: string;
@@ -598,6 +623,7 @@ function App() {
   const [forecastTick, setForecastTick] = useState(0);
   const [apiPrediction, setApiPrediction] = useState<MatchPrediction | null>(null);
   const [upcomingMatches, setUpcomingMatches] = useState<UpcomingMatchesResponse | null>(null);
+  const [finishedMatches, setFinishedMatches] = useState<FinishedMatchesResponse | null>(null);
   const [selectedMatchKey, setSelectedMatchKey] = useState<string | null>(null);
   const [matchDetail, setMatchDetail] = useState<MatchDetail | null>(null);
   const [eventReview, setEventReview] = useState<EventReviewResponse | null>(null);
@@ -668,6 +694,19 @@ function App() {
       }
     }
 
+    async function loadFinishedMatches() {
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/finished-matches?limit=6`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`完赛记录接口返回 ${response.status}`);
+        const data = (await response.json()) as FinishedMatchesResponse;
+        if (!active) return;
+        setFinishedMatches(data);
+      } catch {
+        if (!active) return;
+        setFinishedMatches(null);
+      }
+    }
+
     async function loadAccessOptions() {
       try {
         const response = await fetch(`${API_BASE_URL}/api/access-options`, { cache: "no-store" });
@@ -684,12 +723,14 @@ function App() {
     loadPrediction();
     loadEventReview();
     loadUpcomingMatches();
+    loadFinishedMatches();
     loadAccessOptions();
     const timer = window.setInterval(() => {
       setForecastTick((value) => value + 1);
       loadPrediction();
       loadEventReview();
       loadUpcomingMatches();
+      loadFinishedMatches();
       loadAccessOptions();
     }, FORECAST_REFRESH_MS);
 
@@ -919,6 +960,19 @@ function App() {
           onPointerUp={endDrag}
         >
           <UpcomingMatchesPanel matches={upcomingMatches?.items ?? []} selectedKey={selectedMatchKey} onSelect={loadMatchDetail} />
+        </DraggablePanel>
+
+        <DraggablePanel
+          id="finished"
+          className="wide"
+          title="已结束比赛记录"
+          position={positions.finished}
+          layoutUnlocked={layoutUnlocked}
+          onPointerDown={startDrag}
+          onPointerMove={moveDrag}
+          onPointerUp={endDrag}
+        >
+          <FinishedMatchesPanel records={finishedMatches?.items ?? []} />
         </DraggablePanel>
 
         <DraggablePanel
@@ -1265,6 +1319,41 @@ function UpcomingMatchesPanel({
           </button>
         );
       })}
+    </div>
+  );
+}
+
+function FinishedMatchesPanel({ records }: { records: FinishedMatch[] }) {
+  if (records.length === 0) {
+    return <p className="review-empty">已结束比赛记录等待 API 连接</p>;
+  }
+
+  return (
+    <div className="finished-list">
+      {records.map((match) => (
+        <article className="finished-row" key={`${match.homeTeam}-${match.awayTeam}-${match.kickoff}`}>
+          <div className="finished-result">
+            <div className="finished-side">
+              <TeamFlag team={match.homeTeam} code={match.homeCode} />
+              <span>{match.homeCode}</span>
+            </div>
+            <strong>
+              {match.homeScore} - {match.awayScore}
+            </strong>
+            <div className="finished-side away">
+              <span>{match.awayCode}</span>
+              <TeamFlag team={match.awayTeam} code={match.awayCode} />
+            </div>
+          </div>
+          <div className="finished-copy">
+            <strong>
+              {match.homeName} / {match.awayName}
+            </strong>
+            <small>{[match.stage, match.kickoff, fixtureVenueLabel(match)].filter(Boolean).join(" · ")}</small>
+          </div>
+          <em>{match.modelUseLabel}</em>
+        </article>
+      ))}
     </div>
   );
 }

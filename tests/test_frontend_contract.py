@@ -22,6 +22,12 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("matchPagePath", app_source)
         self.assertIn("打开单场页", app_source)
 
+    def test_homepage_renders_finished_match_records(self):
+        app_source = Path("src/App.tsx").read_text(encoding="utf-8")
+        self.assertIn("/api/finished-matches", app_source)
+        self.assertIn("已结束比赛记录", app_source)
+        self.assertIn("FinishedMatchesPanel", app_source)
+
 
 if __name__ == "__main__":
     unittest.main()

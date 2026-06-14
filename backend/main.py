@@ -18,6 +18,7 @@ from .fixture_update import record_fixture_live_score, record_fixture_result
 from .model import (
     FinishedMatchPredictionError,
     SIMULATION_COUNT,
+    build_finished_match_records,
     build_match_detail,
     build_match_prediction,
     build_upcoming_match_predictions,
@@ -171,6 +172,11 @@ def admin_overview() -> dict[str, object]:
 @app.get("/api/upcoming-matches")
 def upcoming_matches(limit: int = Query(12, ge=1, le=72)) -> dict[str, object]:
     return build_upcoming_match_predictions(limit)
+
+
+@app.get("/api/finished-matches")
+def finished_matches(limit: int = Query(12, ge=1, le=72)) -> dict[str, object]:
+    return build_finished_match_records(limit)
 
 
 @app.get("/api/match-detail")
