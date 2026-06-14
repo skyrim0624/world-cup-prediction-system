@@ -2147,6 +2147,30 @@ Elo / 实力评分
 - 前台主要球队展示位置已经不再出现“该放国旗但没放”的问题。
 - 如果后续客户新增或替换球队名单，需要同步维护 `TEAM_FLAG_ASSET_BY_KEY` 和 `TEAM_FLAG_ASSET_BY_CODE`。
 
+### 2026-06-14：国旗修正版线上部署
+
+已完成：
+
+- 重新执行前端生产构建，并将包含 48 队本地国旗资源的版本部署到 Cloudflare Pages。
+- 部署目标项目：`world-cup-prediction-system`。
+- 正式验收地址：`https://world-cup-prediction-system.pages.dev/`。
+- 本次 Cloudflare Pages 预览地址：`https://ae7a771e.world-cup-prediction-system.pages.dev/`。
+
+验证：
+
+- `python3 -m unittest discover -s tests -p 'test_frontend_contract.py'` 通过。
+- `npm run build` 通过。
+- `npx wrangler pages deploy dist --project-name world-cup-prediction-system --branch main` 部署成功。
+- 正式首页返回 200。
+- 单场深链 `/match/germany/curacao` 返回 200。
+- 国旗资源 `/assets/flags/br.png` 返回 200。
+- 线上浏览器渲染检查通过：首页标题为“世界杯预测工作台”，重点比赛国旗已显示，页面无横向溢出，资源请求无失败。
+
+当前边界：
+
+- 线上仍是 Cloudflare Pages 静态前端验收版。
+- 后端 API 尚未部署到线上，因此动态列表会显示 API 待连接状态；这不影响本次国旗静态资源上线。
+
 ## 十、当前交接摘要
 
 一句话定义：
