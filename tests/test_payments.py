@@ -122,7 +122,7 @@ class PaymentApiTest(unittest.TestCase):
         self.assertEqual(captured["payload"]["outTradeNo"], order["orderId"])
         self.assertEqual(captured["payload"]["amountCents"], 100)
         self.assertEqual(captured["payload"]["paymentMethod"], "native")
-        self.assertEqual(captured["payload"]["notifyUrl"], "https://api.example.com/api/app-payment/wechat/notify")
+        self.assertEqual(captured["payload"]["notifyUrl"], "https://zhugejunshi.com/api/app-payment/wechat/notify")
         self.assertEqual(order["status"], "pending")
         self.assertEqual(order["qrCodeUrl"], "https://pay.example/qr/wechat-native.png")
         self.assertEqual(order["providerOrderId"], "wx_provider_123")

@@ -3423,7 +3423,7 @@ cron: "*/30 * * * *"
 
 - 客户反馈微信 Native 后台不能额外新增回调链接，只能使用已配置的 `https://zhugejunshi.com/api/app-payment/wechat/notify`。
 - 后端新增兼容路由：`POST /api/app-payment/wechat/notify`，内部按 `wechat_native` 支付通知处理。
-- 微信 Native 创建订单时传给客户接口的 `notifyUrl` 改为 `{WORLD_CUP_PUBLIC_API_BASE_URL}/api/app-payment/wechat/notify`。
+- 微信 Native 创建订单时传给客户接口的 `notifyUrl` 固定为 `https://zhugejunshi.com/api/app-payment/wechat/notify`。
 - 微信 JSAPI 仍保留 `POST /api/payments/notify/wechat_jsapi`。
 
 验证：

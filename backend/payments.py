@@ -17,6 +17,7 @@ from .access import ACCESS_PRODUCTS, build_access_decision
 PAYMENT_ORDER_TTL_MINUTES = 15
 PAYMENT_HTTP_TIMEOUT_SECONDS = 12
 WECHAT_NATIVE_NOTIFY_PATH = "/api/app-payment/wechat/notify"
+WECHAT_NATIVE_NOTIFY_URL = "https://zhugejunshi.com/api/app-payment/wechat/notify"
 
 PAYMENT_PROVIDERS = {
     "wechat_jsapi": {
@@ -211,11 +212,11 @@ def _next_action_for_order(order: Mapping[str, object]) -> str:
 
 
 def _customer_notify_url(env: Mapping[str, str], provider_key: str) -> str | None:
+    if provider_key == "wechat_native":
+        return _env_value(env, "CUSTOMER_WECHAT_NATIVE_PAY_NOTIFY_URL") or WECHAT_NATIVE_NOTIFY_URL
     public_base = _env_value(env, "WORLD_CUP_PUBLIC_API_BASE_URL").rstrip("/")
     if not public_base:
         return None
-    if provider_key == "wechat_native":
-        return f"{public_base}{WECHAT_NATIVE_NOTIFY_PATH}"
     return f"{public_base}/api/payments/notify/{provider_key}"
 
 
