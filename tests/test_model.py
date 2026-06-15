@@ -246,6 +246,36 @@ class PredictionModelTest(unittest.TestCase):
         self.assertLess(impacts["brazil"]["attack"], -2.0)
         self.assertGreater(impacts["brazil"]["attack"], -4.0)
 
+    def test_public_proxy_news_fields_drive_event_strength(self):
+        item = RawNewsItem(
+            id="france-defender-public-proxy",
+            title="France defender injury doubt before opener",
+            summary="France defender trained alone and remains a doubt before kickoff.",
+            source="bbc",
+            team="france",
+            status="multi_source",
+            published_at="2026-06-15T09:00:00Z",
+            url="https://example.com/france-defender-public-proxy",
+            category="injury",
+            factor="defense",
+            direction=-1,
+            confidence=0.92,
+            players=["france-defender"],
+            kind="rss",
+            sourceRegistryId="bbc-football-rss",
+        )
+
+        events = events_from_raw_news(
+            [item],
+            {"bbc": NewsSource("bbc", "BBC Sport Football", "A", "https://www.bbc.com/sport/football")},
+        )
+
+        self.assertEqual(len(events), 1)
+        self.assertEqual(events[0].factor, "defense")
+        self.assertEqual(events[0].direction, -1)
+        self.assertEqual(events[0].status, "multi_source")
+        self.assertGreater(events[0].strength, 0.06)
+
     def test_fixture_context_detects_short_rest_and_city_change(self):
         fixtures = [
             Fixture(

@@ -246,6 +246,33 @@ def infer_event_strength(text: str) -> float:
     return 0.015
 
 
+PUBLIC_PROXY_CATEGORY_STRENGTH = {
+    "suspension": 0.07,
+    "injury": 0.062,
+    "availability": 0.048,
+    "lineup": 0.045,
+    "weather": 0.028,
+    "training": 0.026,
+    "general": 0.015,
+}
+
+
+def clamp_public_signal(value: float, lower: float = 0.005, upper: float = 0.095) -> float:
+    return max(lower, min(upper, value))
+
+
+def public_proxy_event_strength(item: RawNewsItem, text: str) -> float:
+    if item.category is None and item.confidence is None and not item.players:
+        return infer_event_strength(text)
+
+    base = PUBLIC_PROXY_CATEGORY_STRENGTH.get(str(item.category or "general"), infer_event_strength(text))
+    confidence = item.confidence if isinstance(item.confidence, (int, float)) else 0.55
+    confidence = max(0.0, min(1.0, float(confidence)))
+    confidence_multiplier = 0.75 + confidence * 0.45
+    player_bonus = min(len(item.players or []) * 0.008, 0.024)
+    return round(clamp_public_signal(base * confidence_multiplier + player_bonus), 4)
+
+
 def action_for_news_item(item: RawNewsItem, source: NewsSource) -> str:
     if item.status in {"unverified", "rumor"} or source.source_level == "D":
         return "ignore"
@@ -303,7 +330,7 @@ def events_from_raw_news(items: list[RawNewsItem], news_sources: dict[str, NewsS
                 source_level=source.source_level,
                 factor=item.factor or infer_event_factor(text),
                 direction=item.direction if item.direction is not None else infer_event_direction(text),
-                strength=infer_event_strength(text),
+                strength=public_proxy_event_strength(item, text),
                 time=item.published_at,
                 source=source.name,
                 url=item.url,
