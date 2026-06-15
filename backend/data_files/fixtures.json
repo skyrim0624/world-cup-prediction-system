@@ -111,9 +111,11 @@
     "away": "curacao",
     "stage": "小组赛 E 组",
     "kickoff": "6月14日 13:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Houston",
-    "stadium": "Houston Stadium"
+    "stadium": "Houston Stadium",
+    "home_score": 7,
+    "away_score": 1
   },
   {
     "match_no": 11,

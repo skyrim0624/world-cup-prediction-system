@@ -44,6 +44,7 @@ from .team_history import (
     run_prediction_backtest,
 )
 from .squad_matchup import apply_matchup_adjustments, build_tactical_matchup
+from .post_match_review import build_post_match_review, load_previous_match_prediction_snapshot
 
 Outcome = Literal["home", "draw", "away"]
 
@@ -361,6 +362,23 @@ def poisson_probability(lam: float, goals: int) -> float:
     return (lam**goals * exp(-lam)) / factorial(goals)
 
 
+def matchup_mismatch_index(attacking: TeamProfile, defending: TeamProfile) -> float:
+    elo_component = (attacking.elo - defending.elo) / 180
+    attack_defense_component = (attacking.attack - defending.defense) / 12
+    squad_component = (attacking.squad - defending.squad) / 14
+    return max(0.0, elo_component + attack_defense_component + squad_component)
+
+
+def blowout_tail_multiplier(attacking: TeamProfile, defending: TeamProfile) -> float:
+    mismatch = matchup_mismatch_index(attacking, defending)
+    return 1 + clamp((mismatch - 2.5) * 0.07, 0.0, 0.28)
+
+
+def goal_lambda_upper_bound(attacking: TeamProfile, defending: TeamProfile) -> float:
+    mismatch = matchup_mismatch_index(attacking, defending)
+    return 3.25 + clamp((mismatch - 2.5) * 0.45, 0.0, 1.75)
+
+
 def expected_goals(home: TeamProfile, away: TeamProfile, scoring_environment: dict[str, object] | None = None) -> tuple[float, float]:
     elo_gap = home.elo - away.elo
     home_attack = home.attack / 86
@@ -381,7 +399,12 @@ def expected_goals(home: TeamProfile, away: TeamProfile, scoring_environment: di
 
     home_lambda = base_home * exp(elo_gap / 760) * home_attack * home_against * home_squad * home_goalkeeper_drag
     away_lambda = base_away * exp(-elo_gap / 760) * away_attack * away_against * away_squad * away_goalkeeper_drag
-    return max(0.35, min(3.25, home_lambda)), max(0.35, min(3.25, away_lambda))
+    home_lambda *= blowout_tail_multiplier(home, away)
+    away_lambda *= blowout_tail_multiplier(away, home)
+    return (
+        max(0.35, min(goal_lambda_upper_bound(home, away), home_lambda)),
+        max(0.35, min(goal_lambda_upper_bound(away, home), away_lambda)),
+    )
 
 
 def score_distribution(
@@ -908,10 +931,13 @@ def score_matrix_for_match(
     home_key: str,
     away_key: str,
     teams: dict[str, TeamProfile],
-    max_goals: int = 4,
+    max_goals: int | None = None,
     scoring_environment: dict[str, object] | None = None,
 ) -> list[dict[str, object]]:
     distribution = score_distribution(home_key, away_key, teams, scoring_environment)
+    if max_goals is None:
+        mismatch = max(matchup_mismatch_index(teams[home_key], teams[away_key]), matchup_mismatch_index(teams[away_key], teams[home_key]))
+        max_goals = MAX_GOALS if mismatch >= 2.5 else 4
     cells = [
         item
         for item in distribution
@@ -1208,8 +1234,9 @@ def build_upcoming_match_predictions(limit: int = 12) -> dict[str, object]:
     }
 
 
-def build_finished_match_records(limit: int = 12) -> dict[str, object]:
+def build_finished_match_records(limit: int = 12, prediction_snapshot: dict[str, object] | None = None) -> dict[str, object]:
     teams = TEAM_PROFILES
+    snapshot = prediction_snapshot if prediction_snapshot is not None else load_previous_match_prediction_snapshot()
     items = []
     finished_fixtures = [fixture for fixture in FIXTURES if fixture.status == "finished"]
     finished_fixtures.sort(
@@ -1238,6 +1265,7 @@ def build_finished_match_records(limit: int = 12) -> dict[str, object]:
                 "awayScore": fixture.away_score,
                 "modelUse": "locked_result_weight",
                 "modelUseLabel": "已锁定为后续路径和动态权重因子",
+                "postMatchReview": build_post_match_review(fixture, snapshot),
             }
         )
         if len(items) >= limit:

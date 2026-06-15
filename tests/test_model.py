@@ -40,8 +40,10 @@ from backend.model import (
     resolve_current_prediction_fixture,
     sample_fixture_score,
     simulate_tournament,
+    score_matrix_for_match,
     win_draw_loss,
 )
+from backend.post_match_review import build_post_match_review
 
 
 class PredictionModelTest(unittest.TestCase):
@@ -70,8 +72,50 @@ class PredictionModelTest(unittest.TestCase):
         self.assertGreater(len(prediction["scoreMatrix"]), 0)
         self.assertEqual(len(prediction["goalMarkets"]), 4)
         self.assertEqual(len(prediction["fairPrices"]), 3)
-        self.assertEqual(prediction["modelMeta"]["lockedResults"], 8)
+        self.assertEqual(prediction["modelMeta"]["lockedResults"], 9)
         self.assertIn("liveMatches", prediction["modelMeta"])
+
+    def test_post_match_review_identifies_blowout_tail_error_and_target_functions(self):
+        fixture = Fixture("germany", "curacao", "小组赛 E 组", "6月14日 13:00 ET", "finished", 7, 1)
+        snapshot = {
+            "homeTeam": "germany",
+            "awayTeam": "curacao",
+            "scoreOutcomes": [
+                {"score": "2-0", "probability": 11.7},
+                {"score": "3-0", "probability": 10.8},
+                {"score": "1-0", "probability": 8.4},
+            ],
+            "scoreMatrix": [
+                {"score": "4-0", "homeGoals": 4, "awayGoals": 0, "probability": 7.2},
+            ],
+        }
+
+        review = build_post_match_review(fixture, snapshot)
+
+        self.assertEqual(review["status"], "reviewed")
+        self.assertEqual(review["actualScore"], "7-1")
+        self.assertEqual(review["predictedTopScore"], "2-0")
+        self.assertEqual(review["severity"], "high")
+        self.assertIn("large_score_tail_underestimated", review["rootCauses"])
+        self.assertIn("score_matrix_truncated_tail", review["rootCauses"])
+        self.assertIn("expected_goals", review["targetFunctions"])
+        self.assertIn("score_distribution_from_lambdas", review["targetFunctions"])
+        self.assertIn("score_matrix_for_match", review["targetFunctions"])
+
+    def test_finished_match_records_include_post_match_review_when_snapshot_matches(self):
+        records = build_finished_match_records(
+            limit=1,
+            prediction_snapshot={
+                "homeTeam": "germany",
+                "awayTeam": "curacao",
+                "scoreOutcomes": [{"score": "2-0", "probability": 11.7}],
+                "scoreMatrix": [{"score": "4-0", "homeGoals": 4, "awayGoals": 0, "probability": 7.2}],
+            },
+        )
+
+        self.assertEqual(records["items"][0]["homeTeam"], "germany")
+        self.assertEqual(records["items"][0]["awayTeam"], "curacao")
+        self.assertEqual(records["items"][0]["postMatchReview"]["severity"], "high")
 
     def test_et_kickoff_is_parsed_as_eastern_daylight_time(self):
         kickoff = parse_fixture_kickoff("6月15日 12:00 ET")
@@ -199,6 +243,20 @@ class PredictionModelTest(unittest.TestCase):
         )
 
         self.assertNotEqual((round(default_home, 3), round(default_away, 3)), (round(historical_home, 3), round(historical_away, 3)))
+
+    def test_expected_goals_expands_high_mismatch_blowout_tail(self):
+        teams = apply_event_adjustments()
+
+        home_lambda, away_lambda = expected_goals(teams["germany"], teams["curacao"])
+
+        self.assertGreater(home_lambda, 3.25)
+        self.assertLess(away_lambda, 0.9)
+
+    def test_score_matrix_expands_to_seven_goals_for_large_mismatch(self):
+        teams = apply_event_adjustments()
+        matrix = score_matrix_for_match("germany", "curacao", teams)
+
+        self.assertTrue(any(cell["homeGoals"] == 7 for cell in matrix))
 
     def test_historical_latest_elo_updates_team_strength_baseline(self):
         history = load_team_match_history()
@@ -359,17 +417,18 @@ class PredictionModelTest(unittest.TestCase):
 
         self.assertEqual(records["count"], 3)
         first = records["items"][0]
-        self.assertEqual(first["matchNo"], 6)
+        self.assertEqual(first["matchNo"], 10)
         self.assertEqual(first["status"], "finished")
-        self.assertIsInstance(first["homeScore"], int)
-        self.assertIsInstance(first["awayScore"], int)
+        self.assertEqual(first["homeScore"], 7)
+        self.assertEqual(first["awayScore"], 1)
         self.assertEqual(first["modelUse"], "locked_result_weight")
         self.assertIn("后续路径", first["modelUseLabel"])
+        self.assertIn("postMatchReview", first)
         third = records["items"][2]
-        self.assertEqual(third["homeName"], "巴西")
-        self.assertEqual(third["homeScore"], 1)
+        self.assertEqual(third["homeName"], "海地")
+        self.assertEqual(third["homeScore"], 0)
         self.assertEqual(third["awayScore"], 1)
-        self.assertEqual(third["awayName"], "摩洛哥")
+        self.assertEqual(third["awayName"], "苏格兰")
 
     def test_multi_source_c_level_news_can_enter_reviewed_model_flow(self):
         source = NewsSource(

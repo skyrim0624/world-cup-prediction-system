@@ -48,7 +48,7 @@ class SquadMatchupTest(unittest.TestCase):
         self.assertNotEqual(adjusted["germany"].attack, teams["germany"].attack)
 
     def test_match_detail_exposes_matchup_context(self):
-        detail = build_match_detail("germany", "curacao", 1200)
+        detail = build_match_detail("spain", "cape-verde", 1200)
 
         self.assertIn("matchupContext", detail)
         self.assertIn("home", detail["matchupContext"])
