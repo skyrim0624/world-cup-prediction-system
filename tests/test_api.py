@@ -551,6 +551,83 @@ class PredictionApiTest(unittest.TestCase):
         self.assertIn("dailyMovers", payload)
         self.assertEqual(payload["dailyMovers"]["baseline"], "no_previous_snapshot")
 
+    def test_public_match_prediction_prefers_snapshot_even_when_false_is_requested(self):
+        snapshot_payload = {
+            "stage": "snapshot-protected",
+            "updatedAt": "2026-06-15T00:00:00Z",
+            "modelMeta": {
+                "simulationCount": 50000,
+                "changeBaseline": "snapshot",
+                "lockedResults": 8,
+                "dataset": {},
+                "events": {},
+            },
+            "dailyMovers": {},
+        }
+        previous_token = os.environ.get("WORLD_CUP_ADMIN_TOKEN")
+        previous_snapshot_path = getattr(main_module, "snapshot_data_path", None)
+        with tempfile.TemporaryDirectory() as temp_dir:
+            snapshot_path = Path(temp_dir) / "latest-match-prediction.json"
+            snapshot_path.write_text(json.dumps(snapshot_payload), encoding="utf-8")
+            os.environ["WORLD_CUP_ADMIN_TOKEN"] = "secret-token"
+            main_module.snapshot_data_path = snapshot_path
+            try:
+                client = TestClient(app)
+                response = client.get("/api/match-prediction?simulations=1200&useSnapshot=false")
+            finally:
+                if previous_token is None:
+                    os.environ.pop("WORLD_CUP_ADMIN_TOKEN", None)
+                else:
+                    os.environ["WORLD_CUP_ADMIN_TOKEN"] = previous_token
+                if previous_snapshot_path is None:
+                    delattr(main_module, "snapshot_data_path")
+                else:
+                    main_module.snapshot_data_path = previous_snapshot_path
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["stage"], "snapshot-protected")
+
+    def test_admin_match_prediction_can_force_live_compute(self):
+        snapshot_payload = {
+            "stage": "snapshot-protected",
+            "updatedAt": "2026-06-15T00:00:00Z",
+            "modelMeta": {
+                "simulationCount": 50000,
+                "changeBaseline": "snapshot",
+                "lockedResults": 8,
+                "dataset": {},
+                "events": {},
+            },
+            "dailyMovers": {},
+        }
+        previous_token = os.environ.get("WORLD_CUP_ADMIN_TOKEN")
+        previous_snapshot_path = getattr(main_module, "snapshot_data_path", None)
+        with tempfile.TemporaryDirectory() as temp_dir:
+            snapshot_path = Path(temp_dir) / "latest-match-prediction.json"
+            snapshot_path.write_text(json.dumps(snapshot_payload), encoding="utf-8")
+            os.environ["WORLD_CUP_ADMIN_TOKEN"] = "secret-token"
+            main_module.snapshot_data_path = snapshot_path
+            try:
+                client = TestClient(app)
+                response = client.get(
+                    "/api/match-prediction?simulations=1200&useSnapshot=false",
+                    headers={"X-Admin-Token": "secret-token"},
+                )
+            finally:
+                if previous_token is None:
+                    os.environ.pop("WORLD_CUP_ADMIN_TOKEN", None)
+                else:
+                    os.environ["WORLD_CUP_ADMIN_TOKEN"] = previous_token
+                if previous_snapshot_path is None:
+                    delattr(main_module, "snapshot_data_path")
+                else:
+                    main_module.snapshot_data_path = previous_snapshot_path
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertEqual(payload["modelMeta"]["simulationCount"], 1200)
+        self.assertNotEqual(payload["stage"], "snapshot-protected")
+
     def test_match_prediction_reuses_short_cache(self):
         client = TestClient(app)
         first = client.get("/api/match-prediction?simulations=1200&useSnapshot=false").json()

@@ -1,8 +1,9 @@
 from __future__ import annotations
 
+from hmac import compare_digest
 from time import monotonic
 
-from fastapi import Depends, FastAPI, HTTPException, Query
+from fastapi import Depends, FastAPI, Header, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
@@ -10,7 +11,7 @@ from . import data as data_state
 from .access import build_access_options, build_access_policy
 from .admin import build_admin_overview, build_prediction_run_monitor
 from .admin_audit import AUDIT_LOG_PATH, append_admin_audit
-from .admin_security import verify_admin_token
+from .admin_security import resolve_admin_token, verify_admin_token
 from .data_import import apply_tournament_data_import, restore_tournament_backup
 from .daily_update import DEFAULT_DAILY_STATUS_PATH
 from .event_review import RAW_NEWS_PATH, review_raw_news_item
@@ -101,15 +102,30 @@ async def health() -> dict[str, str]:
     return {"status": "ok"}
 
 
+def is_local_request(request: Request) -> bool:
+    hostname = request.url.hostname or ""
+    return hostname in {"127.0.0.1", "localhost", "testserver"}
+
+
+def can_run_live_prediction(request: Request, x_admin_token: str | None) -> bool:
+    expected = resolve_admin_token(request)
+    if expected:
+        return bool(x_admin_token and compare_digest(x_admin_token, expected))
+    return is_local_request(request)
+
+
 @app.get("/api/match-prediction")
 async def match_prediction(
+    request: Request,
     simulations: int = Query(SIMULATION_COUNT, ge=1_000, le=50_000),
     use_snapshot: bool = Query(True, alias="useSnapshot"),
+    x_admin_token: str | None = Header(default=None),
 ) -> dict[str, object]:
-    if use_snapshot:
-        snapshot = read_prediction_snapshot(snapshot_data_path)
+    snapshot = read_prediction_snapshot(snapshot_data_path)
+    if use_snapshot or not can_run_live_prediction(request, x_admin_token):
         if snapshot is not None:
             return snapshot
+        raise HTTPException(status_code=503, detail="预测快照暂不可用")
     now = monotonic()
     cached = prediction_cache.get(simulations)
     if cached and now - cached[0] < PREDICTION_CACHE_TTL_SECONDS:

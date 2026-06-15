@@ -3139,11 +3139,13 @@ cron: "*/30 * * * *"
 - 发现 Cloudflare Python Worker 在公开首页并发请求 `useSnapshot=false` 实时模拟时会超 CPU，导致 1101 / 1102。
 - 公开首页预测请求改回自动快照读取：`/api/match-prediction?simulations=1200&useSnapshot=true`。
 - 首页预测快照请求和未开赛赛程请求改为顺序执行，降低 Cloudflare Worker 冷启动并发失败概率。
+- 后端增加保护：公开请求即使传 `useSnapshot=false`，也优先返回快照；只有带后台 Token 或本地调试才允许现场计算。
 - 从干净 worktree 重新部署 API，避免带入本地其它未提交后台改动。
 
 关键决策：
 
 - 公开用户页不再触发实时蒙特卡洛计算；实时计算保留给后台、单次调试或快照生成任务。
+- 旧前端 tab 或缓存 bundle 不允许继续打爆生产 Worker。
 - 用户看到的自动更新依赖半小时日更流水线生成新快照并自动部署，不依赖人工刷新。
 - 赛程列表继续直接读取轻量未开赛接口，确保用户能看到官方赛程入口。
 
