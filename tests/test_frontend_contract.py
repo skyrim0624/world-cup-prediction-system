@@ -8,187 +8,128 @@ def app_source() -> str:
     return Path("src/App.tsx").read_text(encoding="utf-8")
 
 
+def styles_source() -> str:
+    return Path("src/styles.css").read_text(encoding="utf-8")
+
+
 def source_between(source: str, start: str, end: str) -> str:
     start_index = source.index(start)
     end_index = source.index(end, start_index)
     return source[start_index:end_index]
 
 
-class FrontendContractTest(unittest.TestCase):
-    def test_public_app_hides_paid_access_boundary(self):
-        source = app_source()
-        home_source = source_between(source, "function HomePredictionPage()", "function TeamFlag")
-        single_match_source = source_between(source, "function SingleMatchPage", "function AdminConsole")
+def public_home_source() -> str:
+    return source_between(app_source(), "function HomePredictionPage()", "function TeamFlag")
 
-        self.assertIn("VITE_API_BASE_URL", source)
-        self.assertNotIn("/api/access-options", home_source)
+
+class FrontendContractTest(unittest.TestCase):
+    def test_public_homepage_uses_public_schedule_api_only(self):
+        source = public_home_source()
+
+        self.assertIn("/api/public-upcoming-matches?limit=12", source)
+        self.assertNotIn("/api/match-prediction", source)
+        self.assertNotIn("/api/upcoming-matches?limit=12", source)
+        self.assertNotIn("/api/match-detail", source)
+        self.assertNotIn("/api/access-options", source)
         self.assertNotIn("/api/payments/config", source)
         self.assertNotIn("/api/payments/orders", source)
-        self.assertNotIn("/api/access-decision", source)
-        self.assertNotIn("付费解锁", source)
-        self.assertNotIn("微信支付", source)
-        self.assertNotIn("支付宝支付", source)
-        self.assertNotIn("扫码付款", source)
-        self.assertNotIn("AccessPanel", source)
-        self.assertNotIn("LockedContent", source)
-        self.assertNotIn("解锁", home_source)
-        self.assertNotIn("解锁", single_match_source)
 
-    def test_app_exposes_single_match_page_route(self):
+    def test_public_homepage_hides_paid_prediction_content(self):
+        source = public_home_source()
+
+        self.assertIn("¥1", source)
+        self.assertIn("查看预测", source)
+        self.assertIn("全包剩余 92 场 ¥39", source)
+        self.assertIn("安全支付", source)
+        self.assertNotIn("homeWin", source)
+        self.assertNotIn("draw", source)
+        self.assertNotIn("awayWin", source)
+        self.assertNotIn("topScore", source)
+        self.assertNotIn("scoreOutcomes", source)
+        self.assertNotIn("最可能", source)
+        self.assertNotIn("比分", source)
+        self.assertNotIn("概率", source)
+
+    def test_public_homepage_keeps_operations_content_out(self):
+        source = public_home_source()
+
+        self.assertNotIn("/admin", source)
+        self.assertNotIn("/api/finished-matches", source)
+        self.assertNotIn("赛果记录", source)
+        self.assertNotIn("真实模型", source)
+        self.assertNotIn("入模", source)
+        self.assertNotIn("忽略", source)
+        self.assertNotIn("次模拟", source)
+        self.assertNotIn("后台", source)
+
+    def test_public_homepage_matches_01_mobile_visual_structure(self):
+        source = public_home_source()
+        styles = styles_source()
+
+        self.assertIn("public-match-shell", source)
+        self.assertIn("public-match-app", source)
+        self.assertIn("public-match-header", source)
+        self.assertIn("public-match-list", source)
+        self.assertIn("public-pass-bar", source)
+        self.assertIn("未开赛比赛", source)
+        self.assertIn("世界杯预测", source)
+        self.assertIn('url("/assets/app/stadium-bg-mobile-portrait.png")', styles)
+        self.assertIn("width: min(100%, 430px)", styles)
+        self.assertIn("grid-template-columns: repeat(3, minmax(0, 1fr))", styles)
+        self.assertIn("bottom: max(10px, env(safe-area-inset-bottom))", styles)
+
+    def test_public_fallback_strips_paid_fields(self):
         source = app_source()
+        strip_source = source_between(source, "function toPublicUpcomingMatch", "function comparePublicUpcomingMatches")
+
+        self.assertIn("stage: match.stage", strip_source)
+        self.assertIn("homeName: match.homeName", strip_source)
+        self.assertIn("awayName: match.awayName", strip_source)
+        self.assertNotIn("homeWin", strip_source)
+        self.assertNotIn("draw", strip_source)
+        self.assertNotIn("awayWin", strip_source)
+        self.assertNotIn("topScore", strip_source)
+
+    def test_app_exposes_single_match_route_for_next_page(self):
+        source = app_source()
+        single_match_source = source_between(source, "function SingleMatchPage", "function LockedPreviewRow")
+
         self.assertIn("/match/", source)
-        self.assertIn("/api/match-detail", source)
+        self.assertIn("/checkout/", source)
+        self.assertIn("/api/public-match-summary", single_match_source)
+        self.assertIn("/api/payments/orders", single_match_source)
+        self.assertIn("checkoutPagePath", single_match_source)
+        self.assertIn("完整预测需支付后查看", single_match_source)
+        self.assertIn("¥1 解锁本场", single_match_source)
+        self.assertIn("全包剩余 92 场 ¥39", single_match_source)
+        self.assertNotIn("/api/match-detail", single_match_source)
         self.assertIn("SingleMatchPage", source)
         self.assertIn("matchPagePath", source)
-        self.assertIn("打开单场页", source)
 
-    def test_homepage_keeps_operations_content_out_of_public_app(self):
+    def test_checkout_page_uses_payment_config_and_match_scope(self):
         source = app_source()
-        home_source = source_between(source, "function HomePredictionPage()", "function TeamFlag")
+        checkout_source = source_between(source, "function SingleMatchCheckoutPage", "function PaymentInfoRow")
+        styles = styles_source()
 
-        self.assertNotIn("/api/finished-matches", home_source)
-        self.assertNotIn("赛果记录", home_source)
-        self.assertNotIn("FinishedMatchesPanel", home_source)
-        self.assertNotIn("真实模型", home_source)
-        self.assertNotIn("入模", home_source)
-        self.assertNotIn("忽略", home_source)
-        self.assertNotIn("次模拟", home_source)
-        self.assertNotIn("市场价格源待接入", source)
-
-    def test_board_page_omits_daily_probability_placeholder(self):
-        source = app_source()
-        home_source = source_between(source, "function HomePredictionPage()", "function UpcomingMatchesPanel")
-
-        self.assertIn("冠军概率榜", home_source)
-        self.assertNotIn("今日概率变化", home_source)
-        self.assertNotIn("DailyMoversPanel", source)
-        self.assertNotIn("等待下一次日更快照生成今日变化", source)
-        self.assertIn("dailyMovers", source)
-
-    def test_public_homepage_is_user_prediction_page_not_ops_console(self):
-        source = app_source()
-        home_source = source_between(source, "function HomePredictionPage()", "function UpcomingMatchesPanel")
-
-        self.assertIn("今日重点预测", home_source)
-        self.assertIn("app-bottom-nav", home_source)
-        self.assertIn("预测功能导航", home_source)
-        self.assertIn('hash: "matches"', source)
-        self.assertNotIn("activeScreenConfig.label", home_source)
-        self.assertIn("进球概率", home_source)
-        self.assertIn("新闻与方法", home_source)
-        self.assertIn("判断依据", home_source)
-        self.assertIn("UserMethodPanel", source)
-        self.assertNotIn("模型方法", home_source)
-        self.assertNotIn("路径传导", home_source)
-        self.assertNotIn("EventReviewPanel", home_source)
-        self.assertNotIn("onRebuildSnapshot", home_source)
-        self.assertNotIn("双击移动模块", home_source)
-        self.assertNotIn("DraggablePanel", home_source)
-
-    def test_forecast_screen_keeps_goal_markets_above_bottom_nav(self):
-        source = app_source()
-        home_source = source_between(source, "function HomePredictionPage()", "function TeamFlag")
-        styles = Path("src/styles.css").read_text(encoding="utf-8")
-
-        self.assertIn("goalMarkets.slice(0, 2)", home_source)
-        self.assertNotIn("goalMarkets.slice(0, 4)", home_source)
-        self.assertIn("calc(100px + env(safe-area-inset-bottom))", styles)
-
-    def test_public_homepage_polling_uses_automatic_snapshot_and_sequential_schedule_fetch(self):
-        source = app_source()
-        home_source = source_between(source, "function HomePredictionPage()", "function TeamFlag")
-
-        self.assertIn("useSnapshot=true", home_source)
-        self.assertNotIn("useSnapshot=false", home_source)
-        self.assertIn("async function loadHomeData()", home_source)
-        self.assertIn("await loadPrediction();", home_source)
-        self.assertIn("await loadUpcomingMatches();", home_source)
-        self.assertIn("cache: \"no-store\"", home_source)
-
-    def test_matches_page_uses_beijing_time_without_venue_heading(self):
-        source = app_source()
-        home_source = source_between(source, "function HomePredictionPage()", "function TeamFlag")
-        upcoming_source = source_between(source, "function UpcomingMatchesPanel", "function MatchDetailPanel")
-
-        self.assertIn("formatKickoffForUser", source)
-        self.assertIn("北京时间", source)
-        self.assertIn("formatKickoffForUser(match.kickoff)", upcoming_source)
-        self.assertNotIn("fixtureVenueLabel", source)
-        self.assertNotIn("未开赛比赛池", home_source)
-        self.assertNotIn("stadium", upcoming_source)
-        self.assertNotIn("city", upcoming_source)
-
-    def test_matches_page_does_not_show_empty_before_schedule_api_finishes(self):
-        source = app_source()
-        home_source = source_between(source, "function HomePredictionPage()", "function TeamFlag")
-        upcoming_source = source_between(source, "function UpcomingMatchesPanel", "function MatchDetailPanel")
-
-        self.assertIn("upcomingMatchesStatus", home_source)
-        self.assertIn("status={upcomingMatchesStatus}", home_source)
-        self.assertIn("fallbackMatch={focusedUpcomingMatch}", home_source)
-        self.assertIn("STATIC_UPCOMING_MATCHES_FALLBACK", source)
-        self.assertIn("static-fallback", source)
-        self.assertIn("buildStaticUpcomingMatchesFallback", source)
-        self.assertIn("filterUpcomingMatches", source)
-        self.assertIn("germany", source)
-        self.assertIn("curacao", source)
-        self.assertIn("status !== \"ready\" && fallbackMatch", upcoming_source)
-        self.assertIn("status === \"loading\"", upcoming_source)
-        self.assertIn("status === \"failed\"", upcoming_source)
-        self.assertIn("赛程加载中", upcoming_source)
-        self.assertIn("赛程接口连接失败，等待自动刷新", upcoming_source)
-
-    def test_matches_page_filters_expired_kickoffs_and_requests_more_future_matches(self):
-        source = app_source()
-        home_source = source_between(source, "function HomePredictionPage()", "function TeamFlag")
-
-        self.assertIn("/api/upcoming-matches?limit=12", home_source)
-        self.assertIn("matches={upcomingMatchItems}", home_source)
-        self.assertIn("validApiPrediction", home_source)
-        self.assertIn("isUpcomingMatch(apiPrediction", home_source)
-        self.assertIn("filterUpcomingMatches(data.items)", home_source)
-        self.assertIn("resolveDisplayTeam(matchPrediction.homeTeam", home_source)
-        self.assertIn("resolveDisplayTeam(matchPrediction.awayTeam", home_source)
-        self.assertIn("teamFromUpcomingFallback", source)
-        self.assertNotIn("slice(0, 4)", home_source)
-
-    def test_forecast_fallback_uses_official_schedule_not_old_mock_fixture(self):
-        source = app_source()
-        fallback_source = source_between(source, "function buildFallbackPrediction", "function predictionToUpcomingMatch")
-
-        self.assertIn("firstStaticUpcomingMatch", fallback_source)
-        self.assertIn("match.homeTeam", fallback_source)
-        self.assertIn("match.awayTeam", fallback_source)
-        self.assertIn("官方赛程兜底", fallback_source)
-        self.assertNotIn('homeTeam: "brazil"', fallback_source)
-        self.assertNotIn('awayTeam: "argentina"', fallback_source)
-        self.assertNotIn("巴西", fallback_source)
-        self.assertNotIn("阿根廷", fallback_source)
-
-    def test_public_homepage_uses_world_cup_portal_visual_language(self):
-        source = app_source()
-        styles = Path("src/styles.css").read_text(encoding="utf-8")
-        home_source = source_between(source, "function HomePredictionPage()", "function UpcomingMatchesPanel")
-
-        self.assertIn("世界杯预测", home_source)
-        self.assertIn("app-screen", home_source)
-        self.assertIn("app-screen-stack", home_source)
-        self.assertIn("app-prediction-focus", home_source)
-        self.assertIn("app-main-outcome", home_source)
-        self.assertIn("app-supporting-probs", home_source)
-        self.assertIn("compact-score-kicker", home_source)
-        self.assertIn("section-title", home_source)
-        self.assertIn("app-mini-market", home_source)
-        self.assertNotIn("World Cup Forecast Desk", home_source)
-        self.assertNotIn("赛果记录", home_source)
-        self.assertIn("app-bottom-nav", styles)
-        self.assertIn("grid-template-columns: repeat(4, minmax(0, 1fr))", styles)
-        self.assertIn("display: inline-flex", styles)
-        self.assertIn("align-items: flex-end", styles)
-        self.assertIn("grid-template-columns: repeat(2, minmax(0, 1fr))", styles)
-        self.assertIn("width: min(100%, 460px)", styles)
-        self.assertIn("font-size: clamp(15px, 4vw, 18px)", styles)
-        self.assertIn("font-size: clamp(21px, 6vw, 26px)", styles)
+        self.assertIn("/api/public-match-summary", checkout_source)
+        self.assertIn("/api/access-options", checkout_source)
+        self.assertIn("/api/payments/config", checkout_source)
+        self.assertIn("/api/payments/orders", checkout_source)
+        self.assertIn("contentKey: \"match_prediction\"", checkout_source)
+        self.assertIn("matchKey", checkout_source)
+        self.assertIn("微信支付", checkout_source)
+        self.assertIn("支付宝支付", checkout_source)
+        self.assertIn("创建支付订单", checkout_source)
+        self.assertIn("zhugejunshi.com", checkout_source)
+        self.assertNotIn("homeWin", checkout_source)
+        self.assertNotIn("draw", checkout_source)
+        self.assertNotIn("awayWin", checkout_source)
+        self.assertNotIn("topScore", checkout_source)
+        self.assertNotIn("missingConfig", checkout_source)
+        self.assertNotIn("CUSTOMER_", checkout_source)
+        self.assertIn("checkout-page-shell", styles)
+        self.assertIn("gold-football-product-icon.png", styles + checkout_source)
+        self.assertIn("gold-payment-button-texture.png", styles)
 
     def test_team_flags_cover_tournament_teams_and_match_lists(self):
         source = app_source()
@@ -197,8 +138,6 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("TEAM_FLAG_ASSET_BY_KEY", source)
         self.assertIn("flagSource", source)
         self.assertIn("src={flagSource}", source)
-        self.assertIn("TeamFlag team={homeTeam.key} code={homeTeam.code}", source)
-        self.assertIn("TeamFlag team={awayTeam.key} code={awayTeam.code}", source)
         self.assertIn("TeamFlag team={match.homeTeam} code={match.homeCode}", source)
         self.assertIn("TeamFlag team={match.awayTeam} code={match.awayCode}", source)
         self.assertIn("TeamFlag team={detail.homeTeam} code={detail.homeCode}", source)
@@ -206,30 +145,6 @@ class FrontendContractTest(unittest.TestCase):
         self.assertNotIn("knownFlags", source)
         for team in teams:
             self.assertRegex(source, rf'["\']?{re.escape(team["key"])}["\']?:')
-
-    def test_single_match_page_shows_prediction_without_paid_gate(self):
-        source = app_source()
-        single_match_source = source_between(source, "function SingleMatchPage", "function AdminConsole")
-
-        self.assertIn("赛前胜平负概率", single_match_source)
-        self.assertIn("比分预测", single_match_source)
-        self.assertIn("单场预测细节", single_match_source)
-        self.assertIn("match-full-content", single_match_source)
-        self.assertNotIn("免费预览", single_match_source)
-        self.assertNotIn("付费解锁", single_match_source)
-        self.assertNotIn("完整比分分布需要解锁", single_match_source)
-        self.assertNotIn("LockedContent", single_match_source)
-        self.assertNotIn('contentKey="match_prediction"', single_match_source)
-        self.assertNotIn("AccessPanel", single_match_source)
-
-    def test_public_frontend_omits_payment_flow(self):
-        source = app_source()
-
-        self.assertNotIn("PAYMENT_STATUS_POLL_MS", source)
-        self.assertNotIn("pollPaymentOrder", source)
-        self.assertNotIn("/api/payments/orders/", source)
-        self.assertNotIn("/api/access-decision", source)
-        self.assertNotIn("unlockDecisions", source)
 
 
 if __name__ == "__main__":

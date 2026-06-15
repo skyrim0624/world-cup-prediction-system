@@ -1,5 +1,32 @@
-import { Fragment, FormEvent, useEffect, useMemo, useState, type CSSProperties } from "react";
-import { CalendarDays, Newspaper, Target, Trophy, type LucideIcon } from "lucide-react";
+import { Fragment, FormEvent, useEffect, useMemo, useState, type CSSProperties, type ReactNode } from "react";
+import {
+  AlertTriangle,
+  ArrowLeft,
+  BatteryFull,
+  CalendarDays,
+  ChevronRight,
+  CheckCircle2,
+  CircleDollarSign,
+  Clock,
+  Crown,
+  FileText,
+  Hourglass,
+  Info,
+  Lock,
+  LockKeyhole,
+  Menu,
+  Newspaper,
+  QrCode,
+  RefreshCw,
+  Share2,
+  ShieldCheck,
+  Signal,
+  Target,
+  Trophy,
+  WalletCards,
+  Wifi,
+  type LucideIcon,
+} from "lucide-react";
 
 type TeamKey = string;
 type Tone = "green" | "blue" | "gold" | "orange" | "red" | "muted";
@@ -28,6 +55,14 @@ type NewsItem = {
   impact: string;
   tone: Tone;
   time: string;
+};
+
+type MatchNewsItem = NewsItem & {
+  sourceLabel?: string;
+  sourceTier?: string;
+  direction?: "positive" | "neutral" | "negative";
+  affectedTeam?: string;
+  factor?: string;
 };
 
 type ReviewStatus = "confirmed" | "multi_source" | "single_source" | "unverified" | "rumor";
@@ -304,6 +339,59 @@ type UpcomingMatchesResponse = {
   items: UpcomingMatch[];
 };
 
+type PublicUpcomingMatch = {
+  stage: string;
+  kickoff: string;
+  matchNo?: number | null;
+  status: string;
+  homeTeam: TeamKey;
+  awayTeam: TeamKey;
+  homeName: string;
+  awayName: string;
+  homeCode: string;
+  awayCode: string;
+};
+
+type PublicMatchSummary = PublicUpcomingMatch;
+
+type PublicUpcomingMatchesResponse = {
+  updatedAt: string;
+  count: number;
+  items: PublicUpcomingMatch[];
+};
+
+type PostMatchReview = {
+  status: string;
+  actualScore?: string | null;
+  message?: string;
+  hasPredictionBaseline?: boolean;
+  predictedTopScore?: string;
+  predictedTopProbability?: number;
+  summary?: string;
+  severity?: "low" | "medium" | "high" | string;
+  winnerMissed?: boolean;
+  totalGoalError?: number;
+  rootCauses?: string[];
+};
+
+type FinishedMatch = PublicUpcomingMatch & {
+  city?: string | null;
+  stadium?: string | null;
+  homeScore: number;
+  awayScore: number;
+  modelUse?: string;
+  modelUseLabel?: string;
+  postMatchReview?: PostMatchReview;
+};
+
+type FinishedMatchesResponse = {
+  updatedAt: string;
+  count: number;
+  items: FinishedMatch[];
+};
+
+type PublicMatchFilter = "today" | "tomorrow" | "all";
+
 type ScenarioImpact = {
   label: string;
   probability: number;
@@ -405,9 +493,87 @@ type MatchDetail = {
   goalMarkets?: GoalMarket[];
   fairPrices?: FairPrice[];
   marketSource?: MarketSource;
+  pillars?: {
+    home: Record<string, number>;
+    away: Record<string, number>;
+  };
   scenarioImpacts: ScenarioImpact[];
   creatorTopics?: CreatorTopic[];
+  newsItems?: MatchNewsItem[];
   analysis: string[];
+};
+
+type PaymentOrderStatus = "customer_interface_ready" | "provider_config_required" | "pending" | "payment_pending" | "paid" | "expired" | "failed" | string;
+
+type PaymentOrder = {
+  orderId: string;
+  productKey: string;
+  productName: string;
+  amountLabel?: string;
+  provider: string;
+  providerLabel: string;
+  paymentMethod: string;
+  paymentMethodLabel?: string;
+  status: PaymentOrderStatus;
+  qrCodeUrl?: string | null;
+  createdAt: string;
+  expiresAt: string;
+  metadata?: {
+    contentKey?: string;
+    matchKey?: string;
+    homeTeam?: TeamKey;
+    awayTeam?: TeamKey;
+    homeName?: string;
+    awayName?: string;
+  };
+};
+
+type AccessProduct = {
+  key: string;
+  name: string;
+  scope: string;
+  amountLabel: string;
+  status: string;
+};
+
+type AccessOptions = {
+  paymentConfigured: boolean;
+  products: AccessProduct[];
+  disclaimer: string;
+};
+
+type PaymentProviderConfig = {
+  provider: string;
+  label: string;
+  paymentMethod: string;
+  paymentMethodLabel?: string;
+  configured: boolean;
+};
+
+type PaymentConfig = {
+  ready: boolean;
+  providers: PaymentProviderConfig[];
+  disclaimer: string;
+};
+
+type CheckoutProviderOption = {
+  key: "wechat" | "alipay";
+  provider: string;
+  label: string;
+  methodLabel: string;
+  configured: boolean;
+  Icon: LucideIcon;
+};
+
+type CheckoutState = "loading_config" | "ready" | "creating_order" | "provider_config_required" | "failed";
+
+type AccessDecision = {
+  allowed: boolean;
+  reason: string;
+  orderId?: string;
+  productKey?: string | null;
+  paymentStatus?: string | null;
+  requiredProducts: string[];
 };
 
 const teams: Team[] = [
@@ -480,13 +646,26 @@ const INTERACTIVE_SIMULATION_COUNT = 1200;
 const FORECAST_REFRESH_MS = 15000;
 const TOURNAMENT_YEAR = 2026;
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? (import.meta.env.DEV ? "http://127.0.0.1:8000" : "");
+const FORCE_ADMIN_CONSOLE = import.meta.env.VITE_FORCE_ADMIN === "1";
 const SINGLE_MATCH_ROUTE_PREFIX = "/match/";
+const SINGLE_MATCH_CHECKOUT_ROUTE_PREFIX = "/checkout/";
+const POST_MATCH_REVIEW_ROUTE_PREFIX = "/review/";
+const PAYMENT_PENDING_ROUTE = "/payment/pending";
+const CHAMPION_BOARD_ROUTE = "/champion-board";
+const PAYMENT_ORDER_REFRESH_MS = 5000;
+const UNLOCKED_MATCH_PREVIEW_PARAM = "unlocked";
 
 const USER_SCREENS: { key: UserScreenKey; hash: string; label: string; Icon: LucideIcon }[] = [
   { key: "forecast", hash: "forecast", label: "预测", Icon: Target },
   { key: "matches", hash: "matches", label: "赛程", Icon: CalendarDays },
   { key: "board", hash: "board", label: "榜单", Icon: Trophy },
   { key: "news", hash: "news", label: "新闻", Icon: Newspaper },
+];
+
+const PUBLIC_MATCH_TABS: { key: PublicMatchFilter; label: string }[] = [
+  { key: "today", label: "今日" },
+  { key: "tomorrow", label: "明日" },
+  { key: "all", label: "全部" },
 ];
 
 const STATIC_UPCOMING_MATCHES_FALLBACK: UpcomingMatch[] = [
@@ -988,6 +1167,97 @@ function filterUpcomingMatches(matches: UpcomingMatch[], referenceDate = new Dat
   return matches.filter((match) => isUpcomingMatch(match, referenceDate)).sort(compareUpcomingMatches);
 }
 
+function toPublicUpcomingMatch(match: UpcomingMatch): PublicUpcomingMatch {
+  return {
+    stage: match.stage,
+    kickoff: match.kickoff,
+    matchNo: match.matchNo ?? null,
+    status: match.status,
+    homeTeam: match.homeTeam,
+    awayTeam: match.awayTeam,
+    homeName: match.homeName,
+    awayName: match.awayName,
+    homeCode: match.homeCode,
+    awayCode: match.awayCode,
+  };
+}
+
+function comparePublicUpcomingMatches(left: PublicUpcomingMatch, right: PublicUpcomingMatch) {
+  const leftTime = parseKickoffDate(left.kickoff)?.getTime() ?? Number.MAX_SAFE_INTEGER;
+  const rightTime = parseKickoffDate(right.kickoff)?.getTime() ?? Number.MAX_SAFE_INTEGER;
+  return leftTime - rightTime || (left.matchNo ?? 999) - (right.matchNo ?? 999);
+}
+
+function isPublicUpcomingMatch(match: Pick<PublicUpcomingMatch, "kickoff" | "status">, referenceDate = new Date()) {
+  if (match.status !== "scheduled" && match.status !== "未开赛") return false;
+  const kickoffDate = parseKickoffDate(match.kickoff);
+  if (!kickoffDate) return true;
+  return kickoffDate.getTime() > referenceDate.getTime();
+}
+
+function filterPublicUpcomingMatches(matches: PublicUpcomingMatch[], referenceDate = new Date()) {
+  return matches.filter((match) => isPublicUpcomingMatch(match, referenceDate)).sort(comparePublicUpcomingMatches);
+}
+
+function publicMatchesForTab(matches: PublicUpcomingMatch[], activeFilter: PublicMatchFilter, referenceDate = new Date()) {
+  if (activeFilter === "all") return matches;
+
+  const targetDate = new Date(referenceDate);
+  if (activeFilter === "tomorrow") {
+    targetDate.setUTCDate(targetDate.getUTCDate() + 1);
+  }
+  const targetKey = formatDateKeyInTimeZone(targetDate, "America/New_York");
+  return matches.filter((match) => {
+    const kickoffDate = parseKickoffDate(match.kickoff);
+    return kickoffDate ? formatDateKeyInTimeZone(kickoffDate, "America/New_York") === targetKey : false;
+  });
+}
+
+function buildStaticPublicUpcomingMatchesFallback(referenceDate = new Date()): PublicUpcomingMatchesResponse {
+  const items = filterPublicUpcomingMatches(STATIC_UPCOMING_MATCHES_FALLBACK.map(toPublicUpcomingMatch), referenceDate);
+  return {
+    updatedAt: "static-fallback",
+    count: items.length,
+    items,
+  };
+}
+
+function publicMatchStatusLabel(status: string) {
+  if (status === "scheduled") return "未开赛";
+  if (status === "live") return "进行中";
+  if (status === "finished") return "已结束";
+  return status;
+}
+
+function formatDateKeyInTimeZone(date: Date, timeZone: string) {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(date);
+  const part = (type: string) => parts.find((item) => item.type === type)?.value ?? "";
+  return `${part("year")}-${part("month")}-${part("day")}`;
+}
+
+function formatKickoffForPublicList(value: string) {
+  if (!value || value === "待定" || value === "进行中" || value === "已结束") return value;
+  if (/\bET\b/i.test(value)) return value.replace(/\s+/g, " ").trim();
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  const parts = new Intl.DateTimeFormat("zh-CN", {
+    timeZone: "America/New_York",
+    month: "numeric",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).formatToParts(date);
+  const part = (type: string) => parts.find((item) => item.type === type)?.value ?? "";
+  return `${part("month")}月${part("day")}日 ${part("hour")}:${part("minute")} ET`;
+}
+
 function buildStaticUpcomingMatchesFallback(referenceDate = new Date()): UpcomingMatchesResponse {
   const items = filterUpcomingMatches(STATIC_UPCOMING_MATCHES_FALLBACK, referenceDate);
   return {
@@ -999,6 +1269,26 @@ function buildStaticUpcomingMatchesFallback(referenceDate = new Date()): Upcomin
 
 function firstStaticUpcomingMatch(referenceDate = new Date()) {
   return filterUpcomingMatches(STATIC_UPCOMING_MATCHES_FALLBACK, referenceDate)[0] ?? STATIC_UPCOMING_MATCHES_FALLBACK[0];
+}
+
+function publicSummaryFromUpcomingMatch(match: UpcomingMatch): PublicUpcomingMatch {
+  return {
+    stage: match.stage,
+    kickoff: match.kickoff,
+    matchNo: match.matchNo ?? null,
+    status: match.status,
+    homeTeam: match.homeTeam,
+    awayTeam: match.awayTeam,
+    homeName: match.homeName,
+    awayName: match.awayName,
+    homeCode: match.homeCode,
+    awayCode: match.awayCode,
+  };
+}
+
+function staticMatchSummaryFallback(home: TeamKey, away: TeamKey): PublicUpcomingMatch | null {
+  const match = STATIC_UPCOMING_MATCHES_FALLBACK.find((item) => item.homeTeam === home && item.awayTeam === away);
+  return match ? publicSummaryFromUpcomingMatch(match) : null;
 }
 
 function teamFromUpcomingFallback(teamKey: TeamKey): Team | null {
@@ -1065,6 +1355,15 @@ function formatSignedNumber(value: number) {
   return `${value > 0 ? "+" : ""}${value.toFixed(1)}`;
 }
 
+function formatSignedDecimal(value: number) {
+  if (Math.abs(value) < 0.05) return "0.0";
+  return `${value > 0 ? "+" : ""}${value.toFixed(1)}`;
+}
+
+function formatProbabilityValue(value: number) {
+  return `${value.toFixed(1)}%`;
+}
+
 function userNewsImpactLabel(value: string) {
   if (value.includes("不入模型") || value.includes("已忽略")) return "不采信";
   if (value.includes("入模") || value.includes("可入模型")) return "已确认";
@@ -1110,6 +1409,26 @@ function matchRouteParams(pathname: string) {
   };
 }
 
+function checkoutRouteParams(pathname: string) {
+  if (!pathname.startsWith(SINGLE_MATCH_CHECKOUT_ROUTE_PREFIX)) return null;
+  const [, , home, away] = pathname.split("/");
+  if (!home || !away) return null;
+  return {
+    home: decodeURIComponent(home),
+    away: decodeURIComponent(away),
+  };
+}
+
+function postMatchReviewRouteParams(pathname: string) {
+  if (!pathname.startsWith(POST_MATCH_REVIEW_ROUTE_PREFIX)) return null;
+  const [, , home, away] = pathname.split("/");
+  if (!home || !away) return null;
+  return {
+    home: decodeURIComponent(home),
+    away: decodeURIComponent(away),
+  };
+}
+
 function userScreenFromHash(): UserScreenKey {
   const hash = window.location.hash.replace("#", "");
   const screen = USER_SCREENS.find((item) => item.hash === hash || item.key === hash);
@@ -1124,13 +1443,48 @@ function matchPagePath(home: TeamKey, away: TeamKey) {
   return `${SINGLE_MATCH_ROUTE_PREFIX}${encodeURIComponent(home)}/${encodeURIComponent(away)}`;
 }
 
+function checkoutPagePath(home: TeamKey, away: TeamKey) {
+  return `${SINGLE_MATCH_CHECKOUT_ROUTE_PREFIX}${encodeURIComponent(home)}/${encodeURIComponent(away)}`;
+}
+
+function postMatchReviewPagePath(home: TeamKey, away: TeamKey) {
+  return `${POST_MATCH_REVIEW_ROUTE_PREFIX}${encodeURIComponent(home)}/${encodeURIComponent(away)}`;
+}
+
+function paymentPendingRouteParams(pathname: string) {
+  if (pathname !== PAYMENT_PENDING_ROUTE) return null;
+  return new URLSearchParams(window.location.search).get("orderId") ?? "";
+}
+
+function isChampionBoardRoute(pathname: string) {
+  return pathname.replace(/\/$/, "") === CHAMPION_BOARD_ROUTE;
+}
+
 function App() {
-  if (window.location.pathname === "/admin") {
+  if (FORCE_ADMIN_CONSOLE || window.location.pathname === "/admin") {
     return <AdminConsole />;
+  }
+
+  if (isChampionBoardRoute(window.location.pathname)) {
+    return <ChampionProbabilityPage />;
+  }
+
+  const paymentPendingOrderId = paymentPendingRouteParams(window.location.pathname);
+  if (paymentPendingOrderId !== null) {
+    return <PaymentPendingPage orderId={paymentPendingOrderId} />;
+  }
+
+  const checkoutRoute = checkoutRouteParams(window.location.pathname);
+  if (checkoutRoute) {
+    return <SingleMatchCheckoutPage home={checkoutRoute.home} away={checkoutRoute.away} />;
   }
 
   const singleMatchRoute = matchRouteParams(window.location.pathname);
   if (singleMatchRoute) {
+    const searchParams = new URLSearchParams(window.location.search);
+    if (searchParams.get(UNLOCKED_MATCH_PREVIEW_PARAM) === "1" || searchParams.has("orderId")) {
+      return <UnlockedMatchPage home={singleMatchRoute.home} away={singleMatchRoute.away} />;
+    }
     return <SingleMatchPage home={singleMatchRoute.home} away={singleMatchRoute.away} />;
   }
 
@@ -1138,77 +1492,37 @@ function App() {
 }
 
 function HomePredictionPage() {
-  const [forecastTick, setForecastTick] = useState(0);
-  const [apiPrediction, setApiPrediction] = useState<MatchPrediction | null>(null);
-  const [upcomingMatches, setUpcomingMatches] = useState<UpcomingMatchesResponse | null>(() => buildStaticUpcomingMatchesFallback());
-  const [upcomingMatchesStatus, setUpcomingMatchesStatus] = useState<LoadStatus>("loading");
-  const [activeScreen, setActiveScreen] = useState<UserScreenKey>(() => userScreenFromHash());
-  const referenceDate = useMemo(() => new Date(), [forecastTick]);
-
-  const teamsData = apiPrediction?.teams?.length ? apiPrediction.teams : teams;
-  const fallbackPrediction = useMemo(() => buildFallbackPrediction(referenceDate), [referenceDate]);
-  const validApiPrediction = apiPrediction && isUpcomingMatch(apiPrediction, referenceDate) ? apiPrediction : null;
-  const matchPrediction = validApiPrediction ?? fallbackPrediction;
-  const homeTeam = resolveDisplayTeam(matchPrediction.homeTeam, teamsData);
-  const awayTeam = resolveDisplayTeam(matchPrediction.awayTeam, teamsData);
-  const championBoard = [...teamsData].sort((left, right) => right.tournament.champion - left.tournament.champion);
-  const topScore = matchPrediction.scoreOutcomes[0];
-  const goalMarkets = matchPrediction.goalMarkets?.length ? matchPrediction.goalMarkets : goalMarketsFallback();
-  const predictionOutcomes = [
-    { label: `${homeTeam.name}胜`, value: matchPrediction.homeWin, tone: "green" as Tone },
-    { label: "平局", value: matchPrediction.draw, tone: "gold" as Tone },
-    { label: `${awayTeam.name}胜`, value: matchPrediction.awayWin, tone: "blue" as Tone },
-  ].sort((left, right) => right.value - left.value);
-  const primaryOutcome = predictionOutcomes[0];
-  const secondaryOutcomes = predictionOutcomes.slice(1);
-  const upcomingMatchItems = useMemo(() => filterUpcomingMatches(upcomingMatches?.items ?? [], referenceDate), [upcomingMatches, referenceDate]);
-  const focusedPredictionMatch = predictionToUpcomingMatch(matchPrediction, homeTeam, awayTeam);
-  const focusedUpcomingMatch = isUpcomingMatch(focusedPredictionMatch, referenceDate) ? focusedPredictionMatch : null;
+  const [refreshTick, setRefreshTick] = useState(0);
+  const [activeFilter, setActiveFilter] = useState<PublicMatchFilter>("today");
+  const [matchesStatus, setMatchesStatus] = useState<LoadStatus>("loading");
+  const [publicMatches, setPublicMatches] = useState<PublicUpcomingMatchesResponse>(() => buildStaticPublicUpcomingMatchesFallback());
+  const referenceDate = useMemo(() => new Date(), [refreshTick]);
+  const upcomingMatchItems = useMemo(() => filterPublicUpcomingMatches(publicMatches.items, referenceDate), [publicMatches, referenceDate]);
+  const visibleMatches = useMemo(() => publicMatchesForTab(upcomingMatchItems, activeFilter, referenceDate), [upcomingMatchItems, activeFilter, referenceDate]);
 
   useEffect(() => {
     let active = true;
 
-    async function loadPrediction() {
+    async function loadPublicUpcomingMatches() {
       try {
-        const response = await fetch(`${API_BASE_URL}/api/match-prediction?simulations=${INTERACTIVE_SIMULATION_COUNT}&useSnapshot=true`, {
-          cache: "no-store",
-        });
-        if (!response.ok) throw new Error(`预测接口返回 ${response.status}`);
-        const data = (await response.json()) as MatchPrediction;
+        const response = await fetch(`${API_BASE_URL}/api/public-upcoming-matches?limit=12`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`公开赛程接口返回 ${response.status}`);
+        const data = (await response.json()) as PublicUpcomingMatchesResponse;
         if (!active) return;
-        setApiPrediction(data);
+        const items = filterPublicUpcomingMatches(data.items);
+        setPublicMatches({ ...data, count: items.length, items });
+        setMatchesStatus("ready");
       } catch {
         if (!active) return;
-        setApiPrediction(null);
+        setPublicMatches(buildStaticPublicUpcomingMatchesFallback());
+        setMatchesStatus("failed");
       }
     }
 
-    async function loadUpcomingMatches() {
-      try {
-        const response = await fetch(`${API_BASE_URL}/api/upcoming-matches?limit=12`, { cache: "no-store" });
-        if (!response.ok) throw new Error(`未开赛赛程接口返回 ${response.status}`);
-        const data = (await response.json()) as UpcomingMatchesResponse;
-        if (!active) return;
-        const items = filterUpcomingMatches(data.items);
-        setUpcomingMatches({ ...data, count: items.length, items });
-        setUpcomingMatchesStatus("ready");
-      } catch {
-        if (!active) return;
-        setUpcomingMatches(buildStaticUpcomingMatchesFallback());
-        setUpcomingMatchesStatus("failed");
-      }
-    }
-
-    async function loadHomeData() {
-      // NOTE: Cloudflare Python Worker 冷启动时并发请求容易超 CPU，公开页按顺序读取快照和赛程。
-      await loadPrediction();
-      await loadUpcomingMatches();
-    }
-
-    void loadHomeData();
+    void loadPublicUpcomingMatches();
     const timer = window.setInterval(() => {
-      setForecastTick((value) => value + 1);
-      void loadHomeData();
+      setRefreshTick((value) => value + 1);
+      void loadPublicUpcomingMatches();
     }, FORECAST_REFRESH_MS);
 
     return () => {
@@ -1217,165 +1531,133 @@ function HomePredictionPage() {
     };
   }, []);
 
-  useEffect(() => {
-    function syncScreenFromLocation() {
-      setActiveScreen(userScreenFromHash());
-    }
-
-    window.addEventListener("hashchange", syncScreenFromLocation);
-    window.addEventListener("popstate", syncScreenFromLocation);
-    return () => {
-      window.removeEventListener("hashchange", syncScreenFromLocation);
-      window.removeEventListener("popstate", syncScreenFromLocation);
-    };
-  }, []);
-
-  function openMatchPage(match: UpcomingMatch) {
+  function openMatchPage(match: PublicUpcomingMatch) {
     window.location.href = matchPagePath(match.homeTeam, match.awayTeam);
   }
 
-  function openScreen(screenKey: UserScreenKey) {
-    const screen = USER_SCREENS.find((item) => item.key === screenKey);
-    if (!screen) return;
-    setActiveScreen(screenKey);
-    window.history.pushState(null, "", `${window.location.pathname}${window.location.search}#${screen.hash}`);
+  return (
+    <main className="public-match-shell">
+      <div className="public-match-bg" aria-hidden="true" />
+      <section className="public-match-app" aria-labelledby="public-match-title">
+        <header className="public-match-header">
+          <div className="public-brand-mark" aria-hidden="true">
+            <Trophy size={27} strokeWidth={2.1} />
+          </div>
+          <div className="public-brand-copy">
+            <strong>世界杯预测</strong>
+            <span>zhugejunshi.com</span>
+          </div>
+          <button className="public-icon-button" type="button" aria-label="菜单">
+            <Menu size={22} strokeWidth={2.6} />
+          </button>
+        </header>
+
+        <section className="public-page-title">
+          <h1 id="public-match-title">未开赛比赛</h1>
+          <p>公开赛程 · 预测需解锁</p>
+        </section>
+
+        <nav className="public-match-tabs" aria-label="比赛筛选">
+          {PUBLIC_MATCH_TABS.map((tab) => (
+            <button
+              className={activeFilter === tab.key ? "active" : ""}
+              type="button"
+              aria-current={activeFilter === tab.key ? "page" : undefined}
+              key={tab.key}
+              onClick={() => setActiveFilter(tab.key)}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </nav>
+
+        <PublicUpcomingMatchesPanel matches={visibleMatches} status={matchesStatus} activeFilter={activeFilter} onSelect={openMatchPage} />
+      </section>
+      <TournamentPassBar />
+      <footer className="public-safety-footer">
+        <ShieldCheck size={14} strokeWidth={2.2} />
+        <span>数据加密保护 · 安全支付 · 随时可查</span>
+      </footer>
+    </main>
+  );
+}
+
+function PublicUpcomingMatchesPanel({
+  matches,
+  status,
+  activeFilter,
+  onSelect,
+}: {
+  matches: PublicUpcomingMatch[];
+  status: LoadStatus;
+  activeFilter: PublicMatchFilter;
+  onSelect: (match: PublicUpcomingMatch) => void;
+}) {
+  if (matches.length === 0 && status === "loading") {
+    return <p className="public-match-empty">赛程加载中</p>;
+  }
+
+  if (matches.length === 0 && status === "failed") {
+    return <p className="public-match-empty">赛程暂时没有连上，正在自动刷新</p>;
+  }
+
+  if (matches.length === 0) {
+    return <p className="public-match-empty">{activeFilter === "all" ? "暂无未开赛比赛" : "这个分组暂无未开赛比赛"}</p>;
   }
 
   return (
-    <main className="console-shell user-page-shell">
-      <div className="ambient-grid" />
-      <header className="topbar portal-topbar">
-        <div className="brand portal-brand">
-          <span>世界杯预测</span>
-          <small>{formatUpdateTime(matchPrediction.updatedAt)} 更新</small>
+    <div className="public-match-list" aria-label="未开赛比赛列表">
+      {matches.map((match) => (
+        <PublicMatchCard match={match} key={`${match.homeTeam}-${match.awayTeam}-${match.kickoff}`} onSelect={onSelect} />
+      ))}
+    </div>
+  );
+}
+
+function PublicMatchCard({ match, onSelect }: { match: PublicUpcomingMatch; onSelect: (match: PublicUpcomingMatch) => void }) {
+  return (
+    <button className="public-match-card" type="button" onClick={() => onSelect(match)}>
+      <div className="public-match-info">
+        <strong>{match.matchNo ? `#${match.matchNo}` : "#--"}</strong>
+        <span>{match.stage}</span>
+        <em>
+          <CalendarDays size={13} strokeWidth={2.4} />
+          {formatKickoffForPublicList(match.kickoff)}
+        </em>
+      </div>
+      <div className="public-match-teams">
+        <div>
+          <TeamFlag team={match.homeTeam} code={match.homeCode} />
+          <strong>{match.homeName}</strong>
         </div>
-      </header>
-
-      <section className="app-screen" aria-labelledby="active-screen-title">
-        <div className="app-screen-head">
-          <h1 id="active-screen-title">
-            {activeScreen === "forecast" ? "今日重点预测" : activeScreen === "matches" ? "未开赛比赛" : activeScreen === "board" ? "概率榜单" : "新闻与方法"}
-          </h1>
+        <b>vs</b>
+        <div>
+          <TeamFlag team={match.awayTeam} code={match.awayCode} />
+          <strong>{match.awayName}</strong>
         </div>
+      </div>
+      <div className="public-match-action">
+        <small>{publicMatchStatusLabel(match.status)}</small>
+        <span>
+          <LockKeyhole size={15} strokeWidth={2.5} />
+          ¥1 查看预测
+        </span>
+      </div>
+    </button>
+  );
+}
 
-        {activeScreen === "forecast" ? (
-          <div className="app-screen-stack forecast-screen">
-            <section className="console-panel app-hero-card">
-              <a className="app-match-summary" href={matchPagePath(matchPrediction.homeTeam, matchPrediction.awayTeam)}>
-                <span>{matchPrediction.stage}</span>
-                <div className="app-match-teams">
-                  <span>
-                    <TeamFlag team={homeTeam.key} code={homeTeam.code} />
-                    <b>{homeTeam.code}</b>
-                  </span>
-                  <strong>VS</strong>
-                  <span>
-                    <TeamFlag team={awayTeam.key} code={awayTeam.code} />
-                    <b>{awayTeam.code}</b>
-                  </span>
-                </div>
-                <small>{formatKickoffForUser(matchPrediction.kickoff)}</small>
-              </a>
-              <div className="app-prediction-focus">
-                <div className={`app-main-outcome ${primaryOutcome.tone}`}>
-                  <span>主判断</span>
-                  <strong>{primaryOutcome.label}</strong>
-                  <b>{primaryOutcome.value}%</b>
-                </div>
-                <div className="app-score-chip">
-                  <span>最可能比分</span>
-                  <strong>{topScore?.score ?? "--"}</strong>
-                  <em>{topScore ? `${topScore.probability.toFixed(1)}%` : "生成中"}</em>
-                </div>
-              </div>
-              <div className="app-supporting-probs" aria-label="其它赛果概率">
-                {secondaryOutcomes.map((outcome) => (
-                  <article className={outcome.tone} key={outcome.label}>
-                    <span>{outcome.label}</span>
-                    <strong>{outcome.value}%</strong>
-                  </article>
-                ))}
-              </div>
-              <CompactScoreList outcomes={matchPrediction.scoreOutcomes.slice(0, 3)} />
-              <div className="analysis-list compact-analysis">
-                {matchPrediction.analysis.slice(0, 2).map((item) => (
-                  <p key={item}>{item}</p>
-                ))}
-              </div>
-              <div className="app-mini-market">
-                <div className="section-title">
-                  <span>进球概率</span>
-                </div>
-                <GoalMarketPanel markets={goalMarkets.slice(0, 2)} compact />
-              </div>
-            </section>
-          </div>
-        ) : null}
-
-        {activeScreen === "matches" ? (
-          <div className="app-screen-stack">
-            <section className="console-panel">
-              <UpcomingMatchesPanel
-                matches={upcomingMatchItems}
-                status={upcomingMatchesStatus}
-                fallbackMatch={focusedUpcomingMatch}
-                onSelect={openMatchPage}
-              />
-            </section>
-          </div>
-        ) : null}
-
-        {activeScreen === "board" ? (
-          <div className="app-screen-stack">
-            <section className="console-panel portal-standing-card">
-              <div className="section-title">
-                <span>冠军概率榜</span>
-              </div>
-              <ChampionBoard teams={championBoard.slice(0, 5)} />
-            </section>
-          </div>
-        ) : null}
-
-        {activeScreen === "news" ? (
-          <div className="app-screen-stack">
-            <section className="console-panel">
-              <div className="section-title">
-                <span>新闻影响摘要</span>
-              </div>
-              <div className="news-list">
-                {matchPrediction.newsItems.slice(0, 3).map((item) => (
-                  <article className={`news-item ${item.tone}`} key={item.title}>
-                    <span className="news-icon">{item.tone === "red" ? "+" : item.tone === "gold" ? "!" : "?"}</span>
-                    <div>
-                      <strong>{item.title}</strong>
-                      <p>{userNewsDetail(item.detail)}</p>
-                      <small>{item.time}</small>
-                    </div>
-                    <em>{userNewsImpactLabel(item.impact)}</em>
-                  </article>
-                ))}
-              </div>
-            </section>
-            <section className="console-panel">
-              <div className="section-title">
-                <span>判断依据</span>
-              </div>
-              <UserMethodPanel />
-            </section>
-          </div>
-        ) : null}
-
-      </section>
-
-      <nav className="app-bottom-nav" aria-label="预测功能导航">
-        {USER_SCREENS.map(({ key, label, Icon }) => (
-          <button type="button" className={activeScreen === key ? "active" : ""} aria-current={activeScreen === key ? "page" : undefined} key={key} onClick={() => openScreen(key)}>
-            <Icon aria-hidden="true" size={20} strokeWidth={2.4} />
-            <span>{label}</span>
-          </button>
-        ))}
-      </nav>
-    </main>
+function TournamentPassBar() {
+  return (
+    <div className="public-pass-bar" aria-label="全包购买入口">
+      <div>
+        <Crown size={20} strokeWidth={2.5} />
+        <span>全包剩余 92 场 ¥39</span>
+      </div>
+      <button type="button" aria-label="查看全包方案">
+        <ChevronRight size={24} strokeWidth={2.4} />
+      </button>
+    </div>
   );
 }
 
@@ -1388,6 +1670,140 @@ function TeamFlag({ team, code }: { team: TeamKey; code?: string }) {
     <span className={`flag ${flagSource ? "" : "flag-generic"}`} aria-label={`${fallbackCode} 国旗`}>
       {flagSource ? <img src={flagSource} alt="" loading="lazy" /> : <span>{fallbackCode}</span>}
     </span>
+  );
+}
+
+function ChampionProbabilityPage() {
+  const [prediction, setPrediction] = useState<MatchPrediction | null>(null);
+  const [loadStatus, setLoadStatus] = useState<LoadStatus>("loading");
+  const [showInfo, setShowInfo] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadChampionBoard() {
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/match-prediction?simulations=${INTERACTIVE_SIMULATION_COUNT}&useSnapshot=true`, {
+          cache: "no-store",
+        });
+        if (!response.ok) throw new Error(`冠军概率接口返回 ${response.status}`);
+        const data = (await response.json()) as MatchPrediction;
+        if (!active) return;
+        setPrediction(data);
+        setLoadStatus("ready");
+      } catch {
+        if (!active) return;
+        setPrediction(null);
+        setLoadStatus("failed");
+      }
+    }
+
+    void loadChampionBoard();
+    const timer = window.setInterval(loadChampionBoard, FORECAST_REFRESH_MS);
+
+    return () => {
+      active = false;
+      window.clearInterval(timer);
+    };
+  }, []);
+
+  const boardRows = useMemo(() => {
+    const sourceTeams = prediction?.teams?.length ? prediction.teams : teams;
+    return [...sourceTeams]
+      .filter((team) => typeof team.tournament?.champion === "number")
+      .sort((left, right) => right.tournament.champion - left.tournament.champion)
+      .slice(0, 6);
+  }, [prediction]);
+
+  const snapshotMeta = prediction?.modelMeta;
+  const snapshotLine =
+    loadStatus === "ready" && snapshotMeta
+      ? `${snapshotMeta.simulationCount.toLocaleString("zh-CN")} 次模拟 · 已锁定 ${snapshotMeta.lockedResults} 场赛果`
+      : loadStatus === "loading"
+        ? "正在读取最新预测快照"
+        : "预测接口暂不可用，显示本地榜单";
+
+  function goBack() {
+    if (window.history.length > 1) {
+      window.history.back();
+      return;
+    }
+    window.location.href = "/";
+  }
+
+  function openTournamentPass() {
+    window.location.href = "/#board";
+  }
+
+  return (
+    <main className="champion-page-shell">
+      <div className="champion-mobile-status" aria-hidden="true">
+        <span>9:41</span>
+        <div>
+          <Signal size={17} strokeWidth={2.7} />
+          <Wifi size={17} strokeWidth={2.7} />
+          <BatteryFull size={22} strokeWidth={2.3} />
+        </div>
+      </div>
+
+      <header className="champion-page-header">
+        <button type="button" aria-label="返回" onClick={goBack}>
+          <ArrowLeft aria-hidden="true" size={24} strokeWidth={2.7} />
+        </button>
+        <div>
+          <h1>冠军概率榜</h1>
+          <p>来自最新预测快照</p>
+        </div>
+        <button type="button" aria-label="查看模型说明" aria-pressed={showInfo} onClick={() => setShowInfo((value) => !value)}>
+          <Info aria-hidden="true" size={22} strokeWidth={2.4} />
+        </button>
+      </header>
+
+      <button className="champion-pass-cta" type="button" onClick={openTournamentPass}>
+        <Crown aria-hidden="true" size={20} strokeWidth={2.6} />
+        <span>全包查看全部队伍</span>
+        <ChevronRight aria-hidden="true" size={18} strokeWidth={2.8} />
+      </button>
+
+      {showInfo ? <p className="champion-snapshot-note">{snapshotLine}</p> : null}
+
+      <section className="champion-board-page-card" aria-label="冠军概率榜">
+        <div className="champion-board-page-head" aria-hidden="true">
+          <span>球队</span>
+          <span>夺冠</span>
+          <span>决赛</span>
+          <span>四强</span>
+          <span>变化</span>
+        </div>
+        <div className="champion-board-page-list">
+          {boardRows.map((team, index) => (
+            <article className="champion-board-page-row" key={team.key}>
+              <div className="champion-board-team">
+                <b className={index < 3 ? "podium" : ""}>{index + 1}</b>
+                <TeamFlag team={team.key} code={team.code} />
+                <span>
+                  <strong>{team.name}</strong>
+                  <em>{team.code}</em>
+                </span>
+              </div>
+              <strong>{formatProbabilityValue(team.tournament.champion)}</strong>
+              <strong>{formatProbabilityValue(team.tournament.final)}</strong>
+              <strong>{formatProbabilityValue(team.tournament.semifinal)}</strong>
+              <em className={`champion-change-badge ${team.tournament.change >= 0 ? "positive" : "negative"}`}>
+                {formatSignedDecimal(team.tournament.change)}
+              </em>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <footer className="champion-page-footer">
+        <ShieldCheck aria-hidden="true" size={18} strokeWidth={2.1} />
+        <span>概率分析，不是投注建议</span>
+      </footer>
+
+      <div className="champion-home-indicator" aria-hidden="true" />
+    </main>
   );
 }
 
@@ -1533,68 +1949,6 @@ function CreatorTopicsPanel({ topics }: { topics: CreatorTopic[] }) {
   );
 }
 
-function UpcomingMatchesPanel({
-  matches,
-  status,
-  fallbackMatch,
-  onSelect,
-}: {
-  matches: UpcomingMatch[];
-  status: LoadStatus;
-  fallbackMatch: UpcomingMatch | null;
-  onSelect: (match: UpcomingMatch) => void;
-}) {
-  const displayMatches = matches.length ? matches : status !== "ready" && fallbackMatch ? [fallbackMatch] : [];
-
-  if (displayMatches.length === 0 && status === "loading") {
-    return <p className="review-empty">赛程加载中</p>;
-  }
-
-  if (displayMatches.length === 0 && status === "failed") {
-    return <p className="review-empty">赛程接口连接失败，等待自动刷新</p>;
-  }
-
-  if (displayMatches.length === 0) {
-    return <p className="review-empty">暂无未开赛比赛</p>;
-  }
-
-  return (
-    <div className="upcoming-list">
-      {displayMatches.map((match) => {
-        const key = `${match.homeTeam}-${match.awayTeam}`;
-        return (
-          <button className="upcoming-row" key={`${key}-${match.kickoff}`} onClick={() => onSelect(match)}>
-            <div className="upcoming-teams">
-              <span>
-                <TeamFlag team={match.homeTeam} code={match.homeCode} />
-                <em>{match.homeCode}</em>
-              </span>
-              <b>VS</b>
-              <span>
-                <TeamFlag team={match.awayTeam} code={match.awayCode} />
-                <em>{match.awayCode}</em>
-              </span>
-            </div>
-            <div className="upcoming-copy">
-              <strong>
-                {match.homeName} / {match.awayName}
-              </strong>
-              <small>
-                {[match.stage, formatKickoffForUser(match.kickoff), `最可能 ${match.topScore.score} / ${match.topScore.probability.toFixed(1)}%`].filter(Boolean).join(" · ")}
-              </small>
-            </div>
-            <div className="upcoming-probs">
-              <em>{match.homeWin}%</em>
-              <em>{match.draw}%</em>
-              <em>{match.awayWin}%</em>
-            </div>
-          </button>
-        );
-      })}
-    </div>
-  );
-}
-
 function MatchDetailPanel({ detail, teamsData }: { detail: MatchDetail | null; teamsData: Team[] }) {
   if (!detail) {
     return <p className="review-empty">从未开赛预测选择比赛</p>;
@@ -1695,171 +2049,1073 @@ function UserMethodPanel() {
   );
 }
 
-function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
+const PILLAR_ITEMS = [
+  { key: "strength", label: "实力盘" },
+  { key: "form", label: "状态盘" },
+  { key: "path", label: "路径盘" },
+  { key: "squad", label: "人员盘" },
+  { key: "margin", label: "边际盘" },
+];
+
+function matchDetailOrderId() {
+  return new URLSearchParams(window.location.search).get("orderId");
+}
+
+function formatRawKickoff(value: string) {
+  return value.replace(/\s+/g, " ").trim();
+}
+
+function goBackFromUnlockedMatch() {
+  if (window.history.length > 1) {
+    window.history.back();
+    return;
+  }
+  window.location.href = "/";
+}
+
+function fallbackPillars(): Record<string, number> {
+  return { strength: 7, form: 7, path: 7, squad: 7, margin: 7 };
+}
+
+function detailPillars(detail: MatchDetail | null, side: "home" | "away") {
+  return detail?.pillars?.[side] ?? fallbackPillars();
+}
+
+function UnlockedPanel({ title, children, className = "" }: { title: string; children: ReactNode; className?: string }) {
+  return (
+    <section className={`unlocked-panel ${className}`}>
+      <h2>{title}</h2>
+      {children}
+    </section>
+  );
+}
+
+function UnlockedTeamMark({ team, code, name }: { team: TeamKey; code: string; name: string }) {
+  return (
+    <div className="unlocked-team-mark">
+      <span className="unlocked-flag-frame">
+        <TeamFlag team={team} code={code} />
+      </span>
+      <span>{name}</span>
+    </div>
+  );
+}
+
+function UnlockedProbabilityTriplet({ detail, homeName, awayName }: { detail: MatchDetail; homeName: string; awayName: string }) {
+  const rows = [
+    { label: `${homeName}胜`, value: detail.homeWin, tone: "home" },
+    { label: "平局", value: detail.draw, tone: "draw" },
+    { label: `${awayName}胜`, value: detail.awayWin, tone: "away" },
+  ];
+
+  return (
+    <div className="unlocked-probability-grid">
+      {rows.map((row) => (
+        <article className={`unlocked-probability ${row.tone}`} key={row.label}>
+          <span>{row.label}</span>
+          <strong>{row.value}%</strong>
+          <i style={{ "--value": row.value } as CustomStyle} />
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function UnlockedTopScores({ outcomes }: { outcomes: ScoreOutcome[] }) {
+  return (
+    <div className="unlocked-score-top-list">
+      {outcomes.slice(0, 3).map((outcome, index) => (
+        <article key={outcome.score}>
+          <span>{index + 1}</span>
+          <strong>{outcome.score}</strong>
+          <em>{outcome.probability.toFixed(1)}%</em>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function UnlockedScoreMatrix({ cells }: { cells: ScoreMatrixCell[] }) {
+  const visibleCells = cells.filter((cell) => cell.homeGoals <= 4 && cell.awayGoals <= 4);
+  const goals = [0, 1, 2, 3, 4];
+  const maxProbability = Math.max(1, ...visibleCells.map((cell) => cell.probability));
+  const cellMap = new Map(visibleCells.map((cell) => [`${cell.homeGoals}-${cell.awayGoals}`, cell.probability]));
+
+  return (
+    <div className="unlocked-score-matrix" style={{ "--matrix-columns": goals.length + 1 } as CustomStyle}>
+      <span className="matrix-muted" aria-hidden="true" />
+      {goals.map((goal) => (
+        <span className="matrix-muted" key={`away-${goal}`}>
+          {goal}
+        </span>
+      ))}
+      {goals.map((homeGoal) => (
+        <Fragment key={`row-${homeGoal}`}>
+          <span className="matrix-muted">{homeGoal}</span>
+          {goals.map((awayGoal) => {
+            const probability = cellMap.get(`${homeGoal}-${awayGoal}`) ?? 0;
+            return (
+              <span
+                className="unlocked-score-cell"
+                key={`${homeGoal}-${awayGoal}`}
+                style={{ "--heat-alpha": (0.16 + Math.min(probability / maxProbability, 1) * 0.58).toFixed(2) } as CustomStyle}
+              >
+                {probability.toFixed(1)}%
+              </span>
+            );
+          })}
+        </Fragment>
+      ))}
+    </div>
+  );
+}
+
+function FivePillarsRadar({ values }: { values: Record<string, number> }) {
+  const center = 58;
+  const radius = 42;
+  const points = PILLAR_ITEMS.map((item, index) => {
+    const angle = -Math.PI / 2 + (Math.PI * 2 * index) / PILLAR_ITEMS.length;
+    const value = Math.max(0, Math.min(10, values[item.key] ?? 0)) / 10;
+    return `${center + Math.cos(angle) * radius * value},${center + Math.sin(angle) * radius * value}`;
+  }).join(" ");
+
+  return (
+    <div className="unlocked-pillars">
+      <div className="unlocked-radar" aria-hidden="true">
+        <svg viewBox="0 0 116 116" role="img">
+          <polygon className="radar-grid outer" points="58,10 103.7,43.1 86.2,96.9 29.8,96.9 12.3,43.1" />
+          <polygon className="radar-grid inner" points="58,30 84.7,49.4 74.5,80.6 41.5,80.6 31.3,49.4" />
+          <polygon className="radar-shape" points={points} />
+        </svg>
+      </div>
+      <div className="unlocked-pillar-values">
+        {PILLAR_ITEMS.map((item) => (
+          <article key={item.key}>
+            <span>{item.label}</span>
+            <strong>{(values[item.key] ?? 0).toFixed(1)}</strong>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function UnlockedScenarioCards({ scenarios }: { scenarios: ScenarioImpact[] }) {
+  const icons = [CheckCircle2, Target, Trophy];
+  return (
+    <div className="unlocked-scenario-list">
+      {scenarios.slice(0, 3).map((scenario, index) => {
+        const Icon = icons[index] ?? Target;
+        return (
+          <article className={`unlocked-scenario ${scenario.tone}`} key={scenario.label}>
+            <Icon aria-hidden="true" size={18} strokeWidth={2.5} />
+            <span>{scenario.label}</span>
+            <strong>{scenario.probability}%</strong>
+          </article>
+        );
+      })}
+    </div>
+  );
+}
+
+function UnlockedNewsList({ items }: { items: MatchNewsItem[] }) {
+  if (items.length === 0) {
+    return <p className="unlocked-empty">本场暂未接入新增新闻依据</p>;
+  }
+
+  return (
+    <div className="unlocked-news-list">
+      {items.slice(0, 3).map((item) => {
+        const Icon = item.direction === "negative" ? AlertTriangle : item.direction === "neutral" ? Clock : CheckCircle2;
+        return (
+          <article className={`unlocked-news ${item.tone}`} key={`${item.title}-${item.impact}`}>
+            <Icon aria-hidden="true" size={16} strokeWidth={2.4} />
+            <div>
+              <strong>{item.title}</strong>
+              <span>{item.detail}</span>
+            </div>
+            <em>{item.impact}</em>
+          </article>
+        );
+      })}
+    </div>
+  );
+}
+
+function UnlockedMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
   const [detail, setDetail] = useState<MatchDetail | null>(null);
+  const [loadStatus, setLoadStatus] = useState<LoadStatus>("loading");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
     let active = true;
 
     async function loadDetail() {
+      setLoadStatus("loading");
       try {
-        const response = await fetch(
-          `${API_BASE_URL}/api/match-detail?home=${encodeURIComponent(home)}&away=${encodeURIComponent(away)}&simulations=${INTERACTIVE_SIMULATION_COUNT}`,
-          { cache: "no-store" },
-        );
+        const params = new URLSearchParams({
+          home,
+          away,
+          simulations: String(INTERACTIVE_SIMULATION_COUNT),
+        });
+        const orderId = matchDetailOrderId();
+        if (orderId) params.set("orderId", orderId);
+        const response = await fetch(`${API_BASE_URL}/api/match-detail?${params.toString()}`, { cache: "no-store" });
         const payload = await response.json().catch(() => null);
         if (!response.ok) throw new Error(payload?.detail ?? `单场详情接口返回 ${response.status}`);
         if (!active) return;
         setDetail(payload as MatchDetail);
+        setLoadStatus("ready");
         setErrorMessage(null);
       } catch (error) {
         if (!active) return;
         setDetail(null);
+        setLoadStatus("failed");
         setErrorMessage(error instanceof Error ? error.message : "单场预测加载失败");
       }
     }
 
-    loadDetail();
+    void loadDetail();
     return () => {
       active = false;
     };
   }, [home, away]);
 
-  const homeTeam = teams.find((team) => team.key === (detail?.homeTeam ?? home));
-  const awayTeam = teams.find((team) => team.key === (detail?.awayTeam ?? away));
-  const homeName = detail?.homeName ?? homeTeam?.name ?? home;
-  const awayName = detail?.awayName ?? awayTeam?.name ?? away;
-  const homeCode = detail?.homeCode ?? homeTeam?.code ?? home.slice(0, 3).toUpperCase();
-  const awayCode = detail?.awayCode ?? awayTeam?.code ?? away.slice(0, 3).toUpperCase();
-  const detailScoreMatrix = detail ? (detail.scoreMatrix?.length ? detail.scoreMatrix : scoreMatrixFallbackFromOutcomes(detail.scoreOutcomes)) : [];
-  const detailGoalMarkets = detail?.goalMarkets?.length ? detail.goalMarkets : goalMarketsFallback();
-  const detailFairPrices = detail?.fairPrices?.length
-    ? detail.fairPrices
-    : [
-        { label: `${homeName}胜`, probability: detail?.homeWin ?? 0, fairDecimal: detail?.homeWin ? Number((100 / detail.homeWin).toFixed(2)) : 0, note: "90 分钟模型公平概率", tone: "green" as Tone },
-        { label: "平局", probability: detail?.draw ?? 0, fairDecimal: detail?.draw ? Number((100 / detail.draw).toFixed(2)) : 0, note: "90 分钟模型公平概率", tone: "gold" as Tone },
-        { label: `${awayName}胜`, probability: detail?.awayWin ?? 0, fairDecimal: detail?.awayWin ? Number((100 / detail.awayWin).toFixed(2)) : 0, note: "90 分钟模型公平概率", tone: "blue" as Tone },
-      ];
-  const detailCreatorTopics = detail?.creatorTopics?.length
-    ? detail.creatorTopics
-    : creatorTopicsFallback(homeName, awayName, detail?.scoreOutcomes[0]?.score);
+  const fallbackHomeTeam = resolveDisplayTeam(home, teams);
+  const fallbackAwayTeam = resolveDisplayTeam(away, teams);
+  const homeName = detail?.homeName ?? fallbackHomeTeam.name;
+  const awayName = detail?.awayName ?? fallbackAwayTeam.name;
+  const homeCode = detail?.homeCode ?? fallbackHomeTeam.code;
+  const awayCode = detail?.awayCode ?? fallbackAwayTeam.code;
+  const scoreMatrix = detail?.scoreMatrix?.length ? detail.scoreMatrix : detail ? scoreMatrixFallbackFromOutcomes(detail.scoreOutcomes) : [];
+  const homePillars = detailPillars(detail, "home");
+  const newsItems = detail?.newsItems ?? [];
 
   return (
-    <main className="console-shell match-page-shell">
-      <div className="ambient-grid" />
-      <header className="topbar">
-        <div className="brand">
-          <span className="signal-mark" aria-hidden="true">
-            <i />
-            <i />
-            <i />
-            <i />
-          </span>
-          <span>单场预测</span>
-        </div>
-        <a className="back-link" href="/">
-          返回预测页
-        </a>
+    <main className="match-unlocked-shell">
+      <header className="unlocked-header">
+        <button type="button" aria-label="返回" onClick={goBackFromUnlockedMatch}>
+          <ArrowLeft aria-hidden="true" size={24} strokeWidth={2.5} />
+        </button>
+        <strong>完整预测</strong>
+        <span className="unlock-badge">
+          <Crown aria-hidden="true" size={15} strokeWidth={2.4} />
+          已解锁
+        </span>
       </header>
 
-      <section className="scoreboard" aria-label="单场预测对阵">
-        <MiniPitch side="left" />
-        <div className="score-strip match-strip">
-          <div className="score-team home-team">
-            <TeamFlag team={detail?.homeTeam ?? home} code={homeCode} />
-            <span className="team-code">{homeCode}</span>
-          </div>
-          <strong className="versus-mark">VS</strong>
-          <div className="score-team away-team">
-            <span className="team-code">{awayCode}</span>
-            <TeamFlag team={detail?.awayTeam ?? away} code={awayCode} />
-          </div>
-          <div className="match-clock forecast-clock">
-            <span>{detail ? formatKickoffForUser(detail.kickoff) : "加载中"}</span>
-            <em>{detail?.status ?? "待载入"}</em>
-          </div>
-          <div className="match-meta">
+      <section className="unlocked-match-hero" aria-label={`${homeName} 对 ${awayName}`}>
+        <UnlockedTeamMark team={detail?.homeTeam ?? home} code={homeCode} name={homeName} />
+        <div className="unlocked-versus">
+          <h1>
+            {homeName}
+            <span>vs</span>
+            {awayName}
+          </h1>
+          <div>
             <span>{detail?.stage ?? "单场预测"}</span>
-            {detail ? <b>预测更新 {formatUpdateTime(detail.updatedAt)}</b> : null}
+            <span>{detail ? formatRawKickoff(detail.kickoff) : "加载中"}</span>
           </div>
         </div>
-        <MiniPitch side="right" />
+        <UnlockedTeamMark team={detail?.awayTeam ?? away} code={awayCode} name={awayName} />
       </section>
 
-      <div className="module-grid">
-        <section className="console-panel wide">
-          <h2>赛前胜平负概率</h2>
-          {detail ? (
-            <>
-              <div className="probability-row">
-                <Probability label={`${homeName}胜`} value={detail.homeWin} tone="green" />
-                <Probability label="平局" value={detail.draw} tone="gold" />
-                <Probability label={`${awayName}胜`} value={detail.awayWin} tone="blue" />
-              </div>
-              <div className="analysis-list">
-                {detail.analysis.slice(0, 1).map((item) => (
-                  <p key={item}>{item}</p>
-                ))}
-              </div>
-            </>
-          ) : (
-            <p className="review-empty">{errorMessage ?? "单场预测加载中"}</p>
-          )}
+      {loadStatus === "failed" ? (
+        <section className="unlocked-panel unlocked-state-panel">
+          <AlertTriangle aria-hidden="true" size={24} strokeWidth={2.4} />
+          <strong>预测加载失败</strong>
+          <p>{errorMessage}</p>
+        </section>
+      ) : null}
+
+      {detail ? (
+        <>
+          <UnlockedPanel title="胜平负概率">
+            <UnlockedProbabilityTriplet detail={detail} homeName={homeName} awayName={awayName} />
+          </UnlockedPanel>
+
+          <section className="unlocked-score-layout">
+            <UnlockedPanel title="最可能比分" className="score-top-panel">
+              <UnlockedTopScores outcomes={detail.scoreOutcomes} />
+            </UnlockedPanel>
+            <UnlockedPanel title="比分分布" className="score-matrix-panel">
+              <UnlockedScoreMatrix cells={scoreMatrix} />
+            </UnlockedPanel>
+          </section>
+
+          <section className="unlocked-score-layout lower">
+            <UnlockedPanel title="五大盘面">
+              <FivePillarsRadar values={homePillars} />
+            </UnlockedPanel>
+            <UnlockedPanel title="路径传导">
+              <UnlockedScenarioCards scenarios={detail.scenarioImpacts} />
+            </UnlockedPanel>
+          </section>
+
+          <UnlockedPanel title="新闻依据">
+            <UnlockedNewsList items={newsItems} />
+          </UnlockedPanel>
+
+          <footer className="unlocked-footer">
+            <ShieldCheck aria-hidden="true" size={16} strokeWidth={2.2} />
+            <span>概率分析，不是投注建议</span>
+          </footer>
+        </>
+      ) : loadStatus === "loading" ? (
+        <section className="unlocked-panel unlocked-state-panel">
+          <Clock aria-hidden="true" size={24} strokeWidth={2.4} />
+          <strong>完整预测加载中</strong>
+          <p>正在读取后端单场预测、比分矩阵和路径传导</p>
+        </section>
+      ) : null}
+    </main>
+  );
+}
+
+function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
+  const [summary, setSummary] = useState<PublicMatchSummary | null>(() => staticMatchSummaryFallback(home, away));
+  const [loadStatus, setLoadStatus] = useState<LoadStatus>("loading");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [paymentMessage, setPaymentMessage] = useState<string | null>(null);
+  const [paymentPendingProduct, setPaymentPendingProduct] = useState<"single_match" | "tournament_pass" | null>(null);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadSummary() {
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/public-match-summary?home=${encodeURIComponent(home)}&away=${encodeURIComponent(away)}`, {
+          cache: "no-store",
+        });
+        const payload = await response.json().catch(() => null);
+        if (!response.ok) throw new Error(payload?.detail ?? `单场赛程接口返回 ${response.status}`);
+        if (!active) return;
+        setSummary(payload as PublicMatchSummary);
+        setLoadStatus("ready");
+        setErrorMessage(null);
+      } catch (error) {
+        if (!active) return;
+        setSummary((current) => current ?? staticMatchSummaryFallback(home, away));
+        setLoadStatus("failed");
+        setErrorMessage(error instanceof Error ? error.message : "单场赛程加载失败");
+      }
+    }
+
+    void loadSummary();
+    return () => {
+      active = false;
+    };
+  }, [home, away]);
+
+  const homeFallbackTeam = resolveDisplayTeam(home, teams);
+  const awayFallbackTeam = resolveDisplayTeam(away, teams);
+  const displaySummary: PublicMatchSummary = summary ?? {
+    stage: "单场预测",
+    kickoff: "加载中",
+    matchNo: null,
+    status: "scheduled",
+    homeTeam: home,
+    awayTeam: away,
+    homeName: homeFallbackTeam.name,
+    awayName: awayFallbackTeam.name,
+    homeCode: homeFallbackTeam.code,
+    awayCode: awayFallbackTeam.code,
+  };
+  const matchNumberLabel = displaySummary.matchNo ? `#${displaySummary.matchNo}` : "#--";
+  const statusLabel = displaySummary.status === "scheduled" ? "未开赛" : displaySummary.status;
+  const singleMatchDisabled = paymentPendingProduct !== null || loadStatus === "loading";
+  const matchKey = `${displaySummary.homeTeam}-${displaySummary.awayTeam}`;
+
+  async function createUnlockOrder(productKey: "single_match" | "tournament_pass") {
+    if (productKey === "single_match") {
+      window.location.href = checkoutPagePath(displaySummary.homeTeam, displaySummary.awayTeam);
+      return;
+    }
+
+    setPaymentPendingProduct(productKey);
+    setPaymentMessage(null);
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/payments/orders`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          productKey,
+          provider: "wechat_native",
+          contentKey: "tournament_probabilities",
+        }),
+      });
+      const payload = await response.json().catch(() => null);
+      if (!response.ok || !payload?.orderId) throw new Error(payload?.detail ?? "支付订单创建失败");
+      window.location.href = `${PAYMENT_PENDING_ROUTE}?orderId=${encodeURIComponent(payload.orderId)}`;
+    } catch (error) {
+      setPaymentMessage(error instanceof Error ? error.message : "支付订单创建失败");
+      setPaymentPendingProduct(null);
+    }
+  }
+
+  async function shareMatch() {
+    const shareUrl = window.location.href;
+    const title = `${displaySummary.homeName} vs ${displaySummary.awayName} 世界杯预测`;
+    try {
+      if (navigator.share) {
+        await navigator.share({ title, text: "完整预测需解锁后查看", url: shareUrl });
+        return;
+      }
+      await navigator.clipboard?.writeText(shareUrl);
+      setPaymentMessage("链接已复制");
+    } catch {
+      setPaymentMessage("当前浏览器不支持分享");
+    }
+  }
+
+  function goBackToMatches() {
+    if (window.history.length > 1) {
+      window.history.back();
+      return;
+    }
+    window.location.href = "/#matches";
+  }
+
+  return (
+    <main className="locked-match-shell">
+      <header className="locked-match-nav">
+        <button type="button" aria-label="返回未开赛列表" onClick={goBackToMatches}>
+          <ArrowLeft aria-hidden="true" size={28} strokeWidth={2.5} />
+        </button>
+        <span>世界杯预测</span>
+        <button type="button" aria-label="分享本场预测" onClick={shareMatch}>
+          <Share2 aria-hidden="true" size={25} strokeWidth={2.4} />
+        </button>
+      </header>
+
+      <section className="locked-match-hero" aria-label="单场锁定预览">
+        <div className="locked-teams">
+          <div className="locked-team">
+            <span className="locked-team-emblem">
+              <TeamFlag team={displaySummary.homeTeam} code={displaySummary.homeCode} />
+            </span>
+            <strong>{displaySummary.homeName}</strong>
+          </div>
+          <b>VS</b>
+          <div className="locked-team away">
+            <span className="locked-team-emblem">
+              <TeamFlag team={displaySummary.awayTeam} code={displaySummary.awayCode} />
+            </span>
+            <strong>{displaySummary.awayName}</strong>
+          </div>
+        </div>
+
+        <div className="locked-match-meta">
+          <span>{`${matchNumberLabel} ${displaySummary.stage}`}</span>
+          <em>
+            <CalendarDays aria-hidden="true" size={18} strokeWidth={2.3} />
+            {formatKickoffForUser(displaySummary.kickoff)}
+          </em>
+          <em>
+            <Clock aria-hidden="true" size={18} strokeWidth={2.3} />
+            {statusLabel}
+          </em>
+        </div>
+      </section>
+
+      <div className="locked-match-stack">
+        <section className="locked-panel locked-generated-card">
+          <div className="locked-section-heading">
+            <Target aria-hidden="true" size={28} strokeWidth={2.3} />
+            <div>
+              <strong>预测已生成</strong>
+              <span>完整预测需支付后查看</span>
+            </div>
+          </div>
+          <div className="locked-preview-list">
+            <LockedPreviewRow Icon={ShieldCheck} title="胜平负概率" />
+            <LockedPreviewRow Icon={Target} title="最可能比分" />
+            <LockedPreviewRow Icon={Trophy} title="比分分布" />
+          </div>
         </section>
 
-        <section className="console-panel">
-          <h2>比分预测</h2>
-          {detail ? (
-            <div className="score-outcome-list">
-              {detail.scoreOutcomes.slice(0, 3).map((outcome) => (
-                <article className={`score-outcome ${outcome.tone}`} key={outcome.score}>
-                  <strong>{outcome.score}</strong>
-                  <div>
-                    <b>{outcome.probability.toFixed(1)}%</b>
-                    <span>{outcome.note}</span>
-                  </div>
-                </article>
-              ))}
+        <section className="locked-panel locked-content-card">
+          <div className="locked-section-heading gold">
+            <Lock aria-hidden="true" size={27} strokeWidth={2.4} />
+            <div>
+              <strong>单场内容</strong>
+              <span>支付后可查看以下完整内容</span>
             </div>
-          ) : (
-            <p className="review-empty">比分分布等待单场预测</p>
-          )}
+          </div>
+          <div className="locked-content-list">
+            <LockedContentRow Icon={Target} title="单场胜平负" detail="胜平负概率与关键战局分析" />
+            <LockedContentRow Icon={Trophy} title="比分分布" detail="比分概率分布与关键比分解读" />
+            <LockedContentRow Icon={Newspaper} title="路径传导" detail="本场结果对小组与淘汰赛路径的影响" />
+          </div>
         </section>
 
-        <section className="console-panel wide">
-          <h2>单场预测细节</h2>
-          {detail ? (
-            <div className="match-full-content">
-              <div className="score-outcome-list">
-                {detail.scoreOutcomes.map((outcome) => (
-                  <article className={`score-outcome ${outcome.tone}`} key={outcome.score}>
-                    <strong>{outcome.score}</strong>
-                    <div>
-                      <b>{outcome.probability.toFixed(1)}%</b>
-                      <span>{outcome.note}</span>
-                    </div>
-                  </article>
-                ))}
-              </div>
-              <div className="match-detail-splits">
-                <FairPricePanel prices={detailFairPrices} />
-                <GoalMarketPanel markets={detailGoalMarkets} compact />
-              </div>
-              <ScoreMatrix cells={detailScoreMatrix} />
-              <div className="analysis-list">
-                {detail.analysis.map((item) => (
-                  <p key={item}>{item}</p>
-                ))}
-              </div>
-              <ScenarioImpactList scenarios={detail.scenarioImpacts} />
-              <CreatorTopicsPanel topics={detailCreatorTopics} />
-            </div>
-          ) : (
-            <p className="review-empty">路径传导等待单场预测</p>
-          )}
-        </section>
+        {errorMessage && loadStatus === "failed" ? <p className="locked-inline-message">{errorMessage}</p> : null}
+        {paymentMessage ? <p className="locked-inline-message">{paymentMessage}</p> : null}
       </div>
+
+      <section className="locked-purchase-bar" aria-label="购买入口">
+        <button type="button" className="locked-buy-button primary" onClick={() => void createUnlockOrder("single_match")} disabled={singleMatchDisabled}>
+          <span>
+            <Lock aria-hidden="true" size={28} strokeWidth={2.5} />
+          </span>
+          <strong>{paymentPendingProduct === "single_match" ? "创建订单中" : "¥1 解锁本场"}</strong>
+          <small>查看本场完整预测</small>
+        </button>
+        <button type="button" className="locked-buy-button pass" onClick={() => void createUnlockOrder("tournament_pass")} disabled={singleMatchDisabled}>
+          <strong>{paymentPendingProduct === "tournament_pass" ? "创建订单中" : "全包剩余 92 场 ¥39"}</strong>
+          <small>解锁所有未开赛场次</small>
+          <Trophy aria-hidden="true" size={28} strokeWidth={2.3} />
+        </button>
+      </section>
+
+      <footer className="locked-safety-footer">
+        <ShieldCheck aria-hidden="true" size={16} strokeWidth={2.1} />
+        <span>数据加密保护 · 安全支付 · 随时可查</span>
+      </footer>
+    </main>
+  );
+}
+
+function LockedPreviewRow({ Icon, title }: { Icon: LucideIcon; title: string }) {
+  return (
+    <article className="locked-preview-row">
+      <Icon aria-hidden="true" size={30} strokeWidth={2.3} />
+      <div>
+        <strong>{title}</strong>
+        <span>待解锁</span>
+      </div>
+      <span className="locked-blur-lines" aria-hidden="true">
+        <i />
+        <i />
+        <i />
+      </span>
+      <Lock aria-hidden="true" size={28} strokeWidth={2.4} />
+    </article>
+  );
+}
+
+function LockedContentRow({ Icon, title, detail }: { Icon: LucideIcon; title: string; detail: string }) {
+  return (
+    <article className="locked-content-row">
+      <Icon aria-hidden="true" size={31} strokeWidth={2.3} />
+      <div>
+        <strong>{title}</strong>
+        <span>{detail}</span>
+      </div>
+      <Lock aria-hidden="true" size={25} strokeWidth={2.4} />
+    </article>
+  );
+}
+
+function paymentStatusMeta(status: PaymentOrderStatus) {
+  if (status === "paid") {
+    return { label: "支付成功", tone: "paid", detail: "正在确认解锁权限" };
+  }
+  if (status === "expired") {
+    return { label: "订单已过期", tone: "expired", detail: "请重新创建支付订单" };
+  }
+  if (status === "failed") {
+    return { label: "支付失败", tone: "failed", detail: "请返回选择支付方式" };
+  }
+  if (status === "provider_config_required") {
+    return { label: "支付通道暂不可用", tone: "unavailable", detail: "请返回选择其他支付方式" };
+  }
+  return { label: "待支付", tone: "pending", detail: "请在有效时间内完成支付" };
+}
+
+function paymentMethodLabel(order: PaymentOrder) {
+  if (order.paymentMethodLabel) return order.paymentMethodLabel;
+  if (order.provider === "wechat_jsapi" || order.paymentMethod === "jsapi") return "JSAPI 支付";
+  if (order.provider === "wechat_native" || order.paymentMethod === "native") return "扫码支付";
+  if (order.provider === "alipay_qr" || order.paymentMethod === "scan_qr") return "扫码支付";
+  return order.paymentMethod;
+}
+
+function paymentContentKey(order: PaymentOrder) {
+  if (order.metadata?.contentKey) return order.metadata.contentKey;
+  return order.productKey === "tournament_pass" ? "tournament_probabilities" : "match_prediction";
+}
+
+function paymentProductTitle(order: PaymentOrder) {
+  const { metadata } = order;
+  if (metadata?.homeName && metadata.awayName) return `${metadata.homeName} vs ${metadata.awayName}`;
+  if (order.productKey === "tournament_pass") return "剩余未开赛预测";
+  return order.productName;
+}
+
+function formatPaymentDate(value: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "待确认";
+  const parts = new Intl.DateTimeFormat("zh-CN", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+  }).formatToParts(date);
+  const part = (type: string) => parts.find((item) => item.type === type)?.value ?? "";
+  return `${part("year")}-${part("month")}-${part("day")} ${part("hour")}:${part("minute")}:${part("second")}`;
+}
+
+function formatPaymentRemaining(expiresAt: string) {
+  const expires = new Date(expiresAt);
+  if (Number.isNaN(expires.getTime())) return "有效时间待确认";
+  const minutes = Math.ceil((expires.getTime() - Date.now()) / 60000);
+  if (minutes <= 0) return "已过期";
+  return `${minutes}分钟内有效`;
+}
+
+function shortOrderId(orderId: string) {
+  if (!orderId) return "未创建";
+  if (orderId.length <= 14) return orderId;
+  return `${orderId.slice(0, 7)}...`;
+}
+
+function paymentRedirectPath(order: PaymentOrder) {
+  if (order.productKey === "tournament_pass") return "/#board";
+  const { homeTeam, awayTeam } = order.metadata ?? {};
+  if (homeTeam && awayTeam) return `${matchPagePath(homeTeam, awayTeam)}?orderId=${encodeURIComponent(order.orderId)}`;
+  return "/";
+}
+
+function isQrPayment(order: PaymentOrder) {
+  return order.provider === "wechat_native" || order.provider === "alipay_qr" || order.paymentMethod === "native" || order.paymentMethod === "scan_qr";
+}
+
+function isWechatBrowser() {
+  return /micromessenger/i.test(window.navigator.userAgent);
+}
+
+function methodLabelFromProvider(provider: PaymentProviderConfig | undefined) {
+  if (!provider) return "扫码支付";
+  if (provider.paymentMethodLabel) return provider.paymentMethodLabel;
+  if (provider.paymentMethod === "jsapi") return "JSAPI 支付";
+  return "扫码支付";
+}
+
+function fallbackCheckoutProviderOptions(): CheckoutProviderOption[] {
+  return [
+    { key: "wechat", provider: "wechat_native", label: "微信支付", methodLabel: "扫码支付", configured: false, Icon: WalletCards },
+    { key: "alipay", provider: "alipay_qr", label: "支付宝支付", methodLabel: "扫码支付", configured: false, Icon: CircleDollarSign },
+  ];
+}
+
+function buildCheckoutProviderOptions(providers: PaymentProviderConfig[], preferJsapi: boolean): CheckoutProviderOption[] {
+  if (providers.length === 0) return fallbackCheckoutProviderOptions();
+  const wechatNative = providers.find((provider) => provider.provider === "wechat_native" || provider.provider === "wechat");
+  const wechatJsapi = providers.find((provider) => provider.provider === "wechat_jsapi");
+  const wechatProvider = preferJsapi ? wechatJsapi ?? wechatNative : wechatNative ?? wechatJsapi;
+  const alipayProvider = providers.find((provider) => provider.provider === "alipay_qr" || provider.provider === "alipay");
+  return [
+    wechatProvider
+      ? {
+          key: "wechat" as const,
+          provider: wechatProvider.provider,
+          label: "微信支付",
+          methodLabel: methodLabelFromProvider(wechatProvider),
+          configured: wechatProvider.configured,
+          Icon: WalletCards,
+        }
+      : null,
+    alipayProvider
+      ? {
+          key: "alipay" as const,
+          provider: alipayProvider.provider,
+          label: "支付宝支付",
+          methodLabel: methodLabelFromProvider(alipayProvider),
+          configured: alipayProvider.configured,
+          Icon: CircleDollarSign,
+        }
+      : null,
+  ].filter((option): option is CheckoutProviderOption => Boolean(option));
+}
+
+function SingleMatchCheckoutPage({ home, away }: { home: TeamKey; away: TeamKey }) {
+  const [summary, setSummary] = useState<PublicMatchSummary | null>(() => staticMatchSummaryFallback(home, away));
+  const [accessOptions, setAccessOptions] = useState<AccessOptions | null>(null);
+  const [paymentConfig, setPaymentConfig] = useState<PaymentConfig | null>(null);
+  const [selectedProviderKey, setSelectedProviderKey] = useState<CheckoutProviderOption["key"]>("wechat");
+  const [checkoutState, setCheckoutState] = useState<CheckoutState>("loading_config");
+  const [message, setMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadCheckoutData() {
+      setCheckoutState("loading_config");
+      try {
+        const [summaryResponse, accessResponse, paymentResponse] = await Promise.all([
+          fetch(`${API_BASE_URL}/api/public-match-summary?home=${encodeURIComponent(home)}&away=${encodeURIComponent(away)}`, { cache: "no-store" }),
+          fetch(`${API_BASE_URL}/api/access-options`, { cache: "no-store" }),
+          fetch(`${API_BASE_URL}/api/payments/config`, { cache: "no-store" }),
+        ]);
+        const [summaryPayload, accessPayload, paymentPayload] = await Promise.all([
+          summaryResponse.json().catch(() => null),
+          accessResponse.json().catch(() => null),
+          paymentResponse.json().catch(() => null),
+        ]);
+        if (!active) return;
+        if (summaryResponse.ok && summaryPayload) setSummary(summaryPayload as PublicMatchSummary);
+        if (accessResponse.ok && accessPayload) setAccessOptions(accessPayload as AccessOptions);
+        if (paymentResponse.ok && paymentPayload) setPaymentConfig(paymentPayload as PaymentConfig);
+        setCheckoutState("ready");
+      } catch {
+        if (!active) return;
+        setCheckoutState("ready");
+        setMessage("支付配置暂未连上，已保留页面预览");
+      }
+    }
+
+    void loadCheckoutData();
+    return () => {
+      active = false;
+    };
+  }, [home, away]);
+
+  const fallbackHome = resolveDisplayTeam(home, teams);
+  const fallbackAway = resolveDisplayTeam(away, teams);
+  const displaySummary: PublicMatchSummary = summary ?? {
+    stage: "单场预测",
+    kickoff: "待定",
+    matchNo: null,
+    status: "scheduled",
+    homeTeam: home,
+    awayTeam: away,
+    homeName: fallbackHome.name,
+    awayName: fallbackAway.name,
+    homeCode: fallbackHome.code,
+    awayCode: fallbackAway.code,
+  };
+  const singleProduct = accessOptions?.products.find((product) => product.key === "single_match") ?? {
+    key: "single_match",
+    name: "单场预测",
+    scope: "解锁一场未开赛比赛的胜平负、比分分布和路径传导",
+    amountLabel: "¥1.00",
+    status: "payment_pending",
+  };
+  const providerOptions = useMemo(() => buildCheckoutProviderOptions(paymentConfig?.providers ?? [], isWechatBrowser()), [paymentConfig]);
+  const selectedProvider = providerOptions.find((provider) => provider.key === selectedProviderKey) ?? providerOptions[0];
+  const matchKey = `${displaySummary.homeTeam}-${displaySummary.awayTeam}`;
+  const isCreating = checkoutState === "creating_order";
+  const shortScope = "胜平负、比分分布、路径传导";
+  const disclaimer = paymentConfig?.disclaimer ?? accessOptions?.disclaimer ?? "概率分析，不是投注建议。";
+
+  useEffect(() => {
+    if (providerOptions.length > 0 && !providerOptions.some((provider) => provider.key === selectedProviderKey)) {
+      setSelectedProviderKey(providerOptions[0].key);
+    }
+  }, [providerOptions, selectedProviderKey]);
+
+  function goBackToLockedPreview() {
+    window.location.href = matchPagePath(displaySummary.homeTeam, displaySummary.awayTeam);
+  }
+
+  async function createCheckoutOrder() {
+    if (!selectedProvider || isCreating) return;
+    setCheckoutState("creating_order");
+    setMessage(null);
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/payments/orders`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          productKey: "single_match",
+          provider: selectedProvider.provider,
+          contentKey: "match_prediction",
+          matchKey,
+          homeTeam: displaySummary.homeTeam,
+          awayTeam: displaySummary.awayTeam,
+          homeName: displaySummary.homeName,
+          awayName: displaySummary.awayName,
+        }),
+      });
+      const payload = await response.json().catch(() => null);
+      if (!response.ok || !payload?.orderId) throw new Error(payload?.detail ?? "支付订单创建失败");
+      window.location.href = `${PAYMENT_PENDING_ROUTE}?orderId=${encodeURIComponent(payload.orderId)}`;
+    } catch (error) {
+      setCheckoutState("failed");
+      setMessage(error instanceof Error ? error.message : "支付订单创建失败");
+    }
+  }
+
+  return (
+    <main className="checkout-page-shell">
+      <header className="checkout-topbar">
+        <button type="button" aria-label="返回单场预览" onClick={goBackToLockedPreview}>
+          <ArrowLeft aria-hidden="true" size={27} strokeWidth={2.7} />
+        </button>
+        <div>
+          <strong>确认解锁</strong>
+          <span>
+            <ShieldCheck aria-hidden="true" size={17} strokeWidth={2.4} />
+            zhugejunshi.com
+          </span>
+        </div>
+      </header>
+
+      <section className="checkout-product-card" aria-label="解锁商品">
+        <img src="/assets/app/gold-football-product-icon.png" alt="" />
+        <div className="checkout-product-main">
+          <span>{singleProduct.name}</span>
+          <strong>
+            <TeamFlag team={displaySummary.homeTeam} code={displaySummary.homeCode} />
+            {displaySummary.homeName}
+            <em>vs</em>
+            {displaySummary.awayName}
+            <TeamFlag team={displaySummary.awayTeam} code={displaySummary.awayCode} />
+          </strong>
+          <small>{shortScope}</small>
+        </div>
+        <b>{singleProduct.amountLabel}</b>
+      </section>
+
+      <section className="checkout-section-heading">
+        <i aria-hidden="true" />
+        <strong>选择支付方式</strong>
+      </section>
+
+      <section className="checkout-provider-list" aria-label="微信支付和支付宝支付">
+        {providerOptions.map((option) => {
+          const Icon = option.Icon;
+          const selected = selectedProvider?.key === option.key;
+          return (
+            <button
+              className={`checkout-provider-card ${selected ? "selected" : ""}`}
+              type="button"
+              key={option.key}
+              aria-pressed={selected}
+              onClick={() => setSelectedProviderKey(option.key)}
+            >
+              <span className="checkout-provider-radio">{selected ? <CheckCircle2 aria-hidden="true" size={30} strokeWidth={2.7} /> : null}</span>
+              <span className={`checkout-provider-icon ${option.key}`}>
+                <Icon aria-hidden="true" size={35} strokeWidth={2.25} />
+              </span>
+              <span className="checkout-provider-copy">
+                <strong>{option.label}</strong>
+                <small>{option.methodLabel}</small>
+              </span>
+            </button>
+          );
+        })}
+      </section>
+
+      <section className="checkout-notice" aria-live="polite">
+        <Info aria-hidden="true" size={23} strokeWidth={2.3} />
+        <span>{message ?? "创建订单后等待支付确认"}</span>
+      </section>
+
+      <button className="checkout-create-button" type="button" disabled={!selectedProvider || isCreating} onClick={() => void createCheckoutOrder()}>
+        {isCreating ? "订单创建中" : checkoutState === "failed" ? "重新创建支付订单" : "创建支付订单"}
+      </button>
+
+      <footer className="checkout-disclaimer">
+        <ShieldCheck aria-hidden="true" size={18} strokeWidth={2.2} />
+        <span>{disclaimer.replace("微信支付和支付宝仅用于解锁概率分析内容，不提供投注建议。", "概率分析，不是投注建议")}</span>
+      </footer>
+    </main>
+  );
+}
+
+function PaymentInfoRow({
+  Icon,
+  label,
+  children,
+  aside,
+}: {
+  Icon: LucideIcon;
+  label: string;
+  children: ReactNode;
+  aside?: ReactNode;
+}) {
+  return (
+    <div className="payment-info-row">
+      <Icon aria-hidden="true" size={23} strokeWidth={2.2} />
+      <div>
+        <span>{label}</span>
+        <strong>{children}</strong>
+      </div>
+      {aside ? <em>{aside}</em> : null}
+    </div>
+  );
+}
+
+function PaymentPendingPage({ orderId }: { orderId: string }) {
+  const [order, setOrder] = useState<PaymentOrder | null>(null);
+  const [loadStatus, setLoadStatus] = useState<LoadStatus>("loading");
+  const [refreshing, setRefreshing] = useState(false);
+  const [message, setMessage] = useState<string | null>(null);
+
+  async function confirmAccess(nextOrder: PaymentOrder) {
+    const contentKey = paymentContentKey(nextOrder);
+    const matchKey = nextOrder.metadata?.matchKey;
+    const params = new URLSearchParams({
+      orderId: nextOrder.orderId,
+      contentKey,
+    });
+    if (matchKey) params.set("matchKey", matchKey);
+    const response = await fetch(
+      `${API_BASE_URL}/api/access-decision?${params.toString()}`,
+      { cache: "no-store" },
+    );
+    const decision = (await response.json().catch(() => null)) as AccessDecision | null;
+    if (!response.ok || !decision?.allowed) {
+      setMessage("支付状态已更新，解锁权限仍在确认中");
+      return;
+    }
+    setMessage("支付已确认，正在进入预测页面");
+    window.setTimeout(() => {
+      window.location.href = paymentRedirectPath(nextOrder);
+    }, 700);
+  }
+
+  async function loadOrder(checkAccess = false) {
+    if (!orderId) {
+      setLoadStatus("failed");
+      setMessage("缺少支付订单编号");
+      return;
+    }
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/payments/orders/${encodeURIComponent(orderId)}`, { cache: "no-store" });
+      const payload = await response.json().catch(() => null);
+      if (!response.ok) throw new Error(payload?.detail ?? `支付订单接口返回 ${response.status}`);
+      const nextOrder = payload as PaymentOrder;
+      setOrder(nextOrder);
+      setLoadStatus("ready");
+      if (checkAccess && nextOrder.status === "paid") {
+        await confirmAccess(nextOrder);
+      } else if (checkAccess) {
+        setMessage(paymentStatusMeta(nextOrder.status).detail);
+      }
+    } catch (error) {
+      setLoadStatus("failed");
+      setMessage(error instanceof Error ? error.message : "支付订单加载失败");
+    }
+  }
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadActiveOrder() {
+      if (!active) return;
+      await loadOrder(false);
+    }
+
+    void loadActiveOrder();
+    const timer = window.setInterval(() => {
+      void loadActiveOrder();
+    }, PAYMENT_ORDER_REFRESH_MS);
+
+    return () => {
+      active = false;
+      window.clearInterval(timer);
+    };
+  }, [orderId]);
+
+  async function refreshOrder() {
+    setRefreshing(true);
+    setMessage(null);
+    try {
+      await loadOrder(true);
+    } finally {
+      setRefreshing(false);
+    }
+  }
+
+  function goBackToPayment() {
+    if (window.history.length > 1) {
+      window.history.back();
+      return;
+    }
+    window.location.href = "/";
+  }
+
+  const statusMeta = paymentStatusMeta(order?.status ?? "pending");
+  const orderTitle = order ? paymentProductTitle(order) : "订单加载中";
+  const amountLabel = order?.amountLabel ?? "待确认";
+  const paymentLine = order ? `${order.providerLabel} · ${paymentMethodLabel(order)}` : "支付方式待确认";
+  const hasQrCode = Boolean(order?.qrCodeUrl && isQrPayment(order) && statusMeta.tone === "pending");
+
+  return (
+    <main className="payment-page-shell">
+      <header className="payment-page-header">
+        <button type="button" aria-label="返回" onClick={goBackToPayment}>
+          <ArrowLeft aria-hidden="true" size={28} strokeWidth={2.4} />
+        </button>
+        <span>2026 世界杯预测</span>
+      </header>
+
+      <section className="payment-hero" aria-label="支付确认状态">
+        <span className="payment-hero-icon" aria-hidden="true">
+          <FileText size={28} strokeWidth={2.2} />
+        </span>
+        <h1>等待支付确认</h1>
+        <p>{statusMeta.detail}</p>
+      </section>
+
+      <section className="payment-card" aria-label="支付订单">
+        <div className="payment-card-head">
+          <span className="payment-order-icon" aria-hidden="true">
+            <FileText size={26} strokeWidth={2.2} />
+          </span>
+          <strong>
+            订单 {shortOrderId(order?.orderId ?? orderId)} · {order?.productName ?? "支付订单"}
+          </strong>
+          <b className={`payment-status-pill ${statusMeta.tone}`}>{statusMeta.label}</b>
+        </div>
+
+        <div className="payment-info-panel">
+          <PaymentInfoRow Icon={CircleDollarSign} label="产品" aside={amountLabel}>
+            {orderTitle}
+          </PaymentInfoRow>
+          <PaymentInfoRow Icon={WalletCards} label="支付方式">
+            {paymentLine}
+          </PaymentInfoRow>
+          <PaymentInfoRow Icon={Clock} label="创建时间">
+            {order ? formatPaymentDate(order.createdAt) : "待确认"}
+          </PaymentInfoRow>
+          <PaymentInfoRow Icon={Hourglass} label="过期时间" aside={order ? formatPaymentRemaining(order.expiresAt) : undefined}>
+            {order ? formatPaymentDate(order.expiresAt) : "待确认"}
+          </PaymentInfoRow>
+        </div>
+
+        <div className={`payment-qr-panel ${hasQrCode ? "ready" : ""}`}>
+          {hasQrCode ? <img src={order?.qrCodeUrl ?? ""} alt="支付二维码" /> : <QrCode aria-hidden="true" size={42} strokeWidth={1.8} />}
+          <span>{hasQrCode ? "请扫码完成支付" : order?.paymentMethod === "jsapi" ? "微信支付弹窗等待完成" : "二维码待返回"}</span>
+        </div>
+
+        <div className="payment-hint-card">
+          {statusMeta.tone === "unavailable" ? <AlertTriangle aria-hidden="true" size={42} strokeWidth={2.1} /> : <ShieldCheck aria-hidden="true" size={42} strokeWidth={2.1} />}
+          <div>
+            <strong>{statusMeta.tone === "unavailable" ? "当前支付通道暂不可用" : "请完成支付后刷新状态"}</strong>
+            <p>{order?.productKey === "tournament_pass" ? "支付完成后，系统将自动确认并解锁剩余未开赛预测" : "支付完成后，系统将自动确认并解锁本场预测"}</p>
+          </div>
+        </div>
+
+        {message ? <p className="payment-message">{message}</p> : null}
+
+        <button className="payment-refresh-button" type="button" onClick={refreshOrder} disabled={refreshing || loadStatus === "loading"}>
+          {order?.status === "paid" ? <CheckCircle2 aria-hidden="true" size={24} strokeWidth={2.4} /> : <RefreshCw aria-hidden="true" size={24} strokeWidth={2.4} />}
+          <span>{refreshing ? "正在刷新状态" : "我已支付，刷新状态"}</span>
+        </button>
+
+        <button className="payment-back-button" type="button" onClick={goBackToPayment}>
+          <ArrowLeft aria-hidden="true" size={23} strokeWidth={2.4} />
+          <span>返回选择支付方式</span>
+        </button>
+
+        <div className="payment-lock-note">
+          <Lock aria-hidden="true" size={17} strokeWidth={2.2} />
+          <span>支付成功后自动解锁本场预测</span>
+        </div>
+      </section>
+
+      <footer className="payment-footer">
+        <ShieldCheck aria-hidden="true" size={16} strokeWidth={2.1} />
+        <span>概率分析，不是投注建议</span>
+      </footer>
     </main>
   );
 }
@@ -2532,6 +3788,229 @@ function EventReviewPanel({
       </div>
       {message ? <p className="review-message">{message}</p> : null}
     </div>
+  );
+}
+
+function postMatchRootCauseLabel(value: string) {
+  const labels: Record<string, string> = {
+    large_score_tail_underestimated: "大比分尾部低估",
+    score_matrix_truncated_tail: "比分矩阵覆盖不足",
+    total_goals_underestimated: "总进球预期偏低",
+    underdog_goal_tail_underestimated: "弱队进球尾部低估",
+    normal_score_variance: "常规比分波动",
+  };
+  return labels[value] ?? "模型偏差待复盘";
+}
+
+function postMatchSeverityLabel(value?: string) {
+  if (value === "high") return "需要校准";
+  if (value === "medium") return "存在偏差";
+  if (value === "low") return "偏差正常";
+  return "复盘中";
+}
+
+function postMatchDirectionLabel(review?: PostMatchReview) {
+  if (!review || typeof review.winnerMissed !== "boolean") return "方向待确认";
+  return review.winnerMissed ? "方向偏离" : "方向命中";
+}
+
+function findFinishedMatch(matches: FinishedMatch[], home: TeamKey, away: TeamKey) {
+  return matches.find((item) => item.homeTeam === home && item.awayTeam === away) ?? null;
+}
+
+function PostMatchReviewPage({ home, away }: { home: TeamKey; away: TeamKey }) {
+  const [match, setMatch] = useState<FinishedMatch | null>(null);
+  const [nextMatch, setNextMatch] = useState<PublicUpcomingMatch | null>(null);
+  const [loadStatus, setLoadStatus] = useState<LoadStatus>("loading");
+  const [message, setMessage] = useState<string | null>(null);
+  const orderId = useMemo(() => new URLSearchParams(window.location.search).get("orderId"), []);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadPublicReview() {
+      const response = await fetch(`${API_BASE_URL}/api/public-finished-matches?limit=72`, { cache: "no-store" });
+      if (!response.ok) throw new Error(`完赛复盘接口返回 ${response.status}`);
+      const payload = (await response.json()) as FinishedMatchesResponse;
+      const found = findFinishedMatch(payload.items, home, away);
+      if (!found) throw new Error("没有找到这场已结束比赛");
+      if (!active) return;
+      setMatch(found);
+      setLoadStatus("ready");
+    }
+
+    async function loadPaidReview() {
+      if (!orderId) return;
+      const response = await fetch(
+        `${API_BASE_URL}/api/finished-match-review?home=${encodeURIComponent(home)}&away=${encodeURIComponent(away)}&orderId=${encodeURIComponent(orderId)}`,
+        { cache: "no-store" },
+      );
+      if (!active) return;
+      if (!response.ok) {
+        setMessage("赛前预测回看尚未解锁");
+        return;
+      }
+      const payload = (await response.json()) as FinishedMatch;
+      setMatch(payload);
+      setMessage(null);
+    }
+
+    async function loadNextMatch() {
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/public-upcoming-matches?limit=1`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`下一场接口返回 ${response.status}`);
+        const payload = (await response.json()) as PublicUpcomingMatchesResponse;
+        if (!active) return;
+        setNextMatch(payload.items[0] ?? null);
+      } catch {
+        if (!active) return;
+        setNextMatch(buildStaticPublicUpcomingMatchesFallback().items[0] ?? null);
+      }
+    }
+
+    async function run() {
+      try {
+        await loadPublicReview();
+        await loadPaidReview();
+      } catch (error) {
+        if (!active) return;
+        setLoadStatus("failed");
+        setMessage(error instanceof Error ? error.message : "赛后复盘加载失败");
+      }
+      await loadNextMatch();
+    }
+
+    void run();
+    return () => {
+      active = false;
+    };
+  }, [home, away, orderId]);
+
+  function goBack() {
+    if (window.history.length > 1) {
+      window.history.back();
+      return;
+    }
+    window.location.href = "/";
+  }
+
+  const review = match?.postMatchReview;
+  const hasFullReview = Boolean(review?.predictedTopScore);
+  const baselineReady = Boolean(review?.hasPredictionBaseline);
+  const isBaselineMissing = review ? !review.hasPredictionBaseline : false;
+  const rootCause = review?.rootCauses?.[0] ? postMatchRootCauseLabel(review.rootCauses[0]) : "等待赛前快照生成后复盘";
+  const nextHref = nextMatch ? matchPagePath(nextMatch.homeTeam, nextMatch.awayTeam) : "/";
+  const matchStage = match?.stage ?? "赛后复盘";
+  const kickoff = match ? formatKickoffForUser(match.kickoff) : "加载中";
+  const homeName = match?.homeName ?? home;
+  const awayName = match?.awayName ?? away;
+  const homeCode = match?.homeCode ?? home.slice(0, 3).toUpperCase();
+  const awayCode = match?.awayCode ?? away.slice(0, 3).toUpperCase();
+
+  return (
+    <main className="postmatch-page-shell">
+      <section className="postmatch-app" aria-label="已结束比赛复盘">
+        <header className="postmatch-header">
+          <button type="button" aria-label="返回" onClick={goBack}>
+            <ArrowLeft size={25} strokeWidth={2.5} />
+          </button>
+          <div>
+            <strong>赛后复盘</strong>
+            <span>{matchStage}</span>
+          </div>
+        </header>
+
+        <section className="postmatch-hero" aria-label="最终比分">
+          <p>{kickoff}</p>
+          <span className="postmatch-status">{match ? publicMatchStatusLabel(match.status) : "加载中"}</span>
+          <div className="postmatch-scoreline">
+            <div className="postmatch-team">
+              <TeamFlag team={home} code={homeCode} />
+              <span>{homeName}</span>
+            </div>
+            <strong>{match ? `${match.homeScore} - ${match.awayScore}` : "-- - --"}</strong>
+            <div className="postmatch-team away">
+              <TeamFlag team={away} code={awayCode} />
+              <span>{awayName}</span>
+            </div>
+          </div>
+        </section>
+
+        <section className="postmatch-card postmatch-prediction-card" aria-label="赛前预测回看">
+          <Target size={34} strokeWidth={2.2} />
+          <div>
+            <span>赛前最可能比分</span>
+            {hasFullReview ? (
+              <strong>
+                {review?.predictedTopScore} · {formatProbabilityValue(review?.predictedTopProbability ?? 0)}
+              </strong>
+            ) : baselineReady ? (
+              <strong>赛前预测回看已锁定</strong>
+            ) : (
+              <strong>赛前预测快照待生成</strong>
+            )}
+            <p>{hasFullReview ? "已读取本场赛前预测记录" : review?.message ?? "这场暂时只能展示真实赛果"}</p>
+          </div>
+          <Signal size={32} strokeWidth={2.1} />
+        </section>
+
+        <section className="postmatch-card postmatch-model-card" aria-label="模型复盘">
+          <div className="postmatch-section-title">
+            <ShieldCheck size={18} strokeWidth={2.4} />
+            <span>模型复盘</span>
+          </div>
+          {loadStatus === "failed" ? (
+            <div className="postmatch-review-copy muted">
+              <strong>复盘加载失败</strong>
+              <p>{message ?? "请稍后再试"}</p>
+            </div>
+          ) : hasFullReview ? (
+            <div className="postmatch-review-copy">
+              <strong>
+                {postMatchDirectionLabel(review)}，{postMatchSeverityLabel(review?.severity)}
+              </strong>
+              <p>{review?.summary}</p>
+            </div>
+          ) : baselineReady ? (
+            <div className="postmatch-review-copy locked">
+              <strong>完整预测已锁定</strong>
+              <p>{message ?? "解锁后可查看赛前比分预测、方向命中和误差复盘。"}</p>
+            </div>
+          ) : (
+            <div className="postmatch-review-copy muted">
+              <strong>真实赛果已锁定</strong>
+              <p>{review?.message ?? match?.modelUseLabel ?? "比赛结果会进入后续路径权重。"}</p>
+            </div>
+          )}
+        </section>
+
+        <section className="postmatch-card postmatch-root-card" aria-label="误差归因">
+          <div className="postmatch-section-title">
+            <Signal size={18} strokeWidth={2.4} />
+            <span>误差归因</span>
+          </div>
+          <strong>{hasFullReview ? rootCause : isBaselineMissing ? "赛前快照缺失" : "复盘内容已锁定"}</strong>
+          <p>
+            {hasFullReview
+              ? `总进球误差 ${review?.totalGoalError ?? 0} 球，后续用于校准比分分布。`
+              : isBaselineMissing
+                ? "需要先保存每场赛前预测快照，才能做赛后误差归因。"
+                : "解锁后查看模型偏差来源。"}
+          </p>
+        </section>
+
+        <a className="postmatch-next-button" href={nextHref}>
+          <Trophy size={22} strokeWidth={2.3} />
+          <span>查看下一场未开赛</span>
+          <ChevronRight size={24} strokeWidth={2.5} />
+        </a>
+
+        <footer className="postmatch-footer">
+          <ShieldCheck size={15} strokeWidth={2.4} />
+          <span>概率分析，不是投注建议</span>
+        </footer>
+      </section>
+    </main>
   );
 }
 
