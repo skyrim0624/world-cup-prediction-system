@@ -11,6 +11,7 @@ import backend.main as main_module
 from backend.payments import (
     PAYMENT_ORDERS,
     build_order_access_decision,
+    build_payment_config,
     create_payment_order,
     get_payment_order,
     handle_payment_notification,
@@ -36,6 +37,15 @@ class PaymentApiTest(unittest.TestCase):
         self.assertFalse(payload["providers"][2]["configured"])
         self.assertIn("CUSTOMER_ALIPAY_QR_PAY_CREATE_URL", payload["providers"][2]["missingConfig"])
 
+    def test_payment_config_can_enable_local_simulation_mode(self):
+        payload = build_payment_config(env={"WORLD_CUP_PAYMENT_SIMULATION": "1"})
+
+        self.assertTrue(payload["ready"])
+        self.assertTrue(payload["simulationMode"])
+        self.assertEqual([provider["provider"] for provider in payload["providers"]], ["wechat_jsapi", "wechat_native", "alipay_qr"])
+        self.assertTrue(all(provider["configured"] for provider in payload["providers"]))
+        self.assertTrue(all(provider["missingConfig"] == [] for provider in payload["providers"]))
+
     def test_create_scan_payment_order_requires_real_provider_configuration(self):
         client = TestClient(app)
 
@@ -55,6 +65,45 @@ class PaymentApiTest(unittest.TestCase):
         self.assertEqual(payload["paymentMethod"], "native")
         self.assertEqual(payload["paymentMethodLabel"], "扫码支付")
         self.assertEqual(payload["integrationOwner"], "customer")
+
+    def test_local_simulated_native_payment_order_auto_pays_on_status_sync(self):
+        with TemporaryDirectory() as temp_dir:
+            store_path = Path(temp_dir) / "payment-orders.json"
+            env = {"WORLD_CUP_PAYMENT_SIMULATION": "1"}
+
+            created = create_payment_order(
+                "single_match",
+                "wechat_native",
+                metadata={"contentKey": "match_prediction", "matchKey": "netherlands-japan"},
+                env=env,
+                storage_path=store_path,
+            )
+            refreshed = refresh_payment_order_status(created["orderId"], env=env, storage_path=store_path)
+            decision = build_order_access_decision(
+                created["orderId"],
+                "match_prediction",
+                match_key="netherlands-japan",
+                storage_path=store_path,
+            )
+
+        self.assertEqual(created["status"], "pending")
+        self.assertEqual(created["missingConfig"], [])
+        self.assertTrue(str(created["qrCodeUrl"]).startswith("data:image/svg+xml"))
+        self.assertEqual(refreshed["status"], "paid")
+        self.assertTrue(decision["allowed"])
+
+    def test_local_simulated_jsapi_payment_order_returns_jsapi_params(self):
+        with TemporaryDirectory() as temp_dir:
+            store_path = Path(temp_dir) / "payment-orders.json"
+            env = {"WORLD_CUP_PAYMENT_SIMULATION": "1"}
+
+            created = create_payment_order("single_match", "wechat_jsapi", env=env, storage_path=store_path)
+            refreshed = refresh_payment_order_status(created["orderId"], env=env, storage_path=store_path)
+
+        self.assertEqual(created["status"], "pending")
+        self.assertIn("jsapiParams", created)
+        self.assertIn("package", created["jsapiParams"])
+        self.assertEqual(refreshed["status"], "paid")
 
     def test_payment_order_status_can_be_queried_after_creation(self):
         client = TestClient(app)

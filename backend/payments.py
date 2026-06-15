@@ -7,7 +7,7 @@ from datetime import datetime, timedelta, timezone
 from os import environ
 from pathlib import Path
 from typing import Callable, Mapping
-from urllib.parse import urlencode
+from urllib.parse import quote, urlencode
 from urllib.request import Request, urlopen
 from uuid import uuid4
 
@@ -16,6 +16,7 @@ from .access import ACCESS_PRODUCTS, build_access_decision
 
 PAYMENT_ORDER_TTL_MINUTES = 15
 PAYMENT_HTTP_TIMEOUT_SECONDS = 12
+PAYMENT_SIMULATION_ENV = "WORLD_CUP_PAYMENT_SIMULATION"
 WECHAT_NATIVE_NOTIFY_PATH = "/api/app-payment/wechat/notify"
 WECHAT_NATIVE_NOTIFY_URL = "https://zhugejunshi.com/api/app-payment/wechat/notify"
 
@@ -78,6 +79,10 @@ def _iso(value: datetime) -> str:
 def _configured(env: Mapping[str, str], required_config: list[str]) -> tuple[bool, list[str]]:
     missing = [key for key in required_config if not env.get(key)]
     return len(missing) == 0, missing
+
+
+def _payment_simulation_enabled(env: Mapping[str, str]) -> bool:
+    return _env_value(env, PAYMENT_SIMULATION_ENV).strip().lower() in {"1", "true", "yes", "on"}
 
 
 def _product(product_key: str) -> dict[str, object]:
@@ -227,6 +232,58 @@ def _customer_return_url(env: Mapping[str, str], order_id: str) -> str | None:
     return f"{public_base}/payment/pending?orderId={order_id}"
 
 
+def _simulated_qr_code_url(provider_key: str, order_id: str) -> str:
+    label = "微信模拟支付" if provider_key == "wechat_native" else "支付宝模拟支付"
+    short_order_id = order_id.replace("pay_", "")[:10]
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 280 280">
+<rect width="280" height="280" rx="20" fill="#ffffff"/>
+<rect x="20" y="20" width="240" height="240" rx="12" fill="#111111"/>
+<rect x="40" y="40" width="64" height="64" fill="#ffffff"/>
+<rect x="176" y="40" width="64" height="64" fill="#ffffff"/>
+<rect x="40" y="176" width="64" height="64" fill="#ffffff"/>
+<rect x="118" y="118" width="44" height="44" fill="#ffffff"/>
+<rect x="178" y="126" width="22" height="22" fill="#ffffff"/>
+<rect x="126" y="178" width="22" height="22" fill="#ffffff"/>
+<text x="140" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#ffffff">{label} {short_order_id}</text>
+</svg>"""
+    return "data:image/svg+xml;charset=utf-8," + quote(svg)
+
+
+def _simulated_create_response(provider_key: str, order: Mapping[str, object]) -> dict[str, object]:
+    order_id = str(order["orderId"])
+    if provider_key == "wechat_jsapi":
+        return {
+            "status": "pending",
+            "jsapiParams": {
+                "appId": "wx-local-simulation",
+                "timeStamp": str(int(_now().timestamp())),
+                "nonceStr": f"mock-{order_id[-10:]}",
+                "package": f"prepay_id=mock_{order_id}",
+                "signType": "RSA",
+                "paySign": "mock-pay-signature",
+            },
+            "prepayId": f"mock_{order_id}",
+        }
+    if provider_key == "wechat_native":
+        return {
+            "status": "NOTPAY",
+            "qrCodeUrl": _simulated_qr_code_url(provider_key, order_id),
+            "prepayId": f"mock_{order_id}",
+        }
+    return {
+        "trade_status": "WAIT_BUYER_PAY",
+        "qrCodeUrl": _simulated_qr_code_url(provider_key, order_id),
+        "tradeNo": f"mock_{order_id}",
+    }
+
+
+def _simulated_status_response(provider_key: str, order: Mapping[str, object]) -> dict[str, object]:
+    order_id = str(order["orderId"])
+    if provider_key == "alipay_qr":
+        return {"trade_status": "TRADE_SUCCESS", "trade_no": f"mock_trade_{order_id}"}
+    return {"status": "SUCCESS", "transactionId": f"mock_tx_{provider_key}_{order_id[-10:]}"}
+
+
 def _build_customer_create_payload(
     order: Mapping[str, object],
     product: Mapping[str, object],
@@ -315,9 +372,13 @@ def _persist_order(order: dict[str, object], storage_path: Path | None) -> dict[
 
 def build_payment_config(env: Mapping[str, str] | None = None) -> dict[str, object]:
     source = env or environ
+    simulation_mode = _payment_simulation_enabled(source)
     providers = []
     for provider_key, provider in PAYMENT_PROVIDERS.items():
         configured, missing = _configured(source, provider["requiredConfig"])
+        if simulation_mode:
+            configured = True
+            missing = []
         providers.append(
             {
                 "provider": provider_key,
@@ -332,6 +393,7 @@ def build_payment_config(env: Mapping[str, str] | None = None) -> dict[str, obje
 
     return {
         "ready": any(provider["configured"] for provider in providers),
+        "simulationMode": simulation_mode,
         "providers": providers,
         "disclaimer": "微信支付和支付宝仅用于解锁概率分析内容，不提供投注建议。",
     }
@@ -349,7 +411,11 @@ def create_payment_order(
     normalized_provider_key = _provider_key(provider_key)
     provider = _provider(provider_key)
     source = env or environ
+    simulation_mode = _payment_simulation_enabled(source)
     configured, missing = _configured(source, provider["requiredConfig"])
+    if simulation_mode:
+        configured = True
+        missing = []
     created_at = _now()
     expires_at = created_at + timedelta(minutes=PAYMENT_ORDER_TTL_MINUTES)
     status = "customer_interface_ready" if configured else "provider_config_required"
@@ -383,7 +449,10 @@ def create_payment_order(
         method = _env_value(source, f"{prefix}_CREATE_METHOD") or "POST"
         payload = _build_customer_create_payload(order, product, provider, normalized_provider_key, source)
         try:
-            response = requester(create_url, payload, _customer_headers(source, provider), method)
+            if simulation_mode and payment_requester is None:
+                response = _simulated_create_response(normalized_provider_key, order)
+            else:
+                response = requester(create_url, payload, _customer_headers(source, provider), method)
             order = _apply_customer_payment_response(order, response)
         except Exception as error:
             order = {
@@ -438,6 +507,9 @@ def refresh_payment_order_status(
         return order
     provider = _provider(str(order["provider"]))
     source = env or environ
+    if _payment_simulation_enabled(source):
+        updated = _apply_customer_payment_response(order, _simulated_status_response(str(order["provider"]), order))
+        return _persist_order(updated, storage_path)
     configured, _ = _configured(source, provider["requiredConfig"])
     if not configured:
         return order

@@ -2,6 +2,7 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "dev:api": "python3 -m uvicorn backend.main:app --host 127.0.0.1 --port 8000",
+    "dev:api:payment-sim": "WORLD_CUP_PAYMENT_SIMULATION=1 WORLD_CUP_PUBLIC_API_BASE_URL=http://127.0.0.1:8000 WORLD_CUP_PUBLIC_WEB_BASE_URL=http://127.0.0.1:5173 python3 -m uvicorn backend.main:app --host 127.0.0.1 --port 8000",
     "test:model": "PYTHONWARNINGS=ignore::DeprecationWarning python3 -m unittest discover -s tests",
     "test:payments:simulated": "python3 scripts/simulate_payment_flows.py",
     "validate:data": "python3 scripts/validate_prediction_data.py",

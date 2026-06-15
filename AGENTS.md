@@ -3448,6 +3448,29 @@ cron: "*/30 * * * *"
 - `npm run test:payments:simulated` 通过。
 - `python3 -m unittest discover -s tests -p 'test_payments.py'` 通过，21 个支付测试。
 
+### 2026-06-15：本地网页用户流模拟支付
+
+已完成：
+
+- 新增 `WORLD_CUP_PAYMENT_SIMULATION=1` 后端开关。
+- 新增 `npm run dev:api:payment-sim`，用于本地启动可模拟支付成功的 API。
+- 模拟模式下，无需客户真实接口配置，微信 JSAPI、微信 Native 和支付宝都会在 `/api/payments/config` 中显示可用。
+- 模拟模式下，创建订单会返回 JSAPI 参数或可显示的模拟二维码。
+- 支付等待页轮询 `/api/payments/orders/{orderId}?sync=1` 时会自动同步为 `paid`，并自动确认权限跳转到已解锁内容。
+- 正式部署脚本不会设置 `WORLD_CUP_PAYMENT_SIMULATION`，线上默认仍必须走真实支付配置。
+
+本地测试方式：
+
+1. `npm run dev:api:payment-sim`
+2. `npm run dev`
+3. 打开本地前台，进入单场页并点击 `¥1 解锁本场`。
+4. 创建微信或支付宝订单后，等待页会自动模拟支付成功并跳转到已解锁页面。
+
+验证：
+
+- `python3 -m unittest discover -s tests -p 'test_payments.py'` 通过，24 个支付测试。
+- `python3 -m unittest discover -s tests -p 'test_frontend_contract.py'` 通过，10 个前端契约测试。
+
 ## 十、当前交接摘要
 
 一句话定义：

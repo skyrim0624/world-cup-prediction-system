@@ -155,6 +155,8 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("WeixinJSBridge", source)
         self.assertIn("getBrandWCPayRequest", source)
         self.assertIn("/api/payments/orders/", payment_source)
+        polling_source = source_between(payment_source, "async function loadActiveOrder()", "return () =>")
+        self.assertIn("await loadOrder(true)", polling_source)
 
     def test_team_flags_cover_tournament_teams_and_match_lists(self):
         source = app_source()

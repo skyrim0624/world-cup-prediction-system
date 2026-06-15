@@ -3030,7 +3030,7 @@ function PaymentPendingPage({ orderId }: { orderId: string }) {
 
     async function loadActiveOrder() {
       if (!active) return;
-      await loadOrder(false);
+      await loadOrder(true);
     }
 
     void loadActiveOrder();
