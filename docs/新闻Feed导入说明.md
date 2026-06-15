@@ -49,10 +49,16 @@ python3 scripts/import_news_feed.py \
 - `title`：Feed 标题。
 - `summary`：Feed description / summary。
 - `source`：命令传入的来源 key，必须和 `news-sources.json` 对齐。
-- `team`：命令传入的球队 key，可为空。
+- `team`：命令传入的球队 key，可为空；为空时会根据球队中文名、队码和内部 key 从标题 / 摘要自动识别。
 - `status`：默认 `single_source`。
 - `published_at`：Feed 发布时间；缺失时为 `待确认`。
 - `url`：Feed 链接。
+- `category`：自动识别的事件类别，例如 `injury`、`suspension`、`lineup`、`weather`。
+- `factor`：映射到模型盘面前的底层因子，例如 `attack`、`defense`、`path`、`squad`。
+- `direction`：初步方向，`1` 为利好，`-1` 为利空，`0` 为中性或待确认。
+- `confidence`：自动分类置信度，只用于排序和提示，不绕过来源评级。
+
+自动结构化不是自动确认。新闻是否入模仍由来源等级、单源 / 多源状态和后台审核规则决定。
 
 ## 去重
 

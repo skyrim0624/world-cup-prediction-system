@@ -1,0 +1,10 @@
+[Unit]
+Description=World Cup Prediction Daily Update
+After=network-online.target world-cup-prediction-api.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/world-cup-prediction-system/current
+EnvironmentFile=/opt/world-cup-prediction-system/.env.production
+ExecStart=/usr/bin/env bash -lc 'npm run daily:update:production && npm run production:check'

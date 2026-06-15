@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from .io_utils import write_json_atomic
+
 
 def record_fixture_result(
     path: Path,
@@ -43,6 +45,6 @@ def record_fixture_score(
         row["status"] = status
         row["home_score"] = home_score
         row["away_score"] = away_score
-        path.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        write_json_atomic(path, rows)
         return row
     raise ValueError(f"找不到赛程: {home} vs {away}")

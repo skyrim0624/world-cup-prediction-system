@@ -1,0 +1,16 @@
+[Unit]
+Description=World Cup Prediction API
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/world-cup-prediction-system/current
+EnvironmentFile=/opt/world-cup-prediction-system/.env.production
+ExecStart=/usr/bin/env bash -lc 'npm run production:serve'
+Restart=always
+RestartSec=5
+KillSignal=SIGINT
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target

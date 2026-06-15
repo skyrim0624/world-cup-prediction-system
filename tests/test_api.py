@@ -87,6 +87,18 @@ class PredictionApiTest(unittest.TestCase):
         self.assertIn("真实新闻 Feed 配置已接入", payload["knownGaps"][1])
         self.assertIn("支付已有客户接口框架", payload["knownGaps"][2])
 
+    def test_ready_api_returns_structured_production_checks(self):
+        client = TestClient(app)
+        response = client.get("/api/ready")
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertIn(payload["status"], {"ok", "degraded", "fail"})
+        self.assertIn("dailyStatus", payload["checks"])
+        self.assertIn("snapshot", payload["checks"])
+        self.assertIn("modelQuality", payload["checks"])
+        self.assertIn("dataset", payload["checks"])
+
     def test_local_vite_fallback_port_is_allowed_by_cors(self):
         client = TestClient(app)
 

@@ -1,0 +1,17 @@
+.git
+node_modules
+dist
+.venv
+.venv-workers
+.wrangler
+.npm-cache
+python_modules
+__pycache__
+*.pyc
+backend/snapshots/*.json
+backend/data_files/admin-audit.jsonl
+backend/data_files/daily-update-status.json
+backend/data_files/payment-orders.json
+backend/data_files/backups
+reports/*.json
+research-screenshots

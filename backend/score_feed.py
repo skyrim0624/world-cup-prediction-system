@@ -4,6 +4,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from .io_utils import write_json_atomic
+
 
 def parse_score(value: Any) -> int:
     if value in (None, ""):
@@ -133,6 +135,20 @@ def fixture_matches_match_number(fixture: dict[str, Any], row: dict[str, Any]) -
     return match_number is not None and fixture.get("match_no") == match_number
 
 
+def update_fixture_from_score(
+    fixture: dict[str, Any],
+    status: str,
+    home_score: int | None,
+    away_score: int | None,
+) -> str:
+    if fixture.get("status") == "finished" and status != "finished":
+        return "stale"
+    fixture["status"] = status
+    fixture["home_score"] = home_score
+    fixture["away_score"] = away_score
+    return "updated"
+
+
 OBSERVED_METADATA_KEYS = {
     "lineupObserved": "lineupsObserved",
     "disciplineObserved": "disciplineObserved",
@@ -157,6 +173,7 @@ def apply_score_source_updates(
         "disciplineObserved": 0,
         "weatherObserved": 0,
         "stadiumsObserved": 0,
+        "staleSkipped": 0,
         "standingsSource": "computed_from_local_fixtures",
         "items": [],
     }
@@ -177,6 +194,7 @@ def apply_score_source_updates(
             "disciplineObserved": 0,
             "weatherObserved": 0,
             "stadiumsObserved": 0,
+            "staleSkipped": 0,
         }
         for row in parsed_rows:
             metadata = row.get("metadata") or {}
@@ -199,37 +217,34 @@ def apply_score_source_updates(
                 continue
 
             matched = False
+            stale_skipped = False
             for fixture in fixtures:
                 if fixture_matches_match_number(fixture, row) and fixture_matches(fixture, home, away):
-                    fixture["status"] = status
-                    fixture["home_score"] = row["homeScore"]
-                    fixture["away_score"] = row["awayScore"]
+                    stale_skipped = update_fixture_from_score(fixture, status, row["homeScore"], row["awayScore"]) == "stale"
                     matched = True
                     break
                 if fixture_matches_match_number(fixture, row) and fixture_matches(fixture, away, home):
-                    fixture["status"] = status
-                    fixture["home_score"] = row["awayScore"]
-                    fixture["away_score"] = row["homeScore"]
+                    stale_skipped = update_fixture_from_score(fixture, status, row["awayScore"], row["homeScore"]) == "stale"
                     matched = True
                     break
             if not matched:
                 for fixture in fixtures:
                     if fixture_matches(fixture, home, away):
-                        fixture["status"] = status
-                        fixture["home_score"] = row["homeScore"]
-                        fixture["away_score"] = row["awayScore"]
+                        stale_skipped = update_fixture_from_score(fixture, status, row["homeScore"], row["awayScore"]) == "stale"
                         matched = True
                         break
                     if fixture_matches(fixture, away, home):
-                        fixture["status"] = status
-                        fixture["home_score"] = row["awayScore"]
-                        fixture["away_score"] = row["homeScore"]
+                        stale_skipped = update_fixture_from_score(fixture, status, row["awayScore"], row["homeScore"]) == "stale"
                         matched = True
                         break
 
             if not matched:
                 report["skipped"] += 1
                 item_report["skipped"] += 1
+                continue
+            if stale_skipped:
+                report["staleSkipped"] += 1
+                item_report["staleSkipped"] += 1
                 continue
 
             report["updated"] += 1
@@ -244,5 +259,5 @@ def apply_score_source_updates(
         report["standingsSource"] = "computed_from_official_fifa_results"
 
     if report["updated"]:
-        fixtures_path.write_text(json.dumps(fixtures, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        write_json_atomic(fixtures_path, fixtures)
     return report

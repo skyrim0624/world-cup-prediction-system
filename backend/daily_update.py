@@ -9,6 +9,7 @@ from urllib.request import Request, urlopen
 
 from . import data as data_state
 from .event_review import RAW_NEWS_PATH
+from .io_utils import ProcessLockBusy, acquire_process_lock, write_json_atomic, write_text_atomic
 from .model import event_summary, reload_model_data
 from .news_feed import import_news_feed
 from .score_feed import apply_score_source_updates
@@ -16,6 +17,7 @@ from .snapshot import DEFAULT_SNAPSHOT_PATH, write_prediction_snapshot
 
 DEFAULT_DAILY_STATUS_PATH = RAW_NEWS_PATH.parent / "daily-update-status.json"
 DEFAULT_SCORE_SOURCE_CONFIG_PATH = RAW_NEWS_PATH.parent / "score-sources.json"
+DEFAULT_DAILY_LOCK_PATH = RAW_NEWS_PATH.parent / "daily-update.lock"
 REQUEST_HEADERS = {"User-Agent": "world-cup-prediction-system/0.1"}
 
 
@@ -39,7 +41,7 @@ def ensure_json_array_file(path: Path) -> None:
     if path.exists():
         return
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text("[]\n", encoding="utf-8")
+    write_text_atomic(path, "[]\n")
 
 
 def load_feed_specs(config_path: Path) -> list[FeedSpec]:
@@ -96,7 +98,30 @@ def run_daily_update(
     simulation_count: int = 50_000,
     fixtures_path: Path | None = None,
     status_path: Path | None = None,
+    lock_path: Path | None = None,
+    lock_timeout_seconds: float = 0,
 ) -> dict[str, Any]:
+    if lock_path is not None:
+        try:
+            with acquire_process_lock(lock_path, lock_timeout_seconds):
+                return run_daily_update(
+                    raw_news_path=raw_news_path,
+                    snapshot_path=snapshot_path,
+                    feed_specs=feed_specs,
+                    score_specs=score_specs,
+                    simulation_count=simulation_count,
+                    fixtures_path=fixtures_path,
+                    status_path=status_path,
+                    lock_path=None,
+                )
+        except ProcessLockBusy:
+            return {
+                "status": "skipped",
+                "reason": "already_running",
+                "updatedAt": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
+                "lockPath": str(lock_path),
+            }
+
     ensure_json_array_file(raw_news_path)
     active_fixtures_path = fixtures_path or data_state.DATA_DIR / "fixtures.json"
     total_imported = 0
@@ -111,6 +136,7 @@ def run_daily_update(
             source=spec.source,
             team=spec.team,
             known_sources=set(data_state.NEWS_SOURCES),
+            team_aliases=team_aliases(),
         )
         total_imported += result["imported"]
         total_skipped += result["skipped"]
@@ -177,9 +203,21 @@ def run_daily_update(
         "updatedAt": snapshot["updatedAt"],
     }
     if status_path is not None:
-        status_path.parent.mkdir(parents=True, exist_ok=True)
-        status_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        write_json_atomic(status_path, report)
     return report
+
+
+def team_aliases() -> dict[str, tuple[str, ...]]:
+    aliases: dict[str, tuple[str, ...]] = {}
+    for team_key, profile in data_state.TEAM_PROFILES.items():
+        aliases[team_key] = (
+            profile.name,
+            profile.code,
+            team_key,
+            team_key.replace("-", " "),
+            team_key.replace("-", ""),
+        )
+    return aliases
 
 
 def read_daily_update_status(path: Path = DEFAULT_DAILY_STATUS_PATH) -> dict[str, Any] | None:
@@ -194,6 +232,5 @@ def write_daily_update_failure_status(path: Path, error: Exception) -> dict[str,
         "updatedAt": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
         "error": str(error),
     }
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_json_atomic(path, payload)
     return payload

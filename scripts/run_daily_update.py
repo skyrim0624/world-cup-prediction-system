@@ -11,6 +11,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from backend.daily_update import (
     DEFAULT_DAILY_STATUS_PATH,
+    DEFAULT_DAILY_LOCK_PATH,
     load_feed_specs,
     load_score_source_specs,
     run_daily_update,
@@ -29,6 +30,8 @@ def main() -> None:
     parser.add_argument("--simulations", type=int, default=50_000)
     parser.add_argument("--report", type=Path, default=None)
     parser.add_argument("--status", type=Path, default=DEFAULT_DAILY_STATUS_PATH)
+    parser.add_argument("--lock", type=Path, default=DEFAULT_DAILY_LOCK_PATH)
+    parser.add_argument("--lock-timeout", type=float, default=0)
     args = parser.parse_args()
 
     try:
@@ -41,6 +44,8 @@ def main() -> None:
             score_specs=score_specs,
             simulation_count=args.simulations,
             status_path=args.status,
+            lock_path=args.lock,
+            lock_timeout_seconds=args.lock_timeout,
         )
     except Exception as error:
         write_daily_update_failure_status(args.status, error)
@@ -52,6 +57,10 @@ def main() -> None:
         args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     print("日更流程完成")
+    if report["status"] == "skipped":
+        print("已有日更任务运行，跳过本次执行")
+        print(f"锁文件: {report['lockPath']}")
+        return
     print(f"新闻新增: {report['feeds']['imported']}")
     print(f"新闻跳过: {report['feeds']['skipped']}")
     print(f"赛果更新: {report['scores']['updated']}")

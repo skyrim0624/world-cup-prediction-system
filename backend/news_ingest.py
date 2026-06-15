@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from .event_review import ALLOWED_REVIEW_STATUSES
+from .io_utils import write_json_atomic
 
 
 def append_raw_news_item(path: Path, item: dict[str, Any]) -> dict[str, Any]:
@@ -16,5 +17,5 @@ def append_raw_news_item(path: Path, item: dict[str, Any]) -> dict[str, Any]:
         raise ValueError(f"原始新闻 id 已存在: {item['id']}")
 
     rows.append(item)
-    path.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    write_json_atomic(path, rows)
     return item

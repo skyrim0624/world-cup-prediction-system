@@ -1,10 +1,14 @@
 from __future__ import annotations
 
+import os
 from hmac import compare_digest
+from pathlib import Path
 from time import monotonic
 
 from fastapi import Depends, FastAPI, Header, HTTPException, Query, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 from . import data as data_state
@@ -29,10 +33,13 @@ from .model import (
 )
 from .news_ingest import append_raw_news_item
 from .payments import build_order_access_decision, build_payment_config, create_payment_order, get_payment_order
+from .production_health import build_production_readiness
 from .snapshot import DEFAULT_SNAPSHOT_PATH, build_probability_movers, read_prediction_snapshot, write_prediction_snapshot
 
 
 app = FastAPI(title="World Cup Prediction MVP")
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+STATIC_DIST_DIR = PROJECT_ROOT / "dist"
 PREDICTION_CACHE_TTL_SECONDS = 15
 prediction_cache: dict[int, tuple[float, dict[str, object]]] = {}
 review_data_path = RAW_NEWS_PATH
@@ -100,6 +107,11 @@ app.add_middleware(
 @app.get("/api/health")
 async def health() -> dict[str, str]:
     return {"status": "ok"}
+
+
+@app.get("/api/ready")
+async def ready() -> dict[str, object]:
+    return build_production_readiness(status_path=daily_status_path, snapshot_path=snapshot_data_path)
 
 
 def is_local_request(request: Request) -> bool:
@@ -391,3 +403,16 @@ async def rollback_tournament_data(request: TournamentRollbackRequest, _: None =
         audit_log_path,
     )
     return result
+
+
+if os.environ.get("WORLD_CUP_SERVE_STATIC") == "1" and STATIC_DIST_DIR.exists():
+    assets_dir = STATIC_DIST_DIR / "assets"
+    if assets_dir.exists():
+        app.mount("/assets", StaticFiles(directory=assets_dir), name="assets")
+
+    @app.get("/{full_path:path}")
+    async def serve_frontend(full_path: str) -> FileResponse:
+        target = STATIC_DIST_DIR / full_path
+        if target.is_file():
+            return FileResponse(target)
+        return FileResponse(STATIC_DIST_DIR / "index.html")

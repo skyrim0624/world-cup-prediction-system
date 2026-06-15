@@ -9,7 +9,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from backend.event_review import RAW_NEWS_PATH
-from backend.data import NEWS_SOURCES
+from backend.data import NEWS_SOURCES, TEAM_PROFILES
 from backend.news_feed import import_news_feed
 
 
@@ -27,6 +27,10 @@ def main() -> None:
         source=args.source,
         team=args.team,
         known_sources=set(NEWS_SOURCES),
+        team_aliases={
+            key: (profile.name, profile.code, key, key.replace("-", " "), key.replace("-", ""))
+            for key, profile in TEAM_PROFILES.items()
+        },
     )
     print("已导入新闻 Feed")
     print(f"新增: {result['imported']}")

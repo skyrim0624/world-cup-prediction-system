@@ -71,6 +71,31 @@ class NewsFeedImportTest(unittest.TestCase):
 
             self.assertEqual(json.loads(path.read_text(encoding="utf-8")), [])
 
+    def test_import_news_feed_infers_team_and_event_classification(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = Path(temp_dir) / "raw-news.json"
+            path.write_text("[]", encoding="utf-8")
+
+            result = import_news_feed(
+                path,
+                RSS_FEED,
+                source="reuters",
+                team=None,
+                team_aliases={
+                    "brazil": ("巴西", "BRA", "Brazil"),
+                    "france": ("法国", "FRA", "France"),
+                },
+            )
+
+            rows = json.loads(path.read_text(encoding="utf-8"))
+            france_row = rows[1]
+            self.assertEqual(result["imported"], 2)
+            self.assertEqual(france_row["team"], "france")
+            self.assertEqual(france_row["category"], "injury")
+            self.assertEqual(france_row["factor"], "defense")
+            self.assertEqual(france_row["direction"], -1)
+            self.assertGreaterEqual(france_row["confidence"], 0.7)
+
     def test_import_news_feed_script_runs_with_temp_paths(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)

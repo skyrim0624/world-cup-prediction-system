@@ -4,6 +4,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
+from .io_utils import write_json_atomic
 from .model import build_match_prediction
 
 
@@ -257,7 +258,6 @@ def write_prediction_snapshot(
     path.parent.mkdir(parents=True, exist_ok=True)
     if previous is not None:
         target_previous_path = previous_path or previous_snapshot_path_for(path)
-        target_previous_path.parent.mkdir(parents=True, exist_ok=True)
-        target_previous_path.write_text(json.dumps(previous, ensure_ascii=False, indent=2), encoding="utf-8")
-    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        write_json_atomic(target_previous_path, previous)
+    write_json_atomic(path, payload)
     return payload

@@ -1,0 +1,18 @@
+services:
+  world-cup-prediction:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env.production
+    environment:
+      PORT: "8000"
+      WORLD_CUP_SERVE_STATIC: "1"
+      WORLD_CUP_API_WORKERS: "2"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/data_files:/app/backend/data_files
+      - ./backend/snapshots:/app/backend/snapshots
+      - ./reports:/app/reports
+    restart: unless-stopped

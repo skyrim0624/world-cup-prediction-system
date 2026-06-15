@@ -188,6 +188,64 @@ class ScoreFeedTest(unittest.TestCase):
             self.assertEqual(fixtures[0]["home_score"], 2)
             self.assertEqual(fixtures[0]["away_score"], 0)
 
+    def test_apply_score_source_updates_never_downgrades_finished_fixture(self):
+        live_payload = {
+            "events": [
+                {
+                    "id": "760421",
+                    "status": {"type": {"state": "in", "completed": False}},
+                    "competitions": [
+                        {
+                            "status": {"type": {"state": "in", "completed": False}},
+                            "competitors": [
+                                {"homeAway": "home", "score": "1", "team": {"abbreviation": "AUS"}},
+                                {"homeAway": "away", "score": "1", "team": {"abbreviation": "TUR"}},
+                            ],
+                        }
+                    ],
+                }
+            ]
+        }
+        with tempfile.TemporaryDirectory() as temp_dir:
+            fixtures_path = Path(temp_dir) / "fixtures.json"
+            fixtures_path.write_text(
+                json.dumps(
+                    [
+                        {
+                            "home": "australia",
+                            "away": "turkiye",
+                            "stage": "小组赛 D 组",
+                            "kickoff": "2026-06-14T04:00:00Z",
+                            "status": "finished",
+                            "home_score": 2,
+                            "away_score": 0,
+                            "match_no": 24,
+                        }
+                    ],
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            report = apply_score_source_updates(
+                fixtures_path,
+                [
+                    {
+                        "source": "espn",
+                        "format": "espn_scoreboard",
+                        "content": json.dumps(live_payload),
+                    }
+                ],
+                {"AUS": "australia", "TUR": "turkiye"},
+            )
+
+            fixtures = json.loads(fixtures_path.read_text(encoding="utf-8"))
+            self.assertEqual(report["updated"], 0)
+            self.assertEqual(report["staleSkipped"], 1)
+            self.assertEqual(fixtures[0]["status"], "finished")
+            self.assertEqual(fixtures[0]["home_score"], 2)
+            self.assertEqual(fixtures[0]["away_score"], 0)
+
 
 if __name__ == "__main__":
     unittest.main()

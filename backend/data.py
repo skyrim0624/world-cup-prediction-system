@@ -74,6 +74,10 @@ class RawNewsItem:
     status: str
     published_at: str
     url: str
+    category: str | None = None
+    factor: str | None = None
+    direction: int | None = None
+    confidence: float | None = None
 
 
 @dataclass(frozen=True)
@@ -259,7 +263,11 @@ def events_from_raw_news(items: list[RawNewsItem], news_sources: dict[str, NewsS
         if item.status != "single_source" or source.source_level != "C":
             continue
         text = f"{item.title} {item.summary}"
-        signature = (item.team, infer_event_factor(text), infer_event_direction(text))
+        signature = (
+            item.team,
+            item.factor or infer_event_factor(text),
+            item.direction if item.direction is not None else infer_event_direction(text),
+        )
         item_signatures[item.id] = signature
         grouped_items.setdefault(signature, set()).add(item.source)
     for item in items:
@@ -290,8 +298,8 @@ def events_from_raw_news(items: list[RawNewsItem], news_sources: dict[str, NewsS
                 detail=item.summary,
                 team=item.team,
                 source_level=source.source_level,
-                factor=infer_event_factor(text),
-                direction=infer_event_direction(text),
+                factor=item.factor or infer_event_factor(text),
+                direction=item.direction if item.direction is not None else infer_event_direction(text),
                 strength=infer_event_strength(text),
                 time=item.published_at,
                 source=source.name,

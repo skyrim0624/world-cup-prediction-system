@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from .data import DATA_DIR
+from .io_utils import write_json_atomic
 
 RAW_NEWS_PATH = DATA_DIR / "raw-news.json"
 ALLOWED_REVIEW_STATUSES = {"confirmed", "multi_source", "single_source", "unverified", "rumor"}
@@ -26,6 +27,6 @@ def review_raw_news_item(
         row["status"] = status
         if team is not None:
             row["team"] = team
-        path.write_text(json.dumps(rows, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        write_json_atomic(path, rows)
         return row
     raise ValueError(f"找不到原始新闻: {item_id}")
