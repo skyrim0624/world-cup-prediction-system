@@ -4560,7 +4560,7 @@ body:has(.public-match-shell) {
   width: min(100%, 430px);
   min-height: 100vh;
   margin: 0 auto;
-  padding: max(16px, env(safe-area-inset-top)) 14px calc(112px + env(safe-area-inset-bottom));
+  padding: max(14px, env(safe-area-inset-top)) 14px calc(108px + env(safe-area-inset-bottom));
   overflow: hidden;
   color: #f7fff8;
   background:
@@ -4598,18 +4598,18 @@ body:has(.public-match-shell) {
 
 .public-match-header {
   display: grid;
-  grid-template-columns: 40px minmax(0, 1fr) 34px;
+  grid-template-columns: 36px minmax(0, 1fr) 32px;
   align-items: center;
-  gap: 9px;
-  min-height: 52px;
-  padding-bottom: 8px;
+  gap: 8px;
+  min-height: 48px;
+  padding-bottom: 7px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .public-brand-mark {
   display: grid;
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   place-items: center;
   border-radius: 11px;
   color: #f6cf77;
@@ -4620,8 +4620,8 @@ body:has(.public-match-shell) {
 }
 
 .public-brand-mark svg {
-  width: 23px;
-  height: 23px;
+  width: 21px;
+  height: 21px;
 }
 
 .public-brand-copy {
@@ -4632,14 +4632,14 @@ body:has(.public-match-shell) {
 
 .public-brand-copy strong {
   color: #ffffff;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 900;
   line-height: 0.98;
 }
 
 .public-brand-copy span {
   color: #9bdc8f;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   line-height: 1;
 }
@@ -4653,7 +4653,7 @@ body:has(.public-match-shell) {
 .public-page-title h1 {
   margin: 0;
   color: #ffffff;
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 900;
   line-height: 1.1;
   letter-spacing: 0;
@@ -4662,15 +4662,15 @@ body:has(.public-match-shell) {
 .public-page-title p {
   margin: 0;
   color: rgba(245, 255, 241, 0.76);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 1.25;
 }
 
 .public-icon-button {
   display: grid;
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   place-items: center;
   border: 1px solid rgba(212, 255, 205, 0.16);
   border-radius: 999px;
@@ -4681,8 +4681,8 @@ body:has(.public-match-shell) {
 }
 
 .public-icon-button svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 .public-match-tabs {
@@ -4697,13 +4697,13 @@ body:has(.public-match-shell) {
 }
 
 .public-match-tabs button {
-  min-height: 36px;
+  min-height: 34px;
   border: 0;
   border-right: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 0;
   color: rgba(236, 255, 232, 0.72);
   background: transparent;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 900;
 }
 
@@ -4724,12 +4724,12 @@ body:has(.public-match-shell) {
 
 .public-match-card {
   display: grid;
-  grid-template-columns: 82px minmax(0, 1fr) 82px;
+  grid-template-columns: 76px minmax(0, 1fr) 80px;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   width: 100%;
-  min-height: 86px;
-  padding: 9px 8px 9px 10px;
+  min-height: 80px;
+  padding: 8px 7px 8px 9px;
   border: 1px solid rgba(245, 255, 238, 0.12);
   border-radius: 8px;
   color: inherit;
@@ -4744,13 +4744,13 @@ body:has(.public-match-shell) {
 .public-match-info {
   display: grid;
   min-width: 0;
-  gap: 6px;
+  gap: 5px;
 }
 
 .public-match-info strong {
   flex: 0 0 auto;
   color: #ffffff;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 900;
   line-height: 1;
 }
@@ -4760,7 +4760,7 @@ body:has(.public-match-shell) {
   min-width: 0;
   overflow: hidden;
   color: rgba(238, 255, 235, 0.72);
-  font-size: 11px;
+  font-size: 10.5px;
   font-style: normal;
   font-weight: 800;
   line-height: 1.2;
@@ -4774,7 +4774,7 @@ body:has(.public-match-shell) {
   align-items: center;
   gap: 4px;
   color: rgba(238, 255, 235, 0.62);
-  font-size: 10px;
+  font-size: 9.5px;
 }
 
 .public-match-info em svg {
@@ -4784,21 +4784,21 @@ body:has(.public-match-shell) {
 
 .public-match-teams {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 22px minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1fr);
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 
 .public-match-teams > div {
   display: grid;
   justify-items: center;
   min-width: 0;
-  gap: 4px;
+  gap: 3px;
 }
 
 .public-match-teams .flag {
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   border-radius: 999px;
   border-color: rgba(255, 255, 255, 0.66);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.24);
@@ -4808,7 +4808,7 @@ body:has(.public-match-shell) {
   max-width: 100%;
   overflow: hidden;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 900;
   line-height: 1.12;
   text-align: center;
@@ -4818,7 +4818,7 @@ body:has(.public-match-shell) {
 
 .public-match-teams b {
   color: #78c26f;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 900;
   line-height: 1;
   text-align: center;
@@ -4828,17 +4828,17 @@ body:has(.public-match-shell) {
 .public-match-action {
   display: grid;
   justify-items: center;
-  gap: 6px;
+  gap: 5px;
   min-width: 0;
 }
 
 .public-match-action > small {
-  min-width: 58px;
-  padding: 4px 9px;
+  min-width: 55px;
+  padding: 3px 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 999px;
   color: rgba(238, 255, 235, 0.62);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
   line-height: 1;
   white-space: nowrap;
@@ -4849,10 +4849,10 @@ body:has(.public-match-shell) {
   grid-template-columns: auto auto;
   align-items: center;
   justify-content: center;
-  min-width: 70px;
-  min-height: 42px;
+  min-width: 68px;
+  min-height: 40px;
   gap: 2px 5px;
-  padding: 6px 9px;
+  padding: 5px 8px;
   border-radius: 7px;
   color: #1b1204;
   background: linear-gradient(145deg, #fff0bd, #d2a34d);
@@ -4866,13 +4866,13 @@ body:has(.public-match-shell) {
 }
 
 .public-match-action span b {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 900;
 }
 
 .public-match-action span em {
   grid-column: 1 / -1;
-  font-size: 10px;
+  font-size: 9.5px;
   font-style: normal;
   font-weight: 900;
 }
