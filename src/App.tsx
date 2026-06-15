@@ -1674,7 +1674,7 @@ function TeamFlag({ team, code }: { team: TeamKey; code?: string }) {
 
   return (
     <span className={`flag ${flagSource ? "" : "flag-generic"}`} aria-label={`${fallbackCode} 国旗`}>
-      {flagSource ? <img src={flagSource} alt="" loading="lazy" /> : <span>{fallbackCode}</span>}
+      {flagSource ? <img src={flagSource} alt="" loading="eager" decoding="async" /> : <span>{fallbackCode}</span>}
     </span>
   );
 }

@@ -22,6 +22,15 @@ def public_home_source() -> str:
     return source_between(app_source(), "function HomePredictionPage()", "function TeamFlag")
 
 
+def flag_asset_map(source: str, const_name: str) -> dict[str, str]:
+    object_source = source_between(source, f"const {const_name}", "};")
+    entries: dict[str, str] = {}
+    for match in re.finditer(r'(?:"([^"]+)"|([a-z][a-z0-9]*)):\s*"([^"]+)"', object_source):
+        key = match.group(1) or match.group(2)
+        entries[key] = match.group(3)
+    return entries
+
+
 class FrontendContractTest(unittest.TestCase):
     def test_public_homepage_uses_public_schedule_api_only(self):
         source = public_home_source()
@@ -148,8 +157,24 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("TeamFlag team={detail.homeTeam} code={detail.homeCode}", source)
         self.assertIn("TeamFlag team={detail.awayTeam} code={detail.awayCode}", source)
         self.assertNotIn("knownFlags", source)
+        self.assertIn('loading="eager"', source)
         for team in teams:
             self.assertRegex(source, rf'["\']?{re.escape(team["key"])}["\']?:')
+
+    def test_team_flag_mappings_resolve_to_existing_assets(self):
+        source = app_source()
+        teams = json.loads(Path("backend/data_files/teams.json").read_text(encoding="utf-8"))
+        assets_dir = Path("public/assets/flags")
+        key_map = flag_asset_map(source, "TEAM_FLAG_ASSET_BY_KEY")
+        code_map = flag_asset_map(source, "TEAM_FLAG_ASSET_BY_CODE")
+
+        missing = []
+        for team in teams:
+            asset = key_map.get(team["key"]) or code_map.get(team["code"])
+            if not asset or not (assets_dir / f"{asset}.png").exists():
+                missing.append(f'{team["name"]}({team["key"]}/{team["code"]})')
+
+        self.assertEqual([], missing)
 
 
 if __name__ == "__main__":
