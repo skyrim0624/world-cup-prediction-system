@@ -36,7 +36,7 @@ from .model import (
     reload_model_data,
 )
 from .news_ingest import append_raw_news_item
-from .payments import build_order_access_decision, build_payment_config, create_payment_order, get_payment_order
+from .payments import build_order_access_decision, build_payment_config, create_payment_order, get_payment_order, handle_payment_notification, refresh_payment_order_status
 from .production_health import build_production_readiness
 from .snapshot import DEFAULT_SNAPSHOT_PATH, build_probability_movers, read_prediction_snapshot, write_prediction_snapshot
 
@@ -212,11 +212,21 @@ async def create_order(request: PaymentOrderCreateRequest) -> dict[str, object]:
 
 
 @app.get("/api/payments/orders/{order_id}")
-async def payment_order(order_id: str) -> dict[str, object]:
+async def payment_order(order_id: str, sync: bool = Query(False)) -> dict[str, object]:
     try:
+        if sync:
+            return refresh_payment_order_status(order_id, storage_path=payment_orders_path)
         return get_payment_order(order_id, payment_orders_path)
     except KeyError as error:
         raise HTTPException(status_code=404, detail="支付订单不存在") from error
+
+
+@app.post("/api/payments/notify/{provider}")
+async def payment_notify(provider: str, request: Request) -> dict[str, object]:
+    result = handle_payment_notification(provider, await request.body(), request.headers, storage_path=payment_orders_path)
+    if not result.get("ok"):
+        raise HTTPException(status_code=400, detail=str(result.get("reason") or "payment_notify_failed"))
+    return result
 
 
 @app.get("/api/admin/overview")

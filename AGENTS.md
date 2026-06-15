@@ -3388,6 +3388,35 @@ cron: "*/30 * * * *"
 - 本地构建版在“全部”列表滚动到奥地利、约旦、法国、塞内加尔、伊拉克、挪威等队时，国旗均立即显示。
 - `npm run test:model` 当前有 2 个支付通知接口测试失败，属于工作区已有的支付相关未提交改动，不属于本轮国旗修复。
 
+### 2026-06-15：微信 JSAPI / Native 与支付宝支付接口接入
+
+已完成：
+
+- 按聊天截图确认支付分为微信 JSAPI、微信 Native 和支付宝扫码 / 网页类支付。
+- 后端支付订单在客户接口配置齐全时，会调用对应创建订单接口，并保存真实二维码、JSAPI 参数、上游订单号和交易号。
+- 新增客户查单同步：支付等待页查询订单时带 `sync=1`，后端会调用客户查单接口并归一化支付状态。
+- 新增支付回调接口：`POST /api/payments/notify/{provider}`。
+- 回调默认验签规则为 `X-Payment-Signature = HMAC-SHA256(raw_body, NOTIFY_SECRET)`。
+- 微信 JSAPI 返回 `jsapiParams` 时，前端会在微信内调用 `WeixinJSBridge.invoke("getBrandWCPayRequest")`。
+- Cloudflare Worker 已同步微信 / 支付宝相关环境变量。
+- `.env.production.example` 已补齐微信 JSAPI、微信 Native 和支付宝配置项。
+- `docs/支付系统开发记录.md` 已写明客户需要提供的接口字段和当前默认请求 / 返回协议。
+
+验证：
+
+- `python3 -m unittest discover -s tests -p 'test_payments.py'` 通过，20 个支付测试。
+- `python3 -m unittest discover -s tests -p 'test_frontend_contract.py'` 通过，10 个前端契约测试。
+- `npm run test:model` 通过，185 个测试。
+- `npm run validate:data` 通过。
+- `npm run build` 通过。
+
+当前仍需要客户提供：
+
+- 微信 JSAPI 创建订单接口、查单接口、接口鉴权、回调验签密钥、JSAPI 参数字段名，以及是否需要 `openid`。
+- 微信 Native 创建订单接口、查单接口、接口鉴权、回调验签密钥、二维码字段名。
+- 支付宝创建订单接口、查单接口、接口鉴权、回调验签密钥、二维码或跳转 URL 字段名。
+- 如果客户回调不是 HMAC-SHA256，需要提供实际签名字段和验签算法。
+
 ## 十、当前交接摘要
 
 一句话定义：

@@ -516,6 +516,9 @@ type PaymentOrder = {
   paymentMethodLabel?: string;
   status: PaymentOrderStatus;
   qrCodeUrl?: string | null;
+  jsapiParams?: Record<string, string>;
+  providerOrderId?: string;
+  transactionId?: string;
   createdAt: string;
   expiresAt: string;
   metadata?: {
@@ -2694,6 +2697,26 @@ function isWechatBrowser() {
   return /micromessenger/i.test(window.navigator.userAgent);
 }
 
+function invokeWechatJsapiPay(params: Record<string, string>, onResult: (message: string) => void) {
+  const bridge = (window as unknown as { WeixinJSBridge?: { invoke: (method: string, params: Record<string, string>, callback: (result: { err_msg?: string }) => void) => void } }).WeixinJSBridge;
+  if (!bridge) {
+    onResult("请在微信内打开页面后继续支付");
+    return;
+  }
+  bridge.invoke("getBrandWCPayRequest", params, (result) => {
+    const message = result.err_msg ?? "";
+    if (message.includes("ok")) {
+      onResult("微信支付已提交，正在确认状态");
+      return;
+    }
+    if (message.includes("cancel")) {
+      onResult("微信支付已取消");
+      return;
+    }
+    onResult("微信支付未完成，请重新尝试");
+  });
+}
+
 function methodLabelFromProvider(provider: PaymentProviderConfig | undefined) {
   if (!provider) return "扫码支付";
   if (provider.paymentMethodLabel) return provider.paymentMethodLabel;
@@ -2952,6 +2975,7 @@ function PaymentPendingPage({ orderId }: { orderId: string }) {
   const [loadStatus, setLoadStatus] = useState<LoadStatus>("loading");
   const [refreshing, setRefreshing] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
+  const [jsapiInvokedOrderId, setJsapiInvokedOrderId] = useState<string | null>(null);
 
   async function confirmAccess(nextOrder: PaymentOrder) {
     const contentKey = paymentContentKey(nextOrder);
@@ -2984,7 +3008,7 @@ function PaymentPendingPage({ orderId }: { orderId: string }) {
     }
 
     try {
-      const response = await fetch(`${API_BASE_URL}/api/payments/orders/${encodeURIComponent(orderId)}`, { cache: "no-store" });
+      const response = await fetch(`${API_BASE_URL}/api/payments/orders/${encodeURIComponent(orderId)}?sync=1`, { cache: "no-store" });
       const payload = await response.json().catch(() => null);
       if (!response.ok) throw new Error(payload?.detail ?? `支付订单接口返回 ${response.status}`);
       const nextOrder = payload as PaymentOrder;
@@ -3019,6 +3043,23 @@ function PaymentPendingPage({ orderId }: { orderId: string }) {
       window.clearInterval(timer);
     };
   }, [orderId]);
+
+  useEffect(() => {
+    if (!order?.jsapiParams || order.paymentMethod !== "jsapi" || order.status !== "pending") return;
+    if (jsapiInvokedOrderId === order.orderId) return;
+    if (!isWechatBrowser()) {
+      setMessage("请在微信内打开页面完成 JSAPI 支付");
+      return;
+    }
+    setJsapiInvokedOrderId(order.orderId);
+    setMessage("正在调起微信支付");
+    invokeWechatJsapiPay(order.jsapiParams, (resultMessage) => {
+      setMessage(resultMessage);
+      if (resultMessage.includes("已提交")) {
+        void loadOrder(true);
+      }
+    });
+  }, [order?.orderId, order?.paymentMethod, order?.status, order?.jsapiParams, jsapiInvokedOrderId]);
 
   async function refreshOrder() {
     setRefreshing(true);

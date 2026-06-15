@@ -145,6 +145,17 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("gold-football-product-icon.png", styles + checkout_source)
         self.assertIn("gold-payment-button-texture.png", styles)
 
+    def test_payment_pending_page_syncs_order_and_invokes_wechat_jsapi(self):
+        source = app_source()
+        payment_source = source_between(source, "function PaymentPendingPage", "function AdminConsole")
+
+        self.assertIn("sync=1", payment_source)
+        self.assertIn("jsapiParams", payment_source)
+        self.assertIn("invokeWechatJsapiPay", payment_source)
+        self.assertIn("WeixinJSBridge", source)
+        self.assertIn("getBrandWCPayRequest", source)
+        self.assertIn("/api/payments/orders/", payment_source)
+
     def test_team_flags_cover_tournament_teams_and_match_lists(self):
         source = app_source()
         teams = json.loads(Path("backend/data_files/teams.json").read_text(encoding="utf-8"))
