@@ -4712,6 +4712,7 @@ body:has(.public-match-shell) {
 
 .public-match-card {
   display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) 90px;
   gap: 12px;
   width: 100%;
   min-height: 148px;
@@ -4927,7 +4928,7 @@ body:has(.public-match-shell) {
   }
 
   .public-match-card {
-    grid-template-columns: 96px minmax(0, 1fr) 90px;
+    grid-template-columns: 78px minmax(0, 1fr) 78px;
     gap: 8px;
     padding-inline: 9px;
   }
