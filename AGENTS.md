@@ -3471,6 +3471,19 @@ cron: "*/30 * * * *"
 - `python3 -m unittest discover -s tests -p 'test_payments.py'` 通过，24 个支付测试。
 - `python3 -m unittest discover -s tests -p 'test_frontend_contract.py'` 通过，10 个前端契约测试。
 
+### 2026-06-15：单场页与结账页返回循环修复
+
+已完成：
+
+- 修复单场锁定页 `/match/...` 与结账页 `/checkout/...` 的返回循环问题。
+- 单场页顶部返回按钮改为固定返回未开赛列表 `/#matches`。
+- 结账页顶部返回按钮改为 `replace` 回单场页，不再把结账页继续压在历史栈里。
+
+验证：
+
+- `python3 -m unittest discover -s tests -p 'test_frontend_contract.py'` 通过。
+- 本地浏览器实际验证：`/checkout/spain/cape-verde` 返回到 `/match/spain/cape-verde`，再点单场页返回进入 `/#matches`，不再回到结账页。
+
 ## 十、当前交接摘要
 
 一句话定义：

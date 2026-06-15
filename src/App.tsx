@@ -2478,11 +2478,7 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
   }
 
   function goBackToMatches() {
-    if (window.history.length > 1) {
-      window.history.back();
-      return;
-    }
-    window.location.href = "/#matches";
+    window.location.replace("/#matches");
   }
 
   return (
@@ -2838,7 +2834,7 @@ function SingleMatchCheckoutPage({ home, away }: { home: TeamKey; away: TeamKey 
   }, [providerOptions, selectedProviderKey]);
 
   function goBackToLockedPreview() {
-    window.location.href = matchPagePath(displaySummary.homeTeam, displaySummary.awayTeam);
+    window.location.replace(matchPagePath(displaySummary.homeTeam, displaySummary.awayTeam));
   }
 
   async function createCheckoutOrder() {

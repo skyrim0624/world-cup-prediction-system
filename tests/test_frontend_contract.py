@@ -117,6 +117,8 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("¥1 解锁本场", single_match_source)
         self.assertIn("全包剩余 92 场 ¥39", single_match_source)
         self.assertNotIn("/api/match-detail", single_match_source)
+        self.assertIn('window.location.replace("/#matches")', single_match_source)
+        self.assertNotIn("window.history.back", single_match_source)
         self.assertIn("SingleMatchPage", source)
         self.assertIn("matchPagePath", source)
 
@@ -135,6 +137,7 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("支付宝支付", checkout_source)
         self.assertIn("创建支付订单", checkout_source)
         self.assertIn("zhugejunshi.com", checkout_source)
+        self.assertIn("window.location.replace(matchPagePath", checkout_source)
         self.assertNotIn("homeWin", checkout_source)
         self.assertNotIn("draw", checkout_source)
         self.assertNotIn("awayWin", checkout_source)
