@@ -108,12 +108,15 @@ final result: source-level passed; visual screenshot comparison blocked
 
 source visual truth path: `/Users/andreas/Downloads/世界杯预测app 的视觉包/03-单场支付收银台.png`
 
-implementation URL: `http://127.0.0.1:5178/checkout/netherlands/japan`
+implementation URL: `http://127.0.0.1:5178/checkout/spain/cape-verde`
+
+legacy visual check URL: `http://127.0.0.1:5178/checkout/netherlands/japan`
 
 implementation screenshots:
 
-- mobile 390: `/tmp/world-cup-checkout-mobile.png`
-- comparison: `/tmp/world-cup-checkout-comparison.png`
+- mobile 390 compact: `/tmp/world-cup-checkout-compact5-valid-mobile.png`
+- mobile 375 compact: `/tmp/world-cup-checkout-compact5-375.png`
+- alipay selected: `/tmp/world-cup-checkout-alipay-selected.png`
 
 viewport:
 
@@ -132,15 +135,17 @@ scope:
 
 full-view comparison evidence:
 
-- 对照图路径：`/tmp/world-cup-checkout-comparison.png`。
+- 对照图路径：`/tmp/world-cup-checkout-compact5-valid-mobile.png`。
 - 页面结构对齐参考图的核心内容：返回、确认解锁标题、域名信任标识、单场预测商品卡、微信/支付宝两张支付方式卡、订单提示、金色创建订单按钮和非投注声明。
 - 未复刻参考图外层 iPhone 壳，这是产品页面实现的有意处理。
 - 背景使用竖屏球场资产，390px 下未压扁或横向拉伸。
+- 本轮按客户反馈继续收缩：标题、顶部按钮、商品卡、支付卡、图标、按钮、底部声明和字重都下调，避免页面显得像放大版。
 
 focused region comparison evidence:
 
 - 商品卡：已修复 `单场预测` 在 390px 下被挤成两行的问题，商品名、对阵、价格保持同一层级。
 - 支付卡：微信和支付宝聚合成两张卡；微信内部按后端配置选择 JSAPI 或 Native，前台不提前承诺“微信内直接调起支付”。
+- 375px：已修复小屏全局 `.flag` 规则覆盖收银台商品小国旗的问题，国旗不再变成空框。
 - 安全边界：截图页面未出现 `homeWin`、`draw`、`awayWin`、`topScore`、`missingConfig` 或 `CUSTOMER_`。
 
 verification:
@@ -148,11 +153,13 @@ verification:
 - `npm run test:model`: passed, 176 tests
 - `npm run build`: passed
 - `GET /api/payments/config`: passed, returns `wechat_jsapi` / `wechat_native` / `alipay_qr`
-- `POST /api/payments/orders`: passed, order metadata includes `matchKey=netherlands-japan`
-- Playwright CLI screenshot: passed, `/tmp/world-cup-checkout-mobile.png`
+- `POST /api/payments/orders`: passed, order metadata includes `matchKey=spain-cape-verde`
+- Playwright CLI screenshot: passed, `/tmp/world-cup-checkout-compact5-valid-mobile.png`
+- Playwright CLI screenshot 375px: passed, `/tmp/world-cup-checkout-compact5-375.png`
+- Playwright interaction: passed, 支付宝卡片点击后 `aria-pressed=true`，微信卡片变为 `false`，console warnings/errors count 0
 - Browser plugin: blocked, `iab` unavailable
 - Chrome extension: blocked, `extension` unavailable
-- Scripted Playwright interaction: blocked by local package resolution; backend order creation and source-level tests cover provider/match scope
+- legacy route note: `/checkout/netherlands/japan` 是旧演示对阵，后端按非未开赛返回 409；本轮只作为视觉同样式检查，不作为正式支付流 QA。
 
 findings:
 
@@ -168,6 +175,7 @@ patches made:
 - 支付等待页确认权限时带上 `matchKey`。
 - 后端订单权限判断支持 `matchKey` 范围校验。
 - 新增金色足球商品图标和金色支付按钮纹理资产。
+- 收缩第 3 页整体视觉密度，并修正 380px 以下商品小国旗被全局样式覆盖的问题。
 
 final result: passed
 
@@ -323,6 +331,12 @@ focused region comparison evidence:
 - 订单卡：产品、支付方式、创建时间、过期时间、金额、状态标签均由后端订单字段渲染。
 - 安全边界：截图 DOM 检查未出现 `CUSTOMER_`、`missingConfig`、`nextAction`、`integrationOwner`。
 - 付费边界：页面未展示胜平负、最可能比分、比分分布等预测内容。
+- 本轮按客户反馈收缩第 4 页视觉密度：标题、顶部按钮、订单卡 padding、订单行高、说明文字、二维码区域、提示卡和底部按钮均下调。
+
+verification:
+
+- `npm run build`: passed
+- Browser compact recapture: blocked, 内置浏览器两次卡在本地 Webview 连接阶段，未生成收缩后的新截图。
 
 findings:
 
@@ -334,8 +348,9 @@ patches made since previous QA pass:
 - 缩短二维码提示文案，避免“返回”单独换行造成误读。
 - 压紧订单头部排版，减少订单标题换行。
 - 同步后端支付产品价格和客户支付渠道口径。
+- 收缩第 4 页整体字号、按钮高度、卡片间距和二维码区域，让页面密度向概念图靠拢。
 
-final result: passed
+final result: source-level passed; compact visual screenshot recapture blocked
 
 # Design QA - 07 冠军概率榜
 
@@ -393,7 +408,7 @@ implementation URL: `http://127.0.0.1:5174/match/netherlands/japan?unlocked=1`
 
 implementation screenshots:
 
-- blocked: Browser 插件在首轮成功打开并检查 DOM 后断连，后续无法重新截图；本地环境未安装 Playwright 包，不能补做最终截图对照。
+- mobile compact: `/tmp/world-cup-unlocked-compact-mobile.png`
 
 viewport:
 
@@ -421,6 +436,8 @@ source-level comparison evidence:
 - 比分矩阵使用真实后端 `scoreMatrix`，并保持格子比例，不拉伸背景资产。
 - 五大盘面使用后端 `pillars` 渲染雷达图，不使用本地静态 mock。
 - 新闻依据使用后端 `newsItems`，不展示本地后台字段、配置字段或集成备注。
+- 本轮压缩已解锁页字号、控件、旗帜、卡片 padding、比分矩阵格子和模块间距，避免页面显得像“老年机”放大版。
+- 390 x 844 首屏已能放下新闻依据和底部合规提示，信息密度更接近概念图。
 
 verification:
 
@@ -428,11 +445,12 @@ verification:
 - `npm run test:model`: passed, 176 tests
 - local API check: passed, `pillars` present, `newsItems` count 3
 - Browser DOM check before disconnect: page contained `完整预测`、`已解锁`、`最可能比分`、`比分分布`; console warnings/errors count 0
+- Browser compact pass: 390 x 844，页面非空、无 Vite overlay、console warnings/errors count 0
 
 findings:
 
 - 无 P0/P1/P2 source-level 问题。
-- blocked: Browser 插件断连，未完成最终像素级截图对照。
+- P3：当前仍是 App 内页面复原，未复刻参考图外层手机壳。
 
 patches made:
 
@@ -441,5 +459,6 @@ patches made:
 - 后端 `match-detail` 增加五大盘面与新闻依据字段。
 - 生产环境可选开启订单权限校验。
 - 支付等待页单场订单成功后跳转到已解锁单场预测页。
+- 收缩已解锁页视觉密度：标题、标签、概率数字、旗帜、卡片、比分矩阵、五大盘面、新闻行全部下调。
 
-final result: source-level passed; visual screenshot comparison blocked
+final result: passed
