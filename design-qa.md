@@ -96,3 +96,51 @@ patches made since previous QA pass:
 - 同步后端支付产品价格和客户支付渠道口径。
 
 final result: passed
+
+# Design QA - 07 冠军概率榜
+
+source visual truth path: `/Users/andreas/Downloads/世界杯预测app 的视觉包/07-冠军概率榜.png`
+
+implementation URL: `http://127.0.0.1:5179/champion-board`
+
+implementation screenshots:
+
+- mobile 390: `research-screenshots/champion-board-390-fixed.png`
+- mobile 430: `research-screenshots/champion-board-430-fixed.png`
+- desktop: `research-screenshots/champion-board-desktop.png`
+- comparison: `research-screenshots/champion-board-design-qa-comparison.png`
+
+viewport:
+
+- mobile: 390 x 844 / 430 x 932
+- desktop: 1280 x 720
+
+state: 冠军概率榜，展示最新预测快照 Top 6 队伍。
+
+scope:
+
+- 只实现第 7 页冠军概率榜。
+- 页面请求 `/api/match-prediction?simulations=1200&useSnapshot=true`。
+- 页面只读取后端返回的 `teams[].tournament.champion`、`final`、`semifinal`、`change` 以及球队名称和队码。
+- 页面不展示单场胜平负、最可能比分、比分分布、支付配置或本地后台字段。
+
+visual comparison evidence:
+
+- 只复原 App 页面内部：状态栏、返回按钮、信息按钮、标题、副标题、通票入口、冠军概率表、底部风险提示。
+- 未复原外层手机壳、球场背景和奖杯背景，避免把参考图外部包装当成产品页面资产。
+- 表格行保持正常手机比例；390px 检查无横向溢出。
+- 变化标签按后端 `change` 正负显示绿色或红色，不写死本地 UI 数据。
+
+verification:
+
+- `npm run build`: passed
+- `python3 -m unittest discover -s tests -p 'test_frontend_contract.py'`: passed, 8 tests
+- `npm run test:model`: passed, 176 tests
+- Chrome 390 x 844 render check: passed, no horizontal overflow
+
+findings:
+
+- 无 P0/P1/P2。
+- P3：通票入口当前按参考图显示“全包查看全部队伍”，具体 `¥39` 定价保留在付费解锁页，不塞进冠军榜标题区。
+
+final result: passed
