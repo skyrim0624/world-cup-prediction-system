@@ -2455,7 +2455,7 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
       });
       const payload = await response.json().catch(() => null);
       if (!response.ok || !payload?.orderId) throw new Error(payload?.detail ?? "支付订单创建失败");
-      window.location.href = `${PAYMENT_PENDING_ROUTE}?orderId=${encodeURIComponent(payload.orderId)}`;
+      window.location.replace(`${PAYMENT_PENDING_ROUTE}?orderId=${encodeURIComponent(payload.orderId)}`);
     } catch (error) {
       setPaymentMessage(error instanceof Error ? error.message : "支付订单创建失败");
       setPaymentPendingProduct(null);
@@ -2858,7 +2858,7 @@ function SingleMatchCheckoutPage({ home, away }: { home: TeamKey; away: TeamKey 
       });
       const payload = await response.json().catch(() => null);
       if (!response.ok || !payload?.orderId) throw new Error(payload?.detail ?? "支付订单创建失败");
-      window.location.href = `${PAYMENT_PENDING_ROUTE}?orderId=${encodeURIComponent(payload.orderId)}`;
+      window.location.replace(`${PAYMENT_PENDING_ROUTE}?orderId=${encodeURIComponent(payload.orderId)}`);
     } catch (error) {
       setCheckoutState("failed");
       setMessage(error instanceof Error ? error.message : "支付订单创建失败");
@@ -2992,7 +2992,7 @@ function PaymentPendingPage({ orderId }: { orderId: string }) {
     }
     setMessage("支付已确认，正在进入预测页面");
     window.setTimeout(() => {
-      window.location.href = paymentRedirectPath(nextOrder);
+      window.location.replace(paymentRedirectPath(nextOrder));
     }, 700);
   }
 

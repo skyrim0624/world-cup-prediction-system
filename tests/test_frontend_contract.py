@@ -138,6 +138,7 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("创建支付订单", checkout_source)
         self.assertIn("zhugejunshi.com", checkout_source)
         self.assertIn("window.location.replace(matchPagePath", checkout_source)
+        self.assertIn("window.location.replace(`${PAYMENT_PENDING_ROUTE}?orderId=", checkout_source)
         self.assertNotIn("homeWin", checkout_source)
         self.assertNotIn("draw", checkout_source)
         self.assertNotIn("awayWin", checkout_source)
@@ -160,6 +161,7 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("/api/payments/orders/", payment_source)
         polling_source = source_between(payment_source, "async function loadActiveOrder()", "return () =>")
         self.assertIn("await loadOrder(true)", polling_source)
+        self.assertIn("window.location.replace(paymentRedirectPath(nextOrder))", payment_source)
 
     def test_team_flags_cover_tournament_teams_and_match_lists(self):
         source = app_source()

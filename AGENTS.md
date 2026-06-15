@@ -3478,11 +3478,16 @@ cron: "*/30 * * * *"
 - 修复单场锁定页 `/match/...` 与结账页 `/checkout/...` 的返回循环问题。
 - 单场页顶部返回按钮改为固定返回未开赛列表 `/#matches`。
 - 结账页顶部返回按钮改为 `replace` 回单场页，不再把结账页继续压在历史栈里。
+- 修复支付等待页 `/payment/pending` 与完整预测页之间的浏览器原生返回循环：
+  - 结账页创建订单后用 `replace` 进入支付等待页。
+  - 支付成功后用 `replace` 进入完整预测页。
+  - 支付中间页不再留在浏览器历史栈里。
 
 验证：
 
 - `python3 -m unittest discover -s tests -p 'test_frontend_contract.py'` 通过。
 - 本地浏览器实际验证：`/checkout/spain/cape-verde` 返回到 `/match/spain/cape-verde`，再点单场页返回进入 `/#matches`，不再回到结账页。
+- 本地浏览器实际验证：完整预测页按浏览器原生返回后，进入 `/match/spain/cape-verde`，不再回到 `/payment/pending`。
 
 ## 十、当前交接摘要
 
