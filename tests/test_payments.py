@@ -121,6 +121,18 @@ class PaymentApiTest(unittest.TestCase):
         self.assertEqual(payload["status"], "provider_config_required")
         self.assertEqual(payload["amountLabel"], "¥39.00")
 
+    def test_payment_order_survives_unwritable_json_store(self):
+        with TemporaryDirectory() as temp_dir:
+            blocked_parent = Path(temp_dir) / "payment-orders-parent"
+            blocked_parent.write_text("not a directory", encoding="utf-8")
+            storage_path = blocked_parent / "payment-orders.json"
+
+            created = create_payment_order("single_match", "wechat_native", storage_path=storage_path)
+            loaded = get_payment_order(created["orderId"], storage_path=storage_path)
+
+        self.assertEqual(loaded["orderId"], created["orderId"])
+        self.assertEqual(loaded["status"], "provider_config_required")
+
     def test_payment_order_rejects_unknown_provider_or_product(self):
         client = TestClient(app)
 

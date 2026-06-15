@@ -350,7 +350,10 @@ def _apply_customer_payment_response(order: Mapping[str, object], response: Mapp
 def _read_order_store(storage_path: Path | None) -> dict[str, dict[str, object]]:
     if storage_path is None or not storage_path.exists():
         return {}
-    payload = json.loads(storage_path.read_text(encoding="utf-8"))
+    try:
+        payload = json.loads(storage_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return {}
     orders = payload.get("orders", {})
     return {str(order_id): dict(order) for order_id, order in orders.items()}
 
@@ -358,14 +361,17 @@ def _read_order_store(storage_path: Path | None) -> dict[str, dict[str, object]]
 def _write_order_store(storage_path: Path | None, orders: dict[str, dict[str, object]]) -> None:
     if storage_path is None:
         return
-    storage_path.parent.mkdir(parents=True, exist_ok=True)
-    storage_path.write_text(json.dumps({"orders": orders}, ensure_ascii=False, indent=2), encoding="utf-8")
+    try:
+        storage_path.parent.mkdir(parents=True, exist_ok=True)
+        storage_path.write_text(json.dumps({"orders": orders}, ensure_ascii=False, indent=2), encoding="utf-8")
+    except OSError:
+        return
 
 
 def _persist_order(order: dict[str, object], storage_path: Path | None) -> dict[str, object]:
+    PAYMENT_ORDERS[str(order["orderId"])] = order
     stored_orders = _read_order_store(storage_path)
     stored_orders[str(order["orderId"])] = order
-    PAYMENT_ORDERS[str(order["orderId"])] = order
     _write_order_store(storage_path, stored_orders)
     return order
 
