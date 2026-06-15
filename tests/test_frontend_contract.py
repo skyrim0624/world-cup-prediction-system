@@ -114,6 +114,20 @@ class FrontendContractTest(unittest.TestCase):
         self.assertNotIn("stadium", upcoming_source)
         self.assertNotIn("city", upcoming_source)
 
+    def test_matches_page_does_not_show_empty_before_schedule_api_finishes(self):
+        source = app_source()
+        home_source = source_between(source, "function HomePredictionPage()", "function TeamFlag")
+        upcoming_source = source_between(source, "function UpcomingMatchesPanel", "function MatchDetailPanel")
+
+        self.assertIn("upcomingMatchesStatus", home_source)
+        self.assertIn("status={upcomingMatchesStatus}", home_source)
+        self.assertIn("fallbackMatch={focusedUpcomingMatch}", home_source)
+        self.assertIn("status !== \"ready\" && fallbackMatch", upcoming_source)
+        self.assertIn("status === \"loading\"", upcoming_source)
+        self.assertIn("status === \"failed\"", upcoming_source)
+        self.assertIn("赛程加载中", upcoming_source)
+        self.assertIn("赛程接口连接失败，等待自动刷新", upcoming_source)
+
     def test_public_homepage_uses_world_cup_portal_visual_language(self):
         source = app_source()
         styles = Path("src/styles.css").read_text(encoding="utf-8")

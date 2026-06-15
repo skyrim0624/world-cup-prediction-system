@@ -4,6 +4,7 @@ import { CalendarDays, Newspaper, Target, Trophy, type LucideIcon } from "lucide
 type TeamKey = string;
 type Tone = "green" | "blue" | "gold" | "orange" | "red" | "muted";
 type UserScreenKey = "forecast" | "matches" | "board" | "news";
+type LoadStatus = "loading" | "ready" | "failed";
 type FactorImpactMap = Record<string, Record<string, number>>;
 type CustomStyle = CSSProperties & Record<string, string | number>;
 
@@ -694,6 +695,31 @@ function buildFallbackPrediction(tick: number): MatchPrediction {
   };
 }
 
+function predictionToUpcomingMatch(prediction: MatchPrediction, homeTeam: Team | undefined, awayTeam: Team | undefined): UpcomingMatch {
+  const topScore = prediction.scoreOutcomes[0] ?? { score: "--", probability: 0 };
+  return {
+    stage: prediction.stage,
+    kickoff: prediction.kickoff,
+    matchNo: prediction.matchNo ?? null,
+    city: prediction.city ?? null,
+    stadium: prediction.stadium ?? null,
+    status: prediction.status,
+    homeTeam: prediction.homeTeam,
+    awayTeam: prediction.awayTeam,
+    homeName: homeTeam?.name ?? prediction.homeTeam,
+    awayName: awayTeam?.name ?? prediction.awayTeam,
+    homeCode: homeTeam?.code ?? prediction.homeTeam.toUpperCase().slice(0, 3),
+    awayCode: awayTeam?.code ?? prediction.awayTeam.toUpperCase().slice(0, 3),
+    homeWin: prediction.homeWin,
+    draw: prediction.draw,
+    awayWin: prediction.awayWin,
+    topScore: {
+      score: topScore.score,
+      probability: topScore.probability,
+    },
+  };
+}
+
 function formatUpdateTime(value: string) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return "未更新";
@@ -817,6 +843,7 @@ function HomePredictionPage() {
   const [forecastTick, setForecastTick] = useState(0);
   const [apiPrediction, setApiPrediction] = useState<MatchPrediction | null>(null);
   const [upcomingMatches, setUpcomingMatches] = useState<UpcomingMatchesResponse | null>(null);
+  const [upcomingMatchesStatus, setUpcomingMatchesStatus] = useState<LoadStatus>("loading");
   const [activeScreen, setActiveScreen] = useState<UserScreenKey>(() => userScreenFromHash());
 
   const teamsData = apiPrediction?.teams?.length ? apiPrediction.teams : teams;
@@ -834,6 +861,7 @@ function HomePredictionPage() {
   ].sort((left, right) => right.value - left.value);
   const primaryOutcome = predictionOutcomes[0];
   const secondaryOutcomes = predictionOutcomes.slice(1);
+  const focusedUpcomingMatch = apiPrediction ? predictionToUpcomingMatch(apiPrediction, homeTeam, awayTeam) : null;
 
   useEffect(() => {
     let active = true;
@@ -856,13 +884,14 @@ function HomePredictionPage() {
     async function loadUpcomingMatches() {
       try {
         const response = await fetch(`${API_BASE_URL}/api/upcoming-matches?limit=6`, { cache: "no-store" });
-        if (!response.ok) throw new Error(`未赛程接口返回 ${response.status}`);
+        if (!response.ok) throw new Error(`未开赛赛程接口返回 ${response.status}`);
         const data = (await response.json()) as UpcomingMatchesResponse;
         if (!active) return;
         setUpcomingMatches(data);
+        setUpcomingMatchesStatus("ready");
       } catch {
         if (!active) return;
-        setUpcomingMatches(null);
+        setUpcomingMatchesStatus("failed");
       }
     }
 
@@ -978,7 +1007,12 @@ function HomePredictionPage() {
         {activeScreen === "matches" ? (
           <div className="app-screen-stack">
             <section className="console-panel">
-              <UpcomingMatchesPanel matches={(upcomingMatches?.items ?? []).slice(0, 4)} onSelect={openMatchPage} />
+              <UpcomingMatchesPanel
+                matches={(upcomingMatches?.items ?? []).slice(0, 4)}
+                status={upcomingMatchesStatus}
+                fallbackMatch={focusedUpcomingMatch}
+                onSelect={openMatchPage}
+              />
             </section>
           </div>
         ) : null}
@@ -1193,18 +1227,32 @@ function CreatorTopicsPanel({ topics }: { topics: CreatorTopic[] }) {
 
 function UpcomingMatchesPanel({
   matches,
+  status,
+  fallbackMatch,
   onSelect,
 }: {
   matches: UpcomingMatch[];
+  status: LoadStatus;
+  fallbackMatch: UpcomingMatch | null;
   onSelect: (match: UpcomingMatch) => void;
 }) {
-  if (matches.length === 0) {
+  const displayMatches = matches.length ? matches : status !== "ready" && fallbackMatch ? [fallbackMatch] : [];
+
+  if (displayMatches.length === 0 && status === "loading") {
+    return <p className="review-empty">赛程加载中</p>;
+  }
+
+  if (displayMatches.length === 0 && status === "failed") {
+    return <p className="review-empty">赛程接口连接失败，等待自动刷新</p>;
+  }
+
+  if (displayMatches.length === 0) {
     return <p className="review-empty">暂无未开赛比赛</p>;
   }
 
   return (
     <div className="upcoming-list">
-      {matches.map((match) => {
+      {displayMatches.map((match) => {
         const key = `${match.homeTeam}-${match.awayTeam}`;
         return (
           <button className="upcoming-row" key={`${key}-${match.kickoff}`} onClick={() => onSelect(match)}>
