@@ -3348,6 +3348,31 @@ cron: "*/30 * * * *"
 - 只修正模型结构性缺陷：大比分尾部、矩阵展示范围、赛后复盘闭环。
 - 胜负方向预测正确但比分偏差很大，也必须进入高严重度复盘，因为它会影响大小球、净胜球、小组排名和路径模拟。
 
+### 2026-06-15：8 个页面重构后正式发布
+
+已完成：
+
+- 确认当前 `main` 已与 GitHub 远端同步，前面 8 个页面重构相关提交已在远端。
+- 重新部署 Cloudflare Python Worker API。
+- 重新部署前台 Cloudflare Pages 项目 `world-cup-prediction-system`。
+- 重新部署后台 Cloudflare Pages 项目 `world-cup-prediction-admin`。
+- API 发布时重新生成 50,000 次模拟预测快照，当前锁定赛果 9 场。
+- 线上前台 8 个路由均可返回 200 并渲染：`/`、`/champion-board`、`/match/spain/cape-verde`、`/match/spain/cape-verde?unlocked=1`、`/checkout/spain/cape-verde`、`/payment/pending?orderId=preview`、`/admin`、`/review/mexico/south-africa`。
+
+验证：
+
+- `npm run test:model` 通过，176 个测试全部通过。
+- `npm run validate:data` 通过，覆盖 48 队、12 组、72 场小组赛、7 条事件、3736 场历史赛果。
+- `npm run build` 通过。
+- 正式前台首页和后台首页均返回 HTTP 200。
+- 线上 API `/api/model-status` 和 `/api/match-prediction` 均可返回数据。
+
+当前说明：
+
+- 支付等待页使用假订单 `preview` 检查时，线上 API 返回 404 属于预期。
+- 后台页面未携带 Token 检查时，线上 API 返回 401 属于预期。
+- 工作区仍有未跟踪的运行锁文件和研究截图素材，本轮未提交这些临时产物。
+
 ## 十、当前交接摘要
 
 一句话定义：
