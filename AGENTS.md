@@ -3430,6 +3430,24 @@ cron: "*/30 * * * *"
 
 - `python3 -m unittest discover -s tests -p 'test_payments.py'` 通过，21 个支付测试。
 
+### 2026-06-15：三种支付方式本地模拟交付口径
+
+已完成：
+
+- 明确支付交付流程调整为：应用侧完成适配层，客户后续自行配置接口，我们先本地模拟跑通后交付。
+- 新增 `scripts/simulate_payment_flows.py`，使用临时订单文件和 mock 客户支付网关模拟三种支付方式。
+- 新增 `npm run test:payments:simulated`。
+- 本地模拟覆盖：
+  - 微信 JSAPI：创建订单返回 `jsapiParams`，查单同步 `paid`，签名回调 `paid`，支付后解锁。
+  - 微信 Native：创建订单返回二维码，Native 回调地址固定为 `https://zhugejunshi.com/api/app-payment/wechat/notify`，查单和回调均可确认支付。
+  - 支付宝：创建订单返回二维码，`TRADE_SUCCESS` 归一化为 `paid`，回调后可解锁。
+
+验证：
+
+- `python3 -m unittest discover -s tests -p 'test_payment_simulator.py'` 通过。
+- `npm run test:payments:simulated` 通过。
+- `python3 -m unittest discover -s tests -p 'test_payments.py'` 通过，21 个支付测试。
+
 ## 十、当前交接摘要
 
 一句话定义：
@@ -3438,11 +3456,13 @@ cron: "*/30 * * * *"
 
 当前最重要的开发优先级：
 
-1. 等客户提供微信 / 支付宝接口文档后，接真实创建订单、二维码字段、查单字段和支付回调验签。
-2. 补用户 / 设备 / 订单绑定，避免订单只能停留在本地意图层。
-3. 把本地 JSON 订单迁移为正式数据库订单表和访问记录。
-4. 持续替换自建球队评分和高阶代理指标，接入授权 xG / xGA / 事件数据。
-5. 如找到 FIFA 官方红黄牌 / 完整首发专项接口，再把后台补录项升级为自动接入。
+1. 先把应用侧支付适配、等待页和三种本地模拟测试维持为可交付状态。
+2. 客户拿到应用后自行配置微信 JSAPI、微信 Native 和支付宝创建订单 / 查单 / 鉴权 / 回调验签信息。
+3. 客户字段如不一致，再按真实返回 JSON 做小范围字段兼容。
+4. 补用户 / 设备 / 订单绑定，避免订单只能停留在本地意图层。
+5. 把本地 JSON 订单迁移为正式数据库订单表和访问记录。
+6. 持续替换自建球队评分和高阶代理指标，接入授权 xG / xGA / 事件数据。
+7. 如找到 FIFA 官方红黄牌 / 完整首发专项接口，再把后台补录项升级为自动接入。
 
 当前最重要的风险：
 
