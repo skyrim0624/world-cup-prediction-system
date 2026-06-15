@@ -75,10 +75,13 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("世界杯预测", source)
         self.assertIn('url("/assets/app/stadium-bg-mobile-portrait.png")', styles)
         self.assertIn("width: min(100%, 430px)", styles)
-        self.assertIn(".public-match-card {\n  display: grid;\n  gap: 12px;", styles)
+        self.assertIn("font-size: 26px", styles)
+        self.assertIn("min-height: 36px", styles)
+        self.assertIn("grid-template-columns: 82px minmax(0, 1fr) 82px", styles)
+        self.assertIn("min-height: 86px", styles)
         self.assertNotIn("grid-template-columns: 92px minmax(0, 1fr) 90px", styles)
         self.assertIn("grid-template-columns: repeat(3, minmax(0, 1fr))", styles)
-        self.assertIn("bottom: max(10px, env(safe-area-inset-bottom))", styles)
+        self.assertIn("bottom: max(31px, calc(env(safe-area-inset-bottom) + 31px))", styles)
 
     def test_public_fallback_strips_paid_fields(self):
         source = app_source()

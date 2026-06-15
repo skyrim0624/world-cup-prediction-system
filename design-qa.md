@@ -1,3 +1,109 @@
+# Design QA - 02 单场锁定预览收缩调整
+
+source visual truth path: `/Users/andreas/Downloads/世界杯预测app 的视觉包/02-单场锁定预览.png`
+
+implementation URL: `http://127.0.0.1:5176/match/spain/cape-verde`
+
+implementation screenshots:
+
+- mobile 390: `/tmp/world-cup-locked-mobile-390-compact.png`
+- desktop 1280: `/tmp/world-cup-locked-desktop-1280-compact.png`
+
+viewport:
+
+- mobile: 390 x 844
+- desktop: 1280 x 900
+- implementation width cap: 430px
+
+state: 未支付的单场锁定预览。
+
+scope:
+
+- 本轮只处理客户反馈的“页面、文字和版式太大，像老年机”问题。
+- 不改数据接口、不改支付逻辑、不展示任何付费预测内容。
+- 页面仍只请求 `/api/public-match-summary`，不请求 `/api/match-detail`。
+
+full-view comparison evidence:
+
+- 390px 页面截图高度从上一版约 1293px 收缩到 956px，视觉密度明显接近概念图。
+- 顶部导航按钮从 48px 收缩到 40px，标题从 25px 收缩到 19px。
+- 队旗从约 98px 收缩到约 78px，队名和 VS 同步下调。
+- 赛程胶囊、时间和状态文字下调到更接近概念图的辅助信息层级。
+- 两组锁定卡片行高从 78px 收缩到 60px，标题、说明、锁图标、模糊占位一起收紧。
+- 底部购买按钮从 86px 收缩到 68px，保留 `¥1 解锁本场` 与 `全包剩余 92 场 ¥39` 横排可读。
+
+focused region comparison evidence:
+
+- 购买入口不再显得巨大，按钮高度、字号和图标都已收敛到概念图的底部 CTA 密度。
+- 锁定预览行仍只显示栏目名和模糊占位，不泄露比分、概率或预测结果。
+- 桌面截图保持手机内容居中，没有拉伸成桌面大屏页面。
+- Browser 插件此前在本地页面验证中断开，本轮继续用 Playwright CLI 截图兜底。
+
+verification:
+
+- `npm run validate:data`: passed
+- `npm run build`: passed
+- `npm run test:model`: passed, 176 tests
+- Playwright CLI screenshots: passed, mobile and desktop captures generated
+
+findings:
+
+- 无 P0/P1/P2。
+- P3：和概念图相比，当前页面没有外层 iPhone 壳，这是产品实现的有意处理，不作为页面内容复刻。
+
+patches made:
+
+- 收缩 02 页导航、队伍英雄区、赛程状态、锁定卡片、列表行和底部 CTA 尺寸。
+- 下调图标尺寸和文字层级，提升移动端信息密度。
+- 保持公开摘要接口和付费内容锁定边界不变。
+
+final result: passed
+
+# Design QA - 01 页面收缩调整
+
+source visual truth path: `/Users/andreas/Downloads/世界杯预测app 的视觉包/01-未开赛比赛列表.png`
+
+implementation URL: `http://127.0.0.1:5175/`
+
+implementation screenshots:
+
+- blocked: Browser 插件拦截本地 URL 访问，未能完成截图对照；未使用 Playwright CLI 或其它绕路方式。
+
+viewport:
+
+- intended mobile target: 390 x 844 / 430 x 932
+- implementation width cap: 430px
+
+state: 公开未开赛比赛列表，默认 `今日` tab。
+
+scope:
+
+- 本轮只处理客户反馈的“页面、文字和版式太大”问题。
+- 第 1 页主标题从 34px 收缩到 26px。
+- Tab 高度从 48px 收缩到 36px。
+- 比赛卡片从约 148px 收缩到 86px，并固定为 82px / 1fr / 82px 三列。
+- 队旗从 48px 收缩到 38px。
+- 单场 `¥1 查看预测` 按概念图改成更紧凑的两行按钮。
+- 底部全包条从 58px 收缩到 50px。
+
+source-level comparison evidence:
+
+- 01 页保留概念图的信息结构：顶部品牌、标题、副标题、三段筛选、紧凑比赛卡、底部全包和安全提示。
+- 首页仍只请求 `/api/public-upcoming-matches?limit=12`。
+- 首页仍不展示胜平负概率、最可能比分、比分分布或预测结论。
+
+verification:
+
+- `npm run build`: passed
+- `python3 -m unittest discover -s tests -p 'test_frontend_contract.py'`: passed, 8 tests
+
+findings:
+
+- 无 P0/P1/P2 source-level 泄露问题。
+- blocked: Browser 本地 URL 策略阻止截图对照，因此未完成真实渲染像素级 QA。
+
+final result: source-level passed; visual screenshot comparison blocked
+
 # Design QA - 03 单场支付收银台
 
 source visual truth path: `/Users/andreas/Downloads/世界杯预测app 的视觉包/03-单场支付收银台.png`

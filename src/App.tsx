@@ -1640,7 +1640,8 @@ function PublicMatchCard({ match, onSelect }: { match: PublicUpcomingMatch; onSe
         <small>{publicMatchStatusLabel(match.status)}</small>
         <span>
           <LockKeyhole size={15} strokeWidth={2.5} />
-          ¥1 查看预测
+          <b>¥1</b>
+          <em>查看预测</em>
         </span>
       </div>
     </button>
@@ -1740,29 +1741,29 @@ function ChampionProbabilityPage() {
       <div className="champion-mobile-status" aria-hidden="true">
         <span>9:41</span>
         <div>
-          <Signal size={17} strokeWidth={2.7} />
-          <Wifi size={17} strokeWidth={2.7} />
-          <BatteryFull size={22} strokeWidth={2.3} />
+          <Signal size={15} strokeWidth={2.7} />
+          <Wifi size={15} strokeWidth={2.7} />
+          <BatteryFull size={19} strokeWidth={2.3} />
         </div>
       </div>
 
       <header className="champion-page-header">
         <button type="button" aria-label="返回" onClick={goBack}>
-          <ArrowLeft aria-hidden="true" size={24} strokeWidth={2.7} />
+          <ArrowLeft aria-hidden="true" size={20} strokeWidth={2.7} />
         </button>
         <div>
           <h1>冠军概率榜</h1>
           <p>来自最新预测快照</p>
         </div>
         <button type="button" aria-label="查看模型说明" aria-pressed={showInfo} onClick={() => setShowInfo((value) => !value)}>
-          <Info aria-hidden="true" size={22} strokeWidth={2.4} />
+          <Info aria-hidden="true" size={19} strokeWidth={2.4} />
         </button>
       </header>
 
       <button className="champion-pass-cta" type="button" onClick={openTournamentPass}>
-        <Crown aria-hidden="true" size={20} strokeWidth={2.6} />
+        <Crown aria-hidden="true" size={16} strokeWidth={2.6} />
         <span>全包查看全部队伍</span>
-        <ChevronRight aria-hidden="true" size={18} strokeWidth={2.8} />
+        <ChevronRight aria-hidden="true" size={15} strokeWidth={2.8} />
       </button>
 
       {showInfo ? <p className="champion-snapshot-note">{snapshotLine}</p> : null}
@@ -1798,7 +1799,7 @@ function ChampionProbabilityPage() {
       </section>
 
       <footer className="champion-page-footer">
-        <ShieldCheck aria-hidden="true" size={18} strokeWidth={2.1} />
+        <ShieldCheck aria-hidden="true" size={15} strokeWidth={2.1} />
         <span>概率分析，不是投注建议</span>
       </footer>
 
@@ -2480,11 +2481,11 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
     <main className="locked-match-shell">
       <header className="locked-match-nav">
         <button type="button" aria-label="返回未开赛列表" onClick={goBackToMatches}>
-          <ArrowLeft aria-hidden="true" size={28} strokeWidth={2.5} />
+          <ArrowLeft aria-hidden="true" size={22} strokeWidth={2.5} />
         </button>
         <span>世界杯预测</span>
         <button type="button" aria-label="分享本场预测" onClick={shareMatch}>
-          <Share2 aria-hidden="true" size={25} strokeWidth={2.4} />
+          <Share2 aria-hidden="true" size={21} strokeWidth={2.4} />
         </button>
       </header>
 
@@ -2508,11 +2509,11 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
         <div className="locked-match-meta">
           <span>{`${matchNumberLabel} ${displaySummary.stage}`}</span>
           <em>
-            <CalendarDays aria-hidden="true" size={18} strokeWidth={2.3} />
+            <CalendarDays aria-hidden="true" size={14} strokeWidth={2.3} />
             {formatKickoffForUser(displaySummary.kickoff)}
           </em>
           <em>
-            <Clock aria-hidden="true" size={18} strokeWidth={2.3} />
+            <Clock aria-hidden="true" size={14} strokeWidth={2.3} />
             {statusLabel}
           </em>
         </div>
@@ -2521,7 +2522,7 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
       <div className="locked-match-stack">
         <section className="locked-panel locked-generated-card">
           <div className="locked-section-heading">
-            <Target aria-hidden="true" size={28} strokeWidth={2.3} />
+            <Target aria-hidden="true" size={22} strokeWidth={2.3} />
             <div>
               <strong>预测已生成</strong>
               <span>完整预测需支付后查看</span>
@@ -2536,7 +2537,7 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
 
         <section className="locked-panel locked-content-card">
           <div className="locked-section-heading gold">
-            <Lock aria-hidden="true" size={27} strokeWidth={2.4} />
+            <Lock aria-hidden="true" size={22} strokeWidth={2.4} />
             <div>
               <strong>单场内容</strong>
               <span>支付后可查看以下完整内容</span>
@@ -2556,7 +2557,7 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
       <section className="locked-purchase-bar" aria-label="购买入口">
         <button type="button" className="locked-buy-button primary" onClick={() => void createUnlockOrder("single_match")} disabled={singleMatchDisabled}>
           <span>
-            <Lock aria-hidden="true" size={28} strokeWidth={2.5} />
+            <Lock aria-hidden="true" size={21} strokeWidth={2.5} />
           </span>
           <strong>{paymentPendingProduct === "single_match" ? "创建订单中" : "¥1 解锁本场"}</strong>
           <small>查看本场完整预测</small>
@@ -2564,7 +2565,7 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
         <button type="button" className="locked-buy-button pass" onClick={() => void createUnlockOrder("tournament_pass")} disabled={singleMatchDisabled}>
           <strong>{paymentPendingProduct === "tournament_pass" ? "创建订单中" : "全包剩余 92 场 ¥39"}</strong>
           <small>解锁所有未开赛场次</small>
-          <Trophy aria-hidden="true" size={28} strokeWidth={2.3} />
+          <Trophy aria-hidden="true" size={22} strokeWidth={2.3} />
         </button>
       </section>
 
@@ -2844,12 +2845,12 @@ function SingleMatchCheckoutPage({ home, away }: { home: TeamKey; away: TeamKey 
     <main className="checkout-page-shell">
       <header className="checkout-topbar">
         <button type="button" aria-label="返回单场预览" onClick={goBackToLockedPreview}>
-          <ArrowLeft aria-hidden="true" size={27} strokeWidth={2.7} />
+          <ArrowLeft aria-hidden="true" size={22} strokeWidth={2.7} />
         </button>
         <div>
           <strong>确认解锁</strong>
           <span>
-            <ShieldCheck aria-hidden="true" size={17} strokeWidth={2.4} />
+            <ShieldCheck aria-hidden="true" size={14} strokeWidth={2.4} />
             zhugejunshi.com
           </span>
         </div>
@@ -2888,9 +2889,9 @@ function SingleMatchCheckoutPage({ home, away }: { home: TeamKey; away: TeamKey 
               aria-pressed={selected}
               onClick={() => setSelectedProviderKey(option.key)}
             >
-              <span className="checkout-provider-radio">{selected ? <CheckCircle2 aria-hidden="true" size={30} strokeWidth={2.7} /> : null}</span>
+              <span className="checkout-provider-radio">{selected ? <CheckCircle2 aria-hidden="true" size={22} strokeWidth={2.7} /> : null}</span>
               <span className={`checkout-provider-icon ${option.key}`}>
-                <Icon aria-hidden="true" size={35} strokeWidth={2.25} />
+                <Icon aria-hidden="true" size={27} strokeWidth={2.25} />
               </span>
               <span className="checkout-provider-copy">
                 <strong>{option.label}</strong>
@@ -2902,7 +2903,7 @@ function SingleMatchCheckoutPage({ home, away }: { home: TeamKey; away: TeamKey 
       </section>
 
       <section className="checkout-notice" aria-live="polite">
-        <Info aria-hidden="true" size={23} strokeWidth={2.3} />
+        <Info aria-hidden="true" size={18} strokeWidth={2.3} />
         <span>{message ?? "创建订单后等待支付确认"}</span>
       </section>
 
@@ -2911,7 +2912,7 @@ function SingleMatchCheckoutPage({ home, away }: { home: TeamKey; away: TeamKey 
       </button>
 
       <footer className="checkout-disclaimer">
-        <ShieldCheck aria-hidden="true" size={18} strokeWidth={2.2} />
+        <ShieldCheck aria-hidden="true" size={14} strokeWidth={2.2} />
         <span>{disclaimer.replace("微信支付和支付宝仅用于解锁概率分析内容，不提供投注建议。", "概率分析，不是投注建议")}</span>
       </footer>
     </main>
@@ -2931,7 +2932,7 @@ function PaymentInfoRow({
 }) {
   return (
     <div className="payment-info-row">
-      <Icon aria-hidden="true" size={23} strokeWidth={2.2} />
+      <Icon aria-hidden="true" size={20} strokeWidth={2.1} />
       <div>
         <span>{label}</span>
         <strong>{children}</strong>
@@ -3042,14 +3043,14 @@ function PaymentPendingPage({ orderId }: { orderId: string }) {
     <main className="payment-page-shell">
       <header className="payment-page-header">
         <button type="button" aria-label="返回" onClick={goBackToPayment}>
-          <ArrowLeft aria-hidden="true" size={28} strokeWidth={2.4} />
+          <ArrowLeft aria-hidden="true" size={24} strokeWidth={2.4} />
         </button>
         <span>2026 世界杯预测</span>
       </header>
 
       <section className="payment-hero" aria-label="支付确认状态">
         <span className="payment-hero-icon" aria-hidden="true">
-          <FileText size={28} strokeWidth={2.2} />
+          <FileText size={23} strokeWidth={2.2} />
         </span>
         <h1>等待支付确认</h1>
         <p>{statusMeta.detail}</p>
@@ -3058,7 +3059,7 @@ function PaymentPendingPage({ orderId }: { orderId: string }) {
       <section className="payment-card" aria-label="支付订单">
         <div className="payment-card-head">
           <span className="payment-order-icon" aria-hidden="true">
-            <FileText size={26} strokeWidth={2.2} />
+            <FileText size={22} strokeWidth={2.2} />
           </span>
           <strong>
             订单 {shortOrderId(order?.orderId ?? orderId)} · {order?.productName ?? "支付订单"}
@@ -3082,12 +3083,12 @@ function PaymentPendingPage({ orderId }: { orderId: string }) {
         </div>
 
         <div className={`payment-qr-panel ${hasQrCode ? "ready" : ""}`}>
-          {hasQrCode ? <img src={order?.qrCodeUrl ?? ""} alt="支付二维码" /> : <QrCode aria-hidden="true" size={42} strokeWidth={1.8} />}
+          {hasQrCode ? <img src={order?.qrCodeUrl ?? ""} alt="支付二维码" /> : <QrCode aria-hidden="true" size={34} strokeWidth={1.8} />}
           <span>{hasQrCode ? "请扫码完成支付" : order?.paymentMethod === "jsapi" ? "微信支付弹窗等待完成" : "二维码待返回"}</span>
         </div>
 
         <div className="payment-hint-card">
-          {statusMeta.tone === "unavailable" ? <AlertTriangle aria-hidden="true" size={42} strokeWidth={2.1} /> : <ShieldCheck aria-hidden="true" size={42} strokeWidth={2.1} />}
+          {statusMeta.tone === "unavailable" ? <AlertTriangle aria-hidden="true" size={34} strokeWidth={2.1} /> : <ShieldCheck aria-hidden="true" size={34} strokeWidth={2.1} />}
           <div>
             <strong>{statusMeta.tone === "unavailable" ? "当前支付通道暂不可用" : "请完成支付后刷新状态"}</strong>
             <p>{order?.productKey === "tournament_pass" ? "支付完成后，系统将自动确认并解锁剩余未开赛预测" : "支付完成后，系统将自动确认并解锁本场预测"}</p>
@@ -3097,23 +3098,23 @@ function PaymentPendingPage({ orderId }: { orderId: string }) {
         {message ? <p className="payment-message">{message}</p> : null}
 
         <button className="payment-refresh-button" type="button" onClick={refreshOrder} disabled={refreshing || loadStatus === "loading"}>
-          {order?.status === "paid" ? <CheckCircle2 aria-hidden="true" size={24} strokeWidth={2.4} /> : <RefreshCw aria-hidden="true" size={24} strokeWidth={2.4} />}
+          {order?.status === "paid" ? <CheckCircle2 aria-hidden="true" size={20} strokeWidth={2.4} /> : <RefreshCw aria-hidden="true" size={20} strokeWidth={2.4} />}
           <span>{refreshing ? "正在刷新状态" : "我已支付，刷新状态"}</span>
         </button>
 
         <button className="payment-back-button" type="button" onClick={goBackToPayment}>
-          <ArrowLeft aria-hidden="true" size={23} strokeWidth={2.4} />
+          <ArrowLeft aria-hidden="true" size={20} strokeWidth={2.4} />
           <span>返回选择支付方式</span>
         </button>
 
         <div className="payment-lock-note">
-          <Lock aria-hidden="true" size={17} strokeWidth={2.2} />
+          <Lock aria-hidden="true" size={14} strokeWidth={2.2} />
           <span>支付成功后自动解锁本场预测</span>
         </div>
       </section>
 
       <footer className="payment-footer">
-        <ShieldCheck aria-hidden="true" size={16} strokeWidth={2.1} />
+        <ShieldCheck aria-hidden="true" size={14} strokeWidth={2.1} />
         <span>概率分析，不是投注建议</span>
       </footer>
     </main>
