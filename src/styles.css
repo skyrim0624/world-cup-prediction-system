@@ -6870,7 +6870,8 @@ body:has(.postmatch-page-shell) {
 .postmatch-page-shell {
   position: relative;
   isolation: isolate;
-  width: min(100%, 430px);
+  width: 100%;
+  max-width: 430px;
   min-height: 100vh;
   margin: 0 auto;
   overflow-x: hidden;
@@ -6978,16 +6979,16 @@ body:has(.postmatch-page-shell) {
 
 .postmatch-scoreline {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: minmax(70px, 1fr) minmax(118px, auto) minmax(70px, 1fr);
   align-items: end;
   width: 100%;
-  gap: 12px;
+  gap: 8px;
   margin-top: 2px;
 }
 
 .postmatch-scoreline > strong {
   color: #f7fff6;
-  font-size: clamp(50px, 15vw, 66px);
+  font-size: clamp(44px, 12vw, 58px);
   font-weight: 900;
   line-height: 0.95;
   white-space: nowrap;
@@ -7002,8 +7003,8 @@ body:has(.postmatch-page-shell) {
 }
 
 .postmatch-team .flag {
-  width: 66px;
-  height: 66px;
+  width: 58px;
+  height: 58px;
   overflow: hidden;
   border: 2px solid rgba(255, 255, 255, 0.68);
   border-radius: 999px;
@@ -7020,7 +7021,7 @@ body:has(.postmatch-page-shell) {
   max-width: 100%;
   overflow: hidden;
   color: #f7fff6;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 850;
   line-height: 1.15;
   text-overflow: ellipsis;
@@ -7179,12 +7180,13 @@ body:has(.postmatch-page-shell) {
   }
 
   .postmatch-scoreline {
-    gap: 8px;
+    grid-template-columns: minmax(58px, 1fr) minmax(108px, auto) minmax(58px, 1fr);
+    gap: 6px;
   }
 
   .postmatch-team .flag {
-    width: 58px;
-    height: 58px;
+    width: 52px;
+    height: 52px;
   }
 
   .postmatch-prediction-card {

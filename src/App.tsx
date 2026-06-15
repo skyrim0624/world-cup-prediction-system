@@ -1479,6 +1479,11 @@ function App() {
     return <SingleMatchCheckoutPage home={checkoutRoute.home} away={checkoutRoute.away} />;
   }
 
+  const postMatchReviewRoute = postMatchReviewRouteParams(window.location.pathname);
+  if (postMatchReviewRoute) {
+    return <PostMatchReviewPage home={postMatchReviewRoute.home} away={postMatchReviewRoute.away} />;
+  }
+
   const singleMatchRoute = matchRouteParams(window.location.pathname);
   if (singleMatchRoute) {
     const searchParams = new URLSearchParams(window.location.search);

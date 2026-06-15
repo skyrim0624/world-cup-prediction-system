@@ -109,7 +109,7 @@ app.add_middleware(
         "https://world-cup-prediction-system.pages.dev",
         "https://world-cup-prediction-admin.pages.dev",
     ],
-    allow_origin_regex=r"^(http://(127\.0\.0\.1|localhost):517[0-9]|https://[a-z0-9-]+\.(world-cup-prediction-system|world-cup-prediction-admin)\.pages\.dev)$",
+    allow_origin_regex=r"^(http://(127\.0\.0\.1|localhost):51[0-9]{2}|https://[a-z0-9-]+\.(world-cup-prediction-system|world-cup-prediction-admin)\.pages\.dev)$",
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
