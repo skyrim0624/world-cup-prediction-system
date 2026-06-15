@@ -598,6 +598,114 @@ const STATIC_UPCOMING_MATCHES_FALLBACK: UpcomingMatch[] = [
     awayWin: 21,
     topScore: { score: "1-1", probability: 10.0 },
   },
+  {
+    stage: "小组赛 H 组",
+    kickoff: "6月15日 18:00 ET",
+    matchNo: 13,
+    city: "Miami",
+    stadium: "Miami Stadium",
+    status: "scheduled",
+    homeTeam: "saudi-arabia",
+    awayTeam: "uruguay",
+    homeName: "沙特阿拉伯",
+    awayName: "乌拉圭",
+    homeCode: "KSA",
+    awayCode: "URU",
+    homeWin: 18,
+    draw: 22,
+    awayWin: 60,
+    topScore: { score: "0-1", probability: 10.3 },
+  },
+  {
+    stage: "小组赛 G 组",
+    kickoff: "6月15日 21:00 ET",
+    matchNo: 15,
+    city: "Los Angeles",
+    stadium: "Los Angeles Stadium",
+    status: "scheduled",
+    homeTeam: "iran",
+    awayTeam: "new-zealand",
+    homeName: "伊朗",
+    awayName: "新西兰",
+    homeCode: "IRN",
+    awayCode: "NZL",
+    homeWin: 62,
+    draw: 21,
+    awayWin: 17,
+    topScore: { score: "2-0", probability: 11.2 },
+  },
+  {
+    stage: "小组赛 J 组",
+    kickoff: "6月16日 00:00 ET",
+    matchNo: 20,
+    city: "San Francisco Bay Area",
+    stadium: "San Francisco Bay Stadium",
+    status: "scheduled",
+    homeTeam: "austria",
+    awayTeam: "jordan",
+    homeName: "奥地利",
+    awayName: "约旦",
+    homeCode: "AUT",
+    awayCode: "JOR",
+    homeWin: 63,
+    draw: 21,
+    awayWin: 16,
+    topScore: { score: "2-0", probability: 10.9 },
+  },
+  {
+    stage: "小组赛 I 组",
+    kickoff: "6月16日 15:00 ET",
+    matchNo: 17,
+    city: "New York/New Jersey",
+    stadium: "New York New Jersey Stadium",
+    status: "scheduled",
+    homeTeam: "france",
+    awayTeam: "senegal",
+    homeName: "法国",
+    awayName: "塞内加尔",
+    homeCode: "FRA",
+    awayCode: "SEN",
+    homeWin: 63,
+    draw: 20,
+    awayWin: 17,
+    topScore: { score: "2-1", probability: 9.8 },
+  },
+  {
+    stage: "小组赛 I 组",
+    kickoff: "6月16日 18:00 ET",
+    matchNo: 18,
+    city: "Boston",
+    stadium: "Boston Stadium",
+    status: "scheduled",
+    homeTeam: "iraq",
+    awayTeam: "norway",
+    homeName: "伊拉克",
+    awayName: "挪威",
+    homeCode: "IRQ",
+    awayCode: "NOR",
+    homeWin: 25,
+    draw: 24,
+    awayWin: 51,
+    topScore: { score: "1-1", probability: 10.8 },
+  },
+  {
+    stage: "小组赛 J 组",
+    kickoff: "6月16日 21:00 ET",
+    matchNo: 19,
+    city: "Kansas City",
+    stadium: "Kansas City Stadium",
+    status: "scheduled",
+    homeTeam: "argentina",
+    awayTeam: "algeria",
+    homeName: "阿根廷",
+    awayName: "阿尔及利亚",
+    homeCode: "ARG",
+    awayCode: "ALG",
+    homeWin: 68,
+    draw: 18,
+    awayWin: 14,
+    topScore: { score: "2-0", probability: 10.5 },
+  },
 ];
 
 const TEAM_FLAG_ASSET_BY_KEY: Record<TeamKey, string> = {
@@ -749,8 +857,8 @@ const fallbackMarketSource: MarketSource = {
   detail: "授权数据确认后，再开放市场热度参考。",
 };
 
-function buildFallbackPrediction(): MatchPrediction {
-  const match = STATIC_UPCOMING_MATCHES_FALLBACK[0];
+function buildFallbackPrediction(referenceDate = new Date()): MatchPrediction {
+  const match = firstStaticUpcomingMatch(referenceDate);
   const homeWin = match.homeWin;
   const draw = match.draw;
   const awayWin = match.awayWin;
@@ -850,6 +958,47 @@ function formatUpdateTime(value: string) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return "未更新";
   return date.toLocaleTimeString("zh-CN", { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
+}
+
+function parseKickoffDate(value: string) {
+  if (!value || value === "待定" || value === "进行中" || value === "已结束") return null;
+  const easternMatch = value.match(/(\d{1,2})月(\d{1,2})日\s+(\d{1,2}):(\d{2})\s*ET/i);
+  if (easternMatch) {
+    const [, month, day, hour, minute] = easternMatch;
+    return new Date(Date.UTC(TOURNAMENT_YEAR, Number(month) - 1, Number(day), Number(hour) + 4, Number(minute)));
+  }
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function compareUpcomingMatches(left: UpcomingMatch, right: UpcomingMatch) {
+  const leftTime = parseKickoffDate(left.kickoff)?.getTime() ?? Number.MAX_SAFE_INTEGER;
+  const rightTime = parseKickoffDate(right.kickoff)?.getTime() ?? Number.MAX_SAFE_INTEGER;
+  return leftTime - rightTime || (left.matchNo ?? 999) - (right.matchNo ?? 999);
+}
+
+function isUpcomingMatch(match: Pick<UpcomingMatch, "kickoff" | "status">, referenceDate = new Date()) {
+  if (match.status !== "scheduled" && match.status !== "未开赛") return false;
+  const kickoffDate = parseKickoffDate(match.kickoff);
+  if (!kickoffDate) return true;
+  return kickoffDate.getTime() > referenceDate.getTime();
+}
+
+function filterUpcomingMatches(matches: UpcomingMatch[], referenceDate = new Date()) {
+  return matches.filter((match) => isUpcomingMatch(match, referenceDate)).sort(compareUpcomingMatches);
+}
+
+function buildStaticUpcomingMatchesFallback(referenceDate = new Date()): UpcomingMatchesResponse {
+  const items = filterUpcomingMatches(STATIC_UPCOMING_MATCHES_FALLBACK, referenceDate);
+  return {
+    updatedAt: "static-fallback",
+    count: items.length,
+    items,
+  };
+}
+
+function firstStaticUpcomingMatch(referenceDate = new Date()) {
+  return filterUpcomingMatches(STATIC_UPCOMING_MATCHES_FALLBACK, referenceDate)[0] ?? STATIC_UPCOMING_MATCHES_FALLBACK[0];
 }
 
 function formatKickoffForUser(value: string) {
@@ -968,17 +1117,15 @@ function App() {
 function HomePredictionPage() {
   const [forecastTick, setForecastTick] = useState(0);
   const [apiPrediction, setApiPrediction] = useState<MatchPrediction | null>(null);
-  const [upcomingMatches, setUpcomingMatches] = useState<UpcomingMatchesResponse | null>(() => ({
-    updatedAt: "static-fallback",
-    count: STATIC_UPCOMING_MATCHES_FALLBACK.length,
-    items: STATIC_UPCOMING_MATCHES_FALLBACK,
-  }));
+  const [upcomingMatches, setUpcomingMatches] = useState<UpcomingMatchesResponse | null>(() => buildStaticUpcomingMatchesFallback());
   const [upcomingMatchesStatus, setUpcomingMatchesStatus] = useState<LoadStatus>("loading");
   const [activeScreen, setActiveScreen] = useState<UserScreenKey>(() => userScreenFromHash());
+  const referenceDate = useMemo(() => new Date(), [forecastTick]);
 
   const teamsData = apiPrediction?.teams?.length ? apiPrediction.teams : teams;
-  const fallbackPrediction = useMemo(() => buildFallbackPrediction(), [forecastTick]);
-  const matchPrediction = apiPrediction ?? fallbackPrediction;
+  const fallbackPrediction = useMemo(() => buildFallbackPrediction(referenceDate), [referenceDate]);
+  const validApiPrediction = apiPrediction && isUpcomingMatch(apiPrediction, referenceDate) ? apiPrediction : null;
+  const matchPrediction = validApiPrediction ?? fallbackPrediction;
   const homeTeam = teamsData.find((team) => team.key === matchPrediction.homeTeam) ?? teamsData[0];
   const awayTeam = teamsData.find((team) => team.key === matchPrediction.awayTeam) ?? teamsData[1];
   const championBoard = [...teamsData].sort((left, right) => right.tournament.champion - left.tournament.champion);
@@ -991,7 +1138,9 @@ function HomePredictionPage() {
   ].sort((left, right) => right.value - left.value);
   const primaryOutcome = predictionOutcomes[0];
   const secondaryOutcomes = predictionOutcomes.slice(1);
-  const focusedUpcomingMatch = apiPrediction ? predictionToUpcomingMatch(apiPrediction, homeTeam, awayTeam) : null;
+  const upcomingMatchItems = useMemo(() => filterUpcomingMatches(upcomingMatches?.items ?? [], referenceDate), [upcomingMatches, referenceDate]);
+  const focusedPredictionMatch = predictionToUpcomingMatch(matchPrediction, homeTeam, awayTeam);
+  const focusedUpcomingMatch = isUpcomingMatch(focusedPredictionMatch, referenceDate) ? focusedPredictionMatch : null;
 
   useEffect(() => {
     let active = true;
@@ -1013,14 +1162,16 @@ function HomePredictionPage() {
 
     async function loadUpcomingMatches() {
       try {
-        const response = await fetch(`${API_BASE_URL}/api/upcoming-matches?limit=6`, { cache: "no-store" });
+        const response = await fetch(`${API_BASE_URL}/api/upcoming-matches?limit=12`, { cache: "no-store" });
         if (!response.ok) throw new Error(`未开赛赛程接口返回 ${response.status}`);
         const data = (await response.json()) as UpcomingMatchesResponse;
         if (!active) return;
-        setUpcomingMatches(data);
+        const items = filterUpcomingMatches(data.items);
+        setUpcomingMatches({ ...data, count: items.length, items });
         setUpcomingMatchesStatus("ready");
       } catch {
         if (!active) return;
+        setUpcomingMatches(buildStaticUpcomingMatchesFallback());
         setUpcomingMatchesStatus("failed");
       }
     }
@@ -1142,7 +1293,7 @@ function HomePredictionPage() {
           <div className="app-screen-stack">
             <section className="console-panel">
               <UpcomingMatchesPanel
-                matches={(upcomingMatches?.items ?? []).slice(0, 4)}
+                matches={upcomingMatchItems}
                 status={upcomingMatchesStatus}
                 fallbackMatch={focusedUpcomingMatch}
                 onSelect={openMatchPage}

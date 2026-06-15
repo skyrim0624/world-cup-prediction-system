@@ -127,7 +127,9 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("status={upcomingMatchesStatus}", home_source)
         self.assertIn("fallbackMatch={focusedUpcomingMatch}", home_source)
         self.assertIn("STATIC_UPCOMING_MATCHES_FALLBACK", source)
-        self.assertIn("static-fallback", home_source)
+        self.assertIn("static-fallback", source)
+        self.assertIn("buildStaticUpcomingMatchesFallback", source)
+        self.assertIn("filterUpcomingMatches", source)
         self.assertIn("germany", source)
         self.assertIn("curacao", source)
         self.assertIn("status !== \"ready\" && fallbackMatch", upcoming_source)
@@ -136,11 +138,22 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("赛程加载中", upcoming_source)
         self.assertIn("赛程接口连接失败，等待自动刷新", upcoming_source)
 
+    def test_matches_page_filters_expired_kickoffs_and_requests_more_future_matches(self):
+        source = app_source()
+        home_source = source_between(source, "function HomePredictionPage()", "function TeamFlag")
+
+        self.assertIn("/api/upcoming-matches?limit=12", home_source)
+        self.assertIn("matches={upcomingMatchItems}", home_source)
+        self.assertIn("validApiPrediction", home_source)
+        self.assertIn("isUpcomingMatch(apiPrediction", home_source)
+        self.assertIn("filterUpcomingMatches(data.items)", home_source)
+        self.assertNotIn("slice(0, 4)", home_source)
+
     def test_forecast_fallback_uses_official_schedule_not_old_mock_fixture(self):
         source = app_source()
         fallback_source = source_between(source, "function buildFallbackPrediction", "function predictionToUpcomingMatch")
 
-        self.assertIn("STATIC_UPCOMING_MATCHES_FALLBACK[0]", fallback_source)
+        self.assertIn("firstStaticUpcomingMatch", fallback_source)
         self.assertIn("match.homeTeam", fallback_source)
         self.assertIn("match.awayTeam", fallback_source)
         self.assertIn("官方赛程兜底", fallback_source)

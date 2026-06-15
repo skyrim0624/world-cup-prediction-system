@@ -648,6 +648,47 @@ class PredictionApiTest(unittest.TestCase):
         self.assertIn("topScore", first)
         self.assertEqual(first["homeWin"] + first["draw"] + first["awayWin"], 100)
 
+    def test_upcoming_matches_api_filters_scheduled_matches_after_kickoff(self):
+        rows = [
+            {
+                "home": "germany",
+                "away": "curacao",
+                "stage": "小组赛 E 组",
+                "kickoff": "2020-06-15T08:00:00+00:00",
+                "status": "scheduled",
+                "match_no": 1,
+            },
+            {
+                "home": "spain",
+                "away": "cape-verde",
+                "stage": "小组赛 H 组",
+                "kickoff": "2099-06-15T08:00:00+00:00",
+                "status": "scheduled",
+                "match_no": 2,
+            },
+        ]
+        with tempfile.TemporaryDirectory() as temp_dir:
+            fixtures_path = Path(temp_dir) / "fixtures.json"
+            fixtures_path.write_text(json.dumps(rows, ensure_ascii=False), encoding="utf-8")
+            previous_fixtures_path = getattr(main_module, "fixtures_data_path", None)
+            main_module.fixtures_data_path = fixtures_path
+            try:
+                main_module.reload_model_data(main_module.review_data_path, fixtures_path)
+                client = TestClient(app)
+                response = client.get("/api/upcoming-matches?limit=5")
+            finally:
+                if previous_fixtures_path is None:
+                    delattr(main_module, "fixtures_data_path")
+                else:
+                    main_module.fixtures_data_path = previous_fixtures_path
+                main_module.reload_model_data()
+
+        self.assertEqual(response.status_code, 200)
+        items = response.json()["items"]
+        self.assertEqual(items[0]["homeTeam"], "spain")
+        self.assertEqual(items[0]["awayTeam"], "cape-verde")
+        self.assertFalse(any(item["homeTeam"] == "germany" and item["awayTeam"] == "curacao" for item in items))
+
     def test_upcoming_matches_api_preserves_fixture_venue_metadata(self):
         rows = [
             {

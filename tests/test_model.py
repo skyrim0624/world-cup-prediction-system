@@ -34,7 +34,10 @@ from backend.model import (
     expected_goals,
     forced_outcome_score,
     group_names,
+    is_fixture_upcoming,
+    parse_fixture_kickoff,
     rank_group,
+    resolve_current_prediction_fixture,
     sample_fixture_score,
     simulate_tournament,
     win_draw_loss,
@@ -69,6 +72,25 @@ class PredictionModelTest(unittest.TestCase):
         self.assertEqual(len(prediction["fairPrices"]), 3)
         self.assertEqual(prediction["modelMeta"]["lockedResults"], 8)
         self.assertIn("liveMatches", prediction["modelMeta"])
+
+    def test_et_kickoff_is_parsed_as_eastern_daylight_time(self):
+        kickoff = parse_fixture_kickoff("6月15日 12:00 ET")
+
+        self.assertIsNotNone(kickoff)
+        self.assertEqual(kickoff.isoformat(), "2026-06-15T16:00:00+00:00")
+
+    def test_scheduled_fixture_after_kickoff_is_not_upcoming(self):
+        fixture = Fixture("germany", "curacao", "小组赛 E 组", "6月14日 13:00 ET", "scheduled")
+        before_kickoff = parse_fixture_kickoff("6月14日 12:30 ET")
+        after_kickoff = parse_fixture_kickoff("6月14日 13:30 ET")
+
+        self.assertTrue(is_fixture_upcoming(fixture, before_kickoff))
+        self.assertFalse(is_fixture_upcoming(fixture, after_kickoff))
+
+    def test_expired_configured_current_match_rolls_to_next_upcoming_fixture(self):
+        fixture = resolve_current_prediction_fixture(parse_fixture_kickoff("6月15日 00:00 ET"))
+
+        self.assertEqual((fixture.home, fixture.away), ("spain", "cape-verde"))
 
     def test_dataset_is_loaded_from_local_json_files(self):
         self.assertEqual(DATASET_META["source"], "fifa-official-match-schedule-2026")

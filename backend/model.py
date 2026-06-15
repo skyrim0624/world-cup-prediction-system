@@ -4,7 +4,7 @@ import re
 from bisect import bisect_left
 from collections import defaultdict
 from dataclasses import replace
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from math import exp, factorial
 from random import Random
 from pathlib import Path
@@ -181,7 +181,41 @@ def parse_fixture_kickoff(kickoff: str) -> datetime | None:
     if not match:
         return None
     month, day, hour, minute = (int(part) for part in match.groups())
-    return datetime(TOURNAMENT_YEAR, month, day, hour, minute, tzinfo=timezone.utc)
+    parsed = datetime(TOURNAMENT_YEAR, month, day, hour, minute, tzinfo=timezone.utc)
+    if re.search(r"\bET\b", kickoff, re.IGNORECASE):
+        return parsed + timedelta(hours=4)
+    return parsed
+
+
+def is_fixture_upcoming(fixture: Fixture, now: datetime | None = None) -> bool:
+    if fixture.status != "scheduled":
+        return False
+    kickoff = parse_fixture_kickoff(fixture.kickoff)
+    if kickoff is None:
+        return True
+    reference_time = now or datetime.now(timezone.utc)
+    if reference_time.tzinfo is None:
+        reference_time = reference_time.replace(tzinfo=timezone.utc)
+    return kickoff > reference_time
+
+
+def upcoming_fixture_sort_key(fixture: Fixture) -> tuple[datetime, int]:
+    return (
+        parse_fixture_kickoff(fixture.kickoff) or datetime.max.replace(tzinfo=timezone.utc),
+        fixture.match_no or 999,
+    )
+
+
+def resolve_current_prediction_fixture(now: datetime | None = None) -> Fixture:
+    configured_fixture = next((fixture for fixture in FIXTURES if (fixture.home, fixture.away) == CURRENT_MATCH), None)
+    if configured_fixture and is_fixture_upcoming(configured_fixture, now):
+        return configured_fixture
+    upcoming_fixtures = [fixture for fixture in FIXTURES if is_fixture_upcoming(fixture, now)]
+    if upcoming_fixtures:
+        return sorted(upcoming_fixtures, key=upcoming_fixture_sort_key)[0]
+    if configured_fixture:
+        return configured_fixture
+    return next(fixture for fixture in FIXTURES if fixture.status == "scheduled")
 
 
 def fixture_context_for_team(team_key: str, fixture: Fixture, fixtures: list[Fixture]) -> dict[str, object]:
@@ -1125,13 +1159,8 @@ def build_upcoming_match_predictions(limit: int = 12) -> dict[str, object]:
     calibration = build_calibration_profile(score_model_backtest)
     teams = apply_event_adjustments()
     items = []
-    scheduled_fixtures = [fixture for fixture in FIXTURES if fixture.status == "scheduled"]
-    scheduled_fixtures.sort(
-        key=lambda fixture: (
-            parse_fixture_kickoff(fixture.kickoff) or datetime.max.replace(tzinfo=timezone.utc),
-            fixture.match_no or 999,
-        )
-    )
+    scheduled_fixtures = [fixture for fixture in FIXTURES if is_fixture_upcoming(fixture)]
+    scheduled_fixtures.sort(key=upcoming_fixture_sort_key)
     for fixture in scheduled_fixtures:
         fixture_context = build_fixture_context(fixture)
         match_teams = apply_fixture_context_adjustments(teams, fixture, fixture_context)
@@ -1238,8 +1267,8 @@ def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str
         },
     }
     teams = apply_event_adjustments()
-    home_key, away_key = CURRENT_MATCH
-    current_fixture = next(fixture for fixture in FIXTURES if (fixture.home, fixture.away) == CURRENT_MATCH)
+    current_fixture = resolve_current_prediction_fixture()
+    home_key, away_key = current_fixture.home, current_fixture.away
     fixture_context = build_fixture_context(current_fixture)
     match_teams = apply_fixture_context_adjustments(teams, current_fixture, fixture_context)
     matchup_context = build_tactical_matchup(current_fixture, match_teams, metric_rows)
