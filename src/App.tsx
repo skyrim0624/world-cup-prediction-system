@@ -868,7 +868,7 @@ function HomePredictionPage() {
 
     async function loadPrediction() {
       try {
-        const response = await fetch(`${API_BASE_URL}/api/match-prediction?simulations=${INTERACTIVE_SIMULATION_COUNT}&useSnapshot=false`, {
+        const response = await fetch(`${API_BASE_URL}/api/match-prediction?simulations=${INTERACTIVE_SIMULATION_COUNT}&useSnapshot=true`, {
           cache: "no-store",
         });
         if (!response.ok) throw new Error(`预测接口返回 ${response.status}`);
@@ -895,12 +895,16 @@ function HomePredictionPage() {
       }
     }
 
-    loadPrediction();
-    loadUpcomingMatches();
+    async function loadHomeData() {
+      // NOTE: Cloudflare Python Worker 冷启动时并发请求容易超 CPU，公开页按顺序读取快照和赛程。
+      await loadPrediction();
+      await loadUpcomingMatches();
+    }
+
+    void loadHomeData();
     const timer = window.setInterval(() => {
       setForecastTick((value) => value + 1);
-      loadPrediction();
-      loadUpcomingMatches();
+      void loadHomeData();
     }, FORECAST_REFRESH_MS);
 
     return () => {

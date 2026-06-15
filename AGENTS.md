@@ -3128,6 +3128,34 @@ cron: "*/30 * * * *"
 - `npm run validate:data` 通过。
 - `npm run build` 通过。
 
+### 2026-06-15：赛程空状态与 Worker 稳定性修正
+
+已完成：
+
+- 排查线上 `#matches` 显示“暂无未开赛比赛”的问题。
+- 确认 `/api/upcoming-matches` 实际有未开赛赛程，包含德国 vs 库拉索、荷兰 vs 日本、科特迪瓦 vs 厄瓜多尔等。
+- 修正前端状态：未开赛赛程加载中、接口失败、真实为空三种状态分开处理，不再把 `null` 误显示为“暂无未开赛比赛”。
+- 当前重点预测可作为赛程接口失败时的兜底入口，避免赛程页空屏。
+- 发现 Cloudflare Python Worker 在公开首页并发请求 `useSnapshot=false` 实时模拟时会超 CPU，导致 1101 / 1102。
+- 公开首页预测请求改回自动快照读取：`/api/match-prediction?simulations=1200&useSnapshot=true`。
+- 首页预测快照请求和未开赛赛程请求改为顺序执行，降低 Cloudflare Worker 冷启动并发失败概率。
+- 从干净 worktree 重新部署 API，避免带入本地其它未提交后台改动。
+
+关键决策：
+
+- 公开用户页不再触发实时蒙特卡洛计算；实时计算保留给后台、单次调试或快照生成任务。
+- 用户看到的自动更新依赖半小时日更流水线生成新快照并自动部署，不依赖人工刷新。
+- 赛程列表继续直接读取轻量未开赛接口，确保用户能看到官方赛程入口。
+
+验证：
+
+- `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_frontend_contract.py' -v` 通过。
+- `npm run test:model` 通过。
+- `npm run validate:data` 通过。
+- `npm run build` 通过。
+- 线上 `/api/upcoming-matches?limit=6` 返回未开赛赛程。
+- 线上 `/api/match-prediction?simulations=1200&useSnapshot=true` 返回快照结果。
+
 #### 当前仍未完成的专业数据层
 
 没有授权数据前，以下仍保持缺失或中性：

@@ -94,11 +94,15 @@ class FrontendContractTest(unittest.TestCase):
         self.assertNotIn("goalMarkets.slice(0, 4)", home_source)
         self.assertIn("calc(100px + env(safe-area-inset-bottom))", styles)
 
-    def test_public_homepage_polling_uses_live_prediction_not_static_snapshot(self):
+    def test_public_homepage_polling_uses_automatic_snapshot_and_sequential_schedule_fetch(self):
         source = app_source()
         home_source = source_between(source, "function HomePredictionPage()", "function TeamFlag")
 
-        self.assertIn("useSnapshot=false", home_source)
+        self.assertIn("useSnapshot=true", home_source)
+        self.assertNotIn("useSnapshot=false", home_source)
+        self.assertIn("async function loadHomeData()", home_source)
+        self.assertIn("await loadPrediction();", home_source)
+        self.assertIn("await loadUpcomingMatches();", home_source)
         self.assertIn("cache: \"no-store\"", home_source)
 
     def test_matches_page_uses_beijing_time_without_venue_heading(self):
