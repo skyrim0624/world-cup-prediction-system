@@ -1001,6 +1001,29 @@ function firstStaticUpcomingMatch(referenceDate = new Date()) {
   return filterUpcomingMatches(STATIC_UPCOMING_MATCHES_FALLBACK, referenceDate)[0] ?? STATIC_UPCOMING_MATCHES_FALLBACK[0];
 }
 
+function teamFromUpcomingFallback(teamKey: TeamKey): Team | null {
+  const match = STATIC_UPCOMING_MATCHES_FALLBACK.find((item) => item.homeTeam === teamKey || item.awayTeam === teamKey);
+  if (!match) return null;
+  const isHome = match.homeTeam === teamKey;
+  return {
+    key: teamKey,
+    name: isHome ? match.homeName : match.awayName,
+    code: isHome ? match.homeCode : match.awayCode,
+    factors: { strength: 70, form: 70, path: 70, squad: 70, margin: 70 },
+    tournament: { champion: 0, final: 0, semifinal: 0, quarterfinal: 0, change: 0 },
+  };
+}
+
+function resolveDisplayTeam(teamKey: TeamKey, teamsData: Team[]): Team {
+  return teamsData.find((team) => team.key === teamKey) ?? teamFromUpcomingFallback(teamKey) ?? {
+    key: teamKey,
+    name: teamKey,
+    code: teamKey.toUpperCase().slice(0, 3),
+    factors: { strength: 70, form: 70, path: 70, squad: 70, margin: 70 },
+    tournament: { champion: 0, final: 0, semifinal: 0, quarterfinal: 0, change: 0 },
+  };
+}
+
 function formatKickoffForUser(value: string) {
   if (!value || value === "待定" || value === "进行中" || value === "已结束") return value;
   if (value.includes("北京时间")) return value;
@@ -1126,8 +1149,8 @@ function HomePredictionPage() {
   const fallbackPrediction = useMemo(() => buildFallbackPrediction(referenceDate), [referenceDate]);
   const validApiPrediction = apiPrediction && isUpcomingMatch(apiPrediction, referenceDate) ? apiPrediction : null;
   const matchPrediction = validApiPrediction ?? fallbackPrediction;
-  const homeTeam = teamsData.find((team) => team.key === matchPrediction.homeTeam) ?? teamsData[0];
-  const awayTeam = teamsData.find((team) => team.key === matchPrediction.awayTeam) ?? teamsData[1];
+  const homeTeam = resolveDisplayTeam(matchPrediction.homeTeam, teamsData);
+  const awayTeam = resolveDisplayTeam(matchPrediction.awayTeam, teamsData);
   const championBoard = [...teamsData].sort((left, right) => right.tournament.champion - left.tournament.champion);
   const topScore = matchPrediction.scoreOutcomes[0];
   const goalMarkets = matchPrediction.goalMarkets?.length ? matchPrediction.goalMarkets : goalMarketsFallback();

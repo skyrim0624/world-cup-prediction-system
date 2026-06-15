@@ -147,6 +147,9 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("validApiPrediction", home_source)
         self.assertIn("isUpcomingMatch(apiPrediction", home_source)
         self.assertIn("filterUpcomingMatches(data.items)", home_source)
+        self.assertIn("resolveDisplayTeam(matchPrediction.homeTeam", home_source)
+        self.assertIn("resolveDisplayTeam(matchPrediction.awayTeam", home_source)
+        self.assertIn("teamFromUpcomingFallback", source)
         self.assertNotIn("slice(0, 4)", home_source)
 
     def test_forecast_fallback_uses_official_schedule_not_old_mock_fixture(self):
