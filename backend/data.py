@@ -249,8 +249,11 @@ def infer_event_strength(text: str) -> float:
 PUBLIC_PROXY_CATEGORY_STRENGTH = {
     "suspension": 0.07,
     "injury": 0.062,
+    "player_status": 0.064,
     "availability": 0.048,
     "lineup": 0.045,
+    "xg_proxy": 0.052,
+    "market_proxy": 0.028,
     "weather": 0.028,
     "training": 0.026,
     "general": 0.015,

@@ -40,6 +40,10 @@ def infer_news_team(text: str, team_aliases: dict[str, tuple[str, ...]] | None =
 
 def infer_news_factor(text: str) -> str:
     lowered = text.lower()
+    if any(keyword in lowered for keyword in ("xga", "expected goals against", "big chances allowed", "chances conceded", "conceded big chances", "allowed big chances")):
+        return "defense"
+    if any(keyword in lowered for keyword in ("xg", "expected goals", "shot quality", "big chances")) or any(keyword in text for keyword in ("预期进球", "射门质量", "绝佳机会")):
+        return "attack"
     if any(keyword in text for keyword in ("门将", "扑救")) or any(keyword in lowered for keyword in ("goalkeeper", "keeper")):
         return "goalkeeper"
     if any(keyword in text for keyword in ("中卫", "后卫", "防线", "防守")) or any(keyword in lowered for keyword in ("defender", "centre-back", "center-back", "defence", "defense")):
@@ -51,6 +55,67 @@ def infer_news_factor(text: str) -> str:
     return "squad"
 
 
+def classify_xg_proxy(text: str) -> dict[str, Any] | None:
+    lowered = text.lower()
+    has_xg_signal = any(
+        keyword in lowered
+        for keyword in (
+            "xg",
+            "xga",
+            "expected goals",
+            "expected goals against",
+            "shot quality",
+            "big chances",
+            "shots on target",
+        )
+    ) or any(keyword in text for keyword in ("预期进球", "预期失球", "射门质量", "绝佳机会", "射正"))
+    if not has_xg_signal:
+        return None
+
+    defense_context = any(
+        keyword in lowered
+        for keyword in (
+            "xga",
+            "expected goals against",
+            "conceded",
+            "allowed",
+            "big chances against",
+            "big chances allowed",
+            "chances conceded",
+        )
+    ) or any(keyword in text for keyword in ("预期失球", "被创造", "被射门", "被对手", "防守端"))
+    negative_context = any(
+        keyword in lowered
+        for keyword in ("concern", "high xga", "higher xga", "allowed", "conceded", "poor", "drop", "low", "fewer")
+    ) or any(keyword in text for keyword in ("隐患", "下降", "低迷", "不足", "升高", "被"))
+    positive_context = any(
+        keyword in lowered
+        for keyword in ("surge", "strong", "created", "generated", "better", "improved", "higher", "high")
+    ) or any(keyword in text for keyword in ("提升", "创造", "增强", "改善"))
+
+    factor = "defense" if defense_context else "attack"
+    if factor == "defense":
+        direction = -1 if negative_context else 1 if positive_context else 0
+    else:
+        direction = -1 if negative_context and not positive_context else 1 if positive_context else 0
+    return {"category": "xg_proxy", "factor": factor, "direction": direction, "confidence": 0.68}
+
+
+def classify_market_proxy(text: str) -> dict[str, Any] | None:
+    lowered = text.lower()
+    has_market_signal = any(
+        keyword in lowered
+        for keyword in ("odds", "market", "price", "priced", "favorite", "favourite", "shorten", "drift")
+    ) or any(keyword in text for keyword in ("赔率", "市场", "热门", "降温", "升温"))
+    if not has_market_signal:
+        return None
+
+    positive_context = any(keyword in lowered for keyword in ("shorten", "shortened", "favorite", "favourite", "backed", "support")) or any(keyword in text for keyword in ("升温", "走热", "热门"))
+    negative_context = any(keyword in lowered for keyword in ("drift", "drifted", "lengthen", "weaken", "cool")) or any(keyword in text for keyword in ("降温", "走弱", "遇冷"))
+    direction = 1 if positive_context else -1 if negative_context else 0
+    return {"category": "market_proxy", "factor": "path", "direction": direction, "confidence": 0.52}
+
+
 def classify_news_item(text: str) -> dict[str, Any]:
     lowered = text.lower()
     if any(keyword in text for keyword in ("停赛", "累计黄牌", "红牌")) or any(keyword in lowered for keyword in ("suspended", "suspension", "red card", "yellow card")):
@@ -59,6 +124,12 @@ def classify_news_item(text: str) -> dict[str, Any]:
         return {"category": "injury", "factor": infer_news_factor(text), "direction": -1, "confidence": 0.78}
     if any(keyword in text for keyword in ("恢复合练", "复出", "确认可用", "回归")) or any(keyword in lowered for keyword in ("returns", "available", "back in training")):
         return {"category": "availability", "factor": infer_news_factor(text), "direction": 1, "confidence": 0.76}
+    market_proxy = classify_market_proxy(text)
+    if market_proxy is not None:
+        return market_proxy
+    xg_proxy = classify_xg_proxy(text)
+    if xg_proxy is not None:
+        return xg_proxy
     if any(keyword in text for keyword in ("首发", "阵容")) or any(keyword in lowered for keyword in ("lineup", "starting xi", "starts")):
         return {"category": "lineup", "factor": "squad", "direction": 0, "confidence": 0.72}
     if any(keyword in text for keyword in ("高温", "天气", "暴雨", "湿度")) or any(keyword in lowered for keyword in ("weather", "heat", "humidity", "rain")):

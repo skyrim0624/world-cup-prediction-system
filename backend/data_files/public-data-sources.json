@@ -1,5 +1,32 @@
 [
   {
+    "id": "fifa-world-cup-news-index",
+    "kind": "html_index",
+    "source": "fifa",
+    "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/news",
+    "baseUrl": "https://www.fifa.com",
+    "team": null,
+    "maxItems": 30
+  },
+  {
+    "id": "ap-world-cup-news-index",
+    "kind": "html_index",
+    "source": "ap",
+    "url": "https://apnews.com/hub/fifa-world-cup",
+    "baseUrl": "https://apnews.com",
+    "team": null,
+    "maxItems": 30
+  },
+  {
+    "id": "us-soccer-news-index",
+    "kind": "html_index",
+    "source": "us-soccer",
+    "url": "https://www.ussoccer.com/",
+    "baseUrl": "https://www.ussoccer.com",
+    "team": null,
+    "maxItems": 20
+  },
+  {
     "id": "bbc-football-rss",
     "kind": "rss",
     "source": "bbc",

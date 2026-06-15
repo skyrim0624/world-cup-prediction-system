@@ -18,6 +18,12 @@
     "url": "https://www.reuters.com"
   },
   {
+    "key": "ap",
+    "name": "Associated Press",
+    "source_level": "A",
+    "url": "https://apnews.com/hub/fifa-world-cup"
+  },
+  {
     "key": "bbc",
     "name": "BBC Sport Football",
     "source_level": "A",
@@ -34,6 +40,12 @@
     "name": "The Guardian Football",
     "source_level": "A",
     "url": "https://www.theguardian.com/football"
+  },
+  {
+    "key": "us-soccer",
+    "name": "U.S. Soccer",
+    "source_level": "S",
+    "url": "https://www.ussoccer.com/"
   },
   {
     "key": "local-weather",

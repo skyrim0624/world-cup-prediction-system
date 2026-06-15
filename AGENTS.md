@@ -3279,6 +3279,36 @@ cron: "*/30 * * * *"
 - 不直接复制商业 xG / 球员事件数值；但把公开网页和官方线索转成我们自己的代理因子，真实进入 attack / defense / path / squad / goalkeeper 修正。
 - 这让第三点新闻自动更新和第四点预测质量之间形成闭环：抓取结果不只是新闻列表，而是可影响概率的模型输入。
 
+### 2026-06-15：高阶公开代理源与容错补全
+
+已完成：
+
+- 扩展公开采集源类型，新增 `html_index`，可从官方/高可信列表页提取文章入口。
+- 默认公开源增加 FIFA 官方世界杯页、AP 世界杯专题页和 U.S. Soccer 官方站，继续保留 BBC、ESPN、Guardian RSS。
+- 新闻分类器新增三类高阶代理事件：
+  - `xg_proxy`：从公开文本识别 xG / xGA / expected goals / shot quality / big chances / 预期进球 / 射门质量等信号，并映射到 attack 或 defense。
+  - `player_status`：命中关键球员别名且属于伤病、停赛、可用性、首发、训练等状态类信息时，升级为球员级事件。
+  - `market_proxy`：从公开文本识别 odds / market / price / favorite / shorten / drift / 赔率 / 市场 / 热门等信号，只作为市场热度代理，不等同于授权赔率。
+- 新增 `backend/data_files/player-aliases.json`，生产采集脚本会自动加载球员别名。
+- 公开代理强度表加入 `xg_proxy`、`player_status`、`market_proxy`，这些信号会通过原有事件权重、来源等级和确认状态进入模型。
+- 公开采集改为逐源容错：单个来源失败不会中断整条日更；报告会显示 `success`、`partial_success` 或 `failed`，并保留失败来源错误。
+- 更新 `docs/公开数据采集管线说明.md`，说明四类采集源、高阶代理信号、容错规则和授权边界。
+
+验证：
+
+- `test_public_data_pipeline.py` 新增覆盖：
+  - xG / 市场 / 球员状态代理信号分类。
+  - HTML 列表页文章链接抽取。
+  - 单源失败后继续导入其他来源。
+  - 球员别名加载。
+- `test_model.py`、`test_news_feed.py`、`test_daily_update.py` 均通过。
+
+关键决策：
+
+- 不把商业 xG、逐球员事件和授权市场价格伪造成真实数据库字段。
+- 在没有授权接口前，用公开文本代理信号补足预测质量缺口，让模型真正吃到更高阶的公开信息。
+- 公开市场信号只用于观察大众预期和热度偏差，不能在产品里写成投注建议。
+
 ## 十、当前交接摘要
 
 一句话定义：
