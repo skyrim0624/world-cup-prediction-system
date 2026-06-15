@@ -2,7 +2,7 @@ name: Daily Prediction Update
 
 on:
   schedule:
-    - cron: "17 */3 * * *"
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -41,3 +41,25 @@ jobs:
           git add -f backend/snapshots/*.json
           git diff --cached --quiet || git commit -m "chore: daily prediction update"
           git push
+
+      - name: Deploy API Worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "${CLOUDFLARE_API_TOKEN}" ] || [ -z "${CLOUDFLARE_ACCOUNT_ID}" ]; then
+            echo "Cloudflare secrets missing; skip API deploy"
+            exit 0
+          fi
+          npm run deploy:api
+
+      - name: Deploy public web app
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "${CLOUDFLARE_API_TOKEN}" ] || [ -z "${CLOUDFLARE_ACCOUNT_ID}" ]; then
+            echo "Cloudflare secrets missing; skip web deploy"
+            exit 0
+          fi
+          npm run deploy:web

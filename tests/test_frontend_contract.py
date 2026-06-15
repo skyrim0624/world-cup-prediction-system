@@ -94,6 +94,13 @@ class FrontendContractTest(unittest.TestCase):
         self.assertNotIn("goalMarkets.slice(0, 4)", home_source)
         self.assertIn("calc(100px + env(safe-area-inset-bottom))", styles)
 
+    def test_public_homepage_polling_uses_live_prediction_not_static_snapshot(self):
+        source = app_source()
+        home_source = source_between(source, "function HomePredictionPage()", "function TeamFlag")
+
+        self.assertIn("useSnapshot=false", home_source)
+        self.assertIn("cache: \"no-store\"", home_source)
+
     def test_matches_page_uses_beijing_time_without_venue_heading(self):
         source = app_source()
         home_source = source_between(source, "function HomePredictionPage()", "function TeamFlag")

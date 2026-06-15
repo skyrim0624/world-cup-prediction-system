@@ -840,7 +840,7 @@ function HomePredictionPage() {
 
     async function loadPrediction() {
       try {
-        const response = await fetch(`${API_BASE_URL}/api/match-prediction?simulations=${INTERACTIVE_SIMULATION_COUNT}`, {
+        const response = await fetch(`${API_BASE_URL}/api/match-prediction?simulations=${INTERACTIVE_SIMULATION_COUNT}&useSnapshot=false`, {
           cache: "no-store",
         });
         if (!response.ok) throw new Error(`预测接口返回 ${response.status}`);

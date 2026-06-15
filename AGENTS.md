@@ -3086,6 +3086,48 @@ direction * strength * sourceWeight * eventStatusConfidence * 100
 - `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_history_model_pipeline.py' -v` 通过。
 - `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_model.py' -v` 通过。
 
+### 2026-06-15：自动更新链路修正
+
+本次问题：
+
+- 线上首页顶部更新时间长时间不变。根因是前端虽然每 15 秒轮询一次，但默认请求 `/api/match-prediction` 时使用 `useSnapshot=true`，读到的是旧快照；同时 GitHub Actions 仍是每 3 小时跑一次，且生成新快照后没有自动部署 API Worker 和前端页面。
+
+已完成：
+
+- 首页预测请求改为：
+
+```text
+/api/match-prediction?simulations=1200&useSnapshot=false
+```
+
+- 前端仍保持 15 秒自动轮询，不需要人工刷新。
+- GitHub Actions 日更任务从每 3 小时改为每 30 分钟：
+
+```text
+cron: "*/30 * * * *"
+```
+
+- workflow 在 `daily:update`、`daily:check` 和自动提交快照后，增加自动部署步骤：
+  - `npm run deploy:api`
+  - `npm run deploy:web`
+- 如果 GitHub 仓库没有配置 `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID`，部署步骤会跳过，不会让更新任务失败。
+
+关键决策：
+
+- 用户首页用实时计算结果，避免旧快照导致“更新时间不动”。
+- 正式运营仍保留快照机制，后台和日更任务继续生成 50,000 次模拟快照，用于稳定报告和历史变化。
+- 半小时自动更新依赖 GitHub Actions 和 Cloudflare 部署密钥；如果密钥没配，CI 会更新仓库数据但不会自动推到线上 Worker。
+
+验证：
+
+- 新增前端契约测试先失败，确认首页请求没有 `useSnapshot=false`。
+- 新增部署测试先失败，确认 workflow 不是 30 分钟，也没有 deploy 步骤。
+- 实现后 `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_frontend_contract.py' -v` 通过。
+- `PYTHONPATH=. python3 -m unittest discover -s tests -p 'test_deployment.py' -v` 通过。
+- `npm run test:model` 通过。
+- `npm run validate:data` 通过。
+- `npm run build` 通过。
+
 #### 当前仍未完成的专业数据层
 
 没有授权数据前，以下仍保持缺失或中性：
