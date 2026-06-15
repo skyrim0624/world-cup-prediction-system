@@ -10,28 +10,47 @@ from uuid import uuid4
 from .access import ACCESS_PRODUCTS, build_access_decision
 
 
-PAYMENT_METHOD = "scan_qr"
 PAYMENT_ORDER_TTL_MINUTES = 15
 
 PAYMENT_PROVIDERS = {
-    "wechat": {
+    "wechat_jsapi": {
         "label": "微信支付",
-        "missingLabel": "客户微信支付接口",
+        "paymentMethod": "jsapi",
+        "paymentMethodLabel": "JSAPI 支付",
+        "missingLabel": "客户微信 JSAPI 支付接口",
         "requiredConfig": [
-            "CUSTOMER_WECHAT_PAY_CREATE_URL",
-            "CUSTOMER_WECHAT_PAY_STATUS_URL",
-            "CUSTOMER_WECHAT_PAY_NOTIFY_SECRET",
+            "CUSTOMER_WECHAT_JSAPI_PAY_CREATE_URL",
+            "CUSTOMER_WECHAT_JSAPI_PAY_STATUS_URL",
+            "CUSTOMER_WECHAT_JSAPI_PAY_NOTIFY_SECRET",
         ],
     },
-    "alipay": {
+    "wechat_native": {
+        "label": "微信支付",
+        "paymentMethod": "native",
+        "paymentMethodLabel": "扫码支付",
+        "missingLabel": "客户微信 Native 支付接口",
+        "requiredConfig": [
+            "CUSTOMER_WECHAT_NATIVE_PAY_CREATE_URL",
+            "CUSTOMER_WECHAT_NATIVE_PAY_STATUS_URL",
+            "CUSTOMER_WECHAT_NATIVE_PAY_NOTIFY_SECRET",
+        ],
+    },
+    "alipay_qr": {
         "label": "支付宝支付",
-        "missingLabel": "客户支付宝接口",
+        "paymentMethod": "scan_qr",
+        "paymentMethodLabel": "扫码支付",
+        "missingLabel": "客户支付宝扫码接口",
         "requiredConfig": [
-            "CUSTOMER_ALIPAY_PAY_CREATE_URL",
-            "CUSTOMER_ALIPAY_PAY_STATUS_URL",
-            "CUSTOMER_ALIPAY_PAY_NOTIFY_SECRET",
+            "CUSTOMER_ALIPAY_QR_PAY_CREATE_URL",
+            "CUSTOMER_ALIPAY_QR_PAY_STATUS_URL",
+            "CUSTOMER_ALIPAY_QR_PAY_NOTIFY_SECRET",
         ],
     },
+}
+
+PAYMENT_PROVIDER_ALIASES = {
+    "wechat": "wechat_native",
+    "alipay": "alipay_qr",
 }
 
 PAYMENT_ORDERS: dict[str, dict[str, object]] = {}
@@ -57,8 +76,12 @@ def _product(product_key: str) -> dict[str, object]:
     return product
 
 
+def _provider_key(provider_key: str) -> str:
+    return PAYMENT_PROVIDER_ALIASES.get(provider_key, provider_key)
+
+
 def _provider(provider_key: str) -> dict[str, object]:
-    provider = PAYMENT_PROVIDERS.get(provider_key)
+    provider = PAYMENT_PROVIDERS.get(_provider_key(provider_key))
     if provider is None:
         raise ValueError(f"未知支付渠道: {provider_key}")
     return provider
@@ -88,7 +111,8 @@ def build_payment_config(env: Mapping[str, str] | None = None) -> dict[str, obje
             {
                 "provider": provider_key,
                 "label": provider["label"],
-                "paymentMethod": PAYMENT_METHOD,
+                "paymentMethod": provider["paymentMethod"],
+                "paymentMethodLabel": provider["paymentMethodLabel"],
                 "integrationOwner": "customer",
                 "configured": configured,
                 "missingConfig": missing,
@@ -105,10 +129,12 @@ def build_payment_config(env: Mapping[str, str] | None = None) -> dict[str, obje
 def create_payment_order(
     product_key: str,
     provider_key: str,
+    metadata: Mapping[str, object] | None = None,
     env: Mapping[str, str] | None = None,
     storage_path: Path | None = None,
 ) -> dict[str, object]:
     product = _product(product_key)
+    normalized_provider_key = _provider_key(provider_key)
     provider = _provider(provider_key)
     source = env or environ
     configured, missing = _configured(source, provider["requiredConfig"])
@@ -123,9 +149,10 @@ def create_payment_order(
         "productKey": product["key"],
         "productName": product["name"],
         "amountLabel": product.get("amountLabel", "待定价"),
-        "provider": provider_key,
+        "provider": normalized_provider_key,
         "providerLabel": provider["label"],
-        "paymentMethod": PAYMENT_METHOD,
+        "paymentMethod": provider["paymentMethod"],
+        "paymentMethodLabel": provider["paymentMethodLabel"],
         "integrationOwner": "customer",
         "status": status,
         "qrCodeUrl": None,
@@ -134,6 +161,9 @@ def create_payment_order(
         "createdAt": _iso(created_at),
         "expiresAt": _iso(expires_at),
     }
+    if metadata:
+        allowed_metadata_keys = {"contentKey", "matchKey", "homeTeam", "awayTeam", "homeName", "awayName"}
+        order["metadata"] = {key: value for key, value in metadata.items() if key in allowed_metadata_keys and value}
     stored_orders = _read_order_store(storage_path)
     stored_orders[str(order["orderId"])] = order
     PAYMENT_ORDERS[str(order["orderId"])] = order
@@ -167,7 +197,7 @@ def update_payment_order_status(order_id: str, status: str, storage_path: Path |
     return updated
 
 
-def build_order_access_decision(order_id: str, content_key: str, storage_path: Path | None = None) -> dict[str, object]:
+def build_order_access_decision(order_id: str, content_key: str, match_key: str | None = None, storage_path: Path | None = None) -> dict[str, object]:
     try:
         order = get_payment_order(order_id, storage_path)
     except KeyError:
@@ -190,10 +220,24 @@ def build_order_access_decision(order_id: str, content_key: str, storage_path: P
             "requiredProducts": [],
         }
 
+    metadata = order.get("metadata") if isinstance(order.get("metadata"), dict) else {}
+    order_match_key = metadata.get("matchKey") if metadata else None
+    if content_key == "match_prediction" and order_match_key and match_key != order_match_key:
+        return {
+            "allowed": False,
+            "reason": "match_not_in_scope",
+            "orderId": order_id,
+            "productKey": order["productKey"],
+            "paymentStatus": order["status"],
+            "requiredProducts": ["single_match", "tournament_pass", "match_pack"],
+            "matchKey": order_match_key,
+        }
+
     decision = build_access_decision(str(order["productKey"]), content_key, payment_configured=True)
     return {
         **decision,
         "orderId": order_id,
         "productKey": order["productKey"],
         "paymentStatus": order["status"],
+        "matchKey": order_match_key,
     }

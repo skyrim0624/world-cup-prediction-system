@@ -660,6 +660,45 @@ class PredictionApiTest(unittest.TestCase):
         self.assertIn("topScore", first)
         self.assertEqual(first["homeWin"] + first["draw"] + first["awayWin"], 100)
 
+    def test_public_upcoming_matches_api_hides_paid_prediction_fields(self):
+        client = TestClient(app)
+        response = client.get("/api/public-upcoming-matches?limit=5")
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertEqual(len(payload["items"]), 5)
+        first = payload["items"][0]
+        self.assertEqual(first["status"], "scheduled")
+        self.assertIn("homeName", first)
+        self.assertIn("awayName", first)
+        self.assertIn("homeCode", first)
+        self.assertIn("awayCode", first)
+        self.assertNotIn("homeWin", first)
+        self.assertNotIn("draw", first)
+        self.assertNotIn("awayWin", first)
+        self.assertNotIn("topScore", first)
+        self.assertNotIn("fixtureContext", first)
+        self.assertNotIn("matchupContext", first)
+
+    def test_public_match_summary_api_hides_paid_prediction_fields(self):
+        client = TestClient(app)
+        response = client.get("/api/public-match-summary?home=spain&away=cape-verde")
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertEqual(payload["homeTeam"], "spain")
+        self.assertEqual(payload["awayTeam"], "cape-verde")
+        self.assertEqual(payload["homeName"], "西班牙")
+        self.assertEqual(payload["awayName"], "佛得角")
+        self.assertEqual(payload["homeCode"], "ESP")
+        self.assertEqual(payload["awayCode"], "CPV")
+        self.assertNotIn("homeWin", payload)
+        self.assertNotIn("draw", payload)
+        self.assertNotIn("awayWin", payload)
+        self.assertNotIn("topScore", payload)
+        self.assertNotIn("scoreOutcomes", payload)
+        self.assertNotIn("scenarioImpacts", payload)
+
     def test_upcoming_matches_api_filters_scheduled_matches_after_kickoff(self):
         rows = [
             {
@@ -756,6 +795,25 @@ class PredictionApiTest(unittest.TestCase):
         self.assertEqual(third["homeScore"], 0)
         self.assertEqual(third["awayScore"], 1)
         self.assertEqual(third["awayName"], "苏格兰")
+
+    def test_public_finished_matches_api_hides_internal_review_fields(self):
+        client = TestClient(app)
+        response = client.get("/api/public-finished-matches?limit=1")
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertEqual(payload["count"], 1)
+        first = payload["items"][0]
+        self.assertEqual(first["status"], "finished")
+        self.assertEqual(first["homeScore"], 7)
+        self.assertEqual(first["awayScore"], 1)
+        self.assertIn("postMatchReview", first)
+        review = first["postMatchReview"]
+        self.assertIn("message", review)
+        self.assertNotIn("targetFunctions", review)
+        self.assertNotIn("calibrationActions", review)
+        self.assertNotIn("predictedTopScore", review)
+        self.assertNotIn("predictedTopProbability", review)
 
     def test_match_detail_api_builds_prediction_for_any_scheduled_match(self):
         client = TestClient(app)

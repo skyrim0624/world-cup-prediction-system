@@ -10,10 +10,33 @@ GitHub 仓库：[skyrim0624/world-cup-prediction-system](https://github.com/skyr
 
 - 前端：React + TypeScript + Vite，已部署到 Cloudflare Pages。
 - 后端：Python + FastAPI，已通过 Cloudflare Python Worker 部署为线上 API。
+- 后台：单独 Cloudflare Pages 项目，根路径直接进入 Token 控制面板。
 - API 地址：`https://world-cup-prediction-api.loveice0624.workers.dev/`。
 - 数据：当前已导入 48 队、72 场小组赛、已结束赛果样例、事件权重和新闻源配置，可替换为客户授权数据。
 - 线上版本：前端已接生产 API，未开赛比赛池、已结束赛果、单场详情、模型状态和付费配置均从线上 API 读取。
 - 产品边界：这是概率分析产品，不是投注建议产品；不承诺命中，不使用未授权商业数据，不暗示内幕信息。
+
+## 部署入口
+
+前台用户页面：
+
+```bash
+npm run deploy:web
+```
+
+后台管理页面：
+
+```bash
+npm run deploy:admin
+```
+
+后台 API Token 设置在 Worker Secret：
+
+```bash
+npx wrangler secret put WORLD_CUP_ADMIN_TOKEN
+```
+
+前台和后台共用同一个 API Worker。后台 Pages 构建会设置 `VITE_FORCE_ADMIN=1`，所以后台域名访问 `/` 时直接显示 Token 控制面板。
 
 ## 预测方法
 

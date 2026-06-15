@@ -10,44 +10,46 @@ from backend.main import app
 
 
 class PaymentApiTest(unittest.TestCase):
-    def test_payment_config_lists_wechat_and_alipay_scan_providers(self):
+    def test_payment_config_lists_customer_required_payment_providers(self):
         client = TestClient(app)
 
         response = client.get("/api/payments/config")
 
         self.assertEqual(response.status_code, 200)
         payload = response.json()
-        self.assertEqual([provider["provider"] for provider in payload["providers"]], ["wechat", "alipay"])
+        self.assertEqual([provider["provider"] for provider in payload["providers"]], ["wechat_jsapi", "wechat_native", "alipay_qr"])
+        self.assertEqual([provider["paymentMethod"] for provider in payload["providers"]], ["jsapi", "native", "scan_qr"])
         self.assertFalse(payload["ready"])
         self.assertFalse(payload["providers"][0]["configured"])
-        self.assertIn("CUSTOMER_WECHAT_PAY_CREATE_URL", payload["providers"][0]["missingConfig"])
-        self.assertFalse(payload["providers"][1]["configured"])
-        self.assertIn("CUSTOMER_ALIPAY_PAY_CREATE_URL", payload["providers"][1]["missingConfig"])
+        self.assertIn("CUSTOMER_WECHAT_JSAPI_PAY_CREATE_URL", payload["providers"][0]["missingConfig"])
+        self.assertFalse(payload["providers"][2]["configured"])
+        self.assertIn("CUSTOMER_ALIPAY_QR_PAY_CREATE_URL", payload["providers"][2]["missingConfig"])
 
     def test_create_scan_payment_order_requires_real_provider_configuration(self):
         client = TestClient(app)
 
         response = client.post(
             "/api/payments/orders",
-            json={"productKey": "single_match", "provider": "wechat"},
+            json={"productKey": "single_match", "provider": "wechat_native"},
         )
 
         self.assertEqual(response.status_code, 200)
         payload = response.json()
         self.assertEqual(payload["productKey"], "single_match")
-        self.assertEqual(payload["provider"], "wechat")
+        self.assertEqual(payload["provider"], "wechat_native")
         self.assertEqual(payload["status"], "provider_config_required")
         self.assertIsNone(payload["qrCodeUrl"])
-        self.assertIn("客户微信支付接口", payload["nextAction"])
-        self.assertIn("amountLabel", payload)
-        self.assertEqual(payload["paymentMethod"], "scan_qr")
+        self.assertIn("客户微信 Native 支付接口", payload["nextAction"])
+        self.assertEqual(payload["amountLabel"], "¥1.00")
+        self.assertEqual(payload["paymentMethod"], "native")
+        self.assertEqual(payload["paymentMethodLabel"], "扫码支付")
         self.assertEqual(payload["integrationOwner"], "customer")
 
     def test_payment_order_status_can_be_queried_after_creation(self):
         client = TestClient(app)
         created = client.post(
             "/api/payments/orders",
-            json={"productKey": "tournament_pass", "provider": "alipay"},
+            json={"productKey": "tournament_pass", "provider": "alipay_qr"},
         ).json()
 
         response = client.get(f"/api/payments/orders/{created['orderId']}")
@@ -55,8 +57,9 @@ class PaymentApiTest(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         payload = response.json()
         self.assertEqual(payload["orderId"], created["orderId"])
-        self.assertEqual(payload["provider"], "alipay")
+        self.assertEqual(payload["provider"], "alipay_qr")
         self.assertEqual(payload["status"], "provider_config_required")
+        self.assertEqual(payload["amountLabel"], "¥39.00")
 
     def test_payment_order_rejects_unknown_provider_or_product(self):
         client = TestClient(app)
@@ -78,17 +81,38 @@ class PaymentApiTest(unittest.TestCase):
     def test_configured_customer_interface_does_not_fabricate_qr_code(self):
         order = create_payment_order(
             "single_match",
-            "wechat",
+            "wechat_native",
             env={
-                "CUSTOMER_WECHAT_PAY_CREATE_URL": "https://customer.example/pay/wechat/create",
-                "CUSTOMER_WECHAT_PAY_STATUS_URL": "https://customer.example/pay/wechat/status",
-                "CUSTOMER_WECHAT_PAY_NOTIFY_SECRET": "secret",
+                "CUSTOMER_WECHAT_NATIVE_PAY_CREATE_URL": "https://customer.example/pay/wechat/create",
+                "CUSTOMER_WECHAT_NATIVE_PAY_STATUS_URL": "https://customer.example/pay/wechat/status",
+                "CUSTOMER_WECHAT_NATIVE_PAY_NOTIFY_SECRET": "secret",
             },
         )
 
         self.assertEqual(order["status"], "customer_interface_ready")
         self.assertIsNone(order["qrCodeUrl"])
-        self.assertIn("客户微信支付接口已配置", order["nextAction"])
+        self.assertIn("客户微信 Native 支付接口已配置", order["nextAction"])
+
+    def test_payment_order_can_persist_match_context_for_waiting_page(self):
+        order = create_payment_order(
+            "single_match",
+            "wechat_native",
+            metadata={
+                "contentKey": "match_prediction",
+                "matchKey": "netherlands-japan",
+                "homeTeam": "netherlands",
+                "awayTeam": "japan",
+                "homeName": "荷兰",
+                "awayName": "日本",
+                "ignored": "不应写入",
+            },
+        )
+
+        self.assertEqual(order["metadata"]["contentKey"], "match_prediction")
+        self.assertEqual(order["metadata"]["matchKey"], "netherlands-japan")
+        self.assertEqual(order["metadata"]["homeName"], "荷兰")
+        self.assertEqual(order["metadata"]["awayName"], "日本")
+        self.assertNotIn("ignored", order["metadata"])
 
     def test_payment_order_persists_to_json_store(self):
         with TemporaryDirectory() as temp_dir:
@@ -119,12 +143,34 @@ class PaymentApiTest(unittest.TestCase):
             update_payment_order_status(created["orderId"], "paid", storage_path=store_path)
 
             allowed = build_order_access_decision(created["orderId"], "match_prediction", storage_path=store_path)
+            review_allowed = build_order_access_decision(created["orderId"], "post_match_review", storage_path=store_path)
             denied = build_order_access_decision(created["orderId"], "tournament_probabilities", storage_path=store_path)
 
         self.assertTrue(allowed["allowed"])
         self.assertEqual(allowed["reason"], "allowed")
+        self.assertTrue(review_allowed["allowed"])
+        self.assertEqual(review_allowed["reason"], "allowed")
         self.assertFalse(denied["allowed"])
         self.assertEqual(denied["reason"], "product_not_in_scope")
+
+    def test_paid_single_match_order_is_scoped_to_match_key_when_present(self):
+        with TemporaryDirectory() as temp_dir:
+            store_path = Path(temp_dir) / "payment-orders.json"
+            created = create_payment_order(
+                "single_match",
+                "wechat",
+                metadata={"contentKey": "match_prediction", "matchKey": "netherlands-japan"},
+                storage_path=store_path,
+            )
+            update_payment_order_status(created["orderId"], "paid", storage_path=store_path)
+
+            allowed = build_order_access_decision(created["orderId"], "match_prediction", match_key="netherlands-japan", storage_path=store_path)
+            denied = build_order_access_decision(created["orderId"], "match_prediction", match_key="germany-curacao", storage_path=store_path)
+
+        self.assertTrue(allowed["allowed"])
+        self.assertEqual(allowed["reason"], "allowed")
+        self.assertFalse(denied["allowed"])
+        self.assertEqual(denied["reason"], "match_not_in_scope")
 
     def test_payment_order_api_persists_created_order(self):
         client = TestClient(app)
@@ -133,7 +179,19 @@ class PaymentApiTest(unittest.TestCase):
             previous_path = main_module.payment_orders_path
             main_module.payment_orders_path = store_path
             try:
-                created = client.post("/api/payments/orders", json={"productKey": "single_match", "provider": "wechat"}).json()
+                created = client.post(
+                    "/api/payments/orders",
+                    json={
+                        "productKey": "single_match",
+                        "provider": "wechat",
+                        "contentKey": "match_prediction",
+                        "matchKey": "netherlands-japan",
+                        "homeTeam": "netherlands",
+                        "awayTeam": "japan",
+                        "homeName": "荷兰",
+                        "awayName": "日本",
+                    },
+                ).json()
                 PAYMENT_ORDERS.clear()
 
                 response = client.get(f"/api/payments/orders/{created['orderId']}")
@@ -142,6 +200,7 @@ class PaymentApiTest(unittest.TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["orderId"], created["orderId"])
+        self.assertEqual(response.json()["metadata"]["matchKey"], "netherlands-japan")
 
     def test_access_decision_api_uses_payment_order_status(self):
         client = TestClient(app)

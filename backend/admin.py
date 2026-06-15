@@ -168,6 +168,14 @@ def build_prediction_pipeline(snapshot: dict[str, Any] | None, daily_status: dic
                     "已按来源等级和文本关键词生成事件" if raw_news_count else "暂无原始新闻需要转换",
                     "backend.data",
                 ),
+                build_run_step(
+                    "team-strength-layers",
+                    "8 层球队强度细化",
+                    "build_team_strength_profile",
+                    "ran",
+                    "基础、近期、强队、阵容、攻防、门将和战术层逐项计算；缺授权数据保持中性",
+                    "backend.team_strength",
+                ),
             ],
         },
         {
@@ -181,6 +189,14 @@ def build_prediction_pipeline(snapshot: dict[str, Any] | None, daily_status: dic
                     "apply_event_adjustments",
                     "ran",
                     f"{events['applied']} 条入模，{events['ignored']} 条忽略，{events['reviewRequired']} 条待审",
+                ),
+                build_run_step(
+                    "professional-gap-coverage",
+                    "9 类专业缺口覆盖",
+                    "professional_gap_coverage",
+                    "ran",
+                    "逐项标记真实 xG、球员模型、首发预测、市场校准、回测、概率校准、贝叶斯更新和战术 matchup 是否接入",
+                    "backend.team_strength",
                 ),
                 build_run_step(
                     "fixture-context",

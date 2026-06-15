@@ -23,9 +23,13 @@ from .fixture_update import record_fixture_live_score, record_fixture_result
 from .model import (
     FinishedMatchPredictionError,
     SIMULATION_COUNT,
+    build_finished_match_review,
     build_finished_match_records,
     build_match_detail,
     build_match_prediction,
+    build_public_finished_match_records,
+    build_public_match_summary,
+    build_public_upcoming_match_list,
     build_upcoming_match_predictions,
     event_summary,
     event_to_news_item,
@@ -87,6 +91,12 @@ class TournamentRollbackRequest(BaseModel):
 class PaymentOrderCreateRequest(BaseModel):
     productKey: str
     provider: str
+    contentKey: str | None = None
+    matchKey: str | None = None
+    homeTeam: str | None = None
+    awayTeam: str | None = None
+    homeName: str | None = None
+    awayName: str | None = None
 
 
 app.add_middleware(
@@ -97,8 +107,9 @@ app.add_middleware(
         "http://localhost:5173",
         "http://localhost:5174",
         "https://world-cup-prediction-system.pages.dev",
+        "https://world-cup-prediction-admin.pages.dev",
     ],
-    allow_origin_regex=r"^(http://(127\.0\.0\.1|localhost):517[0-9]|https://[a-z0-9-]+\.world-cup-prediction-system\.pages\.dev)$",
+    allow_origin_regex=r"^(http://(127\.0\.0\.1|localhost):517[0-9]|https://[a-z0-9-]+\.(world-cup-prediction-system|world-cup-prediction-admin)\.pages\.dev)$",
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )
@@ -175,8 +186,8 @@ async def access_policy() -> dict[str, object]:
 
 
 @app.get("/api/access-decision")
-async def access_decision(orderId: str, contentKey: str) -> dict[str, object]:
-    return build_order_access_decision(orderId, contentKey, payment_orders_path)
+async def access_decision(orderId: str, contentKey: str, matchKey: str | None = None) -> dict[str, object]:
+    return build_order_access_decision(orderId, contentKey, matchKey, payment_orders_path)
 
 
 @app.get("/api/payments/config")
@@ -187,7 +198,15 @@ async def payment_config() -> dict[str, object]:
 @app.post("/api/payments/orders")
 async def create_order(request: PaymentOrderCreateRequest) -> dict[str, object]:
     try:
-        return create_payment_order(request.productKey, request.provider, storage_path=payment_orders_path)
+        metadata = {
+            "contentKey": request.contentKey,
+            "matchKey": request.matchKey,
+            "homeTeam": request.homeTeam,
+            "awayTeam": request.awayTeam,
+            "homeName": request.homeName,
+            "awayName": request.awayName,
+        }
+        return create_payment_order(request.productKey, request.provider, metadata=metadata, storage_path=payment_orders_path)
     except ValueError as error:
         raise HTTPException(status_code=400, detail=str(error)) from error
 
@@ -215,9 +234,51 @@ async def upcoming_matches(limit: int = Query(12, ge=1, le=72)) -> dict[str, obj
     return build_upcoming_match_predictions(limit)
 
 
+@app.get("/api/public-upcoming-matches")
+async def public_upcoming_matches(limit: int = Query(12, ge=1, le=72)) -> dict[str, object]:
+    return build_public_upcoming_match_list(limit)
+
+
+@app.get("/api/public-match-summary")
+async def public_match_summary(home: str, away: str) -> dict[str, object]:
+    try:
+        return build_public_match_summary(home, away)
+    except FinishedMatchPredictionError as error:
+        raise HTTPException(status_code=409, detail=str(error)) from error
+    except ValueError as error:
+        raise HTTPException(status_code=404, detail=str(error)) from error
+
+
 @app.get("/api/finished-matches")
 async def finished_matches(limit: int = Query(12, ge=1, le=72)) -> dict[str, object]:
     return build_finished_match_records(limit)
+
+
+@app.get("/api/public-finished-matches")
+async def public_finished_matches(limit: int = Query(12, ge=1, le=72)) -> dict[str, object]:
+    return build_public_finished_match_records(limit)
+
+
+@app.get("/api/finished-match-review")
+async def finished_match_review(home: str, away: str, orderId: str) -> dict[str, object]:
+    decision = build_order_access_decision(orderId, "post_match_review", storage_path=payment_orders_path)
+    if not decision["allowed"]:
+        raise HTTPException(status_code=403, detail="赛后复盘尚未解锁")
+    try:
+        order = get_payment_order(orderId, payment_orders_path)
+        metadata = order.get("metadata")
+        if order.get("productKey") == "single_match" and isinstance(metadata, dict):
+            scoped_home = metadata.get("homeTeam")
+            scoped_away = metadata.get("awayTeam")
+            if scoped_home and scoped_away and (scoped_home != home or scoped_away != away):
+                raise HTTPException(status_code=403, detail="该订单不包含这场赛后复盘")
+        return build_finished_match_review(home, away)
+    except HTTPException:
+        raise
+    except KeyError as error:
+        raise HTTPException(status_code=404, detail="支付订单不存在") from error
+    except ValueError as error:
+        raise HTTPException(status_code=404, detail=str(error)) from error
 
 
 @app.get("/api/match-detail")
@@ -225,7 +286,14 @@ async def match_detail(
     home: str,
     away: str,
     simulations: int = Query(1200, ge=1_000, le=50_000),
+    orderId: str | None = None,
 ) -> dict[str, object]:
+    if os.environ.get("WORLD_CUP_REQUIRE_MATCH_DETAIL_PAYMENT") == "1":
+        if not orderId:
+            raise HTTPException(status_code=403, detail="需要先完成支付解锁")
+        decision = build_order_access_decision(orderId, "match_prediction", match_key=f"{home}-{away}", storage_path=payment_orders_path)
+        if not decision.get("allowed"):
+            raise HTTPException(status_code=403, detail="订单未解锁该场预测")
     try:
         return build_match_detail(home, away, simulations)
     except FinishedMatchPredictionError as error:

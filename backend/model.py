@@ -51,6 +51,13 @@ Outcome = Literal["home", "draw", "away"]
 SIMULATION_COUNT = 8_000
 MAX_GOALS = 7
 EVENT_FACTORS = ("attack", "defense", "goalkeeper", "path", "squad")
+PRODUCT_FACTOR_BY_EVENT_FACTOR = {
+    "attack": "strength",
+    "defense": "form",
+    "goalkeeper": "margin",
+    "path": "path",
+    "squad": "squad",
+}
 EVENT_STATUS_CONFIDENCE = {
     "confirmed": 1.0,
     "multi_source": 0.75,
@@ -831,6 +838,93 @@ def event_to_news_item(event) -> dict[str, str]:
     }
 
 
+def match_news_items(home_key: str, away_key: str, teams: dict[str, TeamProfile], fixture: Fixture) -> list[dict[str, object]]:
+    items: list[dict[str, object]] = []
+    for event in EVENTS:
+        if event.action == "ignore" or SOURCE_WEIGHTS[event.source_level] == 0:
+            continue
+        if event.team not in {home_key, away_key, None}:
+            continue
+
+        affected_team = teams[event.team].name if event.team in teams else "全局"
+        if event.direction > 0:
+            direction_label = f"利好{affected_team}" if event.team in teams else "全局利好"
+            tone = "green"
+        elif event.direction < 0:
+            direction_label = f"利空{affected_team}" if event.team in teams else "全局风险"
+            tone = "orange"
+        else:
+            direction_label = "中性观察"
+            tone = "gold"
+
+        items.append(
+            {
+                "title": event.title,
+                "detail": event.detail,
+                "sourceLabel": event.source,
+                "sourceTier": event.source_level,
+                "direction": "positive" if event.direction > 0 else "negative" if event.direction < 0 else "neutral",
+                "impact": direction_label,
+                "affectedTeam": affected_team,
+                "factor": PRODUCT_FACTOR_BY_EVENT_FACTOR.get(event.factor, "squad"),
+                "tone": tone,
+                "time": event.time,
+            }
+        )
+    if len(items) < 3:
+        items.extend(
+            [
+                {
+                    "title": "官方赛程",
+                    "detail": f"{fixture.stage}，开赛时间 {fixture.kickoff}，赛程信息已接入本场预测。",
+                    "sourceLabel": "FIFA 赛程",
+                    "sourceTier": "S",
+                    "direction": "neutral",
+                    "impact": "赛程确认",
+                    "affectedTeam": "全局",
+                    "factor": "path",
+                    "tone": "green",
+                    "time": "官方",
+                },
+                {
+                    "title": "事件库校验",
+                    "detail": f"{teams[home_key].name}与{teams[away_key].name}暂无新增高权重停赛事件。",
+                    "sourceLabel": "结构化事件库",
+                    "sourceTier": "A",
+                    "direction": "neutral",
+                    "impact": "中性观察",
+                    "affectedTeam": "双方",
+                    "factor": "squad",
+                    "tone": "gold",
+                    "time": "实时",
+                },
+                {
+                    "title": "来源过滤",
+                    "detail": "未证实传闻不会进入本场主判断，只保留公开来源和已结构化事件。",
+                    "sourceLabel": "模型规则",
+                    "sourceTier": "A",
+                    "direction": "neutral",
+                    "impact": "风险控制",
+                    "affectedTeam": "全局",
+                    "factor": "margin",
+                    "tone": "blue",
+                    "time": "持续",
+                },
+            ]
+        )
+    return items[:3]
+
+
+def match_pillars(home_key: str, away_key: str, teams: dict[str, TeamProfile]) -> dict[str, dict[str, float]]:
+    def scale(values: dict[str, int]) -> dict[str, float]:
+        return {key: round(value / 10, 1) for key, value in values.items()}
+
+    return {
+        "home": scale(profile_to_plates(teams[home_key])),
+        "away": scale(profile_to_plates(teams[away_key])),
+    }
+
+
 def event_summary() -> dict[str, int]:
     return {
         "watched": len(EVENTS),
@@ -1159,6 +1253,7 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
         "scoringEnvironment": scoring_environment,
         "scoreOutcomes": score_outcomes,
         "scoreMatrix": score_matrix_for_match(home_key, away_key, match_teams, scoring_environment=scoring_environment),
+        "pillars": match_pillars(home_key, away_key, match_teams),
         "goalMarkets": goal_markets_for_match(home_key, away_key, match_teams, scoring_environment),
         "fairPrices": fair_prices_for_match(home_key, away_key, probabilities, teams),
         "marketSource": {
@@ -1167,6 +1262,7 @@ def build_match_detail(home_key: str, away_key: str, simulation_count: int = 120
             "detail": "后续接入授权市场价格后，再展示模型概率与市场价格差值。",
         },
         "scenarioImpacts": build_lightweight_scenario_impacts(home_key, away_key, probabilities, teams),
+        "newsItems": match_news_items(home_key, away_key, teams, current_fixture),
         "creatorTopics": creator_topics_for_match(home_key, away_key, teams, str(score_outcomes[0]["score"])),
         "analysis": [
             f"{teams[home_key].name}单场胜率 {home_win}%，当前差距主要来自基础实力和攻防盘。",
@@ -1234,6 +1330,43 @@ def build_upcoming_match_predictions(limit: int = 12) -> dict[str, object]:
     }
 
 
+def public_fixture_summary(fixture: Fixture, teams: dict[str, TeamProfile] | None = None) -> dict[str, object]:
+    team_profiles = teams or TEAM_PROFILES
+    return {
+        "stage": fixture.stage,
+        "kickoff": fixture.kickoff,
+        "matchNo": fixture.match_no,
+        "status": fixture.status,
+        "homeTeam": fixture.home,
+        "awayTeam": fixture.away,
+        "homeName": team_profiles[fixture.home].name,
+        "awayName": team_profiles[fixture.away].name,
+        "homeCode": team_profiles[fixture.home].code,
+        "awayCode": team_profiles[fixture.away].code,
+    }
+
+
+def build_public_upcoming_match_list(limit: int = 12) -> dict[str, object]:
+    teams = TEAM_PROFILES
+    scheduled_fixtures = [fixture for fixture in FIXTURES if is_fixture_upcoming(fixture)]
+    scheduled_fixtures.sort(key=upcoming_fixture_sort_key)
+    items = [public_fixture_summary(fixture, teams) for fixture in scheduled_fixtures[:limit]]
+    return {
+        "updatedAt": datetime.now(timezone.utc).isoformat(),
+        "count": len(items),
+        "items": items,
+    }
+
+
+def build_public_match_summary(home_key: str, away_key: str) -> dict[str, object]:
+    fixture = next((item for item in FIXTURES if (item.home, item.away) == (home_key, away_key)), None)
+    if fixture is None:
+        raise ValueError(f"找不到比赛: {home_key} vs {away_key}")
+    if not is_fixture_upcoming(fixture):
+        raise FinishedMatchPredictionError("该比赛不是未开赛比赛，不能进入单场预测解锁预览")
+    return public_fixture_summary(fixture, TEAM_PROFILES)
+
+
 def build_finished_match_records(limit: int = 12, prediction_snapshot: dict[str, object] | None = None) -> dict[str, object]:
     teams = TEAM_PROFILES
     snapshot = prediction_snapshot if prediction_snapshot is not None else load_previous_match_prediction_snapshot()
@@ -1275,6 +1408,78 @@ def build_finished_match_records(limit: int = 12, prediction_snapshot: dict[str,
         "count": len(items),
         "items": items,
     }
+
+
+def post_match_review_message(review: dict[str, object]) -> str:
+    status = review.get("status")
+    if status == "missing_prediction_baseline":
+        return "赛前预测快照待生成，这场暂时只能展示真实赛果。"
+    if status == "missing_score_prediction":
+        return "赛前比分预测待生成，这场暂时只能展示真实赛果。"
+    if status == "reviewed":
+        return str(review.get("summary") or "赛后复盘已生成。")
+    return "赛后复盘暂不可用。"
+
+
+def public_post_match_review(review: dict[str, object], include_paid_fields: bool = False) -> dict[str, object]:
+    status = str(review.get("status") or "not_applicable")
+    safe_review: dict[str, object] = {
+        "status": status,
+        "actualScore": review.get("actualScore"),
+        "message": post_match_review_message(review),
+        "hasPredictionBaseline": status == "reviewed",
+    }
+    if not include_paid_fields or status != "reviewed":
+        return safe_review
+
+    for key in ("predictedTopScore", "predictedTopProbability", "summary", "severity", "winnerMissed", "totalGoalError", "rootCauses"):
+        if key in review:
+            safe_review[key] = review[key]
+    return safe_review
+
+
+def finished_match_public_payload(fixture: Fixture, prediction_snapshot: dict[str, object] | None = None, include_paid_review: bool = False) -> dict[str, object]:
+    review = build_post_match_review(fixture, prediction_snapshot)
+    return {
+        **public_fixture_summary(fixture, TEAM_PROFILES),
+        "city": fixture.city,
+        "stadium": fixture.stadium,
+        "homeScore": fixture.home_score,
+        "awayScore": fixture.away_score,
+        "modelUse": "locked_result_weight",
+        "modelUseLabel": "已锁定为后续路径和动态权重因子",
+        "postMatchReview": public_post_match_review(review, include_paid_fields=include_paid_review),
+    }
+
+
+def sorted_finished_fixtures() -> list[Fixture]:
+    finished_fixtures = [fixture for fixture in FIXTURES if fixture.status == "finished"]
+    finished_fixtures.sort(
+        key=lambda fixture: (
+            parse_fixture_kickoff(fixture.kickoff) or datetime.min.replace(tzinfo=timezone.utc),
+            fixture.match_no or 0,
+        ),
+        reverse=True,
+    )
+    return finished_fixtures
+
+
+def build_public_finished_match_records(limit: int = 12, prediction_snapshot: dict[str, object] | None = None) -> dict[str, object]:
+    snapshot = prediction_snapshot if prediction_snapshot is not None else load_previous_match_prediction_snapshot()
+    items = [finished_match_public_payload(fixture, snapshot, include_paid_review=False) for fixture in sorted_finished_fixtures()[:limit]]
+    return {
+        "updatedAt": datetime.now(timezone.utc).isoformat(),
+        "count": len(items),
+        "items": items,
+    }
+
+
+def build_finished_match_review(home_key: str, away_key: str, prediction_snapshot: dict[str, object] | None = None) -> dict[str, object]:
+    snapshot = prediction_snapshot if prediction_snapshot is not None else load_previous_match_prediction_snapshot()
+    fixture = next((item for item in FIXTURES if item.home == home_key and item.away == away_key and item.status == "finished"), None)
+    if fixture is None:
+        raise ValueError(f"未找到已结束比赛: {home_key} vs {away_key}")
+    return finished_match_public_payload(fixture, snapshot, include_paid_review=True)
 
 
 def build_match_prediction(simulation_count: int = SIMULATION_COUNT) -> dict[str, object]:

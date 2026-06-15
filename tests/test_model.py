@@ -25,6 +25,7 @@ from backend.model import (
     best_third_place_teams,
     build_fixture_context,
     build_finished_match_records,
+    build_match_detail,
     build_round_of_32_matches,
     build_score_sampler,
     build_match_prediction,
@@ -74,6 +75,15 @@ class PredictionModelTest(unittest.TestCase):
         self.assertEqual(len(prediction["fairPrices"]), 3)
         self.assertEqual(prediction["modelMeta"]["lockedResults"], 9)
         self.assertIn("liveMatches", prediction["modelMeta"])
+
+    def test_match_detail_exposes_paid_page_fields(self):
+        detail = build_match_detail("netherlands", "japan", 1200)
+
+        self.assertIn("pillars", detail)
+        self.assertEqual(set(detail["pillars"]), {"home", "away"})
+        self.assertEqual(set(detail["pillars"]["home"]), {"strength", "form", "path", "squad", "margin"})
+        self.assertIn("newsItems", detail)
+        self.assertTrue(all("sourceTier" in item and "impact" in item for item in detail["newsItems"]))
 
     def test_post_match_review_identifies_blowout_tail_error_and_target_functions(self):
         fixture = Fixture("germany", "curacao", "小组赛 E 组", "6月14日 13:00 ET", "finished", 7, 1)

@@ -4712,7 +4712,6 @@ body:has(.public-match-shell) {
 
 .public-match-card {
   display: grid;
-  grid-template-columns: 92px minmax(0, 1fr) 90px;
   gap: 12px;
   width: 100%;
   min-height: 148px;
@@ -4928,7 +4927,6 @@ body:has(.public-match-shell) {
   }
 
   .public-match-card {
-    grid-template-columns: 78px minmax(0, 1fr) 78px;
     gap: 8px;
     padding-inline: 9px;
   }
@@ -5306,9 +5304,11 @@ body:has(.locked-match-shell) {
   position: relative;
   display: grid;
   align-content: center;
+  align-items: center;
   min-width: 0;
   min-height: 86px;
   gap: 5px;
+  padding: 10px;
   border-radius: 13px;
   cursor: pointer;
   text-align: center;
@@ -5320,8 +5320,8 @@ body:has(.locked-match-shell) {
 }
 
 .locked-buy-button.primary {
-  grid-template-columns: 54px minmax(0, 1fr);
-  column-gap: 9px;
+  grid-template-columns: 42px minmax(0, 1fr);
+  column-gap: 7px;
   border: 1px solid rgba(255, 232, 165, 0.92);
   color: #301d02;
   background: linear-gradient(135deg, #fff3bf 0%, #f3c86b 55%, #d9a03e 100%);
@@ -5333,7 +5333,7 @@ body:has(.locked-match-shell) {
   align-self: center;
   justify-self: center;
   display: grid;
-  width: 48px;
+  width: 40px;
   aspect-ratio: 1;
   place-items: center;
   border-radius: 50%;
@@ -5344,6 +5344,7 @@ body:has(.locked-match-shell) {
 
 .locked-buy-button.pass {
   grid-template-columns: minmax(0, 1fr) 34px;
+  column-gap: 6px;
   border: 1px solid rgba(243, 200, 107, 0.72);
   color: #f7df9f;
   background: rgba(9, 12, 10, 0.88);
@@ -5357,21 +5358,34 @@ body:has(.locked-match-shell) {
   color: #f3c86b;
 }
 
+.locked-buy-button.primary strong,
+.locked-buy-button.primary small {
+  grid-column: 2;
+  justify-self: start;
+  text-align: left;
+}
+
+.locked-buy-button.pass strong,
+.locked-buy-button.pass small {
+  grid-column: 1;
+}
+
 .locked-buy-button strong {
   min-width: 0;
-  overflow-wrap: anywhere;
-  font-size: clamp(17px, 4.8vw, 22px);
+  font-size: clamp(15px, 4.2vw, 19px);
   font-weight: 900;
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .locked-buy-button small {
   min-width: 0;
   color: currentColor;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
   line-height: 1.2;
   opacity: 0.82;
+  white-space: nowrap;
 }
 
 .locked-safety-footer {
@@ -6137,9 +6151,9 @@ body:has(.checkout-page-shell) {
 
 .checkout-product-card {
   display: grid;
-  grid-template-columns: 84px minmax(0, 1fr) auto;
+  grid-template-columns: 82px minmax(0, 1fr) auto;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   min-height: 124px;
   padding: 16px;
   border: 1px solid rgba(105, 201, 103, 0.22);
@@ -6173,6 +6187,7 @@ body:has(.checkout-page-shell) {
   font-size: 22px;
   font-weight: 850;
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 .checkout-product-main strong {
@@ -6211,7 +6226,7 @@ body:has(.checkout-page-shell) {
 .checkout-product-card > b {
   align-self: start;
   color: #d4a54c;
-  font-size: 34px;
+  font-size: 31px;
   font-weight: 900;
   line-height: 1;
   white-space: nowrap;
