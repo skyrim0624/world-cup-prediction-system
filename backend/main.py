@@ -229,6 +229,14 @@ async def payment_notify(provider: str, request: Request) -> dict[str, object]:
     return result
 
 
+@app.post("/api/app-payment/wechat/notify")
+async def wechat_native_payment_notify(request: Request) -> dict[str, object]:
+    result = handle_payment_notification("wechat_native", await request.body(), request.headers, storage_path=payment_orders_path)
+    if not result.get("ok"):
+        raise HTTPException(status_code=400, detail=str(result.get("reason") or "payment_notify_failed"))
+    return result
+
+
 @app.get("/api/admin/overview")
 async def admin_overview(_: None = Depends(verify_admin_token)) -> dict[str, object]:
     return build_admin_overview(snapshot_data_path, audit_log_path, daily_status_path, tournament_backup_dir)

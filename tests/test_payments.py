@@ -122,7 +122,7 @@ class PaymentApiTest(unittest.TestCase):
         self.assertEqual(captured["payload"]["outTradeNo"], order["orderId"])
         self.assertEqual(captured["payload"]["amountCents"], 100)
         self.assertEqual(captured["payload"]["paymentMethod"], "native")
-        self.assertEqual(captured["payload"]["notifyUrl"], "https://api.example.com/api/payments/notify/wechat_native")
+        self.assertEqual(captured["payload"]["notifyUrl"], "https://api.example.com/api/app-payment/wechat/notify")
         self.assertEqual(order["status"], "pending")
         self.assertEqual(order["qrCodeUrl"], "https://pay.example/qr/wechat-native.png")
         self.assertEqual(order["providerOrderId"], "wx_provider_123")
@@ -152,7 +152,10 @@ class PaymentApiTest(unittest.TestCase):
         self.assertEqual(order["providerOrderId"], "wx_prepay_nested")
 
     def test_configured_jsapi_order_persists_jsapi_params(self):
+        captured = {}
+
         def fake_requester(url, payload, headers, method="POST"):
+            captured["payload"] = payload
             return {
                 "status": "pending",
                 "jsapiParams": {
@@ -174,6 +177,7 @@ class PaymentApiTest(unittest.TestCase):
                 "CUSTOMER_WECHAT_JSAPI_PAY_CREATE_URL": "https://customer.example/pay/wechat-jsapi/create",
                 "CUSTOMER_WECHAT_JSAPI_PAY_STATUS_URL": "https://customer.example/pay/wechat-jsapi/status",
                 "CUSTOMER_WECHAT_JSAPI_PAY_NOTIFY_SECRET": "secret",
+                "WORLD_CUP_PUBLIC_API_BASE_URL": "https://api.example.com",
             },
             payment_requester=fake_requester,
         )
@@ -181,6 +185,7 @@ class PaymentApiTest(unittest.TestCase):
         self.assertEqual(order["status"], "pending")
         self.assertEqual(order["jsapiParams"]["package"], "prepay_id=wx-prepay")
         self.assertEqual(order["providerOrderId"], "wx-prepay")
+        self.assertEqual(captured["payload"]["notifyUrl"], "https://api.example.com/api/payments/notify/wechat_jsapi")
 
     def test_refresh_payment_order_status_queries_customer_status_and_marks_paid(self):
         with TemporaryDirectory() as temp_dir:
@@ -417,6 +422,36 @@ class PaymentApiTest(unittest.TestCase):
                 try:
                     response = client.post(
                         "/api/payments/notify/wechat_native",
+                        content=body,
+                        headers={"X-Payment-Signature": signature, "Content-Type": "application/json"},
+                    )
+                finally:
+                    if previous_secret is None:
+                        main_module.os.environ.pop("CUSTOMER_WECHAT_NATIVE_PAY_NOTIFY_SECRET", None)
+                    else:
+                        main_module.os.environ["CUSTOMER_WECHAT_NATIVE_PAY_NOTIFY_SECRET"] = previous_secret
+            finally:
+                main_module.payment_orders_path = previous_path
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["status"], "paid")
+
+    def test_native_legacy_notify_api_updates_order_after_signature_check(self):
+        client = TestClient(app)
+        with TemporaryDirectory() as temp_dir:
+            store_path = Path(temp_dir) / "payment-orders.json"
+            previous_path = main_module.payment_orders_path
+            main_module.payment_orders_path = store_path
+            try:
+                created = create_payment_order("single_match", "wechat", storage_path=store_path)
+                body = json.dumps({"orderId": created["orderId"], "status": "SUCCESS", "transactionId": "wx_tx_legacy"}, separators=(",", ":")).encode("utf-8")
+                signature = hmac.new(b"notify-secret", body, hashlib.sha256).hexdigest()
+
+                previous_secret = main_module.os.environ.get("CUSTOMER_WECHAT_NATIVE_PAY_NOTIFY_SECRET")
+                main_module.os.environ["CUSTOMER_WECHAT_NATIVE_PAY_NOTIFY_SECRET"] = "notify-secret"
+                try:
+                    response = client.post(
+                        "/api/app-payment/wechat/notify",
                         content=body,
                         headers={"X-Payment-Signature": signature, "Content-Type": "application/json"},
                     )

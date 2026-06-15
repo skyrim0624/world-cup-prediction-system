@@ -3417,6 +3417,19 @@ cron: "*/30 * * * *"
 - 支付宝创建订单接口、查单接口、接口鉴权、回调验签密钥、二维码或跳转 URL 字段名。
 - 如果客户回调不是 HMAC-SHA256，需要提供实际签名字段和验签算法。
 
+### 2026-06-15：微信 Native 固定回调兼容
+
+已完成：
+
+- 客户反馈微信 Native 后台不能额外新增回调链接，只能使用已配置的 `https://zhugejunshi.com/api/app-payment/wechat/notify`。
+- 后端新增兼容路由：`POST /api/app-payment/wechat/notify`，内部按 `wechat_native` 支付通知处理。
+- 微信 Native 创建订单时传给客户接口的 `notifyUrl` 改为 `{WORLD_CUP_PUBLIC_API_BASE_URL}/api/app-payment/wechat/notify`。
+- 微信 JSAPI 仍保留 `POST /api/payments/notify/wechat_jsapi`。
+
+验证：
+
+- `python3 -m unittest discover -s tests -p 'test_payments.py'` 通过，21 个支付测试。
+
 ## 十、当前交接摘要
 
 一句话定义：
