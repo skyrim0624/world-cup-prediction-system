@@ -3245,6 +3245,25 @@ cron: "*/30 * * * *"
 - 客户提供腾讯云服务器和域名后，按 `docs/腾讯云生产部署说明.md` 部署。
 - 客户提供支付接口后，接入正式支付回调和订单权限表。
 
+### 2026-06-15：公开数据采集管线补全
+
+已完成：
+
+- 新增 `backend/public_data_pipeline.py`，把公开网页、RSS 和官方 JSON 新闻接口纳入统一采集流程。
+- 新增 `scripts/run_public_data_pipeline.py` 和 `npm run public:data:update`。
+- 新增 `backend/data_files/public-data-sources.json`，默认登记 BBC、ESPN、Guardian 公开 RSS 源。
+- 生产日更 `daily:update:production` 改为先跑公开数据采集，再抓赛果、重建快照和生成模型质量报告。
+- 公开数据采集会完成来源登记、抓取适配、结构化解析、去重、球队匹配、球员匹配、多源交叉验证和分流。
+- 结构化字段包括 `category`、`factor`、`direction`、`confidence`、`players`、`sourceRegistryId` 和 `kind`。
+- 同一球队、同类事件、同因子、同方向如果来自两个以上来源，会自动升级为 `multi_source`。
+- 分流规则明确：S/A/B 默认入模，C 单源待审、多源或确认后入模，D 忽略。
+- 新增 `docs/公开数据采集管线说明.md`，记录如何扩展 HTML / RSS / JSON 新闻源。
+
+关键决策：
+
+- 可以爬公开网页，但必须先进入来源等级、结构化、去重和交叉验证，不允许网页文本直接重权入模。
+- 公开网页采集用于补新闻/伤病/训练/首发线索；xG、球员级事件和授权市场数据仍不编造，等待客户或授权接口。
+
 ## 十、当前交接摘要
 
 一句话定义：

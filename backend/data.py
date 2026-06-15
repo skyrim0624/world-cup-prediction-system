@@ -78,6 +78,9 @@ class RawNewsItem:
     factor: str | None = None
     direction: int | None = None
     confidence: float | None = None
+    players: list[str] | None = None
+    kind: str | None = None
+    sourceRegistryId: str | None = None
 
 
 @dataclass(frozen=True)

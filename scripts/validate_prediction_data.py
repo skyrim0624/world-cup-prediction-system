@@ -50,6 +50,9 @@ def main() -> None:
     feed_config_path = DATA_DIR / "daily-feed-sources.json"
     if not feed_config_path.exists():
         raise SystemExit("缺少真实新闻 Feed 配置")
+    public_data_config_path = DATA_DIR / "public-data-sources.json"
+    if not public_data_config_path.exists():
+        raise SystemExit("缺少公开数据采集源配置")
     advanced_impacts = advanced_metric_impacts()
     if set(advanced_impacts) != set(TEAM_PROFILES):
         raise SystemExit("高阶指标必须覆盖全部球队")
