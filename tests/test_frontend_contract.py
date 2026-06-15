@@ -136,6 +136,19 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("赛程加载中", upcoming_source)
         self.assertIn("赛程接口连接失败，等待自动刷新", upcoming_source)
 
+    def test_forecast_fallback_uses_official_schedule_not_old_mock_fixture(self):
+        source = app_source()
+        fallback_source = source_between(source, "function buildFallbackPrediction", "function predictionToUpcomingMatch")
+
+        self.assertIn("STATIC_UPCOMING_MATCHES_FALLBACK[0]", fallback_source)
+        self.assertIn("match.homeTeam", fallback_source)
+        self.assertIn("match.awayTeam", fallback_source)
+        self.assertIn("官方赛程兜底", fallback_source)
+        self.assertNotIn('homeTeam: "brazil"', fallback_source)
+        self.assertNotIn('awayTeam: "argentina"', fallback_source)
+        self.assertNotIn("巴西", fallback_source)
+        self.assertNotIn("阿根廷", fallback_source)
+
     def test_public_homepage_uses_world_cup_portal_visual_language(self):
         source = app_source()
         styles = Path("src/styles.css").read_text(encoding="utf-8")

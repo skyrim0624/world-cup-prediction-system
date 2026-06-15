@@ -461,6 +461,13 @@ const teams: Team[] = [
     tournament: { champion: 7.9, final: 17.2, semifinal: 30.4, quarterfinal: 53.8, change: 0.2 },
   },
   {
+    key: "curacao",
+    name: "库拉索",
+    code: "CUW",
+    factors: { strength: 61, form: 68, path: 60, squad: 69, margin: 68 },
+    tournament: { champion: 0, final: 0, semifinal: 0, quarterfinal: 0.4, change: 0 },
+  },
+  {
     key: "netherlands",
     name: "荷兰",
     code: "NED",
@@ -696,35 +703,44 @@ const TEAM_FLAG_ASSET_BY_CODE: Record<string, string> = {
 };
 
 const fallbackNewsItems: NewsItem[] = [
-  { title: "官方名单", detail: "两队暂无新增停赛，核心阵容可用", impact: "利好稳定", tone: "green", time: "1 小时前" },
-  { title: "训练信息", detail: "巴西边路主力单独训练，出场仍待确认", impact: "小幅风险", tone: "gold", time: "3 小时前" },
-  { title: "社媒传闻", detail: "未证实更衣室消息，暂不采信", impact: "不采信", tone: "muted", time: "5 小时前" },
+  { title: "官方赛程", detail: "德国对库拉索为 FIFA 官方赛程中的小组赛 E 组比赛", impact: "赛程确认", tone: "green", time: "官方" },
+  { title: "数据兜底", detail: "预测接口短暂不可用时，只保留已核验赛程，不展示未核验对阵", impact: "保护展示", tone: "gold", time: "自动" },
+  { title: "新闻校验", detail: "未证实传闻不进入公开预测主判断", impact: "不采信", tone: "muted", time: "持续" },
 ];
 
 const fallbackGoalMarkets: GoalMarket[] = [
-  { label: "大 2.5", probability: 43.8, fairDecimal: 2.28, note: "总进球至少 3", tone: "blue" },
-  { label: "小 2.5", probability: 56.2, fairDecimal: 1.78, note: "总进球不超过 2", tone: "green" },
-  { label: "BTTS 是", probability: 53.6, fairDecimal: 1.87, note: "双方都有进球", tone: "gold" },
-  { label: "BTTS 否", probability: 46.4, fairDecimal: 2.16, note: "至少一队零进球", tone: "blue" },
+  { label: "大 2.5", probability: 71.3, fairDecimal: 1.4, note: "总进球至少 3", tone: "green" },
+  { label: "小 2.5", probability: 28.7, fairDecimal: 3.49, note: "总进球不超过 2", tone: "blue" },
+  { label: "BTTS 是", probability: 45.2, fairDecimal: 2.21, note: "双方都有进球", tone: "blue" },
+  { label: "BTTS 否", probability: 54.8, fairDecimal: 1.82, note: "至少一队零进球", tone: "gold" },
 ];
 
 const fallbackScoreMatrix: ScoreMatrixCell[] = [
-  { score: "0-0", homeGoals: 0, awayGoals: 0, probability: 7.8 },
-  { score: "0-1", homeGoals: 0, awayGoals: 1, probability: 8.4 },
-  { score: "0-2", homeGoals: 0, awayGoals: 2, probability: 4.6 },
-  { score: "0-3", homeGoals: 0, awayGoals: 3, probability: 1.6 },
-  { score: "1-0", homeGoals: 1, awayGoals: 0, probability: 10.7 },
-  { score: "1-1", homeGoals: 1, awayGoals: 1, probability: 14.6 },
-  { score: "1-2", homeGoals: 1, awayGoals: 2, probability: 8.1 },
-  { score: "1-3", homeGoals: 1, awayGoals: 3, probability: 2.7 },
-  { score: "2-0", homeGoals: 2, awayGoals: 0, probability: 7.4 },
-  { score: "2-1", homeGoals: 2, awayGoals: 1, probability: 12.8 },
-  { score: "2-2", homeGoals: 2, awayGoals: 2, probability: 7.2 },
-  { score: "2-3", homeGoals: 2, awayGoals: 3, probability: 2.4 },
-  { score: "3-0", homeGoals: 3, awayGoals: 0, probability: 3.1 },
-  { score: "3-1", homeGoals: 3, awayGoals: 1, probability: 5.8 },
-  { score: "3-2", homeGoals: 3, awayGoals: 2, probability: 3.2 },
-  { score: "3-3", homeGoals: 3, awayGoals: 3, probability: 1.1 },
+  { score: "0-0", homeGoals: 0, awayGoals: 0, probability: 2.3 },
+  { score: "0-1", homeGoals: 0, awayGoals: 1, probability: 1.5 },
+  { score: "0-2", homeGoals: 0, awayGoals: 2, probability: 0.5 },
+  { score: "0-3", homeGoals: 0, awayGoals: 3, probability: 0.1 },
+  { score: "0-4", homeGoals: 0, awayGoals: 4, probability: 0 },
+  { score: "1-0", homeGoals: 1, awayGoals: 0, probability: 7.1 },
+  { score: "1-1", homeGoals: 1, awayGoals: 1, probability: 4.7 },
+  { score: "1-2", homeGoals: 1, awayGoals: 2, probability: 1.5 },
+  { score: "1-3", homeGoals: 1, awayGoals: 3, probability: 0.3 },
+  { score: "1-4", homeGoals: 1, awayGoals: 4, probability: 0.1 },
+  { score: "2-0", homeGoals: 2, awayGoals: 0, probability: 11.1 },
+  { score: "2-1", homeGoals: 2, awayGoals: 1, probability: 7.3 },
+  { score: "2-2", homeGoals: 2, awayGoals: 2, probability: 2.4 },
+  { score: "2-3", homeGoals: 2, awayGoals: 3, probability: 0.5 },
+  { score: "2-4", homeGoals: 2, awayGoals: 4, probability: 0.1 },
+  { score: "3-0", homeGoals: 3, awayGoals: 0, probability: 11.6 },
+  { score: "3-1", homeGoals: 3, awayGoals: 1, probability: 7.6 },
+  { score: "3-2", homeGoals: 3, awayGoals: 2, probability: 2.5 },
+  { score: "3-3", homeGoals: 3, awayGoals: 3, probability: 0.5 },
+  { score: "3-4", homeGoals: 3, awayGoals: 4, probability: 0.1 },
+  { score: "4-0", homeGoals: 4, awayGoals: 0, probability: 9.1 },
+  { score: "4-1", homeGoals: 4, awayGoals: 1, probability: 5.9 },
+  { score: "4-2", homeGoals: 4, awayGoals: 2, probability: 1.9 },
+  { score: "4-3", homeGoals: 4, awayGoals: 3, probability: 0.4 },
+  { score: "4-4", homeGoals: 4, awayGoals: 4, probability: 0.1 },
 ];
 
 const fallbackMarketSource: MarketSource = {
@@ -733,75 +749,74 @@ const fallbackMarketSource: MarketSource = {
   detail: "授权数据确认后，再开放市场热度参考。",
 };
 
-function buildFallbackPrediction(tick: number): MatchPrediction {
-  const homeDrift = [0, 1, -1, 2, 0, -2][tick % 6];
-  const drawDrift = [0, -1, 1, -1, 0, 1][tick % 6];
-  const homeWin = 46 + homeDrift;
-  const draw = 26 + drawDrift;
-  const awayWin = 100 - homeWin - draw;
+function buildFallbackPrediction(): MatchPrediction {
+  const match = STATIC_UPCOMING_MATCHES_FALLBACK[0];
+  const homeWin = match.homeWin;
+  const draw = match.draw;
+  const awayWin = match.awayWin;
 
   return {
-    stage: "小组赛 E 组",
-    kickoff: "6月15日 08:00",
+    stage: match.stage,
+    kickoff: match.kickoff,
+    matchNo: match.matchNo,
+    city: match.city,
+    stadium: match.stadium,
     status: "未开赛",
-    homeTeam: "brazil",
-    awayTeam: "argentina",
+    homeTeam: match.homeTeam,
+    awayTeam: match.awayTeam,
     homeWin,
     draw,
     awayWin,
     updatedAt: new Date().toISOString(),
     scoreOutcomes: [
-      { score: "1-1", probability: 14.6, note: "双方基础强度接近", tone: "gold" },
-      { score: "2-1", probability: 12.8 + homeDrift * 0.2, note: "巴西边路优势放大", tone: "green" },
-      { score: "1-0", probability: 10.7, note: "低比分胜局仍有空间", tone: "blue" },
+      { score: "3-0", probability: 11.6, note: "德国进攻盘优势明显", tone: "green" },
+      { score: "2-0", probability: 11.1, note: "低失球胜局仍有空间", tone: "blue" },
+      { score: "4-0", probability: 9.1, note: "强弱差扩大时的高比分分支", tone: "gold" },
     ],
     scoreMatrix: fallbackScoreMatrix,
     goalMarkets: fallbackGoalMarkets,
     fairPrices: [
-      { label: "巴西胜", probability: homeWin, fairDecimal: Number((100 / homeWin).toFixed(2)), note: "90 分钟模型公平概率", tone: "green" },
+      { label: `${match.homeName}胜`, probability: homeWin, fairDecimal: Number((100 / homeWin).toFixed(2)), note: "90 分钟模型公平概率", tone: "green" },
       { label: "平局", probability: draw, fairDecimal: Number((100 / draw).toFixed(2)), note: "90 分钟模型公平概率", tone: "gold" },
-      { label: "阿根廷胜", probability: awayWin, fairDecimal: Number((100 / awayWin).toFixed(2)), note: "90 分钟模型公平概率", tone: "blue" },
+      { label: `${match.awayName}胜`, probability: awayWin, fairDecimal: Number((100 / awayWin).toFixed(2)), note: "90 分钟模型公平概率", tone: "blue" },
     ],
     marketSource: fallbackMarketSource,
     scenarioImpacts: [
       {
-        label: "巴西胜",
+        label: `${match.homeName}胜`,
         probability: homeWin,
-        title: "巴西小组第一概率上升",
-        details: ["巴西夺冠概率约 +0.9%", "阿根廷路径盘下调", "同组第三名出线门槛抬高"],
-        championShift: "+0.9%",
+        title: `${match.homeName}小组第一概率上升`,
+        details: [`${match.homeName}夺冠概率小幅上调`, `${match.awayName}路径盘下调`, "同组竞争队出线门槛抬高"],
+        championShift: "+0.2%",
         tone: "green",
       },
       {
         label: "打平",
         probability: draw,
-        title: "两队路径保持胶着",
-        details: ["小组第一仍取决于末轮", "两队夺冠概率变化都低于 0.4%", "后续净胜球权重上升"],
-        championShift: "±0.3%",
+        title: "小组路径保留变数",
+        details: [`${match.homeName}小组第一概率回落`, `${match.awayName}保留抢分空间`, "后续净胜球权重上升"],
+        championShift: "-0.6%",
         tone: "gold",
       },
       {
-        label: "阿根廷胜",
+        label: `${match.awayName}胜`,
         probability: awayWin,
-        title: "阿根廷半区压力下降",
-        details: ["阿根廷夺冠概率约 +0.8%", "巴西潜在 16 强对手变强", "小组第二路径风险上升"],
-        championShift: "+0.8%",
+        title: `${match.awayName}爆冷后路径压力下降`,
+        details: [`${match.awayName}小组出线概率上升`, `${match.homeName}潜在淘汰赛路径变难`, "小组第二路径风险上升"],
+        championShift: "±0.0%",
         tone: "blue",
       },
     ],
     analysis: [
-      "巴西基础实力略高，但阵容健康信息还没有完全确认。",
-      "平局概率不低，因为双方都可能接受保守开局。",
-      "这场更重要的不是单场胜负，而是会直接改变小组第一和淘汰赛半区。",
+      `${match.homeName}单场胜率 ${homeWin}%，优势来自基础实力和进攻盘。`,
+      `平局概率 ${draw}%，会让小组第一继续依赖后续赛果。`,
+      "预测接口短暂不可用时，公开页只使用已核验官方赛程兜底。",
     ],
-    newsItems: fallbackNewsItems.map((item, index) => ({
-      ...item,
-      time: tick === 0 ? item.time : `${Math.max(1, tick * 5 + index * 8)} 秒前`,
-    })),
+    newsItems: fallbackNewsItems,
     creatorTopics: [
-      { title: "1-1 为什么是最可能比分？", detail: "从双方进球期望和低比分集中度解释。" },
-      { title: "巴西赢球会怎样改变半区？", detail: "把小组第一、潜在 32 强对手和冠军概率串起来。" },
-      { title: "小 2.5 与 BTTS 的分歧点", detail: "用比分矩阵说明双方进球与总进球不一定同向。" },
+      { title: "3-0 为什么是最可能比分？", detail: "从进球期望、双方防守质量和小组赛动机解释。" },
+      { title: "德国赢球会怎样改变半区？", detail: "把小组第一、潜在 32 强对手和冠军概率串起来。" },
+      { title: "大小球与 BTTS 的分歧点", detail: "用比分矩阵说明总进球和双方进球不一定同向。" },
     ],
   };
 }
@@ -962,7 +977,7 @@ function HomePredictionPage() {
   const [activeScreen, setActiveScreen] = useState<UserScreenKey>(() => userScreenFromHash());
 
   const teamsData = apiPrediction?.teams?.length ? apiPrediction.teams : teams;
-  const fallbackPrediction = useMemo(() => buildFallbackPrediction(forecastTick), [forecastTick]);
+  const fallbackPrediction = useMemo(() => buildFallbackPrediction(), [forecastTick]);
   const matchPrediction = apiPrediction ?? fallbackPrediction;
   const homeTeam = teamsData.find((team) => team.key === matchPrediction.homeTeam) ?? teamsData[0];
   const awayTeam = teamsData.find((team) => team.key === matchPrediction.awayTeam) ?? teamsData[1];
