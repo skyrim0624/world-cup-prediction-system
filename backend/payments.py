@@ -308,6 +308,9 @@ def _build_customer_create_payload(
         "currency": "CNY",
         "metadata": metadata,
     }
+    for key in ("contentKey", "matchKey", "homeTeam", "awayTeam", "homeName", "awayName"):
+        if metadata.get(key):
+            payload[key] = metadata[key]
     notify_url = _customer_notify_url(env, provider_key)
     return_url = _customer_return_url(env, str(order["orderId"]))
     if notify_url:
@@ -612,7 +615,7 @@ def build_order_access_decision(order_id: str, content_key: str, match_key: str 
 
     metadata = order.get("metadata") if isinstance(order.get("metadata"), dict) else {}
     order_match_key = metadata.get("matchKey") if metadata else None
-    if content_key == "match_prediction" and order_match_key and match_key != order_match_key:
+    if order["productKey"] == "single_match" and content_key == "match_prediction" and order_match_key and match_key != order_match_key:
         return {
             "allowed": False,
             "reason": "match_not_in_scope",

@@ -174,6 +174,25 @@ class PredictionApiTest(unittest.TestCase):
         self.assertTrue(all(product["status"] == "payment_pending" for product in payload["products"]))
         self.assertIn("概率分析", payload["disclaimer"])
 
+    def test_access_options_follow_payment_simulation_readiness(self):
+        client = TestClient(app)
+        previous = main_module.os.environ.get("WORLD_CUP_PAYMENT_SIMULATION")
+        main_module.os.environ["WORLD_CUP_PAYMENT_SIMULATION"] = "1"
+        try:
+            response = client.get("/api/access-options")
+            policy_response = client.get("/api/access-policy")
+        finally:
+            if previous is None:
+                main_module.os.environ.pop("WORLD_CUP_PAYMENT_SIMULATION", None)
+            else:
+                main_module.os.environ["WORLD_CUP_PAYMENT_SIMULATION"] = previous
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTrue(response.json()["paymentConfigured"])
+        self.assertTrue(all(product["status"] == "available" for product in response.json()["products"]))
+        self.assertEqual(policy_response.status_code, 200)
+        self.assertTrue(policy_response.json()["paymentConfigured"])
+
     def test_access_policy_exposes_content_gates(self):
         client = TestClient(app)
         response = client.get("/api/access-policy")

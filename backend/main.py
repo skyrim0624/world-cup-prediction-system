@@ -97,6 +97,7 @@ class PaymentOrderCreateRequest(BaseModel):
     awayTeam: str | None = None
     homeName: str | None = None
     awayName: str | None = None
+    wechatOpenId: str | None = None
 
 
 app.add_middleware(
@@ -177,12 +178,12 @@ async def model_status() -> dict[str, object]:
 
 @app.get("/api/access-options")
 async def access_options() -> dict[str, object]:
-    return build_access_options(payment_configured=False)
+    return build_access_options(payment_configured=bool(build_payment_config()["ready"]))
 
 
 @app.get("/api/access-policy")
 async def access_policy() -> dict[str, object]:
-    return build_access_policy(payment_configured=False)
+    return build_access_policy(payment_configured=bool(build_payment_config()["ready"]))
 
 
 @app.get("/api/access-decision")
@@ -205,6 +206,7 @@ async def create_order(request: PaymentOrderCreateRequest) -> dict[str, object]:
             "awayTeam": request.awayTeam,
             "homeName": request.homeName,
             "awayName": request.awayName,
+            "wechatOpenId": request.wechatOpenId,
         }
         return create_payment_order(request.productKey, request.provider, metadata=metadata, storage_path=payment_orders_path)
     except ValueError as error:

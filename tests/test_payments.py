@@ -167,6 +167,14 @@ class PaymentApiTest(unittest.TestCase):
         order = create_payment_order(
             "single_match",
             "wechat_native",
+            metadata={
+                "contentKey": "match_prediction",
+                "matchKey": "spain-cape-verde",
+                "homeTeam": "spain",
+                "awayTeam": "cape-verde",
+                "homeName": "西班牙",
+                "awayName": "佛得角",
+            },
             env={
                 "CUSTOMER_WECHAT_NATIVE_PAY_CREATE_URL": "https://customer.example/pay/wechat/create",
                 "CUSTOMER_WECHAT_NATIVE_PAY_STATUS_URL": "https://customer.example/pay/wechat/status",
@@ -183,6 +191,10 @@ class PaymentApiTest(unittest.TestCase):
         self.assertEqual(captured["payload"]["outTradeNo"], order["orderId"])
         self.assertEqual(captured["payload"]["amountCents"], 100)
         self.assertEqual(captured["payload"]["paymentMethod"], "native")
+        self.assertEqual(captured["payload"]["contentKey"], "match_prediction")
+        self.assertEqual(captured["payload"]["matchKey"], "spain-cape-verde")
+        self.assertEqual(captured["payload"]["homeName"], "西班牙")
+        self.assertEqual(captured["payload"]["awayName"], "佛得角")
         self.assertEqual(captured["payload"]["notifyUrl"], "https://zhugejunshi.com/api/app-payment/wechat/notify")
         self.assertEqual(order["status"], "pending")
         self.assertEqual(order["qrCodeUrl"], "https://pay.example/qr/wechat-native.png")
@@ -422,6 +434,25 @@ class PaymentApiTest(unittest.TestCase):
         self.assertFalse(denied["allowed"])
         self.assertEqual(denied["reason"], "match_not_in_scope")
 
+    def test_paid_tournament_pass_unlocks_any_single_match_prediction(self):
+        with TemporaryDirectory() as temp_dir:
+            store_path = Path(temp_dir) / "payment-orders.json"
+            created = create_payment_order(
+                "tournament_pass",
+                "wechat",
+                metadata={"contentKey": "tournament_probabilities", "matchKey": "spain-cape-verde"},
+                storage_path=store_path,
+            )
+            update_payment_order_status(created["orderId"], "paid", storage_path=store_path)
+
+            match_allowed = build_order_access_decision(created["orderId"], "match_prediction", match_key="brazil-argentina", storage_path=store_path)
+            tournament_allowed = build_order_access_decision(created["orderId"], "tournament_probabilities", storage_path=store_path)
+
+        self.assertTrue(match_allowed["allowed"])
+        self.assertEqual(match_allowed["reason"], "allowed")
+        self.assertTrue(tournament_allowed["allowed"])
+        self.assertEqual(tournament_allowed["reason"], "allowed")
+
     def test_payment_order_api_persists_created_order(self):
         client = TestClient(app)
         with TemporaryDirectory() as temp_dir:
@@ -440,6 +471,7 @@ class PaymentApiTest(unittest.TestCase):
                         "awayTeam": "japan",
                         "homeName": "荷兰",
                         "awayName": "日本",
+                        "wechatOpenId": "openid-from-front",
                     },
                 ).json()
                 PAYMENT_ORDERS.clear()
@@ -451,6 +483,7 @@ class PaymentApiTest(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json()["orderId"], created["orderId"])
         self.assertEqual(response.json()["metadata"]["matchKey"], "netherlands-japan")
+        self.assertEqual(response.json()["metadata"]["wechatOpenId"], "openid-from-front")
 
     def test_access_decision_api_uses_payment_order_status(self):
         client = TestClient(app)

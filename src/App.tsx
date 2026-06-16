@@ -1233,6 +1233,36 @@ function publicMatchStatusLabel(status: string) {
   return status;
 }
 
+function formatPublicUpdatedTime(value: string, fallbackDate: Date) {
+  const date = value && value !== "static-fallback" ? new Date(value) : fallbackDate;
+  const safeDate = Number.isNaN(date.getTime()) ? fallbackDate : date;
+  const parts = new Intl.DateTimeFormat("zh-CN", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  }).formatToParts(safeDate);
+  const part = (type: string) => parts.find((item) => item.type === type)?.value ?? "";
+  return `${part("hour")}:${part("minute")}`;
+}
+
+function publicFreeTendencyLabel(match: PublicUpcomingMatch) {
+  const homeProfile = teams.find((team) => team.key === match.homeTeam);
+  const awayProfile = teams.find((team) => team.key === match.awayTeam);
+  const homeScore = homeProfile ? (homeProfile.factors.strength + homeProfile.factors.form + homeProfile.factors.squad) / 3 : null;
+  const awayScore = awayProfile ? (awayProfile.factors.strength + awayProfile.factors.form + awayProfile.factors.squad) / 3 : null;
+
+  if (homeScore === null && awayScore === null) return "赛前信息接近";
+  if (homeScore !== null && awayScore === null) return `${match.homeName}占优`;
+  if (homeScore === null && awayScore !== null) return `${match.awayName}占优`;
+
+  const diff = (homeScore ?? 0) - (awayScore ?? 0);
+  const leader = diff >= 0 ? match.homeName : match.awayName;
+  const absDiff = Math.abs(diff);
+  if (absDiff >= 10) return `${leader}明显占优`;
+  if (absDiff >= 4) return `${leader}略占优`;
+  return "势均力敌";
+}
+
 function formatDateKeyInTimeZone(date: Date, timeZone: string) {
   const parts = new Intl.DateTimeFormat("en-CA", {
     timeZone,
@@ -1336,6 +1366,7 @@ function buildFreeMatchPreview(homeTeam: Team, awayTeam: Team) {
       tendency: "双方接近",
       confidence: "低",
       scoreDirection: "偏向小比分胶着",
+      risk: "关注首发与临场节奏",
       note: "精确概率与完整推导需解锁",
       reasons: ["两队公开强弱差距不明显", "赛前阵容与首发会显著影响判断"],
     };
@@ -1345,6 +1376,7 @@ function buildFreeMatchPreview(homeTeam: Team, awayTeam: Team) {
     tendency: `${favorite.name}${absDiff >= 12 ? "明显占优" : absDiff >= 7 ? "占优" : "略占优"}`,
     confidence: absDiff >= 12 ? "高" : absDiff >= 7 ? "中" : "中低",
     scoreDirection: absDiff >= 12 ? `${favorite.name}偏向中胜` : `${favorite.name}偏向小胜`,
+    risk: "关注轮换与小组动机",
     note: "精确概率与完整推导需解锁",
     reasons: [`${favorite.name}基础实力盘更高`, `${underdog.name}仍有小组赛不确定性`],
   };
@@ -1553,6 +1585,7 @@ function HomePredictionPage() {
   const referenceDate = useMemo(() => new Date(), [refreshTick]);
   const upcomingMatchItems = useMemo(() => filterPublicUpcomingMatches(publicMatches.items, referenceDate), [publicMatches, referenceDate]);
   const visibleMatches = useMemo(() => publicMatchesForTab(upcomingMatchItems, activeFilter, referenceDate), [upcomingMatchItems, activeFilter, referenceDate]);
+  const updatedTimeLabel = useMemo(() => formatPublicUpdatedTime(publicMatches.updatedAt, referenceDate), [publicMatches.updatedAt, referenceDate]);
 
   useEffect(() => {
     let active = true;
@@ -1604,10 +1637,14 @@ function HomePredictionPage() {
     window.location.href = tournamentPassCheckoutPagePath();
   }
 
+  function openChampionBoard() {
+    window.location.href = CHAMPION_BOARD_ROUTE;
+  }
+
   function openMenuTarget(target: PublicMatchFilter | "champion-board") {
     setMenuOpen(false);
     if (target === "champion-board") {
-      window.location.href = CHAMPION_BOARD_ROUTE;
+      openChampionBoard();
       return;
     }
     setActiveFilter(target);
@@ -1618,23 +1655,30 @@ function HomePredictionPage() {
       <div className="public-match-bg" aria-hidden="true" />
       <section className="public-match-app" aria-labelledby="public-match-title">
         <header className="public-match-header">
-          <div className="public-brand-mark" aria-hidden="true">
-            <Trophy size={27} strokeWidth={2.1} />
-          </div>
           <div className="public-brand-copy">
             <strong>世界杯预测</strong>
-            <span>zhugejunshi.com</span>
+            <span>
+              <ShieldCheck size={16} strokeWidth={2.5} />
+              zhugejunshi.com
+            </span>
           </div>
-          <button
-            className="public-icon-button"
-            type="button"
-            aria-label="打开页面设置"
-            aria-expanded={menuOpen}
-            aria-controls="public-menu-sheet"
-            onClick={() => setMenuOpen(true)}
-          >
-            <Menu size={22} strokeWidth={2.6} />
-          </button>
+          <div className="public-header-actions">
+            <button
+              className="public-header-action"
+              type="button"
+              aria-label="打开页面设置"
+              aria-expanded={menuOpen}
+              aria-controls="public-menu-sheet"
+              onClick={() => setMenuOpen(true)}
+            >
+              <Menu size={22} strokeWidth={2.6} />
+              <span>菜单</span>
+            </button>
+            <button className="public-header-action champion" type="button" aria-label="查看冠军榜" onClick={openChampionBoard}>
+              <Trophy size={22} strokeWidth={2.35} />
+              <span>冠军榜</span>
+            </button>
+          </div>
         </header>
 
         {menuOpen ? (
@@ -1670,8 +1714,14 @@ function HomePredictionPage() {
         ) : null}
 
         <section className="public-page-title">
-          <h1 id="public-match-title">未开赛比赛</h1>
-          <p>公开赛程 · 预测需解锁</p>
+          <div>
+            <i aria-hidden="true" />
+            <h1 id="public-match-title">未开赛比赛</h1>
+          </div>
+          <span className="public-updated-pill">
+            <RefreshCw size={15} strokeWidth={2.4} />
+            预测已更新 {updatedTimeLabel}
+          </span>
         </section>
 
         <nav className="public-match-tabs" aria-label="比赛筛选">
@@ -1690,11 +1740,7 @@ function HomePredictionPage() {
 
         <PublicUpcomingMatchesPanel matches={visibleMatches} status={matchesStatus} activeFilter={activeFilter} onSelect={openMatchPage} />
       </section>
-      <TournamentPassBar onSelect={openTournamentPassCheckout} />
-      <footer className="public-safety-footer">
-        <ShieldCheck size={14} strokeWidth={2.2} />
-        <span>数据加密保护 · 安全支付 · 随时可查</span>
-      </footer>
+      <PublicHomeActionDock onChampion={openChampionBoard} onPass={openTournamentPassCheckout} />
     </main>
   );
 }
@@ -1732,13 +1778,18 @@ function PublicUpcomingMatchesPanel({
 }
 
 function PublicMatchCard({ match, onSelect }: { match: PublicUpcomingMatch; onSelect: (match: PublicUpcomingMatch) => void }) {
+  const freeTendency = publicFreeTendencyLabel(match);
+
   return (
     <button className="public-match-card" type="button" onClick={() => onSelect(match)}>
       <div className="public-match-info">
         <strong>{match.matchNo ? `#${match.matchNo}` : "#--"}</strong>
-        <span>{match.stage}</span>
-        <em>
+        <span>
           <CalendarDays size={13} strokeWidth={2.4} />
+          {match.stage}
+        </span>
+        <em>
+          <Clock size={13} strokeWidth={2.4} />
           {formatKickoffForPublicList(match.kickoff)}
         </em>
       </div>
@@ -1754,28 +1805,46 @@ function PublicMatchCard({ match, onSelect }: { match: PublicUpcomingMatch; onSe
         </div>
       </div>
       <div className="public-match-action">
-        <small>{publicMatchStatusLabel(match.status)}</small>
+        <small>免费简版</small>
+        <strong title={`倾向：${freeTendency}`}>
+          <Target size={17} strokeWidth={2.5} />
+          <span>
+            倾向：<b>{freeTendency}</b>
+          </span>
+        </strong>
         <span>
-          <LockKeyhole size={15} strokeWidth={2.5} />
-          <b>¥1</b>
-          <em>查看预测</em>
+          查看
+          <ChevronRight size={17} strokeWidth={2.6} />
         </span>
       </div>
     </button>
   );
 }
 
-function TournamentPassBar({ onSelect }: { onSelect: () => void }) {
+function PublicHomeActionDock({ onPass, onChampion }: { onPass: () => void; onChampion: () => void }) {
   return (
-    <button className="public-pass-bar" type="button" aria-label="解锁全包剩余 92 场" onClick={onSelect}>
-      <div>
-        <Crown size={20} strokeWidth={2.5} />
-        <span>全包剩余 92 场 ¥39</span>
+    <section className="public-home-action-dock" aria-label="首页快捷操作">
+      <div className="public-home-actions">
+        <button className="public-home-action primary" type="button" onClick={onPass}>
+          <LockKeyhole size={22} strokeWidth={2.45} />
+          <span>
+            <strong>全包剩余 92 场 ¥39</strong>
+            <small>解锁所有未开赛场次</small>
+          </span>
+        </button>
+        <button className="public-home-action secondary" type="button" onClick={onChampion}>
+          <Trophy size={25} strokeWidth={2.35} />
+          <span>
+            <strong>冠军榜</strong>
+            <small>查看夺冠概率与分析</small>
+          </span>
+        </button>
       </div>
-      <span className="public-pass-cta" aria-hidden="true">
-        <ChevronRight size={24} strokeWidth={2.4} />
-      </span>
-    </button>
+      <p className="public-safety-footer">
+        <ShieldCheck size={14} strokeWidth={2.2} />
+        <span>数据加密保护 · 安全支付 · 随时可查</span>
+      </p>
+    </section>
   );
 }
 
@@ -2623,30 +2692,18 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
               <strong>免费简版预测</strong>
               <span>先看方向，完整预测需支付后查看</span>
             </div>
+            <em>免费查看</em>
           </div>
-          <div className="locked-free-grid" aria-label="免费预测摘要">
-            <article>
-              <span>倾向</span>
-              <strong>{freePreview.tendency}</strong>
-            </article>
-            <article>
-              <span>信心</span>
-              <strong>{freePreview.confidence}</strong>
-            </article>
-            <article>
-              <span>比分方向</span>
-              <strong>{freePreview.scoreDirection}</strong>
-            </article>
+          <div className="locked-free-list" aria-label="免费预测摘要">
+            <LockedFreeMetric Icon={ShieldCheck} label="倾向" value={freePreview.tendency} />
+            <LockedFreeMetric Icon={Signal} label="信心" value={freePreview.confidence} />
+            <LockedFreeMetric Icon={Target} label="比分方向" value={freePreview.scoreDirection} />
+            <LockedFreeMetric Icon={AlertTriangle} label="风险" value={freePreview.risk} />
           </div>
-          <div className="locked-free-reasons">
-            {freePreview.reasons.map((reason) => (
-              <span key={reason}>
-                <CheckCircle2 aria-hidden="true" size={14} strokeWidth={2.4} />
-                {reason}
-              </span>
-            ))}
-          </div>
-          <p className="locked-free-note">{freePreview.note}</p>
+          <p className="locked-free-note">
+            <Info aria-hidden="true" size={15} strokeWidth={2.2} />
+            <span>{freePreview.note}</span>
+          </p>
         </section>
 
         <section className="locked-panel locked-depth-card">
@@ -2656,70 +2713,62 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
               <strong>深度预测包含</strong>
               <span>解锁后查看具体数值、矩阵和推导</span>
             </div>
+            <em>需解锁</em>
           </div>
-          <div className="locked-depth-tags" aria-label="深度预测内容">
-            <span>精确胜平负概率</span>
-            <span>Top 3 比分</span>
-            <span>比分矩阵</span>
-            <span>五大盘面</span>
-            <span>路径传导</span>
-            <span>新闻依据</span>
+          <div className="locked-depth-grid" aria-label="深度预测内容">
+            <LockedDepthTile Icon={ShieldCheck} title="精确胜平负" />
+            <LockedDepthTile Icon={Trophy} title="Top 3 比分" />
+            <LockedDepthTile Icon={Target} title="比分矩阵" />
+            <LockedDepthTile Icon={Signal} title="五大盘面" />
+            <LockedDepthTile Icon={Crown} title="路径传导" />
+            <LockedDepthTile Icon={Newspaper} title="新闻依据" />
           </div>
         </section>
 
         {errorMessage && loadStatus === "failed" ? <p className="locked-inline-message">{errorMessage}</p> : null}
         {paymentMessage ? <p className="locked-inline-message">{paymentMessage}</p> : null}
+      </div>
+
+      <section className="locked-purchase-bar" aria-label="购买入口">
+        <div className="locked-purchase-actions">
+          <button type="button" className="locked-buy-button primary" onClick={() => createUnlockOrder("single_match")} disabled={singleMatchDisabled}>
+            <span>
+              <Lock aria-hidden="true" size={21} strokeWidth={2.5} />
+            </span>
+            <strong>¥1 解锁本场</strong>
+            <small>查看本场完整预测</small>
+          </button>
+          <button type="button" className="locked-buy-button pass" onClick={() => createUnlockOrder("tournament_pass")} disabled={singleMatchDisabled}>
+            <strong>全包剩余 92 场 ¥39</strong>
+            <small>解锁所有未开赛场次</small>
+            <Trophy aria-hidden="true" size={22} strokeWidth={2.3} />
+          </button>
+        </div>
         <footer className="locked-safety-footer">
           <ShieldCheck aria-hidden="true" size={16} strokeWidth={2.1} />
           <span>数据加密保护 · 安全支付 · 随时可查</span>
         </footer>
-      </div>
-
-      <section className="locked-purchase-bar" aria-label="购买入口">
-        <button type="button" className="locked-buy-button primary" onClick={() => createUnlockOrder("single_match")} disabled={singleMatchDisabled}>
-          <span>
-            <Lock aria-hidden="true" size={21} strokeWidth={2.5} />
-          </span>
-          <strong>¥1 解锁本场</strong>
-          <small>查看本场完整预测</small>
-        </button>
-        <button type="button" className="locked-buy-button pass" onClick={() => createUnlockOrder("tournament_pass")} disabled={singleMatchDisabled}>
-          <strong>全包剩余 92 场 ¥39</strong>
-          <small>解锁所有未开赛场次</small>
-          <Trophy aria-hidden="true" size={22} strokeWidth={2.3} />
-        </button>
       </section>
     </main>
   );
 }
 
-function LockedPreviewRow({ Icon, title }: { Icon: LucideIcon; title: string }) {
+function LockedFreeMetric({ Icon, label, value }: { Icon: LucideIcon; label: string; value: string }) {
   return (
-    <article className="locked-preview-row">
-      <Icon aria-hidden="true" size={30} strokeWidth={2.3} />
-      <div>
-        <strong>{title}</strong>
-        <span>待解锁</span>
-      </div>
-      <span className="locked-blur-lines" aria-hidden="true">
-        <i />
-        <i />
-        <i />
-      </span>
-      <Lock aria-hidden="true" size={28} strokeWidth={2.4} />
+    <article className="locked-free-metric">
+      <Icon aria-hidden="true" size={25} strokeWidth={2.35} />
+      <span>{label}</span>
+      <strong>{value}</strong>
     </article>
   );
 }
 
-function LockedContentRow({ Icon, title, detail }: { Icon: LucideIcon; title: string; detail: string }) {
+function LockedDepthTile({ Icon, title }: { Icon: LucideIcon; title: string }) {
   return (
-    <article className="locked-content-row">
-      <Icon aria-hidden="true" size={31} strokeWidth={2.3} />
-      <div>
-        <strong>{title}</strong>
-        <span>{detail}</span>
-      </div>
-      <Lock aria-hidden="true" size={25} strokeWidth={2.4} />
+    <article className="locked-depth-tile">
+      <Lock aria-hidden="true" size={15} strokeWidth={2.4} />
+      <Icon aria-hidden="true" size={24} strokeWidth={2.35} />
+      <strong>{title}</strong>
     </article>
   );
 }
