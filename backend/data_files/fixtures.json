@@ -101,9 +101,11 @@
     "away": "ecuador",
     "stage": "小组赛 E 组",
     "kickoff": "6月14日 19:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Philadelphia",
-    "stadium": "Philadelphia Stadium"
+    "stadium": "Philadelphia Stadium",
+    "home_score": 1,
+    "away_score": 0
   },
   {
     "match_no": 10,
@@ -123,9 +125,11 @@
     "away": "japan",
     "stage": "小组赛 F 组",
     "kickoff": "6月14日 16:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Dallas",
-    "stadium": "Dallas Stadium"
+    "stadium": "Dallas Stadium",
+    "home_score": 2,
+    "away_score": 2
   },
   {
     "match_no": 12,
@@ -133,9 +137,11 @@
     "away": "tunisia",
     "stage": "小组赛 F 组",
     "kickoff": "6月14日 22:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Monterrey",
-    "stadium": "Monterrey Stadium"
+    "stadium": "Monterrey Stadium",
+    "home_score": 5,
+    "away_score": 1
   },
   {
     "match_no": 13,
@@ -143,9 +149,11 @@
     "away": "uruguay",
     "stage": "小组赛 H 组",
     "kickoff": "6月15日 18:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Miami",
-    "stadium": "Miami Stadium"
+    "stadium": "Miami Stadium",
+    "home_score": 1,
+    "away_score": 1
   },
   {
     "match_no": 14,
@@ -153,9 +161,11 @@
     "away": "cape-verde",
     "stage": "小组赛 H 组",
     "kickoff": "6月15日 12:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Atlanta",
-    "stadium": "Atlanta Stadium"
+    "stadium": "Atlanta Stadium",
+    "home_score": 0,
+    "away_score": 0
   },
   {
     "match_no": 15,
@@ -163,9 +173,11 @@
     "away": "new-zealand",
     "stage": "小组赛 G 组",
     "kickoff": "6月15日 21:00 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "Los Angeles",
-    "stadium": "Los Angeles Stadium"
+    "stadium": "Los Angeles Stadium",
+    "home_score": 1,
+    "away_score": 2
   },
   {
     "match_no": 16,
@@ -173,9 +185,11 @@
     "away": "egypt",
     "stage": "小组赛 G 组",
     "kickoff": "6月15日 15:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Seattle",
-    "stadium": "Seattle Stadium"
+    "stadium": "Seattle Stadium",
+    "home_score": 1,
+    "away_score": 1
   },
   {
     "match_no": 17,
