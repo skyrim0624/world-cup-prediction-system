@@ -10,7 +10,7 @@
   "homeWin": 63,
   "draw": 20,
   "awayWin": 17,
-  "updatedAt": "2026-06-16T10:27:58.023385+00:00",
+  "updatedAt": "2026-06-16T15:31:33.546140+00:00",
   "fixtureContext": {
     "home": {
       "team": "france",
@@ -308,11 +308,11 @@
       "probability": 63,
       "title": "法国小组第一概率上升",
       "details": [
-        "法国夺冠概率 +0.6%",
+        "法国夺冠概率 +0.5%",
         "塞内加尔路径盘下调 -0.1%",
         "同组竞争队出线门槛抬高"
       ],
-      "championShift": "+0.6%",
+      "championShift": "+0.5%",
       "tone": "green"
     },
     {
@@ -320,11 +320,11 @@
       "probability": 20,
       "title": "两队路径保持胶着",
       "details": [
-        "法国夺冠概率 -0.3%",
+        "法国夺冠概率 -0.4%",
         "塞内加尔夺冠概率 +0.1%",
         "小组第一仍取决于末轮和净胜球"
       ],
-      "championShift": "-0.3% / +0.1%",
+      "championShift": "-0.4% / +0.1%",
       "tone": "gold"
     },
     {
@@ -332,11 +332,11 @@
       "probability": 17,
       "title": "塞内加尔半区压力下降",
       "details": [
-        "塞内加尔夺冠概率 +0.4%",
-        "法国潜在淘汰赛路径变难 -1.6%",
+        "塞内加尔夺冠概率 +0.3%",
+        "法国潜在淘汰赛路径变难 -1.7%",
         "小组第二路径风险上升"
       ],
-      "championShift": "+0.4%",
+      "championShift": "+0.3%",
       "tone": "blue"
     }
   ],
@@ -1577,6 +1577,258 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 16 Jun 2026 06:31:37 GMT"
+    },
+    {
+      "title": "Chalobah replaces injured Livramento for World Cup",
+      "detail": "Newcastle United full-back Tino Livramento is out of England's World Cup campaign with a calf injury and is replaced by Chelsea defender Trevoh Chalobah.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 16 Jun 2026 13:38:25 GMT"
+    },
+    {
+      "title": "Tuchel's England deal includes performance clause",
+      "detail": "Thomas Tuchel's England contract extension is subject to a performance clause, says FA chief executive Mark Bullingham.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 11:14:08 GMT"
+    },
+    {
+      "title": "Lack of World Cup segregation a risk - fans' chief",
+      "detail": "The head of fan group Football Supporters Europe says a lack of fan segregation at the 2026 World Cup shows Fifa has \"lost control of their ticketing\".",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 14:16:57 GMT"
+    },
+    {
+      "title": "Record draws and Europe's slow start - is the World Cup lacking jeopardy?",
+      "detail": "Seven of the 10 European teams to have played at the World Cup so far have failed to win - is heat the issue?",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 16 Jun 2026 14:19:09 GMT"
+    },
+    {
+      "title": "Stag-do drag to World Cup - the rise of Scotland's other national anthem",
+      "detail": "From stag-do drag to Fenway Park, how did a 1970s disco hit become the soundtrack of the Tartan Army?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 11:19:30 GMT"
+    },
+    {
+      "title": "Solskjaer in the running for Ipswich job",
+      "detail": "Ole Gunnar Solskjaer and Gary O'Neil are among the leading contenders for the Ipswich managerial role.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 13:57:18 GMT"
+    },
+    {
+      "title": "Just's rise from Austrian second tier to World Cup breakout star",
+      "detail": "BBC Scotland charts a rapid rise that has taken the Motherwell attacking midfielder from second-division football to the game's grandest stage.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 15:09:34 GMT"
+    },
+    {
+      "title": "Would Hearts' McInnes be 'perfect fit' for Rangers?",
+      "detail": "With Derek McInnes reportedly on the verge of a switch from Hearts to Rangers, his former assistant Tony Docherty details why the move would be a 'perfect fit'.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 11:38:52 GMT"
+    },
+    {
+      "title": "Dazzling winger to strolling veteran - Messi back on World Cup stage",
+      "detail": "Lionel Messi is set for his sixth World Cup with Argentina. Guillem Balague looks at how the Argentine has evolved.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 13:02:39 GMT"
+    },
+    {
+      "title": "What's next for Curtis Jones as Inter Milan step up their interest?",
+      "detail": "As Inter Milan step up their interest in Curtis Jones, a look at the decision facing Liverpool and Jones, whose contract expires next summer",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 14:28:33 GMT"
+    },
+    {
+      "title": "New Leicester boss Martin 'must show he can adapt'",
+      "detail": "New Leicester City boss Russell Martin must show he is adaptable after recent failings, says ex-Foxes defender Matt Heath.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 16 Jun 2026 14:52:09 GMT"
+    },
+    {
+      "title": "Shamrock Rovers fans 'immensely proud' of Cape Verde hero Lopes",
+      "detail": "Shamrock Rovers defender Roberto 'Pico' Lopes says his side's draw with highly-fancied Spain in their first-ever World Cup match felt \"a bit surreal\" post-match.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 14:44:37 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "France's all-time leading goalscorer Olivier Giroud speaks to Mark Chapman.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 11:00:00 GMT"
+    },
+    {
+      "title": "Ask pundits McCann & Crichton your World Cup questions",
+      "detail": "BBC Sport Scotland pundits Neil McCann and Leanne Crichton are in Boston and are ready to answer - some - of your questions about Scotland's World Cup campaign.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 14:20:03 GMT"
+    },
+    {
+      "title": "Why the USMNT's dominant opening win may predict a...",
+      "detail": "It's only one game, sure, but the USMNT's win over Paraguay has the underlying stats of a World Cup team destined for a deep run.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 08:34:08 EST"
+    },
+    {
+      "title": "'Repressed' Iran forced to leave U.S. after game",
+      "detail": "Iran coach Amir Ghalenoei called his team perhaps the \"most oppressed team in the whole World Cup,\" after he said Iran have been forced to leave Los Angeles and return to their base camp in Tijuana, Mexico, immediately following their opening match.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 11:15:09 EST"
+    },
+    {
+      "title": "Sources: Tunisia hire Renard with Lamouchi out",
+      "detail": "Tunisia have brought in Herve Renard to oversee the remainder of their World Cup campaign, it has been announced.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 11:15:09 EST"
+    },
+    {
+      "title": "U.S.' Penso 2nd woman to ref men's WC game",
+      "detail": "U.S. referee Tori Penso was assigned to officiate The Group A match between Czechia and South Africa in Atlanta on Thursday, making her the second woman to take charge of a men's World Cup match.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 11:15:09 EST"
+    },
+    {
+      "title": "England's Livramento out of WCup, Chalobah in",
+      "detail": "Tino Livramento has been ruled out of the World Cup with a hamstring injury and will be replaced by Chelsea defender Trevoh Chalobah, England announced on Tuesday.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 16 Jun 2026 11:15:08 EST"
+    },
+    {
+      "title": "Senegal coach calls on NYC diaspora to show out",
+      "detail": "Senegal head coach Pape Thiaw has called on the country's diaspora community in New York and beyond to put their full backing behind the team when they face France in their FIFA World Cup opener on Tuesday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 11:15:09 EST"
+    },
+    {
+      "title": "Rüdiger signs one-year extension at Real Madrid",
+      "detail": "Defender Antonio Rüdiger has extended his contract with Real Madrid until 2027, the Spanish club announced Tuesday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 11:15:09 EST"
+    },
+    {
+      "title": "😞Which coaches were sacked during World Cup?",
+      "detail": "Tunisia manager Sabri Lamouchi won't be feeling too good after being sacked midway through a World Cup, but he's not the first coach to suffer that fate.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 11:15:09 EST"
+    },
+    {
+      "title": "World Cup Daily Live: Giant inflatable match ball ...",
+      "detail": "World Cup group-stage days rarely get better than this. Lionel Messi, Kylian Mbappé and Erling Haaland are all in action. Follow live updates with ESPN.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 09:51:22 EST"
+    },
+    {
+      "title": "Iran's entertaining draw with New Zealand offers r...",
+      "detail": "For 90 minutes, the Iran national team was allowed to focus on soccer. And then, alas, reality descended once more.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 09:51:57 EST"
+    },
+    {
+      "title": "Transfer rumors, news: Tottenham join Arsenal, Cit...",
+      "detail": "Newcastle United midfielder Sandro Tonali now has Tottenham Hotspur on his trail. Transfer Talk has the latest.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 10:32:32 EST"
+    },
+    {
+      "title": "Copy of Undefeated after six matches, the Asian nations ha...",
+      "detail": "Asia's unbeaten start to the World Cup is a good reminder that football exists outside of Europe's top leagues.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 08:54:50 EST"
+    },
+    {
+      "title": "Runners-up in 2018, third place in 2022: Can Croat...",
+      "detail": "Croatia have continued to punch above their weight at consecutive World Cups, but despite some aging players -- can they surprise people yet again?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 03:51:59 EST"
+    },
+    {
+      "title": "Key issues for England at 2026 World Cup: Fatigue,...",
+      "detail": "null",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 04:33:45 EST"
+    },
+    {
+      "title": "‘I’m not a model’ Uruguay’s Bielsa defends bizarre World Cup portrait",
+      "detail": "<ul><li><p>Head coach looked downwards in official Fifa photo</p></li><li><p>‘The picture was taken the way it was taken’</p></li></ul><p>The Uruguay head coach, Marcelo Bielsa, has lived up to his maverick reputation by refusing to cooperate during a photoshoot for Fifa. Bielsa stared down at the floor, hands in pockets, statuesque, during the obligatory media duty last Wednesday and the 70-year-old hit back when asked about the incident after <a href=\"https://www.theguardian.com/football/2026/jun/16/saudi-arabia-uruguay-world-cup-match-report\">Uruguay’s 1-1 draw with Saudi Arabia</a> on Monday.</p><p>“I’m not a model,” he said. “I don’t have to give any explanation, the picture was taken the way it was taken. Should I also explain why I don’t look to the people who are speaking to me at this moment?”</p> <a href=\"https://www.theguardian.com/football/2026/jun/16/marcelo-bielsa-photoshoot-uruguay-world-cup-2026\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 10:08:21 GMT"
+    },
+    {
+      "title": "Luka Modric has been tormenting England for 20 years. Can he do it one more time?",
+      "detail": "<p>From Zagreb to Wembley and Moscow, the Croatia great has derailed the Three Lions on many occasions. Now he’s ready for one last dance in Dallas</p><p>When Luka Modric first played against England, Tony Blair was still in office. Arsenal had just moved from Highbury to the Emirates Stadium, Italy were newly crowned world champions and Pep Guardiola retired as a player after a six-month spell in Mexico with Dorados. Twitter was less than three months old and Facebook had been made fully public earlier that year. Amy Winehouse’s album Back to Black was about to be released, while the much-hyped film Borat was coming to cinemas.</p><p>Football fans in England – and in Croatia – may recognise which game it was solely from that last bit of pop culture history: <a href=\"https://www.theguardian.com/football/2006/oct/12/newsstory.englandfootballteam\">the European Championship qualifier in Zagreb</a> on 11 October 2006.</p> <a href=\"https://www.theguardian.com/football/2026/jun/16/world-cup-luka-modric-croatia-england-20-years-can-he-do-it-one-more-time\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 11:00:06 GMT"
+    },
+    {
+      "title": "Football Daily | ‘Pico’ Lopes and Cape Verde give Spain’s boys one hell of a neutralising",
+      "detail": "<p><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\"><strong>Sign up now! Sign up now! Sign up now? Sign up now!</strong></a></p><p>About a month ago, Roberto “Pico” Lopes thought he was meeting his parents for a Sunday dinner in Crumlin on the outskirts of Dublin, but was met by a surprise party of friends, family and neighbours, all adorned in Cape Verde colours, to give him <a href=\"https://www.instagram.com/p/DYdB3L0s3Fo/?hl=en\">a special send-off</a> for the Geopolitics World Cup. Dublin born and raised, Lopes looked positively delirious as he waved at the small crowd of loved ones. “We’re going to get a camper van and travel through the States,” beamed Lopes’s wife, Leah O’Shaughnessy, holding their seven-month-old son, Diego. “He probably won’t remember it, but we’ll be able to look back on the photos and videos and say that he was able to watch his daddy in the [GWC].”</p> <a href=\"https://www.theguardian.com/football/2026/jun/16/pico-lopes-cape-verde-football-daily-newsletter\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 13:54:09 GMT"
+    },
+    {
+      "title": "Iran overcomes its divisions for 90 minutes, then same old problems return",
+      "detail": "<p>Support in LA included those of past and present regimes, and opponents of both, but a match that captivated all could not dissolve troubles</p><p>Soccer unites. This is what we are told. It swoops in, majestic in the players’ grace, and gives a people – any people – a thing to rally around in good times and bad. It’s true, that does happen on occasion. But other times, as in <a href=\"https://www.theguardian.com/football/2026/jun/16/iran-new-zealand-world-cup-2026-group-g-match-report\">Monday’s 2-2 draw between Iran and New Zealand</a> here in southern California, the magic of this ridiculously simple game lies in its power to make one, or several, or several thousand, forget.</p><p>Before the game, Iranians worldwide had been divided by decades of political and cultural difficulty and the Iran team were hamstrung by interrupted preparations for what should be the pinnacle of any player’s career.</p> <a href=\"https://www.theguardian.com/football/2026/jun/16/iran-overcomes-its-divisions-for-90-minutes-then-same-old-problems-return\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 11:49:29 GMT"
+    },
+    {
+      "title": "Cape Verde shock Spain with historic draw on World Cup debut",
+      "detail": "<p>Wow, just wow. At 1.57pm Atlanta time, 3,291 miles from home, the final whistle went on Cape Verde’s first game in a World Cup finals tournament – and they had only gone and done it.</p><p>What they had done was madness: a tiny nation, a debutant, had held one of the favourites, Spain, the European champions, to a 0-0 draw. Bubista, the coach who had led them here, had said he wanted the world to see who and what they are – and, boy, did they see. Qualification, he had insisted, was more than football, it was music, it was culture, it was everything. So what was this? This was wonderful. What a moment and what a noise greeted the moment when the impossible had become real.</p> <a href=\"https://www.theguardian.com/football/2026/jun/15/spain-cape-verde-world-cup-2026-group-h-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 15 Jun 2026 18:31:34 GMT"
+    },
+    {
+      "title": "Class acts: the maths teacher who taught Argentina’s Álvarez and Fernández",
+      "detail": "<p>Luciana Alvarengue likes to think she had the smallest of influences on two of her old pupils as they take aim at another World Cup</p><p>For all Argentinians, sitting down to watch the <a href=\"https://www.theguardian.com/football/2022/dec/18/world-cup-final-argentina-france-match-report\">2022 World Cup final</a> was special – but for Luciana Alvarengue there was additional emotion. In the Argentina side were not one but two players to whom she had taught maths at school: Enzo Fernández and Julián Álvarez.</p><p>“They are still my students, even if they are no longer in the classroom,” she says. “To see it with my son telling me: ‘Mamá, there are your students’ … that’s really nice.”</p> <a href=\"https://www.theguardian.com/football/2026/jun/16/enzo-fernandez-julian-alvarez-argentina-river-plate-teacher-world-cup-2026\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 11:00:07 GMT"
+    },
+    {
+      "title": "From Shamrock Rovers to defying Spain: ‘rusty’ Roberto Lopes savours Cape Verde’s finest hour",
+      "detail": "<p>Dublin-born defender’s display against Spain drew comparisons with Paul McGrath’s against Italy in 1994 but he says there is still room to improve</p><p>Rucksack on his back, Roberto “Pico” Lopes was standing on the corner of the narrow walkway way below the stands at the Atlanta stadium on Monday afternoon when the last of Spain’s players tried to make their way home. More than an hour after the final whistle had gone and they <em>still </em>couldn’t get past him, someone quipped. The centre-back from Crumlin reckoned he was “rusty” too here, yet he was at the heart of <a href=\"https://www.theguardian.com/football/2026/jun/15/spain-cape-verde-world-cup-2026-group-h-match-report\">the greatest moment in Cape Verde’s history</a>, one his coach claimed went far beyond football, and the kind of story only the World Cup can write.</p><p>It had taken a little while and a word or two to realise it. In the final minute when Spain had their 11th and last corner, Lopes had looked at the clock and seen that it was close. He had heard the final whistle go, heard the roar as it was confirmed that Cape Verde had held on, undefeated on their tournament debut. He had seen the tears and celebration, family and friends in the stands, As he went down the tunnel he encountered Ray Houghton, scorer of the<em> </em>goal in New York when the Republic of Ireland defeated Italy 32 years ago, and embraced him. It was, he said, “lovely”, but what all this meant hadn’t entirely sunk in yet.</p> <a href=\"https://www.theguardian.com/football/2026/jun/16/roberto-lopes-cape-verde-spain-draw-world-cup-2026\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 13:10:15 GMT"
+    },
+    {
+      "title": "History for Cape Verde as Spain start with a stutter | World Cup Daily",
+      "detail": "<p><a href=\"https://bsky.app/profile/maxrushden.bsky.social\">Max Rushden</a> is joined by <a href=\"https://bsky.app/profile/did:plc:i55lfvhkg573wfmby5sdnvq6\">Barry Glendenning</a>, <a href=\"https://bsky.app/profile/barneyronay.bsky.social\">Barney Ronay</a>, Dan Bardell and <a href=\"https://bsky.app/profile/sidlowe.bsky.social\">Sid Lowe</a> as debutants Cape Verde earn a draw against the favourites Spain</p> <a href=\"https://www.theguardian.com/football/video/2026/jun/16/history-for-cape-verde-as-spain-start-with-a-stutter-world-cup-daily\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 16 Jun 2026 07:14:51 GMT"
     }
   ],
   "teams": [
@@ -1594,8 +1846,8 @@
       "tournament": {
         "champion": 1.8,
         "final": 4.8,
-        "semifinal": 11.6,
-        "quarterfinal": 27.4,
+        "semifinal": 11.8,
+        "quarterfinal": 27.8,
         "change": -0.1
       }
     },
@@ -1631,9 +1883,9 @@
       },
       "tournament": {
         "champion": 0.7,
-        "final": 2.3,
-        "semifinal": 7.2,
-        "quarterfinal": 20.9,
+        "final": 2.4,
+        "semifinal": 7.3,
+        "quarterfinal": 21.2,
         "change": 0.0
       }
     },
@@ -1663,15 +1915,15 @@
       "factors": {
         "strength": 76,
         "form": 77,
-        "path": 66,
+        "path": 65,
         "squad": 79,
         "margin": 76
       },
       "tournament": {
         "champion": 0.3,
-        "final": 1.2,
+        "final": 1.1,
         "semifinal": 3.9,
-        "quarterfinal": 13.3,
+        "quarterfinal": 13.2,
         "change": -0.1
       }
     },
@@ -1726,7 +1978,7 @@
       },
       "tournament": {
         "champion": 0.8,
-        "final": 2.6,
+        "final": 2.7,
         "semifinal": 7.2,
         "quarterfinal": 20.6,
         "change": -0.3
@@ -1744,11 +1996,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 7.4,
-        "final": 13.9,
-        "semifinal": 25.2,
-        "quarterfinal": 42.6,
-        "change": -2.5
+        "champion": 7.6,
+        "final": 14.2,
+        "semifinal": 25.6,
+        "quarterfinal": 42.7,
+        "change": -2.3
       }
     },
     {
@@ -1763,11 +2015,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 1.6,
-        "final": 4.2,
-        "semifinal": 10.4,
-        "quarterfinal": 24.0,
-        "change": -0.1
+        "champion": 1.7,
+        "final": 4.3,
+        "semifinal": 10.5,
+        "quarterfinal": 24.1,
+        "change": 0.0
       }
     },
     {
@@ -1802,7 +2054,7 @@
       },
       "tournament": {
         "champion": 0.2,
-        "final": 0.8,
+        "final": 0.9,
         "semifinal": 2.9,
         "quarterfinal": 10.4,
         "change": -0.1
@@ -1834,7 +2086,7 @@
       "factors": {
         "strength": 75,
         "form": 75,
-        "path": 65,
+        "path": 64,
         "squad": 75,
         "margin": 76
       },
@@ -1872,7 +2124,7 @@
       "factors": {
         "strength": 79,
         "form": 78,
-        "path": 68,
+        "path": 69,
         "squad": 79,
         "margin": 77
       },
@@ -1896,11 +2148,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 5.5,
-        "final": 11.2,
-        "semifinal": 21.5,
+        "champion": 5.6,
+        "final": 11.3,
+        "semifinal": 21.6,
         "quarterfinal": 36.3,
-        "change": -0.8
+        "change": -0.7
       }
     },
     {
@@ -1936,7 +2188,7 @@
       "tournament": {
         "champion": 0.3,
         "final": 1.2,
-        "semifinal": 3.9,
+        "semifinal": 4.0,
         "quarterfinal": 12.3,
         "change": -0.2
       }
@@ -1955,8 +2207,8 @@
       "tournament": {
         "champion": 0.8,
         "final": 2.3,
-        "semifinal": 6.2,
-        "quarterfinal": 15.7,
+        "semifinal": 6.3,
+        "quarterfinal": 15.8,
         "change": 0.3
       }
     },
@@ -1967,16 +2219,16 @@
       "factors": {
         "strength": 87,
         "form": 86,
-        "path": 74,
+        "path": 75,
         "squad": 85,
         "margin": 84
       },
       "tournament": {
-        "champion": 5.2,
-        "final": 10.4,
-        "semifinal": 19.8,
+        "champion": 5.4,
+        "final": 10.5,
+        "semifinal": 19.9,
         "quarterfinal": 35.9,
-        "change": -0.7
+        "change": -0.5
       }
     },
     {
@@ -1992,8 +2244,8 @@
       },
       "tournament": {
         "champion": 1.6,
-        "final": 4.2,
-        "semifinal": 9.9,
+        "final": 4.3,
+        "semifinal": 10.0,
         "quarterfinal": 22.4,
         "change": 0.4
       }
@@ -2029,11 +2281,11 @@
         "margin": 78
       },
       "tournament": {
-        "champion": 0.1,
+        "champion": 0.2,
         "final": 0.7,
-        "semifinal": 2.6,
+        "semifinal": 2.7,
         "quarterfinal": 9.3,
-        "change": -0.4
+        "change": -0.3
       }
     },
     {
@@ -2049,8 +2301,8 @@
       },
       "tournament": {
         "champion": 2.9,
-        "final": 7.0,
-        "semifinal": 15.5,
+        "final": 7.1,
+        "semifinal": 15.6,
         "quarterfinal": 34.2,
         "change": -0.5
       }
@@ -2124,11 +2376,11 @@
         "margin": 85
       },
       "tournament": {
-        "champion": 17.6,
-        "final": 27.0,
-        "semifinal": 40.1,
-        "quarterfinal": 52.2,
-        "change": 5.4
+        "champion": 17.7,
+        "final": 27.1,
+        "semifinal": 40.2,
+        "quarterfinal": 52.3,
+        "change": 5.5
       }
     },
     {
@@ -2165,7 +2417,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.6,
-        "quarterfinal": 2.6,
+        "quarterfinal": 2.7,
         "change": 0.0
       }
     },
@@ -2182,9 +2434,9 @@
       },
       "tournament": {
         "champion": 2.1,
-        "final": 5.6,
-        "semifinal": 12.7,
-        "quarterfinal": 23.4,
+        "final": 5.7,
+        "semifinal": 12.8,
+        "quarterfinal": 23.5,
         "change": -0.7
       }
     },
@@ -2200,11 +2452,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 12.7,
-        "final": 21.2,
-        "semifinal": 34.4,
-        "quarterfinal": 50.3,
-        "change": -1.2
+        "champion": 13.0,
+        "final": 21.4,
+        "semifinal": 34.7,
+        "quarterfinal": 50.4,
+        "change": -0.9
       }
     },
     {
@@ -2220,9 +2472,9 @@
       },
       "tournament": {
         "champion": 0.8,
-        "final": 2.3,
-        "semifinal": 6.3,
-        "quarterfinal": 15.8,
+        "final": 2.4,
+        "semifinal": 6.5,
+        "quarterfinal": 16.0,
         "change": -0.1
       }
     },
@@ -2259,8 +2511,8 @@
       "tournament": {
         "champion": 0.6,
         "final": 1.9,
-        "semifinal": 5.3,
-        "quarterfinal": 14.0,
+        "semifinal": 5.4,
+        "quarterfinal": 14.1,
         "change": -0.1
       }
     },
@@ -2276,11 +2528,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 13.9,
-        "final": 23.1,
-        "semifinal": 36.3,
+        "champion": 14.1,
+        "final": 23.2,
+        "semifinal": 36.2,
         "quarterfinal": 50.9,
-        "change": 4.2
+        "change": 4.4
       }
     },
     {
@@ -2298,7 +2550,7 @@
         "champion": 0.3,
         "final": 1.2,
         "semifinal": 3.8,
-        "quarterfinal": 10.3,
+        "quarterfinal": 10.4,
         "change": -0.1
       }
     },
@@ -2352,11 +2604,11 @@
         "margin": 83
       },
       "tournament": {
-        "champion": 6.3,
-        "final": 12.7,
-        "semifinal": 23.5,
-        "quarterfinal": 42.1,
-        "change": -1.8
+        "champion": 6.4,
+        "final": 12.9,
+        "semifinal": 23.6,
+        "quarterfinal": 42.2,
+        "change": -1.7
       }
     },
     {
@@ -2372,9 +2624,9 @@
       },
       "tournament": {
         "champion": 0.0,
-        "final": 0.1,
-        "semifinal": 0.8,
-        "quarterfinal": 3.1,
+        "final": 0.2,
+        "semifinal": 0.9,
+        "quarterfinal": 3.2,
         "change": -0.1
       }
     },
@@ -2393,7 +2645,7 @@
         "champion": 0.0,
         "final": 0.2,
         "semifinal": 0.9,
-        "quarterfinal": 3.4,
+        "quarterfinal": 3.5,
         "change": -0.1
       }
     },
@@ -2410,9 +2662,9 @@
       },
       "tournament": {
         "champion": 2.2,
-        "final": 5.6,
-        "semifinal": 12.7,
-        "quarterfinal": 26.1,
+        "final": 5.7,
+        "semifinal": 12.8,
+        "quarterfinal": 26.4,
         "change": 0.6
       }
     },
@@ -2422,17 +2674,17 @@
       "code": "ENG",
       "factors": {
         "strength": 91,
-        "form": 86,
+        "form": 84,
         "path": 74,
         "squad": 86,
-        "margin": 84
+        "margin": 82
       },
       "tournament": {
-        "champion": 10.0,
-        "final": 17.8,
-        "semifinal": 30.6,
-        "quarterfinal": 47.9,
-        "change": 0.8
+        "champion": 8.4,
+        "final": 15.8,
+        "semifinal": 28.1,
+        "quarterfinal": 45.4,
+        "change": -0.8
       }
     },
     {
@@ -2448,8 +2700,8 @@
       },
       "tournament": {
         "champion": 1.3,
-        "final": 3.6,
-        "semifinal": 9.2,
+        "final": 3.5,
+        "semifinal": 9.1,
         "quarterfinal": 19.1,
         "change": -0.1
       }
@@ -2488,7 +2740,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.4,
-        "quarterfinal": 2.0,
+        "quarterfinal": 1.9,
         "change": 0.0
       }
     }
@@ -2512,18 +2764,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 174,
+      "eventCount": 210,
       "manualEventCount": 3,
-      "rawNewsCount": 171,
+      "rawNewsCount": 207,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 174,
-      "applied": 154,
+      "watched": 210,
+      "applied": 188,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 169,
+      "singleSource": 205,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -2567,7 +2819,7 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": -1.8900000000000001,
+        "path": -2.81,
         "squad": 1.65
       },
       "bosnia-herzegovina": {
@@ -2630,7 +2882,7 @@
         "attack": -2.15,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 0.0,
+        "path": -0.92,
         "squad": 0.0
       },
       "australia": {
@@ -2644,7 +2896,7 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 0.0,
+        "path": 0.87,
         "squad": 0.0
       },
       "germany": {
@@ -2679,7 +2931,7 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 0.0,
+        "path": 0.87,
         "squad": 0.0
       },
       "japan": {
@@ -2845,7 +3097,7 @@
       },
       "england": {
         "attack": 0.0,
-        "defense": 0.0,
+        "defense": -4.3,
         "goalkeeper": 0.0,
         "path": 0.0,
         "squad": 0.0
@@ -13164,17 +13416,175 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-16T10:28:39.716401+00:00",
+    "generatedAt": "2026-06-16T15:32:14.787872+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "england",
+        "name": "英格兰",
+        "code": "ENG",
+        "previousChampion": 10.0,
+        "currentChampion": 8.4,
+        "change": -1.6,
+        "direction": "down",
+        "reason": "状态盘下调 -4.3",
+        "reasons": [
+          "状态盘下调 -4.3",
+          "四强概率下降 -2.5%",
+          "八强概率下降 -2.5%",
+          "决赛概率下降 -2.0%",
+          "可入模型事件新增 34 条"
+        ]
+      },
+      {
+        "team": "france",
+        "name": "法国",
+        "code": "FRA",
+        "previousChampion": 12.7,
+        "currentChampion": 13.0,
+        "change": 0.3,
+        "direction": "up",
+        "reason": "四强概率上升 +0.3%",
+        "reasons": [
+          "四强概率上升 +0.3%",
+          "决赛概率上升 +0.2%",
+          "八强概率上升 +0.1%",
+          "可入模型事件新增 34 条"
+        ]
+      },
+      {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 13.9,
+        "currentChampion": 14.1,
+        "change": 0.2,
+        "direction": "up",
+        "reason": "决赛概率上升 +0.1%",
+        "reasons": [
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 34 条"
+        ]
+      },
+      {
+        "team": "brazil",
+        "name": "巴西",
+        "code": "BRA",
+        "previousChampion": 7.4,
+        "currentChampion": 7.6,
+        "change": 0.2,
+        "direction": "up",
+        "reason": "四强概率上升 +0.4%",
+        "reasons": [
+          "四强概率上升 +0.4%",
+          "决赛概率上升 +0.3%",
+          "八强概率上升 +0.1%",
+          "可入模型事件新增 34 条"
+        ]
+      },
+      {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 5.2,
+        "currentChampion": 5.4,
+        "change": 0.2,
+        "direction": "up",
+        "reason": "路径盘上调 +0.9",
+        "reasons": [
+          "路径盘上调 +0.9",
+          "四强概率上升 +0.1%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 34 条"
+        ]
+      },
+      {
+        "team": "spain",
+        "name": "西班牙",
+        "code": "ESP",
+        "previousChampion": 17.6,
+        "currentChampion": 17.7,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.1%",
+        "reasons": [
+          "四强概率上升 +0.1%",
+          "决赛概率上升 +0.1%",
+          "八强概率上升 +0.1%",
+          "可入模型事件新增 34 条"
+        ]
+      },
+      {
+        "team": "portugal",
+        "name": "葡萄牙",
+        "code": "POR",
+        "previousChampion": 6.3,
+        "currentChampion": 6.4,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "决赛概率上升 +0.2%",
+        "reasons": [
+          "决赛概率上升 +0.2%",
+          "四强概率上升 +0.1%",
+          "八强概率上升 +0.1%",
+          "可入模型事件新增 34 条"
+        ]
+      },
+      {
+        "team": "germany",
+        "name": "德国",
+        "code": "GER",
+        "previousChampion": 5.5,
+        "currentChampion": 5.6,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.1%",
+        "reasons": [
+          "四强概率上升 +0.1%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 34 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 9,
+      "down": 1,
+      "largestUp": {
+        "team": "france",
+        "name": "法国",
+        "code": "FRA",
+        "previousChampion": 12.7,
+        "currentChampion": 13.0,
+        "change": 0.3,
+        "direction": "up",
+        "reason": "四强概率上升 +0.3%",
+        "reasons": [
+          "四强概率上升 +0.3%",
+          "决赛概率上升 +0.2%",
+          "八强概率上升 +0.1%",
+          "可入模型事件新增 34 条"
+        ]
+      },
+      "largestDown": {
+        "team": "england",
+        "name": "英格兰",
+        "code": "ENG",
+        "previousChampion": 10.0,
+        "currentChampion": 8.4,
+        "change": -1.6,
+        "direction": "down",
+        "reason": "状态盘下调 -4.3",
+        "reasons": [
+          "状态盘下调 -4.3",
+          "四强概率下降 -2.5%",
+          "八强概率下降 -2.5%",
+          "决赛概率下降 -2.0%",
+          "可入模型事件新增 34 条"
+        ]
+      }
     }
   }
 }
