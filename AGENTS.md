@@ -3524,6 +3524,7 @@ cron: "*/30 * * * *"
 - `run_daily_update` 对远程 `url` 新闻源逐源容错，失败源写入报告但不阻断日更。
 - 本地 `input` 新闻源仍保持严格失败，避免配置缺文件被吞掉。
 - 日更 CLI 输出新增 `新闻源失败`。
+- `daily:check` 的健康检查逻辑拆到 `backend/daily_health.py`，避免 CLI 间接 import `backend.admin` 和 FastAPI。
 - 更新 `docs/日更流程说明.md` 和 `docs/新闻抓取系统开发记录.md`。
 
 验证：
@@ -3533,6 +3534,7 @@ cron: "*/30 * * * *"
 - `npm run validate:data` 通过。
 - `npm run build` 通过。
 - 使用真实远程 Feed 配置跑临时日更通过，当前远程源可正常返回。
+- 手动触发 GitHub Actions 后确认 `Run daily update` 已通过，后续暴露出 `daily:check` 缺 FastAPI 依赖问题，并已拆分为轻量健康检查模块。
 
 说明：
 

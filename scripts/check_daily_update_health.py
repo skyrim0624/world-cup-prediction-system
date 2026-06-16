@@ -9,8 +9,8 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from backend.admin import build_daily_update_health
 from backend.daily_update import DEFAULT_DAILY_STATUS_PATH, read_daily_update_status
+from backend.daily_health import build_daily_update_health
 
 
 def parse_now(value: str | None) -> datetime | None:

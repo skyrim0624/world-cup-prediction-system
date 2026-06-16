@@ -1,7 +1,7 @@
 import unittest
 from datetime import UTC, datetime
 
-from backend.admin import build_daily_update_health
+from backend.daily_health import build_daily_update_health
 
 
 class AdminOverviewTest(unittest.TestCase):
