@@ -652,6 +652,7 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? (import.meta.env.DEV ?
 const FORCE_ADMIN_CONSOLE = import.meta.env.VITE_FORCE_ADMIN === "1";
 const SINGLE_MATCH_ROUTE_PREFIX = "/match/";
 const SINGLE_MATCH_CHECKOUT_ROUTE_PREFIX = "/checkout/";
+const TOURNAMENT_PASS_CHECKOUT_ROUTE = "/checkout/pass";
 const POST_MATCH_REVIEW_ROUTE_PREFIX = "/review/";
 const PAYMENT_PENDING_ROUTE = "/payment/pending";
 const CHAMPION_BOARD_ROUTE = "/champion-board";
@@ -1422,6 +1423,10 @@ function checkoutRouteParams(pathname: string) {
   };
 }
 
+function isTournamentPassCheckoutRoute(pathname: string) {
+  return pathname.replace(/\/$/, "") === TOURNAMENT_PASS_CHECKOUT_ROUTE;
+}
+
 function postMatchReviewRouteParams(pathname: string) {
   if (!pathname.startsWith(POST_MATCH_REVIEW_ROUTE_PREFIX)) return null;
   const [, , home, away] = pathname.split("/");
@@ -1448,6 +1453,10 @@ function matchPagePath(home: TeamKey, away: TeamKey) {
 
 function checkoutPagePath(home: TeamKey, away: TeamKey) {
   return `${SINGLE_MATCH_CHECKOUT_ROUTE_PREFIX}${encodeURIComponent(home)}/${encodeURIComponent(away)}`;
+}
+
+function tournamentPassCheckoutPagePath() {
+  return TOURNAMENT_PASS_CHECKOUT_ROUTE;
 }
 
 function postMatchReviewPagePath(home: TeamKey, away: TeamKey) {
@@ -1477,6 +1486,10 @@ function App() {
     return <PaymentPendingPage orderId={paymentPendingOrderId} />;
   }
 
+  if (isTournamentPassCheckoutRoute(window.location.pathname)) {
+    return <TournamentPassCheckoutPage />;
+  }
+
   const checkoutRoute = checkoutRouteParams(window.location.pathname);
   if (checkoutRoute) {
     return <SingleMatchCheckoutPage home={checkoutRoute.home} away={checkoutRoute.away} />;
@@ -1502,6 +1515,7 @@ function App() {
 function HomePredictionPage() {
   const [refreshTick, setRefreshTick] = useState(0);
   const [activeFilter, setActiveFilter] = useState<PublicMatchFilter>("today");
+  const [menuOpen, setMenuOpen] = useState(false);
   const [matchesStatus, setMatchesStatus] = useState<LoadStatus>("loading");
   const [publicMatches, setPublicMatches] = useState<PublicUpcomingMatchesResponse>(() => buildStaticPublicUpcomingMatchesFallback());
   const referenceDate = useMemo(() => new Date(), [refreshTick]);
@@ -1539,8 +1553,32 @@ function HomePredictionPage() {
     };
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+
+    function closeMenuOnEscape(event: KeyboardEvent) {
+      if (event.key === "Escape") setMenuOpen(false);
+    }
+
+    window.addEventListener("keydown", closeMenuOnEscape);
+    return () => window.removeEventListener("keydown", closeMenuOnEscape);
+  }, [menuOpen]);
+
   function openMatchPage(match: PublicUpcomingMatch) {
     window.location.href = matchPagePath(match.homeTeam, match.awayTeam);
+  }
+
+  function openTournamentPassCheckout() {
+    window.location.href = tournamentPassCheckoutPagePath();
+  }
+
+  function openMenuTarget(target: PublicMatchFilter | "champion-board") {
+    setMenuOpen(false);
+    if (target === "champion-board") {
+      window.location.href = CHAMPION_BOARD_ROUTE;
+      return;
+    }
+    setActiveFilter(target);
   }
 
   return (
@@ -1555,10 +1593,49 @@ function HomePredictionPage() {
             <strong>世界杯预测</strong>
             <span>zhugejunshi.com</span>
           </div>
-          <button className="public-icon-button" type="button" aria-label="菜单">
+          <button
+            className="public-icon-button"
+            type="button"
+            aria-label="打开页面设置"
+            aria-expanded={menuOpen}
+            aria-controls="public-menu-sheet"
+            onClick={() => setMenuOpen(true)}
+          >
             <Menu size={22} strokeWidth={2.6} />
           </button>
         </header>
+
+        {menuOpen ? (
+          <div className="public-menu-backdrop" role="presentation" onClick={() => setMenuOpen(false)}>
+            <section
+              className="public-menu-sheet"
+              id="public-menu-sheet"
+              role="dialog"
+              aria-modal="true"
+              aria-label="页面设置"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="public-menu-title">
+                <strong>页面设置</strong>
+                <button type="button" onClick={() => setMenuOpen(false)}>
+                  关闭
+                </button>
+              </div>
+              <button type="button" onClick={() => openMenuTarget("today")}>
+                今日赛程
+              </button>
+              <button type="button" onClick={() => openMenuTarget("tomorrow")}>
+                明日赛程
+              </button>
+              <button type="button" onClick={() => openMenuTarget("all")}>
+                全部赛程
+              </button>
+              <button type="button" onClick={() => openMenuTarget("champion-board")}>
+                冠军榜
+              </button>
+            </section>
+          </div>
+        ) : null}
 
         <section className="public-page-title">
           <h1 id="public-match-title">未开赛比赛</h1>
@@ -1581,7 +1658,7 @@ function HomePredictionPage() {
 
         <PublicUpcomingMatchesPanel matches={visibleMatches} status={matchesStatus} activeFilter={activeFilter} onSelect={openMatchPage} />
       </section>
-      <TournamentPassBar />
+      <TournamentPassBar onSelect={openTournamentPassCheckout} />
       <footer className="public-safety-footer">
         <ShieldCheck size={14} strokeWidth={2.2} />
         <span>数据加密保护 · 安全支付 · 随时可查</span>
@@ -1656,17 +1733,17 @@ function PublicMatchCard({ match, onSelect }: { match: PublicUpcomingMatch; onSe
   );
 }
 
-function TournamentPassBar() {
+function TournamentPassBar({ onSelect }: { onSelect: () => void }) {
   return (
-    <div className="public-pass-bar" aria-label="全包购买入口">
+    <button className="public-pass-bar" type="button" aria-label="解锁全包剩余 92 场" onClick={onSelect}>
       <div>
         <Crown size={20} strokeWidth={2.5} />
         <span>全包剩余 92 场 ¥39</span>
       </div>
-      <button type="button" aria-label="查看全包方案">
+      <span className="public-pass-cta" aria-hidden="true">
         <ChevronRight size={24} strokeWidth={2.4} />
-      </button>
-    </div>
+      </span>
+    </button>
   );
 }
 
@@ -2386,7 +2463,6 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
   const [loadStatus, setLoadStatus] = useState<LoadStatus>("loading");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [paymentMessage, setPaymentMessage] = useState<string | null>(null);
-  const [paymentPendingProduct, setPaymentPendingProduct] = useState<"single_match" | "tournament_pass" | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -2432,34 +2508,15 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
   };
   const matchNumberLabel = displaySummary.matchNo ? `#${displaySummary.matchNo}` : "#--";
   const statusLabel = displaySummary.status === "scheduled" ? "未开赛" : displaySummary.status;
-  const singleMatchDisabled = paymentPendingProduct !== null || loadStatus === "loading";
-  const matchKey = `${displaySummary.homeTeam}-${displaySummary.awayTeam}`;
+  const singleMatchDisabled = loadStatus === "loading";
 
-  async function createUnlockOrder(productKey: "single_match" | "tournament_pass") {
+  function createUnlockOrder(productKey: "single_match" | "tournament_pass") {
     if (productKey === "single_match") {
       window.location.href = checkoutPagePath(displaySummary.homeTeam, displaySummary.awayTeam);
       return;
     }
 
-    setPaymentPendingProduct(productKey);
-    setPaymentMessage(null);
-    try {
-      const response = await fetch(`${API_BASE_URL}/api/payments/orders`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          productKey,
-          provider: "wechat_native",
-          contentKey: "tournament_probabilities",
-        }),
-      });
-      const payload = await response.json().catch(() => null);
-      if (!response.ok || !payload?.orderId) throw new Error(payload?.detail ?? "支付订单创建失败");
-      window.location.replace(`${PAYMENT_PENDING_ROUTE}?orderId=${encodeURIComponent(payload.orderId)}`);
-    } catch (error) {
-      setPaymentMessage(error instanceof Error ? error.message : "支付订单创建失败");
-      setPaymentPendingProduct(null);
-    }
+    window.location.href = tournamentPassCheckoutPagePath();
   }
 
   async function shareMatch() {
@@ -2559,15 +2616,15 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
       </div>
 
       <section className="locked-purchase-bar" aria-label="购买入口">
-        <button type="button" className="locked-buy-button primary" onClick={() => void createUnlockOrder("single_match")} disabled={singleMatchDisabled}>
+        <button type="button" className="locked-buy-button primary" onClick={() => createUnlockOrder("single_match")} disabled={singleMatchDisabled}>
           <span>
             <Lock aria-hidden="true" size={21} strokeWidth={2.5} />
           </span>
-          <strong>{paymentPendingProduct === "single_match" ? "创建订单中" : "¥1 解锁本场"}</strong>
+          <strong>¥1 解锁本场</strong>
           <small>查看本场完整预测</small>
         </button>
-        <button type="button" className="locked-buy-button pass" onClick={() => void createUnlockOrder("tournament_pass")} disabled={singleMatchDisabled}>
-          <strong>{paymentPendingProduct === "tournament_pass" ? "创建订单中" : "全包剩余 92 场 ¥39"}</strong>
+        <button type="button" className="locked-buy-button pass" onClick={() => createUnlockOrder("tournament_pass")} disabled={singleMatchDisabled}>
+          <strong>全包剩余 92 场 ¥39</strong>
           <small>解锁所有未开赛场次</small>
           <Trophy aria-hidden="true" size={22} strokeWidth={2.3} />
         </button>
@@ -2753,8 +2810,164 @@ function buildCheckoutProviderOptions(providers: PaymentProviderConfig[], prefer
           configured: alipayProvider.configured,
           Icon: CircleDollarSign,
         }
-      : null,
+    : null,
   ].filter((option): option is CheckoutProviderOption => Boolean(option));
+}
+
+function compactAmountLabel(value: string) {
+  return value.replace(".00", "");
+}
+
+function TournamentPassCheckoutPage() {
+  const [accessOptions, setAccessOptions] = useState<AccessOptions | null>(null);
+  const [paymentConfig, setPaymentConfig] = useState<PaymentConfig | null>(null);
+  const [selectedProviderKey, setSelectedProviderKey] = useState<CheckoutProviderOption["key"]>("wechat");
+  const [checkoutState, setCheckoutState] = useState<CheckoutState>("loading_config");
+  const [message, setMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadCheckoutData() {
+      setCheckoutState("loading_config");
+      try {
+        const [accessResponse, paymentResponse] = await Promise.all([
+          fetch(`${API_BASE_URL}/api/access-options`, { cache: "no-store" }),
+          fetch(`${API_BASE_URL}/api/payments/config`, { cache: "no-store" }),
+        ]);
+        const [accessPayload, paymentPayload] = await Promise.all([accessResponse.json().catch(() => null), paymentResponse.json().catch(() => null)]);
+        if (!active) return;
+        if (accessResponse.ok && accessPayload) setAccessOptions(accessPayload as AccessOptions);
+        if (paymentResponse.ok && paymentPayload) setPaymentConfig(paymentPayload as PaymentConfig);
+        setCheckoutState("ready");
+      } catch {
+        if (!active) return;
+        setCheckoutState("ready");
+        setMessage("支付配置暂未连上，已保留页面预览");
+      }
+    }
+
+    void loadCheckoutData();
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const passProduct = accessOptions?.products.find((product) => product.key === "tournament_pass") ?? {
+    key: "tournament_pass",
+    name: "赛事全周期",
+    scope: "解锁整届赛事的冠军概率榜、路径变化和日更摘要",
+    amountLabel: "¥39.00",
+    status: "payment_pending",
+  };
+  const providerOptions = useMemo(() => buildCheckoutProviderOptions(paymentConfig?.providers ?? [], isWechatBrowser()), [paymentConfig]);
+  const selectedProvider = providerOptions.find((provider) => provider.key === selectedProviderKey) ?? providerOptions[0];
+  const isCreating = checkoutState === "creating_order";
+  const disclaimer = paymentConfig?.disclaimer ?? accessOptions?.disclaimer ?? "概率分析，不是投注建议。";
+
+  useEffect(() => {
+    if (providerOptions.length > 0 && !providerOptions.some((provider) => provider.key === selectedProviderKey)) {
+      setSelectedProviderKey(providerOptions[0].key);
+    }
+  }, [providerOptions, selectedProviderKey]);
+
+  function goBackToMatches() {
+    window.location.replace("/#matches");
+  }
+
+  async function createCheckoutOrder() {
+    if (!selectedProvider || isCreating) return;
+    setCheckoutState("creating_order");
+    setMessage(null);
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/payments/orders`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          productKey: "tournament_pass",
+          provider: selectedProvider.provider,
+          contentKey: "tournament_probabilities",
+        }),
+      });
+      const payload = await response.json().catch(() => null);
+      if (!response.ok || !payload?.orderId) throw new Error(payload?.detail ?? "支付订单创建失败");
+      window.location.replace(`${PAYMENT_PENDING_ROUTE}?orderId=${encodeURIComponent(payload.orderId)}`);
+    } catch (error) {
+      setCheckoutState("failed");
+      setMessage(error instanceof Error ? error.message : "支付订单创建失败");
+    }
+  }
+
+  return (
+    <main className="checkout-page-shell checkout-pass-shell">
+      <header className="checkout-topbar">
+        <button type="button" aria-label="返回未开赛列表" onClick={goBackToMatches}>
+          <ArrowLeft aria-hidden="true" size={22} strokeWidth={2.7} />
+        </button>
+        <div>
+          <strong>确认解锁</strong>
+          <span>
+            <ShieldCheck aria-hidden="true" size={14} strokeWidth={2.4} />
+            zhugejunshi.com
+          </span>
+        </div>
+      </header>
+
+      <section className="checkout-product-card checkout-pass-card" aria-label="解锁商品">
+        <img src="/assets/app/gold-football-product-icon.png" alt="" />
+        <div className="checkout-product-main">
+          <span>{passProduct.name}</span>
+          <strong>全包剩余 92 场</strong>
+          <small>{passProduct.scope}</small>
+        </div>
+        <b>{compactAmountLabel(passProduct.amountLabel)}</b>
+      </section>
+
+      <section className="checkout-section-heading">
+        <i aria-hidden="true" />
+        <strong>选择支付方式</strong>
+      </section>
+
+      <section className="checkout-provider-list" aria-label="微信支付和支付宝支付">
+        {providerOptions.map((option) => {
+          const Icon = option.Icon;
+          const selected = selectedProvider?.key === option.key;
+          return (
+            <button
+              className={`checkout-provider-card ${selected ? "selected" : ""}`}
+              type="button"
+              key={option.key}
+              aria-pressed={selected}
+              onClick={() => setSelectedProviderKey(option.key)}
+            >
+              <span className="checkout-provider-radio">{selected ? <CheckCircle2 aria-hidden="true" size={22} strokeWidth={2.7} /> : null}</span>
+              <span className={`checkout-provider-icon ${option.key}`}>
+                <Icon aria-hidden="true" size={27} strokeWidth={2.25} />
+              </span>
+              <span className="checkout-provider-copy">
+                <strong>{option.label}</strong>
+                <small>{option.methodLabel}</small>
+              </span>
+            </button>
+          );
+        })}
+      </section>
+
+      <section className="checkout-notice" aria-live="polite">
+        <Info aria-hidden="true" size={18} strokeWidth={2.3} />
+        <span>{message ?? "创建订单后等待支付确认"}</span>
+      </section>
+
+      <button className="checkout-create-button" type="button" disabled={!selectedProvider || isCreating} onClick={() => void createCheckoutOrder()}>
+        {isCreating ? "订单创建中" : checkoutState === "failed" ? "重新创建支付订单" : "创建支付订单"}
+      </button>
+
+      <footer className="checkout-disclaimer">
+        <ShieldCheck aria-hidden="true" size={14} strokeWidth={2.2} />
+        <span>{disclaimer.replace("微信支付和支付宝仅用于解锁概率分析内容，不提供投注建议。", "概率分析，不是投注建议")}</span>
+      </footer>
+    </main>
+  );
 }
 
 function SingleMatchCheckoutPage({ home, away }: { home: TeamKey; away: TeamKey }) {

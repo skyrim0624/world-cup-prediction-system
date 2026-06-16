@@ -111,16 +111,32 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("/match/", source)
         self.assertIn("/checkout/", source)
         self.assertIn("/api/public-match-summary", single_match_source)
-        self.assertIn("/api/payments/orders", single_match_source)
         self.assertIn("checkoutPagePath", single_match_source)
+        self.assertIn("tournamentPassCheckoutPagePath", single_match_source)
         self.assertIn("完整预测需支付后查看", single_match_source)
         self.assertIn("¥1 解锁本场", single_match_source)
         self.assertIn("全包剩余 92 场 ¥39", single_match_source)
         self.assertNotIn("/api/match-detail", single_match_source)
+        self.assertNotIn("/api/payments/orders", single_match_source)
         self.assertIn('window.location.replace("/#matches")', single_match_source)
         self.assertNotIn("window.history.back", single_match_source)
         self.assertIn("SingleMatchPage", source)
         self.assertIn("matchPagePath", source)
+
+    def test_tournament_pass_checkout_creates_pass_order(self):
+        source = app_source()
+        pass_checkout_source = source_between(source, "function TournamentPassCheckoutPage", "function SingleMatchCheckoutPage")
+
+        self.assertIn("/checkout/pass", source)
+        self.assertIn("/api/access-options", pass_checkout_source)
+        self.assertIn("/api/payments/config", pass_checkout_source)
+        self.assertIn("/api/payments/orders", pass_checkout_source)
+        self.assertIn('productKey: "tournament_pass"', pass_checkout_source)
+        self.assertIn('contentKey: "tournament_probabilities"', pass_checkout_source)
+        self.assertIn("微信支付", pass_checkout_source)
+        self.assertIn("支付宝支付", pass_checkout_source)
+        self.assertIn("全包剩余 92 场", pass_checkout_source)
+        self.assertIn("window.location.replace(`${PAYMENT_PENDING_ROUTE}?orderId=", pass_checkout_source)
 
     def test_checkout_page_uses_payment_config_and_match_scope(self):
         source = app_source()
