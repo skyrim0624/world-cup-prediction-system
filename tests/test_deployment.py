@@ -13,6 +13,12 @@ class DeploymentAutomationTest(unittest.TestCase):
         self.assertIn("npm run deploy:api", workflow)
         self.assertIn("npm run deploy:web", workflow)
 
+    def test_cloudflare_api_deploy_packages_model_quality_report(self):
+        script = Path("scripts/deploy-cloudflare-api.sh").read_text(encoding="utf-8")
+
+        self.assertIn("reports/model-quality-report.json", script)
+        self.assertIn("python_modules/reports", script)
+
 
 if __name__ == "__main__":
     unittest.main()

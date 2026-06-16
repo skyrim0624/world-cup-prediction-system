@@ -9,7 +9,8 @@ from . import data as data_state
 from .daily_update import DEFAULT_DAILY_STATUS_PATH, read_daily_update_status
 from .snapshot import DEFAULT_SNAPSHOT_PATH, read_prediction_snapshot
 
-DEFAULT_MODEL_QUALITY_REPORT_PATH = Path("reports/model-quality-report.json")
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_MODEL_QUALITY_REPORT_PATH = PROJECT_ROOT / "reports/model-quality-report.json"
 
 
 def parse_time(value: str | None) -> datetime | None:

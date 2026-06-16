@@ -10,7 +10,7 @@
   "homeWin": 63,
   "draw": 20,
   "awayWin": 17,
-  "updatedAt": "2026-06-16T09:58:00.263865+00:00",
+  "updatedAt": "2026-06-16T10:09:27.545798+00:00",
   "fixtureContext": {
     "home": {
       "team": "france",
@@ -13003,7 +13003,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-16T09:58:21.539479+00:00",
+    "generatedAt": "2026-06-16T10:09:43.889984+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

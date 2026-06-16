@@ -79,6 +79,13 @@ class ProductionOpsTest(unittest.TestCase):
             self.assertEqual(readiness["checks"]["dailyStatus"]["status"], "pass")
             self.assertEqual(readiness["checks"]["snapshot"]["status"], "fail")
 
+    def test_model_quality_report_default_path_is_packaged_with_backend_root(self):
+        from backend.production_health import DEFAULT_MODEL_QUALITY_REPORT_PATH
+
+        self.assertEqual(DEFAULT_MODEL_QUALITY_REPORT_PATH.name, "model-quality-report.json")
+        self.assertEqual(DEFAULT_MODEL_QUALITY_REPORT_PATH.parent.name, "reports")
+        self.assertTrue(str(DEFAULT_MODEL_QUALITY_REPORT_PATH).endswith("reports/model-quality-report.json"))
+
     def test_tencent_deployment_pack_is_present(self):
         required_paths = [
             Path("Dockerfile"),
