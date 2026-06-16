@@ -63,6 +63,7 @@ def main() -> None:
         return
     print(f"新闻新增: {report['feeds']['imported']}")
     print(f"新闻跳过: {report['feeds']['skipped']}")
+    print(f"新闻源失败: {report['feeds'].get('failed', 0)}")
     print(f"赛果更新: {report['scores']['updated']}")
     print(f"赛果锁定: {report['scores']['finished']}")
     print(f"进行中更新: {report['scores']['live']}")

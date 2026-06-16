@@ -186,6 +186,43 @@ class DailyUpdateTest(unittest.TestCase):
             self.assertEqual(report["feeds"]["items"][0]["url"], f"data:text/xml,{quote(RSS_FEED)}")
             self.assertEqual(rows[0]["source"], "bbc")
 
+    def test_run_daily_update_records_remote_feed_failure_and_continues(self):
+        from backend.daily_update import load_feed_specs, run_daily_update
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            raw_news_path = root / "raw-news.json"
+            snapshot_path = root / "latest-match-prediction.json"
+            config_path = root / "feed-config.json"
+            raw_news_path.write_text("[]", encoding="utf-8")
+            config_path.write_text(
+                json.dumps(
+                    [
+                        {"url": "data:text/xml,", "source": "bbc", "team": "brazil"},
+                        {"url": f"data:text/xml,{quote(RSS_FEED)}", "source": "espn", "team": "brazil"},
+                    ],
+                    ensure_ascii=False,
+                ),
+                encoding="utf-8",
+            )
+
+            report = run_daily_update(
+                raw_news_path=raw_news_path,
+                snapshot_path=snapshot_path,
+                feed_specs=load_feed_specs(config_path),
+                simulation_count=1200,
+            )
+
+            rows = json.loads(raw_news_path.read_text(encoding="utf-8"))
+            failed_item = report["feeds"]["items"][0]
+            self.assertEqual(report["status"], "success")
+            self.assertEqual(report["feeds"]["failed"], 1)
+            self.assertEqual(report["feeds"]["imported"], 1)
+            self.assertEqual(failed_item["status"], "failed")
+            self.assertIn("新闻 Feed 为空", failed_item["error"])
+            self.assertTrue(snapshot_path.exists())
+            self.assertEqual(len(rows), 1)
+
     def test_run_daily_update_applies_score_sources_before_snapshot(self):
         from backend.daily_update import ScoreSourceSpec, run_daily_update
 

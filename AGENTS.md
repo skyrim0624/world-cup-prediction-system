@@ -3504,6 +3504,40 @@ cron: "*/30 * * * *"
 - 本地模拟支付用于验收三种支付方式的用户流程，不代表线上正式支付已开通。
 - 线上正式环境默认不会启用 `WORLD_CUP_PAYMENT_SIMULATION`，避免公开绕过支付。
 
+### 2026-06-16：GitHub Actions 日更失败修复
+
+问题：
+
+- 用户收到 GitHub Actions 邮件：`Daily Prediction Update: All jobs have failed`。
+- 查看 run 日志后确认失败点是 `npm run daily:update`。
+- 具体错误为 `no element found: line 1, column 0`，发生在新闻 Feed XML 解析阶段。
+
+原因：
+
+- GitHub 定时任务会抓取 BBC、ESPN、Guardian 等远程 RSS / Atom 新闻源。
+- 某次远程源返回空内容或不可解析 XML 时，`ElementTree.fromstring()` 直接抛错。
+- 旧逻辑没有单源容错，导致一个第三方新闻源波动就让整个日更、快照、部署步骤全部跳过。
+
+已完成：
+
+- `parse_news_feed` 对空 Feed 和坏 XML 抛出明确错误。
+- `run_daily_update` 对远程 `url` 新闻源逐源容错，失败源写入报告但不阻断日更。
+- 本地 `input` 新闻源仍保持严格失败，避免配置缺文件被吞掉。
+- 日更 CLI 输出新增 `新闻源失败`。
+- 更新 `docs/日更流程说明.md` 和 `docs/新闻抓取系统开发记录.md`。
+
+验证：
+
+- `python3 -m unittest discover -s tests -p 'test_news_feed.py'` 通过。
+- `python3 -m unittest discover -s tests -p 'test_daily_update.py'` 通过。
+- `npm run validate:data` 通过。
+- `npm run build` 通过。
+- 使用真实远程 Feed 配置跑临时日更通过，当前远程源可正常返回。
+
+说明：
+
+- `npm run test:model` 当前有 2 个 `test_api.py` 断言失败，单独跑 `test_api.py` 也失败，和本次 Feed 容错改动无关；原因更像当前日期推进后样例比赛从 `scheduled` 进入非公开预测状态，以及测试自定义 fixture 路径的全局状态问题，后续可单独修。
+
 ## 十、当前交接摘要
 
 一句话定义：

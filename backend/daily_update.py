@@ -126,18 +126,37 @@ def run_daily_update(
     active_fixtures_path = fixtures_path or data_state.DATA_DIR / "fixtures.json"
     total_imported = 0
     total_skipped = 0
+    failed_feeds = 0
     feed_reports = []
     score_payloads = []
 
     for spec in feed_specs or []:
-        result = import_news_feed(
-            raw_news_path,
-            read_feed_text(spec),
-            source=spec.source,
-            team=spec.team,
-            known_sources=set(data_state.NEWS_SOURCES),
-            team_aliases=team_aliases(),
-        )
+        try:
+            result = import_news_feed(
+                raw_news_path,
+                read_feed_text(spec),
+                source=spec.source,
+                team=spec.team,
+                known_sources=set(data_state.NEWS_SOURCES),
+                team_aliases=team_aliases(),
+            )
+        except Exception as error:
+            if spec.input_path is not None:
+                raise
+            failed_feeds += 1
+            feed_reports.append(
+                {
+                    "input": None,
+                    "url": spec.url,
+                    "source": spec.source,
+                    "team": spec.team,
+                    "status": "failed",
+                    "error": str(error),
+                    "imported": 0,
+                    "skipped": 0,
+                }
+            )
+            continue
         total_imported += result["imported"]
         total_skipped += result["skipped"]
         feed_reports.append(
@@ -146,6 +165,7 @@ def run_daily_update(
                 "url": spec.url,
                 "source": spec.source,
                 "team": spec.team,
+                "status": "success",
                 **result,
             }
         )
@@ -180,6 +200,7 @@ def run_daily_update(
         "feeds": {
             "imported": total_imported,
             "skipped": total_skipped,
+            "failed": failed_feeds,
             "items": feed_reports,
         },
         "scores": score_report,

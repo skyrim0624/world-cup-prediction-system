@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from backend.news_feed import import_news_feed
+from backend.news_feed import import_news_feed, parse_news_feed
 
 
 RSS_FEED = """<?xml version="1.0" encoding="UTF-8" ?>
@@ -70,6 +70,10 @@ class NewsFeedImportTest(unittest.TestCase):
                 import_news_feed(path, RSS_FEED, source="unknown-source", team="france", known_sources={"reuters"})
 
             self.assertEqual(json.loads(path.read_text(encoding="utf-8")), [])
+
+    def test_parse_news_feed_reports_empty_feed(self):
+        with self.assertRaisesRegex(ValueError, "新闻 Feed 为空"):
+            parse_news_feed("", source="bbc", team=None)
 
     def test_import_news_feed_infers_team_and_event_classification(self):
         with tempfile.TemporaryDirectory() as temp_dir:

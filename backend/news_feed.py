@@ -146,7 +146,12 @@ def parse_news_feed(
     status: str = "single_source",
     team_aliases: dict[str, tuple[str, ...]] | None = None,
 ) -> list[dict[str, Any]]:
-    root = ElementTree.fromstring(feed_text)
+    if not feed_text.strip():
+        raise ValueError(f"新闻 Feed 为空: {source}")
+    try:
+        root = ElementTree.fromstring(feed_text)
+    except ElementTree.ParseError as error:
+        raise ValueError(f"新闻 Feed 不是有效 XML: {source}: {error}") from error
     items = root.findall("./channel/item")
     if not items:
         items = root.findall("{http://www.w3.org/2005/Atom}entry")
