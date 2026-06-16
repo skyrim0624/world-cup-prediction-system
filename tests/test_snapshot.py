@@ -4,7 +4,14 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from backend.snapshot import build_probability_movers, previous_snapshot_path_for, read_prediction_snapshot, write_prediction_snapshot
+from backend.snapshot import (
+    DEFAULT_SNAPSHOT_PATH,
+    build_probability_movers,
+    previous_snapshot_path_for,
+    read_prediction_snapshot,
+    snapshot_meta_path,
+    write_prediction_snapshot,
+)
 
 
 class PredictionSnapshotTest(unittest.TestCase):
@@ -17,6 +24,10 @@ class PredictionSnapshotTest(unittest.TestCase):
             self.assertIn("snapshotMeta", payload)
             self.assertIn("dailyMovers", payload)
             self.assertEqual(payload["snapshotMeta"]["type"], "match-prediction")
+            self.assertEqual(payload["snapshotMeta"]["path"], "latest.json")
+
+    def test_snapshot_meta_path_uses_repo_relative_path_for_default_snapshot(self):
+        self.assertEqual(snapshot_meta_path(DEFAULT_SNAPSHOT_PATH), "backend/snapshots/latest-match-prediction.json")
 
     def test_read_prediction_snapshot_returns_payload_when_file_exists(self):
         with tempfile.TemporaryDirectory() as temp_dir:

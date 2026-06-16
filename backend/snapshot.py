@@ -9,6 +9,7 @@ from .model import build_match_prediction
 
 
 DEFAULT_SNAPSHOT_PATH = Path(__file__).with_name("snapshots") / "latest-match-prediction.json"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 REQUIRED_MODEL_META_FIELDS = {"simulationCount", "changeBaseline", "lockedResults", "dataset", "events"}
 REQUIRED_SNAPSHOT_FIELDS = {"dailyMovers"}
 FACTOR_REASON_LABELS = {
@@ -27,6 +28,13 @@ TOURNAMENT_REASON_LABELS = {
 
 def previous_snapshot_path_for(path: Path = DEFAULT_SNAPSHOT_PATH) -> Path:
     return path.with_name(f"previous-{path.name}")
+
+
+def snapshot_meta_path(path: Path) -> str:
+    try:
+        return str(path.resolve().relative_to(PROJECT_ROOT))
+    except ValueError:
+        return path.name
 
 
 def read_prediction_snapshot(path: Path = DEFAULT_SNAPSHOT_PATH) -> dict[str, object] | None:
@@ -251,7 +259,7 @@ def write_prediction_snapshot(
         "snapshotMeta": {
             "type": "match-prediction",
             "generatedAt": datetime.now(timezone.utc).isoformat(),
-            "path": str(path),
+            "path": snapshot_meta_path(path),
         },
     }
     payload["dailyMovers"] = build_probability_movers(payload, previous)

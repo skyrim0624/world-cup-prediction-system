@@ -10,7 +10,7 @@
   "homeWin": 63,
   "draw": 21,
   "awayWin": 16,
-  "updatedAt": "2026-06-16T02:24:50.472158+00:00",
+  "updatedAt": "2026-06-16T02:36:22.406722+00:00",
   "fixtureContext": {
     "home": {
       "team": "austria",
@@ -12954,11 +12954,11 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-16T02:25:28.498537+00:00",
-    "path": "/home/runner/work/world-cup-prediction-system/world-cup-prediction-system/backend/snapshots/latest-match-prediction.json"
+    "generatedAt": "2026-06-16T02:36:37.899353+00:00",
+    "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
-    "baseline": "no_previous_snapshot",
+    "baseline": "previous_snapshot",
     "items": [],
     "summary": {
       "up": 0,

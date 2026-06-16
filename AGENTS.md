@@ -3540,6 +3540,24 @@ cron: "*/30 * * * *"
 
 - `npm run test:model` 当前有 2 个 `test_api.py` 断言失败，单独跑 `test_api.py` 也失败，和本次 Feed 容错改动无关；原因更像当前日期推进后样例比赛从 `scheduled` 进入非公开预测状态，以及测试自定义 fixture 路径的全局状态问题，后续可单独修。
 
+### 2026-06-16：正式上线与快照路径泄露修复
+
+已完成：
+
+- 确认 GitHub Actions 定时任务已全绿，但因为仓库未配置 `CLOUDFLARE_API_TOKEN` / `CLOUDFLARE_ACCOUNT_ID`，Actions 部署步骤实际会跳过。
+- 使用本机 Cloudflare 登录状态手动部署 API Worker 和前台 Pages。
+- 发现 `/api/match-prediction?useSnapshot=true` 的 `snapshotMeta.path` 会暴露本机绝对路径。
+- 修复 `write_prediction_snapshot()`，快照元数据只记录仓库相对路径，例如 `backend/snapshots/latest-match-prediction.json`。
+- 重新生成 50,000 次预测快照，避免线上 API 暴露 `/Users/...` 或 `/home/runner/...`。
+
+验证：
+
+- 正式前台 `https://world-cup-prediction-system.pages.dev/` 返回 200。
+- 正式 API `https://world-cup-prediction-api.loveice0624.workers.dev/api/model-status` 返回 200。
+- `python3 -m unittest discover -s tests -p 'test_snapshot.py'` 通过。
+- `python3 -m unittest discover -s tests -p 'test_api.py' -k snapshot_rebuild` 通过。
+- `npm run validate:data` 通过。
+
 ## 十、当前交接摘要
 
 一句话定义：

@@ -952,7 +952,7 @@ class PredictionApiTest(unittest.TestCase):
             self.assertEqual(response.status_code, 200)
             self.assertTrue(snapshot_path.exists())
             payload = response.json()
-            self.assertEqual(payload["snapshotMeta"]["path"], str(snapshot_path))
+            self.assertEqual(payload["snapshotMeta"]["path"], snapshot_path.name)
             self.assertEqual(payload["modelMeta"]["simulationCount"], 1200)
             self.assertTrue(
                 any(item["title"] == "自动化测试高温事件" and item["impact"] == "轻微修正" for item in payload["newsItems"])
