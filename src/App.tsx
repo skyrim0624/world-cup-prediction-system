@@ -1318,6 +1318,38 @@ function resolveDisplayTeam(teamKey: TeamKey, teamsData: Team[]): Team {
   };
 }
 
+function publicTeamScore(team: Team) {
+  const { strength, form, path, squad, margin } = team.factors;
+  return strength * 0.38 + form * 0.22 + squad * 0.18 + path * 0.12 + margin * 0.1;
+}
+
+function buildFreeMatchPreview(homeTeam: Team, awayTeam: Team) {
+  const homeScore = publicTeamScore(homeTeam);
+  const awayScore = publicTeamScore(awayTeam);
+  const diff = homeScore - awayScore;
+  const absDiff = Math.abs(diff);
+  const favorite = diff >= 0 ? homeTeam : awayTeam;
+  const underdog = diff >= 0 ? awayTeam : homeTeam;
+
+  if (absDiff < 3) {
+    return {
+      tendency: "双方接近",
+      confidence: "低",
+      scoreDirection: "偏向小比分胶着",
+      note: "精确概率与完整推导需解锁",
+      reasons: ["两队公开强弱差距不明显", "赛前阵容与首发会显著影响判断"],
+    };
+  }
+
+  return {
+    tendency: `${favorite.name}${absDiff >= 12 ? "明显占优" : absDiff >= 7 ? "占优" : "略占优"}`,
+    confidence: absDiff >= 12 ? "高" : absDiff >= 7 ? "中" : "中低",
+    scoreDirection: absDiff >= 12 ? `${favorite.name}偏向中胜` : `${favorite.name}偏向小胜`,
+    note: "精确概率与完整推导需解锁",
+    reasons: [`${favorite.name}基础实力盘更高`, `${underdog.name}仍有小组赛不确定性`],
+  };
+}
+
 function formatKickoffForUser(value: string) {
   if (!value || value === "待定" || value === "进行中" || value === "已结束") return value;
   if (value.includes("北京时间")) return value;
@@ -2478,11 +2510,11 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
         setSummary(payload as PublicMatchSummary);
         setLoadStatus("ready");
         setErrorMessage(null);
-      } catch (error) {
+      } catch {
         if (!active) return;
         setSummary((current) => current ?? staticMatchSummaryFallback(home, away));
         setLoadStatus("failed");
-        setErrorMessage(error instanceof Error ? error.message : "单场赛程加载失败");
+        setErrorMessage(null);
       }
     }
 
@@ -2509,6 +2541,9 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
   const matchNumberLabel = displaySummary.matchNo ? `#${displaySummary.matchNo}` : "#--";
   const statusLabel = displaySummary.status === "scheduled" ? "未开赛" : displaySummary.status;
   const singleMatchDisabled = loadStatus === "loading";
+  const displayHomeTeam = { ...resolveDisplayTeam(displaySummary.homeTeam, teams), name: displaySummary.homeName, code: displaySummary.homeCode };
+  const displayAwayTeam = { ...resolveDisplayTeam(displaySummary.awayTeam, teams), name: displaySummary.awayName, code: displaySummary.awayCode };
+  const freePreview = buildFreeMatchPreview(displayHomeTeam, displayAwayTeam);
 
   function createUnlockOrder(productKey: "single_match" | "tournament_pass") {
     if (productKey === "single_match") {
@@ -2581,38 +2616,63 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
       </section>
 
       <div className="locked-match-stack">
-        <section className="locked-panel locked-generated-card">
+        <section className="locked-panel locked-free-card">
           <div className="locked-section-heading">
             <Target aria-hidden="true" size={22} strokeWidth={2.3} />
             <div>
-              <strong>预测已生成</strong>
-              <span>完整预测需支付后查看</span>
+              <strong>免费简版预测</strong>
+              <span>先看方向，完整预测需支付后查看</span>
             </div>
           </div>
-          <div className="locked-preview-list">
-            <LockedPreviewRow Icon={ShieldCheck} title="胜平负概率" />
-            <LockedPreviewRow Icon={Target} title="最可能比分" />
-            <LockedPreviewRow Icon={Trophy} title="比分分布" />
+          <div className="locked-free-grid" aria-label="免费预测摘要">
+            <article>
+              <span>倾向</span>
+              <strong>{freePreview.tendency}</strong>
+            </article>
+            <article>
+              <span>信心</span>
+              <strong>{freePreview.confidence}</strong>
+            </article>
+            <article>
+              <span>比分方向</span>
+              <strong>{freePreview.scoreDirection}</strong>
+            </article>
           </div>
+          <div className="locked-free-reasons">
+            {freePreview.reasons.map((reason) => (
+              <span key={reason}>
+                <CheckCircle2 aria-hidden="true" size={14} strokeWidth={2.4} />
+                {reason}
+              </span>
+            ))}
+          </div>
+          <p className="locked-free-note">{freePreview.note}</p>
         </section>
 
-        <section className="locked-panel locked-content-card">
+        <section className="locked-panel locked-depth-card">
           <div className="locked-section-heading gold">
             <Lock aria-hidden="true" size={22} strokeWidth={2.4} />
             <div>
-              <strong>单场内容</strong>
-              <span>支付后可查看以下完整内容</span>
+              <strong>深度预测包含</strong>
+              <span>解锁后查看具体数值、矩阵和推导</span>
             </div>
           </div>
-          <div className="locked-content-list">
-            <LockedContentRow Icon={Target} title="单场胜平负" detail="胜平负概率与关键战局分析" />
-            <LockedContentRow Icon={Trophy} title="比分分布" detail="比分概率分布与关键比分解读" />
-            <LockedContentRow Icon={Newspaper} title="路径传导" detail="本场结果对小组与淘汰赛路径的影响" />
+          <div className="locked-depth-tags" aria-label="深度预测内容">
+            <span>精确胜平负概率</span>
+            <span>Top 3 比分</span>
+            <span>比分矩阵</span>
+            <span>五大盘面</span>
+            <span>路径传导</span>
+            <span>新闻依据</span>
           </div>
         </section>
 
         {errorMessage && loadStatus === "failed" ? <p className="locked-inline-message">{errorMessage}</p> : null}
         {paymentMessage ? <p className="locked-inline-message">{paymentMessage}</p> : null}
+        <footer className="locked-safety-footer">
+          <ShieldCheck aria-hidden="true" size={16} strokeWidth={2.1} />
+          <span>数据加密保护 · 安全支付 · 随时可查</span>
+        </footer>
       </div>
 
       <section className="locked-purchase-bar" aria-label="购买入口">
@@ -2629,11 +2689,6 @@ function SingleMatchPage({ home, away }: { home: TeamKey; away: TeamKey }) {
           <Trophy aria-hidden="true" size={22} strokeWidth={2.3} />
         </button>
       </section>
-
-      <footer className="locked-safety-footer">
-        <ShieldCheck aria-hidden="true" size={16} strokeWidth={2.1} />
-        <span>数据加密保护 · 安全支付 · 随时可查</span>
-      </footer>
     </main>
   );
 }

@@ -106,16 +106,23 @@ class FrontendContractTest(unittest.TestCase):
 
     def test_app_exposes_single_match_route_for_next_page(self):
         source = app_source()
+        styles = styles_source()
         single_match_source = source_between(source, "function SingleMatchPage", "function LockedPreviewRow")
+        purchase_bar_styles = source_between(styles, ".locked-purchase-bar", ".locked-buy-button")
 
         self.assertIn("/match/", source)
         self.assertIn("/checkout/", source)
         self.assertIn("/api/public-match-summary", single_match_source)
         self.assertIn("checkoutPagePath", single_match_source)
         self.assertIn("tournamentPassCheckoutPagePath", single_match_source)
+        self.assertIn("免费简版预测", single_match_source)
+        self.assertIn("深度预测包含", single_match_source)
         self.assertIn("完整预测需支付后查看", single_match_source)
         self.assertIn("¥1 解锁本场", single_match_source)
         self.assertIn("全包剩余 92 场 ¥39", single_match_source)
+        self.assertIn("locked-free-card", styles)
+        self.assertIn("locked-depth-card", styles)
+        self.assertIn("position: fixed", purchase_bar_styles)
         self.assertNotIn("/api/match-detail", single_match_source)
         self.assertNotIn("/api/payments/orders", single_match_source)
         self.assertIn('window.location.replace("/#matches")', single_match_source)
