@@ -195,6 +195,13 @@ def parse_fixture_kickoff(kickoff: str) -> datetime | None:
     return parsed
 
 
+def fixture_kickoff_utc_iso(kickoff: str) -> str | None:
+    parsed = parse_fixture_kickoff(kickoff)
+    if parsed is None:
+        return None
+    return parsed.astimezone(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
 def is_fixture_upcoming(fixture: Fixture, now: datetime | None = None) -> bool:
     if fixture.status != "scheduled":
         return False
@@ -1297,6 +1304,8 @@ def build_upcoming_match_predictions(limit: int = 12) -> dict[str, object]:
             {
                 "stage": fixture.stage,
                 "kickoff": fixture.kickoff,
+                "kickoffUtc": fixture_kickoff_utc_iso(fixture.kickoff),
+                "kickoffTimeZone": "America/New_York" if re.search(r"\bET\b", fixture.kickoff, re.IGNORECASE) else None,
                 "matchNo": fixture.match_no,
                 "city": fixture.city,
                 "stadium": fixture.stadium,
@@ -1335,6 +1344,8 @@ def public_fixture_summary(fixture: Fixture, teams: dict[str, TeamProfile] | Non
     return {
         "stage": fixture.stage,
         "kickoff": fixture.kickoff,
+        "kickoffUtc": fixture_kickoff_utc_iso(fixture.kickoff),
+        "kickoffTimeZone": "America/New_York" if re.search(r"\bET\b", fixture.kickoff, re.IGNORECASE) else None,
         "matchNo": fixture.match_no,
         "status": fixture.status,
         "homeTeam": fixture.home,

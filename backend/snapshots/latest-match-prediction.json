@@ -10,7 +10,7 @@
   "homeWin": 72,
   "draw": 17,
   "awayWin": 11,
-  "updatedAt": "2026-06-17T10:16:29.515051+00:00",
+  "updatedAt": "2026-06-17T13:46:17.642651+00:00",
   "fixtureContext": {
     "home": {
       "team": "portugal",
@@ -14161,177 +14161,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-17T10:17:09.573346+00:00",
+    "generatedAt": "2026-06-17T13:46:31.867241+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 13.7,
-        "currentChampion": 13.4,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "四强概率下降 -0.3%",
-        "reasons": [
-          "四强概率下降 -0.3%",
-          "决赛概率下降 -0.2%",
-          "八强概率下降 -0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 19 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 17.9,
-        "currentChampion": 18.1,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 19 条"
-        ]
-      },
-      {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 6.7,
-        "currentChampion": 6.5,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "八强概率下降 -0.3%",
-        "reasons": [
-          "八强概率下降 -0.3%",
-          "决赛概率下降 -0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 19 条"
-        ]
-      },
-      {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 1.5,
-        "currentChampion": 1.7,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "四强概率上升 +0.2%",
-        "reasons": [
-          "四强概率上升 +0.2%",
-          "八强概率上升 +0.2%",
-          "决赛概率上升 +0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 19 条"
-        ]
-      },
-      {
-        "team": "austria",
-        "name": "奥地利",
-        "code": "AUT",
-        "previousChampion": 0.5,
-        "currentChampion": 0.7,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "八强概率上升 +2.5%",
-        "reasons": [
-          "八强概率上升 +2.5%",
-          "四强概率上升 +1.2%",
-          "决赛概率上升 +0.5%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 19 条"
-        ]
-      },
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 7.8,
-        "currentChampion": 7.7,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "已完赛果新增 1 场，路径重新模拟",
-        "reasons": [
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 19 条"
-        ]
-      },
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 6.4,
-        "currentChampion": 6.5,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.2%",
-        "reasons": [
-          "决赛概率上升 +0.2%",
-          "八强概率上升 +0.2%",
-          "四强概率上升 +0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 19 条"
-        ]
-      },
-      {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 5.5,
-        "currentChampion": 5.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.4%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 19 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 10,
-      "down": 7,
-      "largestUp": {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 17.9,
-        "currentChampion": 18.1,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 19 条"
-        ]
-      },
-      "largestDown": {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 13.7,
-        "currentChampion": 13.4,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "四强概率下降 -0.3%",
-        "reasons": [
-          "四强概率下降 -0.3%",
-          "决赛概率下降 -0.2%",
-          "八强概率下降 -0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 19 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }

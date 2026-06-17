@@ -314,6 +314,8 @@ type CreatorTopic = {
 type UpcomingMatch = {
   stage: string;
   kickoff: string;
+  kickoffUtc?: string | null;
+  kickoffTimeZone?: string | null;
   matchNo?: number | null;
   city?: string | null;
   stadium?: string | null;
@@ -342,6 +344,8 @@ type UpcomingMatchesResponse = {
 type PublicUpcomingMatch = {
   stage: string;
   kickoff: string;
+  kickoffUtc?: string | null;
+  kickoffTimeZone?: string | null;
   matchNo?: number | null;
   status: string;
   homeTeam: TeamKey;
@@ -648,6 +652,8 @@ const teams: Team[] = [
 const INTERACTIVE_SIMULATION_COUNT = 1200;
 const FORECAST_REFRESH_MS = 15000;
 const TOURNAMENT_YEAR = 2026;
+const PUBLIC_DISPLAY_TIME_ZONE = "Asia/Shanghai";
+const PUBLIC_DISPLAY_TIME_ZONE_LABEL = "北京";
 const PRODUCTION_API_BASE_URL = "https://world-cup-prediction-api.loveice0624.workers.dev";
 const ENV_API_BASE_URL = String(import.meta.env.VITE_API_BASE_URL ?? "").trim().replace(/\/+$/, "");
 const DEFAULT_API_BASE_URL = import.meta.env.DEV ? "http://127.0.0.1:8000" : PRODUCTION_API_BASE_URL;
@@ -1146,7 +1152,11 @@ function formatUpdateTime(value: string) {
   return date.toLocaleTimeString("zh-CN", { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false });
 }
 
-function parseKickoffDate(value: string) {
+function parseKickoffDate(value: string, kickoffUtc?: string | null) {
+  if (kickoffUtc) {
+    const structuredDate = new Date(kickoffUtc);
+    if (!Number.isNaN(structuredDate.getTime())) return structuredDate;
+  }
   if (!value || value === "待定" || value === "进行中" || value === "已结束") return null;
   const easternMatch = value.match(/(\d{1,2})月(\d{1,2})日\s+(\d{1,2}):(\d{2})\s*ET/i);
   if (easternMatch) {
@@ -1158,14 +1168,14 @@ function parseKickoffDate(value: string) {
 }
 
 function compareUpcomingMatches(left: UpcomingMatch, right: UpcomingMatch) {
-  const leftTime = parseKickoffDate(left.kickoff)?.getTime() ?? Number.MAX_SAFE_INTEGER;
-  const rightTime = parseKickoffDate(right.kickoff)?.getTime() ?? Number.MAX_SAFE_INTEGER;
+  const leftTime = parseKickoffDate(left.kickoff, left.kickoffUtc)?.getTime() ?? Number.MAX_SAFE_INTEGER;
+  const rightTime = parseKickoffDate(right.kickoff, right.kickoffUtc)?.getTime() ?? Number.MAX_SAFE_INTEGER;
   return leftTime - rightTime || (left.matchNo ?? 999) - (right.matchNo ?? 999);
 }
 
-function isUpcomingMatch(match: Pick<UpcomingMatch, "kickoff" | "status">, referenceDate = new Date()) {
+function isUpcomingMatch(match: Pick<UpcomingMatch, "kickoff" | "kickoffUtc" | "status">, referenceDate = new Date()) {
   if (match.status !== "scheduled" && match.status !== "未开赛") return false;
-  const kickoffDate = parseKickoffDate(match.kickoff);
+  const kickoffDate = parseKickoffDate(match.kickoff, match.kickoffUtc);
   if (!kickoffDate) return true;
   return kickoffDate.getTime() > referenceDate.getTime();
 }
@@ -1178,6 +1188,8 @@ function toPublicUpcomingMatch(match: UpcomingMatch): PublicUpcomingMatch {
   return {
     stage: match.stage,
     kickoff: match.kickoff,
+    kickoffUtc: match.kickoffUtc ?? null,
+    kickoffTimeZone: match.kickoffTimeZone ?? null,
     matchNo: match.matchNo ?? null,
     status: match.status,
     homeTeam: match.homeTeam,
@@ -1190,14 +1202,14 @@ function toPublicUpcomingMatch(match: UpcomingMatch): PublicUpcomingMatch {
 }
 
 function comparePublicUpcomingMatches(left: PublicUpcomingMatch, right: PublicUpcomingMatch) {
-  const leftTime = parseKickoffDate(left.kickoff)?.getTime() ?? Number.MAX_SAFE_INTEGER;
-  const rightTime = parseKickoffDate(right.kickoff)?.getTime() ?? Number.MAX_SAFE_INTEGER;
+  const leftTime = parseKickoffDate(left.kickoff, left.kickoffUtc)?.getTime() ?? Number.MAX_SAFE_INTEGER;
+  const rightTime = parseKickoffDate(right.kickoff, right.kickoffUtc)?.getTime() ?? Number.MAX_SAFE_INTEGER;
   return leftTime - rightTime || (left.matchNo ?? 999) - (right.matchNo ?? 999);
 }
 
-function isPublicUpcomingMatch(match: Pick<PublicUpcomingMatch, "kickoff" | "status">, referenceDate = new Date()) {
+function isPublicUpcomingMatch(match: Pick<PublicUpcomingMatch, "kickoff" | "kickoffUtc" | "status">, referenceDate = new Date()) {
   if (match.status !== "scheduled" && match.status !== "未开赛") return false;
-  const kickoffDate = parseKickoffDate(match.kickoff);
+  const kickoffDate = parseKickoffDate(match.kickoff, match.kickoffUtc);
   if (!kickoffDate) return true;
   return kickoffDate.getTime() > referenceDate.getTime();
 }
@@ -1211,12 +1223,12 @@ function publicMatchesForTab(matches: PublicUpcomingMatch[], activeFilter: Publi
 
   const targetDate = new Date(referenceDate);
   if (activeFilter === "tomorrow") {
-    targetDate.setUTCDate(targetDate.getUTCDate() + 1);
+    targetDate.setDate(targetDate.getDate() + 1);
   }
-  const targetKey = formatDateKeyInTimeZone(targetDate, "America/New_York");
+  const targetKey = formatDateKeyInTimeZone(targetDate, PUBLIC_DISPLAY_TIME_ZONE);
   return matches.filter((match) => {
-    const kickoffDate = parseKickoffDate(match.kickoff);
-    return kickoffDate ? formatDateKeyInTimeZone(kickoffDate, "America/New_York") === targetKey : false;
+    const kickoffDate = parseKickoffDate(match.kickoff, match.kickoffUtc);
+    return kickoffDate ? formatDateKeyInTimeZone(kickoffDate, PUBLIC_DISPLAY_TIME_ZONE) === targetKey : false;
   });
 }
 
@@ -1277,14 +1289,14 @@ function formatDateKeyInTimeZone(date: Date, timeZone: string) {
   return `${part("year")}-${part("month")}-${part("day")}`;
 }
 
-function formatKickoffForPublicList(value: string) {
+function formatKickoffForPublicList(value: string, kickoffUtc?: string | null) {
   if (!value || value === "待定" || value === "进行中" || value === "已结束") return value;
-  if (/\bET\b/i.test(value)) return value.replace(/\s+/g, " ").trim();
 
-  const date = new Date(value);
+  const parsedKickoff = parseKickoffDate(value, kickoffUtc);
+  const date = parsedKickoff ?? new Date(value);
   if (Number.isNaN(date.getTime())) return value;
   const parts = new Intl.DateTimeFormat("zh-CN", {
-    timeZone: "America/New_York",
+    timeZone: PUBLIC_DISPLAY_TIME_ZONE,
     month: "numeric",
     day: "numeric",
     hour: "2-digit",
@@ -1292,7 +1304,7 @@ function formatKickoffForPublicList(value: string) {
     hour12: false,
   }).formatToParts(date);
   const part = (type: string) => parts.find((item) => item.type === type)?.value ?? "";
-  return `${part("month")}月${part("day")}日 ${part("hour")}:${part("minute")} ET`;
+  return `${part("month")}月${part("day")}日 ${part("hour")}:${part("minute")} ${PUBLIC_DISPLAY_TIME_ZONE_LABEL}`;
 }
 
 function buildStaticUpcomingMatchesFallback(referenceDate = new Date()): UpcomingMatchesResponse {
@@ -1312,6 +1324,8 @@ function publicSummaryFromUpcomingMatch(match: UpcomingMatch): PublicUpcomingMat
   return {
     stage: match.stage,
     kickoff: match.kickoff,
+    kickoffUtc: match.kickoffUtc ?? null,
+    kickoffTimeZone: match.kickoffTimeZone ?? null,
     matchNo: match.matchNo ?? null,
     status: match.status,
     homeTeam: match.homeTeam,
@@ -1793,7 +1807,7 @@ function PublicMatchCard({ match, onSelect }: { match: PublicUpcomingMatch; onSe
         </span>
         <em>
           <Clock size={13} strokeWidth={2.4} />
-          {formatKickoffForPublicList(match.kickoff)}
+          {formatKickoffForPublicList(match.kickoff, match.kickoffUtc)}
         </em>
       </div>
       <div className="public-match-teams">

@@ -3592,6 +3592,42 @@ cron: "*/30 * * * *"
 - `npm run test:payments:simulated` 通过。
 - 线上 API 用 `Origin: https://zhugejunshi.com` 请求公开赛程返回 200，并返回 CORS 放行头。
 
+### 2026-06-17：客户部署赛程抓取与时间口径修复
+
+问题：
+
+- 客户反馈部署后赛程抓不到，页面显示“赛程暂时没有连上”。
+- 用户又发现北京时间/泰国时间当晚打开页面时，`6月17日 13:00 ET` 的比赛仍显示在“今日未开赛”，看起来像已经结束的比赛没有撤掉。
+
+原因：
+
+- 正式 Worker 源接口 `https://world-cup-prediction-api.loveice0624.workers.dev/api/public-upcoming-matches` 本身返回 200，赛程数据存在。
+- 客户域名同源接口 `https://zhugejunshi.com/api/public-upcoming-matches` 返回 404。
+- 客户域名中转接口 `https://zhugejunshi.com/world-cup-prediction-remote-api/api/public-upcoming-matches` 返回 500。
+- 客户域名下的 JS 包把 API 基址硬编码为 `/world-cup-prediction-remote-api`，没有直接请求正式 Worker API。
+- 公开赛程接口过去只返回 `kickoff: "6月17日 13:00 ET"` 这类原始字符串，首页又按 `America/New_York` 给“今日/明日”分组，并直接展示 ET 时间，导致国内/泰国用户误读为本地下午 1 点。
+
+已完成：
+
+- 后端公开赛程和完整预测赛程增加 `kickoffUtc` 与 `kickoffTimeZone`，前端不再只靠中文时间字符串猜日期。
+- 首页未开赛过滤、排序、今日/明日分组改为优先使用 `kickoffUtc`。
+- 公开首页“今日/明日”按北京时间口径分组，列表时间显示为北京时间，不再直接显示原始 ET。
+- 放宽公开比赛卡片时间列，避免 `ET` 或时间后缀被截断造成误导。
+- 补充 API、模型和前端契约测试，锁定公开赛程必须暴露标准 UTC 时间，公开首页不能再按美国东部时间分组。
+
+验证：
+
+- Worker API 带 `Origin: https://zhugejunshi.com` 请求返回 200，并返回 `access-control-allow-origin: https://zhugejunshi.com`。
+- 本地页面默认“今日”分组不再显示北京时间已经跨到明天的 `6月17日 13:00 ET` 场次。
+- `npm run test:model` 通过：206 个测试。
+- `npm run build` 通过。
+- `npm run validate:data` 通过。
+
+客户部署要求：
+
+- 客户域名页面应直接使用 `VITE_API_BASE_URL=https://world-cup-prediction-api.loveice0624.workers.dev` 构建。
+- 不应继续依赖 `/world-cup-prediction-remote-api`，除非先修好客户站点里的中转接口。
+
 ## 十、当前交接摘要
 
 一句话定义：

@@ -100,18 +100,33 @@ class FrontendContractTest(unittest.TestCase):
         self.assertIn("width: min(100%, 430px)", styles)
         self.assertIn("font-size: 21px", styles)
         self.assertIn("min-height: 36px", styles)
-        self.assertIn("grid-template-columns: 68px minmax(0, 1fr) 78px", styles)
+        self.assertIn("grid-template-columns: 88px minmax(0, 1fr) 74px", styles)
         self.assertIn("min-height: 90px", styles)
         self.assertIn("grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr)", styles)
+        self.assertNotIn("grid-template-columns: 68px minmax(0, 1fr) 78px", styles)
         self.assertNotIn("grid-template-columns: 92px minmax(0, 1fr) 90px", styles)
         self.assertIn("grid-template-columns: repeat(3, minmax(0, 1fr))", styles)
         self.assertIn("bottom: 0", styles)
+
+    def test_public_schedule_uses_beijing_time_instead_of_raw_et(self):
+        source = app_source()
+        tab_source = source_between(source, "function publicMatchesForTab", "function buildStaticPublicUpcomingMatchesFallback")
+        list_format_source = source_between(source, "function formatKickoffForPublicList", "function buildStaticUpcomingMatchesFallback")
+
+        self.assertIn('const PUBLIC_DISPLAY_TIME_ZONE = "Asia/Shanghai"', source)
+        self.assertIn("formatDateKeyInTimeZone(targetDate, PUBLIC_DISPLAY_TIME_ZONE)", tab_source)
+        self.assertIn("formatDateKeyInTimeZone(kickoffDate, PUBLIC_DISPLAY_TIME_ZONE)", tab_source)
+        self.assertNotIn('formatDateKeyInTimeZone(targetDate, "America/New_York")', tab_source)
+        self.assertIn("parseKickoffDate(value, kickoffUtc)", list_format_source)
+        self.assertIn("PUBLIC_DISPLAY_TIME_ZONE_LABEL", list_format_source)
+        self.assertNotIn("return value.replace(/\\s+/g, \" \").trim()", list_format_source)
 
     def test_public_fallback_strips_paid_fields(self):
         source = app_source()
         strip_source = source_between(source, "function toPublicUpcomingMatch", "function comparePublicUpcomingMatches")
 
         self.assertIn("stage: match.stage", strip_source)
+        self.assertIn("kickoffUtc: match.kickoffUtc ?? null", strip_source)
         self.assertIn("homeName: match.homeName", strip_source)
         self.assertIn("awayName: match.awayName", strip_source)
         self.assertNotIn("homeWin", strip_source)

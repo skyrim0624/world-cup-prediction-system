@@ -34,6 +34,7 @@ from backend.model import (
     event_confidence_weight,
     event_factor_impacts,
     expected_goals,
+    fixture_kickoff_utc_iso,
     forced_outcome_score,
     group_names,
     is_fixture_upcoming,
@@ -148,6 +149,9 @@ class PredictionModelTest(unittest.TestCase):
 
         self.assertIsNotNone(kickoff)
         self.assertEqual(kickoff.isoformat(), "2026-06-15T16:00:00+00:00")
+
+    def test_fixture_kickoff_exposes_standard_utc_iso(self):
+        self.assertEqual(fixture_kickoff_utc_iso("6月17日 13:00 ET"), "2026-06-17T17:00:00Z")
 
     def test_scheduled_fixture_after_kickoff_is_not_upcoming(self):
         fixture = Fixture("germany", "curacao", "小组赛 E 组", "6月14日 13:00 ET", "scheduled")
