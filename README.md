@@ -35,7 +35,7 @@ npm run dev
 正式支付配置由客户在部署环境中补齐，示例见 `.env.production.example`。当前应用支持：
 
 - 微信 JSAPI 支付：适用于微信内网页支付。
-- 微信 Native 支付：适用于扫码支付，Native 回调地址固定为 `https://zhugejunshi.com/api/app-payment/wechat/notify`。
+- 微信 Native 支付：适用于扫码支付；默认回调 `WORLD_CUP_PUBLIC_API_BASE_URL/api/app-payment/wechat/notify`，如果客户支付后台必须使用固定客户域名，可配置 `CUSTOMER_WECHAT_NATIVE_PAY_NOTIFY_URL` 覆盖。
 - 支付宝扫码 / 网页支付：由客户接口返回二维码或跳转地址。
 
 交付压缩包不包含 `.git`、`node_modules`、`dist`、本地虚拟环境、运行锁文件、研究截图和本地构建缓存。客户收到源码后重新执行依赖安装和构建即可。

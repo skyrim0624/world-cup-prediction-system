@@ -168,14 +168,18 @@ def complete_group_fixtures(fixtures: list[Fixture], team_profiles: dict[str, Te
     return completed
 
 
-def load_events(team_profiles: dict[str, TeamProfile]) -> list[TeamEvent]:
+def load_events(team_profiles: dict[str, TeamProfile], drop_unknown_teams: bool = False) -> list[TeamEvent]:
     rows = read_json_file("events.json")
     events = [TeamEvent(**row) for row in rows]
     known_teams = set(team_profiles)
+    compatible_events = []
     for event in events:
         if event.team is not None and event.team not in known_teams:
+            if drop_unknown_teams:
+                continue
             raise ValueError(f"事件包含未知球队: {event.team}")
-    return events
+        compatible_events.append(event)
+    return compatible_events
 
 
 def load_source_weights() -> dict[str, float]:
@@ -198,6 +202,7 @@ def load_raw_news_items(
     team_profiles: dict[str, TeamProfile],
     news_sources: dict[str, NewsSource],
     path: Path | None = None,
+    drop_unknown_teams: bool = False,
 ) -> list[RawNewsItem]:
     if path is None:
         rows = read_json_file("raw-news.json")
@@ -208,12 +213,16 @@ def load_raw_news_items(
     if len(known_ids) != len(items):
         raise ValueError("原始新闻 id 不能重复")
     known_teams = set(team_profiles)
+    compatible_items = []
     for item in items:
         if item.source not in news_sources:
             raise ValueError(f"原始新闻包含未知来源: {item.source}")
         if item.team is not None and item.team not in known_teams:
+            if drop_unknown_teams:
+                continue
             raise ValueError(f"原始新闻包含未知球队: {item.team}")
-    return items
+        compatible_items.append(item)
+    return compatible_items
 
 
 def infer_event_factor(text: str) -> str:
@@ -374,8 +383,14 @@ def load_runtime_dataset(
     fixtures = load_fixtures(team_profiles, fixtures_path)
     source_weights = load_source_weights()
     news_sources = load_news_sources(source_weights)
-    raw_news_items = load_raw_news_items(team_profiles, news_sources, raw_news_path)
-    manual_events = load_events(team_profiles)
+    drop_incompatible_team_events = teams_path is not None
+    raw_news_items = load_raw_news_items(
+        team_profiles,
+        news_sources,
+        raw_news_path,
+        drop_unknown_teams=drop_incompatible_team_events,
+    )
+    manual_events = load_events(team_profiles, drop_unknown_teams=drop_incompatible_team_events)
     events = manual_events + events_from_raw_news(raw_news_items, news_sources)
     third_place_combinations = load_third_place_combinations()
     current_match = load_current_match()

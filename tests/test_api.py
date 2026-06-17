@@ -7,10 +7,26 @@ from pathlib import Path
 from fastapi.testclient import TestClient
 
 import backend.main as main_module
+import backend.model as model_state
 from test_data_import import make_team
 
 
 app = main_module.app
+
+
+def first_upcoming_fixture():
+    fixtures = [fixture for fixture in model_state.FIXTURES if model_state.is_fixture_upcoming(fixture)]
+    fixtures.sort(key=model_state.upcoming_fixture_sort_key)
+    if not fixtures:
+        raise AssertionError("当前测试数据没有未开赛比赛")
+    return fixtures[0]
+
+
+def finished_fixture_at(index: int = 0):
+    fixtures = model_state.sorted_finished_fixtures()
+    if len(fixtures) <= index:
+        raise AssertionError("当前测试数据没有足够的已结束比赛")
+    return fixtures[index]
 
 
 def make_compatible_import_payload() -> dict[str, object]:
@@ -715,16 +731,17 @@ class PredictionApiTest(unittest.TestCase):
 
     def test_public_match_summary_api_hides_paid_prediction_fields(self):
         client = TestClient(app)
-        response = client.get("/api/public-match-summary?home=spain&away=cape-verde")
+        fixture = first_upcoming_fixture()
+        response = client.get(f"/api/public-match-summary?home={fixture.home}&away={fixture.away}")
 
         self.assertEqual(response.status_code, 200)
         payload = response.json()
-        self.assertEqual(payload["homeTeam"], "spain")
-        self.assertEqual(payload["awayTeam"], "cape-verde")
-        self.assertEqual(payload["homeName"], "西班牙")
-        self.assertEqual(payload["awayName"], "佛得角")
-        self.assertEqual(payload["homeCode"], "ESP")
-        self.assertEqual(payload["awayCode"], "CPV")
+        self.assertEqual(payload["homeTeam"], fixture.home)
+        self.assertEqual(payload["awayTeam"], fixture.away)
+        self.assertIn("homeName", payload)
+        self.assertIn("awayName", payload)
+        self.assertIn("homeCode", payload)
+        self.assertIn("awayCode", payload)
         self.assertNotIn("homeWin", payload)
         self.assertNotIn("draw", payload)
         self.assertNotIn("awayWin", payload)
@@ -779,7 +796,7 @@ class PredictionApiTest(unittest.TestCase):
                 "home": "brazil",
                 "away": "argentina",
                 "stage": "小组赛 E 组",
-                "kickoff": "2026-06-15T08:00:00-05:00",
+                "kickoff": "2099-06-15T08:00:00-05:00",
                 "status": "scheduled",
                 "match_no": 31,
                 "city": "Mexico City",
@@ -816,18 +833,20 @@ class PredictionApiTest(unittest.TestCase):
         payload = response.json()
         self.assertEqual(payload["count"], 3)
         first = payload["items"][0]
-        self.assertEqual(first["matchNo"], 10)
+        expected_first = finished_fixture_at(0)
+        self.assertEqual(first["matchNo"], expected_first.match_no)
         self.assertEqual(first["status"], "finished")
-        self.assertEqual(first["homeScore"], 7)
-        self.assertEqual(first["awayScore"], 1)
+        self.assertEqual(first["homeScore"], expected_first.home_score)
+        self.assertEqual(first["awayScore"], expected_first.away_score)
         self.assertEqual(first["modelUse"], "locked_result_weight")
         self.assertIn("后续路径", first["modelUseLabel"])
         self.assertIn("postMatchReview", first)
+        expected_third = finished_fixture_at(2)
         third = payload["items"][2]
-        self.assertEqual(third["homeName"], "海地")
-        self.assertEqual(third["homeScore"], 0)
-        self.assertEqual(third["awayScore"], 1)
-        self.assertEqual(third["awayName"], "苏格兰")
+        self.assertEqual(third["homeTeam"], expected_third.home)
+        self.assertEqual(third["homeScore"], expected_third.home_score)
+        self.assertEqual(third["awayScore"], expected_third.away_score)
+        self.assertEqual(third["awayTeam"], expected_third.away)
 
     def test_public_finished_matches_api_hides_internal_review_fields(self):
         client = TestClient(app)
@@ -837,9 +856,10 @@ class PredictionApiTest(unittest.TestCase):
         payload = response.json()
         self.assertEqual(payload["count"], 1)
         first = payload["items"][0]
+        expected_first = finished_fixture_at(0)
         self.assertEqual(first["status"], "finished")
-        self.assertEqual(first["homeScore"], 7)
-        self.assertEqual(first["awayScore"], 1)
+        self.assertEqual(first["homeScore"], expected_first.home_score)
+        self.assertEqual(first["awayScore"], expected_first.away_score)
         self.assertIn("postMatchReview", first)
         review = first["postMatchReview"]
         self.assertIn("message", review)
@@ -850,15 +870,16 @@ class PredictionApiTest(unittest.TestCase):
 
     def test_match_detail_api_builds_prediction_for_any_scheduled_match(self):
         client = TestClient(app)
-        response = client.get("/api/match-detail?home=spain&away=cape-verde&simulations=1200")
+        fixture = first_upcoming_fixture()
+        response = client.get(f"/api/match-detail?home={fixture.home}&away={fixture.away}&simulations=1200")
         self.assertEqual(response.status_code, 200)
         payload = response.json()
-        self.assertEqual(payload["homeTeam"], "spain")
-        self.assertEqual(payload["awayTeam"], "cape-verde")
-        self.assertEqual(payload["homeName"], "西班牙")
-        self.assertEqual(payload["awayName"], "佛得角")
-        self.assertEqual(payload["homeCode"], "ESP")
-        self.assertEqual(payload["awayCode"], "CPV")
+        self.assertEqual(payload["homeTeam"], fixture.home)
+        self.assertEqual(payload["awayTeam"], fixture.away)
+        self.assertIn("homeName", payload)
+        self.assertIn("awayName", payload)
+        self.assertIn("homeCode", payload)
+        self.assertIn("awayCode", payload)
         self.assertEqual(len(payload["scoreOutcomes"]), 3)
         self.assertGreater(len(payload["scoreMatrix"]), 0)
         self.assertEqual(len(payload["goalMarkets"]), 4)
@@ -870,7 +891,8 @@ class PredictionApiTest(unittest.TestCase):
 
     def test_match_detail_api_rejects_finished_match_prediction(self):
         client = TestClient(app)
-        response = client.get("/api/match-detail?home=mexico&away=south-africa&simulations=1200")
+        fixture = finished_fixture_at(0)
+        response = client.get(f"/api/match-detail?home={fixture.home}&away={fixture.away}&simulations=1200")
 
         self.assertEqual(response.status_code, 409)
         self.assertIn("已结束比赛不再预测", response.json()["detail"])
@@ -880,9 +902,9 @@ class PredictionApiTest(unittest.TestCase):
         response = client.get("/api/events")
         self.assertEqual(response.status_code, 200)
         payload = response.json()
-        self.assertEqual(payload["summary"]["watched"], 7)
+        self.assertEqual(payload["summary"], model_state.event_summary())
         self.assertEqual(payload["summary"]["reviewRequired"], 1)
-        self.assertGreaterEqual(len(payload["items"]), 7)
+        self.assertGreaterEqual(len(payload["items"]), payload["summary"]["watched"])
         self.assertEqual(payload["items"][0]["impact"], "全局备注")
         self.assertTrue(any(item["action"] == "watch" and item["impact"] == "待审核" for item in payload["items"]))
 

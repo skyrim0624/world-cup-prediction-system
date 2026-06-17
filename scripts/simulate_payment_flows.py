@@ -25,7 +25,7 @@ from backend.payments import (
 
 PUBLIC_API_BASE_URL = "http://127.0.0.1:8000"
 PUBLIC_WEB_BASE_URL = "http://127.0.0.1:5173"
-NATIVE_NOTIFY_URL = "https://zhugejunshi.com/api/app-payment/wechat/notify"
+NATIVE_NOTIFY_URL = f"{PUBLIC_API_BASE_URL}/api/app-payment/wechat/notify"
 
 
 PAYMENT_ENV = {

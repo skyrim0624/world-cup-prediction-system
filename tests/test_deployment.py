@@ -19,6 +19,11 @@ class DeploymentAutomationTest(unittest.TestCase):
         self.assertIn("reports/model-quality-report.json", script)
         self.assertIn("python_modules/reports", script)
 
+    def test_worker_syncs_customer_native_notify_override(self):
+        source = Path("worker/entry.py").read_text(encoding="utf-8")
+
+        self.assertIn("CUSTOMER_WECHAT_NATIVE_PAY_NOTIFY_URL", source)
+
 
 if __name__ == "__main__":
     unittest.main()

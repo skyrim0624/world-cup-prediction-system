@@ -30,6 +30,7 @@ from backend.model import (
     build_score_sampler,
     build_match_prediction,
     build_standings,
+    event_summary,
     event_confidence_weight,
     event_factor_impacts,
     expected_goals,
@@ -42,9 +43,19 @@ from backend.model import (
     sample_fixture_score,
     simulate_tournament,
     score_matrix_for_match,
+    sorted_finished_fixtures,
+    upcoming_fixture_sort_key,
     win_draw_loss,
 )
 from backend.post_match_review import build_post_match_review
+
+
+def first_upcoming_fixture():
+    fixtures = [fixture for fixture in model_module.FIXTURES if is_fixture_upcoming(fixture)]
+    fixtures.sort(key=upcoming_fixture_sort_key)
+    if not fixtures:
+        raise AssertionError("当前测试数据没有未开赛比赛")
+    return fixtures[0]
 
 
 class PredictionModelTest(unittest.TestCase):
@@ -73,11 +84,15 @@ class PredictionModelTest(unittest.TestCase):
         self.assertGreater(len(prediction["scoreMatrix"]), 0)
         self.assertEqual(len(prediction["goalMarkets"]), 4)
         self.assertEqual(len(prediction["fairPrices"]), 3)
-        self.assertEqual(prediction["modelMeta"]["lockedResults"], 9)
+        self.assertEqual(
+            prediction["modelMeta"]["lockedResults"],
+            len([fixture for fixture in model_module.FIXTURES if fixture.status == "finished"]),
+        )
         self.assertIn("liveMatches", prediction["modelMeta"])
 
     def test_match_detail_exposes_paid_page_fields(self):
-        detail = build_match_detail("netherlands", "japan", 1200)
+        fixture = first_upcoming_fixture()
+        detail = build_match_detail(fixture.home, fixture.away, 1200)
 
         self.assertIn("pillars", detail)
         self.assertEqual(set(detail["pillars"]), {"home", "away"})
@@ -113,19 +128,20 @@ class PredictionModelTest(unittest.TestCase):
         self.assertIn("score_matrix_for_match", review["targetFunctions"])
 
     def test_finished_match_records_include_post_match_review_when_snapshot_matches(self):
+        fixture = sorted_finished_fixtures()[0]
         records = build_finished_match_records(
             limit=1,
             prediction_snapshot={
-                "homeTeam": "germany",
-                "awayTeam": "curacao",
+                "homeTeam": fixture.home,
+                "awayTeam": fixture.away,
                 "scoreOutcomes": [{"score": "2-0", "probability": 11.7}],
                 "scoreMatrix": [{"score": "4-0", "homeGoals": 4, "awayGoals": 0, "probability": 7.2}],
             },
         )
 
-        self.assertEqual(records["items"][0]["homeTeam"], "germany")
-        self.assertEqual(records["items"][0]["awayTeam"], "curacao")
-        self.assertEqual(records["items"][0]["postMatchReview"]["severity"], "high")
+        self.assertEqual(records["items"][0]["homeTeam"], fixture.home)
+        self.assertEqual(records["items"][0]["awayTeam"], fixture.away)
+        self.assertEqual(records["items"][0]["postMatchReview"]["status"], "reviewed")
 
     def test_et_kickoff_is_parsed_as_eastern_daylight_time(self):
         kickoff = parse_fixture_kickoff("6月15日 12:00 ET")
@@ -142,9 +158,12 @@ class PredictionModelTest(unittest.TestCase):
         self.assertFalse(is_fixture_upcoming(fixture, after_kickoff))
 
     def test_expired_configured_current_match_rolls_to_next_upcoming_fixture(self):
-        fixture = resolve_current_prediction_fixture(parse_fixture_kickoff("6月15日 00:00 ET"))
+        now = parse_fixture_kickoff("6月15日 00:00 ET")
+        fixture = resolve_current_prediction_fixture(now)
+        expected = [item for item in model_module.FIXTURES if is_fixture_upcoming(item, now)]
+        expected.sort(key=upcoming_fixture_sort_key)
 
-        self.assertEqual((fixture.home, fixture.away), ("spain", "cape-verde"))
+        self.assertEqual((fixture.home, fixture.away), (expected[0].home, expected[0].away))
 
     def test_dataset_is_loaded_from_local_json_files(self):
         self.assertEqual(DATASET_META["source"], "fifa-official-match-schedule-2026")
@@ -161,10 +180,7 @@ class PredictionModelTest(unittest.TestCase):
     def test_prediction_exposes_model_transparency_meta(self):
         prediction = build_match_prediction(1200)
         self.assertEqual(prediction["modelMeta"]["dataset"]["source"], "fifa-official-match-schedule-2026")
-        self.assertEqual(prediction["modelMeta"]["events"]["watched"], 7)
-        self.assertEqual(prediction["modelMeta"]["events"]["applied"], 3)
-        self.assertEqual(prediction["modelMeta"]["events"]["ignored"], 2)
-        self.assertEqual(prediction["modelMeta"]["events"]["reviewRequired"], 1)
+        self.assertEqual(prediction["modelMeta"]["events"], event_summary())
         self.assertEqual(prediction["modelMeta"]["advancedMetrics"]["source"], "verified_layered_inputs")
         self.assertEqual(prediction["modelMeta"]["advancedMetricDataQuality"]["status"], "pass")
         self.assertEqual(prediction["modelMeta"]["historicalEloBlend"]["source"], "cc0_international_results_latest_elo")
@@ -427,18 +443,20 @@ class PredictionModelTest(unittest.TestCase):
 
         self.assertEqual(records["count"], 3)
         first = records["items"][0]
-        self.assertEqual(first["matchNo"], 10)
+        expected_first = sorted_finished_fixtures()[0]
+        self.assertEqual(first["matchNo"], expected_first.match_no)
         self.assertEqual(first["status"], "finished")
-        self.assertEqual(first["homeScore"], 7)
-        self.assertEqual(first["awayScore"], 1)
+        self.assertEqual(first["homeScore"], expected_first.home_score)
+        self.assertEqual(first["awayScore"], expected_first.away_score)
         self.assertEqual(first["modelUse"], "locked_result_weight")
         self.assertIn("后续路径", first["modelUseLabel"])
         self.assertIn("postMatchReview", first)
+        expected_third = sorted_finished_fixtures()[2]
         third = records["items"][2]
-        self.assertEqual(third["homeName"], "海地")
-        self.assertEqual(third["homeScore"], 0)
-        self.assertEqual(third["awayScore"], 1)
-        self.assertEqual(third["awayName"], "苏格兰")
+        self.assertEqual(third["homeTeam"], expected_third.home)
+        self.assertEqual(third["homeScore"], expected_third.home_score)
+        self.assertEqual(third["awayScore"], expected_third.away_score)
+        self.assertEqual(third["awayTeam"], expected_third.away)
 
     def test_multi_source_c_level_news_can_enter_reviewed_model_flow(self):
         source = NewsSource(

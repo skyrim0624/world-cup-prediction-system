@@ -3572,6 +3572,26 @@ cron: "*/30 * * * *"
 - 新增 CORS 回归测试，锁定客户域名允许访问。
 - 新增前端契约测试，锁定生产环境默认 API 地址。
 
+### 2026-06-17：生产连接与日更测试审查
+
+已完成：
+
+- 全仓扫描 API 地址、CORS、Cloudflare Worker 环境同步、Pages 构建、支付回调和所有前端 fetch 路径。
+- 前端 `VITE_API_BASE_URL` 增加空字符串容错和尾斜杠清理，避免客户环境变量为空时重新退回同源 `/api`。
+- 微信 Native 支付回调默认改为 `WORLD_CUP_PUBLIC_API_BASE_URL/api/app-payment/wechat/notify`，避免默认落到没有 API 代理的客户静态域名；如客户需要固定域名，可用 `CUSTOMER_WECHAT_NATIVE_PAY_NOTIFY_URL` 覆盖。
+- Cloudflare Worker 环境同步增加 `CUSTOMER_WECHAT_NATIVE_PAY_NOTIFY_URL`。
+- 后台导入 / 回滚赛事数据时，对旧新闻和旧事件中不属于新球队池的记录做兼容过滤，避免导入临时或替换赛事数据时被旧 raw-news 阻断。
+- 测试从写死历史场次改为动态选择当前未开赛 / 已结束比赛，避免每日赛果更新后测试继续误报。
+- 同步更新 README、`.env.production.example`、支付开发记录和本地支付模拟脚本。
+
+验证：
+
+- `npm run test:model` 通过：204 个测试。
+- `npm run build` 通过。
+- `npm run validate:data` 通过。
+- `npm run test:payments:simulated` 通过。
+- 线上 API 用 `Origin: https://zhugejunshi.com` 请求公开赛程返回 200，并返回 CORS 放行头。
+
 ## 十、当前交接摘要
 
 一句话定义：

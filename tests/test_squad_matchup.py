@@ -1,7 +1,8 @@
 import unittest
 
 from backend.data import TEAM_PROFILES, Fixture
-from backend.model import apply_event_adjustments, build_match_detail, win_draw_loss
+import backend.model as model_state
+from backend.model import apply_event_adjustments, build_match_detail, is_fixture_upcoming, upcoming_fixture_sort_key, win_draw_loss
 from backend.squad_matchup import (
     build_star_power_profile,
     build_tactical_matchup,
@@ -48,7 +49,9 @@ class SquadMatchupTest(unittest.TestCase):
         self.assertNotEqual(adjusted["germany"].attack, teams["germany"].attack)
 
     def test_match_detail_exposes_matchup_context(self):
-        detail = build_match_detail("spain", "cape-verde", 1200)
+        fixtures = [fixture for fixture in model_state.FIXTURES if is_fixture_upcoming(fixture)]
+        fixtures.sort(key=upcoming_fixture_sort_key)
+        detail = build_match_detail(fixtures[0].home, fixtures[0].away, 1200)
 
         self.assertIn("matchupContext", detail)
         self.assertIn("home", detail["matchupContext"])

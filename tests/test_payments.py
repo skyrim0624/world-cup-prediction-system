@@ -195,11 +195,32 @@ class PaymentApiTest(unittest.TestCase):
         self.assertEqual(captured["payload"]["matchKey"], "spain-cape-verde")
         self.assertEqual(captured["payload"]["homeName"], "西班牙")
         self.assertEqual(captured["payload"]["awayName"], "佛得角")
-        self.assertEqual(captured["payload"]["notifyUrl"], "https://zhugejunshi.com/api/app-payment/wechat/notify")
+        self.assertEqual(captured["payload"]["notifyUrl"], "https://api.example.com/api/app-payment/wechat/notify")
         self.assertEqual(order["status"], "pending")
         self.assertEqual(order["qrCodeUrl"], "https://pay.example/qr/wechat-native.png")
         self.assertEqual(order["providerOrderId"], "wx_provider_123")
         self.assertEqual(order["nextAction"], "等待用户扫码支付。")
+
+    def test_configured_native_notify_url_overrides_default_worker_callback(self):
+        captured = {}
+
+        def fake_requester(url, payload, headers, method="POST"):
+            captured["payload"] = payload
+            return {"status": "pending", "qrCodeUrl": "https://pay.example/qr.png"}
+
+        create_payment_order(
+            "single_match",
+            "wechat_native",
+            env={
+                "CUSTOMER_WECHAT_NATIVE_PAY_CREATE_URL": "https://customer.example/pay/wechat/create",
+                "CUSTOMER_WECHAT_NATIVE_PAY_STATUS_URL": "https://customer.example/pay/wechat/status",
+                "CUSTOMER_WECHAT_NATIVE_PAY_NOTIFY_SECRET": "secret",
+                "CUSTOMER_WECHAT_NATIVE_PAY_NOTIFY_URL": "https://zhugejunshi.com/api/app-payment/wechat/notify",
+            },
+            payment_requester=fake_requester,
+        )
+
+        self.assertEqual(captured["payload"]["notifyUrl"], "https://zhugejunshi.com/api/app-payment/wechat/notify")
 
     def test_customer_create_interface_accepts_nested_data_response(self):
         order = create_payment_order(
