@@ -255,9 +255,11 @@
     "away": "croatia",
     "stage": "小组赛 L 组",
     "kickoff": "6月17日 16:00 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "Dallas",
-    "stadium": "Dallas Stadium"
+    "stadium": "Dallas Stadium",
+    "home_score": 1,
+    "away_score": 0
   },
   {
     "match_no": 23,
@@ -265,11 +267,11 @@
     "away": "dr-congo",
     "stage": "小组赛 K 组",
     "kickoff": "6月17日 13:00 ET",
-    "status": "live",
+    "status": "finished",
     "city": "Houston",
     "stadium": "Houston Stadium",
     "home_score": 1,
-    "away_score": 0
+    "away_score": 1
   },
   {
     "match_no": 24,
