@@ -3558,6 +3558,20 @@ cron: "*/30 * * * *"
 - `python3 -m unittest discover -s tests -p 'test_api.py' -k snapshot_rebuild` 通过。
 - `npm run validate:data` 通过。
 
+### 2026-06-17：客户域名 API 连接修复
+
+已完成：
+
+- 排查确认正式 Workers API `https://world-cup-prediction-api.loveice0624.workers.dev/api/public-upcoming-matches?limit=3` 在线返回 200，赛程数据存在。
+- 排查确认客户域名 `https://zhugejunshi.com/api/public-upcoming-matches?limit=3` 返回 404，说明客户站点没有同源 `/api` 后端。
+- 后端 CORS 增加 `https://zhugejunshi.com` 和 `https://www.zhugejunshi.com`，允许客户页面直接读取正式 Workers API。
+- 前端生产构建增加正式 API 兜底地址；即使客户部署时漏配 `VITE_API_BASE_URL`，也不会回落到客户域名的相对 `/api`。
+
+验证：
+
+- 新增 CORS 回归测试，锁定客户域名允许访问。
+- 新增前端契约测试，锁定生产环境默认 API 地址。
+
 ## 十、当前交接摘要
 
 一句话定义：

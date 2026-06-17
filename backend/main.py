@@ -109,8 +109,10 @@ app.add_middleware(
         "http://localhost:5174",
         "https://world-cup-prediction-system.pages.dev",
         "https://world-cup-prediction-admin.pages.dev",
+        "https://zhugejunshi.com",
+        "https://www.zhugejunshi.com",
     ],
-    allow_origin_regex=r"^(http://(127\.0\.0\.1|localhost):51[0-9]{2}|https://[a-z0-9-]+\.(world-cup-prediction-system|world-cup-prediction-admin)\.pages\.dev)$",
+    allow_origin_regex=r"^(http://(127\.0\.0\.1|localhost):51[0-9]{2}|https://[a-z0-9-]+\.(world-cup-prediction-system|world-cup-prediction-admin)\.pages\.dev|https://[a-z0-9-]+\.zhugejunshi\.com)$",
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
 )

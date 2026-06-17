@@ -127,6 +127,20 @@ class PredictionApiTest(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.headers["access-control-allow-origin"], "https://world-cup-prediction-system.pages.dev")
 
+    def test_customer_domain_origin_is_allowed_by_cors(self):
+        client = TestClient(app)
+
+        response = client.options(
+            "/api/health",
+            headers={
+                "Origin": "https://zhugejunshi.com",
+                "Access-Control-Request-Method": "GET",
+            },
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.headers["access-control-allow-origin"], "https://zhugejunshi.com")
+
     def test_model_status_exposes_tournament_provenance(self):
         payload = make_compatible_import_payload()
         with tempfile.TemporaryDirectory() as temp_dir:

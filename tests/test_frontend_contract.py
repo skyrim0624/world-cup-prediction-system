@@ -43,6 +43,12 @@ class FrontendContractTest(unittest.TestCase):
         self.assertNotIn("/api/payments/config", source)
         self.assertNotIn("/api/payments/orders", source)
 
+    def test_production_build_has_canonical_api_fallback(self):
+        source = app_source()
+
+        self.assertIn('const PRODUCTION_API_BASE_URL = "https://world-cup-prediction-api.loveice0624.workers.dev"', source)
+        self.assertIn('import.meta.env.DEV ? "http://127.0.0.1:8000" : PRODUCTION_API_BASE_URL', source)
+
     def test_public_homepage_hides_paid_prediction_content(self):
         source = public_home_source()
 
