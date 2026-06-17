@@ -233,9 +233,11 @@
     "away": "jordan",
     "stage": "小组赛 J 组",
     "kickoff": "6月16日 00:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "San Francisco Bay Area",
-    "stadium": "San Francisco Bay Stadium"
+    "stadium": "San Francisco Bay Stadium",
+    "home_score": 3,
+    "away_score": 1
   },
   {
     "match_no": 21,
