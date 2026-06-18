@@ -10,7 +10,7 @@
   "homeWin": 49,
   "draw": 25,
   "awayWin": 26,
-  "updatedAt": "2026-06-18T09:22:07.244801+00:00",
+  "updatedAt": "2026-06-18T12:38:24.840784+00:00",
   "fixtureContext": {
     "home": {
       "team": "czechia",
@@ -312,11 +312,11 @@
       "probability": 49,
       "title": "捷克小组第一概率上升",
       "details": [
-        "捷克夺冠概率 ±0.0%",
+        "捷克夺冠概率 +0.1%",
         "南非路径盘下调 ±0.0%",
         "同组竞争队出线门槛抬高"
       ],
-      "championShift": "±0.0%",
+      "championShift": "+0.1%",
       "tone": "green"
     },
     {
@@ -3046,6 +3046,188 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 18 Jun 2026 08:17:14 GMT"
+    },
+    {
+      "title": "Tactical analysis: England look exciting but how can they tighten up?",
+      "detail": "England produced some exciting attacking football while beating Croatia 4-2 but why did they look so shaky defensively?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 09:38:00 GMT"
+    },
+    {
+      "title": "Lionesses will face Greece in World Cup play-offs",
+      "detail": "England will face Greece in round one of the 2027 Women's World Cup play-offs, with Northern Ireland, Scotland and Wales also learning their opponents.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 12:15:51 GMT"
+    },
+    {
+      "title": "Calvin Harris & Commonwealths force Monday start to Celtic's title defence",
+      "detail": "Celtic open the 2026-27 Scottish Premiership season at home to Dundee on 3 August, with the champions saying they are disappointed to be starting on a Monday evening.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 11:00:27 GMT"
+    },
+    {
+      "title": "Hydration boos and surprise results - World Cup talking points",
+      "detail": "BBC Sport takes a look at the talking points from the first week of World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 11:13:59 GMT"
+    },
+    {
+      "title": "Most shots? Best dribbler? World Cup so far in numbers",
+      "detail": "Now every team has played once, BBC Sport take a look at who has been the best and worst players so far according to the stats.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 12:00:34 GMT"
+    },
+    {
+      "title": "What's going on with stoppage time at the World Cup?",
+      "detail": "Pierluigi Collina decided to wage war on time-wasting at this World Cup, changing tack from the last tournament. But has it been a success so far?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 12:09:41 GMT"
+    },
+    {
+      "title": "Ivory Coast's Wahi denied entry to Canada",
+      "detail": "The Ivory Coast football federation have announced their forward Elye Wahi has been denied entry to Canada for their next World Cup game.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 11:39:28 GMT"
+    },
+    {
+      "title": "Konate to join Real Madrid on four-year deal",
+      "detail": "Real Madrid agree a deal to sign Ibrahima Konate on a four-year contract when the France centre-back leaves Liverpool at the end of June.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 10:05:33 GMT"
+    },
+    {
+      "title": "Nearly man McInnes finally has Rangers job he always wanted",
+      "detail": "Why has Derek McInnes swapped nearly winning the Scottish title with Heart of Midlothian for a Rangers side who finished behind them in third last season?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 10:38:37 GMT"
+    },
+    {
+      "title": "More than the Score",
+      "detail": "FIFA's mandatory three-minute drinks break sparks controversy",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 10:46:00 GMT"
+    },
+    {
+      "title": "Scottish Premiership fixtures - find out your club's schedule",
+      "detail": "Find out your team's schedule for this season's Scottish Premiership pre-split campaign.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 11:02:13 GMT"
+    },
+    {
+      "title": "Scotland draw Czech Republic in round one of World Cup play-offs",
+      "detail": "Scotland will have to beat Czech Republic and either Lithuania or Sweden in successive two-legged play-off ties if they are to reach next summer's Women's World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 10:55:40 GMT"
+    },
+    {
+      "title": "New boss McLeish keen to change St Mirren style",
+      "detail": "Craig McLeish wants to make St Mirren \"more exciting\" as he embarks on his first season as permanent manager of the Buddies.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 12:04:07 GMT"
+    },
+    {
+      "title": "Ronaldo: Portugal's World Cup 'far from over'",
+      "detail": "Cristiano Ronaldo defended Portugal's performance against Congo DR in their World Cup opener but said he is already looking ahead to the next game.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 08:32:21 EST"
+    },
+    {
+      "title": "Konaté completes switch to Madrid from Liverpool",
+      "detail": "Ibrahima Konaté has completed his move to Real Madrid from Liverpool.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 08:32:21 EST"
+    },
+    {
+      "title": "Barça to play Brady's Birmingham in a friendly",
+      "detail": "Barcelona will take on Tom Brady's Birmingham City in a preseason friendly at St. Andrew's @ Knighthead Park on July 31, the two clubs have confirmed.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 08:32:22 EST"
+    },
+    {
+      "title": "Canada's Davies fit to face Qatar in World Cup",
+      "detail": "Canada captain Alphonso Davies will be available to play on Thursday against Qatar after he missed his team's World Cup opener while recovering from a hamstring injury.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 18 Jun 2026 08:32:21 EST"
+    },
+    {
+      "title": "🔥Good, Bad, Ugly: The World Cup warmup kits",
+      "detail": "null",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 08:32:22 EST"
+    },
+    {
+      "title": "World Cup overreactions: Takeaways now that all 48...",
+      "detail": "All 48 teams in the World Cup have played exactly one game, so let's react -- or, because it's such a small sample size -- overreact.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 08:32:10 EST"
+    },
+    {
+      "title": "Ranking Europe's top clubs by player performance a...",
+      "detail": "null",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 08:32:10 EST"
+    },
+    {
+      "title": "World Cup Daily: Congo DR fans hit Ronaldo with th...",
+      "detail": "The second round of matches at the 2026 FIFA World Cup is underway today! Enjoy all the features, news, video analysis and color from around the competition.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 05:58:56 EST"
+    },
+    {
+      "title": "Full hearts, empty kegs, can't lose: Scotland's Tartan Army takes over World Cup",
+      "detail": "Scotland's Tartan Army has been one of the stories of the 2026 World Cup so far, drinking its way through Boston and bringing bonhomie, passion and national pride after nearly 30 years away from the tournament.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 03:16:11 EST"
+    },
+    {
+      "title": "The lifelong education of USMNT goalkeeper (and Ha...",
+      "detail": "The starting USMNT goalkeeper has an economics degree from Harvard. In his remarkable family, that makes him the underachiever.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 05:59:04 EST"
+    },
+    {
+      "title": "Transfer rumors, news: Liverpool and Chelsea keen ...",
+      "detail": "Liverpool and Chelsea are both tracking Brighton midfielder Yasin Ayari. Transfer Talk has the latest.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 07:24:40 EST"
+    },
+    {
+      "title": "Faster than Mbappé: Is Muñoz Liverpool's answer to...",
+      "detail": "Osasuna winger Victor Muñoz offers width, explosive pace and the ability to beat a man. But can he make the step up at Liverpool?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 07:24:40 EST"
+    },
+    {
+      "title": "Côte d’Ivoire’s Wahi denied Canada visa for World Cup match amid fixing allegation",
+      "detail": "<ul><li><p>Striker will miss match against Germany in Toronto</p></li><li><p>Was arrested over alleged ‘organised fraud’ in Ligue 1</p></li></ul><p>The Côte d’Ivoire striker Elye Wahi, who is being investigated for alleged fixing, has not been authorised to travel to Canada for his team’s World Cup match against Germany, the Côte d’Ivoire football federation (FIF) said on Thursday.</p><p>FIF said Wahi would not be able to travel with the squad for Saturday’s game in Toronto because “the necessary administrative authorisations for his entry into Canadian territory could not be obtained at this stage”.</p> <a href=\"https://www.theguardian.com/football/2026/jun/18/elye-wahi-cote-d-ivoire-canada-entry-visa-world-cup-2026\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 18 Jun 2026 11:59:29 GMT"
     }
   ],
   "teams": [
@@ -3099,11 +3281,11 @@
         "margin": 78
       },
       "tournament": {
-        "champion": 0.7,
-        "final": 2.5,
-        "semifinal": 7.0,
-        "quarterfinal": 20.7,
-        "change": 0.1
+        "champion": 0.8,
+        "final": 2.6,
+        "semifinal": 7.1,
+        "quarterfinal": 20.8,
+        "change": 0.2
       }
     },
     {
@@ -3121,7 +3303,7 @@
         "champion": 0.1,
         "final": 0.4,
         "semifinal": 1.8,
-        "quarterfinal": 7.7,
+        "quarterfinal": 7.8,
         "change": -0.2
       }
     },
@@ -3133,14 +3315,14 @@
         "strength": 76,
         "form": 77,
         "path": 64,
-        "squad": 79,
+        "squad": 77,
         "margin": 76
       },
       "tournament": {
         "champion": 0.3,
-        "final": 1.2,
-        "semifinal": 3.9,
-        "quarterfinal": 13.9,
+        "final": 1.0,
+        "semifinal": 3.6,
+        "quarterfinal": 13.2,
         "change": 0.0
       }
     },
@@ -3196,8 +3378,8 @@
       "tournament": {
         "champion": 0.8,
         "final": 2.3,
-        "semifinal": 6.5,
-        "quarterfinal": 19.6,
+        "semifinal": 6.6,
+        "quarterfinal": 19.8,
         "change": -0.3
       }
     },
@@ -3292,7 +3474,7 @@
         "champion": 0.7,
         "final": 2.4,
         "semifinal": 7.2,
-        "quarterfinal": 20.9,
+        "quarterfinal": 20.8,
         "change": -0.5
       }
     },
@@ -3330,7 +3512,7 @@
         "champion": 0.4,
         "final": 1.6,
         "semifinal": 5.3,
-        "quarterfinal": 15.6,
+        "quarterfinal": 15.7,
         "change": 0.1
       }
     },
@@ -3366,7 +3548,7 @@
       },
       "tournament": {
         "champion": 5.6,
-        "final": 11.2,
+        "final": 11.1,
         "semifinal": 21.0,
         "quarterfinal": 35.2,
         "change": -0.4
@@ -3405,7 +3587,7 @@
       "tournament": {
         "champion": 0.3,
         "final": 1.1,
-        "semifinal": 3.9,
+        "semifinal": 3.8,
         "quarterfinal": 12.1,
         "change": -0.2
       }
@@ -3423,8 +3605,8 @@
       },
       "tournament": {
         "champion": 0.9,
-        "final": 2.4,
-        "semifinal": 6.2,
+        "final": 2.5,
+        "semifinal": 6.3,
         "quarterfinal": 15.9,
         "change": 0.4
       }
@@ -3538,8 +3720,8 @@
       "tournament": {
         "champion": 0.3,
         "final": 1.0,
-        "semifinal": 3.5,
-        "quarterfinal": 12.1,
+        "semifinal": 3.6,
+        "quarterfinal": 12.2,
         "change": -0.1
       }
     },
@@ -3650,11 +3832,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 2.1,
+        "champion": 2.2,
         "final": 5.5,
         "semifinal": 12.3,
         "quarterfinal": 22.5,
-        "change": -0.5
+        "change": -0.4
       }
     },
     {
@@ -3785,7 +3967,7 @@
       "tournament": {
         "champion": 0.7,
         "final": 2.2,
-        "semifinal": 6.3,
+        "semifinal": 6.2,
         "quarterfinal": 15.1,
         "change": -0.4
       }
@@ -3805,7 +3987,7 @@
         "champion": 0.0,
         "final": 0.0,
         "semifinal": 0.1,
-        "quarterfinal": 0.7,
+        "quarterfinal": 0.6,
         "change": 0.0
       }
     },
@@ -3822,9 +4004,9 @@
       },
       "tournament": {
         "champion": 5.9,
-        "final": 11.7,
+        "final": 11.8,
         "semifinal": 21.8,
-        "quarterfinal": 37.4,
+        "quarterfinal": 37.5,
         "change": -1.5
       }
     },
@@ -3842,7 +4024,7 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.2,
-        "semifinal": 1.1,
+        "semifinal": 1.2,
         "quarterfinal": 4.2,
         "change": -0.1
       }
@@ -3879,9 +4061,9 @@
       },
       "tournament": {
         "champion": 2.7,
-        "final": 6.6,
+        "final": 6.7,
         "semifinal": 15.3,
-        "quarterfinal": 34.1,
+        "quarterfinal": 34.2,
         "change": 0.7
       }
     },
@@ -3916,11 +4098,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 1.0,
+        "champion": 1.1,
         "final": 3.0,
         "semifinal": 8.0,
         "quarterfinal": 16.0,
-        "change": -0.2
+        "change": -0.1
       }
     },
     {
@@ -3981,18 +4163,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 383,
+      "eventCount": 409,
       "manualEventCount": 3,
-      "rawNewsCount": 380,
+      "rawNewsCount": 406,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 383,
-      "applied": 351,
+      "watched": 409,
+      "applied": 374,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 378,
+      "singleSource": 404,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -4037,7 +4219,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -3.8299999999999996,
-        "squad": 1.65
+        "squad": -0.5
       },
       "bosnia-herzegovina": {
         "attack": 0.0,
@@ -14633,16 +14815,71 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-18T09:22:44.882152+00:00",
+    "generatedAt": "2026-06-18T12:39:03.357261+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "uruguay",
+        "name": "乌拉圭",
+        "code": "URU",
+        "previousChampion": 2.1,
+        "currentChampion": 2.2,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 23 条",
+        "reasons": [
+          "可入模型事件新增 23 条"
+        ]
+      },
+      {
+        "team": "croatia",
+        "name": "克罗地亚",
+        "code": "CRO",
+        "previousChampion": 1.0,
+        "currentChampion": 1.1,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 23 条",
+        "reasons": [
+          "可入模型事件新增 23 条"
+        ]
+      },
+      {
+        "team": "south-korea",
+        "name": "韩国",
+        "code": "KOR",
+        "previousChampion": 0.7,
+        "currentChampion": 0.8,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.1%",
+        "reasons": [
+          "四强概率上升 +0.1%",
+          "决赛概率上升 +0.1%",
+          "八强概率上升 +0.1%",
+          "可入模型事件新增 23 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
+      "up": 3,
       "down": 0,
-      "largestUp": null,
+      "largestUp": {
+        "team": "uruguay",
+        "name": "乌拉圭",
+        "code": "URU",
+        "previousChampion": 2.1,
+        "currentChampion": 2.2,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 23 条",
+        "reasons": [
+          "可入模型事件新增 23 条"
+        ]
+      },
       "largestDown": null
     }
   }

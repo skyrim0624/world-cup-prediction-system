@@ -293,9 +293,11 @@
     "away": "south-africa",
     "stage": "小组赛 A 组",
     "kickoff": "6月18日 12:00 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "Atlanta",
-    "stadium": "Atlanta Stadium"
+    "stadium": "Atlanta Stadium",
+    "home_score": 1,
+    "away_score": 0
   },
   {
     "match_no": 26,
