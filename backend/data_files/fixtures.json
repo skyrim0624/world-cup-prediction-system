@@ -293,11 +293,11 @@
     "away": "south-africa",
     "stage": "小组赛 A 组",
     "kickoff": "6月18日 12:00 ET",
-    "status": "live",
+    "status": "finished",
     "city": "Atlanta",
     "stadium": "Atlanta Stadium",
     "home_score": 1,
-    "away_score": 0
+    "away_score": 1
   },
   {
     "match_no": 26,
@@ -305,9 +305,11 @@
     "away": "bosnia-herzegovina",
     "stage": "小组赛 B 组",
     "kickoff": "6月18日 15:00 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "Los Angeles",
-    "stadium": "Los Angeles Stadium"
+    "stadium": "Los Angeles Stadium",
+    "home_score": 0,
+    "away_score": 0
   },
   {
     "match_no": 27,
