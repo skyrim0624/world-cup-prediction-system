@@ -6324,5 +6324,47 @@
     "factor": "attack",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-8d8ca9838e52",
+    "title": "Scotland's Boston love affair one for the ages",
+    "summary": "BBC Scotland's Scott Mullen looks at the Tartan Army's time in Boston as it gets set to finish.",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Thu, 18 Jun 2026 22:29:00 GMT",
+    "url": "https://www.bbc.com/sport/football/articles/c4gyree9775o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-51ca1c3db495",
+    "title": "Manzambi double propels Switzerland to win against Bosnia",
+    "summary": "Substitute Johan Manzambi scores twice in a thrilling final 20 minutes, as Switzerland beat Bosnia-Herzegovina 4-1 to edge towards a place in the World Cup round of 32.",
+    "source": "bbc",
+    "team": "bosnia-herzegovina",
+    "status": "single_source",
+    "published_at": "Thu, 18 Jun 2026 22:08:51 GMT",
+    "url": "https://www.bbc.com/sport/football/videos/c8x2e857755o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "espn-aadc0baa3566",
+    "title": "Canada's Koné stretchered off after hard tackle",
+    "summary": "Canada midfielder Ismaël Koné was stretchered off the field in the second half of the host nation's match against Qatar on Thursday at BC Place in Vancouver.",
+    "source": "espn",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Thu, 18 Jun 2026 19:41:00 EST",
+    "url": "https://www.espn.com/soccer/story/_/id/49112391/canada-ismael-kone-stretchered-hard-tackle",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
