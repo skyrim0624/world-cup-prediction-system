@@ -371,9 +371,11 @@
     "away": "australia",
     "stage": "小组赛 D 组",
     "kickoff": "6月19日 15:00 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "Seattle",
-    "stadium": "Seattle Stadium"
+    "stadium": "Seattle Stadium",
+    "home_score": 0,
+    "away_score": 0
   },
   {
     "match_no": 33,

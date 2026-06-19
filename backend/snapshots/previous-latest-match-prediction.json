@@ -10,7 +10,7 @@
   "homeWin": 43,
   "draw": 26,
   "awayWin": 32,
-  "updatedAt": "2026-06-19T14:15:43.324284+00:00",
+  "updatedAt": "2026-06-19T17:00:04.822934+00:00",
   "fixtureContext": {
     "home": {
       "team": "usa",
@@ -3914,6 +3914,41 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 19 Jun 2026 10:53:56 GMT"
+    },
+    {
+      "title": "The maths whizz turned teen star who chose Morocco over France",
+      "detail": "Get to know Ayyoub Bouaddi - Morocco's new star.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 13:22:43 GMT"
+    },
+    {
+      "title": "The Wayne Rooney Show",
+      "detail": "South Africa 2006 changed everything for me: Tim Cahill reveals all.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 14:04:00 GMT"
+    },
+    {
+      "title": "Africa's greatest World Cup kits - pick your favourite",
+      "detail": "Your chance to rank 10 of the most colourful and iconic kits African teams have worn at the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 15:45:06 GMT"
+    },
+    {
+      "title": "Who are Morocco's players to look out for against Scotland?",
+      "detail": "Scotland face Morocco in their second group game of the 2026 World Cup. BBC Sport takes a look at the Morocco players to look out for.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 14:04:30 GMT"
+    },
+    {
+      "title": "Jesse Marsch: windmilling human meme or shrewd protector of suddenly dangerous Canada?",
+      "detail": "<p>Some on the internet are tiring of the American’s antics with Les Rouges. But there’s an argument that he is taking the heat off his players</p><p>Some corners of the internet were determined that Canada’s <a href=\"https://www.theguardian.com/football/2026/jun/18/canada-qatar-world-cup-2026-group-b-match-report\">totemic and traumatic 6-0 World Cup victory</a> on Thursday would be remembered mostly through Jesse Marsch memes.</p><p>The American’s <a href=\"https://bsky.app/profile/jm539581.bsky.social/post/3molvdvgw3k25\">handsy sideline shuffle</a> after Jonathan David rifled the first goal of a hat-trick past Qatar duly racked up social media views by the million. Shots of Marsch <a href=\"https://bsky.app/profile/jeffrueter.bsky.social/post/3mom2lzs5lc2r\">holding up six fingers to Canada fans</a> at the end of the match were chopped and put side by side with Michael Jordan in identical pose after winning his sixth NBA title with the Chicago Bulls.</p> <a href=\"https://www.theguardian.com/football/2026/jun/19/canada-qatar-world-cup-jesse-marsch\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 19 Jun 2026 15:30:35 GMT"
     }
   ],
   "teams": [
@@ -4849,18 +4884,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 507,
+      "eventCount": 512,
       "manualEventCount": 3,
-      "rawNewsCount": 504,
+      "rawNewsCount": 509,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 507,
-      "applied": 467,
+      "watched": 512,
+      "applied": 472,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 502,
+      "singleSource": 507,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -4904,7 +4939,7 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": -3.8299999999999996,
+        "path": -3.8799999999999994,
         "squad": -11.25
       },
       "bosnia-herzegovina": {
@@ -15501,7 +15536,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-19T14:16:19.890511+00:00",
+    "generatedAt": "2026-06-19T17:00:42.440482+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
