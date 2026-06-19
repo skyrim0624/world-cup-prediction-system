@@ -10,7 +10,7 @@
   "homeWin": 43,
   "draw": 26,
   "awayWin": 32,
-  "updatedAt": "2026-06-19T05:35:35.953720+00:00",
+  "updatedAt": "2026-06-19T10:48:03.157577+00:00",
   "fixtureContext": {
     "home": {
       "team": "usa",
@@ -313,7 +313,7 @@
       "title": "美国小组第一概率上升",
       "details": [
         "美国夺冠概率 +0.3%",
-        "澳大利亚路径盘下调 -0.1%",
+        "澳大利亚路径盘下调 -0.2%",
         "同组竞争队出线门槛抬高"
       ],
       "championShift": "+0.3%",
@@ -325,10 +325,10 @@
       "title": "两队路径保持胶着",
       "details": [
         "美国夺冠概率 +0.1%",
-        "澳大利亚夺冠概率 ±0.0%",
+        "澳大利亚夺冠概率 -0.1%",
         "小组第一仍取决于末轮和净胜球"
       ],
-      "championShift": "+0.1% / ±0.0%",
+      "championShift": "+0.1% / -0.1%",
       "tone": "gold"
     },
     {
@@ -336,11 +336,11 @@
       "probability": 32,
       "title": "澳大利亚半区压力下降",
       "details": [
-        "澳大利亚夺冠概率 +0.3%",
+        "澳大利亚夺冠概率 +0.2%",
         "美国潜在淘汰赛路径变难 -0.2%",
         "小组第二路径风险上升"
       ],
-      "championShift": "+0.3%",
+      "championShift": "+0.2%",
       "tone": "blue"
     }
   ],
@@ -3697,6 +3697,146 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Fri, 19 Jun 2026 02:00:19 GMT"
+    },
+    {
+      "title": "Coventry play champions Arsenal in Premier League opener",
+      "detail": "Newly promoted Coventry City will travel to champions Arsenal in the first match of the 2026-27 Premier League season.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 09:00:40 GMT"
+    },
+    {
+      "title": "Premier League fixtures - find out your club's schedule",
+      "detail": "The Premier League fixtures are out - find out your club's schedule.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 08:39:53 GMT"
+    },
+    {
+      "title": "Scotland's totems must turn up to thwart dynamic Morocco",
+      "detail": "Scotland will need their best display since Steve Clarke took over to achieve the result against Morocco that will secure knockout tournament football for the first time, writes Tom English.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 10:43:36 GMT"
+    },
+    {
+      "title": "Wonderwall sing-along one of my favourite England moments - Kane",
+      "detail": "Harry Kane says singing 'Wonderwall' with fans after England's win over Croatia on Wednesday was one of his \"favourite ever moments\" in a Three Lions shirt.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 09:55:06 GMT"
+    },
+    {
+      "title": "The heavily jeered $250m goldmine - are hydration break ads here to stay?",
+      "detail": "BBC Sport explores how hydration break ads work in other countries and how they could impact the future of football.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 10:14:48 GMT"
+    },
+    {
+      "title": "Burnley target Bellamy in managerial hunt",
+      "detail": "Craig Bellamy is wanted by former club Burnley to become their new manager.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 10:03:09 GMT"
+    },
+    {
+      "title": "Iran to lodge complaint over travel restrictions",
+      "detail": "Iran are to lodge an official complaint to Fifa about the travel restrictions they are facing at the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 07:50:32 GMT"
+    },
+    {
+      "title": "Morocco captain Hakimi to stand trial for rape",
+      "detail": "French prosecutors confirm Morocco captain Achraf Hakimi will stand trial for rape, in accusations dating back to 2023.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 10:28:22 GMT"
+    },
+    {
+      "title": "Who am I? Guess World Cup star No 12",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 05:50:34 GMT"
+    },
+    {
+      "title": "Can Renard revive Tunisia's World Cup campaign?",
+      "detail": "Tunisia have turned to two-time Africa Cup of Nations winner Herve Renard to revive their 2026 World Cup campaign after a disastrous start which saw Sabri Lamouchi sacked after one match.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 09:47:42 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "Charlie Adam joins Rick & Lloyd to preview Scotland's huge World Cup clash with Morocco.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 07:53:00 GMT"
+    },
+    {
+      "title": "Why Pochettino's fluid USA midfield is thriving",
+      "detail": "Mauricio Pochettino has his USA midfield thriving at the World Cup with a fluid approach - here is how it works.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 08:48:45 GMT"
+    },
+    {
+      "title": "Podcast: Game day - Scotland's World Cup nerve test",
+      "detail": "Scotland brace for Morocco—tactics, nerves and World Cup belief.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Raskin seeks move amid Atalanta interest - gossip",
+      "detail": "Rangers midfielder linked with move, Hearts vacancy latest and Kilmarnock agree to sign goalkeeper.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 07:13:02 GMT"
+    },
+    {
+      "title": "World Cup 2026: Scotland fans take over Boston; Koné injury latest; USA v Australia buildup – live",
+      "detail": "<p><strong>⚽ All the latest news from day eight of the tournament<br>⚽ </strong><a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\"><strong>Player guide</strong></a><strong> | </strong><a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\"><strong>Bracketology</strong></a><strong> | </strong><a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\"><strong>Golden Boot</strong></a><strong> | </strong><a href=\"mailto:matchday.live@guardian.co.uk\"><strong>Mail us</strong></a></p><p><strong>Let’s begin our look at what will happen later today.</strong></p><p>First up is USA v Australia in Seattle at 8pm BST/12pm local time.</p> <a href=\"https://www.theguardian.com/football/live/2026/jun/19/world-cup-2026-news-kone-injury-canada-rout-scotland-big-challenge-morocco-usa-australia-buildup-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 19 Jun 2026 10:33:34 GMT"
+    },
+    {
+      "title": "‘The cops bought me an egg and cheese muffin’: Boston’s love affair with Tartan Army goes on",
+      "detail": "<p>Scotland fans in the Massachusetts city awaiting their game against Morocco have continued to make an impression on the locals</p><p>On Thursday afternoon, local broadcasters in Boston went live to an event hosted by the city’s mayor, Michelle Wu. It was a significant moment, with Wu confirming a deal that would commemorate a new chapter for the city. Representatives of the other party were also present, and they were easy to spot. Particularly the one guy in a kilt and a T-shirt reading: “I’m not perfect, but I am Scottish, and that’s kind of the same thing.”</p><p>The agreement signed will see Boston and Glasgow become twin cites. Officially, according to Wu, the arrangement will “create new opportunities for meaningful cooperation and mutual growth”. But who was she kidding. A more telling line was the one that reflected “longstanding ties between Scotland and the United States” and, of course, “the goodwill generated during the Fifa World Cup 2026”. In other words, Boston’s love affair with the Tartan Army is now official.</p> <a href=\"https://www.theguardian.com/football/2026/jun/19/the-cops-bought-me-an-egg-and-cheese-muffin-bostons-love-affair-with-tartan-army-goes-on\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 07:00:25 GMT"
+    },
+    {
+      "title": "Players are human beings and social media comments reach us. But the focus has to be on the pitch | Rodrygo",
+      "detail": "<p>The pressure of wearing the Brazil shirt can be heavy but also creates a positive kind of responsibility</p><p>Playing in a World Cup is a huge experience; when you’re with the national team, your entire focus is on the squad’s schedule – the hotel, the training centre, the stadium – basically, everything revolves around the matches.</p><p>I lived that routine daily at the 2022 World Cup and realised the immense dedication the tournament demands. In this 2026 edition, as fate would have it and as I am still recovering from my injury, I’m discovering a different side of the World Cup: a World Cup of reunions, with countless events happening simultaneously across the cities and countries, <a href=\"https://www.theguardian.com/football/2026/jun/14/england-world-cup-training-base-kansas-city-swope\">creating opportunities for conversations</a> and extraordinary experiences.</p> <a href=\"https://www.theguardian.com/football/2026/jun/19/players-are-human-beings-and-social-media-comments-reach-us-but-the-focus-has-to-be-on-the-pitch\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 19 Jun 2026 07:00:26 GMT"
+    },
+    {
+      "title": "Iran to lodge complaint with Fifa over ‘restrictions imposed’ on team at World Cup",
+      "detail": "<ul><li><p>Iran permitted to arrive in LA just 24 hours before Belgium game</p></li><li><p>Federation will express its ‘dissatisfaction’ over logistical issues</p></li></ul><p>Iran plan to lodge a formal complaint with Fifa regarding the “restrictions imposed by the organisers” on the team at the World Cup, after being told they will only be permitted to arrive in Los Angeles 24 hours before Sunday’s crucial game against Belgium.</p><p>After <a href=\"https://www.theguardian.com/football/2026/jun/16/iran-new-zealand-world-cup-2026-group-g-match-report\">Iran’s Group G opener with New Zealand</a>, their head coach, Amir Ghalenoei, argued they are the <a href=\"https://www.theguardian.com/football/2026/jun/16/amir-ghalenoei-iran-coach-mehdi-taremi-fifa-us-world-cup\">“most oppressed” team at the tournament</a>. Iran’s captain, Mehdi Taremi, said the logistical issues meant recent weeks had been a “disaster”.</p> <a href=\"https://www.theguardian.com/football/2026/jun/19/iran-lodge-complaint-fifa-restrictions-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 05:22:59 GMT"
+    },
+    {
+      "title": "Declan Rice is running out of steam, leaving Tuchel a midfield conundrum",
+      "detail": "<p>England mainstay is flagging after six years of nonstop action, but finding a solution to his absence is no easy task</p><p>A freak of nature is Aaron Cresswell’s description of Declan Rice. The former West Ham left-back marvels at Rice’s ability to keep going. “He can play six or seven games a week,” Cresswell says of his old West Ham teammate. “God knows how many he’s played in the last few years.”</p><p>The answer is 360 since the start of the 2020-21 season. The schedule has been relentless for the England midfielder. He was vital for West Ham when they had deep European runs in 2022 and 2023, was a mainstay for Gareth Southgate’s England and has been no less influential for Arsenal’s Premier League and Champions League endeavours since joining them three years ago.</p> <a href=\"https://www.theguardian.com/football/2026/jun/19/world-cup-england-rice-out-of-steam-tuchel-midfield-dilemma\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 07:00:27 GMT"
+    },
+    {
+      "title": "Happy hosts as Canada claim first win and Mexico seal knockout spot | World Cup Daily",
+      "detail": "<p><a href=\"https://bsky.app/profile/maxrushden.bsky.social\">Max Rushden</a> is joined by <a href=\"https://bsky.app/profile/did:plc:i55lfvhkg573wfmby5sdnvq6\">Barry Glendenning</a>, Nicky Bandini and Ben Fisher as Canada thrash Qatar 6-0 in Vancouver</p> <a href=\"https://www.theguardian.com/football/video/2026/jun/19/happy-hosts-as-canada-claim-first-win-and-mexico-seal-knockout-spot-world-cup-daily\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 07:38:35 GMT"
     }
   ],
   "teams": [
@@ -3712,11 +3852,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 1.7,
+        "champion": 1.6,
         "final": 4.4,
         "semifinal": 11.0,
         "quarterfinal": 24.4,
-        "change": 0.1
+        "change": 0.0
       }
     },
     {
@@ -3727,14 +3867,14 @@
         "strength": 66,
         "form": 74,
         "path": 67,
-        "squad": 73,
+        "squad": 71,
         "margin": 74
       },
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.3,
-        "quarterfinal": 1.8,
+        "quarterfinal": 1.6,
         "change": 0.0
       }
     },
@@ -3751,9 +3891,9 @@
       },
       "tournament": {
         "champion": 0.7,
-        "final": 2.2,
-        "semifinal": 6.3,
-        "quarterfinal": 19.4,
+        "final": 2.3,
+        "semifinal": 6.5,
+        "quarterfinal": 19.8,
         "change": 0.1
       }
     },
@@ -3770,9 +3910,9 @@
       },
       "tournament": {
         "champion": 0.1,
-        "final": 0.3,
+        "final": 0.2,
         "semifinal": 0.9,
-        "quarterfinal": 4.2,
+        "quarterfinal": 4.3,
         "change": -0.1
       }
     },
@@ -3784,14 +3924,14 @@
         "strength": 76,
         "form": 77,
         "path": 64,
-        "squad": 68,
+        "squad": 66,
         "margin": 76
       },
       "tournament": {
         "champion": 0.2,
-        "final": 0.9,
-        "semifinal": 3.6,
-        "quarterfinal": 14.6,
+        "final": 0.8,
+        "semifinal": 3.2,
+        "quarterfinal": 13.9,
         "change": -0.3
       }
     },
@@ -3885,7 +4025,7 @@
       "tournament": {
         "champion": 1.3,
         "final": 3.8,
-        "semifinal": 9.5,
+        "semifinal": 9.4,
         "quarterfinal": 22.7,
         "change": -0.3
       }
@@ -3923,7 +4063,7 @@
       "tournament": {
         "champion": 0.2,
         "final": 0.8,
-        "semifinal": 2.9,
+        "semifinal": 3.0,
         "quarterfinal": 10.4,
         "change": 0.0
       }
@@ -3978,11 +4118,11 @@
         "margin": 77
       },
       "tournament": {
-        "champion": 0.4,
+        "champion": 0.5,
         "final": 1.6,
         "semifinal": 5.4,
         "quarterfinal": 16.7,
-        "change": 0.1
+        "change": 0.2
       }
     },
     {
@@ -4000,7 +4140,7 @@
         "champion": 0.4,
         "final": 1.5,
         "semifinal": 4.1,
-        "quarterfinal": 9.8,
+        "quarterfinal": 9.9,
         "change": 0.0
       }
     },
@@ -4170,7 +4310,7 @@
       "tournament": {
         "champion": 3.0,
         "final": 7.1,
-        "semifinal": 15.4,
+        "semifinal": 15.5,
         "quarterfinal": 34.1,
         "change": -0.4
       }
@@ -4208,8 +4348,8 @@
       "tournament": {
         "champion": 0.3,
         "final": 1.1,
-        "semifinal": 3.4,
-        "quarterfinal": 10.6,
+        "semifinal": 3.5,
+        "quarterfinal": 10.7,
         "change": 0.1
       }
     },
@@ -4284,7 +4424,7 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 0.5,
+        "semifinal": 0.6,
         "quarterfinal": 2.7,
         "change": 0.0
       }
@@ -4396,11 +4536,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 14.5,
-        "final": 24.6,
+        "champion": 14.6,
+        "final": 24.7,
         "semifinal": 38.5,
         "quarterfinal": 52.9,
-        "change": 3.9
+        "change": 4.0
       }
     },
     {
@@ -4436,8 +4576,8 @@
       "tournament": {
         "champion": 0.7,
         "final": 2.3,
-        "semifinal": 6.5,
-        "quarterfinal": 15.1,
+        "semifinal": 6.6,
+        "quarterfinal": 15.2,
         "change": -0.5
       }
     },
@@ -4531,7 +4671,7 @@
       "tournament": {
         "champion": 2.6,
         "final": 6.8,
-        "semifinal": 15.4,
+        "semifinal": 15.5,
         "quarterfinal": 33.7,
         "change": 0.5
       }
@@ -4543,7 +4683,7 @@
       "factors": {
         "strength": 91,
         "form": 84,
-        "path": 74,
+        "path": 75,
         "squad": 84,
         "margin": 82
       },
@@ -4567,11 +4707,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 1.1,
+        "champion": 1.2,
         "final": 3.2,
         "semifinal": 7.9,
         "quarterfinal": 16.1,
-        "change": -0.2
+        "change": -0.1
       }
     },
     {
@@ -4632,18 +4772,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 476,
+      "eventCount": 496,
       "manualEventCount": 3,
-      "rawNewsCount": 473,
+      "rawNewsCount": 493,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 476,
-      "applied": 437,
+      "watched": 496,
+      "applied": 456,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 471,
+      "singleSource": 491,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -4667,7 +4807,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": 0.87,
-        "squad": 0.0
+        "squad": -2.15
       },
       "south-korea": {
         "attack": 0.0,
@@ -4688,7 +4828,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -3.8299999999999996,
-        "squad": -9.1
+        "squad": -11.25
       },
       "bosnia-herzegovina": {
         "attack": 0.0,
@@ -4967,7 +5107,7 @@
         "attack": 0.0,
         "defense": -4.3,
         "goalkeeper": 0.0,
-        "path": 0.0,
+        "path": 0.87,
         "squad": -2.15
       },
       "croatia": {
@@ -15284,173 +15424,94 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-19T05:36:12.161536+00:00",
+    "generatedAt": "2026-06-19T10:48:38.855924+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
     "items": [
       {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 19.0,
-        "currentChampion": 19.3,
-        "change": 0.3,
-        "direction": "up",
-        "reason": "四强概率上升 +0.5%",
-        "reasons": [
-          "四强概率上升 +0.5%",
-          "八强概率上升 +0.4%",
-          "决赛概率上升 +0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 17 条"
-        ]
-      },
-      {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 1.5,
-        "currentChampion": 1.3,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "路径盘下调 -0.9",
-        "reasons": [
-          "路径盘下调 -0.9",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 17 条"
-        ]
-      },
-      {
         "team": "argentina",
         "name": "阿根廷",
         "code": "ARG",
-        "previousChampion": 14.6,
-        "currentChampion": 14.5,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "八强概率下降 -0.4%",
-        "reasons": [
-          "八强概率下降 -0.4%",
-          "四强概率下降 -0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 17 条"
-        ]
-      },
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 13.6,
-        "currentChampion": 13.7,
+        "previousChampion": 14.5,
+        "currentChampion": 14.6,
         "change": 0.1,
         "direction": "up",
-        "reason": "四强概率上升 +0.2%",
+        "reason": "决赛概率上升 +0.1%",
         "reasons": [
-          "四强概率上升 +0.2%",
           "决赛概率上升 +0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 17 条"
+          "可入模型事件新增 19 条"
         ]
       },
       {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 8.5,
-        "currentChampion": 8.4,
+        "team": "mexico",
+        "name": "墨西哥",
+        "code": "MEX",
+        "previousChampion": 1.7,
+        "currentChampion": 1.6,
         "change": -0.1,
         "direction": "down",
-        "reason": "八强概率下降 -0.6%",
+        "reason": "可入模型事件新增 19 条",
         "reasons": [
-          "八强概率下降 -0.6%",
-          "四强概率下降 -0.2%",
-          "决赛概率下降 -0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 17 条"
+          "可入模型事件新增 19 条"
         ]
       },
       {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 5.8,
-        "currentChampion": 5.9,
+        "team": "croatia",
+        "name": "克罗地亚",
+        "code": "CRO",
+        "previousChampion": 1.1,
+        "currentChampion": 1.2,
         "change": 0.1,
         "direction": "up",
-        "reason": "决赛概率上升 +0.2%",
+        "reason": "可入模型事件新增 19 条",
         "reasons": [
-          "决赛概率上升 +0.2%",
-          "八强概率上升 +0.2%",
-          "四强概率上升 +0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 17 条"
+          "可入模型事件新增 19 条"
         ]
       },
       {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 5.9,
-        "currentChampion": 5.8,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.3%",
+        "team": "australia",
+        "name": "澳大利亚",
+        "code": "AUS",
+        "previousChampion": 0.4,
+        "currentChampion": 0.5,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 19 条",
         "reasons": [
-          "决赛概率下降 -0.3%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 17 条"
-        ]
-      },
-      {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 5.6,
-        "currentChampion": 5.5,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "已完赛果新增 1 场，路径重新模拟",
-        "reasons": [
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 17 条"
+          "可入模型事件新增 19 条"
         ]
       }
     ],
     "summary": {
-      "up": 12,
-      "down": 13,
+      "up": 3,
+      "down": 1,
       "largestUp": {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 19.0,
-        "currentChampion": 19.3,
-        "change": 0.3,
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 14.5,
+        "currentChampion": 14.6,
+        "change": 0.1,
         "direction": "up",
-        "reason": "四强概率上升 +0.5%",
+        "reason": "决赛概率上升 +0.1%",
         "reasons": [
-          "四强概率上升 +0.5%",
-          "八强概率上升 +0.4%",
           "决赛概率上升 +0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 17 条"
+          "可入模型事件新增 19 条"
         ]
       },
       "largestDown": {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 1.5,
-        "currentChampion": 1.3,
-        "change": -0.2,
+        "team": "mexico",
+        "name": "墨西哥",
+        "code": "MEX",
+        "previousChampion": 1.7,
+        "currentChampion": 1.6,
+        "change": -0.1,
         "direction": "down",
-        "reason": "路径盘下调 -0.9",
+        "reason": "可入模型事件新增 19 条",
         "reasons": [
-          "路径盘下调 -0.9",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 17 条"
+          "可入模型事件新增 19 条"
         ]
       }
     }
