@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-19T22:10:07.358641+00:00",
+  "updatedAt": "2026-06-19T23:38:46.255776+00:00",
   "fixtureContext": {
     "home": {
       "team": "brazil",
@@ -4379,6 +4379,34 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 19 Jun 2026 21:25:50 GMT"
+    },
+    {
+      "title": "The Super Bowl winner's son stepping into spotlight with USA",
+      "detail": "Alex Freeman is stepping out of the shadows of his Super Bowl-winning father to forge his own path in football.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 23:31:23 GMT"
+    },
+    {
+      "title": "Rate the players in Scotland v Morocco",
+      "detail": "Rate the Scotland and Morocco players out of 10 below and come back 30 minutes after full-time to see the final ratings.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 22:44:31 GMT"
+    },
+    {
+      "title": "Gary Lineker to appear as special guest on ITV during World Cup broadcast",
+      "detail": "<ul><li><p>Former Match of the Day presenter left BBC last year</p></li><li><p>Lineker to feature in coverage of Germany v Côte d’Ivoire</p></li></ul><p>Gary Lineker has been booked to appear as a special guest on ITV’s World Cup coverage of Germany v Côte d’Ivoire on Saturday evening in his first appearance on terrestrial television since <a href=\"https://www.theguardian.com/football/2025/may/19/gary-lineker-to-leave-bbc\">leaving the BBC 13 months ago</a>.</p><p>The former Match of the Day presenter is in New York recording daily episodes of The Rest is Football podcast, which is being shown on Netflix, and has agreed to make a one-off appearance in ITV’s Brooklyn studio.</p> <a href=\"https://www.theguardian.com/football/2026/jun/19/gary-lineker-to-appear-as-special-guest-on-itv-during-world-cup-broadcast\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 21:51:46 GMT"
+    },
+    {
+      "title": "Brazil v Haiti: World Cup 2026 – live",
+      "detail": "<p>⚽️ Kick-off time: 8.30pm local/10.30am AEST/1.30am BST<br>⚽️ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:jonathan.howcroft.freelance@theguardian.com\">Mail Jonathan</a></p><p><strong>Only one contest has been played to completion so far this matchday and it was a good one for the USA.</strong> The hosts guaranteed their participation in the knockout phase with a needly 2-0 victory over an Australian side that regressed towards the mean following their outstanding opening win over Turkey.</p><p>Australia looked like a bunch of bananas in their all-yellow strip against the USA, and it is tempting to call this comprehensive 2-0 defeat a banana skin in the Socceroos’ <a href=\"https://www.theguardian.com/football/world-cup-football\">World Cup</a> campaign. In truth, however, this was less a slip up than a humbling, and the visitors proved ripe opposition as the hosts came and took what they wanted.</p><p>Two of the first round of matches at the <a href=\"https://www.theguardian.com/football/world-cup-football\">World Cup</a> were played at a level of severe heat that a football players’ union has previously said should trigger the delay or postponement of games, a Guardian analysis has found. A further four games were played in cities with temperatures also beyond that level of heat, though conditions inside the stadiums were mitigated by air conditioning.</p> <a href=\"https://www.theguardian.com/football/live/2026/jun/20/fifa-world-cup-2026-live-brazil-v-haiti-updates-bra-vs-hai-group-c-match-score-latest\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 19 Jun 2026 23:18:29 GMT"
     }
   ],
   "teams": [
@@ -4541,7 +4569,7 @@
       "factors": {
         "strength": 91,
         "form": 85,
-        "path": 71,
+        "path": 70,
         "squad": 80,
         "margin": 84
       },
@@ -5314,18 +5342,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 540,
+      "eventCount": 544,
       "manualEventCount": 3,
-      "rawNewsCount": 537,
+      "rawNewsCount": 541,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 540,
-      "applied": 498,
+      "watched": 544,
+      "applied": 502,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 535,
+      "singleSource": 539,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -5397,7 +5425,7 @@
         "attack": -2.5,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": -3.07,
+        "path": -3.9899999999999998,
         "squad": -6.449999999999999
       },
       "morocco": {
@@ -15966,182 +15994,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-19T22:10:44.395141+00:00",
+    "generatedAt": "2026-06-19T23:39:22.868127+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 5.8,
-        "currentChampion": 6.0,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "四强概率上升 +0.6%",
-        "reasons": [
-          "四强概率上升 +0.6%",
-          "决赛概率上升 +0.5%",
-          "八强概率上升 +0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 2 条"
-        ]
-      },
-      {
-        "team": "uruguay",
-        "name": "乌拉圭",
-        "code": "URU",
-        "previousChampion": 2.3,
-        "currentChampion": 2.1,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "四强概率下降 -0.4%",
-        "reasons": [
-          "四强概率下降 -0.4%",
-          "决赛概率下降 -0.2%",
-          "八强概率下降 -0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 2 条"
-        ]
-      },
-      {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 1.4,
-        "currentChampion": 1.6,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "路径盘上调 +0.7",
-        "reasons": [
-          "路径盘上调 +0.7",
-          "人员盘上调 +0.7",
-          "八强概率上升 +2.8%",
-          "四强概率上升 +1.2%",
-          "决赛概率上升 +0.6%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 2 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 19.3,
-        "currentChampion": 19.2,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "四强概率下降 -0.1%",
-        "reasons": [
-          "四强概率下降 -0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 2 条"
-        ]
-      },
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 14.6,
-        "currentChampion": 14.7,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.2%",
-        "reasons": [
-          "四强概率上升 +0.2%",
-          "八强概率上升 +0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 2 条"
-        ]
-      },
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 13.7,
-        "currentChampion": 13.6,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "四强概率下降 -0.3%",
-        "reasons": [
-          "四强概率下降 -0.3%",
-          "决赛概率下降 -0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 2 条"
-        ]
-      },
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 8.4,
-        "currentChampion": 8.3,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "四强概率下降 -0.5%",
-        "reasons": [
-          "四强概率下降 -0.5%",
-          "八强概率下降 -0.3%",
-          "决赛概率下降 -0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 2 条"
-        ]
-      },
-      {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 5.9,
-        "currentChampion": 5.8,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.2%",
-        "reasons": [
-          "决赛概率下降 -0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 2 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 9,
-      "down": 9,
-      "largestUp": {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 5.8,
-        "currentChampion": 6.0,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "四强概率上升 +0.6%",
-        "reasons": [
-          "四强概率上升 +0.6%",
-          "决赛概率上升 +0.5%",
-          "八强概率上升 +0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 2 条"
-        ]
-      },
-      "largestDown": {
-        "team": "uruguay",
-        "name": "乌拉圭",
-        "code": "URU",
-        "previousChampion": 2.3,
-        "currentChampion": 2.1,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "四强概率下降 -0.4%",
-        "reasons": [
-          "四强概率下降 -0.4%",
-          "决赛概率下降 -0.2%",
-          "八强概率下降 -0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 2 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }

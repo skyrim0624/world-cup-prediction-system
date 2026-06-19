@@ -7500,5 +7500,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-f16ad684a3ce",
+    "title": "The Super Bowl winner's son stepping into spotlight with USA",
+    "summary": "Alex Freeman is stepping out of the shadows of his Super Bowl-winning father to forge his own path in football.",
+    "source": "bbc",
+    "team": "usa",
+    "status": "single_source",
+    "published_at": "Fri, 19 Jun 2026 23:31:23 GMT",
+    "url": "https://www.bbc.com/sport/football/articles/ckg4qvedjkwo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-80e0c149e866",
+    "title": "Rate the players in Scotland v Morocco",
+    "summary": "Rate the Scotland and Morocco players out of 10 below and come back 30 minutes after full-time to see the final ratings.",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Fri, 19 Jun 2026 22:44:31 GMT",
+    "url": "https://www.bbc.com/sport/football/articles/ce95gpgv09go?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-3efaaf6d13f0",
+    "title": "Gary Lineker to appear as special guest on ITV during World Cup broadcast",
+    "summary": "<ul><li><p>Former Match of the Day presenter left BBC last year</p></li><li><p>Lineker to feature in coverage of Germany v Côte d’Ivoire</p></li></ul><p>Gary Lineker has been booked to appear as a special guest on ITV’s World Cup coverage of Germany v Côte d’Ivoire on Saturday evening in his first appearance on terrestrial television since <a href=\"https://www.theguardian.com/football/2025/may/19/gary-lineker-to-leave-bbc\">leaving the BBC 13 months ago</a>.</p><p>The former Match of the Day presenter is in New York recording daily episodes of The Rest is Football podcast, which is being shown on Netflix, and has agreed to make a one-off appearance in ITV’s Brooklyn studio.</p> <a href=\"https://www.theguardian.com/football/2026/jun/19/gary-lineker-to-appear-as-special-guest-on-itv-during-world-cup-broadcast\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Fri, 19 Jun 2026 21:51:46 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/19/gary-lineker-to-appear-as-special-guest-on-itv-during-world-cup-broadcast",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-22b4516ef4b5",
+    "title": "Brazil v Haiti: World Cup 2026 – live",
+    "summary": "<p>⚽️ Kick-off time: 8.30pm local/10.30am AEST/1.30am BST<br>⚽️ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:jonathan.howcroft.freelance@theguardian.com\">Mail Jonathan</a></p><p><strong>Only one contest has been played to completion so far this matchday and it was a good one for the USA.</strong> The hosts guaranteed their participation in the knockout phase with a needly 2-0 victory over an Australian side that regressed towards the mean following their outstanding opening win over Turkey.</p><p>Australia looked like a bunch of bananas in their all-yellow strip against the USA, and it is tempting to call this comprehensive 2-0 defeat a banana skin in the Socceroos’ <a href=\"https://www.theguardian.com/football/world-cup-football\">World Cup</a> campaign. In truth, however, this was less a slip up than a humbling, and the visitors proved ripe opposition as the hosts came and took what they wanted.</p><p>Two of the first round of matches at the <a href=\"https://www.theguardian.com/football/world-cup-football\">World Cup</a> were played at a level of severe heat that a football players’ union has previously said should trigger the delay or postponement of games, a Guardian analysis has found. A further four games were played in cities with temperatures also beyond that level of heat, though conditions inside the stadiums were mitigated by air conditioning.</p> <a href=\"https://www.theguardian.com/football/live/2026/jun/20/fifa-world-cup-2026-live-brazil-v-haiti-updates-bra-vs-hai-group-c-match-score-latest\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Fri, 19 Jun 2026 23:18:29 GMT",
+    "url": "https://www.theguardian.com/football/live/2026/jun/20/fifa-world-cup-2026-live-brazil-v-haiti-updates-bra-vs-hai-group-c-match-score-latest",
+    "category": "weather",
+    "factor": "path",
+    "direction": -1,
+    "confidence": 0.66
   }
 ]
