@@ -10,7 +10,7 @@
   "homeWin": 43,
   "draw": 26,
   "awayWin": 32,
-  "updatedAt": "2026-06-19T10:48:03.157577+00:00",
+  "updatedAt": "2026-06-19T14:15:43.324284+00:00",
   "fixtureContext": {
     "home": {
       "team": "usa",
@@ -3837,6 +3837,83 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 19 Jun 2026 07:38:35 GMT"
+    },
+    {
+      "title": "Stick or twist? Rashford and Guehi are Tuchel's big dilemmas",
+      "detail": "Before England's World Cup match against Ghana on Tuesday, BBC Sport's Phil McNulty looks at Thomas Tuchel's big selection dilemmas.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 12:20:37 GMT"
+    },
+    {
+      "title": "Nike v Adidas - the World Cup brand battle",
+      "detail": "Eye-watering budgets are nothing new, but this year both Nike and Adidas have gone bigger and bolder than ever before in the fight for World Cup attention.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 13:01:38 GMT"
+    },
+    {
+      "title": "The US World Cup star who couldn't be an American under Trump's plan",
+      "detail": "Folarin Balogun scored two goals on his World Cup debut, but he is the type of person President Trump is trying to ban under birthright citizenship.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 11:21:09 GMT"
+    },
+    {
+      "title": "London City Lionesses sign ex-England keeper Earps",
+      "detail": "Former England goalkeeper Mary Earps joins London City Lionesses on a two-year deal after leaving Paris St-Germain.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 11:00:18 GMT"
+    },
+    {
+      "title": "Who's the Bos? - meet 2026 World Cup's fastest player",
+      "detail": "Fifa’s sprint data has revealed Australia’s Jordan Bos as the fastest player at World Cup 2026, capping a remarkable rise for the Feyenoord defender",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 12:43:36 GMT"
+    },
+    {
+      "title": "World Cup quiz: Who has most Scotland appearances?",
+      "detail": "Test your knowledge of Scotland players with at least five appearances at World Cups.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 12:32:42 GMT"
+    },
+    {
+      "title": "Fifa bans football club's submarine badge on flag",
+      "detail": "The Barrow flag is banned from World Cup stadiums as it includes a depiction of military equipment.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 12:11:13 GMT"
+    },
+    {
+      "title": "More than the Score",
+      "detail": "Discover why the history between Haitian and Brazilian football runs deep",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 10:41:00 GMT"
+    },
+    {
+      "title": "‘I paid $800 for my ticket but it was worth it’: England fans enjoying early World Cup vibe",
+      "detail": "<p>Some supporters are breaking the bank to follow Thomas Tuchel’s team and early indications are that it’s worth it</p><p>They came, they saw and they went to the rodeo. For those England fans who made it to Dallas, watching Thomas Tuchel’s side see off Croatia in their opening match of the 2026 World Cup was the experience of a lifetime.</p><p>“I’ve never been to a World Cup game before so I thought it was something I couldn’t miss out on,” says Oli Lee, a music producer from Kent who now lives in Los Angeles and is otherwise known as one half of the Snakehips duo who had a UK top-five hit in 2015. “I paid $800 (£604) for my ticket but it was all worth it. We had a bit of a session in Dallas – I ended up jumping in a pool with my phone in my pocket but it’s still working somehow!”</p> <a href=\"https://www.theguardian.com/football/2026/jun/19/i-paid-800-for-my-ticket-but-it-was-worth-it-england-fans-enjoying-early-world-cup-vibe\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 12:42:06 GMT"
+    },
+    {
+      "title": "Two World Cup matches were played in ‘severe heat’, analysis finds",
+      "detail": "<p>Games in Miami and Monterrey were at heat level a players’ union had warned in the past should trigger delays</p><p>Two of the first round of matches at the World Cup were played at a level of severe heat that a football players’ union has previously said should trigger the delay or postponement of games, a Guardian analysis has found.</p><p>A further four games were played in cities with temperatures also beyond that level of heat, though conditions inside the stadiums were mitigated by air conditioning.</p> <a href=\"https://www.theguardian.com/football/2026/jun/19/world-cup-matches-severe-heat-level-analysis\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 19 Jun 2026 12:30:31 GMT"
+    },
+    {
+      "title": "ITV wins World Cup ratings battle with BBC in tournament’s first week",
+      "detail": "<ul><li><p>England v Croatia attracted year’s highest UK TV figures</p></li><li><p>BBC opted for more first-pick games in knockout stages</p></li></ul><p>ITV is winning the UK television ratings battle after the first week of the World Cup. Viewing figures obtained by the Guardian from Barb, which measures audience numbers, show the commercial channel had four of the five highest TV audiences, topped by <a href=\"https://www.theguardian.com/football/2026/jun/17/england-croatia-world-cup-2026-group-l-match-report\">England’s 4-2 win</a> over Croatia.</p><p>England’s victory in Dallas attracted a peak audience of 15.4 million on ITV and an average of more than 10 million, the highest UK TV viewing figures of the year.</p> <a href=\"https://www.theguardian.com/football/2026/jun/19/itv-wins-world-cup-ratings-battle-bbc-first-week-england-croatia\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 19 Jun 2026 10:53:56 GMT"
     }
   ],
   "teams": [
@@ -4132,7 +4209,7 @@
       "factors": {
         "strength": 79,
         "form": 78,
-        "path": 69,
+        "path": 68,
         "squad": 81,
         "margin": 77
       },
@@ -4772,18 +4849,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 496,
+      "eventCount": 507,
       "manualEventCount": 3,
-      "rawNewsCount": 493,
+      "rawNewsCount": 504,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 496,
-      "applied": 456,
+      "watched": 507,
+      "applied": 467,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 491,
+      "singleSource": 502,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -4904,7 +4981,7 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 0.87,
+        "path": -0.050000000000000044,
         "squad": 1.65
       },
       "germany": {
@@ -15424,96 +15501,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-19T10:48:38.855924+00:00",
+    "generatedAt": "2026-06-19T14:16:19.890511+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 14.5,
-        "currentChampion": 14.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 19 条"
-        ]
-      },
-      {
-        "team": "mexico",
-        "name": "墨西哥",
-        "code": "MEX",
-        "previousChampion": 1.7,
-        "currentChampion": 1.6,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 19 条",
-        "reasons": [
-          "可入模型事件新增 19 条"
-        ]
-      },
-      {
-        "team": "croatia",
-        "name": "克罗地亚",
-        "code": "CRO",
-        "previousChampion": 1.1,
-        "currentChampion": 1.2,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 19 条",
-        "reasons": [
-          "可入模型事件新增 19 条"
-        ]
-      },
-      {
-        "team": "australia",
-        "name": "澳大利亚",
-        "code": "AUS",
-        "previousChampion": 0.4,
-        "currentChampion": 0.5,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 19 条",
-        "reasons": [
-          "可入模型事件新增 19 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 3,
-      "down": 1,
-      "largestUp": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 14.5,
-        "currentChampion": 14.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 19 条"
-        ]
-      },
-      "largestDown": {
-        "team": "mexico",
-        "name": "墨西哥",
-        "code": "MEX",
-        "previousChampion": 1.7,
-        "currentChampion": 1.6,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 19 条",
-        "reasons": [
-          "可入模型事件新增 19 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
