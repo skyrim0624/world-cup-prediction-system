@@ -351,9 +351,11 @@
     "away": "morocco",
     "stage": "小组赛 C 组",
     "kickoff": "6月19日 18:00 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "Boston",
-    "stadium": "Boston Stadium"
+    "stadium": "Boston Stadium",
+    "home_score": 0,
+    "away_score": 1
   },
   {
     "match_no": 31,
@@ -371,7 +373,7 @@
     "away": "australia",
     "stage": "小组赛 D 组",
     "kickoff": "6月19日 15:00 ET",
-    "status": "live",
+    "status": "finished",
     "city": "Seattle",
     "stadium": "Seattle Stadium",
     "home_score": 2,

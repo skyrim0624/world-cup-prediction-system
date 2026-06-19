@@ -7472,5 +7472,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-9d67a6a9d992",
+    "title": "USA close in on last 32 with win over Australia",
+    "summary": "The United States take a huge step towards winning their World Cup group beating Australia 2-0 with a dominant, high-energy performance in front of a boisterous sellout crowd in Seattle.",
+    "source": "bbc",
+    "team": "usa",
+    "status": "single_source",
+    "published_at": "Fri, 19 Jun 2026 21:46:26 GMT",
+    "url": "https://www.bbc.com/sport/football/videos/c30ylqjmpgyo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-fbf3a5feafc4",
+    "title": "USA surge into World Cup knockout stage after dominant victory over Socceroos",
+    "summary": "<p>Soccer won. That much could have been predicted before a temperate and bright Friday afternoon in the Pacific north-west, in a rare match between two sides that can agree on that terminology.</p><p>The manner of play, too, had been predicted by the players and coaches of both teams: a tight, competitive match of football (or whatever you want to call it), with <a href=\"https://www.theguardian.com/football/live/2026/jun/19/usa-v-australia-world-cup-2026-live\">a 2-0 win for the United States</a> delighting the vast majority of the 66,925-strong sellout crowd and securing the host nation’s place in the knockout round.</p> <a href=\"https://www.theguardian.com/football/2026/jun/19/usa-australia-world-cup-2026-group-d-match-report\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Fri, 19 Jun 2026 21:25:50 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/19/usa-australia-world-cup-2026-group-d-match-report",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
