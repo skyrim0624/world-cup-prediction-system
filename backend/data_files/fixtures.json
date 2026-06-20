@@ -341,9 +341,11 @@
     "away": "haiti",
     "stage": "小组赛 C 组",
     "kickoff": "6月19日 20:30 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Philadelphia",
-    "stadium": "Philadelphia Stadium"
+    "stadium": "Philadelphia Stadium",
+    "home_score": 3,
+    "away_score": 0
   },
   {
     "match_no": 30,
@@ -351,7 +353,7 @@
     "away": "morocco",
     "stage": "小组赛 C 组",
     "kickoff": "6月19日 18:00 ET",
-    "status": "live",
+    "status": "finished",
     "city": "Boston",
     "stadium": "Boston Stadium",
     "home_score": 0,
@@ -363,9 +365,11 @@
     "away": "paraguay",
     "stage": "小组赛 D 组",
     "kickoff": "6月19日 23:00 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "San Francisco Bay Area",
-    "stadium": "San Francisco Bay Stadium"
+    "stadium": "San Francisco Bay Stadium",
+    "home_score": 0,
+    "away_score": 1
   },
   {
     "match_no": 32,
