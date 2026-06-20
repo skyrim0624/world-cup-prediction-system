@@ -389,9 +389,11 @@
     "away": "cote-divoire",
     "stage": "小组赛 E 组",
     "kickoff": "6月20日 16:00 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "Toronto",
-    "stadium": "Toronto Stadium"
+    "stadium": "Toronto Stadium",
+    "home_score": 0,
+    "away_score": 0
   },
   {
     "match_no": 34,
@@ -409,7 +411,7 @@
     "away": "sweden",
     "stage": "小组赛 F 组",
     "kickoff": "6月20日 13:00 ET",
-    "status": "live",
+    "status": "finished",
     "city": "Houston",
     "stadium": "Houston Stadium",
     "home_score": 5,
