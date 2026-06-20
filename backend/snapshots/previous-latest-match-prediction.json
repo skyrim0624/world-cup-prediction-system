@@ -10,7 +10,7 @@
   "homeWin": 64,
   "draw": 20,
   "awayWin": 16,
-  "updatedAt": "2026-06-20T10:59:48.915180+00:00",
+  "updatedAt": "2026-06-20T12:57:42.228228+00:00",
   "fixtureContext": {
     "home": {
       "team": "netherlands",
@@ -4530,6 +4530,41 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 20 Jun 2026 08:31:54 GMT"
+    },
+    {
+      "title": "Curacao's trailblazer doctor on football's big stage",
+      "detail": "Dr Suzanne Huurman is head of medical staff for Curacao's national men's side - the World Cup's smallest ever team by population and size.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 12:35:17 GMT"
+    },
+    {
+      "title": "Oh, brother! The sibling rivals lining up for different World Cup teams",
+      "detail": "Sibling rivals are lining up for different teams at the World Cup, with seven pairs of brothers in total at this tournament.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 11:55:37 GMT"
+    },
+    {
+      "title": "Why are so many World Cup goals being scored late?",
+      "detail": "World Cup 2026 is witnessing a surge in late goals. Longer stoppage times, tactical substitutions and hydration breaks are reshaping matches",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 11:39:00 GMT"
+    },
+    {
+      "title": "What next for McAtee amid Anderson uncertainty?",
+      "detail": "After struggling to break through at Nottingham Forest last season, will James McAtee get his chance if Elliot Anderson leaves for Manchester City?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 11:26:59 GMT"
+    },
+    {
+      "title": "David Raya: ‘When you lose a Champions League final it destroys you inside’",
+      "detail": "<p>The goalkeeper discusses being bullied by 35-year-olds in the English fifth tier, winning the Premier League and competition in the Spain squad</p><p>“No, no, there’s someone else,” David Raya says, leaping out of his chair at Spain’s training camp in Chattanooga, Tennessee, pulling his phone from the wash bag sitting on the floor and starting to scroll. Ah, look, here it is,” he says eventually, reading from the screen: “‘… the goalkeeper, who played in yesterday’s match, was at Southport on loan from Oxford United…’ Yeah, Max Crocombe. I <em>think</em> that is right”</p><p>And so then there were four, another name to add to the list. Peter Withe, Stan Mortensen, him, and now New Zealand’s No 1: the men who played for Southport and went to a World Cup.</p> <a href=\"https://www.theguardian.com/football/2026/jun/20/david-raya-when-you-lose-a-champions-league-final-it-destroys-you-inside\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sat, 20 Jun 2026 11:00:04 GMT"
     }
   ],
   "teams": [
@@ -5465,18 +5500,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 595,
+      "eventCount": 600,
       "manualEventCount": 3,
-      "rawNewsCount": 592,
+      "rawNewsCount": 597,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 595,
-      "applied": 548,
+      "watched": 600,
+      "applied": 552,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 590,
+      "singleSource": 595,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -5562,7 +5597,7 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 0.0,
+        "path": -0.92,
         "squad": 0.0
       },
       "scotland": {
@@ -16117,7 +16152,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-20T11:00:24.763323+00:00",
+    "generatedAt": "2026-06-20T12:58:17.374167+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
