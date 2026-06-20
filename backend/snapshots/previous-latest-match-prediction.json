@@ -10,7 +10,7 @@
   "homeWin": 64,
   "draw": 20,
   "awayWin": 16,
-  "updatedAt": "2026-06-20T08:03:58.807639+00:00",
+  "updatedAt": "2026-06-20T10:59:48.915180+00:00",
   "fixtureContext": {
     "home": {
       "team": "netherlands",
@@ -4495,6 +4495,41 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 20 Jun 2026 04:00:53 GMT"
+    },
+    {
+      "title": "'Everything I do is for you' - how tragedy is driving Diomande",
+      "detail": "BBC Sport explores how exciting young Ivory Coast Yan Diomande is determined to succeed at the World Cup in honour of his sister.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 08:56:58 GMT"
+    },
+    {
+      "title": "White House in talks over Iran travel restrictions",
+      "detail": "The White House is considering changing the strict travel restrictions Iran are facing at the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 08:52:50 GMT"
+    },
+    {
+      "title": "Cooper on Wales' radar amid Bellamy's Burnley links",
+      "detail": "Wales are preparing for head coach Craig Bellamy's possible move to Burnley with a shortlist of potential successors which includes former Nottingham Forest boss Steve Cooper.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 10:02:34 GMT"
+    },
+    {
+      "title": "Oxford announce exit of head coach Bloomfield",
+      "detail": "Oxford United announce head coach Matt Bloomfield has left the club.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 10:43:13 GMT"
+    },
+    {
+      "title": "USA go supersonic in Seattle and Morocco squeeze past Scotland | World Cup Daily",
+      "detail": "<p><a href=\"https://bsky.app/profile/maxrushden.bsky.social\">Max Rushden</a> is joined by <a href=\"https://bsky.app/profile/did:plc:i55lfvhkg573wfmby5sdnvq6\">Barry Glendenning</a>, <a href=\"https://bsky.app/profile/larssivertsen.bsky.social\">Lars Sivertsen</a>, Seb Hutchinson, <a href=\"https://bsky.app/profile/jacksongs.bsky.social\">Jack Snape</a>, <a href=\"https://bsky.app/profile/anabnos.com\">Alex Abnos</a> and Ewan Murray as the USA progress to the round of 32</p> <a href=\"https://www.theguardian.com/football/video/2026/jun/20/usa-go-supersonic-in-seattle-and-morocco-squeeze-past-scotland-world-cup-daily\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 08:31:54 GMT"
     }
   ],
   "teams": [
@@ -5430,18 +5465,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 590,
+      "eventCount": 595,
       "manualEventCount": 3,
-      "rawNewsCount": 587,
+      "rawNewsCount": 592,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 590,
-      "applied": 544,
+      "watched": 595,
+      "applied": 548,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 585,
+      "singleSource": 590,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -16082,176 +16117,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-20T08:04:35.154904+00:00",
+    "generatedAt": "2026-06-20T11:00:24.763323+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 13.6,
-        "currentChampion": 13.8,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "已完赛果新增 1 场，路径重新模拟",
-        "reasons": [
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 24 条"
-        ]
-      },
-      {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 1.8,
-        "currentChampion": 1.6,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "四强概率下降 -0.1%",
-        "reasons": [
-          "四强概率下降 -0.1%",
-          "决赛概率下降 -0.1%",
-          "八强概率下降 -0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 24 条"
-        ]
-      },
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 8.1,
-        "currentChampion": 8.2,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.3%",
-        "reasons": [
-          "四强概率上升 +0.3%",
-          "八强概率上升 +0.2%",
-          "决赛概率上升 +0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 24 条"
-        ]
-      },
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 6.0,
-        "currentChampion": 5.9,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "八强概率下降 -0.4%",
-        "reasons": [
-          "八强概率下降 -0.4%",
-          "决赛概率下降 -0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 24 条"
-        ]
-      },
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 5.0,
-        "currentChampion": 5.1,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.4%",
-        "reasons": [
-          "决赛概率上升 +0.4%",
-          "四强概率上升 +0.2%",
-          "八强概率上升 +0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 24 条"
-        ]
-      },
-      {
-        "team": "belgium",
-        "name": "比利时",
-        "code": "BEL",
-        "previousChampion": 3.0,
-        "currentChampion": 3.1,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 24 条"
-        ]
-      },
-      {
-        "team": "colombia",
-        "name": "哥伦比亚",
-        "code": "COL",
-        "previousChampion": 2.6,
-        "currentChampion": 2.7,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "已完赛果新增 1 场，路径重新模拟",
-        "reasons": [
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 24 条"
-        ]
-      },
-      {
-        "team": "uruguay",
-        "name": "乌拉圭",
-        "code": "URU",
-        "previousChampion": 2.3,
-        "currentChampion": 2.2,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "四强概率下降 -0.3%",
-        "reasons": [
-          "四强概率下降 -0.3%",
-          "决赛概率下降 -0.2%",
-          "八强概率下降 -0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 24 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 7,
-      "down": 8,
-      "largestUp": {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 13.6,
-        "currentChampion": 13.8,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "已完赛果新增 1 场，路径重新模拟",
-        "reasons": [
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 24 条"
-        ]
-      },
-      "largestDown": {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 1.8,
-        "currentChampion": 1.6,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "四强概率下降 -0.1%",
-        "reasons": [
-          "四强概率下降 -0.1%",
-          "决赛概率下降 -0.1%",
-          "八强概率下降 -0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 24 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
