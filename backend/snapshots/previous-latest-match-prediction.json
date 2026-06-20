@@ -10,7 +10,7 @@
   "homeWin": 74,
   "draw": 16,
   "awayWin": 10,
-  "updatedAt": "2026-06-20T20:21:37.174343+00:00",
+  "updatedAt": "2026-06-20T21:49:25.030253+00:00",
   "fixtureContext": {
     "home": {
       "team": "ecuador",
@@ -4967,6 +4967,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 20 Jun 2026 19:00:09 GMT"
+    },
+    {
+      "title": "Scotland expects: What is behind McTominay's understated World Cup?",
+      "detail": "Some are suggesting Scott McTominay has not had the expected impact for Scotland at the World Cup, but is that fair on the Napoli midfielder?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 20:16:11 GMT"
+    },
+    {
+      "title": "Newcastle reject Spurs bid of about £80m for Tonali",
+      "detail": "Newcastle United reject a bid from Tottenham Hotspur for midfielder Sandro Tonali of about £80m.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 21:39:47 GMT"
+    },
+    {
+      "title": "Chelsea weigh up Wirtz move - Sunday's gossip",
+      "detail": "Chelsea considering Florian Wirtz move, Felix Nmecha open to England return and Aston Villa among Nick Woltemade suitors, plus more.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 21:29:41 GMT"
+    },
+    {
+      "title": "Sources: Newcastle reject Spurs' $100M Tonali bid",
+      "detail": "Tottenham Hotspur have had an offer worth in the region of £75 million ($100m) rejected by Newcastle United for Sandro Tonali, sources have confirmed to ESPN.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 17:43:24 EST"
+    },
+    {
+      "title": "Dalot: Portugal prepped for team, Ronaldo critics",
+      "detail": "Diogo Dalot has said Portugal took time before the World Cup to prepare for any potential backlash on social media, adding that having a player like Cristiano Ronaldo meant they needed to.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 17:43:23 EST"
+    },
+    {
+      "title": "Netherlands thump Sweden 5-1 in statement win",
+      "detail": "Brian Brobbey and Cody Gakpo scored two each as Netherlands cruised to a 5-1 World Cup victory over Sweden to go top of Group F.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 17:43:24 EST"
+    },
+    {
+      "title": "World Cup baby joy for Norway’s Østigård while Doku plans to fly home for birth",
+      "detail": "<ul><li><p>Belgian’s decision sparked criticism in some quarters</p></li><li><p>Norwegian defender followed son’s birth on video link</p></li></ul><p>Family life is intruding on the World Cup for some players in the shape of new arrivals, with Norway’s Leo Østigård following the birth of his first child by video link and Jérémy Doku contemplating leaving the Belgium squad to be with his wife when she gives birth, potentially ⁠missing a key match.</p><p>Østigård, who has been receiving parenting tips from his teammate ⁠Erling Haaland, provided long-distance support to his partner, Aurora Eidmann, as she gave birth to their ⁠son on Friday.</p> <a href=\"https://www.theguardian.com/football/2026/jun/20/world-cup-baby-joy-norway-leo-ostigard-jeremy-doku-belgium-plans-birth\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 20:06:18 GMT"
     }
   ],
   "teams": [
@@ -4984,7 +5033,7 @@
       "tournament": {
         "champion": 1.7,
         "final": 4.4,
-        "semifinal": 11.1,
+        "semifinal": 11.0,
         "quarterfinal": 24.9,
         "change": 0.0
       }
@@ -5326,9 +5375,9 @@
       "tournament": {
         "champion": 0.3,
         "final": 1.1,
-        "semifinal": 3.9,
+        "semifinal": 4.0,
         "quarterfinal": 12.6,
-        "change": -0.1
+        "change": -0.2
       }
     },
     {
@@ -5364,7 +5413,7 @@
       "tournament": {
         "champion": 5.7,
         "final": 11.3,
-        "semifinal": 21.8,
+        "semifinal": 21.7,
         "quarterfinal": 41.8,
         "change": -0.9
       }
@@ -5801,7 +5850,7 @@
       "tournament": {
         "champion": 2.6,
         "final": 6.8,
-        "semifinal": 15.6,
+        "semifinal": 15.5,
         "quarterfinal": 34.3,
         "change": 0.6
       }
@@ -5902,18 +5951,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 624,
+      "eventCount": 631,
       "manualEventCount": 3,
-      "rawNewsCount": 621,
+      "rawNewsCount": 628,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 624,
-      "applied": 576,
+      "watched": 631,
+      "applied": 582,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 619,
+      "singleSource": 626,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -16554,181 +16603,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-20T20:22:12.737727+00:00",
+    "generatedAt": "2026-06-20T21:49:59.632681+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 8.2,
-        "currentChampion": 7.9,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.3%",
-        "reasons": [
-          "决赛概率下降 -0.3%",
-          "四强概率下降 -0.2%",
-          "八强概率下降 -0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 5.7,
-        "currentChampion": 6.0,
-        "change": 0.3,
-        "direction": "up",
-        "reason": "八强概率上升 +0.7%",
-        "reasons": [
-          "八强概率上升 +0.7%",
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.4%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "japan",
-        "name": "日本",
-        "code": "JPN",
-        "previousChampion": 1.4,
-        "currentChampion": 1.6,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.2%",
-        "reasons": [
-          "决赛概率上升 +0.2%",
-          "四强概率上升 +0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 19.0,
-        "currentChampion": 19.1,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.2%",
-        "reasons": [
-          "决赛概率上升 +0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 5.8,
-        "currentChampion": 5.9,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.1%",
-        "reasons": [
-          "八强概率上升 +0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 5.8,
-        "currentChampion": 5.7,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.4%",
-        "reasons": [
-          "决赛概率下降 -0.4%",
-          "四强概率下降 -0.3%",
-          "八强概率下降 -0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 5.5,
-        "currentChampion": 5.4,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "四强概率下降 -0.6%",
-        "reasons": [
-          "四强概率下降 -0.6%",
-          "八强概率下降 -0.5%",
-          "决赛概率下降 -0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "belgium",
-        "name": "比利时",
-        "code": "BEL",
-        "previousChampion": 3.1,
-        "currentChampion": 3.0,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "四强概率下降 -0.4%",
-        "reasons": [
-          "四强概率下降 -0.4%",
-          "决赛概率下降 -0.3%",
-          "八强概率下降 -0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 6,
-      "down": 8,
-      "largestUp": {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 5.7,
-        "currentChampion": 6.0,
-        "change": 0.3,
-        "direction": "up",
-        "reason": "八强概率上升 +0.7%",
-        "reasons": [
-          "八强概率上升 +0.7%",
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.4%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      "largestDown": {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 8.2,
-        "currentChampion": 7.9,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.3%",
-        "reasons": [
-          "决赛概率下降 -0.3%",
-          "四强概率下降 -0.2%",
-          "八强概率下降 -0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
