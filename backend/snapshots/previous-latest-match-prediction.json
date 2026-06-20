@@ -10,7 +10,7 @@
   "homeWin": 64,
   "draw": 20,
   "awayWin": 16,
-  "updatedAt": "2026-06-20T12:57:42.228228+00:00",
+  "updatedAt": "2026-06-20T15:07:59.608150+00:00",
   "fixtureContext": {
     "home": {
       "team": "netherlands",
@@ -4565,6 +4565,27 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Sat, 20 Jun 2026 11:00:04 GMT"
+    },
+    {
+      "title": "Why Kane is different at this World Cup",
+      "detail": "Former England captain Alan Shearer explains what has changed for Harry Kane since his struggles at the 2022 World Cup in Qatar.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 13:24:12 GMT"
+    },
+    {
+      "title": "'Star in the making' - What is Man City's plan for forgotten man Reis?",
+      "detail": "Manchester City are still awaiting the arrival of their new manager but forgotten defender Vitor Reis will be back in the building following his season-long loan spell in La Liga.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 13:39:38 GMT"
+    },
+    {
+      "title": "Football Daily | Turkey need another rebrand after failing to take flight at World Cup",
+      "detail": "<p><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\"><strong>Sign up now! Sign up now! Sign up now? Sign up now!</strong></a></p><p>When Turkey changed to Türkiye in 2022, president Recep Tayyip Erdoğan announced it was because the new name was “the best representation and expression of the Turkish people’s culture, civilisation, and values.” The rebrand, though, also had a less lofty reason. “The association with the bird genuinely annoys Erdoğan and the people around him,” explained Selim Koru of the Foreign Policy Research Institute, while even state broadcaster TRT conceded that the loose-necked Christmas bird was at least a factor in the revamp.</p><p>When did it become a thing for the refereeing team to have their names on the backs of their shirts? I’m amazed that Fifa isn’t looking to cash in by selling replicas” – Phil Taverner.</p><p>Re: <a href=\"https://www.theguardian.com/football/2026/jun/19/canada-usa-mexico-co-hosts-world-cup-2026-football-daily-newsletter\">yesterday’s Football Daily</a>. Please, up your game! Australian rules football and American football do not play with anything egg-shaped. It’s a prolate spheroid. How different the game would be (could it even exist?) if it were” – Kate Clements.</p><p>Re: Trevor Wastell and US commentary (<a href=\"https://www.theguardian.com/football/2026/jun/19/canada-usa-mexico-co-hosts-world-cup-2026-football-daily-newsletter\">yesterday’s Football Daily letters</a>). I am lucky to speak Spanish but, even if I did not, anyone who would watch football in the USA USA USA (or anywhere else) in any other language is off their rocker. Also, one needs only the barest anglicised Spanglish to get the gist. Luckily for United Statesians, Peacock TV are showing my home nation’s characteristic enthusiasm for multilingual audiences, with the basic subscription having thrown in streaming of every GWC partido en Español, much like they would reruns of ‘Betty la Fea’ or ‘María la del Barrio’. I almost hear NBC suits saying: ‘Who would be watching this? I can’t even understand it!’ Highly recommended” – Thad Brown.</p><p><em><strong>This is an extract from our daily football email … Football Daily. To get the full version,<a href=\"https://preview.gutools.co.uk/info/2016/jan/05/the-fiver-email-sign-up\"> </a><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\">just visit this page and follow the instructions</a>.</strong></em></p> <a href=\"https://www.theguardian.com/football/2026/jun/20/turkey-exit-tears-world-cup-2026-football-daily-newsletter\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 20 Jun 2026 13:22:15 GMT"
     }
   ],
   "teams": [
@@ -5500,18 +5521,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 600,
+      "eventCount": 603,
       "manualEventCount": 3,
-      "rawNewsCount": 597,
+      "rawNewsCount": 600,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 600,
-      "applied": 552,
+      "watched": 603,
+      "applied": 555,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 595,
+      "singleSource": 598,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -16152,7 +16173,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-20T12:58:17.374167+00:00",
+    "generatedAt": "2026-06-20T15:08:34.189787+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
