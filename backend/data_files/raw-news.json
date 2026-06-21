@@ -9628,5 +9628,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-d6c992f57f12",
+    "title": "Yamal on target as Spain put four past Saudi Arabia",
+    "summary": "Lamine Yamal scored 10 minutes into his first World Cup start as Spain beat Saudi Arabia to register their first win of the tournament.",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Sun, 21 Jun 2026 18:51:44 GMT",
+    "url": "https://www.bbc.com/sport/football/videos/cze9g190rz1o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-ff3e70dae0c0",
+    "title": "Belgium v Iran: World Cup 2026 – live",
+    "summary": "<p>⚽️ Kick-off: 12pm local time/8pm BST/5am (Mon) AEST<br>⚽️ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:daniel.harris.casual@theguardian.com\">Email Daniel</a></p><p><strong>Hayes is working tonight and so is Roy Keane – </strong>a happy chance, given the Father’s Day card my buddy Tinny received this morning.</p><p><strong>In the UK, the undoubted star has been the wonderful Emma Hayes. </strong>I remember the first time I heard her co-commentate, many years ago now on BBC radio. Her ability to identify what sets the pattern of a match, simplifying complex tactical plans without being patronising, but making clear she’s the expert and compelling us to listen, is unique.</p> <a href=\"https://www.theguardian.com/football/live/2026/jun/21/belgium-v-iran-world-cup-2026-live\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Sun, 21 Jun 2026 18:43:23 GMT",
+    "url": "https://www.theguardian.com/football/live/2026/jun/21/belgium-v-iran-world-cup-2026-live",
+    "category": "injury",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.78
+  },
+  {
+    "id": "guardian-a7dac4e9311b",
+    "title": "Lamine Yamal and Oyarzabal fire Spain to emphatic win against Saudi Arabia",
+    "summary": "<p>Luis de la Fuente said he wanted a new jumper for his birthday but this was even better. On the day that the Spain coach turned 65, his players gave him the perfect afternoon in Atlanta, all the doubts from their opener blown away. Unable to find a way through in 97 minutes here <a href=\"https://www.theguardian.com/football/2026/jun/15/spain-cape-verde-world-cup-2026-group-h-match-report\">against Cape Verde</a>, this time they put three past Saudi Arabia before anyone had even stopped for the first drink. Life is there to be enjoyed, Lamine Yamal had said and they did.</p><p>Lamine scored ten minutes into his first start since suffering a hamstring injury in April and Mikel Oyarzabal added two more in the first quarter. By the end it was four and it could hardly have worked out more nicely, Spain’s victory secured so early that the coach could use the occasion to offer opportunities to those that needed them, Mikel Merino and Nico Williams invited to join the party too. De la Fuente said that Spain wanted to be Spain again, and here they were.</p> <a href=\"https://www.theguardian.com/football/2026/jun/21/spain-saudi-arabia-world-cup-group-h-match-report\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Sun, 21 Jun 2026 18:18:48 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/21/spain-saudi-arabia-world-cup-group-h-match-report",
+    "category": "injury",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.78
+  },
+  {
+    "id": "guardian-11b3770e2ab6",
+    "title": "From Times Square to England squad: Trevoh Chalobah realises World Cup dream",
+    "summary": "<p>Chelsea defender has mad scramble for boots and cuts short holiday after belatedly receiving the message of a lifetime from Thomas Tuchel</p><p>Trevoh Chalobah has always thought he would be part of an England World Cup squad. In July 2018, the Chelsea centre-half even put it on the record. “One day … believe,” he posted on social media, alongside a picture of the World Cup trophy. He was 19 and had just joined Ipswich in the Championship on a season’s loan. The message has aged exceptionally well.</p><p>Despite his faith, Chalobah did not think it would be this summer. The chance had surely gone when Thomas Tuchel did not name him in his squad for the tournament in North America. He was close after a fine season at Chelsea, when he made a career-high 47 club appearances, but not close enough.</p> <a href=\"https://www.theguardian.com/football/2026/jun/21/from-times-square-to-england-squad-trevoh-chalobah-realises-world-cup-dream\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "paraguay",
+    "status": "single_source",
+    "published_at": "Sun, 21 Jun 2026 18:00:36 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/21/from-times-square-to-england-squad-trevoh-chalobah-realises-world-cup-dream",
+    "category": "general",
+    "factor": "defense",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
