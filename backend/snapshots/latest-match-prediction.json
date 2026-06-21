@@ -10,7 +10,7 @@
   "homeWin": 74,
   "draw": 16,
   "awayWin": 10,
-  "updatedAt": "2026-06-21T19:03:31.377782+00:00",
+  "updatedAt": "2026-06-21T20:54:10.597110+00:00",
   "fixtureContext": {
     "home": {
       "team": "uruguay",
@@ -5468,6 +5468,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 21 Jun 2026 18:00:36 GMT"
+    },
+    {
+      "title": "Lamine Yamal shows why this could be his World Cup",
+      "detail": "Spain looked an instantly better team with Lamine Yamal in the side, with the 18-year-old showing why this could be his World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 21 Jun 2026 19:27:01 GMT"
+    },
+    {
+      "title": "Lamine Yamal is Spain's main man - Rooney analysis",
+      "detail": "Watch BBC pundits Wayne Rooney, Cesar Azpilicueta, and Thomas Frank give their analysis on Lamine Yamal's performance for Spain against Saudi Arabia in the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 21 Jun 2026 19:24:06 GMT"
+    },
+    {
+      "title": "Uruguay v Cape Verde: World Cup 2026 – live",
+      "detail": "<p>⚽️ Kick-off: 6pm local time/11pm BST/8am (Mon) AEST<br>⚽️ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:beau.dure.casual@theguardian.com\">Email Beau</a></p><p>Beau will be here shortly. In the meantime, here’s what to know about Uruguay and Cape Verde before they meet in a few hours in Miami.</p><p><strong>Uruguay</strong></p> <a href=\"https://www.theguardian.com/football/live/2026/jun/21/uruguay-v-cape-verde-world-cup-2026-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 21 Jun 2026 20:00:39 GMT"
     }
   ],
   "teams": [
@@ -6403,18 +6424,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 696,
+      "eventCount": 699,
       "manualEventCount": 3,
-      "rawNewsCount": 693,
+      "rawNewsCount": 696,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 696,
-      "applied": 642,
+      "watched": 699,
+      "applied": 645,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 691,
+      "singleSource": 694,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -17055,179 +17076,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-21T19:04:05.974267+00:00",
+    "generatedAt": "2026-06-21T20:54:43.662953+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 5.8,
-        "currentChampion": 5.2,
-        "change": -0.6,
-        "direction": "down",
-        "reason": "人员盘下调 -2.2",
-        "reasons": [
-          "人员盘下调 -2.2",
-          "四强概率下降 -1.1%",
-          "八强概率下降 -1.1%",
-          "决赛概率下降 -0.8%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 13.0,
-        "currentChampion": 13.3,
-        "change": 0.3,
-        "direction": "up",
-        "reason": "四强概率上升 +0.3%",
-        "reasons": [
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 14.6,
-        "currentChampion": 14.4,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "已完赛果新增 1 场，路径重新模拟",
-        "reasons": [
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 5.7,
-        "currentChampion": 5.9,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.3%",
-        "reasons": [
-          "决赛概率上升 +0.3%",
-          "四强概率上升 +0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "belgium",
-        "name": "比利时",
-        "code": "BEL",
-        "previousChampion": 3.1,
-        "currentChampion": 2.9,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "八强概率下降 -0.9%",
-        "reasons": [
-          "八强概率下降 -0.9%",
-          "四强概率下降 -0.2%",
-          "决赛概率下降 -0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "japan",
-        "name": "日本",
-        "code": "JPN",
-        "previousChampion": 2.0,
-        "currentChampion": 1.8,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "八强概率下降 -0.5%",
-        "reasons": [
-          "八强概率下降 -0.5%",
-          "四强概率下降 -0.4%",
-          "决赛概率下降 -0.3%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "norway",
-        "name": "挪威",
-        "code": "NOR",
-        "previousChampion": 0.8,
-        "currentChampion": 1.0,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "四强概率上升 +0.1%",
-        "reasons": [
-          "四强概率上升 +0.1%",
-          "决赛概率上升 +0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 20.1,
-        "currentChampion": 20.2,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 4 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 9,
-      "down": 10,
-      "largestUp": {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 13.0,
-        "currentChampion": 13.3,
-        "change": 0.3,
-        "direction": "up",
-        "reason": "四强概率上升 +0.3%",
-        "reasons": [
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      "largestDown": {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 5.8,
-        "currentChampion": 5.2,
-        "change": -0.6,
-        "direction": "down",
-        "reason": "人员盘下调 -2.2",
-        "reasons": [
-          "人员盘下调 -2.2",
-          "四强概率下降 -1.1%",
-          "八强概率下降 -1.1%",
-          "决赛概率下降 -0.8%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 4 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }

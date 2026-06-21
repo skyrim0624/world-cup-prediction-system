@@ -9684,5 +9684,47 @@
     "factor": "defense",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-974962dded95",
+    "title": "Lamine Yamal shows why this could be his World Cup",
+    "summary": "Spain looked an instantly better team with Lamine Yamal in the side, with the 18-year-old showing why this could be his World Cup.",
+    "source": "bbc",
+    "team": "spain",
+    "status": "single_source",
+    "published_at": "Sun, 21 Jun 2026 19:27:01 GMT",
+    "url": "https://www.bbc.com/sport/football/articles/cj0gy46d5vro?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-cbbfae84bf41",
+    "title": "Lamine Yamal is Spain's main man - Rooney analysis",
+    "summary": "Watch BBC pundits Wayne Rooney, Cesar Azpilicueta, and Thomas Frank give their analysis on Lamine Yamal's performance for Spain against Saudi Arabia in the 2026 World Cup.",
+    "source": "bbc",
+    "team": "spain",
+    "status": "single_source",
+    "published_at": "Sun, 21 Jun 2026 19:24:06 GMT",
+    "url": "https://www.bbc.com/sport/football/videos/clye4lmd3zzo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-3e0841bd297e",
+    "title": "Uruguay v Cape Verde: World Cup 2026 – live",
+    "summary": "<p>⚽️ Kick-off: 6pm local time/11pm BST/8am (Mon) AEST<br>⚽️ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:beau.dure.casual@theguardian.com\">Email Beau</a></p><p>Beau will be here shortly. In the meantime, here’s what to know about Uruguay and Cape Verde before they meet in a few hours in Miami.</p><p><strong>Uruguay</strong></p> <a href=\"https://www.theguardian.com/football/live/2026/jun/21/uruguay-v-cape-verde-world-cup-2026-live\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Sun, 21 Jun 2026 20:00:39 GMT",
+    "url": "https://www.theguardian.com/football/live/2026/jun/21/uruguay-v-cape-verde-world-cup-2026-live",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
