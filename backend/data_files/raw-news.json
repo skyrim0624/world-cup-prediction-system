@@ -9320,5 +9320,33 @@
     "factor": "attack",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-5bca5e91ed77",
+    "title": "Sportsound: Craig Levein among guests",
+    "summary": "Comprehensive coverage of Scottish sport, including live and exclusive commentary.",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Sun, 21 Jun 2026 16:00:00 GMT",
+    "url": "https://www.bbc.co.uk/sounds/play/live:bbc_radio_scotland_fm?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-563325ac3ee7",
+    "title": "Thomas Partey in spotlight as he faces England and former Arsenal teammates after rape charges",
+    "summary": "<p>Ghana midfielder has denied all accusations as he prepares to begin his World Cup campaign in Boston on Tuesday</p><p>The Football Association has remained coy over what will happen when England line up for their next World Cup match against Ghana on Tuesday and come up against a familiar opponent in Thomas Partey. The former Arsenal midfielder <a href=\"https://www.theguardian.com/football/2025/aug/04/thomas-partey-villarreal-court-appearance\">played for Villarreal</a> this season, but will be released at the end of his contract this month.</p><p>In the pre-match ceremony, all players are expected to shake hands with opponents, and the FA will leave England’s players to decide whether they wish to go through the ritual with Partey. The squad includes two of his former club-mates, Declan Rice and Bukayo Saka.</p> <a href=\"https://www.theguardian.com/football/2026/jun/21/thomas-partey-england-ghana-handshake\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "usa",
+    "status": "single_source",
+    "published_at": "Sun, 21 Jun 2026 11:11:47 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/21/thomas-partey-england-ghana-handshake",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
