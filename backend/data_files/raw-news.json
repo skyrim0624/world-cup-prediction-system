@@ -9880,5 +9880,33 @@
     "factor": "defense",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-0d9f8da63a06",
+    "title": "'Oh my word!' - Cape Verde take shock lead against Uruguay",
+    "summary": "Cape Verde's Kevin Pina scores the opening goal against Uruguay in their Group H match in the 2026 World Cup.",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Sun, 21 Jun 2026 22:46:33 GMT",
+    "url": "https://www.bbc.com/sport/football/videos/cjwg6le7193o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-3595415eab57",
+    "title": "New Zealand v Egypt: World Cup 2026 – live",
+    "summary": "<p>⚽️ Kick-off time: 6pm local/11am AEST/2am BST/9pm EDT<br>⚽️ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:jonathan.howcroft.freelance@theguardian.com\">Mail Jonathan</a></p><p>Here’s the latest pod.</p><p><strong>Laine Yamal added some much needed spark to Spain’s attack as the World Cup favourites kickstarted their campaign with a rout of Saudi Arabia.</strong></p><p>This was exactly the way the coach would have wished it. Lamine Yamal scoring 10 minutes into his first start since suffering a hamstring injury in April. Mikel Oyarzabal adding two more in the first “quarter”, Marc Cucurella forcing the fourth on 49, victory secured so early that De la Fuente could withdraw those players who needed protecting and give minutes to those that needed them, Mikel Merino and Nico Williams invited to join the party too. Unai Simón was the last to arrive, not making a significant save until the 80th minute.</p> <a href=\"https://www.theguardian.com/football/live/2026/jun/22/fifa-world-cup-2026-live-new-zealand-v-egypt-updates-nzl-vs-egy-group-g-match-score-latest\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Sun, 21 Jun 2026 23:35:33 GMT",
+    "url": "https://www.theguardian.com/football/live/2026/jun/22/fifa-world-cup-2026-live-new-zealand-v-egypt-updates-nzl-vs-egy-group-g-match-score-latest",
+    "category": "injury",
+    "factor": "attack",
+    "direction": -1,
+    "confidence": 0.78
   }
 ]
