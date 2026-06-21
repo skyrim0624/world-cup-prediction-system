@@ -437,9 +437,11 @@
     "away": "cape-verde",
     "stage": "小组赛 H 组",
     "kickoff": "6月21日 18:00 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "Miami",
-    "stadium": "Miami Stadium"
+    "stadium": "Miami Stadium",
+    "home_score": 0,
+    "away_score": 0
   },
   {
     "match_no": 38,
@@ -459,7 +461,7 @@
     "away": "iran",
     "stage": "小组赛 G 组",
     "kickoff": "6月21日 15:00 ET",
-    "status": "live",
+    "status": "finished",
     "city": "Los Angeles",
     "stadium": "Los Angeles Stadium",
     "home_score": 0,
