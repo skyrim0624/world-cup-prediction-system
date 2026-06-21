@@ -425,9 +425,11 @@
     "away": "japan",
     "stage": "小组赛 F 组",
     "kickoff": "6月20日 00:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Monterrey",
-    "stadium": "Monterrey Stadium"
+    "stadium": "Monterrey Stadium",
+    "home_score": 0,
+    "away_score": 4
   },
   {
     "match_no": 37,
