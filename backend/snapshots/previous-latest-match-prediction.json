@@ -10,7 +10,7 @@
   "homeWin": 65,
   "draw": 20,
   "awayWin": 16,
-  "updatedAt": "2026-06-22T05:05:28.862306+00:00",
+  "updatedAt": "2026-06-22T11:16:13.490982+00:00",
   "fixtureContext": {
     "home": {
       "team": "argentina",
@@ -5447,6 +5447,104 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Mon, 22 Jun 2026 02:10:16 GMT"
+    },
+    {
+      "title": "Madueke's remarkable season - from petition to World Cup starter",
+      "detail": "Noni Madueke has gone from fans protesting against him signing for Arsenal to England World Cup starter. BBC Sport look at his rollercoaster season.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 22 Jun 2026 10:47:17 GMT"
+    },
+    {
+      "title": "Iran leave note asking for peace after Belgium draw",
+      "detail": "Iran leave a message saying \"may peace, respect and friendship prevail among all nations\" following their World Cup group game with Belgium.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 22 Jun 2026 09:54:09 GMT"
+    },
+    {
+      "title": "How football united behind Doku after childbirth criticism",
+      "detail": "Jeremy Doku wants to fly home to attend the birth of his first child - but why has that proved controversial in some quarters?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 22 Jun 2026 10:01:15 GMT"
+    },
+    {
+      "title": "A defender's view on how to stop the World Cup's best strikers",
+      "detail": "Lionel Messi, Kylian Mbappe, Erling Haaland and Harry Kane look to be on lethal form in this World Cup. So how can you stop them in their tracks?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 22 Jun 2026 08:10:21 GMT"
+    },
+    {
+      "title": "Who am I? Guess World Cup star No 15",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 22 Jun 2026 06:02:45 GMT"
+    },
+    {
+      "title": "Name the seven Scotland survivors from Clarke's first squad",
+      "detail": "Seven players from Steve Clarke's first Scotland squad are with the head coach at the 2026 World Cup - can you name them?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 22 Jun 2026 07:46:18 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "Spain shine and Cape Verde do it again.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 22 Jun 2026 06:50:00 GMT"
+    },
+    {
+      "title": "Ask pundits McCann & Crichton your World Cup questions",
+      "detail": "BBC Sport Scotland pundits Neil McCann and Leanne Crichton are in the United States and ready to answer some of your questions about Scotland's World Cup campaign.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 22 Jun 2026 09:50:49 GMT"
+    },
+    {
+      "title": "From Belfast to the World Cup - McDermott's American odyssey",
+      "detail": "Mick McDermott tells BBC Sport NI of his pride at being involved with Ghana at the World Cup, his relationship with Carlos Quieroz and their hopes of shocking England on Tuesday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 22 Jun 2026 06:53:49 GMT"
+    },
+    {
+      "title": "Podcast: Frustration vs potential - can Scotland step up against Brazil?",
+      "detail": "Scotland fall to Morocco – now Brazil awaits in a huge World Cup test.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 22 Jun 2026 07:17:00 GMT"
+    },
+    {
+      "title": "Celtic bid for defender as Saracchi talks intensify - gossip",
+      "detail": "Celtic bid for defender while talks over left-back's return intensify as Portsmouth push for discussions with Dundee centre-half.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 22 Jun 2026 06:52:27 GMT"
+    },
+    {
+      "title": "World Cup 2026: Cape Verde’s story continues; L’Équipe apologises to Doku over ‘disgusting’ comments – live",
+      "detail": "<p>⚽ All the latest news from day 11 of the tournament<br>⚽ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:matchday.live@guardian.co.uk\">Mail us</a></p><p><strong>Beiranvand, by the way, holds <a href=\"https://www.guinnessworldrecords.com/world-records/680552-farthest-distance%C2%A0throw-of-a-football-soccer-in-a-competetive-match\">the world record for the longest throw in a competitive match</a> – 61.0026m – <a href=\"https://www.guinnessworldrecords.com/world-records/114432-longest-football-soccer-punt-kick\">and for the longest drop-kick</a>, 78.014m.</strong> Not bad for someone who was once sleeping rough.</p><p><strong>But let’s return to Iran for a moment.</strong> Their goalie, Alireza Beiranvand – or “The Wall of Persia” as he’s known – had to run away from home to become a footballer, his old fella less than enchanted by the ruse and cutting up his gloves. I wonder how he feels now his boy has been player of the match at a World Cup.</p> <a href=\"https://www.theguardian.com/football/live/2026/jun/22/world-cup-2026-cape-verde-continue-remarkable-story-messi-mbappe-and-haaland-return-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 22 Jun 2026 10:58:17 GMT"
+    },
+    {
+      "title": "Who are ya? Behind the scenes of the official World Cup portrait photographs",
+      "detail": "<p>Poses and backstage snaps showcase the players’ personalities and the mechanics of Fifa’s obligatory photoshoots</p><p>Lionel Messi of Argentina stands rigidly in front of the camera. Marc Cucurella of Spain whips his hair and appears to boogie. Diego Moreira of Belgium covers his eyes with his forearm and reveals an eerie tattoo. Harry Kane leans awkwardly on to one knee.</p><p>There are 1,248 football players and 48 managers at the World Cup, and none could escape the obligatory media duty that is the official portrait – whether or not they had a fun pose in mind.</p><p>(Above) Diego Moreira of Belgium obscures his eyes for an eerie portrait. (Below) Marc Cucurella of Spain, Ronald Araújo of Uruguay and various other familiar faces.</p> <a href=\"https://www.theguardian.com/football/2026/jun/22/behind-the-scenes-official-world-cup-portrait-photographs\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 22 Jun 2026 09:39:23 GMT"
+    },
+    {
+      "title": "Cape Verde do it again and Lamine Yamal spurs on Spain | World Cup Daily",
+      "detail": "<p><a href=\"https://bsky.app/profile/maxrushden.bsky.social\">Max Rushden</a> is joined by <a href=\"https://bsky.app/profile/did:plc:i55lfvhkg573wfmby5sdnvq6\">Barry Glendenning</a>, Jeff Rueter and Mark Langdon as Cape Verde claim yet another historic point and Spain finally look like a team worthy of the favourites tag.</p> <a href=\"https://www.theguardian.com/football/video/2026/jun/22/cape-verde-do-it-again-and-lamine-yamal-spurs-on-spain-world-cup-daily\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 22 Jun 2026 06:31:08 GMT"
     }
   ],
   "teams": [
@@ -5628,7 +5726,7 @@
       "factors": {
         "strength": 84,
         "form": 81,
-        "path": 67,
+        "path": 68,
         "squad": 76,
         "margin": 82
       },
@@ -6382,18 +6480,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 726,
+      "eventCount": 740,
       "manualEventCount": 3,
-      "rawNewsCount": 723,
+      "rawNewsCount": 737,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 726,
-      "applied": 671,
+      "watched": 740,
+      "applied": 683,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 721,
+      "singleSource": 735,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -6472,7 +6570,7 @@
         "attack": -2.15,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": -3.68,
+        "path": -2.81,
         "squad": -4.3
       },
       "haiti": {
@@ -17034,184 +17132,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-22T05:06:02.071344+00:00",
+    "generatedAt": "2026-06-22T11:16:38.673741+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 15.4,
-        "currentChampion": 16.6,
-        "change": 1.2,
-        "direction": "up",
-        "reason": "八强概率上升 +4.9%",
-        "reasons": [
-          "八强概率上升 +4.9%",
-          "四强概率上升 +3.3%",
-          "决赛概率上升 +1.9%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 14 条"
-        ]
-      },
-      {
-        "team": "uruguay",
-        "name": "乌拉圭",
-        "code": "URU",
-        "previousChampion": 1.9,
-        "currentChampion": 1.4,
-        "change": -0.5,
-        "direction": "down",
-        "reason": "八强概率下降 -4.2%",
-        "reasons": [
-          "八强概率下降 -4.2%",
-          "四强概率下降 -2.8%",
-          "决赛概率下降 -1.3%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 14 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 20.3,
-        "currentChampion": 20.6,
-        "change": 0.3,
-        "direction": "up",
-        "reason": "八强概率上升 +0.5%",
-        "reasons": [
-          "八强概率上升 +0.5%",
-          "四强概率上升 +0.2%",
-          "决赛概率上升 +0.2%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 14 条"
-        ]
-      },
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 8.3,
-        "currentChampion": 8.0,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "路径盘下调 -0.9",
-        "reasons": [
-          "路径盘下调 -0.9",
-          "八强概率下降 -1.0%",
-          "四强概率下降 -0.8%",
-          "决赛概率下降 -0.5%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 14 条"
-        ]
-      },
-      {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 5.9,
-        "currentChampion": 5.7,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.2%",
-        "reasons": [
-          "决赛概率下降 -0.2%",
-          "八强概率下降 -0.2%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 14 条"
-        ]
-      },
-      {
-        "team": "colombia",
-        "name": "哥伦比亚",
-        "code": "COL",
-        "previousChampion": 2.7,
-        "currentChampion": 2.5,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.3%",
-        "reasons": [
-          "决赛概率下降 -0.3%",
-          "四强概率下降 -0.1%",
-          "八强概率下降 -0.1%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 14 条"
-        ]
-      },
-      {
-        "team": "austria",
-        "name": "奥地利",
-        "code": "AUT",
-        "previousChampion": 0.5,
-        "currentChampion": 0.7,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "八强概率上升 +1.1%",
-        "reasons": [
-          "八强概率上升 +1.1%",
-          "四强概率上升 +0.2%",
-          "决赛概率上升 +0.2%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 14 条"
-        ]
-      },
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 13.3,
-        "currentChampion": 13.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 14 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 7,
-      "down": 11,
-      "largestUp": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 15.4,
-        "currentChampion": 16.6,
-        "change": 1.2,
-        "direction": "up",
-        "reason": "八强概率上升 +4.9%",
-        "reasons": [
-          "八强概率上升 +4.9%",
-          "四强概率上升 +3.3%",
-          "决赛概率上升 +1.9%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 14 条"
-        ]
-      },
-      "largestDown": {
-        "team": "uruguay",
-        "name": "乌拉圭",
-        "code": "URU",
-        "previousChampion": 1.9,
-        "currentChampion": 1.4,
-        "change": -0.5,
-        "direction": "down",
-        "reason": "八强概率下降 -4.2%",
-        "reasons": [
-          "八强概率下降 -4.2%",
-          "四强概率下降 -2.8%",
-          "决赛概率下降 -1.3%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 14 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
