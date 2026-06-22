@@ -437,7 +437,7 @@
     "away": "cape-verde",
     "stage": "小组赛 H 组",
     "kickoff": "6月21日 18:00 ET",
-    "status": "live",
+    "status": "finished",
     "city": "Miami",
     "stadium": "Miami Stadium",
     "home_score": 2,
@@ -473,9 +473,11 @@
     "away": "egypt",
     "stage": "小组赛 G 组",
     "kickoff": "6月21日 21:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Vancouver",
-    "stadium": "BC Place Vancouver"
+    "stadium": "BC Place Vancouver",
+    "home_score": 1,
+    "away_score": 3
   },
   {
     "match_no": 41,
