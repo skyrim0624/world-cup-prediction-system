@@ -505,9 +505,11 @@
     "away": "austria",
     "stage": "小组赛 J 组",
     "kickoff": "6月22日 13:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Dallas",
-    "stadium": "Dallas Stadium"
+    "stadium": "Dallas Stadium",
+    "home_score": 2,
+    "away_score": 0
   },
   {
     "match_no": 44,
