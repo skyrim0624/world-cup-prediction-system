@@ -533,9 +533,11 @@
     "away": "ghana",
     "stage": "小组赛 L 组",
     "kickoff": "6月23日 16:00 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "Boston",
-    "stadium": "Boston Stadium"
+    "stadium": "Boston Stadium",
+    "home_score": 0,
+    "away_score": 0
   },
   {
     "match_no": 46,
