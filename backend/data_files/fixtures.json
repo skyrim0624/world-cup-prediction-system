@@ -521,9 +521,11 @@
     "away": "algeria",
     "stage": "小组赛 J 组",
     "kickoff": "6月22日 23:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "San Francisco Bay Area",
-    "stadium": "San Francisco Bay Stadium"
+    "stadium": "San Francisco Bay Stadium",
+    "home_score": 1,
+    "away_score": 2
   },
   {
     "match_no": 45,
