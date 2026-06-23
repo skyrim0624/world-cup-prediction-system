@@ -485,9 +485,11 @@
     "away": "senegal",
     "stage": "小组赛 I 组",
     "kickoff": "6月22日 20:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "New York/New Jersey",
-    "stadium": "New York New Jersey Stadium"
+    "stadium": "New York New Jersey Stadium",
+    "home_score": 3,
+    "away_score": 2
   },
   {
     "match_no": 42,
@@ -495,9 +497,11 @@
     "away": "iraq",
     "stage": "小组赛 I 组",
     "kickoff": "6月22日 17:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Philadelphia",
-    "stadium": "Philadelphia Stadium"
+    "stadium": "Philadelphia Stadium",
+    "home_score": 3,
+    "away_score": 0
   },
   {
     "match_no": 43,
