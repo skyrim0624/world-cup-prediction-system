@@ -545,9 +545,11 @@
     "away": "croatia",
     "stage": "小组赛 L 组",
     "kickoff": "6月23日 19:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Toronto",
-    "stadium": "Toronto Stadium"
+    "stadium": "Toronto Stadium",
+    "home_score": 0,
+    "away_score": 1
   },
   {
     "match_no": 47,
@@ -567,9 +569,11 @@
     "away": "dr-congo",
     "stage": "小组赛 K 组",
     "kickoff": "6月23日 22:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Guadalajara",
-    "stadium": "Guadalajara Stadium"
+    "stadium": "Guadalajara Stadium",
+    "home_score": 1,
+    "away_score": 0
   },
   {
     "match_no": 49,
