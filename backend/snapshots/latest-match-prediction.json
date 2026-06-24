@@ -1,95 +1,97 @@
 {
-  "stage": "小组赛 L 组",
-  "kickoff": "6月23日 19:00 ET",
-  "matchNo": 46,
-  "city": "Toronto",
-  "stadium": "Toronto Stadium",
+  "stage": "小组赛 K 组",
+  "kickoff": "6月23日 22:00 ET",
+  "matchNo": 48,
+  "city": "Guadalajara",
+  "stadium": "Guadalajara Stadium",
   "status": "未开赛",
-  "homeTeam": "panama",
-  "awayTeam": "croatia",
-  "homeWin": 20,
-  "draw": 23,
-  "awayWin": 57,
-  "updatedAt": "2026-06-23T22:48:50.827569+00:00",
+  "homeTeam": "colombia",
+  "awayTeam": "dr-congo",
+  "homeWin": 62,
+  "draw": 21,
+  "awayWin": 17,
+  "updatedAt": "2026-06-24T00:03:35.398678+00:00",
   "fixtureContext": {
     "home": {
-      "team": "panama",
+      "team": "colombia",
       "restDays": 6.0,
-      "previousCity": "Toronto",
-      "currentCity": "Toronto",
-      "cityChange": false,
-      "impact": 0.0,
-      "notes": []
-    },
-    "away": {
-      "team": "croatia",
-      "restDays": 6.1,
-      "previousCity": "Dallas",
-      "currentCity": "Toronto",
+      "previousCity": "Mexico City",
+      "currentCity": "Guadalajara",
       "cityChange": true,
       "impact": -0.7,
       "notes": [
-        "Dallas 转场到 Toronto"
+        "Mexico City 转场到 Guadalajara"
+      ]
+    },
+    "away": {
+      "team": "dr-congo",
+      "restDays": 6.4,
+      "previousCity": "Houston",
+      "currentCity": "Guadalajara",
+      "cityChange": true,
+      "impact": -0.7,
+      "notes": [
+        "Houston 转场到 Guadalajara"
       ]
     }
   },
   "matchupContext": {
     "source": "team_profile_matchup",
     "home": {
-      "team": "panama",
+      "team": "colombia",
       "metrics": {
-        "attackVsDefense": -0.5,
-        "pressVsBuildout": -0.1,
-        "buildoutVsPress": -0.11,
-        "directnessEdge": -0.1,
-        "setPieceEdge": -0.1,
-        "aerialEdge": -0.09,
-        "goalkeeperDrag": 0.0
+        "attackVsDefense": 0.45,
+        "pressVsBuildout": 0.07,
+        "buildoutVsPress": 0.05,
+        "directnessEdge": 0.09,
+        "setPieceEdge": 0.09,
+        "aerialEdge": 0.06,
+        "goalkeeperDrag": -0.3
       },
       "adjustments": {
-        "attack": -0.45,
-        "defense": -0.06,
+        "attack": 0.44,
+        "defense": 0.04,
         "goalkeeper": 0.0,
-        "path": -0.03,
+        "path": 0.02,
         "squad": 0.0
       }
     },
     "away": {
-      "team": "croatia",
+      "team": "dr-congo",
       "metrics": {
-        "attackVsDefense": 0.55,
-        "pressVsBuildout": 0.11,
-        "buildoutVsPress": 0.1,
-        "directnessEdge": 0.11,
-        "setPieceEdge": 0.11,
-        "aerialEdge": 0.09,
-        "goalkeeperDrag": -0.45
+        "attackVsDefense": -0.25,
+        "pressVsBuildout": -0.05,
+        "buildoutVsPress": -0.07,
+        "directnessEdge": -0.05,
+        "setPieceEdge": -0.05,
+        "aerialEdge": -0.06,
+        "goalkeeperDrag": -0.05
       },
       "adjustments": {
-        "attack": 0.59,
-        "defense": 0.06,
+        "attack": -0.23,
+        "defense": -0.03,
         "goalkeeper": 0.0,
-        "path": 0.03,
+        "path": -0.02,
         "squad": 0.0
       }
     }
   },
   "scoreOutcomes": [
     {
-      "score": "0-1",
-      "probability": 10.6,
+      "score": "2-0",
+      "probability": 10.3,
       "note": "双方基础强度接近",
       "tone": "gold"
     },
     {
-      "score": "1-1",
-      "probability": 10.5,
+      "score": "2-1",
+      "probability": 9.9,
       "note": "边路优势可能放大",
       "tone": "green"
     },
     {
-      "score": "0-2",
-      "probability": 10.0,
+      "score": "1-0",
+      "probability": 9.9,
       "note": "低比分胜局仍有空间",
       "tone": "blue"
     }
@@ -99,145 +101,145 @@
       "score": "0-0",
       "homeGoals": 0,
       "awayGoals": 0,
-      "probability": 5.6
+      "probability": 4.7
     },
     {
       "score": "0-1",
       "homeGoals": 0,
       "awayGoals": 1,
-      "probability": 10.6
+      "probability": 4.5
     },
     {
       "score": "0-2",
       "homeGoals": 0,
       "awayGoals": 2,
-      "probability": 10.0
+      "probability": 2.2
     },
     {
       "score": "0-3",
       "homeGoals": 0,
       "awayGoals": 3,
-      "probability": 6.3
+      "probability": 0.7
     },
     {
       "score": "0-4",
       "homeGoals": 0,
       "awayGoals": 4,
-      "probability": 3.0
+      "probability": 0.2
     },
     {
       "score": "1-0",
       "homeGoals": 1,
       "awayGoals": 0,
-      "probability": 5.5
+      "probability": 9.9
     },
     {
       "score": "1-1",
       "homeGoals": 1,
       "awayGoals": 1,
-      "probability": 10.5
+      "probability": 9.5
     },
     {
       "score": "1-2",
       "homeGoals": 1,
       "awayGoals": 2,
-      "probability": 9.9
+      "probability": 4.6
     },
     {
       "score": "1-3",
       "homeGoals": 1,
       "awayGoals": 3,
-      "probability": 6.3
+      "probability": 1.5
     },
     {
       "score": "1-4",
       "homeGoals": 1,
       "awayGoals": 4,
-      "probability": 3.0
+      "probability": 0.3
     },
     {
       "score": "2-0",
       "homeGoals": 2,
       "awayGoals": 0,
-      "probability": 2.7
+      "probability": 10.3
     },
     {
       "score": "2-1",
       "homeGoals": 2,
       "awayGoals": 1,
-      "probability": 5.2
+      "probability": 9.9
     },
     {
       "score": "2-2",
       "homeGoals": 2,
       "awayGoals": 2,
-      "probability": 4.9
+      "probability": 4.8
     },
     {
       "score": "2-3",
       "homeGoals": 2,
       "awayGoals": 3,
-      "probability": 3.1
+      "probability": 1.5
     },
     {
       "score": "2-4",
       "homeGoals": 2,
       "awayGoals": 4,
-      "probability": 1.5
+      "probability": 0.4
     },
     {
       "score": "3-0",
       "homeGoals": 3,
       "awayGoals": 0,
-      "probability": 0.9
+      "probability": 7.2
     },
     {
       "score": "3-1",
       "homeGoals": 3,
       "awayGoals": 1,
-      "probability": 1.7
+      "probability": 6.9
     },
     {
       "score": "3-2",
       "homeGoals": 3,
       "awayGoals": 2,
-      "probability": 1.6
+      "probability": 3.3
     },
     {
       "score": "3-3",
       "homeGoals": 3,
       "awayGoals": 3,
-      "probability": 1.0
+      "probability": 1.1
     },
     {
       "score": "3-4",
       "homeGoals": 3,
       "awayGoals": 4,
-      "probability": 0.5
+      "probability": 0.3
     },
     {
       "score": "4-0",
       "homeGoals": 4,
       "awayGoals": 0,
-      "probability": 0.2
+      "probability": 3.8
     },
     {
       "score": "4-1",
       "homeGoals": 4,
       "awayGoals": 1,
-      "probability": 0.4
+      "probability": 3.6
     },
     {
       "score": "4-2",
       "homeGoals": 4,
       "awayGoals": 2,
-      "probability": 0.4
+      "probability": 1.7
     },
     {
       "score": "4-3",
       "homeGoals": 4,
       "awayGoals": 3,
-      "probability": 0.3
+      "probability": 0.6
     },
     {
       "score": "4-4",
@@ -249,52 +251,52 @@
   "goalMarkets": [
     {
       "label": "大 2.5",
-      "probability": 55.0,
-      "fairDecimal": 1.82,
+      "probability": 58.6,
+      "fairDecimal": 1.71,
       "note": "总进球至少 3",
-      "tone": "gold"
+      "tone": "green"
     },
     {
       "label": "小 2.5",
-      "probability": 45.0,
-      "fairDecimal": 2.22,
+      "probability": 41.4,
+      "fairDecimal": 2.42,
       "note": "总进球不超过 2",
       "tone": "blue"
     },
     {
       "label": "BTTS 是",
-      "probability": 53.4,
-      "fairDecimal": 1.87,
+      "probability": 54.0,
+      "fairDecimal": 1.85,
       "note": "双方都有进球",
       "tone": "gold"
     },
     {
       "label": "BTTS 否",
-      "probability": 46.6,
-      "fairDecimal": 2.15,
+      "probability": 46.0,
+      "fairDecimal": 2.17,
       "note": "至少一队零进球",
       "tone": "blue"
     }
   ],
   "fairPrices": [
     {
-      "label": "巴拿马胜",
-      "probability": 19.9,
-      "fairDecimal": 5.02,
+      "label": "哥伦比亚胜",
+      "probability": 62.0,
+      "fairDecimal": 1.61,
       "note": "90 分钟模型公平概率",
       "tone": "green"
     },
     {
       "label": "平局",
-      "probability": 22.8,
-      "fairDecimal": 4.39,
+      "probability": 21.0,
+      "fairDecimal": 4.77,
       "note": "90 分钟模型公平概率",
       "tone": "gold"
     },
     {
-      "label": "克罗地亚胜",
-      "probability": 57.3,
-      "fairDecimal": 1.75,
+      "label": "刚果民主共和国胜",
+      "probability": 17.0,
+      "fairDecimal": 5.88,
       "note": "90 分钟模型公平概率",
       "tone": "blue"
     }
@@ -306,49 +308,49 @@
   },
   "scenarioImpacts": [
     {
-      "label": "巴拿马胜",
-      "probability": 20,
-      "title": "巴拿马小组第一概率上升",
+      "label": "哥伦比亚胜",
+      "probability": 62,
+      "title": "哥伦比亚小组第一概率上升",
       "details": [
-        "巴拿马夺冠概率 ±0.0%",
-        "克罗地亚路径盘下调 -0.6%",
+        "哥伦比亚夺冠概率 +0.2%",
+        "刚果民主共和国路径盘下调 ±0.0%",
         "同组竞争队出线门槛抬高"
       ],
-      "championShift": "±0.0%",
+      "championShift": "+0.2%",
       "tone": "green"
     },
     {
       "label": "打平",
-      "probability": 23,
+      "probability": 21,
       "title": "两队路径保持胶着",
       "details": [
-        "巴拿马夺冠概率 ±0.0%",
-        "克罗地亚夺冠概率 -0.4%",
+        "哥伦比亚夺冠概率 ±0.0%",
+        "刚果民主共和国夺冠概率 ±0.0%",
         "小组第一仍取决于末轮和净胜球"
       ],
-      "championShift": "±0.0% / -0.4%",
+      "championShift": "±0.0% / ±0.0%",
       "tone": "gold"
     },
     {
-      "label": "克罗地亚胜",
-      "probability": 57,
-      "title": "克罗地亚半区压力下降",
+      "label": "刚果民主共和国胜",
+      "probability": 17,
+      "title": "刚果民主共和国半区压力下降",
       "details": [
-        "克罗地亚夺冠概率 +0.3%",
-        "巴拿马潜在淘汰赛路径变难 ±0.0%",
+        "刚果民主共和国夺冠概率 +0.1%",
+        "哥伦比亚潜在淘汰赛路径变难 -0.5%",
         "小组第二路径风险上升"
       ],
-      "championShift": "+0.3%",
+      "championShift": "+0.1%",
       "tone": "blue"
     }
   ],
   "creatorTopics": [
     {
-      "title": "0-1 为什么是最可能比分？",
+      "title": "2-0 为什么是最可能比分？",
       "detail": "从进球期望、双方防守质量和小组赛动机解释。"
     },
     {
-      "title": "巴拿马赢球会怎样改变半区？",
+      "title": "哥伦比亚赢球会怎样改变半区？",
       "detail": "把单场结果传导到小组第一、潜在 32 强对手和冠军概率。"
     },
     {
@@ -357,10 +359,11 @@
     }
   ],
   "analysis": [
-    "巴拿马单场胜率 20%，优势来自基础实力和进攻盘。",
-    "平局概率 23%，会让小组第一继续依赖末轮赛果。",
+    "哥伦比亚单场胜率 62%，优势来自基础实力和进攻盘。",
+    "平局概率 21%，会让小组第一继续依赖末轮赛果。",
     "已结束比赛已经锁定进积分表，伤病和停赛只按来源权重小幅修正。",
-    "边际盘：克罗地亚Dallas 转场到 Toronto，路径盘和人员盘小幅下调。"
+    "边际盘：哥伦比亚Mexico City 转场到 Guadalajara，路径盘和人员盘小幅下调。",
+    "边际盘：刚果民主共和国Houston 转场到 Guadalajara，路径盘和人员盘小幅下调。"
   ],
   "newsItems": [
     {
@@ -7257,6 +7260,41 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Tue, 23 Jun 2026 18:09:46 GMT"
+    },
+    {
+      "title": "Should Ghana have been awarded a penalty against England?",
+      "detail": "England fans have been left frustrated by the goalless draw against Ghana, but were Thomas Tuchel's side fortunate not to have given away a penalty?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 23 Jun 2026 23:46:07 GMT"
+    },
+    {
+      "title": "Tuchel credits 'committed' Ghana defending after England draw",
+      "detail": "England manager Thomas Tuchel says England found it \"difficult\" to break down Ghana's defence, after the two teams played out a 0-0 draw at the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 23 Jun 2026 23:25:46 GMT"
+    },
+    {
+      "title": "England given reality check by stubborn Ghana to leave group in the balance",
+      "detail": "<p>It was a talking point beforehand in the England dressing room, Harry Kane bringing it up; a message with it, too. At each of the previous three tournaments, the team had spluttered in game two. The roll call of irritation took in the draws against Scotland and Denmark at the European Championship – either side of the draw against the United States at the last World Cup. Must do better this time, was the gist of what Kane said.</p><p>England did not do better. The idea was to maintain the momentum they had generated in the 4-2 win over Croatia in their opening Group L tie but there was no surge here. Only stodge. England laboured to create against an ultra-defensive Ghana team, their only pulse-quickening moments coming towards the very end.</p> <a href=\"https://www.theguardian.com/football/2026/jun/23/england-ghana-world-cup-group-l-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 23 Jun 2026 22:15:10 GMT"
+    },
+    {
+      "title": "‘I’m back’: Ronaldo’s relief after double kickstarts Portugal World Cup push",
+      "detail": "<ul><li><p>41-year-old heavily criticised after DR Congo draw</p></li><li><p>‘It felt like I’d already retired from football,’ he adds</p></li></ul><p>Cristiano Ronaldo savoured the end of a “difficult, dark week” after scoring twice in Portugal’s 5-0 <a href=\"https://www.theguardian.com/football/2026/jun/23/portugal-uzbekistan-world-cup-group-k-match-report\">rout of Uzbekistan</a> and becoming the first player to find the net in six World Cups.</p><p>Ronaldo and Portugal had come under heavy criticism after a flat <a href=\"https://www.theguardian.com/football/2026/jun/17/portugal-dr-congo-world-cup-2026-group-k-match-report\">draw against Democratic Republic of the Congo</a>. There had been a particular spotlight on the 41-year-old Ronaldo, who had not scored in 10 major tournament games before Tuesday’s fixture. There have long been question marks over his continued ability to lead Portugal on this stage, but after the final whistle he shouted into a television camera: “I’m back, I’m back.”</p> <a href=\"https://www.theguardian.com/football/2026/jun/23/difficult-dark-week-ronaldo-relief-double-kickstarts-portugal\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 23 Jun 2026 20:46:56 GMT"
+    },
+    {
+      "title": "Ingenuity absent for turgid England as they fail to break down Ghana’s yellow wall | Jacob Steinberg",
+      "detail": "<p>Thomas Tuchel experiences an England tradition – a difficult second game at a major tournament</p><p>There were times when this looked like the goalless draw with the USA at the 2022 World Cup, or the misshapen stalemate with Denmark in Frankfurt two years ago. For Thomas Tuchel, the worry was that the more passive patterns from the Gareth Southgate era had not quite been driven out of this team yet. The German was watching an England tradition, the difficult second tournament game, and as the hour approached it was possible to see Tuchel becoming increasingly agitated on the touchline.</p><p>England were predictable and turgid for long spells against a determined Ghana side who earned their point with an exhibition of purest Queiroz-ball. There was no caustic half-time interview from Anthony Barry, no stunning second-half surge. Instead, after <a href=\"https://www.theguardian.com/football/2026/jun/17/england-croatia-world-cup-2026-group-l-match-report\">the freewheeling attacking play</a> that saw off Croatia last week, this felt familiar. This felt anxious. In the cramped football and sideways passing, this felt more England. They created nothing until a late flurry of chances, and when it was over it was tempting to wonder if the reaction from the crowd would have been more negative if it had been Southgate rather than Tuchel standing in the technical area at Boston Stadium.</p> <a href=\"https://www.theguardian.com/football/2026/jun/24/ingenuity-absent-for-turgid-england-as-they-fail-to-break-down-ghanas-yellow-wall\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 23 Jun 2026 23:00:56 GMT"
     }
   ],
   "teams": [
@@ -8192,18 +8230,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 985,
+      "eventCount": 990,
       "manualEventCount": 3,
-      "rawNewsCount": 982,
+      "rawNewsCount": 987,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 985,
-      "applied": 912,
+      "watched": 990,
+      "applied": 917,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 980,
+      "singleSource": 985,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -8844,8 +8882,8 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 0.0,
-        "squad": 0.0
+        "path": -0.7,
+        "squad": -0.7
       },
       "uzbekistan": {
         "attack": 0.0,
@@ -8858,8 +8896,8 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 0.0,
-        "squad": 0.0
+        "path": -0.7,
+        "squad": -0.7
       },
       "england": {
         "attack": 0.0,
@@ -8872,8 +8910,8 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": -0.7,
-        "squad": -0.7
+        "path": 0.0,
+        "squad": 0.0
       },
       "ghana": {
         "attack": 0.0,
@@ -8893,40 +8931,40 @@
     "matchupContext": {
       "source": "team_profile_matchup",
       "home": {
-        "team": "panama",
+        "team": "colombia",
         "metrics": {
-          "attackVsDefense": -0.5,
-          "pressVsBuildout": -0.1,
-          "buildoutVsPress": -0.11,
-          "directnessEdge": -0.1,
-          "setPieceEdge": -0.1,
-          "aerialEdge": -0.09,
-          "goalkeeperDrag": 0.0
+          "attackVsDefense": 0.45,
+          "pressVsBuildout": 0.07,
+          "buildoutVsPress": 0.05,
+          "directnessEdge": 0.09,
+          "setPieceEdge": 0.09,
+          "aerialEdge": 0.06,
+          "goalkeeperDrag": -0.3
         },
         "adjustments": {
-          "attack": -0.45,
-          "defense": -0.06,
+          "attack": 0.44,
+          "defense": 0.04,
           "goalkeeper": 0.0,
-          "path": -0.03,
+          "path": 0.02,
           "squad": 0.0
         }
       },
       "away": {
-        "team": "croatia",
+        "team": "dr-congo",
         "metrics": {
-          "attackVsDefense": 0.55,
-          "pressVsBuildout": 0.11,
-          "buildoutVsPress": 0.1,
-          "directnessEdge": 0.11,
-          "setPieceEdge": 0.11,
-          "aerialEdge": 0.09,
-          "goalkeeperDrag": -0.45
+          "attackVsDefense": -0.25,
+          "pressVsBuildout": -0.05,
+          "buildoutVsPress": -0.07,
+          "directnessEdge": -0.05,
+          "setPieceEdge": -0.05,
+          "aerialEdge": -0.06,
+          "goalkeeperDrag": -0.05
         },
         "adjustments": {
-          "attack": 0.59,
-          "defense": 0.06,
+          "attack": -0.23,
+          "defense": -0.03,
           "goalkeeper": 0.0,
-          "path": 0.03,
+          "path": -0.02,
           "squad": 0.0
         }
       }
@@ -18727,13 +18765,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-06-23",
+      "referenceDate": "2026-06-24",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 10,
-      "oldestAgeDays": 84,
+      "newestAgeDays": 11,
+      "oldestAgeDays": 85,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -18844,180 +18882,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-23T22:49:21.883462+00:00",
+    "generatedAt": "2026-06-24T00:04:06.760751+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 16.0,
-        "currentChampion": 16.6,
-        "change": 0.6,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.6%",
-        "reasons": [
-          "决赛概率上升 +0.6%",
-          "四强概率上升 +0.4%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 8.3,
-        "currentChampion": 7.9,
-        "change": -0.4,
-        "direction": "down",
-        "reason": "八强概率下降 -1.0%",
-        "reasons": [
-          "八强概率下降 -1.0%",
-          "四强概率下降 -0.7%",
-          "决赛概率下降 -0.4%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 13.3,
-        "currentChampion": 13.6,
-        "change": 0.3,
-        "direction": "up",
-        "reason": "四强概率上升 +0.4%",
-        "reasons": [
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.3%",
-          "八强概率上升 +0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 1.5,
-        "currentChampion": 1.2,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "状态盘下调 -2.5",
-        "reasons": [
-          "状态盘下调 -2.5",
-          "八强概率下降 -1.5%",
-          "四强概率下降 -0.8%",
-          "决赛概率下降 -0.5%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 5.1,
-        "currentChampion": 5.3,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "四强概率上升 +0.5%",
-        "reasons": [
-          "四强概率上升 +0.5%",
-          "八强概率上升 +0.4%",
-          "决赛概率上升 +0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "belgium",
-        "name": "比利时",
-        "code": "BEL",
-        "previousChampion": 2.3,
-        "currentChampion": 2.1,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.2%",
-        "reasons": [
-          "决赛概率下降 -0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 6.3,
-        "currentChampion": 6.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.3%",
-        "reasons": [
-          "八强概率上升 +0.3%",
-          "决赛概率上升 +0.2%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 5.8,
-        "currentChampion": 5.7,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.3%",
-        "reasons": [
-          "决赛概率下降 -0.3%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 7,
-      "down": 11,
-      "largestUp": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 16.0,
-        "currentChampion": 16.6,
-        "change": 0.6,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.6%",
-        "reasons": [
-          "决赛概率上升 +0.6%",
-          "四强概率上升 +0.4%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      "largestDown": {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 8.3,
-        "currentChampion": 7.9,
-        "change": -0.4,
-        "direction": "down",
-        "reason": "八强概率下降 -1.0%",
-        "reasons": [
-          "八强概率下降 -1.0%",
-          "四强概率下降 -0.7%",
-          "决赛概率下降 -0.4%",
-          "已完赛果新增 1 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }

@@ -10,7 +10,7 @@
   "homeWin": 20,
   "draw": 23,
   "awayWin": 57,
-  "updatedAt": "2026-06-23T21:17:13.109132+00:00",
+  "updatedAt": "2026-06-23T22:48:50.827569+00:00",
   "fixtureContext": {
     "home": {
       "team": "panama",
@@ -311,7 +311,7 @@
       "title": "巴拿马小组第一概率上升",
       "details": [
         "巴拿马夺冠概率 ±0.0%",
-        "克罗地亚路径盘下调 -0.5%",
+        "克罗地亚路径盘下调 -0.6%",
         "同组竞争队出线门槛抬高"
       ],
       "championShift": "±0.0%",
@@ -323,10 +323,10 @@
       "title": "两队路径保持胶着",
       "details": [
         "巴拿马夺冠概率 ±0.0%",
-        "克罗地亚夺冠概率 -0.2%",
+        "克罗地亚夺冠概率 -0.4%",
         "小组第一仍取决于末轮和净胜球"
       ],
-      "championShift": "±0.0% / -0.2%",
+      "championShift": "±0.0% / -0.4%",
       "tone": "gold"
     },
     {
@@ -334,11 +334,11 @@
       "probability": 57,
       "title": "克罗地亚半区压力下降",
       "details": [
-        "克罗地亚夺冠概率 +0.1%",
+        "克罗地亚夺冠概率 +0.3%",
         "巴拿马潜在淘汰赛路径变难 ±0.0%",
         "小组第二路径风险上升"
       ],
-      "championShift": "+0.1%",
+      "championShift": "+0.3%",
       "tone": "blue"
     }
   ],
@@ -7194,6 +7194,69 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Tue, 23 Jun 2026 20:28:12 GMT"
+    },
+    {
+      "title": "'I'm back' - record-breaking Ronaldo answers critics",
+      "detail": "Portugal forward Cristiano Ronaldo provides the perfect response to those that doubted him as he becomes the first player to score at six World Cups.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 23 Jun 2026 21:33:55 GMT"
+    },
+    {
+      "title": "Spence appears not to shake hands with Partey",
+      "detail": "Footage circulating on social media appears to show England's Djed Spence not shaking hands with Ghana's Thomas Partey before their World Cup group match in Boston.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 23 Jun 2026 21:46:47 GMT"
+    },
+    {
+      "title": "England held to goalless draw by Ghana",
+      "detail": "England fail to repeat their performance that overpowered Croatia in their first World Cup game as they are held to a draw by a resolute Ghana at Boston Stadium.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 23 Jun 2026 22:41:55 GMT"
+    },
+    {
+      "title": "'Anxious moment for England' - should this have been Ghana penalty?",
+      "detail": "England's Ezri Konsa makes a last-ditch attempt to stop Ghana's Prince Adu during their World Cup Group L match in Boston.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 23 Jun 2026 22:05:14 GMT"
+    },
+    {
+      "title": "Rice remains positive after England draw with Ghana",
+      "detail": "England midfielder Declan Rice says he remains positive despite being held to a 0-0 draw against Ghana in their World Cup Group L match in Boston.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 23 Jun 2026 22:28:36 GMT"
+    },
+    {
+      "title": "Kane's late miss sees England frustrated by Ghana",
+      "detail": "Harry Kane missed a golden late chance as England's World Cup campaign was brought back to Earth with a goalless draw against Ghana at Gillette Stadium on Tuesday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 23 Jun 2026 18:19:45 EST"
+    },
+    {
+      "title": "South Korea say finale in Mexico on 'home ground'",
+      "detail": "And yet, thousands of miles away, South Korea have not only been feeling the love in Mexico at the FIFA World Cup, it could even be said that they are enjoying a \"home\" advantage.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 23 Jun 2026 18:19:45 EST"
+    },
+    {
+      "title": "In a World Cup on home soil, El Tri is making Mexico proud",
+      "detail": "At Qatar 2022, there was a divide between Mexico and the country they represented. That's all changed at this World Cup on home soil.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 23 Jun 2026 17:33:29 EST"
+    },
+    {
+      "title": "Commentator loses World Cup credentials after calling Infantino and referee ‘thieves’",
+      "detail": "<ul><li><p>Jorge Chipi Vera launches TV rant after Almirón red card</p></li><li><p>Paraguay winger covered mouth in win over Turkey</p></li></ul><p>A football commentator has been stripped of his World Cup credentials by ⁠Fifa after an expletive-laden tirade against the organisation and match officials during <a href=\"https://www.theguardian.com/football/2026/jun/20/turkey-paraguay-world-cup-2026-group-d-match-report\">Paraguay’s 1-0 victory over Turkey</a> when ⁠Miguel Almirón was sent ⁠off.</p><p>Jorge ​Chipi Vera lost his composure on live television when Paraguay’s Almirón became the first player sent off at the ⁠tournament for violating a strict new rule that forbids covering mouths during on-field confrontations. Almirón was dismissed by the Salvadorian referee Iván Barton for remarks made to ⁠Turkey’s Mert Muldur with his hand covering his mouth in first-half stoppage time.</p> <a href=\"https://www.theguardian.com/football/2026/jun/23/commentator-loses-world-cup-credentials-after-calling-infantino-and-referee-thieves\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 23 Jun 2026 18:09:46 GMT"
     }
   ],
   "teams": [
@@ -7209,11 +7272,11 @@
         "margin": 79
       },
       "tournament": {
-        "champion": 1.4,
-        "final": 4.0,
-        "semifinal": 10.8,
-        "quarterfinal": 24.4,
-        "change": -0.3
+        "champion": 1.5,
+        "final": 4.1,
+        "semifinal": 10.9,
+        "quarterfinal": 25.4,
+        "change": -0.2
       }
     },
     {
@@ -7229,8 +7292,8 @@
       },
       "tournament": {
         "champion": 0.0,
-        "final": 0.0,
-        "semifinal": 0.2,
+        "final": 0.1,
+        "semifinal": 0.3,
         "quarterfinal": 1.7,
         "change": 0.0
       }
@@ -7247,10 +7310,10 @@
         "margin": 78
       },
       "tournament": {
-        "champion": 0.8,
-        "final": 2.2,
+        "champion": 0.7,
+        "final": 2.4,
         "semifinal": 6.7,
-        "quarterfinal": 21.1,
+        "quarterfinal": 21.0,
         "change": 0.2
       }
     },
@@ -7267,10 +7330,10 @@
       },
       "tournament": {
         "champion": 0.1,
-        "final": 0.2,
+        "final": 0.3,
         "semifinal": 1.0,
-        "quarterfinal": 5.0,
-        "change": 0.0
+        "quarterfinal": 4.9,
+        "change": -0.1
       }
     },
     {
@@ -7285,11 +7348,11 @@
         "margin": 75
       },
       "tournament": {
-        "champion": 0.0,
+        "champion": 0.1,
         "final": 0.3,
         "semifinal": 1.6,
-        "quarterfinal": 8.6,
-        "change": -0.4
+        "quarterfinal": 8.5,
+        "change": -0.3
       }
     },
     {
@@ -7306,8 +7369,8 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 0.6,
-        "quarterfinal": 3.6,
+        "semifinal": 0.5,
+        "quarterfinal": 3.5,
         "change": -0.1
       }
     },
@@ -7324,7 +7387,7 @@
       },
       "tournament": {
         "champion": 0.0,
-        "final": 0.1,
+        "final": 0.0,
         "semifinal": 0.3,
         "quarterfinal": 2.1,
         "change": 0.0
@@ -7344,9 +7407,9 @@
       "tournament": {
         "champion": 0.8,
         "final": 2.6,
-        "semifinal": 7.2,
-        "quarterfinal": 22.5,
-        "change": -0.5
+        "semifinal": 7.3,
+        "quarterfinal": 22.4,
+        "change": -0.3
       }
     },
     {
@@ -7361,11 +7424,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 5.1,
-        "final": 10.4,
-        "semifinal": 20.6,
-        "quarterfinal": 37.2,
-        "change": -4.5
+        "champion": 5.3,
+        "final": 10.6,
+        "semifinal": 21.1,
+        "quarterfinal": 37.6,
+        "change": -4.2
       }
     },
     {
@@ -7374,17 +7437,17 @@
       "code": "MAR",
       "factors": {
         "strength": 84,
-        "form": 81,
+        "form": 80,
         "path": 65,
         "squad": 76,
         "margin": 82
       },
       "tournament": {
-        "champion": 1.5,
-        "final": 4.0,
-        "semifinal": 10.0,
-        "quarterfinal": 25.2,
-        "change": -0.3
+        "champion": 1.2,
+        "final": 3.5,
+        "semifinal": 9.2,
+        "quarterfinal": 23.7,
+        "change": -0.5
       }
     },
     {
@@ -7412,16 +7475,16 @@
       "code": "SCO",
       "factors": {
         "strength": 75,
-        "form": 78,
+        "form": 76,
         "path": 64,
         "squad": 70,
         "margin": 78
       },
       "tournament": {
         "champion": 0.1,
-        "final": 0.5,
-        "semifinal": 2.1,
-        "quarterfinal": 7.6,
+        "final": 0.4,
+        "semifinal": 1.7,
+        "quarterfinal": 6.7,
         "change": -0.1
       }
     },
@@ -7437,11 +7500,11 @@
         "margin": 78
       },
       "tournament": {
-        "champion": 1.0,
+        "champion": 0.9,
         "final": 3.2,
         "semifinal": 9.8,
-        "quarterfinal": 33.3,
-        "change": -0.4
+        "quarterfinal": 33.6,
+        "change": -0.5
       }
     },
     {
@@ -7458,7 +7521,7 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.2,
-        "semifinal": 0.9,
+        "semifinal": 0.8,
         "quarterfinal": 3.1,
         "change": -0.1
       }
@@ -7475,11 +7538,11 @@
         "margin": 77
       },
       "tournament": {
-        "champion": 0.3,
+        "champion": 0.2,
         "final": 1.0,
-        "semifinal": 3.2,
+        "semifinal": 3.1,
         "quarterfinal": 8.5,
-        "change": 0.1
+        "change": 0.0
       }
     },
     {
@@ -7497,7 +7560,7 @@
         "champion": 0.1,
         "final": 0.4,
         "semifinal": 1.1,
-        "quarterfinal": 2.6,
+        "quarterfinal": 2.4,
         "change": 0.0
       }
     },
@@ -7514,9 +7577,9 @@
       },
       "tournament": {
         "champion": 5.0,
-        "final": 10.7,
-        "semifinal": 21.3,
-        "quarterfinal": 36.0,
+        "final": 10.5,
+        "semifinal": 21.1,
+        "quarterfinal": 35.8,
         "change": -1.2
       }
     },
@@ -7535,7 +7598,7 @@
         "champion": 0.0,
         "final": 0.0,
         "semifinal": 0.0,
-        "quarterfinal": 0.4,
+        "quarterfinal": 0.3,
         "change": 0.0
       }
     },
@@ -7553,7 +7616,7 @@
       "tournament": {
         "champion": 0.3,
         "final": 1.0,
-        "semifinal": 3.6,
+        "semifinal": 3.5,
         "quarterfinal": 11.2,
         "change": -0.1
       }
@@ -7570,11 +7633,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 0.4,
-        "final": 1.0,
-        "semifinal": 2.6,
-        "quarterfinal": 7.0,
-        "change": 0.2
+        "champion": 0.3,
+        "final": 0.9,
+        "semifinal": 2.5,
+        "quarterfinal": 6.6,
+        "change": 0.1
       }
     },
     {
@@ -7589,10 +7652,10 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 5.8,
-        "final": 11.8,
-        "semifinal": 22.5,
-        "quarterfinal": 42.2,
+        "champion": 5.7,
+        "final": 11.5,
+        "semifinal": 22.9,
+        "quarterfinal": 42.9,
         "change": -0.4
       }
     },
@@ -7609,9 +7672,9 @@
       },
       "tournament": {
         "champion": 2.0,
-        "final": 4.9,
-        "semifinal": 12.0,
-        "quarterfinal": 27.1,
+        "final": 5.1,
+        "semifinal": 12.1,
+        "quarterfinal": 27.3,
         "change": 0.6
       }
     },
@@ -7648,9 +7711,9 @@
       "tournament": {
         "champion": 0.1,
         "final": 0.5,
-        "semifinal": 2.1,
+        "semifinal": 2.0,
         "quarterfinal": 7.1,
-        "change": -0.3
+        "change": -0.2
       }
     },
     {
@@ -7665,11 +7728,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 2.3,
-        "final": 5.7,
-        "semifinal": 12.3,
-        "quarterfinal": 26.0,
-        "change": -0.7
+        "champion": 2.1,
+        "final": 5.5,
+        "semifinal": 12.5,
+        "quarterfinal": 26.3,
+        "change": -0.9
       }
     },
     {
@@ -7684,11 +7747,11 @@
         "margin": 76
       },
       "tournament": {
-        "champion": 0.4,
+        "champion": 0.3,
         "final": 1.4,
         "semifinal": 5.0,
-        "quarterfinal": 19.1,
-        "change": -0.1
+        "quarterfinal": 18.8,
+        "change": -0.2
       }
     },
     {
@@ -7704,8 +7767,8 @@
       },
       "tournament": {
         "champion": 0.3,
-        "final": 1.1,
-        "semifinal": 3.7,
+        "final": 1.3,
+        "semifinal": 3.8,
         "quarterfinal": 12.7,
         "change": 0.1
       }
@@ -7744,8 +7807,8 @@
         "champion": 20.9,
         "final": 31.7,
         "semifinal": 46.8,
-        "quarterfinal": 58.2,
-        "change": 7.7
+        "quarterfinal": 58.1,
+        "change": 7.6
       }
     },
     {
@@ -7761,9 +7824,9 @@
       },
       "tournament": {
         "champion": 0.0,
-        "final": 0.1,
+        "final": 0.0,
         "semifinal": 0.3,
-        "quarterfinal": 1.8,
+        "quarterfinal": 1.7,
         "change": 0.0
       }
     },
@@ -7781,7 +7844,7 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 0.3,
+        "semifinal": 0.4,
         "quarterfinal": 1.6,
         "change": 0.0
       }
@@ -7798,11 +7861,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 1.4,
-        "final": 3.5,
-        "semifinal": 8.0,
-        "quarterfinal": 15.2,
-        "change": -0.4
+        "champion": 1.3,
+        "final": 3.4,
+        "semifinal": 7.9,
+        "quarterfinal": 15.0,
+        "change": -0.5
       }
     },
     {
@@ -7817,10 +7880,10 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 13.3,
-        "final": 22.3,
-        "semifinal": 36.9,
-        "quarterfinal": 53.4,
+        "champion": 13.6,
+        "final": 22.6,
+        "semifinal": 37.3,
+        "quarterfinal": 53.6,
         "change": -0.4
       }
     },
@@ -7837,10 +7900,10 @@
       },
       "tournament": {
         "champion": 0.5,
-        "final": 1.7,
-        "semifinal": 4.5,
-        "quarterfinal": 12.8,
-        "change": -0.1
+        "final": 1.6,
+        "semifinal": 4.7,
+        "quarterfinal": 12.7,
+        "change": 0.0
       }
     },
     {
@@ -7858,7 +7921,7 @@
         "champion": 0.0,
         "final": 0.0,
         "semifinal": 0.1,
-        "quarterfinal": 0.4,
+        "quarterfinal": 0.5,
         "change": 0.0
       }
     },
@@ -7874,11 +7937,11 @@
         "margin": 76
       },
       "tournament": {
-        "champion": 1.0,
+        "champion": 0.9,
         "final": 3.1,
         "semifinal": 9.0,
         "quarterfinal": 22.8,
-        "change": -0.1
+        "change": -0.2
       }
     },
     {
@@ -7893,11 +7956,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 16.0,
-        "final": 28.2,
-        "semifinal": 44.5,
-        "quarterfinal": 62.8,
-        "change": 4.4
+        "champion": 16.6,
+        "final": 28.8,
+        "semifinal": 44.9,
+        "quarterfinal": 62.7,
+        "change": 4.7
       }
     },
     {
@@ -7913,10 +7976,10 @@
       },
       "tournament": {
         "champion": 0.4,
-        "final": 1.3,
-        "semifinal": 4.1,
-        "quarterfinal": 12.0,
-        "change": 0.0
+        "final": 1.2,
+        "semifinal": 3.8,
+        "quarterfinal": 12.1,
+        "change": 0.1
       }
     },
     {
@@ -7932,9 +7995,9 @@
       },
       "tournament": {
         "champion": 0.6,
-        "final": 1.7,
+        "final": 1.8,
         "semifinal": 5.3,
-        "quarterfinal": 13.5,
+        "quarterfinal": 13.1,
         "change": -0.3
       }
     },
@@ -7969,11 +8032,11 @@
         "margin": 83
       },
       "tournament": {
-        "champion": 6.3,
-        "final": 12.8,
+        "champion": 6.4,
+        "final": 13.0,
         "semifinal": 24.3,
-        "quarterfinal": 43.5,
-        "change": -1.7
+        "quarterfinal": 43.8,
+        "change": -1.8
       }
     },
     {
@@ -7991,7 +8054,7 @@
         "champion": 0.0,
         "final": 0.2,
         "semifinal": 1.0,
-        "quarterfinal": 3.8,
+        "quarterfinal": 3.9,
         "change": -0.1
       }
     },
@@ -8026,11 +8089,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 2.6,
-        "final": 6.9,
-        "semifinal": 15.5,
-        "quarterfinal": 33.2,
-        "change": 0.7
+        "champion": 2.7,
+        "final": 7.0,
+        "semifinal": 15.8,
+        "quarterfinal": 33.7,
+        "change": 0.8
       }
     },
     {
@@ -8045,11 +8108,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 8.3,
-        "final": 15.9,
-        "semifinal": 29.6,
-        "quarterfinal": 48.3,
-        "change": -1.3
+        "champion": 7.9,
+        "final": 15.5,
+        "semifinal": 28.9,
+        "quarterfinal": 47.3,
+        "change": -1.1
       }
     },
     {
@@ -8066,8 +8129,8 @@
       "tournament": {
         "champion": 1.1,
         "final": 3.0,
-        "semifinal": 7.6,
-        "quarterfinal": 15.6,
+        "semifinal": 7.4,
+        "quarterfinal": 16.4,
         "change": 0.0
       }
     },
@@ -8084,10 +8147,10 @@
       },
       "tournament": {
         "champion": 0.0,
-        "final": 0.1,
-        "semifinal": 0.8,
-        "quarterfinal": 3.9,
-        "change": -0.1
+        "final": 0.2,
+        "semifinal": 0.9,
+        "quarterfinal": 4.9,
+        "change": -0.2
       }
     },
     {
@@ -8104,8 +8167,8 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.0,
-        "semifinal": 0.2,
-        "quarterfinal": 0.9,
+        "semifinal": 0.1,
+        "quarterfinal": 0.7,
         "change": 0.0
       }
     }
@@ -8114,8 +8177,8 @@
     "engine": "Poisson + Monte Carlo",
     "simulationCount": 50000,
     "changeBaseline": "unadjusted_model",
-    "lockedResults": 45,
-    "liveMatches": 1,
+    "lockedResults": 46,
+    "liveMatches": 0,
     "dataset": {
       "source": "fifa-official-match-schedule-2026",
       "tournamentSource": {
@@ -8129,18 +8192,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 976,
+      "eventCount": 985,
       "manualEventCount": 3,
-      "rawNewsCount": 973,
+      "rawNewsCount": 982,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 976,
-      "applied": 903,
+      "watched": 985,
+      "applied": 912,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 971,
+      "singleSource": 980,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -8216,7 +8279,7 @@
         "squad": -8.6
       },
       "morocco": {
-        "attack": -2.15,
+        "attack": -4.699999999999999,
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -5.57,
@@ -8230,7 +8293,7 @@
         "squad": 0.0
       },
       "scotland": {
-        "attack": 0.0,
+        "attack": -2.15,
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -3.68,
@@ -18781,147 +18844,178 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-23T21:17:37.074251+00:00",
+    "generatedAt": "2026-06-23T22:49:21.883462+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
     "items": [
       {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 13.2,
-        "currentChampion": 13.3,
-        "change": 0.1,
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 16.0,
+        "currentChampion": 16.6,
+        "change": 0.6,
         "direction": "up",
-        "reason": "四强概率上升 +0.1%",
+        "reason": "决赛概率上升 +0.6%",
         "reasons": [
-          "四强概率上升 +0.1%",
-          "可入模型事件新增 23 条"
+          "决赛概率上升 +0.6%",
+          "四强概率上升 +0.4%",
+          "已完赛果新增 1 场，路径重新模拟",
+          "可入模型事件新增 9 条"
         ]
       },
       {
         "team": "england",
         "name": "英格兰",
         "code": "ENG",
-        "previousChampion": 8.4,
-        "currentChampion": 8.3,
-        "change": -0.1,
+        "previousChampion": 8.3,
+        "currentChampion": 7.9,
+        "change": -0.4,
         "direction": "down",
         "reason": "八强概率下降 -1.0%",
         "reasons": [
           "八强概率下降 -1.0%",
-          "四强概率下降 -0.6%",
-          "决赛概率下降 -0.3%",
-          "可入模型事件新增 23 条"
+          "四强概率下降 -0.7%",
+          "决赛概率下降 -0.4%",
+          "已完赛果新增 1 场，路径重新模拟",
+          "可入模型事件新增 9 条"
         ]
       },
       {
-        "team": "japan",
-        "name": "日本",
-        "code": "JPN",
-        "previousChampion": 1.9,
-        "currentChampion": 2.0,
-        "change": 0.1,
+        "team": "france",
+        "name": "法国",
+        "code": "FRA",
+        "previousChampion": 13.3,
+        "currentChampion": 13.6,
+        "change": 0.3,
         "direction": "up",
-        "reason": "四强概率上升 +0.1%",
+        "reason": "四强概率上升 +0.4%",
         "reasons": [
-          "四强概率上升 +0.1%",
-          "可入模型事件新增 23 条"
-        ]
-      },
-      {
-        "team": "uruguay",
-        "name": "乌拉圭",
-        "code": "URU",
-        "previousChampion": 1.3,
-        "currentChampion": 1.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 23 条",
-        "reasons": [
-          "可入模型事件新增 23 条"
-        ]
-      },
-      {
-        "team": "croatia",
-        "name": "克罗地亚",
-        "code": "CRO",
-        "previousChampion": 1.0,
-        "currentChampion": 1.1,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.1%",
-          "可入模型事件新增 23 条"
-        ]
-      },
-      {
-        "team": "south-korea",
-        "name": "韩国",
-        "code": "KOR",
-        "previousChampion": 0.7,
-        "currentChampion": 0.8,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.2%",
-        "reasons": [
+          "四强概率上升 +0.4%",
+          "决赛概率上升 +0.3%",
           "八强概率上升 +0.2%",
-          "四强概率上升 +0.1%",
-          "可入模型事件新增 23 条"
+          "已完赛果新增 1 场，路径重新模拟",
+          "可入模型事件新增 9 条"
         ]
       },
       {
-        "team": "canada",
-        "name": "加拿大",
-        "code": "CAN",
-        "previousChampion": 0.1,
-        "currentChampion": 0.0,
+        "team": "morocco",
+        "name": "摩洛哥",
+        "code": "MAR",
+        "previousChampion": 1.5,
+        "currentChampion": 1.2,
+        "change": -0.3,
+        "direction": "down",
+        "reason": "状态盘下调 -2.5",
+        "reasons": [
+          "状态盘下调 -2.5",
+          "八强概率下降 -1.5%",
+          "四强概率下降 -0.8%",
+          "决赛概率下降 -0.5%",
+          "已完赛果新增 1 场，路径重新模拟",
+          "可入模型事件新增 9 条"
+        ]
+      },
+      {
+        "team": "brazil",
+        "name": "巴西",
+        "code": "BRA",
+        "previousChampion": 5.1,
+        "currentChampion": 5.3,
+        "change": 0.2,
+        "direction": "up",
+        "reason": "四强概率上升 +0.5%",
+        "reasons": [
+          "四强概率上升 +0.5%",
+          "八强概率上升 +0.4%",
+          "决赛概率上升 +0.2%",
+          "已完赛果新增 1 场，路径重新模拟",
+          "可入模型事件新增 9 条"
+        ]
+      },
+      {
+        "team": "belgium",
+        "name": "比利时",
+        "code": "BEL",
+        "previousChampion": 2.3,
+        "currentChampion": 2.1,
+        "change": -0.2,
+        "direction": "down",
+        "reason": "决赛概率下降 -0.2%",
+        "reasons": [
+          "决赛概率下降 -0.2%",
+          "已完赛果新增 1 场，路径重新模拟",
+          "可入模型事件新增 9 条"
+        ]
+      },
+      {
+        "team": "portugal",
+        "name": "葡萄牙",
+        "code": "POR",
+        "previousChampion": 6.3,
+        "currentChampion": 6.4,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.3%",
+        "reasons": [
+          "八强概率上升 +0.3%",
+          "决赛概率上升 +0.2%",
+          "已完赛果新增 1 场，路径重新模拟",
+          "可入模型事件新增 9 条"
+        ]
+      },
+      {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 5.8,
+        "currentChampion": 5.7,
         "change": -0.1,
         "direction": "down",
-        "reason": "状态盘下调 -2.2",
+        "reason": "决赛概率下降 -0.3%",
         "reasons": [
-          "状态盘下调 -2.2",
-          "八强概率下降 -0.6%",
-          "四强概率下降 -0.2%",
-          "可入模型事件新增 23 条"
+          "决赛概率下降 -0.3%",
+          "已完赛果新增 1 场，路径重新模拟",
+          "可入模型事件新增 9 条"
         ]
       }
     ],
     "summary": {
-      "up": 5,
-      "down": 2,
+      "up": 7,
+      "down": 11,
       "largestUp": {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 13.2,
-        "currentChampion": 13.3,
-        "change": 0.1,
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 16.0,
+        "currentChampion": 16.6,
+        "change": 0.6,
         "direction": "up",
-        "reason": "四强概率上升 +0.1%",
+        "reason": "决赛概率上升 +0.6%",
         "reasons": [
-          "四强概率上升 +0.1%",
-          "可入模型事件新增 23 条"
+          "决赛概率上升 +0.6%",
+          "四强概率上升 +0.4%",
+          "已完赛果新增 1 场，路径重新模拟",
+          "可入模型事件新增 9 条"
         ]
       },
       "largestDown": {
         "team": "england",
         "name": "英格兰",
         "code": "ENG",
-        "previousChampion": 8.4,
-        "currentChampion": 8.3,
-        "change": -0.1,
+        "previousChampion": 8.3,
+        "currentChampion": 7.9,
+        "change": -0.4,
         "direction": "down",
         "reason": "八强概率下降 -1.0%",
         "reasons": [
           "八强概率下降 -1.0%",
-          "四强概率下降 -0.6%",
-          "决赛概率下降 -0.3%",
-          "可入模型事件新增 23 条"
+          "四强概率下降 -0.7%",
+          "决赛概率下降 -0.4%",
+          "已完赛果新增 1 场，路径重新模拟",
+          "可入模型事件新增 9 条"
         ]
       }
     }
