@@ -14570,5 +14570,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-99aae9c22efa",
+    "title": "Wales boss Bellamy in talks over Burnley job",
+    "summary": "Burnley hope to complete a deal to appoint Wales boss Craig Bellamy following Scott Parker's departure.",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Wed, 24 Jun 2026 13:17:18 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c8624edp778o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-a4194c6919b5",
+    "title": "Leeds agree contract with Fulham forward Wilson",
+    "summary": "Leeds agree a long-term contract with Fulham attacker Harry Wilson to join on a free transfer.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Wed, 24 Jun 2026 11:23:45 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c892dk5dnz8o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-343dfc0e31b3",
+    "title": "Defender Gusto considering Chelsea future",
+    "summary": "Chelsea defender Malo Gusto is exploring his options to leave this summer, with the club placing a £75m price tag on him.",
+    "source": "bbc",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Wed, 24 Jun 2026 11:23:18 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/czj8v1pz204o?at_medium=RSS&at_campaign=rss",
+    "category": "market_proxy",
+    "factor": "path",
+    "direction": 0,
+    "confidence": 0.52
+  },
+  {
+    "id": "bbc-f2da46199ab9",
+    "title": "Ramsey ready for challenge as new Oxford head coach",
+    "summary": "New Oxford United boss Aaron Ramsey says he is ready for his first permanent head coach role at the League One club.",
+    "source": "bbc",
+    "team": "england",
+    "status": "single_source",
+    "published_at": "Wed, 24 Jun 2026 12:22:46 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c992g5n1edjo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
