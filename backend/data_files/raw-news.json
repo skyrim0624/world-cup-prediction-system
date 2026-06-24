@@ -14794,5 +14794,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-b2abb2c34ebe",
+    "title": "Madibo given five-game ban for causing Kone leg break",
+    "summary": "Qatar midfielder Assim Madibo is given a five-match ban for the challenge which resulted in a broken leg for Canada's Ismael Kone.",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Wed, 24 Jun 2026 19:24:12 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c0lykrnw64xo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-92596d08c5c0",
+    "title": "Belgium going out? Sutton's World Cup 2026 score predictions - final group games",
+    "summary": "BBC Sport's football expert Chris Sutton gives his predictions for the scores of the final set of group games at the 2026 World Cup.",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Wed, 24 Jun 2026 18:42:01 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cg74z733xmko?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-e97e95f5fff1",
+    "title": "Bukayo Saka may start against Panama but Tuchel wary of pressuring him",
+    "summary": "<ul><li><p>England coach hopeful winger ‘is good to go’ on Saturday</p></li><li><p>‘It’s not the moment to shout for individual names’</p></li></ul><p>Thomas Tuchel is hoping Bukayo Saka could start against Panama on Saturday, but warned the Arsenal forward cannot solve England’s problems in attack on his own.</p><p>Saka made his second substitute appearance of the tournament <a href=\"https://www.theguardian.com/football/2026/jun/23/england-ghana-world-cup-group-l-match-report\">in the 0-0 draw with Ghana</a> at Boston Stadium and added late impetus to England’s misfiring attack, although he could not find a breakthrough on a frustrating afternoon for Tuchel. The 24-year-old’s return from a nagging achilles injury has been managed carefully by Arsenal and England over recent weeks, with Saka saying last week that he was gambling on his fitness.</p> <a href=\"https://www.theguardian.com/football/2026/jun/24/bukayo-saka-england-panama-thomas-tuchel-world-cup\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Wed, 24 Jun 2026 18:00:52 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/24/bukayo-saka-england-panama-thomas-tuchel-world-cup",
+    "category": "injury",
+    "factor": "attack",
+    "direction": -1,
+    "confidence": 0.78
   }
 ]
