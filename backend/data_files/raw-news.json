@@ -14990,5 +14990,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.72
+  },
+  {
+    "id": "bbc-8ecefa7f3359",
+    "title": "Vinicius Jr pounces on Scotland mistake to give Brazil early lead",
+    "summary": "Brazil forward Vinicius Junior pounces on a mistake by the Scotland defence to give his side an early lead in their World Cup Group C match in Miami.",
+    "source": "bbc",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Wed, 24 Jun 2026 22:38:49 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/videos/c77yd2r6pj4o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "defense",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-31288394a06c",
+    "title": "Rate the players as Scotland face Brazil",
+    "summary": "Rate the Scotland and Brazil players out of 10 below and come back 30 minutes after full-time to see the final ratings.",
+    "source": "bbc",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Wed, 24 Jun 2026 22:45:48 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c5yen4pvmrvo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-bb5c5920e32f",
+    "title": "Switzerland beat Canada but both through to last 32",
+    "summary": "Switzerland seal their place in the first knockout round of the World Cup by beating co-hosts Canada to top Group B.",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Wed, 24 Jun 2026 21:58:36 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/videos/c98219e7vdqo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-6e52d66d7fab",
+    "title": "England have cause for concern but Thomas Tuchel’s strategy is for the very best | Jacob Steinberg",
+    "summary": "<p>Draw with a negative Ghana is unlikely to define World Cup campaign, with plans in place for tougher opposition</p><p>Not as easy as it looks, is it? After looking as if he had all the answers a week ago, Thomas Tuchel has tumbled into a place Gareth Southgate knew all too well. This is the moment when anxiety rises and selection decision choices are questioned. Tuchel, a newcomer to international football, will have to ignore the noise and keep in mind that this is usually how it goes when England experience their traditional tournament stumble in their second group game.</p><p>The inevitable response to Tuesday’s <a href=\"https://www.theguardian.com/football/2026/jun/23/england-ghana-world-cup-group-l-match-report\">goalless draw with Ghana</a> will be people wondering why Tuchel left their favourite player out of his squad. Top pundits are bemoaning the absence of Trent Alexander-Arnold, Phil Foden, Adam Wharton and Cole Palmer. Not unfairly, there is an argument that England have too many similar types and needed a player to unlock the game at Boston Stadium.</p> <a href=\"https://www.theguardian.com/football/2026/jun/24/england-thomas-tuchel-strategy-2026-world-cup-ghana\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "australia",
+    "status": "single_source",
+    "published_at": "Wed, 24 Jun 2026 18:00:51 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/24/england-thomas-tuchel-strategy-2026-world-cup-ghana",
+    "category": "market_proxy",
+    "factor": "path",
+    "direction": 1,
+    "confidence": 0.52
   }
 ]

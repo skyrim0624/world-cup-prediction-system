@@ -581,9 +581,11 @@
     "away": "brazil",
     "stage": "小组赛 C 组",
     "kickoff": "6月24日 18:00 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "Miami",
-    "stadium": "Miami Stadium"
+    "stadium": "Miami Stadium",
+    "home_score": 0,
+    "away_score": 2
   },
   {
     "match_no": 50,
@@ -591,9 +593,11 @@
     "away": "haiti",
     "stage": "小组赛 C 组",
     "kickoff": "6月24日 18:00 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "Atlanta",
-    "stadium": "Atlanta Stadium"
+    "stadium": "Atlanta Stadium",
+    "home_score": 2,
+    "away_score": 2
   },
   {
     "match_no": 51,
