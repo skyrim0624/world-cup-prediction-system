@@ -14738,5 +14738,61 @@
     "factor": "attack",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-bf3ec1b32860",
+    "title": "What we learned from McInnes' Rangers unveiling",
+    "summary": "BBC Sport Scotland lays out what we learned from Derek McInnes' first press conference as Rangers manager.",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Wed, 24 Jun 2026 17:14:33 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cly79pv5d6do?at_medium=RSS&at_campaign=rss",
+    "category": "training",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.58
+  },
+  {
+    "id": "bbc-329cb3cce6be",
+    "title": "Villa fans get suspended ban for discriminatory behaviour",
+    "summary": "Aston Villa could be banned from selling tickets for a European away game next season following an incident at the Europa League final.",
+    "source": "bbc",
+    "team": "netherlands",
+    "status": "single_source",
+    "published_at": "Wed, 24 Jun 2026 17:43:02 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cly79e29l3ro?at_medium=RSS&at_campaign=rss",
+    "category": "suspension",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.9
+  },
+  {
+    "id": "guardian-51d0d9cec736",
+    "title": "Switzerland v Canada: World Cup 2026 – live",
+    "summary": "<p>⚽ Match kicks off at 12pm local time/4pm ET/8pm BST<br>⚽ <a href=\"https://viewer.gutools.co.uk/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://viewer.gutools.co.uk/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"https://viewer.gutools.co.uk/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a></p><p><strong>Alphonso Davies stays on the bench for Canada</strong>, whose two changes are in central midfield: Mathieu Choiniere and Nathan Saliba replace Stephen Eustaquio and Ismael Kone.</p><p>Switzerland bring in Luca Jaquez, Djibril Sow, Johan Manzambi and Ruben Vargas for Silvan Widmer, Michel Aebischer, Dan Ndoye and Fabian Rieder.</p> <a href=\"https://www.theguardian.com/football/live/2026/jun/24/switzerland-v-canada-world-cup-2026-live\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Wed, 24 Jun 2026 18:05:01 GMT",
+    "url": "https://www.theguardian.com/football/live/2026/jun/24/switzerland-v-canada-world-cup-2026-live",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-00501ae8bc33",
+    "title": "Bosnia and Herzegovina v Qatar: World Cup 2026 – live",
+    "summary": "<ul><li><p><strong>⚽ Match in Seattle kicks off at 12pm local time/4pm ET/8pm BST</strong></p></li><li><p><strong>⚽ </strong><a href=\"https://viewer.gutools.co.uk/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\"><strong>Player guide</strong></a><strong> | </strong><a href=\"https://viewer.gutools.co.uk/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\"><strong>Bracketology</strong></a><strong> | </strong><a href=\"https://viewer.gutools.co.uk/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\"><strong>Golden Boot</strong></a><strong> | </strong><a href=\"mailto:will.unwin.freelancer@theguardian.com\"><strong>Mail Will</strong></a></p></li></ul><p>Before each game in Bosnia and Herzegovina’s World Cup adventure, Sarajevo has blossomed with primary colours – and two distinct flags.</p><p>One is the national flag dating to 1998: blue and yellow diagonal halves emblazoned with a slanting line of white stars. The other has golden lilies on a blue shield set against a white background, and has a far deeper history, steeped in centuries of complexity. Its striking resurgence as a national symbol, showcased during Bosnia’s</p> <a href=\"https://www.theguardian.com/football/live/2026/jun/24/bosnia-and-herzegovina-v-qatar-world-cup-2026-live\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "qatar",
+    "status": "single_source",
+    "published_at": "Wed, 24 Jun 2026 17:58:39 GMT",
+    "url": "https://www.theguardian.com/football/live/2026/jun/24/bosnia-and-herzegovina-v-qatar-world-cup-2026-live",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
