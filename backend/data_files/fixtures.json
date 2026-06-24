@@ -601,11 +601,11 @@
     "away": "canada",
     "stage": "小组赛 B 组",
     "kickoff": "6月24日 15:00 ET",
-    "status": "live",
+    "status": "finished",
     "city": "Vancouver",
     "stadium": "BC Place Vancouver",
     "home_score": 2,
-    "away_score": 0
+    "away_score": 1
   },
   {
     "match_no": 52,
@@ -613,10 +613,10 @@
     "away": "qatar",
     "stage": "小组赛 B 组",
     "kickoff": "6月24日 15:00 ET",
-    "status": "live",
+    "status": "finished",
     "city": "Seattle",
     "stadium": "Seattle Stadium",
-    "home_score": 2,
+    "home_score": 3,
     "away_score": 1
   },
   {
