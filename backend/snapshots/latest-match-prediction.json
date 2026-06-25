@@ -1,77 +1,77 @@
 {
-  "stage": "小组赛 F 组",
-  "kickoff": "6月25日 19:00 ET",
-  "matchNo": 57,
-  "city": "Dallas",
-  "stadium": "Dallas Stadium",
+  "stage": "小组赛 D 组",
+  "kickoff": "6月25日 22:00 ET",
+  "matchNo": 59,
+  "city": "Los Angeles",
+  "stadium": "Los Angeles Stadium",
   "status": "未开赛",
-  "homeTeam": "japan",
-  "awayTeam": "sweden",
-  "homeWin": 55,
-  "draw": 23,
-  "awayWin": 22,
-  "updatedAt": "2026-06-25T22:06:08.313976+00:00",
+  "homeTeam": "turkiye",
+  "awayTeam": "usa",
+  "homeWin": 44,
+  "draw": 25,
+  "awayWin": 31,
+  "updatedAt": "2026-06-25T23:54:33.673036+00:00",
   "fixtureContext": {
     "home": {
-      "team": "japan",
-      "restDays": 5.8,
-      "previousCity": "Monterrey",
-      "currentCity": "Dallas",
+      "team": "turkiye",
+      "restDays": 6.0,
+      "previousCity": "San Francisco Bay Area",
+      "currentCity": "Los Angeles",
       "cityChange": true,
       "impact": -0.7,
       "notes": [
-        "Monterrey 转场到 Dallas"
+        "San Francisco Bay Area 转场到 Los Angeles"
       ]
     },
     "away": {
-      "team": "sweden",
-      "restDays": 5.2,
-      "previousCity": "Houston",
-      "currentCity": "Dallas",
+      "team": "usa",
+      "restDays": 6.3,
+      "previousCity": "Seattle",
+      "currentCity": "Los Angeles",
       "cityChange": true,
       "impact": -0.7,
       "notes": [
-        "Houston 转场到 Dallas"
+        "Seattle 转场到 Los Angeles"
       ]
     }
   },
   "matchupContext": {
     "source": "team_profile_matchup",
     "home": {
-      "team": "japan",
+      "team": "turkiye",
       "metrics": {
-        "attackVsDefense": 0.25,
-        "pressVsBuildout": 0.05,
-        "buildoutVsPress": 0.01,
-        "directnessEdge": 0.05,
-        "setPieceEdge": 0.05,
-        "aerialEdge": 0.03,
+        "attackVsDefense": 0.15,
+        "pressVsBuildout": -0.02,
+        "buildoutVsPress": 0.04,
+        "directnessEdge": 0.03,
+        "setPieceEdge": 0.03,
+        "aerialEdge": 0.04,
         "goalkeeperDrag": -0.1
       },
       "adjustments": {
-        "attack": 0.22,
-        "defense": 0.03,
+        "attack": 0.17,
+        "defense": -0.0,
         "goalkeeper": 0.0,
         "path": 0.01,
         "squad": 0.0
       }
     },
     "away": {
-      "team": "sweden",
+      "team": "usa",
       "metrics": {
-        "attackVsDefense": -0.15,
-        "pressVsBuildout": -0.01,
-        "buildoutVsPress": -0.05,
-        "directnessEdge": -0.03,
-        "setPieceEdge": -0.03,
-        "aerialEdge": -0.03,
-        "goalkeeperDrag": -0.05
+        "attackVsDefense": 0.05,
+        "pressVsBuildout": -0.04,
+        "buildoutVsPress": 0.02,
+        "directnessEdge": 0.01,
+        "setPieceEdge": 0.01,
+        "aerialEdge": -0.04,
+        "goalkeeperDrag": -0.1
       },
       "adjustments": {
-        "attack": -0.13,
-        "defense": -0.01,
+        "attack": 0.06,
+        "defense": -0.02,
         "goalkeeper": 0.0,
-        "path": -0.01,
+        "path": -0.0,
         "squad": 0.0
       }
     }
@@ -79,19 +79,19 @@
   "scoreOutcomes": [
     {
       "score": "1-1",
-      "probability": 10.6,
+      "probability": 11.2,
       "note": "双方基础强度接近",
       "tone": "gold"
     },
     {
-      "score": "1-0",
-      "probability": 10.0,
+      "score": "2-1",
+      "probability": 9.2,
       "note": "边路优势可能放大",
       "tone": "green"
     },
     {
-      "score": "2-1",
-      "probability": 9.9,
+      "score": "1-0",
+      "probability": 8.5,
       "note": "低比分胜局仍有空间",
       "tone": "blue"
     }
@@ -101,103 +101,103 @@
       "score": "0-0",
       "homeGoals": 0,
       "awayGoals": 0,
-      "probability": 5.4
+      "probability": 5.2
     },
     {
       "score": "0-1",
       "homeGoals": 0,
       "awayGoals": 1,
-      "probability": 5.7
+      "probability": 6.8
     },
     {
       "score": "0-2",
       "homeGoals": 0,
       "awayGoals": 2,
-      "probability": 3.0
+      "probability": 4.5
     },
     {
       "score": "0-3",
       "homeGoals": 0,
       "awayGoals": 3,
-      "probability": 1.1
+      "probability": 2.0
     },
     {
       "score": "0-4",
       "homeGoals": 0,
       "awayGoals": 4,
-      "probability": 0.3
+      "probability": 0.6
     },
     {
       "score": "1-0",
       "homeGoals": 1,
       "awayGoals": 0,
-      "probability": 10.0
+      "probability": 8.5
     },
     {
       "score": "1-1",
       "homeGoals": 1,
       "awayGoals": 1,
-      "probability": 10.6
+      "probability": 11.2
     },
     {
       "score": "1-2",
       "homeGoals": 1,
       "awayGoals": 2,
-      "probability": 5.7
+      "probability": 7.4
     },
     {
       "score": "1-3",
       "homeGoals": 1,
       "awayGoals": 3,
-      "probability": 2.0
+      "probability": 3.2
     },
     {
       "score": "1-4",
       "homeGoals": 1,
       "awayGoals": 4,
-      "probability": 0.5
+      "probability": 1.1
     },
     {
       "score": "2-0",
       "homeGoals": 2,
       "awayGoals": 0,
-      "probability": 9.3
+      "probability": 7.0
     },
     {
       "score": "2-1",
       "homeGoals": 2,
       "awayGoals": 1,
-      "probability": 9.9
+      "probability": 9.2
     },
     {
       "score": "2-2",
       "homeGoals": 2,
       "awayGoals": 2,
-      "probability": 5.3
+      "probability": 6.1
     },
     {
       "score": "2-3",
       "homeGoals": 2,
       "awayGoals": 3,
-      "probability": 1.9
+      "probability": 2.7
     },
     {
       "score": "2-4",
       "homeGoals": 2,
       "awayGoals": 4,
-      "probability": 0.5
+      "probability": 0.9
     },
     {
       "score": "3-0",
       "homeGoals": 3,
       "awayGoals": 0,
-      "probability": 5.8
+      "probability": 3.8
     },
     {
       "score": "3-1",
       "homeGoals": 3,
       "awayGoals": 1,
-      "probability": 6.1
+      "probability": 5.0
     },
     {
       "score": "3-2",
@@ -209,94 +209,94 @@
       "score": "3-3",
       "homeGoals": 3,
       "awayGoals": 3,
-      "probability": 1.2
+      "probability": 1.5
     },
     {
       "score": "3-4",
       "homeGoals": 3,
       "awayGoals": 4,
-      "probability": 0.3
+      "probability": 0.5
     },
     {
       "score": "4-0",
       "homeGoals": 4,
       "awayGoals": 0,
-      "probability": 2.7
+      "probability": 1.6
     },
     {
       "score": "4-1",
       "homeGoals": 4,
       "awayGoals": 1,
-      "probability": 2.9
+      "probability": 2.1
     },
     {
       "score": "4-2",
       "homeGoals": 4,
       "awayGoals": 2,
-      "probability": 1.5
+      "probability": 1.4
     },
     {
       "score": "4-3",
       "homeGoals": 4,
       "awayGoals": 3,
-      "probability": 0.5
+      "probability": 0.6
     },
     {
       "score": "4-4",
       "homeGoals": 4,
       "awayGoals": 4,
-      "probability": 0.1
+      "probability": 0.2
     }
   ],
   "goalMarkets": [
     {
       "label": "大 2.5",
-      "probability": 56.0,
-      "fairDecimal": 1.79,
+      "probability": 56.7,
+      "fairDecimal": 1.76,
       "note": "总进球至少 3",
-      "tone": "gold"
+      "tone": "green"
     },
     {
       "label": "小 2.5",
-      "probability": 44.0,
-      "fairDecimal": 2.27,
+      "probability": 43.3,
+      "fairDecimal": 2.31,
       "note": "总进球不超过 2",
       "tone": "blue"
     },
     {
       "label": "BTTS 是",
-      "probability": 55.3,
-      "fairDecimal": 1.81,
+      "probability": 59.0,
+      "fairDecimal": 1.69,
       "note": "双方都有进球",
-      "tone": "gold"
+      "tone": "green"
     },
     {
       "label": "BTTS 否",
-      "probability": 44.7,
-      "fairDecimal": 2.24,
+      "probability": 41.0,
+      "fairDecimal": 2.44,
       "note": "至少一队零进球",
       "tone": "blue"
     }
   ],
   "fairPrices": [
     {
-      "label": "日本胜",
-      "probability": 54.9,
-      "fairDecimal": 1.82,
+      "label": "土耳其胜",
+      "probability": 44.0,
+      "fairDecimal": 2.27,
       "note": "90 分钟模型公平概率",
       "tone": "green"
     },
     {
       "label": "平局",
-      "probability": 23.1,
-      "fairDecimal": 4.32,
+      "probability": 24.6,
+      "fairDecimal": 4.06,
       "note": "90 分钟模型公平概率",
       "tone": "gold"
     },
     {
-      "label": "瑞典胜",
-      "probability": 22.0,
-      "fairDecimal": 4.55,
+      "label": "美国胜",
+      "probability": 31.4,
+      "fairDecimal": 3.19,
       "note": "90 分钟模型公平概率",
       "tone": "blue"
     }
@@ -308,39 +308,39 @@
   },
   "scenarioImpacts": [
     {
-      "label": "日本胜",
-      "probability": 55,
-      "title": "日本小组第一概率上升",
+      "label": "土耳其胜",
+      "probability": 44,
+      "title": "土耳其小组第一概率上升",
       "details": [
-        "日本夺冠概率 -0.1%",
-        "瑞典路径盘下调 ±0.0%",
+        "土耳其夺冠概率 ±0.0%",
+        "美国路径盘下调 -0.1%",
         "同组竞争队出线门槛抬高"
       ],
-      "championShift": "-0.1%",
+      "championShift": "±0.0%",
       "tone": "green"
     },
     {
       "label": "打平",
-      "probability": 23,
+      "probability": 25,
       "title": "两队路径保持胶着",
       "details": [
-        "日本夺冠概率 -0.3%",
-        "瑞典夺冠概率 ±0.0%",
+        "土耳其夺冠概率 -0.1%",
+        "美国夺冠概率 -0.1%",
         "小组第一仍取决于末轮和净胜球"
       ],
-      "championShift": "-0.3% / ±0.0%",
+      "championShift": "-0.1% / -0.1%",
       "tone": "gold"
     },
     {
-      "label": "瑞典胜",
-      "probability": 22,
-      "title": "瑞典半区压力下降",
+      "label": "美国胜",
+      "probability": 31,
+      "title": "美国半区压力下降",
       "details": [
-        "瑞典夺冠概率 +0.1%",
-        "日本潜在淘汰赛路径变难 -0.5%",
+        "美国夺冠概率 -0.1%",
+        "土耳其潜在淘汰赛路径变难 -0.1%",
         "小组第二路径风险上升"
       ],
-      "championShift": "+0.1%",
+      "championShift": "-0.1%",
       "tone": "blue"
     }
   ],
@@ -350,7 +350,7 @@
       "detail": "从进球期望、双方防守质量和小组赛动机解释。"
     },
     {
-      "title": "日本赢球会怎样改变半区？",
+      "title": "土耳其赢球会怎样改变半区？",
       "detail": "把单场结果传导到小组第一、潜在 32 强对手和冠军概率。"
     },
     {
@@ -359,11 +359,11 @@
     }
   ],
   "analysis": [
-    "日本单场胜率 55%，优势来自基础实力和进攻盘。",
-    "平局概率 23%，会让小组第一继续依赖末轮赛果。",
+    "土耳其单场胜率 44%，优势来自基础实力和进攻盘。",
+    "平局概率 25%，会让小组第一继续依赖末轮赛果。",
     "已结束比赛已经锁定进积分表，伤病和停赛只按来源权重小幅修正。",
-    "边际盘：日本Monterrey 转场到 Dallas，路径盘和人员盘小幅下调。",
-    "边际盘：瑞典Houston 转场到 Dallas，路径盘和人员盘小幅下调。"
+    "边际盘：土耳其San Francisco Bay Area 转场到 Los Angeles，路径盘和人员盘小幅下调。",
+    "边际盘：美国Seattle 转场到 Los Angeles，路径盘和人员盘小幅下调。"
   ],
   "newsItems": [
     {
@@ -8674,6 +8674,48 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 25 Jun 2026 21:46:42 GMT"
+    },
+    {
+      "title": "Ecuador stun Germany to qualify for knockout stages",
+      "detail": "Goals from Nilson Angulo and Gonzalo Plata help Ecuador come from behind to beat Germany 2-1 to qualify for the knockout stages of the FIFA World Cup, as one of the top eight third-placed teams.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 25 Jun 2026 22:57:00 GMT"
+    },
+    {
+      "title": "Man Utd's Onana set for Trabzonspor loan",
+      "detail": "Manchester United goalkeeper Andre Onana is close to securing a second loan spell at Turkish club Trabzonspor.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 25 Jun 2026 22:33:50 GMT"
+    },
+    {
+      "title": "Ivory Coast defeat Curacao to progress to knockout stages for first time",
+      "detail": "Ivory Coast ease past Curacao in their World Cup Group E clash courtesy of a Nicolas Pepe brace, confirming their qualification in the knockout stages of the competition for the first time in their history.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 25 Jun 2026 22:46:40 GMT"
+    },
+    {
+      "title": "Paraguay v Australia: World Cup 2026 – live",
+      "detail": "<p>⚽️ Kick-off time: 7pm local/12pm AEST/3am BST/10pm EDT<br>⚽️ <a href=\"https://www.theguardian.com/football/2026/jun/24/world-cup-groups-permutations-round-of-32-usa-mexico-canada\">Third-place table, who has qualified and who needs what?</a><br>⚽️ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:jonathan.howcroft.freelance@theguardian.com\">Mail Jonathan</a></p><p>Feel free to keep me company throughout the match by emailing your thoughts about today’s match, and anything related to the World Cup to <a href=\"mailto:jonathan.howcroft.freelance@theguardian.com\">jonathan.howcroft.freelance@theguardian.com</a>.</p><p><strong>Hello everybody and welcome to live coverage of match 60 of the 2026 World Cup between Paraguay and Australia. Kick-off at San Francisco Bay Area Stadium is 7pm local time (10pm EDT / 3am BST / 12pm AEST).</strong></p> <a href=\"https://www.theguardian.com/football/live/2026/jun/26/fifa-world-cup-2026-live-paraguay-v-australia-socceroos-updates-par-vs-aus-group-d-match-score-latest\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 25 Jun 2026 23:47:41 GMT"
+    },
+    {
+      "title": "Plata’s golden touch against Germany sends Ecuador into World Cup last 32",
+      "detail": "<p><em>Sí se puede</em>, yes we can, was the chant that rang out from the 55,000 Ecuador fans in New York as their team’s final group match kicked off. Despite a flat start to their World Cup campaign, there was a genuine belief that an upset against a full-strength Germany was possible. They had no other choice: having been shut out <a href=\"https://www.theguardian.com/football/2026/jun/21/curacao-ecuador-world-cup-group-e-match-report\">by Eloy Room’s heroics for Curaçao</a>, Sebastián Beccacece’s side had to win to progress.</p><p>This time, a stirring performance earned <em>La Tri</em> a famous victory against an error-prone <em>Mannschaft</em>. Gonzalo Plata’s 77th-minute strike sparked wild and emotional celebrations, assuring their place in the round of 32 as a best third-place team.</p> <a href=\"https://www.theguardian.com/football/2026/jun/25/ecuador-germany-world-cup-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 25 Jun 2026 22:28:28 GMT"
+    },
+    {
+      "title": "Côte d’Ivoire into World Cup knockouts for first time as Pépé finishes off Curaçao",
+      "detail": "<p>Côte d’Ivoire surviving the World Cup group stage for the first time, in the year of our football gods 2026, is one of those titbits that sounds like it shouldn’t be true, and yet here we are. An underwhelming <a href=\"https://www.theguardian.com/football/live/2026/jun/25/curacao-v-cote-divoire-world-cup-2026-live\">2-0 victory over Curaçao</a>, courtesy of Nicolas Pépé’s double, put the Ivorians through to the last 32 as Group E runners-up.</p><p>“Celebrate this historic qualification, like we should,” the Ivorian manager, Emerse Faé, told his compatriots afterwards. “Once we’re done celebrating, we want to go as far as possible in this competition. This is a young group. They’re all at their first ever World Cup. They’re playing well. There is a lot of solidarity in this group.”</p> <a href=\"https://www.theguardian.com/football/2026/jun/25/pepe-at-the-double-as-cote-divoire-beat-curacao-and-claim-place-in-last-32\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 25 Jun 2026 22:20:06 GMT"
     }
   ],
   "teams": [
@@ -9609,18 +9651,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1187,
+      "eventCount": 1193,
       "manualEventCount": 3,
-      "rawNewsCount": 1184,
+      "rawNewsCount": 1190,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1187,
-      "applied": 1099,
+      "watched": 1193,
+      "applied": 1105,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1182,
+      "singleSource": 1188,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -10058,8 +10100,8 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 0.0,
-        "squad": 0.0
+        "path": -0.7,
+        "squad": -0.7
       },
       "paraguay": {
         "attack": 0.0,
@@ -10079,8 +10121,8 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 0.0,
-        "squad": 0.0
+        "path": -0.7,
+        "squad": -0.7
       },
       "germany": {
         "attack": 0.0,
@@ -10121,8 +10163,8 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": -0.7,
-        "squad": -0.7
+        "path": 0.0,
+        "squad": 0.0
       },
       "tunisia": {
         "attack": 0.0,
@@ -10135,8 +10177,8 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": -0.7,
-        "squad": -0.7
+        "path": 0.0,
+        "squad": 0.0
       },
       "belgium": {
         "attack": 0.0,
@@ -10310,40 +10352,40 @@
     "matchupContext": {
       "source": "team_profile_matchup",
       "home": {
-        "team": "japan",
+        "team": "turkiye",
         "metrics": {
-          "attackVsDefense": 0.25,
-          "pressVsBuildout": 0.05,
-          "buildoutVsPress": 0.01,
-          "directnessEdge": 0.05,
-          "setPieceEdge": 0.05,
-          "aerialEdge": 0.03,
+          "attackVsDefense": 0.15,
+          "pressVsBuildout": -0.02,
+          "buildoutVsPress": 0.04,
+          "directnessEdge": 0.03,
+          "setPieceEdge": 0.03,
+          "aerialEdge": 0.04,
           "goalkeeperDrag": -0.1
         },
         "adjustments": {
-          "attack": 0.22,
-          "defense": 0.03,
+          "attack": 0.17,
+          "defense": -0.0,
           "goalkeeper": 0.0,
           "path": 0.01,
           "squad": 0.0
         }
       },
       "away": {
-        "team": "sweden",
+        "team": "usa",
         "metrics": {
-          "attackVsDefense": -0.15,
-          "pressVsBuildout": -0.01,
-          "buildoutVsPress": -0.05,
-          "directnessEdge": -0.03,
-          "setPieceEdge": -0.03,
-          "aerialEdge": -0.03,
-          "goalkeeperDrag": -0.05
+          "attackVsDefense": 0.05,
+          "pressVsBuildout": -0.04,
+          "buildoutVsPress": 0.02,
+          "directnessEdge": 0.01,
+          "setPieceEdge": 0.01,
+          "aerialEdge": -0.04,
+          "goalkeeperDrag": -0.1
         },
         "adjustments": {
-          "attack": -0.13,
-          "defense": -0.01,
+          "attack": 0.06,
+          "defense": -0.02,
           "goalkeeper": 0.0,
-          "path": -0.01,
+          "path": -0.0,
           "squad": 0.0
         }
       }
@@ -20261,184 +20303,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-25T22:06:37.267583+00:00",
+    "generatedAt": "2026-06-25T23:55:01.706432+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "ecuador",
-        "name": "厄瓜多尔",
-        "code": "ECU",
-        "previousChampion": 0.3,
-        "currentChampion": 1.0,
-        "change": 0.7,
-        "direction": "up",
-        "reason": "八强概率上升 +16.3%",
-        "reasons": [
-          "八强概率上升 +16.3%",
-          "四强概率上升 +6.6%",
-          "决赛概率上升 +2.3%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 16.2,
-        "currentChampion": 16.6,
-        "change": 0.4,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.3%",
-        "reasons": [
-          "决赛概率上升 +0.3%",
-          "四强概率上升 +0.1%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 14.1,
-        "currentChampion": 13.8,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "八强概率下降 -0.5%",
-        "reasons": [
-          "八强概率下降 -0.5%",
-          "四强概率下降 -0.4%",
-          "决赛概率下降 -0.4%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 5.6,
-        "currentChampion": 5.3,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "四强概率下降 -0.4%",
-        "reasons": [
-          "四强概率下降 -0.4%",
-          "决赛概率下降 -0.4%",
-          "八强概率下降 -0.2%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 22.1,
-        "currentChampion": 22.3,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "四强概率上升 +0.4%",
-        "reasons": [
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.3%",
-          "八强概率上升 +0.3%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 7.1,
-        "currentChampion": 6.9,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "八强概率下降 -1.0%",
-        "reasons": [
-          "八强概率下降 -1.0%",
-          "四强概率下降 -0.2%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 4.7,
-        "currentChampion": 4.5,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "八强概率下降 -0.7%",
-        "reasons": [
-          "八强概率下降 -0.7%",
-          "四强概率下降 -0.2%",
-          "决赛概率下降 -0.2%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "south-korea",
-        "name": "韩国",
-        "code": "KOR",
-        "previousChampion": 0.9,
-        "currentChampion": 0.7,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "八强概率下降 -3.9%",
-        "reasons": [
-          "八强概率下降 -3.9%",
-          "四强概率下降 -1.1%",
-          "决赛概率下降 -0.5%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 5,
-      "down": 13,
-      "largestUp": {
-        "team": "ecuador",
-        "name": "厄瓜多尔",
-        "code": "ECU",
-        "previousChampion": 0.3,
-        "currentChampion": 1.0,
-        "change": 0.7,
-        "direction": "up",
-        "reason": "八强概率上升 +16.3%",
-        "reasons": [
-          "八强概率上升 +16.3%",
-          "四强概率上升 +6.6%",
-          "决赛概率上升 +2.3%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      "largestDown": {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 14.1,
-        "currentChampion": 13.8,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "八强概率下降 -0.5%",
-        "reasons": [
-          "八强概率下降 -0.5%",
-          "四强概率下降 -0.4%",
-          "决赛概率下降 -0.4%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 9 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
