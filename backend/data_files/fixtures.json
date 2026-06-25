@@ -629,11 +629,11 @@
     "away": "mexico",
     "stage": "小组赛 A 组",
     "kickoff": "6月24日 21:00 ET",
-    "status": "live",
+    "status": "finished",
     "city": "Mexico City",
     "stadium": "Mexico City Stadium",
     "home_score": 0,
-    "away_score": 0
+    "away_score": 3
   },
   {
     "match_no": 54,
@@ -641,10 +641,10 @@
     "away": "south-korea",
     "stage": "小组赛 A 组",
     "kickoff": "6月24日 21:00 ET",
-    "status": "live",
+    "status": "finished",
     "city": "Monterrey",
     "stadium": "Monterrey Stadium",
-    "home_score": 0,
+    "home_score": 1,
     "away_score": 0
   },
   {
