@@ -653,9 +653,11 @@
     "away": "cote-divoire",
     "stage": "小组赛 E 组",
     "kickoff": "6月25日 16:00 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "Philadelphia",
-    "stadium": "Philadelphia Stadium"
+    "stadium": "Philadelphia Stadium",
+    "home_score": 0,
+    "away_score": 1
   },
   {
     "match_no": 56,
@@ -663,9 +665,11 @@
     "away": "germany",
     "stage": "小组赛 E 组",
     "kickoff": "6月25日 16:00 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "New York/New Jersey",
-    "stadium": "New York New Jersey Stadium"
+    "stadium": "New York New Jersey Stadium",
+    "home_score": 1,
+    "away_score": 1
   },
   {
     "match_no": 57,
