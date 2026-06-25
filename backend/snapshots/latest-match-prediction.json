@@ -10,7 +10,7 @@
   "homeWin": 19,
   "draw": 22,
   "awayWin": 59,
-  "updatedAt": "2026-06-25T12:26:59.290650+00:00",
+  "updatedAt": "2026-06-25T15:26:38.943676+00:00",
   "fixtureContext": {
     "home": {
       "team": "curacao",
@@ -8614,6 +8614,69 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 25 Jun 2026 10:35:57 GMT"
+    },
+    {
+      "title": "The games that show the flaws in a 48-team World Cup",
+      "detail": "Two matches in the final round of group games present the chance for two teams to simply play out a draw to qualify.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 25 Jun 2026 13:38:00 GMT"
+    },
+    {
+      "title": "Bellamy to stay with Wales as Burnley move off",
+      "detail": "Wales manager Craig Bellamy's proposed move to take charge at Championship side Burnley has fallen through.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 25 Jun 2026 14:47:33 GMT"
+    },
+    {
+      "title": "Hincapie completes permanent £34.5m Arsenal move",
+      "detail": "Defender Piero Hincapie makes his loan move from Bayer Leverkusen to Arsenal permanent.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 25 Jun 2026 13:45:35 GMT"
+    },
+    {
+      "title": "Godfrey signs new three-year deal with London City",
+      "detail": "England international Freya Godfrey has signed a new three-year contract with London City Lionesses.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 25 Jun 2026 13:00:17 GMT"
+    },
+    {
+      "title": "McCrorie returns to Rangers from Bristol City",
+      "detail": "Ross McCrorie is reuniting with manager Derek McInnes and returning to Rangers after Bristol City accept an undisclosed offer from the Ibrox club.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 25 Jun 2026 14:09:14 GMT"
+    },
+    {
+      "title": "World Cup: Kasper Schmeichel on Scotland's chances",
+      "detail": "Kasper Schmeichel on Scotland's chances and life as a goalkeeper.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 25 Jun 2026 07:52:00 GMT"
+    },
+    {
+      "title": "The narrative about the difference between Gareth Southgate and Thomas Tuchel is not that simple | Cath Bishop",
+      "detail": "<p>The assumption that the England coach gave his team a rocket against Croatia at half-time is wrong. In fact he did the opposite</p><p>We’ve completed the Southgate leadership lessons and now we find ourselves at the beginning of the Tuchelosophy course. We can already see some of the key modules we’ll be studying over the next few weeks. But it’s important we’re ready to learn with open minds and ditch some of the old tropes.</p><p>The dominant simplistic narrative that accompanied the shift from Gareth Southgate to <a href=\"https://www.theguardian.com/football/thomas-tuchel\">Thomas Tuchel</a> was that the former wasn’t ruthless enough and therefore the latter will be more ruthless. There are already assumptions and interpretations of Tuchel’s actions and words being made through that lens which need challenging.</p> <a href=\"https://www.theguardian.com/football/2026/jun/25/world-cup-gareth-southgate-thomas-tuchel-difference-england\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 25 Jun 2026 13:27:44 GMT"
+    },
+    {
+      "title": "World Cup Q&A: ask our correspondents anything — from how far the home nations can go to who might win it all",
+      "detail": "<p>As we near the end of the group stage, writers from our newly expanded US soccer team Alexander Abnos, Pablo Maurer and Jeff Rueter will be online to answer your World Cup questions at 5PM BST (midday EDT, 9AM PDT)</p><p><a href=\"https://profile.theguardian.com/signin?INTCMP=DOTCOM_NEWHEADER_SIGNIN&amp;ABCMP=ab-sign-in&amp;componentEventParams=componentType%3Didentityauthentication%26componentId%3Dguardian_signin_header\"><strong>Post yours below the line now</strong></a></p><p>We’re approaching the end of the group stages of the biggest World Cup ever. The Guardian’s coverage of the tournament has been greatly enhanced this year by the <a href=\"https://www.theguardian.com/guardian-us-press-office/2026/jan/23/the-guardian-sports-desk-key-hires-2026-world-cup\">expansion</a> of our soccer/football team in the United States.</p><p>Correspondents Alexander Abnos, Pablo Iglesias Maurer and Jeff Rueter have been as busy as you’d expect over the first few weeks of the tournament.</p> <a href=\"https://www.theguardian.com/sport/live/2026/jun/25/world-cup-qa-ask-our-us-soccer-correspondents-anything\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 25 Jun 2026 14:02:35 GMT"
+    },
+    {
+      "title": "Scotland on the brink after Brazil beating, Mexico march on | World Cup Daily",
+      "detail": "<p>Max Rushden is joined by Barry Glendenning, Mark Langdon, Nicky Bandini and Ewan Murray as Scotland are beaten convincingly by Brazil to leave their chances of progress hanging in the balance</p> <a href=\"https://www.theguardian.com/football/video/2026/jun/25/scotland-brazil-mexio-world-cup-daily-podcast\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 25 Jun 2026 13:14:28 GMT"
     }
   ],
   "teams": [
@@ -8727,7 +8790,7 @@
         "champion": 0.0,
         "final": 0.2,
         "semifinal": 1.2,
-        "quarterfinal": 8.4,
+        "quarterfinal": 8.3,
         "change": -0.2
       }
     },
@@ -8782,7 +8845,7 @@
       },
       "tournament": {
         "champion": 5.4,
-        "final": 11.4,
+        "final": 11.3,
         "semifinal": 22.7,
         "quarterfinal": 38.3,
         "change": -4.5
@@ -8896,8 +8959,8 @@
       },
       "tournament": {
         "champion": 0.3,
-        "final": 0.9,
-        "semifinal": 3.3,
+        "final": 1.0,
+        "semifinal": 3.4,
         "quarterfinal": 9.0,
         "change": 0.1
       }
@@ -8910,15 +8973,15 @@
         "strength": 79,
         "form": 78,
         "path": 67,
-        "squad": 82,
+        "squad": 83,
         "margin": 77
       },
       "tournament": {
-        "champion": 0.2,
+        "champion": 0.1,
         "final": 0.5,
         "semifinal": 1.3,
-        "quarterfinal": 2.6,
-        "change": 0.1
+        "quarterfinal": 2.7,
+        "change": 0.0
       }
     },
     {
@@ -8934,7 +8997,7 @@
       },
       "tournament": {
         "champion": 4.7,
-        "final": 10.1,
+        "final": 10.0,
         "semifinal": 21.2,
         "quarterfinal": 34.5,
         "change": -1.9
@@ -9069,7 +9132,7 @@
         "champion": 0.1,
         "final": 0.6,
         "semifinal": 2.4,
-        "quarterfinal": 7.6,
+        "quarterfinal": 7.5,
         "change": -0.3
       }
     },
@@ -9220,7 +9283,7 @@
       "tournament": {
         "champion": 1.2,
         "final": 3.2,
-        "semifinal": 7.3,
+        "semifinal": 7.2,
         "quarterfinal": 12.9,
         "change": -0.4
       }
@@ -9296,7 +9359,7 @@
       "tournament": {
         "champion": 0.9,
         "final": 3.0,
-        "semifinal": 9.1,
+        "semifinal": 9.0,
         "quarterfinal": 21.3,
         "change": -0.1
       }
@@ -9446,11 +9509,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 2.8,
+        "champion": 2.9,
         "final": 7.1,
-        "semifinal": 15.7,
+        "semifinal": 15.8,
         "quarterfinal": 34.3,
-        "change": 0.8
+        "change": 0.9
       }
     },
     {
@@ -9549,18 +9612,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1145,
+      "eventCount": 1154,
       "manualEventCount": 3,
-      "rawNewsCount": 1142,
+      "rawNewsCount": 1151,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1145,
-      "applied": 1060,
+      "watched": 1154,
+      "applied": 1069,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1140,
+      "singleSource": 1149,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -9682,7 +9745,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -1.02,
-        "squad": 2.8
+        "squad": 4.449999999999999
       },
       "germany": {
         "attack": 0.0,
@@ -20201,17 +20264,70 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-25T12:27:28.283312+00:00",
+    "generatedAt": "2026-06-25T15:27:00.923574+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "colombia",
+        "name": "哥伦比亚",
+        "code": "COL",
+        "previousChampion": 2.8,
+        "currentChampion": 2.9,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.1%",
+        "reasons": [
+          "四强概率上升 +0.1%",
+          "可入模型事件新增 9 条"
+        ]
+      },
+      {
+        "team": "turkiye",
+        "name": "土耳其",
+        "code": "TUR",
+        "previousChampion": 0.2,
+        "currentChampion": 0.1,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 9 条",
+        "reasons": [
+          "可入模型事件新增 9 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 1,
+      "down": 1,
+      "largestUp": {
+        "team": "colombia",
+        "name": "哥伦比亚",
+        "code": "COL",
+        "previousChampion": 2.8,
+        "currentChampion": 2.9,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.1%",
+        "reasons": [
+          "四强概率上升 +0.1%",
+          "可入模型事件新增 9 条"
+        ]
+      },
+      "largestDown": {
+        "team": "turkiye",
+        "name": "土耳其",
+        "code": "TUR",
+        "previousChampion": 0.2,
+        "currentChampion": 0.1,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 9 条",
+        "reasons": [
+          "可入模型事件新增 9 条"
+        ]
+      }
     }
   }
 }
