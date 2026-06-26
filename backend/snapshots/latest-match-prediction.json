@@ -10,7 +10,7 @@
   "homeWin": 20,
   "draw": 21,
   "awayWin": 60,
-  "updatedAt": "2026-06-26T13:32:29.250975+00:00",
+  "updatedAt": "2026-06-26T16:22:10.680552+00:00",
   "fixtureContext": {
     "home": {
       "team": "norway",
@@ -9400,6 +9400,55 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Fri, 26 Jun 2026 13:00:12 GMT"
+    },
+    {
+      "title": "Why has Trump stayed away from the World Cup?",
+      "detail": "Why has Donald Trump stayed away from the World Cup? And will he appear before the final?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 14:35:00 GMT"
+    },
+    {
+      "title": "Arsenal explore moves for Newcastle's Guimaraes & Tonali",
+      "detail": "Arsenal have held exploratory talks over potential moves for Newcastle pair Bruno Guimaraes and Sandro Tonali.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 15:08:16 GMT"
+    },
+    {
+      "title": "Where has it gone wrong for Bielsa's struggling Uruguay?",
+      "detail": "With Uruguay possibly on the brink of elimination from the 2026 World Cup, BBC Sport looks at what has gone wrong for them under colourful coach Marcelo Bielsa.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 14:31:33 GMT"
+    },
+    {
+      "title": "World Cup quiz: Who are England's top appearance-makers?",
+      "detail": "Test your knowledge of the players who have featured at least 10 times for England at World Cups.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 14:45:24 GMT"
+    },
+    {
+      "title": "Wrexham icon Mullin leaves club by mutual consent",
+      "detail": "Striker Paul Mullin leaves Wrexham by mutual consent, ending a memorable spell at the north Wales club.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 14:00:46 GMT"
+    },
+    {
+      "title": "Graham agrees permanent deal with Ipswich Women",
+      "detail": "Ipswich Town Women sign forward Kit Graham on a two-year contract following a successful loan from Tottenham last season.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 15:44:11 GMT"
+    },
+    {
+      "title": "Football Daily | Animal instinct and maths boost Netherlands’ hopes of World Cup glory",
+      "detail": "<p><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\"><strong>Sign up now! Sign up now! Sign up now? Sign up now!</strong></a></p><p>When Paul the Octopus <a href=\"https://www.theguardian.com/football/2010/oct/26/paul-psychic-octopus-dies-football\">sadly died</a> at an aquarium in Germany in 2010, there was a massive void to fill in the World Cup prediction space. It seemed a huge ask to find a tipster on the same level as the eight-legged maverick one-off. <a href=\"https://www.theguardian.com/sport/2022/dec/12/paul-the-octopus-taiyo-the-otter-world-cup-psychic-animals\">Others tried</a> but Leon the Porcupine, Anton the Tamarin and Petty the Pygmy Hippopotamus were all woefully wide of the mark; this was no golden generation of animal oracles. Things turned dark in 2018 when a new octopus, Rabio, appeared on the scene but was killed by a Japanese fisher despite the sea-dwelling savant getting it right with all three of the Samurai Blue’s group games.</p><p>Big Website still has a lot of players ‘writing themselves into the history books’. Surely given the state of books (and history) we need to come up with a new term like ‘entered themselves at the datacentre’ or ‘input themselves into a field on a spreadsheet on the Opta supercomputer’?” – Michael Hill.</p><p>Given that the (somewhat logical) German words for semi-final, etc are worthy of a letter o’ the day (<a href=\"https://www.theguardian.com/football/2026/jun/25/scotland-brazil-world-cup-2026-football-daily\">yesterday’s Football Daily letters</a>), here by contrast are the somewhat odd Finnish terms. A final is an ‘end match’ (<em>loppuottelu</em>) but recently the boring ‘final’ (<em>finaali</em>) is often used. A semi-final is a <em>välierä</em>, where <em>erä</em> is round and <em>väli</em> is intermediate. So a rather vague ‘intermediate round’. So far so good, perhaps, but a quarter-final is a <em>puolivälierä</em> = a half <em>välierä</em> or in other words a ‘half intermediate round’. The round of 16 is then a ‘a quarter intermediate round’, a <em>neljännesvälierä</em>” – Mike Walsh.</p><p><em><strong>This is an extract from our daily football email … Football Daily. To get the full version,<a href=\"https://preview.gutools.co.uk/info/2016/jan/05/the-fiver-email-sign-up\"> </a><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\">just visit this page and follow the instructions</a>.</strong></em></p> <a href=\"https://www.theguardian.com/football/2026/jun/26/netherlands-world-cup-2026-football-daily-newsletter\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 14:42:01 GMT"
     }
   ],
   "teams": [
@@ -10335,18 +10384,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1257,
+      "eventCount": 1264,
       "manualEventCount": 3,
-      "rawNewsCount": 1254,
+      "rawNewsCount": 1261,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1257,
-      "applied": 1167,
+      "watched": 1264,
+      "applied": 1172,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1252,
+      "singleSource": 1259,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -20987,7 +21036,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-26T13:32:53.428775+00:00",
+    "generatedAt": "2026-06-26T16:22:36.493744+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
