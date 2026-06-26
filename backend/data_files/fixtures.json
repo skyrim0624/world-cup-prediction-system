@@ -677,9 +677,11 @@
     "away": "sweden",
     "stage": "小组赛 F 组",
     "kickoff": "6月25日 19:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Dallas",
-    "stadium": "Dallas Stadium"
+    "stadium": "Dallas Stadium",
+    "home_score": 1,
+    "away_score": 1
   },
   {
     "match_no": 58,
@@ -687,9 +689,11 @@
     "away": "netherlands",
     "stage": "小组赛 F 组",
     "kickoff": "6月25日 19:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Kansas City",
-    "stadium": "Kansas City Stadium"
+    "stadium": "Kansas City Stadium",
+    "home_score": 1,
+    "away_score": 3
   },
   {
     "match_no": 59,
@@ -697,9 +701,11 @@
     "away": "usa",
     "stage": "小组赛 D 组",
     "kickoff": "6月25日 22:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Los Angeles",
-    "stadium": "Los Angeles Stadium"
+    "stadium": "Los Angeles Stadium",
+    "home_score": 3,
+    "away_score": 2
   },
   {
     "match_no": 60,
@@ -707,9 +713,11 @@
     "away": "australia",
     "stage": "小组赛 D 组",
     "kickoff": "6月25日 22:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "San Francisco Bay Area",
-    "stadium": "San Francisco Bay Stadium"
+    "stadium": "San Francisco Bay Stadium",
+    "home_score": 0,
+    "away_score": 0
   },
   {
     "match_no": 61,
