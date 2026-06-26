@@ -10,7 +10,7 @@
   "homeWin": 20,
   "draw": 21,
   "awayWin": 60,
-  "updatedAt": "2026-06-26T16:22:10.680552+00:00",
+  "updatedAt": "2026-06-26T18:11:48.325186+00:00",
   "fixtureContext": {
     "home": {
       "team": "norway",
@@ -9449,6 +9449,69 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 26 Jun 2026 14:42:01 GMT"
+    },
+    {
+      "title": "Rice back in England training but James misses out again",
+      "detail": "Declan Rice returns to England training on Friday, but Reece James again misses out and remains a doubt to face Panama.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 26 Jun 2026 16:54:34 GMT"
+    },
+    {
+      "title": "Is an outsider right about reasons for Scottish football's ills?",
+      "detail": "From undervalued broadcasting deals to unfulfilled potential, Ian Wright says he feels sorry for Scottish football fans - but is the former England striker right?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 16:26:04 GMT"
+    },
+    {
+      "title": "Sources: Haaland to miss France World Cup clash",
+      "detail": "Erling Haaland will start Norway's World Cup Group I clash against Kylian Mbappé's France on the substitutes' bench with coach Stale Solbakken planning to rest ten players, sources have told ESPN.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 12:49:26 EST"
+    },
+    {
+      "title": "Milan name CEO amid Pulisic transfer approach",
+      "detail": "In a bid to \"bring a winning culture\" back to the club, AC Milan named Massimo Calvelli as CEO, one day after sources told ESPN they rejected an approach from New York City FC for United States attacker Christian Pulisic.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 12:49:05 EST"
+    },
+    {
+      "title": "Sources: Newcastle reject Arsenal Guimarães bid",
+      "detail": "Arsenal have had a £55 million ($73m) offer for Bruno Guimarães rejected by Newcastle United, sources have told ESPN Brasil.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 12:49:05 EST"
+    },
+    {
+      "title": "Farewell to Wrexham: Paul Mullin leaves club",
+      "detail": "Paul Mullin is to leave Wrexham after five years at the club, following the mutual termination of his contract.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 12:49:05 EST"
+    },
+    {
+      "title": "Norway v France: World Cup 2026 – live",
+      "detail": "<p>⚽️ World Cup kick-off time: 3pm EDT/8pm BST/5am AEST<br>⚽️ <a href=\"https://www.theguardian.com/football/2026/jun/24/world-cup-groups-permutations-round-of-32-usa-mexico-canada\">Third-place table</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:scott.murray.casual@theguardian.com\">Mail Scott</a><br>⚽️ <a href=\"https://www.theguardian.com/football/live/2026/jun/26/senegal-v-iraq-world-cup-2026-live-updates\">Senegal v Iraq – live updates from the group’s other game</a></p><p><strong>France make four changes to the team selected to start the win over Iraq.</strong> Désiré Doué, Aurélien Tchouaméni, Théo Hernandez and Maxence Lacroix come in for Bradley Barcola, Adrien Rabiot, Lucas Digne and William Saliba, who all drop to the bench. Both teams are certain of qualifying for the knockouts, so it would appear France are placing more importance on finishing top than Norway boss Ståle Solbakken. Didier Deschamps is absent, having flown home ​to attend his mother’s funeral.</p><p><strong>So much for that Erling Haaland versus Kylian Mbappé shootout: Norway coach Stale Solbakken has rested the striker.</strong> He’s one of ten players stood down, with the only regular starter to retain his starting spot being Benfica midfielder Fredrik Aursnes.</p> <a href=\"https://www.theguardian.com/football/live/2026/jun/26/norway-v-france-world-cup-2026-live-updates\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 17:54:54 GMT"
+    },
+    {
+      "title": "Senegal v Iraq: World Cup 2026 – live",
+      "detail": "<p>⚽️ World Cup kick-off time: 3pm EDT/8pm BST/5am AEST<br>⚽️ <a href=\"https://www.theguardian.com/football/2026/jun/24/world-cup-groups-permutations-round-of-32-usa-mexico-canada\">Third-place table</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:daniel.gallan.casual@guardian.co.uk\">Mail us</a><br>⚽️ <a href=\"https://www.theguardian.com/football/live/2026/jun/26/norway-v-france-world-cup-2026-live-updates\">Norway v France – live updates elsewhere in the group</a></p><p><strong>It’s been a pretty good week for African football.</strong></p><p><a href=\"https://www.theguardian.com/football/2026/jun/25/south-africa-south-korea-world-cup-match-report\">South Africa reached the knockouts of a World Cup for the first time.</a> <a href=\"https://www.theguardian.com/football/2026/jun/25/morocco-haiti-world-cup-match-report\">Morocco underlined their potential to go deep with a convincing win</a>. <a href=\"https://www.theguardian.com/football/2026/jun/25/pepe-at-the-double-as-cote-divoire-beat-curacao-and-claim-place-in-last-32\">And Côte d’Ivoire finished level on points with Germany to qualify in second spot from a difficult group.</a></p> <a href=\"https://www.theguardian.com/football/live/2026/jun/26/senegal-v-iraq-world-cup-2026-live-updates\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 17:00:17 GMT"
+    },
+    {
+      "title": "How content creators are bringing fans an added dimension to this World Cup",
+      "detail": "<p>YouTubers reveal how they are challenging traditional broadcast coverage of the tournament with their own audience interaction</p><p>For decades, the World Cup belonged to broadcasters. Fans gathered around the television, watched the game live or caught the highlights later that evening. In the UK, BBC and ITV acted as gatekeepers, deciding which stories were told and how audiences experienced football’s biggest tournament.</p><p>That world still exists. Millions watch live matches on television, and broadcasters remain dominant when it comes to rights and access. But alongside them, another layer of football media has emerged.</p> <a href=\"https://www.theguardian.com/football/2026/jun/26/influencers-content-creators-world-cup-2026-broadcasting-youtube\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 15:59:56 GMT"
     }
   ],
   "teams": [
@@ -9745,7 +9808,7 @@
         "strength": 79,
         "form": 78,
         "path": 67,
-        "squad": 83,
+        "squad": 81,
         "margin": 77
       },
       "tournament": {
@@ -10384,18 +10447,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1264,
+      "eventCount": 1273,
       "manualEventCount": 3,
-      "rawNewsCount": 1261,
+      "rawNewsCount": 1270,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1264,
-      "applied": 1172,
+      "watched": 1273,
+      "applied": 1180,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1259,
+      "singleSource": 1268,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -10517,7 +10580,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -1.02,
-        "squad": 4.449999999999999
+        "squad": 2.2999999999999994
       },
       "germany": {
         "attack": 0.0,
@@ -21036,7 +21099,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-26T16:22:36.493744+00:00",
+    "generatedAt": "2026-06-26T18:12:14.577964+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

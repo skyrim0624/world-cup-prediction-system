@@ -725,9 +725,11 @@
     "away": "france",
     "stage": "小组赛 I 组",
     "kickoff": "6月26日 15:00 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "Boston",
-    "stadium": "Boston Stadium"
+    "stadium": "Boston Stadium",
+    "home_score": 1,
+    "away_score": 3
   },
   {
     "match_no": 62,
@@ -735,9 +737,11 @@
     "away": "iraq",
     "stage": "小组赛 I 组",
     "kickoff": "6月26日 15:00 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "Toronto",
-    "stadium": "Toronto Stadium"
+    "stadium": "Toronto Stadium",
+    "home_score": 1,
+    "away_score": 0
   },
   {
     "match_no": 63,
