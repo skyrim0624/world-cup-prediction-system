@@ -10,7 +10,7 @@
   "homeWin": 20,
   "draw": 21,
   "awayWin": 60,
-  "updatedAt": "2026-06-26T04:14:32.130630+00:00",
+  "updatedAt": "2026-06-26T08:09:16.893612+00:00",
   "fixtureContext": {
     "home": {
       "team": "norway",
@@ -572,11 +572,11 @@
       "probability": 60,
       "title": "法国半区压力下降",
       "details": [
-        "法国夺冠概率 +0.2%",
+        "法国夺冠概率 +0.3%",
         "挪威潜在淘汰赛路径变难 -0.1%",
         "小组第二路径风险上升"
       ],
-      "championShift": "+0.2%",
+      "championShift": "+0.3%",
       "tone": "blue"
     }
   ],
@@ -9071,6 +9071,139 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 26 Jun 2026 01:22:43 GMT"
+    },
+    {
+      "title": "Mbappe v Haaland: Who is more important for their country?",
+      "detail": "Two of the greatest forwards in world football will go head-to-head at Boston Stadium on Friday, as France and Kylian Mbappe take on Norway and Erling Haaland.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 07:27:37 GMT"
+    },
+    {
+      "title": "What is SkyJo? The card game being played in the England camp",
+      "detail": "As England try to get their game right on the pitch, the games they play off the field are performing a key role in team bonding - as Morgan Rogers reveals to BBC Sport.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 05:26:44 GMT"
+    },
+    {
+      "title": "Turkey end World Cup on high with last-gasp win over USA",
+      "detail": "Turkey come out on top in the last minute of an end-to-end 3-2 win over a second string USA side, in their final Group D match at SoFi Stadium in Los Angeles.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 05:05:12 GMT"
+    },
+    {
+      "title": "Brobbey on target again as Netherlands beat Tunisia to win group",
+      "detail": "Brian Brobbey scores for the second game in a row as Netherlands defeat Tunisia 3-1 to top Group F, setting up a match against Morocco in the last 32 at the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 03:32:25 GMT"
+    },
+    {
+      "title": "Australia through and Paraguay close following draw between sides",
+      "detail": "Australia sealed their passage to the last 32 and Paraguay are almost certain to join them after they shared a drab draw in San Francisco which suited both sides.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 04:44:08 GMT"
+    },
+    {
+      "title": "Why Vrancken marks fresh start at data-driven Hearts",
+      "detail": "As Belgian head coach Wouter Vranckin takes charge at Hearts, it marks a strengthening of the club's data-driven vision, writes Thomas Duncan.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 07:15:32 GMT"
+    },
+    {
+      "title": "Who am I? Guess World Cup star No 19",
+      "detail": "Will you get today's World Cup player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 05:56:43 GMT"
+    },
+    {
+      "title": "Hearts' Braga plays down transfer talk - gossip",
+      "detail": "Hearts striker says sole focus is on Champions League qualifying despite links to France as Celtic are set to end long negotiations with coaching staff...",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 07:08:02 GMT"
+    },
+    {
+      "title": "USMNT must heed World Cup lessons learned in loss ...",
+      "detail": "A late 3-2 defeat to Türkiye will count for little in the grand scheme of things, but USMNT boss Mauricio Pochettino will have learned plenty about his second-string players.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 03:53:27 EST"
+    },
+    {
+      "title": "USMNT player ratings: Turner earns 3/10 as U.S. co...",
+      "detail": "The USMNT's hot start finally hit a bump with three goals conceded, with backup keeper Matt Turner bearing blame.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 03:53:27 EST"
+    },
+    {
+      "title": "Poch puzzled by 'weird' questions: We 'won group'",
+      "detail": "Mauricio Pochettino was combative and seemingly frustrated with the media during his postgame news conference Thursday night, telling reporters after the United States lost to Türkiye 3-2, we still won the group.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 02:33:46 EST"
+    },
+    {
+      "title": "Pulisic subs on as Türkiye beats U.S. on last kick...",
+      "detail": "After starting the World Cup with two performances full of incredible verve and vibrancy, the United States finished its group stage with a showing that was erratic and inconsistent in a match that had little meaning.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 02:27:09 EST"
+    },
+    {
+      "title": "Grades for every team eliminated from the World Cu...",
+      "detail": "When the World Cup ends, 47 teams will have been eliminated, and we're grading every one on how their run compared with expectations.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 03:20:51 EST"
+    },
+    {
+      "title": "Transfer rumors, news: Arsenal eye move for Bruno...",
+      "detail": "Arsenal are preparing an offer to sign Newcastle United midfielder Bruno Guimarães. Transfer Talk has the latest.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 03:50:30 EST"
+    },
+    {
+      "title": "A Premier League star who does it all: Why City sp...",
+      "detail": "Manchester City have agreed a club-record deal to sign Nottingham Forest and England midfielder Elliot Anderson. But why?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 03:50:30 EST"
+    },
+    {
+      "title": "World Cup 2026: Haaland and Mbappé face off, Scotland still left in limbo – live",
+      "detail": "<p>⚽ Latest news from day 15 | <a href=\"https://www.theguardian.com/football/2026/jun/25/erling-haaland-v-kylian-mbappe-how-the-norway-and-france-hitmen-match-up\">Haaland v Mbappé in data</a><br>⚽ <a href=\"https://www.theguardian.com/football/2026/jun/24/world-cup-groups-permutations-round-of-32-usa-mexico-canada\">Third-place table</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"mailto:sarah.rendell.casual@guardian.co.uk\">Mail us</a></p><p><strong>England fans</strong>, this may bring back some painful memories. Thirty years ago England were knocked out of Euros 96, relive it if you dare:</p><p><strong>Iran and Egypt attempted to sidestep questions</strong> about their reluctance to take part in <a href=\"https://www.theguardian.com/football/2026/jun/25/seattle-pride-match-world-cup-egypt-iran\">the designated “Pride Match”</a> celebrating the LGBTQ+ community in Seattle, as Fifa confirmed it will permit rainbow flags to be displayed inside the stadium.</p> <a href=\"https://www.theguardian.com/football/live/2026/jun/26/world-cup-2026-norway-france-senegal-iraq-cape-verde-saudi-arabia-uruguay-spain-egypt-iran-new-zealand-belgium-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 26 Jun 2026 07:55:56 GMT"
+    },
+    {
+      "title": "Socceroos secure place in World Cup last 32 after nerve-shredding draw with Paraguay",
+      "detail": "<p>It was not a match of high distinction, but all the Socceroos needed was a pass against Paraguay, and their 0-0 draw in San Francisco Bay Area stadium booked a place in the World Cup knockout phase for the third time in their history.</p><p>A much-changed Australia side controlled large parts of the match, but with both teams knowing that a draw would be enough to qualify for the last 32, there were long stretches without impetus.</p> <a href=\"https://www.theguardian.com/football/2026/jun/26/australia-socceroos-paraguay-world-cup-2026-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 03:58:38 GMT"
+    },
+    {
+      "title": "USA suffer late defeat to Turkey but eye Bosnia and Herzegovina in World Cup knockout stage",
+      "detail": "<p></p><p>The US men’s national team have already made history this summer. They scored the most goals they ever have in a single World Cup game, won two straight games in the tournament for the first time in the modern era, and wrapped up top spot in an evenly-matched Group D with a game to spare.</p><p>On Thursday evening they faced a far more familiar foe: World Cup adversity. And in the key moments – the kind of spots where knockout games are won and lost – they wilted. Kaan Ayhan’s goal with the last kick of the game sealed a 3-2 win for Turkey, giving their disastrous tournament a positive ending. It also means the Americans go into last 32 – where they will play Bosnia and Herzegovina – with fresh questions.</p> <a href=\"https://www.theguardian.com/football/2026/jun/26/turkey-usa-world-cup-2026-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 04:55:18 GMT"
+    },
+    {
+      "title": "Fifa unites the world – in anger at hydration breaks (AKA ad breaks) | Barney Ronay",
+      "detail": "<p>Fans, players and coaches have voiced their indignation at the way the game is massively altered by the four-quarter structure</p><p>With 22 minutes gone on Tuesday night at Boston Stadium, and an injury delay in train, a clutch of England and Ghana players wandered to the side of the pitch and began taking drinks. This was the signal for a sudden spurt of refereeing indignation, the officials sprinting across in a state of apparently genuine outrage, appalled by the spectacle of unofficial hydration.</p><p>The first drinks break, Hydro-Quart-One, was only a minute away. Here we had players basically stealing hydration. Not to mention messing with the most vital part of the show – the advert timings. Guys, the director has not cued the break. David Beckham has the ice-cold faux beer halfway to his lips. Will Ferrell is making hyena-like vocal warm-up noises at the wheel of his crisp delivery lorry. We’re professionals. Hit your marks people.</p> <a href=\"https://www.theguardian.com/football/2026/jun/26/fifa-unites-the-world-in-anger-at-hydration-breaks-aka-ad-breaks\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 26 Jun 2026 04:00:09 GMT"
     }
   ],
   "teams": [
@@ -9081,7 +9214,7 @@
       "factors": {
         "strength": 82,
         "form": 80,
-        "path": 69,
+        "path": 68,
         "squad": 71,
         "margin": 79
       },
@@ -9108,7 +9241,7 @@
         "champion": 0.0,
         "final": 0.2,
         "semifinal": 1.3,
-        "quarterfinal": 8.1,
+        "quarterfinal": 8.2,
         "change": -0.1
       }
     },
@@ -9165,7 +9298,7 @@
         "champion": 0.1,
         "final": 0.4,
         "semifinal": 1.9,
-        "quarterfinal": 10.7,
+        "quarterfinal": 10.8,
         "change": -0.4
       }
     },
@@ -9253,15 +9386,15 @@
         "strength": 84,
         "form": 80,
         "path": 65,
-        "squad": 76,
+        "squad": 74,
         "margin": 81
       },
       "tournament": {
-        "champion": 1.4,
-        "final": 3.7,
-        "semifinal": 9.8,
-        "quarterfinal": 27.1,
-        "change": -0.2
+        "champion": 1.2,
+        "final": 3.4,
+        "semifinal": 9.3,
+        "quarterfinal": 26.2,
+        "change": -0.4
       }
     },
     {
@@ -9467,9 +9600,9 @@
       },
       "tournament": {
         "champion": 6.5,
-        "final": 13.2,
-        "semifinal": 26.7,
-        "quarterfinal": 54.0,
+        "final": 13.4,
+        "semifinal": 27.0,
+        "quarterfinal": 54.7,
         "change": -0.8
       }
     },
@@ -9524,7 +9657,7 @@
       },
       "tournament": {
         "champion": 0.1,
-        "final": 0.5,
+        "final": 0.6,
         "semifinal": 2.1,
         "quarterfinal": 6.3,
         "change": -0.2
@@ -9696,7 +9829,7 @@
       "tournament": {
         "champion": 14.1,
         "final": 23.3,
-        "semifinal": 39.0,
+        "semifinal": 39.1,
         "quarterfinal": 56.3,
         "change": 0.3
       }
@@ -10006,18 +10139,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1210,
+      "eventCount": 1229,
       "manualEventCount": 3,
-      "rawNewsCount": 1207,
+      "rawNewsCount": 1226,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1210,
-      "applied": 1122,
+      "watched": 1229,
+      "applied": 1140,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1205,
+      "singleSource": 1224,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -10033,7 +10166,7 @@
         "attack": 0.0,
         "defense": -2.55,
         "goalkeeper": 0.0,
-        "path": -3.9299999999999997,
+        "path": -4.85,
         "squad": -9.399999999999999
       },
       "south-africa": {
@@ -10097,7 +10230,7 @@
         "defense": 0.0,
         "goalkeeper": -2.15,
         "path": -5.57,
-        "squad": -4.3
+        "squad": -6.449999999999999
       },
       "haiti": {
         "attack": 0.0,
@@ -20658,182 +20791,49 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-26T04:14:59.351518+00:00",
+    "generatedAt": "2026-06-26T08:09:43.504525+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
     "items": [
       {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 5.3,
-        "currentChampion": 6.5,
-        "change": 1.2,
-        "direction": "up",
-        "reason": "八强概率上升 +10.7%",
-        "reasons": [
-          "八强概率上升 +10.7%",
-          "四强概率上升 +4.1%",
-          "决赛概率上升 +2.0%",
-          "已完赛果新增 4 场，路径重新模拟",
-          "可入模型事件新增 17 条"
-        ]
-      },
-      {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 4.5,
-        "currentChampion": 5.1,
-        "change": 0.6,
-        "direction": "up",
-        "reason": "八强概率上升 +5.0%",
-        "reasons": [
-          "八强概率上升 +5.0%",
-          "四强概率上升 +1.8%",
-          "决赛概率上升 +1.0%",
-          "已完赛果新增 4 场，路径重新模拟",
-          "可入模型事件新增 17 条"
-        ]
-      },
-      {
-        "team": "japan",
-        "name": "日本",
-        "code": "JPN",
-        "previousChampion": 2.2,
-        "currentChampion": 1.7,
-        "change": -0.5,
-        "direction": "down",
-        "reason": "八强概率下降 -7.3%",
-        "reasons": [
-          "八强概率下降 -7.3%",
-          "四强概率下降 -2.7%",
-          "决赛概率下降 -1.2%",
-          "已完赛果新增 4 场，路径重新模拟",
-          "可入模型事件新增 17 条"
-        ]
-      },
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 16.6,
-        "currentChampion": 16.3,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "四强概率下降 -0.2%",
-        "reasons": [
-          "四强概率下降 -0.2%",
-          "决赛概率下降 -0.2%",
-          "八强概率下降 -0.2%",
-          "已完赛果新增 4 场，路径重新模拟",
-          "可入模型事件新增 17 条"
-        ]
-      },
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 13.8,
-        "currentChampion": 14.1,
-        "change": 0.3,
-        "direction": "up",
-        "reason": "八强概率上升 +2.8%",
-        "reasons": [
-          "八强概率上升 +2.8%",
-          "四强概率上升 +0.6%",
-          "决赛概率上升 +0.4%",
-          "已完赛果新增 4 场，路径重新模拟",
-          "可入模型事件新增 17 条"
-        ]
-      },
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 5.4,
-        "currentChampion": 5.7,
-        "change": 0.3,
-        "direction": "up",
-        "reason": "八强概率上升 +1.5%",
-        "reasons": [
-          "八强概率上升 +1.5%",
-          "四强概率上升 +0.9%",
-          "决赛概率上升 +0.7%",
-          "已完赛果新增 4 场，路径重新模拟",
-          "可入模型事件新增 17 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 22.3,
-        "currentChampion": 22.1,
+        "team": "morocco",
+        "name": "摩洛哥",
+        "code": "MAR",
+        "previousChampion": 1.4,
+        "currentChampion": 1.2,
         "change": -0.2,
         "direction": "down",
-        "reason": "决赛概率下降 -0.3%",
+        "reason": "人员盘下调 -2.1",
         "reasons": [
+          "人员盘下调 -2.1",
+          "八强概率下降 -0.9%",
+          "四强概率下降 -0.5%",
           "决赛概率下降 -0.3%",
-          "已完赛果新增 4 场，路径重新模拟",
-          "可入模型事件新增 17 条"
-        ]
-      },
-      {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 6.1,
-        "currentChampion": 5.9,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.3%",
-        "reasons": [
-          "决赛概率下降 -0.3%",
-          "八强概率下降 -0.3%",
-          "四强概率下降 -0.2%",
-          "已完赛果新增 4 场，路径重新模拟",
-          "可入模型事件新增 17 条"
+          "可入模型事件新增 18 条"
         ]
       }
     ],
     "summary": {
-      "up": 9,
-      "down": 12,
-      "largestUp": {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 5.3,
-        "currentChampion": 6.5,
-        "change": 1.2,
-        "direction": "up",
-        "reason": "八强概率上升 +10.7%",
-        "reasons": [
-          "八强概率上升 +10.7%",
-          "四强概率上升 +4.1%",
-          "决赛概率上升 +2.0%",
-          "已完赛果新增 4 场，路径重新模拟",
-          "可入模型事件新增 17 条"
-        ]
-      },
+      "up": 0,
+      "down": 1,
+      "largestUp": null,
       "largestDown": {
-        "team": "japan",
-        "name": "日本",
-        "code": "JPN",
-        "previousChampion": 2.2,
-        "currentChampion": 1.7,
-        "change": -0.5,
+        "team": "morocco",
+        "name": "摩洛哥",
+        "code": "MAR",
+        "previousChampion": 1.4,
+        "currentChampion": 1.2,
+        "change": -0.2,
         "direction": "down",
-        "reason": "八强概率下降 -7.3%",
+        "reason": "人员盘下调 -2.1",
         "reasons": [
-          "八强概率下降 -7.3%",
-          "四强概率下降 -2.7%",
-          "决赛概率下降 -1.2%",
-          "已完赛果新增 4 场，路径重新模拟",
-          "可入模型事件新增 17 条"
+          "人员盘下调 -2.1",
+          "八强概率下降 -0.9%",
+          "四强概率下降 -0.5%",
+          "决赛概率下降 -0.3%",
+          "可入模型事件新增 18 条"
         ]
       }
     }
