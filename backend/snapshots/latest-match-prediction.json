@@ -10,7 +10,7 @@
   "homeWin": 20,
   "draw": 21,
   "awayWin": 60,
-  "updatedAt": "2026-06-26T11:26:04.250694+00:00",
+  "updatedAt": "2026-06-26T13:32:29.250975+00:00",
   "fixtureContext": {
     "home": {
       "team": "norway",
@@ -9316,6 +9316,90 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 26 Jun 2026 08:38:27 GMT"
+    },
+    {
+      "title": "Has VAR become a lottery at the World Cup?",
+      "detail": "After a week of strange decisions many supporters have been left scratching their heads with VAR.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 12:29:59 GMT"
+    },
+    {
+      "title": "Start Rashford? Bring O'Reilly back? Pick your England XI to face Panama",
+      "detail": "Who should start for England against Panama in their final World Cup group game? It's time to put yourself in Thomas Tuchel's shoes.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 11:58:25 GMT"
+    },
+    {
+      "title": "What do numbers tell us about Scotland's World Cup attacking intent?",
+      "detail": "BBC Scotland crunches the numbers behind Steve Clarke's blunt attack and looks at the potential deeper issues.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 10:47:23 GMT"
+    },
+    {
+      "title": "Brentford in talks to hold Shakhtar's Champions League matches",
+      "detail": "Brentford could play host to Champions League matches next season, despite not qualifying for the competition",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 13:14:31 GMT"
+    },
+    {
+      "title": "How Oyarzabal shows Spain are more than just Yamal - Azpilicueta",
+      "detail": "Former Spain captain Cesar Azpilicueta explains why La Roja head coach Luis de la Fuente has the team and squad he needs for success in the next month.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 12:27:43 GMT"
+    },
+    {
+      "title": "Wales boss Bellamy has 'burned bridges' - Roberts",
+      "detail": "Wales head coach Craig Bellamy faces tensions in his relationships with bosses, players and fans after a move to Burnley collapsed.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 11:14:36 GMT"
+    },
+    {
+      "title": "Pattinson signs new deal with London City Lionesses",
+      "detail": "London City Lionesses has announced England defender Poppy Pattinson has extended her contract until summer 2029.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 13:10:16 GMT"
+    },
+    {
+      "title": "Argentina's soccer system rife with child neglect",
+      "detail": "The Argentine soccer system that produced the defending World Cup champions is also rife with child exploitation and neglect, according to an ESPN investigation released Friday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 09:14:37 EST"
+    },
+    {
+      "title": "Hunger, neglect, sexual abuse: Inside Argentina's ...",
+      "detail": "An investigation into Argentina's soccer system that produced the defending World Cup champions found that it is rife with exploitation.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 09:10:37 EST"
+    },
+    {
+      "title": "Behind the banner: How a World Cup-themed USA tifo was born",
+      "detail": "Soccer tifos have been a staple at games since the 1960s. Here's how USA supporters created the storied fan art for a 2025 game as a World Cup sendoff.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 08:04:27 EST"
+    },
+    {
+      "title": "Urgency, magic and Rashford: how England can beat the low block against Panama | Emma Hayes",
+      "detail": "<p>Thomas Tuchel’s team will be working on key details of how to combat a low block before their final Group L game on Saturday</p><p>England’s goalless draw with Ghana reminded me of many games in my coaching career, when you’re facing a team who are extremely compact, positioned very low, and very well drilled. To break them down you need to play with more variety, better movement and – above all – urgency, and it took England too long to play with urgency.</p><p>They can expect the same stubborn defending from Panama on Saturday. Therefore, in the buildup to their final group match, they will have been working on the key details needed to score against a low block.</p> <a href=\"https://www.theguardian.com/football/2026/jun/26/england-panama-low-block-rashford-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 11:00:15 GMT"
+    },
+    {
+      "title": "US players insist momentum remains with them despite late loss to Turkey",
+      "detail": "<p>The US were on the verge of an encouraging draw in a meaningless game, but they insist that losing to Turkey changes nothing about what’s to come</p><p>Throughout the week preceding the United States’ final group game, the matchup with Turkey was discussed as something of a formality. The new World Cup format made it impossible to begin speculation on a possible opponent until the third wave of matches kicked off on Wednesday, but the co-hosts’ place in the round of 32 was already secure.</p><p>There were ample questions about how much Mauricio Pochettino would (and should) rotate. Christian Pulisic’s every movement, including whether or not he was donning a sleeve on his calf, was closely scrutinized. The atmosphere around training was light and jovial, a rare “eye of the hurricane” moment where the intensity seemed to wane and positivity permeated every corner of the team’s camp in Irvine.</p> <a href=\"https://www.theguardian.com/football/2026/jun/26/usmnt-turkey-momentum\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 26 Jun 2026 13:00:12 GMT"
     }
   ],
   "teams": [
@@ -9402,7 +9486,7 @@
       "factors": {
         "strength": 76,
         "form": 72,
-        "path": 64,
+        "path": 63,
         "squad": 61,
         "margin": 75
       },
@@ -10251,18 +10335,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1245,
+      "eventCount": 1257,
       "manualEventCount": 3,
-      "rawNewsCount": 1242,
+      "rawNewsCount": 1254,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1245,
-      "applied": 1155,
+      "watched": 1257,
+      "applied": 1167,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1240,
+      "singleSource": 1252,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -10306,7 +10390,7 @@
         "attack": -9.0,
         "defense": -2.55,
         "goalkeeper": 0.0,
-        "path": -3.979999999999999,
+        "path": -4.8999999999999995,
         "squad": -16.05
       },
       "bosnia-herzegovina": {
@@ -20903,7 +20987,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-26T11:26:31.048075+00:00",
+    "generatedAt": "2026-06-26T13:32:53.428775+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
