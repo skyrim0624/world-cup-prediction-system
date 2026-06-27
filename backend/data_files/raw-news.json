@@ -18840,5 +18840,33 @@
     "factor": "defense",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-ecf7c57a87b3",
+    "title": "Where does Scotland's World Cup campaign leave Clarke?",
+    "summary": "Did Steve Clarke get the best out of his Scotland squad at the 2026 World Cup as they face group-stage exit?",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Sat, 27 Jun 2026 15:50:25 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/ckg4d3w9p4zo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-dc2f394ad38e",
+    "title": "Spain rocked by injuries with Pino to miss rest of World Cup and Williams doubtful",
+    "summary": "<ul><li><p>Yéremy Pino broke collar bone in win against Uruguay</p></li><li><p>Nico Williams has groin which injury is being assessed</p></li></ul><p>Yéremy Pino is likely to miss the rest of the World Cup with a broken collar bone and there are concerns Spain could also lose Nico Williams to a groin injury, as their qualification for the last 32 came at a heavy price.</p><p>Spain landed back in Chattanooga from Guadalajara just before 5am on Saturday. Tests will be carried out on both wingers to assess the extent of their injuries, with the <em>selección</em> due to train again at 6pm local time.</p> <a href=\"https://www.theguardian.com/football/2026/jun/27/spain-injuries-yeremy-pino-miss-world-cup-nico-williams\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Sat, 27 Jun 2026 16:41:01 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/27/spain-injuries-yeremy-pino-miss-world-cup-nico-williams",
+    "category": "injury",
+    "factor": "attack",
+    "direction": -1,
+    "confidence": 0.78
   }
 ]

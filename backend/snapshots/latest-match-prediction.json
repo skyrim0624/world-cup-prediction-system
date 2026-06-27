@@ -10,7 +10,7 @@
   "homeWin": 10,
   "draw": 16,
   "awayWin": 73,
-  "updatedAt": "2026-06-27T16:11:06.014174+00:00",
+  "updatedAt": "2026-06-27T17:39:04.628907+00:00",
   "fixtureContext": {
     "home": {
       "team": "panama",
@@ -10050,6 +10050,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 27 Jun 2026 15:03:28 GMT"
+    },
+    {
+      "title": "Where does Scotland's World Cup campaign leave Clarke?",
+      "detail": "Did Steve Clarke get the best out of his Scotland squad at the 2026 World Cup as they face group-stage exit?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 27 Jun 2026 15:50:25 GMT"
+    },
+    {
+      "title": "Spain rocked by injuries with Pino to miss rest of World Cup and Williams doubtful",
+      "detail": "<ul><li><p>Yéremy Pino broke collar bone in win against Uruguay</p></li><li><p>Nico Williams has groin which injury is being assessed</p></li></ul><p>Yéremy Pino is likely to miss the rest of the World Cup with a broken collar bone and there are concerns Spain could also lose Nico Williams to a groin injury, as their qualification for the last 32 came at a heavy price.</p><p>Spain landed back in Chattanooga from Guadalajara just before 5am on Saturday. Tests will be carried out on both wingers to assess the extent of their injuries, with the <em>selección</em> due to train again at 6pm local time.</p> <a href=\"https://www.theguardian.com/football/2026/jun/27/spain-injuries-yeremy-pino-miss-world-cup-nico-williams\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sat, 27 Jun 2026 16:41:01 GMT"
     }
   ],
   "teams": [
@@ -10985,18 +10999,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1350,
+      "eventCount": 1352,
       "manualEventCount": 3,
-      "rawNewsCount": 1347,
+      "rawNewsCount": 1349,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1350,
-      "applied": 1255,
+      "watched": 1352,
+      "applied": 1257,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1345,
+      "singleSource": 1347,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -11114,7 +11128,7 @@
         "squad": -2.15
       },
       "turkiye": {
-        "attack": 0.0,
+        "attack": -2.15,
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -1.02,
@@ -21637,7 +21651,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-27T16:11:30.452550+00:00",
+    "generatedAt": "2026-06-27T17:39:28.462343+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
