@@ -10,7 +10,7 @@
   "homeWin": 37,
   "draw": 28,
   "awayWin": 35,
-  "updatedAt": "2026-06-26T21:49:05.228033+00:00",
+  "updatedAt": "2026-06-26T23:14:04.959639+00:00",
   "fixtureContext": {
     "home": {
       "team": "cape-verde",
@@ -9367,6 +9367,41 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 26 Jun 2026 20:02:34 GMT"
+    },
+    {
+      "title": "Senegal thrash 10-man Iraq to boost hopes of reaching last 32",
+      "detail": "Iliman Ndiaye and Ismaila Sarr produce a goal and an assist each as Senegal dismantle 10-man Iraq 5-0 at Toronto Stadium, boosting hopes of a World Cup last-32 spot.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 21:46:08 GMT"
+    },
+    {
+      "title": "17 passes, all 11 players - Dembele scores 'magic' goal for France",
+      "detail": "Every member of France's starting XI gets involved as a 17-pass move is put away by Ousmane Dembele to seal his hat-trick in France's 4-1 win over Norway in their final FIFA World Cup Group I match at Boston Stadium.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 22:09:46 GMT"
+    },
+    {
+      "title": "Senegal salvage hopes of World Cup last-32 place with rout of 10-man Iraq",
+      "detail": "<p>The substitute Pape Gueye scored a pair of sensational second-half goals from long range as Senegal got a much-needed boost to their goal difference with a 5-0 victory over 10-man Iraq in their Group I finale.</p><p>Ismaïla Sarr added his third ⁠goal of the tournament, ⁠the first ​of four after half-time for the Lions of Teranga, who sealed a third-place group finish and are vying for one ⁠of the eight third-place spots in the last 32.</p> <a href=\"https://www.theguardian.com/football/2026/jun/26/senegal-iraq-world-cup-group-i-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 21:36:33 GMT"
+    },
+    {
+      "title": "Uruguay v Spain: World Cup 2026 – live",
+      "detail": "<p>⚽️ Kick-off time: 6pm local/8pm EDT/1am BST/10am AEST<br>⚽️ <a href=\"https://www.theguardian.com/football/2026/jun/24/world-cup-groups-permutations-round-of-32-usa-mexico-canada\">Third-place table</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/world-cup-2026/table\">Group tables</a> | <a href=\"mailto:tom.lutz@theguardian.com\">Mail Tom</a></p><p><strong>A few changes for each team. </strong>For Spain<strong>, </strong>Marcos Llorente replaces Pedro Porro in defence, while Mikel Merino and Alex Baena are in Dani ⁠Olmo and Nico Williams. Marcelo Bielsa has Fernando Muslera in goal and Darwin Nunez leading the line.</p><p><strong>Uruguay:</strong> Fernando Muslera; Sebastian ​Caceres, Guillermo ​Varela, Mathias Olivera; Manuel ​Ugarte, Rodrigo Bentancur, Federico Valverde, Agustin Canobbio, ​Maxi Araujo, ‌Juan Manuel ​Sanabria; Darwin ​Nunez. <strong>Subs:</strong> Rochet, Mele, Gimenez, Ronald Araujo, de la Cruz, de Arrascaeta, Pellistri, Martinez, Vina, Rodriguez, Aguirre, Vinas, Piquerez, Bueno, Zalazar.</p> <a href=\"https://www.theguardian.com/football/live/2026/jun/26/uruguay-v-spain-world-cup-2026-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 23:04:33 GMT"
+    },
+    {
+      "title": "Cape Verde v Saudi Arabia: World Cup 2026 – live",
+      "detail": "<p>⚽️ Kick-off time: 7pm local/8pm EDT/1am BST/10am AEST<br>⚽️ <a href=\"https://www.theguardian.com/football/2026/jun/24/world-cup-groups-permutations-round-of-32-usa-mexico-canada\">Third-place table</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/world-cup-2026/table\">Group tables</a> | <a href=\"mailto:beau.dure@theguardian.com\">Mail Beau</a></p><p>A couple of groups have a game like this -- one team (Cape Verde in this case, Belgium later) will advance with a win and will be very good shape with a draw, while the other team (Saudi Arabia now, New Zealand later) will either win and advance or fail to win and fly home.</p><p>Cape Verde have already posted one of the greatest underdog performances in World Cup history, managing draws against traditional powerhouses Spain and Uruguay, the former on a stupendous shot-stopping stint by the 40-year-old goalkeeper they call Vozinha. His <a href=\"https://www.instagram.com/Vozinha1/\">Instagram following</a> has grown from about 50,000 to a current total of 16.7 million, and increase of more than 33,000%.</p> <a href=\"https://www.theguardian.com/football/live/2026/jun/26/cape-verde-v-saudi-arabia-world-cup-2026-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 26 Jun 2026 23:02:16 GMT"
     }
   ],
   "teams": [
@@ -10302,18 +10337,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1286,
+      "eventCount": 1291,
       "manualEventCount": 3,
-      "rawNewsCount": 1283,
+      "rawNewsCount": 1288,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1286,
-      "applied": 1192,
+      "watched": 1291,
+      "applied": 1197,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1281,
+      "singleSource": 1286,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -20954,183 +20989,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-26T21:49:31.044780+00:00",
+    "generatedAt": "2026-06-26T23:14:30.938302+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "senegal",
-        "name": "塞内加尔",
-        "code": "SEN",
-        "previousChampion": 0.5,
-        "currentChampion": 0.9,
-        "change": 0.4,
-        "direction": "up",
-        "reason": "八强概率上升 +10.0%",
-        "reasons": [
-          "八强概率上升 +10.0%",
-          "四强概率上升 +3.7%",
-          "决赛概率上升 +1.3%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 14.5,
-        "currentChampion": 14.2,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.4%",
-        "reasons": [
-          "决赛概率下降 -0.4%",
-          "四强概率下降 -0.2%",
-          "八强概率下降 -0.2%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 5.8,
-        "currentChampion": 6.1,
-        "change": 0.3,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.3%",
-        "reasons": [
-          "决赛概率上升 +0.3%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 6.3,
-        "currentChampion": 6.5,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "四强概率上升 +0.4%",
-        "reasons": [
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.3%",
-          "八强概率上升 +0.2%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "south-korea",
-        "name": "韩国",
-        "code": "KOR",
-        "previousChampion": 0.5,
-        "currentChampion": 0.3,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "八强概率下降 -6.3%",
-        "reasons": [
-          "八强概率下降 -6.3%",
-          "四强概率下降 -1.8%",
-          "决赛概率下降 -0.6%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 16.4,
-        "currentChampion": 16.5,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "八强概率上升 +0.1%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 6.1,
-        "currentChampion": 6.0,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "四强概率下降 -0.1%",
-        "reasons": [
-          "四强概率下降 -0.1%",
-          "决赛概率下降 -0.1%",
-          "八强概率下降 -0.1%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 4.6,
-        "currentChampion": 4.5,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "四强概率下降 -0.3%",
-        "reasons": [
-          "四强概率下降 -0.3%",
-          "决赛概率下降 -0.3%",
-          "八强概率下降 -0.1%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 6,
-      "down": 6,
-      "largestUp": {
-        "team": "senegal",
-        "name": "塞内加尔",
-        "code": "SEN",
-        "previousChampion": 0.5,
-        "currentChampion": 0.9,
-        "change": 0.4,
-        "direction": "up",
-        "reason": "八强概率上升 +10.0%",
-        "reasons": [
-          "八强概率上升 +10.0%",
-          "四强概率上升 +3.7%",
-          "决赛概率上升 +1.3%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      "largestDown": {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 14.5,
-        "currentChampion": 14.2,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.4%",
-        "reasons": [
-          "决赛概率下降 -0.4%",
-          "四强概率下降 -0.2%",
-          "八强概率下降 -0.2%",
-          "已完赛果新增 2 场，路径重新模拟",
-          "可入模型事件新增 6 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
