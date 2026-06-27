@@ -19022,5 +19022,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-546cb82dc4c4",
+    "title": "Rate the players in Panama v England",
+    "summary": "Rate the Panama and England players out of 10 below and come back after full-time to see the final ratings.",
+    "source": "bbc",
+    "team": "belgium",
+    "status": "single_source",
+    "published_at": "Sat, 27 Jun 2026 21:49:05 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c8r2l8y7ygko?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-4212831eb0e6",
+    "title": "Colombia v Portugal: World Cup 2026 – live",
+    "summary": "<p><strong>⚽️ </strong>Kick-off time: 7.30pm EDT/12.30am BST/9.30am AEST<strong><br>⚽️ </strong><a href=\"https://www.theguardian.com/football/2026/jun/24/world-cup-groups-permutations-round-of-32-usa-mexico-canada\">Third-place table</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/world-cup-2026/table\">Group tables</a> | <a href=\"mailto:beau.dure@guardian.co.uk\">Mail Beau</a><br><strong>⚽️ </strong><a href=\"https://www.theguardian.com/football/live/2026/jun/27/dr-congo-v-uzbekistan-world-cup-2026-live\">DR Congo v Uzbekistan – live updates from Group K</a></p><p>Let’s begin with the tangible stakes ...</p><p>If Portugal win this game, they win Group K, and Colombia will be second, resulting in these matchups:</p><p>Portugal: July 3 in Kansas City vs. the third-place team in Group L, if that team qualifies. Should the Group L team fall short, they’ll face the third-place team in Group I, which is Senegal.</p><p>Colombia: July 2 in Toronto vs. the runner-up in Group L (England, Ghana or Croatia).</p> <a href=\"https://www.theguardian.com/football/live/2026/jun/27/colombia-v-portugal-world-cup-2026-live\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "mexico",
+    "status": "single_source",
+    "published_at": "Sat, 27 Jun 2026 21:45:01 GMT",
+    "url": "https://www.theguardian.com/football/live/2026/jun/27/colombia-v-portugal-world-cup-2026-live",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-b9a4e2dcbcec",
+    "title": "DR Congo v Uzbekistan: World Cup 2026 – live",
+    "summary": "<p>⚽️ Kick-off time: 7.30pm EDT/12.30am BST/9.30am AEST<br>⚽️ <a href=\"https://www.theguardian.com/football/2026/jun/24/world-cup-groups-permutations-round-of-32-usa-mexico-canada\">Third-place table</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/world-cup-2026/table\">Group tables</a> | <a href=\"mailto:bryan.graham@theguardian.com\">Mail Bryan</a><br>⚽️ <a href=\"https://www.theguardian.com/football/live/2026/jun/27/colombia-v-portugal-world-cup-2026-live\">Colombia v Portugal – live updates also in Group K</a></p><p>For DR Congo, the equation could hardly be simpler. Beat Uzbekistan tonight in Atlanta and the Leopards will almost certainly reach the knockout stage, either by snatching second place or, more likely, as <a href=\"https://www.theguardian.com/football/2026/jun/24/world-cup-groups-permutations-round-of-32-usa-mexico-canada\">one of the World Cup’s best third-placed teams</a>.</p><p>The stakes have resonated far beyond the dressing room. Ahead of kick-off, President Félix Tshisekedi <a href=\"https://x.com/Presidence_RDC/status/2070776215208690057\">issued an emotional message</a> urging the nation to rally behind the team.</p> <a href=\"https://www.theguardian.com/football/live/2026/jun/27/dr-congo-v-uzbekistan-world-cup-2026-live\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "mexico",
+    "status": "single_source",
+    "published_at": "Sat, 27 Jun 2026 22:06:17 GMT",
+    "url": "https://www.theguardian.com/football/live/2026/jun/27/dr-congo-v-uzbekistan-world-cup-2026-live",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
