@@ -10,7 +10,7 @@
   "homeWin": 10,
   "draw": 16,
   "awayWin": 73,
-  "updatedAt": "2026-06-27T08:44:42.444869+00:00",
+  "updatedAt": "2026-06-27T11:00:44.953781+00:00",
   "fixtureContext": {
     "home": {
       "team": "panama",
@@ -9875,6 +9875,41 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 27 Jun 2026 07:00:34 GMT"
+    },
+    {
+      "title": "Scouting report on Panama - why England should be wary",
+      "detail": "Panama's results do not paint a true picture of their performances in the World Cup so far - so what can England expect from them?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 27 Jun 2026 09:22:57 GMT"
+    },
+    {
+      "title": "One night in Miami: The Scotsmen of the apocalypse",
+      "detail": "BBC Scotland's Scott Mullen paints the scene from Miami as Scotland's World Cup hopes fade.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 27 Jun 2026 08:34:12 GMT"
+    },
+    {
+      "title": "Man Utd waiting on Ugarte injury after he leaves pitch on stretcher",
+      "detail": "Manchester United are waiting to discover the extent of Manuel Ugarte's injury after the midfielder was stretchered off during Uruguay's World Cup defeat by Spain.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sat, 27 Jun 2026 10:36:07 GMT"
+    },
+    {
+      "title": "The World Cup is undressing the myth of Trump’s American homogeneity",
+      "detail": "<p>The 2026 World Cup has become a rebuke to Trump’s homogeneous vision of America, revealing a tournament – and a US team – shaped by migration and diversity</p><p>Following the Department of Homeland Security on social media is a bit like wandering through a casino at 4am. Sooner or later, you’ll see something that makes you go: How did we get <em>here</em>?</p><p>There was one of those moments earlier this month. Days after the US opened their World Cup campaign with a 4-1 romp over Paraguay, DHS marked the occasion by posting an image of Chris Richards, Sergiño Dest and Folarin Balogun exulting beneath the headline “DEFEND THE HOMELAND” and the caption “OUR SOIL”.</p> <a href=\"https://www.theguardian.com/football/2026/jun/27/world-cup-usmnt-migration-nationalism-dhs-opinion\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 27 Jun 2026 09:00:02 GMT"
+    },
+    {
+      "title": "France earn favourites tag and Cape Verde make history | World Cup Daily",
+      "detail": "<p><a href=\"https://bsky.app/profile/maxrushden.bsky.social\">Max Rushden</a> is joined by <a href=\"https://bsky.app/profile/did:plc:i55lfvhkg573wfmby5sdnvq6\">Barry Glendenning</a>, Mark Langdon and <a href=\"https://bsky.app/profile/philippeauclair.bsky.social\">Philippe Auclair</a> as France beat a much-changed Norway and Cape Verde progress</p> <a href=\"https://www.theguardian.com/football/video/2026/jun/27/france-earn-favourites-tag-and-cape-verde-make-history-world-cup-daily\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 27 Jun 2026 09:36:28 GMT"
     }
   ],
   "teams": [
@@ -10056,7 +10091,7 @@
       "factors": {
         "strength": 84,
         "form": 78,
-        "path": 64,
+        "path": 65,
         "squad": 74,
         "margin": 79
       },
@@ -10095,7 +10130,7 @@
         "strength": 75,
         "form": 76,
         "path": 64,
-        "squad": 70,
+        "squad": 67,
         "margin": 78
       },
       "tournament": {
@@ -10810,18 +10845,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1325,
+      "eventCount": 1330,
       "manualEventCount": 3,
-      "rawNewsCount": 1322,
+      "rawNewsCount": 1327,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1325,
-      "applied": 1230,
+      "watched": 1330,
+      "applied": 1235,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1320,
+      "singleSource": 1325,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -10900,7 +10935,7 @@
         "attack": -4.699999999999999,
         "defense": -4.3,
         "goalkeeper": -2.15,
-        "path": -6.49,
+        "path": -5.62,
         "squad": -6.449999999999999
       },
       "haiti": {
@@ -10915,7 +10950,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -3.68,
-        "squad": -6.449999999999999
+        "squad": -8.6
       },
       "usa": {
         "attack": -4.3,
@@ -21462,174 +21497,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-27T08:45:07.079767+00:00",
+    "generatedAt": "2026-06-27T11:01:09.494135+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "belgium",
-        "name": "比利时",
-        "code": "BEL",
-        "previousChampion": 2.3,
-        "currentChampion": 2.1,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "人员盘下调 -2.2",
-        "reasons": [
-          "人员盘下调 -2.2",
-          "八强概率下降 -1.1%",
-          "四强概率下降 -0.8%",
-          "决赛概率下降 -0.4%",
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 21.7,
-        "currentChampion": 21.8,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.3%",
-        "reasons": [
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 13.7,
-        "currentChampion": 13.8,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.1%",
-        "reasons": [
-          "四强概率上升 +0.1%",
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 6.2,
-        "currentChampion": 6.3,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.8%",
-        "reasons": [
-          "八强概率上升 +0.8%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 5.5,
-        "currentChampion": 5.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.1%",
-        "reasons": [
-          "四强概率上升 +0.1%",
-          "决赛概率上升 +0.1%",
-          "八强概率上升 +0.1%",
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 4.4,
-        "currentChampion": 4.5,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.1%",
-        "reasons": [
-          "四强概率上升 +0.1%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
-        "team": "switzerland",
-        "name": "瑞士",
-        "code": "SUI",
-        "previousChampion": 0.8,
-        "currentChampion": 0.9,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.3%",
-        "reasons": [
-          "八强概率上升 +0.3%",
-          "四强概率上升 +0.1%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 1.0,
-        "currentChampion": 0.9,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "状态盘下调 -2.1",
-        "reasons": [
-          "状态盘下调 -2.1",
-          "八强概率下降 -0.9%",
-          "四强概率下降 -0.5%",
-          "决赛概率下降 -0.2%",
-          "可入模型事件新增 11 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 8,
-      "down": 3,
-      "largestUp": {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 21.7,
-        "currentChampion": 21.8,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.3%",
-        "reasons": [
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 11 条"
-        ]
-      },
-      "largestDown": {
-        "team": "belgium",
-        "name": "比利时",
-        "code": "BEL",
-        "previousChampion": 2.3,
-        "currentChampion": 2.1,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "人员盘下调 -2.2",
-        "reasons": [
-          "人员盘下调 -2.2",
-          "八强概率下降 -1.1%",
-          "四强概率下降 -0.8%",
-          "决赛概率下降 -0.4%",
-          "可入模型事件新增 11 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
