@@ -749,9 +749,11 @@
     "away": "iran",
     "stage": "小组赛 G 组",
     "kickoff": "6月26日 23:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Seattle",
-    "stadium": "Seattle Stadium"
+    "stadium": "Seattle Stadium",
+    "home_score": 1,
+    "away_score": 1
   },
   {
     "match_no": 64,
@@ -759,9 +761,11 @@
     "away": "belgium",
     "stage": "小组赛 G 组",
     "kickoff": "6月26日 23:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Vancouver",
-    "stadium": "BC Place Vancouver"
+    "stadium": "BC Place Vancouver",
+    "home_score": 1,
+    "away_score": 5
   },
   {
     "match_no": 65,
@@ -769,7 +773,7 @@
     "away": "saudi-arabia",
     "stage": "小组赛 H 组",
     "kickoff": "6月26日 20:00 ET",
-    "status": "live",
+    "status": "finished",
     "city": "Houston",
     "stadium": "Houston Stadium",
     "home_score": 0,
@@ -781,7 +785,7 @@
     "away": "spain",
     "stage": "小组赛 H 组",
     "kickoff": "6月26日 20:00 ET",
-    "status": "live",
+    "status": "finished",
     "city": "Guadalajara",
     "stadium": "Guadalajara Stadium",
     "home_score": 0,
