@@ -10,7 +10,7 @@
   "homeWin": 10,
   "draw": 16,
   "awayWin": 73,
-  "updatedAt": "2026-06-27T14:47:04.476738+00:00",
+  "updatedAt": "2026-06-27T16:11:06.014174+00:00",
   "fixtureContext": {
     "home": {
       "team": "panama",
@@ -10036,6 +10036,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 27 Jun 2026 13:41:00 GMT"
+    },
+    {
+      "title": "World Cup quiz: Name the team from England v Panama 2018",
+      "detail": "England face Panama for the first time since a 6-1 win at Russia 2018. Can you remember the starting XI?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 27 Jun 2026 14:50:33 GMT"
+    },
+    {
+      "title": "Filth, fury and fairytales: Uruguay and Cape Verde bring football heritage",
+      "detail": "<p><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\"><strong>Sign up now! Sign up now! Sign up now? Sign up now!</strong></a></p><p>The Geopolitics World Cup has its North Korea 1966, its Cameroon 1990, rank outsiders to revive hearts hardened by relentless cynicism. For Pak Doo-ik and Roger Milla, read Vozinha, and all his Cape Verde teammates, including Pico Lopes, a defender recruited while playing for Shamrock Rovers from the diaspora <a href=\"https://www.theguardian.com/football/2026/jun/16/roberto-lopes-cape-verde-spain-draw-world-cup-2026\">via LinkedChat</a>. An archipelago nation with a population smaller than Bradford <a href=\"https://www.theguardian.com/football/2026/jun/27/cape-verde-saudi-arabia-world-cup-match-report\">has negotiated a tough group</a> including two former winners in Spain and Uruguay. They will next meet Argentina in Miami, the adopted city of Lionel Messi, where the fairytale likely ends. Though if not, then they would become the greatest World Cup story of all. “We are small but we have big hearts,” sobbed Vozinha following <a href=\"https://www.theguardian.com/football/2026/jun/27/cape-verde-relishing-world-cup-date-with-argentina\">a 0-0 draw with Saudi Arabia</a> and a quick check on the other Group H result from Guadalajara.</p><p>Having sat through the first group games and fumed at the obvious lack of jeopardy, I decided my GWC experience would be significantly enhanced if I ignored some games and played walking football for the 60-plus generation instead. To my amazement, there is an entire new football language waiting to be discovered by anybody prepared to play the beautiful game at a sedate pace. For example, the walking football term used when a player scores three goals is ‘a gerihat-trick’. Come to think of it, this all isn’t far removed from descriptions of England’s performance against Ghana. Does anybody else have any walking football terms?” – Mike Towers.</p><p>Re: tournament wording in different languages (Football Daily letters passim). I’d love to be the first of 1,057 Scots to tell you what ‘knockout stage’, ‘quarter-final’, ‘semi-final’, ‘final’ and the like are in our national tongue, but I don’t think any of us knows” – Peter Storch (and no other Scots).</p><p>Leaving aside the £116m for Elliot Anderson (yesterday’s Beyond The GWC, full email edition), I’m concerned about a midfielder called Odysseas Vlachodimos <a href=\"https://www.theguardian.com/football/2026/jun/25/manchester-city-agree-british-record-130m-fee-with-nottingham-forest-for-elliot-anderson\">being mentioned in passing</a>. Is he the kind of player who gets lost in the middle of games, or does he tease the opposition till they lose control?” – Kev The Poet.</p><p><em><strong>This is an extract from our daily football email … Football Daily. To get the full version,<a href=\"https://preview.gutools.co.uk/info/2016/jan/05/the-fiver-email-sign-up\"> </a><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\">just visit this page and follow the instructions</a>.</strong></em></p> <a href=\"https://www.theguardian.com/football/2026/jun/27/football-daily-cape-verde-uruguay-gwc\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 27 Jun 2026 15:03:28 GMT"
     }
   ],
   "teams": [
@@ -10971,18 +10985,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1348,
+      "eventCount": 1350,
       "manualEventCount": 3,
-      "rawNewsCount": 1345,
+      "rawNewsCount": 1347,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1348,
-      "applied": 1253,
+      "watched": 1350,
+      "applied": 1255,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1343,
+      "singleSource": 1345,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -21623,7 +21637,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-27T14:47:26.620277+00:00",
+    "generatedAt": "2026-06-27T16:11:30.452550+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
