@@ -18994,5 +18994,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-e61ae423b988",
+    "title": "Como bid for Chelsea's Chalobah - Sunday's gossip",
+    "summary": "Chelsea are handed a bid from Como for defender Trevoh Chalobah, Everton are frontrunners to sign Blues striker Liam Delap, while Inter Milan may miss out on Liverpool midfielder Curtis Jones over his valuation, plus more.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Sat, 27 Jun 2026 20:45:03 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cp364e4n1y5o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "defense",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-e50d591cab4c",
+    "title": "Hugo Broos rises above South Africa’s problems to break new World Cup ground",
+    "summary": "<p>Blunder that threatened qualification and poor start against Mexico are in the past as date with Canada looms</p><p>Hugo Broos, South Africa’s Belgian head coach, deserves a significant share of the credit for Bafana Bafana reaching the World Cup knockout stages for the first time in their rather chequered history. The country had been absent from the tournament since they hosted it in 2010 and participated only twice before that, in 1998 and 2002. A wave of unbridled excitement was triggered when Broos ended the long wait to qualify.</p><p>“The question I always asked myself is: ‘Why is South Africa not a dominating country in Africa?’” Broos said in a recent radio interview. “When I came here, I had a plan. I kept the plan till the end, till the results were there, because I knew that was the way to do it.”</p> <a href=\"https://www.theguardian.com/football/2026/jun/27/hugo-broos-rose-above-south-africas-problems-to-reach-world-cup-last-32\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "mexico",
+    "status": "single_source",
+    "published_at": "Sat, 27 Jun 2026 19:27:23 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/27/hugo-broos-rose-above-south-africas-problems-to-reach-world-cup-last-32",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
