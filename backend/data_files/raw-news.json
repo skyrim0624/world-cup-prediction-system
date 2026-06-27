@@ -18770,5 +18770,47 @@
     "factor": "path",
     "direction": 1,
     "confidence": 0.52
+  },
+  {
+    "id": "bbc-06c2c4c8ce32",
+    "title": "Who are the Panama players England need to look out for?",
+    "summary": "BBC Sport analyses the key players for Panama who will be aiming to cause a World Cup upset against England in their final Group L fixture.",
+    "source": "bbc",
+    "team": "australia",
+    "status": "single_source",
+    "published_at": "Sat, 27 Jun 2026 13:37:22 GMT",
+    "url": "https://www.bbc.co.uk/sport/articles/cr47wd2d3ero?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-34caaaf39105",
+    "title": "Are Celtic reacting quickly enough to last season's 'wake-up call'?",
+    "summary": "Have Celtic learned lessons from last season as Martin O'Neill sounds \"wake-up call\" warning?",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Sat, 27 Jun 2026 13:58:59 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c0jye43v30no?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-7ddbb32496cf",
+    "title": "Who would the US need to beat to win the World Cup? Probably only Spain, France and England",
+    "summary": "<p>Mauricio Pochettino’s team won their group after some impressive performances. But they’d probably need to beat some of the world’s best to claim the title</p><p>Football Unites the World … in wishing it had paid more attention in applied mathematics class. Or so the Fifa slogan could have been expanded to say, given the mind-warping that arose from the formula for slicing the <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">newly expanded 48-team tournament</a> down to <a href=\"https://www.theguardian.com/football/2026/jun/24/world-cup-groups-permutations-round-of-32-usa-mexico-canada\">32 sides for the first knockout round</a>.</p><p>After all, why do a random draw when you can build a matrix with 495 possible scenarios in order to assign the fixtures for the eight best third-placers? Anyway, what matters is that Mauricio Pochettino’s team will face Bosnia and Herzegovina in the round of 32, and no new format is going to stop us from – in time-honored fashion – speculating wildly about what may happen next while we still have the chance, with the potential for American wins rated using one of the mantra-loving manager’s motivational rallying cries of choice.</p> <a href=\"https://www.theguardian.com/football/2026/jun/27/usa-bracket-world-cup-path-to-final\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "mexico",
+    "status": "single_source",
+    "published_at": "Sat, 27 Jun 2026 13:41:00 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/27/usa-bracket-world-cup-path-to-final",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

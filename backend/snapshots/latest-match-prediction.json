@@ -10,7 +10,7 @@
   "homeWin": 10,
   "draw": 16,
   "awayWin": 73,
-  "updatedAt": "2026-06-27T12:53:15.337834+00:00",
+  "updatedAt": "2026-06-27T14:47:04.476738+00:00",
   "fixtureContext": {
     "home": {
       "team": "panama",
@@ -10015,6 +10015,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 27 Jun 2026 08:10:38 GMT"
+    },
+    {
+      "title": "Who are the Panama players England need to look out for?",
+      "detail": "BBC Sport analyses the key players for Panama who will be aiming to cause a World Cup upset against England in their final Group L fixture.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 27 Jun 2026 13:37:22 GMT"
+    },
+    {
+      "title": "Are Celtic reacting quickly enough to last season's 'wake-up call'?",
+      "detail": "Have Celtic learned lessons from last season as Martin O'Neill sounds \"wake-up call\" warning?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 27 Jun 2026 13:58:59 GMT"
+    },
+    {
+      "title": "Who would the US need to beat to win the World Cup? Probably only Spain, France and England",
+      "detail": "<p>Mauricio Pochettino’s team won their group after some impressive performances. But they’d probably need to beat some of the world’s best to claim the title</p><p>Football Unites the World … in wishing it had paid more attention in applied mathematics class. Or so the Fifa slogan could have been expanded to say, given the mind-warping that arose from the formula for slicing the <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">newly expanded 48-team tournament</a> down to <a href=\"https://www.theguardian.com/football/2026/jun/24/world-cup-groups-permutations-round-of-32-usa-mexico-canada\">32 sides for the first knockout round</a>.</p><p>After all, why do a random draw when you can build a matrix with 495 possible scenarios in order to assign the fixtures for the eight best third-placers? Anyway, what matters is that Mauricio Pochettino’s team will face Bosnia and Herzegovina in the round of 32, and no new format is going to stop us from – in time-honored fashion – speculating wildly about what may happen next while we still have the chance, with the potential for American wins rated using one of the mantra-loving manager’s motivational rallying cries of choice.</p> <a href=\"https://www.theguardian.com/football/2026/jun/27/usa-bracket-world-cup-path-to-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 27 Jun 2026 13:41:00 GMT"
     }
   ],
   "teams": [
@@ -10950,18 +10971,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1345,
+      "eventCount": 1348,
       "manualEventCount": 3,
-      "rawNewsCount": 1342,
+      "rawNewsCount": 1345,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1345,
-      "applied": 1250,
+      "watched": 1348,
+      "applied": 1253,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1340,
+      "singleSource": 1343,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -21602,110 +21623,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-27T12:53:39.920702+00:00",
+    "generatedAt": "2026-06-27T14:47:26.620277+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 4.5,
-        "currentChampion": 3.9,
-        "change": -0.6,
-        "direction": "down",
-        "reason": "状态盘下调 -2.1",
-        "reasons": [
-          "状态盘下调 -2.1",
-          "八强概率下降 -1.4%",
-          "四强概率下降 -1.3%",
-          "决赛概率下降 -0.8%",
-          "可入模型事件新增 15 条"
-        ]
-      },
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 13.8,
-        "currentChampion": 14.0,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "八强概率上升 +1.0%",
-        "reasons": [
-          "八强概率上升 +1.0%",
-          "四强概率上升 +0.7%",
-          "决赛概率上升 +0.4%",
-          "可入模型事件新增 15 条"
-        ]
-      },
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 6.3,
-        "currentChampion": 6.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.2%",
-        "reasons": [
-          "四强概率上升 +0.2%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 15 条"
-        ]
-      },
-      {
-        "team": "belgium",
-        "name": "比利时",
-        "code": "BEL",
-        "previousChampion": 2.1,
-        "currentChampion": 2.2,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 15 条",
-        "reasons": [
-          "可入模型事件新增 15 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 3,
-      "down": 1,
-      "largestUp": {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 13.8,
-        "currentChampion": 14.0,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "八强概率上升 +1.0%",
-        "reasons": [
-          "八强概率上升 +1.0%",
-          "四强概率上升 +0.7%",
-          "决赛概率上升 +0.4%",
-          "可入模型事件新增 15 条"
-        ]
-      },
-      "largestDown": {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 4.5,
-        "currentChampion": 3.9,
-        "change": -0.6,
-        "direction": "down",
-        "reason": "状态盘下调 -2.1",
-        "reasons": [
-          "状态盘下调 -2.1",
-          "八强概率下降 -1.4%",
-          "四强概率下降 -1.3%",
-          "决赛概率下降 -0.8%",
-          "可入模型事件新增 15 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
