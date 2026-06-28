@@ -797,7 +797,7 @@
     "away": "england",
     "stage": "小组赛 L 组",
     "kickoff": "6月27日 17:00 ET",
-    "status": "live",
+    "status": "finished",
     "city": "New York/New Jersey",
     "stadium": "New York New Jersey Stadium",
     "home_score": 0,
@@ -809,11 +809,11 @@
     "away": "ghana",
     "stage": "小组赛 L 组",
     "kickoff": "6月27日 17:00 ET",
-    "status": "live",
+    "status": "finished",
     "city": "Philadelphia",
     "stadium": "Philadelphia Stadium",
-    "home_score": 1,
-    "away_score": 0
+    "home_score": 2,
+    "away_score": 1
   },
   {
     "match_no": 69,
@@ -841,9 +841,11 @@
     "away": "portugal",
     "stage": "小组赛 K 组",
     "kickoff": "6月27日 19:30 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "Miami",
-    "stadium": "Miami Stadium"
+    "stadium": "Miami Stadium",
+    "home_score": 0,
+    "away_score": 0
   },
   {
     "match_no": 72,
@@ -851,8 +853,10 @@
     "away": "uzbekistan",
     "stage": "小组赛 K 组",
     "kickoff": "6月27日 19:30 ET",
-    "status": "scheduled",
+    "status": "live",
     "city": "Atlanta",
-    "stadium": "Atlanta Stadium"
+    "stadium": "Atlanta Stadium",
+    "home_score": 0,
+    "away_score": 1
   }
 ]
