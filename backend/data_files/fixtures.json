@@ -821,9 +821,11 @@
     "away": "austria",
     "stage": "小组赛 J 组",
     "kickoff": "6月27日 22:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Kansas City",
-    "stadium": "Kansas City Stadium"
+    "stadium": "Kansas City Stadium",
+    "home_score": 3,
+    "away_score": 3
   },
   {
     "match_no": 70,
@@ -831,9 +833,11 @@
     "away": "argentina",
     "stage": "小组赛 J 组",
     "kickoff": "6月27日 22:00 ET",
-    "status": "scheduled",
+    "status": "finished",
     "city": "Dallas",
-    "stadium": "Dallas Stadium"
+    "stadium": "Dallas Stadium",
+    "home_score": 1,
+    "away_score": 3
   },
   {
     "match_no": 71,
@@ -841,7 +845,7 @@
     "away": "portugal",
     "stage": "小组赛 K 组",
     "kickoff": "6月27日 19:30 ET",
-    "status": "live",
+    "status": "finished",
     "city": "Miami",
     "stadium": "Miami Stadium",
     "home_score": 0,
@@ -853,10 +857,10 @@
     "away": "uzbekistan",
     "stage": "小组赛 K 组",
     "kickoff": "6月27日 19:30 ET",
-    "status": "live",
+    "status": "finished",
     "city": "Atlanta",
     "stadium": "Atlanta Stadium",
-    "home_score": 0,
+    "home_score": 3,
     "away_score": 1
   }
 ]
