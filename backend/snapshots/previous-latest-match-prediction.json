@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-28T17:45:59.778915+00:00",
+  "updatedAt": "2026-06-28T19:39:03.637643+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -10792,6 +10792,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 28 Jun 2026 15:59:37 GMT"
+    },
+    {
+      "title": "Nothing off table in picking Clarke successor - SFA",
+      "detail": "The Scottish FA's chief executive says \"nothing's off the table\" in replacing Steve Clarke as national head coach, a process that \"starts now\".",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 17:59:24 GMT"
+    },
+    {
+      "title": "France the team to beat? Chris Sutton predicts World Cup's last-32 matches",
+      "detail": "BBC Sport's football expert Chris Sutton gives his predictions for the last-32 ties at the 2026 World Cup, including England against DR Congo.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 19:14:59 GMT"
+    },
+    {
+      "title": "‘We don’t want penalties’: Pickford backs England’s attacking approach",
+      "detail": "<p>Jordan Pickford has enjoyed shootout success but believes his England side can deliver World Cup glory without penalties</p><p>Jordan Pickford has pretty much seen it all since making his first England appearance at under-16 level in 2009. Although he experienced the embarrassment of conceding the only goal scored by a goalkeeper from open play at a Fifa World Cup match against Canada in the under-17 edition in Mexico two years later, the 32-year-old has more than made up for it.</p><p>The <a href=\"https://www.theguardian.com/football/2026/jun/27/england-panama-world-cup-group-l-match-report\">2-0 victory against Panama</a> on Saturday was the 29th major tournament England game in a row to feature Pickford as Thomas Tuchel’s side secured top spot in Group L to set up a meeting with the Democratic Republic of Congo in Atlanta on Wednesday. As the Everton goalkeeper is fully aware, things are about to get much more serious.</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/jordan-pickford-england-world-cup-democratic-republic-congo\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 18:00:15 GMT"
     }
   ],
   "teams": [
@@ -11727,18 +11748,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1457,
+      "eventCount": 1460,
       "manualEventCount": 3,
-      "rawNewsCount": 1454,
+      "rawNewsCount": 1457,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1457,
-      "applied": 1357,
+      "watched": 1460,
+      "applied": 1360,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1452,
+      "singleSource": 1455,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -22379,164 +22400,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-28T17:46:21.882603+00:00",
+    "generatedAt": "2026-06-28T19:39:23.690906+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 21.2,
-        "currentChampion": 20.2,
-        "change": -1.0,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "四强概率下降 -1.2%",
-          "决赛概率下降 -1.2%",
-          "八强概率下降 -1.1%",
-          "可入模型事件新增 16 条"
-        ]
-      },
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 20.4,
-        "currentChampion": 20.6,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "可入模型事件新增 16 条",
-        "reasons": [
-          "可入模型事件新增 16 条"
-        ]
-      },
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 14.3,
-        "currentChampion": 14.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "路径盘上调 +0.9",
-        "reasons": [
-          "路径盘上调 +0.9",
-          "决赛概率上升 +0.3%",
-          "可入模型事件新增 16 条"
-        ]
-      },
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 6.3,
-        "currentChampion": 6.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.2%",
-        "reasons": [
-          "决赛概率上升 +0.2%",
-          "八强概率上升 +0.2%",
-          "四强概率上升 +0.1%",
-          "可入模型事件新增 16 条"
-        ]
-      },
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 5.8,
-        "currentChampion": 5.9,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 16 条",
-        "reasons": [
-          "可入模型事件新增 16 条"
-        ]
-      },
-      {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 4.4,
-        "currentChampion": 4.5,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 16 条"
-        ]
-      },
-      {
-        "team": "colombia",
-        "name": "哥伦比亚",
-        "code": "COL",
-        "previousChampion": 3.4,
-        "currentChampion": 3.5,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 16 条",
-        "reasons": [
-          "可入模型事件新增 16 条"
-        ]
-      },
-      {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 0.9,
-        "currentChampion": 1.0,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "八强概率上升 +0.1%",
-          "可入模型事件新增 16 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 7,
-      "down": 1,
-      "largestUp": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 20.4,
-        "currentChampion": 20.6,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "可入模型事件新增 16 条",
-        "reasons": [
-          "可入模型事件新增 16 条"
-        ]
-      },
-      "largestDown": {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 21.2,
-        "currentChampion": 20.2,
-        "change": -1.0,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "四强概率下降 -1.2%",
-          "决赛概率下降 -1.2%",
-          "八强概率下降 -1.1%",
-          "可入模型事件新增 16 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }

@@ -20380,5 +20380,33 @@
     "factor": "goalkeeper",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-a34eb95538eb",
+    "title": "Diomande picks PSG over Liverpool - Monday's gossip",
+    "summary": "Yan Diomande picks Paris St-Germain over Liverpool, Ruben Amorim wants Mason Mount at AC Milan, Nottingham Forest eye Curtis Jones, Jeremy Monga in Arsenal's sights and Aston Villa battle Leeds for Zion Suzuki.",
+    "source": "bbc",
+    "team": "paraguay",
+    "status": "single_source",
+    "published_at": "Sun, 28 Jun 2026 20:49:56 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cqx1yjnxng2o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-a6433be8e0c0",
+    "title": "Father figure Carlo Ancelotti will have a plan for Brazil. He always has a plan | Rodrygo",
+    "summary": "<p>For anyone outside the dressing room it is hard to predict what the Mister will do but he will be prepared for Japan on Monday</p><p>The 2022 Champions League semi-final. The Santiago Bernabéu. More than 60,000 fans in the stands, and Manchester City leading 1-0. I was on the Real&nbsp;Madrid bench when Carlo Ancelotti called me over and told me to get on the pitch, play aggressively and decide the match.</p><p>I stepped on to the field in the 68th minute. In the 90th minute, I equalised but we still trailed by a goal on aggregate. We restarted, and the next minute<a href=\"https://www.theguardian.com/football/2022/may/04/real-madrid-manchester-city-champions-league-semi-final-second-leg-match-report\"> I scored again to force extra time</a>. We won and the rest is history: another title for the club after beating Liverpool in the final. I bring up this moment to highlight how important coaches are to a team’s journey and how decisive they are in a player’s&nbsp;career, doing work that often goes unseen by the public.</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/carlo-ancelotti-brazil-japan-world-cup\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Sun, 28 Jun 2026 20:00:18 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/28/carlo-ancelotti-brazil-japan-world-cup",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
