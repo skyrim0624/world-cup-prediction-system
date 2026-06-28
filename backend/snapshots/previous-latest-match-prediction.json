@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-28T11:12:33.980377+00:00",
+  "updatedAt": "2026-06-28T12:58:19.665223+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -10582,6 +10582,34 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Sun, 28 Jun 2026 01:40:20 GMT"
+    },
+    {
+      "title": "Derided by Leeds, snubbed by USA - but Marsch becoming Canada hero",
+      "detail": "Derided by Leeds fans and snubbed by the USA, Jesse Marsch has faced difficult moments in his career - but appears to have found his home with Canada as they look to reach the World Cup last 16.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 11:28:24 GMT"
+    },
+    {
+      "title": "‘We will step up’: Thomas Tuchel feels England will thrive in World Cup knockouts",
+      "detail": "<ul><li><p>‘The bigger the games get, the bigger we will get,’ he says</p></li><li><p>Jarell Quansah hopes to be fit for last 32 after ankle sprain</p></li></ul><p>Thomas Tuchel believes England can only get better after sealing top spot in Group L and has backed his side to “step up” for the knockout stages of the World Cup.</p><p>After the goalless draw against Ghana, England struggled to break down Panama and began the second half behind Croatia in the standings. But goals from Jude Bellingham and Harry Kane – whose header made him England’s highest World Cup scorer – secured <a href=\"https://www.theguardian.com/football/2026/jun/27/england-panama-world-cup-group-l-match-report\">a 2-0 win</a> and ensured they will travel to Atlanta for a last-32 tie against the Democratic Republic of the Congo on Wednesday.</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/thomas-tuchel-england-world-cup-knockouts\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 28 Jun 2026 01:31:49 GMT"
+    },
+    {
+      "title": "World Cup glory could all come down to penalties. What’s the best strategy?",
+      "detail": "<p>As the knockout stages begin, penalties are inevitable. What do the stats say about the best ways to take them?</p><p>The 2022 World Cup final was a nail-biting affair, <a href=\"https://www.theguardian.com/football/2022/dec/18/world-cup-final-argentina-france-match-report\">decided by a penalty shootout after Argentina and France were evenly matched with three goals apiece</a>. Argentina subsequently won 4-2 on penalties, taking the title.</p><p>Even outside penalty shootouts, a single spot kick can easily decide the outcome of a game at a World Cup, making any advantage in taking a penalty crucial. So what can we learn about the best strategy for penalty kicks from statistics and research?</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/world-cup-glory-could-all-come-down-to-penalties-whats-the-best-strategy\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 11:00:11 GMT"
+    },
+    {
+      "title": "World Cup 2026 colour chart: fans of all 48 teams join the party – in pictures",
+      "detail": "<p>As the World Cup enters the knockout rounds, we take a look at the creativity and emotion that fans of all 48 teams showed in the group stage</p><p>The 2026 World Cup has set a new all-time attendance record for the men’s tournament, surpassing the previous record of 3,587,538 set during the 1994 World Cup – and the group stages have only just ended.</p><p>As ever, fans have brought colour and fun to the tournament – from Mexico’s duck mascot to Norway’s Viking rowers, with plenty more in between. Here are a selection of our favourite images of fans at the matches and at <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/24/world-cup-2026-viewing-parties-around-the-globe-in-pictures\">watch parties across the globe.</a></p> <a href=\"https://www.theguardian.com/football/2026/jun/28/world-cup-2026-colour-chart-fans-all-teams-gallery\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 11:00:11 GMT"
     }
   ],
   "teams": [
@@ -10668,7 +10696,7 @@
       "factors": {
         "strength": 76,
         "form": 72,
-        "path": 62,
+        "path": 61,
         "squad": 61,
         "margin": 75
       },
@@ -11517,18 +11545,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1427,
+      "eventCount": 1431,
       "manualEventCount": 3,
-      "rawNewsCount": 1424,
+      "rawNewsCount": 1428,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1427,
-      "applied": 1330,
+      "watched": 1431,
+      "applied": 1334,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1422,
+      "singleSource": 1426,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -11544,7 +11572,7 @@
         "attack": 0.0,
         "defense": -2.55,
         "goalkeeper": 0.0,
-        "path": -4.85,
+        "path": -3.9799999999999995,
         "squad": -9.399999999999999
       },
       "south-africa": {
@@ -11572,7 +11600,7 @@
         "attack": -9.0,
         "defense": -2.55,
         "goalkeeper": 0.0,
-        "path": -5.819999999999999,
+        "path": -6.739999999999999,
         "squad": -16.05
       },
       "bosnia-herzegovina": {
@@ -22169,7 +22197,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-28T11:12:55.903002+00:00",
+    "generatedAt": "2026-06-28T12:58:42.546888+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

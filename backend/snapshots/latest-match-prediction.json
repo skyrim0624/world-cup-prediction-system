@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-28T12:58:19.665223+00:00",
+  "updatedAt": "2026-06-28T14:53:23.366846+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -10610,6 +10610,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 28 Jun 2026 11:00:11 GMT"
+    },
+    {
+      "title": "How Bellingham became Tuchel's most important player",
+      "detail": "His starting place was the subject of much debate in Thomas Tuchel's England team, but Jude Bellingham has become integral to the manager's style of play.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 13:51:29 GMT"
+    },
+    {
+      "title": "Rice set for England start against DR Congo",
+      "detail": "Declan Rice is expected to be available to start England's World Cup last-32 tie with DR Congo on Wednesday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 14:14:57 GMT"
+    },
+    {
+      "title": "Iran needed help to save their ‘disaster’ World Cup. Instead they got more heartbreak",
+      "detail": "<p>Team Melli’s agonizing exit after other results failed to break their way is a moment of anguish that rises to the top of a football history full of them</p><p>Mehdi Taremi lay on the ground at Seattle Stadium staring at the heavens, devastated. The Iran team he captains had just finished <a href=\"https://www.theguardian.com/football/2026/jun/27/egypt-iran-world-cup-group-g-match-report\">a 1-1 draw with Egypt</a> in their final World Cup group game – one where a win would have put them through to the knockout round for the first time in seven tournament appearances. Taremi had missed a penalty in Friday’s contest, and a seeming late winner had sent the team into bedlam before being correctly ruled out for offside.</p><p>Taremi lay on the ground for several minutes. He did so as Alireza Jahanbakhsh, his longtime teammate on a veteran-laden Iran squad, offered comfort. Taremi remained after other teammates who had collapsed in exhaustion had arisen again, trudging to the locker room.</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/iran-world-cup-exit-heartbreak\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 13:27:44 GMT"
     }
   ],
   "teams": [
@@ -10969,7 +10990,7 @@
       "tournament": {
         "champion": 0.3,
         "final": 1.1,
-        "semifinal": 4.0,
+        "semifinal": 4.1,
         "quarterfinal": 12.5,
         "change": -0.1
       }
@@ -10989,7 +11010,7 @@
         "champion": 1.0,
         "final": 3.2,
         "semifinal": 8.8,
-        "quarterfinal": 20.3,
+        "quarterfinal": 20.4,
         "change": 0.4
       }
     },
@@ -11400,14 +11421,14 @@
         "strength": 70,
         "form": 74,
         "path": 64,
-        "squad": 74,
+        "squad": 76,
         "margin": 74
       },
       "tournament": {
         "champion": 0.1,
         "final": 0.3,
-        "semifinal": 1.2,
-        "quarterfinal": 5.2,
+        "semifinal": 1.3,
+        "quarterfinal": 5.4,
         "change": 0.0
       }
     },
@@ -11462,9 +11483,9 @@
       },
       "tournament": {
         "champion": 7.9,
-        "final": 17.3,
-        "semifinal": 33.1,
-        "quarterfinal": 55.3,
+        "final": 17.2,
+        "semifinal": 32.8,
+        "quarterfinal": 55.0,
         "change": -2.8
       }
     },
@@ -11545,18 +11566,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1431,
+      "eventCount": 1434,
       "manualEventCount": 3,
-      "rawNewsCount": 1428,
+      "rawNewsCount": 1431,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1431,
-      "applied": 1334,
+      "watched": 1434,
+      "applied": 1337,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1426,
+      "singleSource": 1429,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -11860,7 +11881,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": 0.0,
-        "squad": 0.0
+        "squad": 1.65
       },
       "uzbekistan": {
         "attack": 0.0,
@@ -22197,7 +22218,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-28T12:58:42.546888+00:00",
+    "generatedAt": "2026-06-28T14:53:45.300933+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

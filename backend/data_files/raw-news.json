@@ -19974,5 +19974,47 @@
     "factor": "path",
     "direction": 1,
     "confidence": 0.52
+  },
+  {
+    "id": "bbc-29b6855ef5f7",
+    "title": "How Bellingham became Tuchel's most important player",
+    "summary": "His starting place was the subject of much debate in Thomas Tuchel's England team, but Jude Bellingham has become integral to the manager's style of play.",
+    "source": "bbc",
+    "team": "germany",
+    "status": "single_source",
+    "published_at": "Sun, 28 Jun 2026 13:51:29 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c4gy5vj7npqo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-86725c0a6d3e",
+    "title": "Rice set for England start against DR Congo",
+    "summary": "Declan Rice is expected to be available to start England's World Cup last-32 tie with DR Congo on Wednesday.",
+    "source": "bbc",
+    "team": "dr-congo",
+    "status": "single_source",
+    "published_at": "Sun, 28 Jun 2026 14:14:57 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cvgjd5j74z5o?at_medium=RSS&at_campaign=rss",
+    "category": "availability",
+    "factor": "squad",
+    "direction": 1,
+    "confidence": 0.76
+  },
+  {
+    "id": "guardian-b2f5566fa0b6",
+    "title": "Iran needed help to save their ‘disaster’ World Cup. Instead they got more heartbreak",
+    "summary": "<p>Team Melli’s agonizing exit after other results failed to break their way is a moment of anguish that rises to the top of a football history full of them</p><p>Mehdi Taremi lay on the ground at Seattle Stadium staring at the heavens, devastated. The Iran team he captains had just finished <a href=\"https://www.theguardian.com/football/2026/jun/27/egypt-iran-world-cup-group-g-match-report\">a 1-1 draw with Egypt</a> in their final World Cup group game – one where a win would have put them through to the knockout round for the first time in seven tournament appearances. Taremi had missed a penalty in Friday’s contest, and a seeming late winner had sent the team into bedlam before being correctly ruled out for offside.</p><p>Taremi lay on the ground for several minutes. He did so as Alireza Jahanbakhsh, his longtime teammate on a veteran-laden Iran squad, offered comfort. Taremi remained after other teammates who had collapsed in exhaustion had arisen again, trudging to the locker room.</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/iran-world-cup-exit-heartbreak\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "australia",
+    "status": "single_source",
+    "published_at": "Sun, 28 Jun 2026 13:27:44 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/28/iran-world-cup-exit-heartbreak",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
