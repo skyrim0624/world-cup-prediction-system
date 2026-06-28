@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-28T19:39:03.637643+00:00",
+  "updatedAt": "2026-06-28T21:10:04.189126+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -10813,6 +10813,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 28 Jun 2026 18:00:15 GMT"
+    },
+    {
+      "title": "Diomande picks PSG over Liverpool - Monday's gossip",
+      "detail": "Yan Diomande picks Paris St-Germain over Liverpool, Ruben Amorim wants Mason Mount at AC Milan, Nottingham Forest eye Curtis Jones, Jeremy Monga in Arsenal's sights and Aston Villa battle Leeds for Zion Suzuki.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 20:49:56 GMT"
+    },
+    {
+      "title": "Father figure Carlo Ancelotti will have a plan for Brazil. He always has a plan | Rodrygo",
+      "detail": "<p>For anyone outside the dressing room it is hard to predict what the Mister will do but he will be prepared for Japan on Monday</p><p>The 2022 Champions League semi-final. The Santiago Bernabéu. More than 60,000 fans in the stands, and Manchester City leading 1-0. I was on the Real&nbsp;Madrid bench when Carlo Ancelotti called me over and told me to get on the pitch, play aggressively and decide the match.</p><p>I stepped on to the field in the 68th minute. In the 90th minute, I equalised but we still trailed by a goal on aggregate. We restarted, and the next minute<a href=\"https://www.theguardian.com/football/2022/may/04/real-madrid-manchester-city-champions-league-semi-final-second-leg-match-report\"> I scored again to force extra time</a>. We won and the rest is history: another title for the club after beating Liverpool in the final. I bring up this moment to highlight how important coaches are to a team’s journey and how decisive they are in a player’s&nbsp;career, doing work that often goes unseen by the public.</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/carlo-ancelotti-brazil-japan-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 20:00:18 GMT"
     }
   ],
   "teams": [
@@ -11748,18 +11762,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1460,
+      "eventCount": 1462,
       "manualEventCount": 3,
-      "rawNewsCount": 1457,
+      "rawNewsCount": 1459,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1460,
-      "applied": 1360,
+      "watched": 1462,
+      "applied": 1362,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1455,
+      "singleSource": 1457,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -22400,7 +22414,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-28T19:39:23.690906+00:00",
+    "generatedAt": "2026-06-28T21:10:26.531582+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-28T21:10:04.189126+00:00",
+  "updatedAt": "2026-06-28T22:36:44.919747+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -567,7 +567,7 @@
       "title": "库拉索半区压力下降",
       "details": [
         "库拉索夺冠概率 ±0.0%",
-        "德国潜在淘汰赛路径变难 ±0.0%",
+        "德国潜在淘汰赛路径变难 -0.1%",
         "小组第二路径风险上升"
       ],
       "championShift": "±0.0%",
@@ -10827,6 +10827,104 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 28 Jun 2026 20:00:18 GMT"
+    },
+    {
+      "title": "Canada into last 16 with late winner against South Africa",
+      "detail": "Stephen Eustaquio scores a dramatic winner in the second minute of injury time as co-hosts Canada beat South Africa to move into the last 16 of the World Cup for the first time.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 28 Jun 2026 21:49:24 GMT"
+    },
+    {
+      "title": "Conspiracy or chaos? Algeria & Austria defend 'unexpected' draw",
+      "detail": "The 'Disgrace of Gijon' - an infamous match at the 1982 World Cup in Spain - has followed Austria and Algeria for 44 years. Did history repeat itself in Algeria's 3-3 draw with Austria on Sunday?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 21:16:30 GMT"
+    },
+    {
+      "title": "Eustaquio scores in injury-time to take Canada through to the last 16",
+      "detail": "Stephen Eustaquio scores the only goal of the match against South Africa as Canada progresses to the last 16 of the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 28 Jun 2026 21:24:53 GMT"
+    },
+    {
+      "title": "Co-hosts Canada beat SA to book 1st last-16 spot",
+      "detail": "Stephen Eustáquio scored in the second minute of second-half stoppage time, and Canada beat South Africa 1-0 on Sunday for their first knockout match victory in a World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 17:11:15 EST"
+    },
+    {
+      "title": "South Korea coach quits after WC exit, criticism",
+      "detail": "South Korea coach Hong Myung-Bo resigned Sunday, a day after the team's quick elimination from the World Cup and following heavy criticism from the country's president.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 17:35:44 EST"
+    },
+    {
+      "title": "Balogun: U.S. finding 'another gear' for knockouts...",
+      "detail": "United States forward Folarin Balogun said he can \"feel the difference\" in the atmosphere around the World Cup now that the knockout stage has begun.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 17:11:14 EST"
+    },
+    {
+      "title": "Inside how a U.S. academy helped mold World Cup ph...",
+      "detail": "Teenager Yan Diomande is a top target for Europe's biggest clubs this summer. Before he was a star, though, he was a promising winger in Florida called \"Dio.\"",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 16:10:46 EST"
+    },
+    {
+      "title": "Gab Marcotti's Best XI of World Cup group stage: M...",
+      "detail": "The 2026 World Cup group stage has given us tons to cheer about, from superstars on form to wonderful underdog stories. How do you turn that into a best XI? Gab Marcotti gives it a shot.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 15:52:20 EST"
+    },
+    {
+      "title": "Will the real England please stand up? Tuchel's si...",
+      "detail": "ESPN's Tom Hamilton assesses England's group stage, the questions still surrounding Thomas Tuchel's side and why the knockouts will reveal their true identity.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 15:08:04 EST"
+    },
+    {
+      "title": "Canada first into last 16 as Stephen Eustáquio scores in stoppage time against South Africa",
+      "detail": "<p></p><p>Jesse Marsch clenched both fists and, for a split second, seemed to resist the temptation to charge on to the pitch to celebrate the goal that sent Canada into the last 16 of the World Cup. But then all hell broke loose, Marsch, some of his Canada staff and a raft of unused substitutes emptied on to the turf.</p><p>Sixty-four seconds into at least five minutes of second-half stoppage time, Stephen Eustáquio chested a South Africa clearance and struck a sweet right-foot shot with his laces, the ball thudding into the bottom corner of the goal. It was undoubtedly deserved but for so long it was impossible to shake the sense that the game was heading for extra time, South Africa seemingly content to play the long game, showing little ambition on the ball. Their goalkeeper, Ronwen Williams, was frequently booed for retaining possession.</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/south-africa-canada-world-cup-last-32-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 28 Jun 2026 21:23:01 GMT"
+    },
+    {
+      "title": "South Korea coach resigns after president condemns ‘incompetent people’ in World Cup exit",
+      "detail": "<ul><li><p>Korean president Lee lashes out and apologises to nation</p></li><li><p>Son Heung-min omission against South Africa backfires</p></li></ul><p>Hong Myung-bo resigned on Sunday as South Korea’s head coach, a day after his side’s group-stage exit from the World Cup and after condemnation from the country’s president.</p><p>The 57-year-old former captain, in his second stint as coach, oversaw an early World Cup departure for the second time to go with the failure in 2014. South Korea were expected to get out of a Group A that included the co-hosts Mexico as well as South Africa and Czechia. But they <a href=\"https://www.theguardian.com/football/2026/jun/25/south-africa-south-korea-world-cup-match-report\">lost 1-0 against South Africa</a> and <a href=\"https://www.theguardian.com/football/2026/jun/19/mexico-south-korea-world-cup-2026-group-a-match-report\">Mexico</a>, and finished on three points, their only success a <a href=\"https://www.theguardian.com/football/2026/jun/12/south-korea-czechia-world-cup-2026-group-a-match-report\">2-1 win against Czechia</a>.</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/south-korea-coach-resigns-president-condemns-world-cup-exit\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 20:55:03 GMT"
+    },
+    {
+      "title": "Kane and Bellingham produce the goods but England need others to step up",
+      "detail": "<p>Pair’s goals saw off Panama but Tuchel has problems at right-back and on flanks for last-32 tie against the DRC</p><p>England will head to Atlanta with problems in central defence, right-backs dropping like flies, weary legs in midfield and hope that everything will turn out fine if the Harry and Jude show continues to thrill. For Thomas Tuchel, it is “a moment to keep believe and pushing”.</p><p>Did England convince while securing top spot in Group L by beating Panama 2-0 in New Jersey? Not at all, but for a team looking to keep spirits high all that matters for now is they have a winnable last-32 tie against the Democratic Republic of the Congo on Wednesday and will be a threat against anyone if Jude Bellingham and Harry Kane continue to produce.</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/kane-and-bellingham-produce-the-goods-but-england-need-others-to-step-up\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 21:00:19 GMT"
+    },
+    {
+      "title": "Unflappable Lucas Herrington takes praise and World Cup progress in his stride",
+      "detail": "<p>Teenage defender is youngest Australian to start a World Cup match and has already been linked with Barcelona</p><p>Nestory Irankunda and Cristian Volpato might be the Socceroos’ excitement machines, but in the shop window of this World Cup there is one model worth more than all others.</p><p>Lucas Herrington, who at 18 became the youngest Australian to start a World Cup match when the defender played against Paraguay, has already been linked with a move to Barcelona. Such is his trajectory, his next transfer is expected to fetch a price close to – or more than – the Australian record set by Harry Souttar, who was bought by Leicester for £15m (approximately A$26m) in 2023.</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/unflappable-lucas-herrington-takes-praise-and-world-cup-progress-in-his-stride\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 21:56:28 GMT"
+    },
+    {
+      "title": "England’s right-back problems deepen with Jarell Quansah likely to miss DR Congo tie",
+      "detail": "<ul><li><p>Djed Spence expected to start with Reece James out</p></li><li><p>Tuchel says Bellingham is on board as ‘team player’</p></li></ul><p>Declan Rice will give England a boost by returning for the last-32 game against the Democratic Republic of the Congo (DRC) on Wednesday but Jarell Quansah is likely to add to Thomas Tuchel’s worries at right-back by missing out with an ankle injury.</p><p>Tuchel’s plans were complicated by Tino Livramento leaving the camp with a calf injury this month and the head coach was given another ­headache when Reece James tweaked a hamstring last week. James, who started England’s first two games in Group&nbsp;L, missed the <a href=\"https://www.theguardian.com/football/2026/jun/27/england-panama-world-cup-group-l-match-report\">win against Panama</a> last Saturday, is <a href=\"https://www.theguardian.com/football/2026/jun/26/england-reece-james-ruled-out-two-games-world-cup-hamstring-injury-panama\">unavailable against the DRC</a> and is increasingly unlikely to be back for a possible last‑16 match against either Mexico or Ecuador in Mexico City the ­following Sunday.</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/england-right-back-problem-jarell-quansah-likely-miss-dr-congo-djed-spence\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 28 Jun 2026 19:08:28 GMT"
     }
   ],
   "teams": [
@@ -10838,15 +10936,15 @@
         "strength": 82,
         "form": 80,
         "path": 68,
-        "squad": 71,
+        "squad": 68,
         "margin": 79
       },
       "tournament": {
-        "champion": 0.8,
-        "final": 3.0,
-        "semifinal": 8.2,
-        "quarterfinal": 19.2,
-        "change": -0.7
+        "champion": 0.7,
+        "final": 2.7,
+        "semifinal": 7.5,
+        "quarterfinal": 18.1,
+        "change": -0.8
       }
     },
     {
@@ -10857,14 +10955,14 @@
         "strength": 66,
         "form": 74,
         "path": 66,
-        "squad": 74,
-        "margin": 74
+        "squad": 70,
+        "margin": 72
       },
       "tournament": {
         "champion": 0.0,
         "final": 0.2,
-        "semifinal": 1.4,
-        "quarterfinal": 9.1,
+        "semifinal": 1.2,
+        "quarterfinal": 8.2,
         "change": -0.1
       }
     },
@@ -10920,8 +11018,8 @@
       "tournament": {
         "champion": 0.1,
         "final": 0.3,
-        "semifinal": 1.6,
-        "quarterfinal": 10.4,
+        "semifinal": 1.7,
+        "quarterfinal": 10.8,
         "change": -0.3
       }
     },
@@ -10996,7 +11094,7 @@
       "tournament": {
         "champion": 5.9,
         "final": 12.9,
-        "semifinal": 24.8,
+        "semifinal": 24.9,
         "quarterfinal": 42.5,
         "change": -4.9
       }
@@ -11015,8 +11113,8 @@
       "tournament": {
         "champion": 1.0,
         "final": 2.6,
-        "semifinal": 8.0,
-        "quarterfinal": 24.5,
+        "semifinal": 8.1,
+        "quarterfinal": 24.7,
         "change": -0.5
       }
     },
@@ -11203,11 +11301,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 1.0,
-        "final": 3.2,
-        "semifinal": 8.8,
-        "quarterfinal": 20.4,
-        "change": 0.4
+        "champion": 1.1,
+        "final": 3.3,
+        "semifinal": 9.0,
+        "quarterfinal": 20.9,
+        "change": 0.5
       }
     },
     {
@@ -11222,11 +11320,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 6.4,
-        "final": 12.7,
-        "semifinal": 27.0,
-        "quarterfinal": 56.0,
-        "change": -0.4
+        "champion": 6.5,
+        "final": 12.8,
+        "semifinal": 27.1,
+        "quarterfinal": 56.3,
+        "change": -0.3
       }
     },
     {
@@ -11243,7 +11341,7 @@
       "tournament": {
         "champion": 1.8,
         "final": 4.9,
-        "semifinal": 11.5,
+        "semifinal": 11.6,
         "quarterfinal": 24.1,
         "change": 0.7
       }
@@ -11623,8 +11721,8 @@
       "tournament": {
         "champion": 0.1,
         "final": 0.3,
-        "semifinal": 1.3,
-        "quarterfinal": 5.4,
+        "semifinal": 1.4,
+        "quarterfinal": 5.6,
         "change": 0.0
       }
     },
@@ -11678,11 +11776,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 7.9,
-        "final": 17.2,
-        "semifinal": 32.8,
-        "quarterfinal": 55.0,
-        "change": -2.8
+        "champion": 8.0,
+        "final": 17.3,
+        "semifinal": 33.1,
+        "quarterfinal": 55.4,
+        "change": -2.7
       }
     },
     {
@@ -11762,18 +11860,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1462,
+      "eventCount": 1476,
       "manualEventCount": 3,
-      "rawNewsCount": 1459,
+      "rawNewsCount": 1473,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1462,
-      "applied": 1362,
+      "watched": 1476,
+      "applied": 1376,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1457,
+      "singleSource": 1471,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -11790,14 +11888,14 @@
         "defense": -2.55,
         "goalkeeper": 0.0,
         "path": -3.9799999999999995,
-        "squad": -9.399999999999999
+        "squad": -11.549999999999999
       },
       "south-africa": {
         "attack": 0.0,
         "defense": 0.0,
-        "goalkeeper": 0.0,
+        "goalkeeper": -2.15,
         "path": -0.10000000000000009,
-        "squad": 1.15
+        "squad": -3.15
       },
       "south-korea": {
         "attack": 0.0,
@@ -22414,17 +22512,114 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-28T21:10:26.531582+00:00",
+    "generatedAt": "2026-06-28T22:37:06.834712+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "england",
+        "name": "英格兰",
+        "code": "ENG",
+        "previousChampion": 7.9,
+        "currentChampion": 8.0,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.4%",
+        "reasons": [
+          "八强概率上升 +0.4%",
+          "四强概率上升 +0.3%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 14 条"
+        ]
+      },
+      {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 6.4,
+        "currentChampion": 6.5,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.3%",
+        "reasons": [
+          "八强概率上升 +0.3%",
+          "四强概率上升 +0.1%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 14 条"
+        ]
+      },
+      {
+        "team": "ecuador",
+        "name": "厄瓜多尔",
+        "code": "ECU",
+        "previousChampion": 1.0,
+        "currentChampion": 1.1,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.5%",
+        "reasons": [
+          "八强概率上升 +0.5%",
+          "四强概率上升 +0.2%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 14 条"
+        ]
+      },
+      {
+        "team": "mexico",
+        "name": "墨西哥",
+        "code": "MEX",
+        "previousChampion": 0.8,
+        "currentChampion": 0.7,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "人员盘下调 -2.2",
+        "reasons": [
+          "人员盘下调 -2.2",
+          "八强概率下降 -1.1%",
+          "四强概率下降 -0.7%",
+          "决赛概率下降 -0.3%",
+          "可入模型事件新增 14 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 3,
+      "down": 1,
+      "largestUp": {
+        "team": "england",
+        "name": "英格兰",
+        "code": "ENG",
+        "previousChampion": 7.9,
+        "currentChampion": 8.0,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.4%",
+        "reasons": [
+          "八强概率上升 +0.4%",
+          "四强概率上升 +0.3%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 14 条"
+        ]
+      },
+      "largestDown": {
+        "team": "mexico",
+        "name": "墨西哥",
+        "code": "MEX",
+        "previousChampion": 0.8,
+        "currentChampion": 0.7,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "人员盘下调 -2.2",
+        "reasons": [
+          "人员盘下调 -2.2",
+          "八强概率下降 -1.1%",
+          "四强概率下降 -0.7%",
+          "决赛概率下降 -0.3%",
+          "可入模型事件新增 14 条"
+        ]
+      }
     }
   }
 }
