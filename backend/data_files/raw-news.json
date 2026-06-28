@@ -19918,5 +19918,61 @@
     "factor": "path",
     "direction": -1,
     "confidence": 0.66
+  },
+  {
+    "id": "bbc-c1fadc944d11",
+    "title": "Derided by Leeds, snubbed by USA - but Marsch becoming Canada hero",
+    "summary": "Derided by Leeds fans and snubbed by the USA, Jesse Marsch has faced difficult moments in his career - but appears to have found his home with Canada as they look to reach the World Cup last 16.",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Sun, 28 Jun 2026 11:28:24 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cd95071lvvqo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-5bbedb669e3d",
+    "title": "‘We will step up’: Thomas Tuchel feels England will thrive in World Cup knockouts",
+    "summary": "<ul><li><p>‘The bigger the games get, the bigger we will get,’ he says</p></li><li><p>Jarell Quansah hopes to be fit for last 32 after ankle sprain</p></li></ul><p>Thomas Tuchel believes England can only get better after sealing top spot in Group L and has backed his side to “step up” for the knockout stages of the World Cup.</p><p>After the goalless draw against Ghana, England struggled to break down Panama and began the second half behind Croatia in the standings. But goals from Jude Bellingham and Harry Kane – whose header made him England’s highest World Cup scorer – secured <a href=\"https://www.theguardian.com/football/2026/jun/27/england-panama-world-cup-group-l-match-report\">a 2-0 win</a> and ensured they will travel to Atlanta for a last-32 tie against the Democratic Republic of the Congo on Wednesday.</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/thomas-tuchel-england-world-cup-knockouts\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Sun, 28 Jun 2026 01:31:49 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/28/thomas-tuchel-england-world-cup-knockouts",
+    "category": "weather",
+    "factor": "path",
+    "direction": -1,
+    "confidence": 0.66
+  },
+  {
+    "id": "guardian-d20d13735187",
+    "title": "World Cup glory could all come down to penalties. What’s the best strategy?",
+    "summary": "<p>As the knockout stages begin, penalties are inevitable. What do the stats say about the best ways to take them?</p><p>The 2022 World Cup final was a nail-biting affair, <a href=\"https://www.theguardian.com/football/2022/dec/18/world-cup-final-argentina-france-match-report\">decided by a penalty shootout after Argentina and France were evenly matched with three goals apiece</a>. Argentina subsequently won 4-2 on penalties, taking the title.</p><p>Even outside penalty shootouts, a single spot kick can easily decide the outcome of a game at a World Cup, making any advantage in taking a penalty crucial. So what can we learn about the best strategy for penalty kicks from statistics and research?</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/world-cup-glory-could-all-come-down-to-penalties-whats-the-best-strategy\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Sun, 28 Jun 2026 11:00:11 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/28/world-cup-glory-could-all-come-down-to-penalties-whats-the-best-strategy",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-e49c113aaf70",
+    "title": "World Cup 2026 colour chart: fans of all 48 teams join the party – in pictures",
+    "summary": "<p>As the World Cup enters the knockout rounds, we take a look at the creativity and emotion that fans of all 48 teams showed in the group stage</p><p>The 2026 World Cup has set a new all-time attendance record for the men’s tournament, surpassing the previous record of 3,587,538 set during the 1994 World Cup – and the group stages have only just ended.</p><p>As ever, fans have brought colour and fun to the tournament – from Mexico’s duck mascot to Norway’s Viking rowers, with plenty more in between. Here are a selection of our favourite images of fans at the matches and at <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/24/world-cup-2026-viewing-parties-around-the-globe-in-pictures\">watch parties across the globe.</a></p> <a href=\"https://www.theguardian.com/football/2026/jun/28/world-cup-2026-colour-chart-fans-all-teams-gallery\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "mexico",
+    "status": "single_source",
+    "published_at": "Sun, 28 Jun 2026 11:00:11 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/28/world-cup-2026-colour-chart-fans-all-teams-gallery",
+    "category": "market_proxy",
+    "factor": "path",
+    "direction": 1,
+    "confidence": 0.52
   }
 ]

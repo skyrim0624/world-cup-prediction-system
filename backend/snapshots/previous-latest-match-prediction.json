@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-28T08:33:13.680626+00:00",
+  "updatedAt": "2026-06-28T11:12:33.980377+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -10533,6 +10533,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 28 Jun 2026 05:06:53 GMT"
+    },
+    {
+      "title": "Clarke leaves strong Scotland legacy but exit brings sense of relief",
+      "detail": "Steve Clarke took Scotland out of the wilderness - but not past the group stage of a tournament. Tom English's must-read analysis of his reign.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 09:16:02 GMT"
+    },
+    {
+      "title": "27 flights, 24 matches: How Fifa's president is jetting around World Cup",
+      "detail": "Gianni Infantino has clocked up thousands of air miles across North America so far.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 09:20:51 GMT"
+    },
+    {
+      "title": "World Cup goals chart led by PSG and Real - plus Palace and Sunderland",
+      "detail": "Crystal Palace and Sunderland lead the Premier League’s World Cup scoring charts after the 2026 group stage, ahead of Arsenal, Liverpool and Manchester City.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 09:57:25 GMT"
+    },
+    {
+      "title": "Will Clarke successor be big-name overseas coach or Scotland icon?",
+      "detail": "The key questions around the appointment of Steve Clarke's successor - and some of the potential candidates.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 10:33:09 GMT"
+    },
+    {
+      "title": "How to win a World Cup penalty shootout",
+      "detail": "We have a look at what can be learned from every World Cup penalty taken in a shootout ever.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 09:38:42 GMT"
+    },
+    {
+      "title": "World Cup 2026 power rankings: France still kings but who has climbed 26 places?",
+      "detail": "<p>From Algeria to Uzbekistan, we assess the standing of the 48 nations after the group stage of the tournament</p><p>It took a little over an hour for Kylian Mbappé to find his groove. Irked by a poor refereeing decision, he <a href=\"https://www.theguardian.com/football/2026/jun/16/france-senegal-world-cup-group-i-match-report\">scored twice in France’s opener</a> against Senegal. Ably supported by a stunning cast, Mbappé will already have his sights on winning the competition. Michael Olise <a href=\"https://www.theguardian.com/football/2026/jun/20/michael-olise-france-world-cup-didier-deschamps\">has shown his class throughout</a>, while Ousmane Dembélé <a href=\"https://www.theguardian.com/football/2026/jun/26/france-norway-world-cup-group-i-match-report\">dazzled with a hat-trick against Norway</a>. We’ll see if anyone can stop Didier Deschamps’ team.</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/world-cup-2026-power-rankings-france-argentina-england-scotland\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 08:30:04 GMT"
+    },
+    {
+      "title": "Jude Bellingham bends another day to his will after Panama stifle England | Barney Ronay",
+      "detail": "<p>A joyless England display, football’s equivalent of assembling a wardrobe, was rescued by the No 10</p><p>In the half-time break at a rain-fogged New York New Jersey Stadium, with England still living out the same painful never-ending 0-0 draw, a lone saxophonist could be heard playing a series of noodling riffs on the deserted concourse outside.</p><p>So it’s come to this. Even the New York dinner jazz scene is having a pop now. And sometimes it really does feel as if the world is trying to tell you something. England had been footballing toothache to that point, awkward, rigid, unable to think or move freely, to find combinations to fit the patterns in front of them.</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/jude-bellingham-england-panama-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 28 Jun 2026 01:40:20 GMT"
     }
   ],
   "teams": [
@@ -10999,7 +11048,7 @@
       "factors": {
         "strength": 84,
         "form": 83,
-        "path": 74,
+        "path": 73,
         "squad": 75,
         "margin": 80
       },
@@ -11468,18 +11517,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1420,
+      "eventCount": 1427,
       "manualEventCount": 3,
-      "rawNewsCount": 1417,
+      "rawNewsCount": 1424,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1420,
-      "applied": 1323,
+      "watched": 1427,
+      "applied": 1330,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1415,
+      "singleSource": 1422,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -11663,7 +11712,7 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 1.74,
+        "path": 0.82,
         "squad": -7.25
       },
       "egypt": {
@@ -22120,7 +22169,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-28T08:33:35.836201+00:00",
+    "generatedAt": "2026-06-28T11:12:55.903002+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
