@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-29T21:53:51.104378+00:00",
+  "updatedAt": "2026-06-29T23:04:05.867739+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -11380,6 +11380,167 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 29 Jun 2026 20:59:04 GMT"
+    },
+    {
+      "title": "45 minutes from Brazil 'humiliation' - but 'Crafty Carlo' does it again",
+      "detail": "Half-time in Houston and Brazil's players trudged off facing another early World Cup exit. But we should have known better than to doubt Carlo Ancelotti.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 29 Jun 2026 22:14:31 GMT"
+    },
+    {
+      "title": "'They needed that' - Havertz levels for Germany with header",
+      "detail": "Kai Havertz equalises for Germany against Paraquay in their last-32 tie.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 22:13:39 GMT"
+    },
+    {
+      "title": "Follow live: Germany and Paraguay battling in extr...",
+      "detail": "null",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 18:48:37 EST"
+    },
+    {
+      "title": "Brazil survive World Cup scare against Japan",
+      "detail": "Casemiro said Brazil avoided one of the all-time great World Cup shocks against Japan by keeping \"calm.\"",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 18:22:26 EST"
+    },
+    {
+      "title": "USMNT's Ream: We'll do what we must to advance",
+      "detail": "United States men's national team defender Tim Ream said his side will need to \"expect the unexpected\" in their round of 32 World Cup encounter against Bosnia-Herzegovina on Wednesday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 18:22:25 EST"
+    },
+    {
+      "title": "Madrid give $1.1M in Venezuela earthquake aid",
+      "detail": "LaLiga giants Real Madrid have donated €1 million ($1.1m) to help those affected by the earthquakes in Venezuela, with president Florentino Pérez donating an additional €1m ($1.1m) as well.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 18:22:26 EST"
+    },
+    {
+      "title": "Berhalter in tears after son Sebastian's WC goal",
+      "detail": "Chicago Fire manager Gregg Berhalter was brought to tears when thinking about son Sebastian Berhalter's first World Cup goal for the United States men's national team against Türkiye in the final group stage match.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 18:22:26 EST"
+    },
+    {
+      "title": "Chicago Fire complete Lewandowski signing",
+      "detail": "Chicago Fire FC have completed the signing of former Barcelona and Bayern Munich striker Robert Lewandowski.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 18:22:26 EST"
+    },
+    {
+      "title": "Sources: Barcelona approach for Kane dismissed",
+      "detail": "Barcelona have made an informal enquiry about Harry Kane's availability but the approach was dismissed with the England captain fully focused on the World Cup, sources have told ESPN.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 18:22:26 EST"
+    },
+    {
+      "title": "Nico Paz to stay at Como; Madrid deal reached",
+      "detail": "Real Madrid, Como and Nico Paz have reached an agreement for the player to stay at the Italian club next season",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 18:22:26 EST"
+    },
+    {
+      "title": "Maresca joins Man City, pays Chelsea over exit",
+      "detail": "Manchester City have formally announced Enzo Maresca as their new manager amid Chelsea claims that the Italian will personally pay compensation for the move.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 18:22:26 EST"
+    },
+    {
+      "title": "Brazil avoid World Cup shock with late win vs. Jap...",
+      "detail": "Brazil's ageing stars left it late to beat Japan 2-1 and reach the World Cup's round of 16. Is their team too old to make a deep run?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 16:21:49 EST"
+    },
+    {
+      "title": "From Messi to Haaland: Which World Cup frontrunner...",
+      "detail": "The superstars have shown up at the 2026 World Cup, but which team is most reliant on its talisman to keep moving through the competition?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 11:32:31 EST"
+    },
+    {
+      "title": "France have been waiting for Dembele to show up. N...",
+      "detail": "It's taken a long time for Ousmane Dembele to replicate his PSG form for the France national team, but Friday's hat trick vs. Norway has him primed for more.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 10:20:25 EST"
+    },
+    {
+      "title": "Why outsiders believe the USMNT can make a deep Wo...",
+      "detail": "After an impressive group stage, ESPN has assembled a panel of coaches and analysts to assess whether the United States has what it takes to become the surprise package of the 2026 FIFA World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 12:13:52 EST"
+    },
+    {
+      "title": "Balogun leads Nigeria-descent players in World Cup...",
+      "detail": "Nigeria failed to qualify for the 2026 FIFA World Cup, the first 48-team World Cup, which featured a record 10 African countries. But the nations is being represented by many players from the diaspora.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 12:13:53 EST"
+    },
+    {
+      "title": "Don't be fooled into thinking Haaland, Norway 'don...",
+      "detail": "Erling Haaland has appeared relaxed and happy at the World Cup so far. That's good news for Norway and bad news for defenders.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 03:31:18 EST"
+    },
+    {
+      "title": "Jiménez is lucky to be alive, never mind living his World Cup dream with Mexico",
+      "detail": "Six years after suffering a life-threatening skull fracture, Raúl Jiménez is back at the top, leading Mexico at this World Cup on home soil.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 03:32:49 EST"
+    },
+    {
+      "title": "Transfer rumors, news: Barcelona eye Kane, plus tw...",
+      "detail": "Liverpool are considering a Bundesliga winger while potentially negotiating Curtis Jones' exit for Serie A. Transfer Talk has the latest.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 10:26:12 EST"
+    },
+    {
+      "title": "France World Cup 2026 team guide",
+      "detail": "<p>Kylian Mbappé, Ousmane Dembélé and Michael Olise have the attacking power to shred opponents but will Didier Deschamps let them off the leash?</p><p><em>This article is part of the Guardian’s <a href=\"https://www.theguardian.com/football/series/world-cup-2026-guardian-experts-network\">2026 World Cup Experts’ Network</a>, a cooperation between some of the best media organisations from the 48 countries who qualified. theguardian.com is running previews from three countries each day in the run-up to the tournament kicking off on 11 June.</em></p> <a href=\"https://www.theguardian.com/football/2026/jun/06/france-world-cup-2026-team-guide\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 06 Jun 2026 15:00:07 GMT"
+    },
+    {
+      "title": "Sweden World Cup 2026 team guide",
+      "detail": "<p>With Graham Potter at the helm and Viktor Gyökeres finding form, hopes are high after playoff success</p><p><em>This article is part of the Guardian’s <a href=\"https://www.theguardian.com/football/series/world-cup-2026-guardian-experts-network\">2026 World Cup Experts’ Network</a>, a cooperation between some of the best media organisations from the 48 countries who qualified. theguardian.com is running previews from three countries each day in the run-up to the tournament kicking off on 11 June.</em></p> <a href=\"https://www.theguardian.com/football/2026/jun/03/sweden-world-cup-2026-team-guide\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 03 Jun 2026 07:00:46 GMT"
+    },
+    {
+      "title": "Côte d’Ivoire World Cup 2026 team guide",
+      "detail": "<p>Returning to the world stage after 12 years the 2023 African champions are ambitious and have plenty of options in attack </p><p><em>This article is part of the Guardian’s <a href=\"https://www.theguardian.com/football/series/world-cup-2026-guardian-experts-network\">2026 World Cup Experts’ Network</a>, a cooperation between some of the best media organisations from the 48 countries who qualified. theguardian.com is running previews from three countries each day in the run-up to the tournament kicking off on 11 June.</em></p> <a href=\"https://www.theguardian.com/football/2026/jun/01/cote-divoire-world-cup-2026-team-guide\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 01 Jun 2026 07:00:10 GMT"
+    },
+    {
+      "title": "Norway World Cup 2026 team guide",
+      "detail": "<p>Ståle Solbakken leads country to first major tournament in 26 years knowing that, with Erling Haaland up front, anything can happen</p><p><em>This article is part of the Guardian’s <a href=\"https://www.theguardian.com/football/series/world-cup-2026-guardian-experts-network\">2026 World Cup Experts’ Network</a>, a cooperation between some of the best media organisations from the 48 countries who qualified. theguardian.com is running previews from three countries each day in the run-up to the tournament kicking off on 11 June.</em></p> <a href=\"https://www.theguardian.com/football/2026/jun/07/norway-world-cup-2026-team-guide\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 07 Jun 2026 07:00:28 GMT"
     }
   ],
   "teams": [
@@ -11529,7 +11690,7 @@
       },
       "tournament": {
         "champion": 1.0,
-        "final": 3.2,
+        "final": 3.3,
         "semifinal": 8.3,
         "quarterfinal": 25.4,
         "change": -0.5
@@ -11543,15 +11704,15 @@
         "strength": 91,
         "form": 85,
         "path": 64,
-        "squad": 73,
+        "squad": 71,
         "margin": 83
       },
       "tournament": {
-        "champion": 5.0,
-        "final": 11.5,
-        "semifinal": 22.9,
-        "quarterfinal": 40.3,
-        "change": -5.8
+        "champion": 4.7,
+        "final": 10.8,
+        "semifinal": 21.9,
+        "quarterfinal": 39.2,
+        "change": -6.1
       }
     },
     {
@@ -11739,8 +11900,8 @@
       "tournament": {
         "champion": 0.3,
         "final": 1.2,
-        "semifinal": 4.2,
-        "quarterfinal": 12.9,
+        "semifinal": 4.3,
+        "quarterfinal": 13.2,
         "change": -0.1
       }
     },
@@ -11758,7 +11919,7 @@
       "tournament": {
         "champion": 1.1,
         "final": 3.4,
-        "semifinal": 9.3,
+        "semifinal": 9.4,
         "quarterfinal": 20.9,
         "change": 0.5
       }
@@ -11795,9 +11956,9 @@
       },
       "tournament": {
         "champion": 1.9,
-        "final": 5.1,
-        "semifinal": 12.0,
-        "quarterfinal": 25.2,
+        "final": 5.3,
+        "semifinal": 12.3,
+        "quarterfinal": 25.8,
         "change": 0.8
       }
     },
@@ -12062,8 +12223,8 @@
       "tournament": {
         "champion": 0.9,
         "final": 3.1,
-        "semifinal": 8.7,
-        "quarterfinal": 21.5,
+        "semifinal": 8.9,
+        "quarterfinal": 21.8,
         "change": 0.0
       }
     },
@@ -12080,7 +12241,7 @@
       },
       "tournament": {
         "champion": 20.8,
-        "final": 37.1,
+        "final": 37.3,
         "semifinal": 55.6,
         "quarterfinal": 75.1,
         "change": 5.6
@@ -12155,11 +12316,11 @@
         "margin": 83
       },
       "tournament": {
-        "champion": 4.5,
+        "champion": 4.6,
         "final": 8.6,
         "semifinal": 17.1,
         "quarterfinal": 25.6,
-        "change": -1.7
+        "change": -1.6
       }
     },
     {
@@ -12213,7 +12374,7 @@
       },
       "tournament": {
         "champion": 3.5,
-        "final": 9.5,
+        "final": 9.6,
         "semifinal": 19.9,
         "quarterfinal": 49.4,
         "change": 1.0
@@ -12232,8 +12393,8 @@
       },
       "tournament": {
         "champion": 8.2,
-        "final": 17.6,
-        "semifinal": 33.8,
+        "final": 17.8,
+        "semifinal": 34.1,
         "quarterfinal": 55.4,
         "change": -2.5
       }
@@ -12315,18 +12476,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1541,
+      "eventCount": 1564,
       "manualEventCount": 3,
-      "rawNewsCount": 1538,
+      "rawNewsCount": 1561,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1541,
-      "applied": 1437,
+      "watched": 1564,
+      "applied": 1456,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1536,
+      "singleSource": 1559,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -12399,7 +12560,7 @@
         "defense": 0.0,
         "goalkeeper": -2.15,
         "path": -10.43,
-        "squad": -13.299999999999999
+        "squad": -15.45
       },
       "morocco": {
         "attack": -4.699999999999999,
@@ -22967,17 +23128,76 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-29T21:54:13.175178+00:00",
+    "generatedAt": "2026-06-29T23:04:28.076189+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "brazil",
+        "name": "巴西",
+        "code": "BRA",
+        "previousChampion": 5.0,
+        "currentChampion": 4.7,
+        "change": -0.3,
+        "direction": "down",
+        "reason": "人员盘下调 -2.2",
+        "reasons": [
+          "人员盘下调 -2.2",
+          "八强概率下降 -1.1%",
+          "四强概率下降 -1.0%",
+          "决赛概率下降 -0.7%",
+          "可入模型事件新增 19 条"
+        ]
+      },
+      {
+        "team": "portugal",
+        "name": "葡萄牙",
+        "code": "POR",
+        "previousChampion": 4.5,
+        "currentChampion": 4.6,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 19 条",
+        "reasons": [
+          "可入模型事件新增 19 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 1,
+      "down": 1,
+      "largestUp": {
+        "team": "portugal",
+        "name": "葡萄牙",
+        "code": "POR",
+        "previousChampion": 4.5,
+        "currentChampion": 4.6,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 19 条",
+        "reasons": [
+          "可入模型事件新增 19 条"
+        ]
+      },
+      "largestDown": {
+        "team": "brazil",
+        "name": "巴西",
+        "code": "BRA",
+        "previousChampion": 5.0,
+        "currentChampion": 4.7,
+        "change": -0.3,
+        "direction": "down",
+        "reason": "人员盘下调 -2.2",
+        "reasons": [
+          "人员盘下调 -2.2",
+          "八强概率下降 -1.1%",
+          "四强概率下降 -1.0%",
+          "决赛概率下降 -0.7%",
+          "可入模型事件新增 19 条"
+        ]
+      }
     }
   }
 }

@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-29T20:07:28.586205+00:00",
+  "updatedAt": "2026-06-29T21:53:51.104378+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -11352,6 +11352,34 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 29 Jun 2026 19:52:41 GMT"
+    },
+    {
+      "title": "Bournemouth reject Arsenal interest in Scott",
+      "detail": "Bournemouth reject an enquiry from Arsenal for Alex Scott and say the midfielder is not for sale this summer.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 20:19:15 GMT"
+    },
+    {
+      "title": "'That might just wake Germany up' - Paraguay take shock lead through Enciso",
+      "detail": "Julio Enciso gives Paraguay the lead as they look to upset the odds by defeating Germany in the round of 32.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 21:39:38 GMT"
+    },
+    {
+      "title": "Kane will sign new Bayern deal - Tuesday's gossip",
+      "detail": "Harry Kane will extend his Bayern Munich contract, Manchester City plan major rebuild, while Rayo Vallecano left-back Pep Chavarria is a target for Chelsea.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 19:57:51 GMT"
+    },
+    {
+      "title": "Fluency the key for Noni Madueke before England’s ‘difficult’ DR Congo test",
+      "detail": "<ul><li><p>Arsenal star says squad has practised penalties</p></li><li><p>Bukayo Saka provides ‘healthy competition’ for place</p></li></ul><p>Noni Madueke has warned that England must not take the Democratic Republic of the Congo (DRC) lightly but expects a much more fluent attacking display than against Ghana during the group stages.</p><p>England struggled to break down Carlos Queiroz’s side in the 0-0 draw in Boston last week and the DRC are expected to employ the same counterattacking style for the last-32 tie in Atlanta on Wednesday. Madueke started against Croatia and Ghana before losing his place to his Arsenal ­teammate Bukayo Saka for the win against Panama.</p> <a href=\"https://www.theguardian.com/football/2026/jun/29/noni-madueke-england-democratic-republic-congo-world-cup-2026\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 20:59:04 GMT"
     }
   ],
   "teams": [
@@ -12287,18 +12315,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1537,
+      "eventCount": 1541,
       "manualEventCount": 3,
-      "rawNewsCount": 1534,
+      "rawNewsCount": 1538,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1537,
-      "applied": 1433,
+      "watched": 1541,
+      "applied": 1437,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1532,
+      "singleSource": 1536,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -22939,161 +22967,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-29T20:07:50.687450+00:00",
+    "generatedAt": "2026-06-29T21:54:13.175178+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 5.9,
-        "currentChampion": 5.0,
-        "change": -0.9,
-        "direction": "down",
-        "reason": "人员盘下调 -4.7",
-        "reasons": [
-          "人员盘下调 -4.7",
-          "八强概率下降 -2.2%",
-          "四强概率下降 -2.0%",
-          "决赛概率下降 -1.4%",
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 20.6,
-        "currentChampion": 20.8,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.3%",
-        "reasons": [
-          "决赛概率上升 +0.3%",
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 8.0,
-        "currentChampion": 8.2,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "四强概率上升 +0.7%",
-        "reasons": [
-          "四强概率上升 +0.7%",
-          "决赛概率上升 +0.3%",
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 20.2,
-        "currentChampion": 20.3,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 11 条",
-        "reasons": [
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 14.4,
-        "currentChampion": 14.5,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 11 条",
-        "reasons": [
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
-        "team": "belgium",
-        "name": "比利时",
-        "code": "BEL",
-        "previousChampion": 2.0,
-        "currentChampion": 2.1,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 11 条",
-        "reasons": [
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
-        "team": "japan",
-        "name": "日本",
-        "code": "JPN",
-        "previousChampion": 1.8,
-        "currentChampion": 1.9,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +1.1%",
-        "reasons": [
-          "八强概率上升 +1.1%",
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
-        "team": "usa",
-        "name": "美国",
-        "code": "USA",
-        "previousChampion": 0.6,
-        "currentChampion": 0.7,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 11 条",
-        "reasons": [
-          "可入模型事件新增 11 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 7,
-      "down": 1,
-      "largestUp": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 20.6,
-        "currentChampion": 20.8,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.3%",
-        "reasons": [
-          "决赛概率上升 +0.3%",
-          "可入模型事件新增 11 条"
-        ]
-      },
-      "largestDown": {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 5.9,
-        "currentChampion": 5.0,
-        "change": -0.9,
-        "direction": "down",
-        "reason": "人员盘下调 -4.7",
-        "reasons": [
-          "人员盘下调 -4.7",
-          "八强概率下降 -2.2%",
-          "四强概率下降 -2.0%",
-          "决赛概率下降 -1.4%",
-          "可入模型事件新增 11 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
