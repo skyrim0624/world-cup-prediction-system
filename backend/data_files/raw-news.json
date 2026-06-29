@@ -20604,5 +20604,61 @@
     "factor": "squad",
     "direction": -1,
     "confidence": 0.78
+  },
+  {
+    "id": "guardian-b29f8576e1e3",
+    "title": "Brazil World Cup 2026 team guide",
+    "summary": "<p>Unimpressive in qualification, fans will be hoping Carlo Ancelotti can get the best out of Vinícius Júnior, as he did at Real Madrid</p><p><em>This article is part of the Guardian’s <a href=\"https://www.theguardian.com/football/series/world-cup-2026-guardian-experts-network\">2026 World Cup Experts’ Network</a>, a cooperation between some of the best media organisations from the 48 countries who qualified. theguardian.com is running previews from three countries each day in the run-up to the tournament kicking off on 11 June.</em></p> <a href=\"https://www.theguardian.com/football/2026/may/29/brazil-world-cup-2026-team-guide\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Fri, 29 May 2026 15:00:55 GMT",
+    "url": "https://www.theguardian.com/football/2026/may/29/brazil-world-cup-2026-team-guide",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-2bcf19876de6",
+    "title": "Japan World Cup 2026 team guide",
+    "summary": "<p>Impressive results have fuelled belief that Hajime Moriyasu’s side can not just survive against the best but beat them too</p><p><em>This article is part of the Guardian’s <a href=\"https://www.theguardian.com/football/series/world-cup-2026-guardian-experts-network\">2026 World Cup Experts’ Network</a>, a cooperation between some of the best media organisations from the 48 countries who qualified. theguardian.com is running previews from three countries each day in the run-up to the tournament kicking off on 11 June.</em></p> <a href=\"https://www.theguardian.com/football/2026/jun/02/japan-world-cup-2026-team-guide\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Tue, 02 Jun 2026 15:00:28 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/02/japan-world-cup-2026-team-guide",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-959cf228693f",
+    "title": "Germany World Cup 2026 team guide",
+    "summary": "<p>Julian Nagelsmann will rely on a Bayern-based core, but individual class is in worryingly short supply</p><p><em>This article is part of the Guardian’s <a href=\"https://www.theguardian.com/football/series/world-cup-2026-guardian-experts-network\">2026 World Cup Experts’ Network</a>, a cooperation between some of the best media organisations from the 48 countries who qualified. theguardian.com is running previews from three countries each day in the run-up to the tournament kicking off on 11 June.</em></p> <a href=\"https://www.theguardian.com/football/2026/jun/02/germany-world-cup-2026-team-guide\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "paraguay",
+    "status": "single_source",
+    "published_at": "Tue, 02 Jun 2026 06:30:40 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/02/germany-world-cup-2026-team-guide",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-855b61e61d82",
+    "title": "Paraguay World Cup 2026 team guide",
+    "summary": "<p>After a public holiday was declared to celebrate World Cup qualification, expect a physical Paraguay side well prepared for intense conditions</p><p><em>This article is part of the Guardian’s <a href=\"https://www.theguardian.com/football/series/world-cup-2026-guardian-experts-network\">2026 World Cup Experts’ Network</a>, a cooperation between some of the best media organisations from the 48 countries who qualified. theguardian.com is running previews from three countries each day in the run-up to the tournament kicking off on 11 June.</em></p> <a href=\"https://www.theguardian.com/football/2026/may/31/paraguay-world-cup-2026-team-guide\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Sun, 31 May 2026 07:00:41 GMT",
+    "url": "https://www.theguardian.com/football/2026/may/31/paraguay-world-cup-2026-team-guide",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

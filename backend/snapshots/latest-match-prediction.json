@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-28T22:36:44.919747+00:00",
+  "updatedAt": "2026-06-29T00:14:06.811270+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -10925,6 +10925,34 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Sun, 28 Jun 2026 19:08:28 GMT"
+    },
+    {
+      "title": "Brazil World Cup 2026 team guide",
+      "detail": "<p>Unimpressive in qualification, fans will be hoping Carlo Ancelotti can get the best out of Vinícius Júnior, as he did at Real Madrid</p><p><em>This article is part of the Guardian’s <a href=\"https://www.theguardian.com/football/series/world-cup-2026-guardian-experts-network\">2026 World Cup Experts’ Network</a>, a cooperation between some of the best media organisations from the 48 countries who qualified. theguardian.com is running previews from three countries each day in the run-up to the tournament kicking off on 11 June.</em></p> <a href=\"https://www.theguardian.com/football/2026/may/29/brazil-world-cup-2026-team-guide\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 29 May 2026 15:00:55 GMT"
+    },
+    {
+      "title": "Japan World Cup 2026 team guide",
+      "detail": "<p>Impressive results have fuelled belief that Hajime Moriyasu’s side can not just survive against the best but beat them too</p><p><em>This article is part of the Guardian’s <a href=\"https://www.theguardian.com/football/series/world-cup-2026-guardian-experts-network\">2026 World Cup Experts’ Network</a>, a cooperation between some of the best media organisations from the 48 countries who qualified. theguardian.com is running previews from three countries each day in the run-up to the tournament kicking off on 11 June.</em></p> <a href=\"https://www.theguardian.com/football/2026/jun/02/japan-world-cup-2026-team-guide\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 02 Jun 2026 15:00:28 GMT"
+    },
+    {
+      "title": "Germany World Cup 2026 team guide",
+      "detail": "<p>Julian Nagelsmann will rely on a Bayern-based core, but individual class is in worryingly short supply</p><p><em>This article is part of the Guardian’s <a href=\"https://www.theguardian.com/football/series/world-cup-2026-guardian-experts-network\">2026 World Cup Experts’ Network</a>, a cooperation between some of the best media organisations from the 48 countries who qualified. theguardian.com is running previews from three countries each day in the run-up to the tournament kicking off on 11 June.</em></p> <a href=\"https://www.theguardian.com/football/2026/jun/02/germany-world-cup-2026-team-guide\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 02 Jun 2026 06:30:40 GMT"
+    },
+    {
+      "title": "Paraguay World Cup 2026 team guide",
+      "detail": "<p>After a public holiday was declared to celebrate World Cup qualification, expect a physical Paraguay side well prepared for intense conditions</p><p><em>This article is part of the Guardian’s <a href=\"https://www.theguardian.com/football/series/world-cup-2026-guardian-experts-network\">2026 World Cup Experts’ Network</a>, a cooperation between some of the best media organisations from the 48 countries who qualified. theguardian.com is running previews from three countries each day in the run-up to the tournament kicking off on 11 June.</em></p> <a href=\"https://www.theguardian.com/football/2026/may/31/paraguay-world-cup-2026-team-guide\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 31 May 2026 07:00:41 GMT"
     }
   ],
   "teams": [
@@ -11860,18 +11888,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1476,
+      "eventCount": 1480,
       "manualEventCount": 3,
-      "rawNewsCount": 1473,
+      "rawNewsCount": 1477,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1476,
-      "applied": 1376,
+      "watched": 1480,
+      "applied": 1380,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1471,
+      "singleSource": 1475,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -22395,13 +22423,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-06-28",
+      "referenceDate": "2026-06-29",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 15,
-      "oldestAgeDays": 89,
+      "newestAgeDays": 16,
+      "oldestAgeDays": 90,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -22512,114 +22540,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-28T22:37:06.834712+00:00",
+    "generatedAt": "2026-06-29T00:14:29.059309+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 7.9,
-        "currentChampion": 8.0,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.4%",
-        "reasons": [
-          "八强概率上升 +0.4%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 14 条"
-        ]
-      },
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 6.4,
-        "currentChampion": 6.5,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.3%",
-        "reasons": [
-          "八强概率上升 +0.3%",
-          "四强概率上升 +0.1%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 14 条"
-        ]
-      },
-      {
-        "team": "ecuador",
-        "name": "厄瓜多尔",
-        "code": "ECU",
-        "previousChampion": 1.0,
-        "currentChampion": 1.1,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.5%",
-        "reasons": [
-          "八强概率上升 +0.5%",
-          "四强概率上升 +0.2%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 14 条"
-        ]
-      },
-      {
-        "team": "mexico",
-        "name": "墨西哥",
-        "code": "MEX",
-        "previousChampion": 0.8,
-        "currentChampion": 0.7,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "人员盘下调 -2.2",
-        "reasons": [
-          "人员盘下调 -2.2",
-          "八强概率下降 -1.1%",
-          "四强概率下降 -0.7%",
-          "决赛概率下降 -0.3%",
-          "可入模型事件新增 14 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 3,
-      "down": 1,
-      "largestUp": {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 7.9,
-        "currentChampion": 8.0,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.4%",
-        "reasons": [
-          "八强概率上升 +0.4%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 14 条"
-        ]
-      },
-      "largestDown": {
-        "team": "mexico",
-        "name": "墨西哥",
-        "code": "MEX",
-        "previousChampion": 0.8,
-        "currentChampion": 0.7,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "人员盘下调 -2.2",
-        "reasons": [
-          "人员盘下调 -2.2",
-          "八强概率下降 -1.1%",
-          "四强概率下降 -0.7%",
-          "决赛概率下降 -0.3%",
-          "可入模型事件新增 14 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
