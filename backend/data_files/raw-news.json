@@ -21458,5 +21458,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-68226409dceb",
+    "title": "Bournemouth reject Arsenal interest in Scott",
+    "summary": "Bournemouth reject an enquiry from Arsenal for Alex Scott and say the midfielder is not for sale this summer.",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Mon, 29 Jun 2026 20:19:15 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/ce8mgmr732do?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-9806e0980659",
+    "title": "'That might just wake Germany up' - Paraguay take shock lead through Enciso",
+    "summary": "Julio Enciso gives Paraguay the lead as they look to upset the odds by defeating Germany in the round of 32.",
+    "source": "bbc",
+    "team": "paraguay",
+    "status": "single_source",
+    "published_at": "Mon, 29 Jun 2026 21:39:38 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/videos/c0kyemyzzdzo?at_medium=RSS&at_campaign=rss",
+    "category": "market_proxy",
+    "factor": "path",
+    "direction": 0,
+    "confidence": 0.52
+  },
+  {
+    "id": "bbc-1f32e8411856",
+    "title": "Kane will sign new Bayern deal - Tuesday's gossip",
+    "summary": "Harry Kane will extend his Bayern Munich contract, Manchester City plan major rebuild, while Rayo Vallecano left-back Pep Chavarria is a target for Chelsea.",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Mon, 29 Jun 2026 19:57:51 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cdjknmk894eo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-763566ceb23c",
+    "title": "Fluency the key for Noni Madueke before England’s ‘difficult’ DR Congo test",
+    "summary": "<ul><li><p>Arsenal star says squad has practised penalties</p></li><li><p>Bukayo Saka provides ‘healthy competition’ for place</p></li></ul><p>Noni Madueke has warned that England must not take the Democratic Republic of the Congo (DRC) lightly but expects a much more fluent attacking display than against Ghana during the group stages.</p><p>England struggled to break down Carlos Queiroz’s side in the 0-0 draw in Boston last week and the DRC are expected to employ the same counterattacking style for the last-32 tie in Atlanta on Wednesday. Madueke started against Croatia and Ghana before losing his place to his Arsenal ­teammate Bukayo Saka for the win against Panama.</p> <a href=\"https://www.theguardian.com/football/2026/jun/29/noni-madueke-england-democratic-republic-congo-world-cup-2026\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "netherlands",
+    "status": "single_source",
+    "published_at": "Mon, 29 Jun 2026 20:59:04 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/29/noni-madueke-england-democratic-republic-congo-world-cup-2026",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
