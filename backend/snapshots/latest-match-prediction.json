@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-29T00:14:06.811270+00:00",
+  "updatedAt": "2026-06-29T05:14:32.572823+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -10953,6 +10953,76 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 31 May 2026 07:00:41 GMT"
+    },
+    {
+      "title": "'You are Canadian heroes' - the forgotten hosts making World Cup history",
+      "detail": "Canada are making history at this World Cup with a run that is likely to change the face of football in the country forever.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 00:02:44 GMT"
+    },
+    {
+      "title": "Sources: Diomande close to preferred PSG move",
+      "detail": "Paris Saint-Germain are preparing to close the deal for the transfer of Yan Diomandé after positive initial talks with the German club, sources have told ESPN.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 21:58:39 EST"
+    },
+    {
+      "title": "Ancelotti refuses to engage in Japan 'mind games'",
+      "detail": "Brazil manager Carlo Ancelotti refused to engage in \"mind games\" ahead of the round-of-32 clash with Japan on Monday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 22:35:26 EST"
+    },
+    {
+      "title": "Marsch's 'Canadian heroes' deliver defining win",
+      "detail": "After Canada beat South Africa to win their first-ever FIFA World Cup knockout match and advance to the round of 16, coach Jesse Marsch didn't hesitate to call his players \"Canadian heroes.\"",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 22:35:26 EST"
+    },
+    {
+      "title": "Source: Fire in final stage of deal for Lewandowsk...",
+      "detail": "Chicago Fire FC and Robert Lewandowski are finalizing the details of a deal that would see the Poland striker move to MLS this summer, a source confirmed to ESPN.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 21:58:40 EST"
+    },
+    {
+      "title": "Kubo out vs Brazil but Japan can 'change history'",
+      "detail": "For the third consecutive game Japan will be without key playmaker Takefusa Kubo for Monday's massive round-of-32 meeting with Brazil.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 22:35:26 EST"
+    },
+    {
+      "title": "Germany boss: Paraguay an 'uncomfortable' game",
+      "detail": "Julian Nagelsmann said Paraguay are an \"uncomfortable\" opponent for Germany in the round of 32 and believes his team will need a \"perfect\" performance to get through.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 22:35:26 EST"
+    },
+    {
+      "title": "Twenty years later, Japan are more than ready for ...",
+      "detail": "Twenty years ago -- almost to the day -- Japan fell 4-1 to a Brazil line-up laden with stars. Now, the Samurai Blue feel like the tables are starting to turn.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 21:16:49 EST"
+    },
+    {
+      "title": "Morocco and the Netherlands look to move mountains in Monterrey matchup",
+      "detail": "<p>Two teams with plenty of connections meet in a ‘clash of titans’ at one of the World Cup’s most picturesque venues </p><p>Morocco manager Mohamed Ouahbi had just been asked what would inspire his players to justify the feverish expectation hanging over them. Would they turn to the example of history, or would they draw on something else? “The biggest motivation the players have is to put on the jersey and represent the country,” he began. “That is motivation enough to move mountains.”</p><p>It would be some feat if they managed to alter the geology of Cerro de la Silla, the claw-shaped double peak that overwhelms the skyline around Estadio Monterrey, where Morocco and the Netherlands will play in the World Cup Round of 32.</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/morocco-netherlands-world-cup-2026-preview\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 03:45:09 GMT"
+    },
+    {
+      "title": "O Canada! The knockouts begin with a win for Marsch’s men: World Cup Daily – podcast",
+      "detail": "<p><a href=\"https://bsky.app/profile/maxrushden.bsky.social\">Max Rushden</a> is joined by <a href=\"https://bsky.app/profile/did:plc:i55lfvhkg573wfmby5sdnvq6\">Barry Glendenning</a>, Mark Langdon and <a href=\"https://bsky.app/profile/jonawils.bsky.social\">Jonathan Wilson</a> as the knockout stages commence with a late, late winner for Canada over South Africa</p><p><strong>Rate, review, share on <a href=\"https://itunes.apple.com/podcast/football-weekly-the-guardian/id188674007?mt=2\">Apple Podcasts</a> and join the conversation on <a href=\"mailto:footballweekly@theguardian.com\">email</a>.</strong></p><p>On the podcast today: the biggest moment in Canadian men’s football history as they make the round of 16 thanks to a very late winner against South Africa. They’ll be rewarded with a game against either Netherlands or Morocco.</p> <a href=\"https://www.theguardian.com/football/audio/2026/jun/29/o-canada-the-knockouts-begin-win-for-jesse-marsch-men-south-africa-world-cup-daily-podcast\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 01:24:52 GMT"
     }
   ],
   "teams": [
@@ -11888,18 +11958,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1480,
+      "eventCount": 1490,
       "manualEventCount": 3,
-      "rawNewsCount": 1477,
+      "rawNewsCount": 1487,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1480,
-      "applied": 1380,
+      "watched": 1490,
+      "applied": 1390,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1475,
+      "singleSource": 1485,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -22540,7 +22610,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-29T00:14:29.059309+00:00",
+    "generatedAt": "2026-06-29T05:14:54.518731+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
