@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-29T10:10:07.672612+00:00",
+  "updatedAt": "2026-06-29T14:35:49.355926+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -11100,6 +11100,90 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 29 Jun 2026 07:00:32 GMT"
+    },
+    {
+      "title": "New Man City boss Maresca to pay compensation to Chelsea",
+      "detail": "Enzo Maresca signs three-year Manchester City deal after agreeing to pay compensation to former club Chelsea.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 13:02:47 GMT"
+    },
+    {
+      "title": "How Tuchel is still searching for solutions out wide - Shearer",
+      "detail": "Former England captain Alan Shearer explains why there are lots of reasons to be positive about England so far at this World Cup, but having a settled side is not one of them.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 11:27:47 GMT"
+    },
+    {
+      "title": "Africa's World Cup success leaves Asia looking for answers",
+      "detail": "The 2026 World Cup has been an amazing story for African football - while Asia has been left to reflect on failure.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 14:17:14 GMT"
+    },
+    {
+      "title": "Why Netherlands v Morocco is more than just a match",
+      "detail": "Morocco’s World Cup meeting with the Netherlands tells a story about migration, identity and the battle for Dutch-born talent.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 10:16:02 GMT"
+    },
+    {
+      "title": "Kerr joins NWSL side Gotham FC",
+      "detail": "Australian international Sam Kerr has joined Gotham FC on a four-year deal following her departure from Chelsea.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 14:25:57 GMT"
+    },
+    {
+      "title": "Move over Messi and Ronaldo - the new generation shining at World Cup",
+      "detail": "BBC Sport looks at five young players who are making a big impression on the same World Cup stage as veterans Lionel Messi and Cristiano Ronaldo.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 10:33:25 GMT"
+    },
+    {
+      "title": "Could a heatwave make World Cup matches 'unsafe' this week?",
+      "detail": "Temperatures are expected to soar across parts of the US and Canada this week which could bring significant health impacts to some World Cup matches.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 29 Jun 2026 11:36:07 GMT"
+    },
+    {
+      "title": "'Big brother' Van Dijk key to Dutch World Cup dreams",
+      "detail": "France's World Cup winner Olivier Giroud explains why Netherlands defender Virgil van Dijk is still the main man for his national team.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 11:52:25 GMT"
+    },
+    {
+      "title": "Sackings, death threats and fury – World Cup exit leaves South Korean football in crisis",
+      "detail": "After crashing out of the World Cup, BBC Sport investigates the rise and fall of South Korean football.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 12:03:17 GMT"
+    },
+    {
+      "title": "World Cup quiz: How well do you know the group stage in numbers?",
+      "detail": "The biggest ever group stage at a World Cup is over - test yourself on the numbers of the first round of games.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 10:38:12 GMT"
+    },
+    {
+      "title": "Ex-Everton defender Godfrey joins Rangers on loan from Atalanta",
+      "detail": "Former Everton defender Ben Godfrey is determined to help Rangers \"achieve what it deserves\" after signing on loan from Atalanta.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 10:09:35 GMT"
+    },
+    {
+      "title": "Alphonso Davies’ return brightens Canada’s landmark World Cup moment",
+      "detail": "<p>The Bayern Munich star changed the game when he came on, opening the space for Stephen Eustáquio to shoot from for the match-winner</p><p>For 75 minutes, Canada and South Africa struggled to find a way to break through in the World Cup’s inaugural round of 32 clash. Neither team ceded an inch. Canada couldn’t be baited into intensifying its press as South Africa dawdled playing out from the back. South Africa worked to advance upfield but struggled to find dangerous avenues into the box.</p><p>Then, at long last, 345 minutes into Canada’s tournament, Alphonso Davies crossed the touchline for his first involvement at World Cup 2026. The game, for Canada and neutrals alike, greatly benefitted.</p> <a href=\"https://www.theguardian.com/football/2026/jun/28/alphonso-davies-canada-south-africa-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 00:07:44 GMT"
     }
   ],
   "teams": [
@@ -11186,7 +11270,7 @@
       "factors": {
         "strength": 76,
         "form": 72,
-        "path": 61,
+        "path": 60,
         "squad": 59,
         "margin": 75
       },
@@ -12035,18 +12119,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1501,
+      "eventCount": 1513,
       "manualEventCount": 3,
-      "rawNewsCount": 1498,
+      "rawNewsCount": 1510,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1501,
-      "applied": 1399,
+      "watched": 1513,
+      "applied": 1410,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1496,
+      "singleSource": 1508,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -12090,7 +12174,7 @@
         "attack": -9.0,
         "defense": -2.55,
         "goalkeeper": 0.0,
-        "path": -6.739999999999999,
+        "path": -7.659999999999999,
         "squad": -18.2
       },
       "bosnia-herzegovina": {
@@ -22687,7 +22771,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-29T10:10:28.061510+00:00",
+    "generatedAt": "2026-06-29T14:36:11.379720+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
