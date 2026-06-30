@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-30T17:25:44.802096+00:00",
+  "updatedAt": "2026-06-30T19:21:35.365104+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -12080,6 +12080,62 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 30 Jun 2026 15:00:11 GMT"
+    },
+    {
+      "title": "Quansah and James miss England training as right-back problems mount",
+      "detail": "Jarell Quansah and Reece James miss training as England's right-back issues mount before their World Cup last-32 match against DR Congo on Wednesday.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 30 Jun 2026 18:52:31 GMT"
+    },
+    {
+      "title": "Spurs agree £85m deal for West Ham's Fernandes",
+      "detail": "Tottenham agree a deal to sign West Ham's Mateus Fernandes as Manchester United pull out of the race for midfielder.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 17:43:43 GMT"
+    },
+    {
+      "title": "Coventry boss Lampard signs new contract to 2029",
+      "detail": "Coventry City manager Frank Lampard signs a new contract until 2029 before the club's first Premier League campaign in 25 years.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 17:17:15 GMT"
+    },
+    {
+      "title": "'Goal of the tournament' - Amad's brilliant equaliser for Ivory Coast",
+      "detail": "Amad Diallo scores a \"goal of the tournament\" contender to equalise for Ivory Coast against Norway in their last-32 match.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 18:58:20 GMT"
+    },
+    {
+      "title": "Villa among four Premier League clubs fined by Uefa over squad-cost rules",
+      "detail": "Aston Villa have been fined 22.5m euros (£19.4m) by Uefa for a \"significant breach\" of its squad-cost rule for 2025.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 17:53:14 GMT"
+    },
+    {
+      "title": "Brighton sign Leeds defender Struijk for about £20m",
+      "detail": "Brighton sign Leeds United defender Pascal Struijk for an undisclosed fee understood to be about £20m.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 18:37:29 GMT"
+    },
+    {
+      "title": "'A moment of real quality' - Nusa's sensational strike puts Norway ahead",
+      "detail": "Norway take the lead in their round of 32 tie against Ivory Coast after a brilliant strike from forward Antonio Nusa.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 18:16:10 GMT"
+    },
+    {
+      "title": "‘It’s going to be tough’: Declan Rice ready for DR Congo challenge in last 32",
+      "detail": "<p>England midfielder’s experience with Arsenal last season taught him the need to be patient against teams unwilling to attack</p><p>Declan Rice is reflecting on the pivotal moment of his season so far, the one when plenty of people thought it was about to go wrong for him and Arsenal. It was a narrow and painful <a href=\"https://www.theguardian.com/football/2026/apr/19/manchester-city-arsenal-premier-league-match-report\">defeat for them at Manchester City</a> in mid‑April, which meant the clubs were stride for stride with each other at the top of the Premier League. The momentum was with City. Were Arsenal about to blow it?</p><p>The TV cameras picked out Rice on the Etihad Stadium pitch and, as he shook his head, he was easy to lipread. “It’s not done,” the England midfielder said. It was not. Arsenal <a href=\"https://www.theguardian.com/football/2026/may/18/arsenal-burnley-premier-league-match-report\">won all of their remaining</a> league games, finding a way through unbearable levels of tension. City did not and Arsenal were champions for the first time since 2004. “It could have gone either way,” Rice says with a smile. “That would have lived with me for ever.”</p> <a href=\"https://www.theguardian.com/football/2026/jun/30/declan-rice-england-dr-congo-world-cup-2026\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 18:00:12 GMT"
     }
   ],
   "teams": [
@@ -12869,7 +12925,7 @@
       "factors": {
         "strength": 70,
         "form": 74,
-        "path": 64,
+        "path": 63,
         "squad": 76,
         "margin": 74
       },
@@ -13015,18 +13071,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1641,
+      "eventCount": 1649,
       "manualEventCount": 3,
-      "rawNewsCount": 1638,
+      "rawNewsCount": 1646,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1641,
-      "applied": 1526,
+      "watched": 1649,
+      "applied": 1532,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1636,
+      "singleSource": 1644,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -13329,7 +13385,7 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 0.0,
+        "path": -0.92,
         "squad": 1.65
       },
       "uzbekistan": {
@@ -23667,165 +23723,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-30T17:26:06.827794+00:00",
+    "generatedAt": "2026-06-30T19:21:56.866394+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 3.6,
-        "currentChampion": 4.1,
-        "change": 0.5,
-        "direction": "up",
-        "reason": "状态盘上调 +1.6",
-        "reasons": [
-          "状态盘上调 +1.6",
-          "八强概率上升 +1.6%",
-          "四强概率上升 +1.4%",
-          "决赛概率上升 +0.9%",
-          "可入模型事件新增 15 条"
-        ]
-      },
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.1,
-        "currentChampion": 21.0,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.2%",
-        "reasons": [
-          "决赛概率下降 -0.2%",
-          "可入模型事件新增 15 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 20.4,
-        "currentChampion": 20.3,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 15 条",
-        "reasons": [
-          "可入模型事件新增 15 条"
-        ]
-      },
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 14.6,
-        "currentChampion": 14.5,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.1%",
-        "reasons": [
-          "决赛概率下降 -0.1%",
-          "可入模型事件新增 15 条"
-        ]
-      },
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 8.4,
-        "currentChampion": 8.3,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "四强概率下降 -0.4%",
-        "reasons": [
-          "四强概率下降 -0.4%",
-          "决赛概率下降 -0.2%",
-          "可入模型事件新增 15 条"
-        ]
-      },
-      {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 3.6,
-        "currentChampion": 3.5,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 15 条",
-        "reasons": [
-          "可入模型事件新增 15 条"
-        ]
-      },
-      {
-        "team": "japan",
-        "name": "日本",
-        "code": "JPN",
-        "previousChampion": 2.1,
-        "currentChampion": 2.0,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "八强概率下降 -0.8%",
-        "reasons": [
-          "八强概率下降 -0.8%",
-          "四强概率下降 -0.4%",
-          "决赛概率下降 -0.1%",
-          "可入模型事件新增 15 条"
-        ]
-      },
-      {
-        "team": "norway",
-        "name": "挪威",
-        "code": "NOR",
-        "previousChampion": 1.0,
-        "currentChampion": 0.9,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "八强概率下降 -0.5%",
-        "reasons": [
-          "八强概率下降 -0.5%",
-          "四强概率下降 -0.2%",
-          "决赛概率下降 -0.1%",
-          "可入模型事件新增 15 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
-      "down": 8,
-      "largestUp": {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 3.6,
-        "currentChampion": 4.1,
-        "change": 0.5,
-        "direction": "up",
-        "reason": "状态盘上调 +1.6",
-        "reasons": [
-          "状态盘上调 +1.6",
-          "八强概率上升 +1.6%",
-          "四强概率上升 +1.4%",
-          "决赛概率上升 +0.9%",
-          "可入模型事件新增 15 条"
-        ]
-      },
-      "largestDown": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.1,
-        "currentChampion": 21.0,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.2%",
-        "reasons": [
-          "决赛概率下降 -0.2%",
-          "可入模型事件新增 15 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
