@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-30T12:30:19.879207+00:00",
+  "updatedAt": "2026-06-30T15:17:00.351827+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -11898,6 +11898,62 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 30 Jun 2026 10:00:06 GMT"
+    },
+    {
+      "title": "Tottenham goalkeeper Kinsky signs new deal",
+      "detail": "Tottenham Hotspur goalkeeper Antonin Kinsky signs a new, improved contract with the Premier League club.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 15:07:12 GMT"
+    },
+    {
+      "title": "Fuchs blows kiss to bowler after smashing six into river on cricket debut",
+      "detail": "Just a day after resigning as Newport County head coach, Christian Fuchs blows a kiss to a bowler after hitting him for six while making his cricket debut for Derbyshire village side Grindleford.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 13:07:06 GMT"
+    },
+    {
+      "title": "Why the new Scotland head coach has a tricky task",
+      "detail": "Steve Clarke successor as Scotland head coach may have a tricky task to sustain the national side's success over the long term.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 13:30:58 GMT"
+    },
+    {
+      "title": "More than the Score",
+      "detail": "Does Germany’s last 32 exit spell the end for manager Julian Nagelsmann?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 13:04:00 GMT"
+    },
+    {
+      "title": "Should teams bring on players just for penalty shootouts?",
+      "detail": "BBC Sport's Ask Me Anything team looks at the numbers behind late substitutes taking penalties in shootouts.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 14:04:37 GMT"
+    },
+    {
+      "title": "Celebrations and bottle-throwing on Dutch streets after dramatic Morocco win",
+      "detail": "<p>The police were pelted with bottles in The Hague but there were hugs between sets of fans in Amsterdam after a tense last-32 tie</p><p>In the Netherlands the country’s World Cup last-32 tie against Morocco was always going to be about more than football. When the Atlas Lions <a href=\"https://www.theguardian.com/football/2026/jun/30/netherlands-morocco-world-cup-2026-last-32-match-report\">dumped Ronald Koeman’s team out</a> of the tournament in a penalty shooutout after an epic contest, joyous 6am celebrations were sparked among the Moroccan community in Amsterdam. In The Hague, on the other hand, the atmosphere turned grim.</p><p>Approximately 440,000 people of Moroccan descent live in the Netherlands, and approximately 440,000 of them were asked the same question before this game: “So who will <em>you </em>support, then?” It was mostly good-natured, and the former manager Ron Jans displayed genuine interest when putting the dilemma to his fellow pundit Ibrahim Afellay on Dutch national television. Afellay, capped 53 times for the Netherlands, expressed and explained his support for Morocco. In the real world, the most common reaction has been one of understanding, if not sympathy, regardless of which side someone picked.</p> <a href=\"https://www.theguardian.com/football/2026/jun/30/morocco-netherlands-celebrations-bottle-throwing-dutch-streets-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 09:59:56 GMT"
+    },
+    {
+      "title": "Who did it best? USA 1994 versus World Cup 2026 – then and now",
+      "detail": "<p>From the hairstyles to the stadia, the kits to the celebrations, we take a look at the changing face of the game.</p><p><em><strong>Tap on the images below to fade between the visuals</strong></em></p><p>It’s 32 years since Diego Maradona went berserk down the barrel of a TV camera after scoring for Argentina; since Bebeto rocked an imaginary baby to sleep; since Roberto Baggio blazed his spot-kick into orbit (the tournament’s second worst penalty after Diana Ross’s blooper during the opening ceremony); since Carlos Valderrama wowed the world with his luscious blonde afro.</p><p>The visuals from the World Cup in 1994 were rich and cinematic, but does the beautiful game look that different on its return to the United States? Has football lost its style and soul? Or will this year’s tournament live just as long in the memory as its predecessor?</p> <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/30/who-did-it-best-usa-1994-versus-world-cup-2026-then-and-now\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 13:00:06 GMT"
+    },
+    {
+      "title": "Mexico face up to their most terrifying opponent: the ghost of World Cup game four",
+      "detail": "<p>El Tri have made a habit of qualifying from the group stage and then falling at the first hurdle. They are hoping the memory of 1986 will help end the curse</p><p>In Mexico, the phrase <em>ya merito</em> (“almost there”) is closely linked to the country’s men’s football team.</p><p>In Mexican Spanish, it’s a colloquial, almost affectionate expression; a way of describing something that’s close enough to touch, but that can never quite be reached. Now the phrase seems to capture something more profound about Mexico’s national team – shorthand for El Tri’s habit of not exactly failing, but always <em>just</em> falling short.</p> <a href=\"https://www.theguardian.com/football/2026/jun/30/mexico-ecuador-world-cup-2026\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 13:00:07 GMT"
     }
   ],
   "teams": [
@@ -12833,18 +12889,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1615,
+      "eventCount": 1623,
       "manualEventCount": 3,
-      "rawNewsCount": 1612,
+      "rawNewsCount": 1620,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1615,
-      "applied": 1504,
+      "watched": 1623,
+      "applied": 1511,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1610,
+      "singleSource": 1618,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -23485,7 +23541,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-30T12:30:41.675388+00:00",
+    "generatedAt": "2026-06-30T15:17:21.990291+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
