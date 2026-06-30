@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-30T01:32:04.838766+00:00",
+  "updatedAt": "2026-06-30T06:19:03.778257+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -11590,6 +11590,76 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 29 Jun 2026 22:51:53 GMT"
+    },
+    {
+      "title": "The end for Nagelsmann? Germany suffer their 'next football nightmare'",
+      "detail": "Germany make a shock last-32 exit against Paraguay, losing a World Cup penalty shootout for the first time to pile pressure on boss Julian Nagelsmann.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 02:38:35 GMT"
+    },
+    {
+      "title": "Emotional Gakpo scores days after loss of unborn son",
+      "detail": "Liverpool forward Cody Gakpo scores for the Netherlands days after the loss of his unborn son, as they are knocked out on penalties by Morocco.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 05:10:38 GMT"
+    },
+    {
+      "title": "Inside Paraguay's tears of joy over their seismic World Cup shock",
+      "detail": "How Paraguay marked one of the biggest wins in their footballing history with euphoric celebrations.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 03:00:39 GMT"
+    },
+    {
+      "title": "'A joke' - how a 'terrible' VAR disallowed goal cost Germany",
+      "detail": "Alan Shearer, Jurgen Klopp, Pat Nevin and Darren Cann feel Germany were hard done by as a VAR call rules out a potential winning goal before they lose on penalties to Paraguay.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 01:42:03 GMT"
+    },
+    {
+      "title": "Who am I? Guess World Cup star No 23",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 05:48:18 GMT"
+    },
+    {
+      "title": "Netherlands crumble in penalty shootout as Morocco reach last 16",
+      "detail": "Netherlands miss three spot kicks as Morocco come from behind to beat the Dutch on penalties in Monterrey to reach the last 16 of the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 05:01:03 GMT"
+    },
+    {
+      "title": "'Germany play one way - and it doesn't work anymore'",
+      "detail": "The team in the studio talk about what went wrong for Germany as they go out of the World Cup to Paraguay",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 02:55:30 GMT"
+    },
+    {
+      "title": "'Pandor poised for Rangers as Butland heads for Hull' - gossip",
+      "detail": "Rangers are reportedly poised to sign Hull City goalkeeper Ivor Pandor, with Jack Butland moving in the opposite direction, as Aberdeen, Dundee, Dundee United and Motherwell are said to have received bids for key players.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 06:06:01 GMT"
+    },
+    {
+      "title": "Morocco edge wild last-32 penalty shootout as Netherlands pay heavy price for misses",
+      "detail": "<p>Maybe Morocco are about to do it all again. They are into the last 16 after a match that lasted almost three hours, winning a strange and error-strewn shootout to tee up a meeting with Canada. Ismael Saibari converted the winning penalty after his team and the Netherlands had fluffed their lines repeatedly. Perhaps it was fitting that, after the teams had missed twice apiece, the goalkeeper Yassine Bounou made the save that allowed Saibari his moment. He stood tall to bat away Crysencio Summerville’s shot, recalling <a href=\"https://www.theguardian.com/football/2022/dec/06/morocco-spain-world-cup-last-16-match-report\">his two saves in the win against Spain at Qatar 2022</a>.</p><p>Morocco had deserved to win against a negative Netherlands, even if they only earned extra time when the centre-back Issa Diop headed in. One wonders how Cody Gakpo, playing despite the announcement he and his partner had lost their unborn son, could process the turnaround. He seemed to have scored the winner with a hammered finish in the 72nd minute, the emotions taking hold afterwards. Gakpo was in tears after scoring, pointing to the sky and being comforted by Denzel Dumfries. Football can be intensely cruel but some things hold infinitely greater importance.</p> <a href=\"https://www.theguardian.com/football/2026/jun/30/netherlands-morocco-world-cup-2026-last-32-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 30 Jun 2026 04:10:40 GMT"
+    },
+    {
+      "title": "‘I’d do it again’: Ronald Koeman defiant in defeat after the Netherlands sent home",
+      "detail": "<ul><li><p>Dutch coach to ‘reflect on future’ after shootout loss</p></li><li><p>Mohamed Ouahbi says Morocco can be ‘unstoppable’</p></li></ul><p>An embattled Ronald Koeman said he will consider his future as manager of the Netherlands after they were eliminated from the World Cup by Morocco.</p><p>The Netherlands tumbled out on penalties after a 1-1 draw in the last-32 tie, the pill even more bitter to swallow because they had been leading at the start of added time. Issa Diop cancelled out Cody Gakpo’s goal and, in a spiky post-match press conference, Koeman said he will decide whether to continue his three-and-a-half year tenure, which is his second in charge of the national team.</p> <a href=\"https://www.theguardian.com/football/2026/jun/30/ronald-koeman-netherlands-morocco-world-cup-reaction\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 05:45:24 GMT"
     }
   ],
   "teams": [
@@ -11678,7 +11748,7 @@
         "form": 72,
         "path": 60,
         "squad": 59,
-        "margin": 75
+        "margin": 74
       },
       "tournament": {
         "champion": 0.1,
@@ -12525,18 +12595,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1571,
+      "eventCount": 1581,
       "manualEventCount": 3,
-      "rawNewsCount": 1568,
+      "rawNewsCount": 1578,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1571,
-      "applied": 1463,
+      "watched": 1581,
+      "applied": 1472,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1566,
+      "singleSource": 1576,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -12579,7 +12649,7 @@
       "canada": {
         "attack": -9.0,
         "defense": -2.55,
-        "goalkeeper": 0.0,
+        "goalkeeper": -2.15,
         "path": -7.659999999999999,
         "squad": -18.2
       },
@@ -23177,150 +23247,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-30T01:32:26.741992+00:00",
+    "generatedAt": "2026-06-30T06:19:25.777535+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 4.7,
-        "currentChampion": 4.1,
-        "change": -0.6,
-        "direction": "down",
-        "reason": "状态盘下调 -2.2",
-        "reasons": [
-          "状态盘下调 -2.2",
-          "八强概率下降 -1.8%",
-          "四强概率下降 -1.5%",
-          "决赛概率下降 -1.0%",
-          "可入模型事件新增 7 条"
-        ]
-      },
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 20.8,
-        "currentChampion": 21.0,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.2%",
-        "reasons": [
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 7 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 20.3,
-        "currentChampion": 20.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 7 条",
-        "reasons": [
-          "可入模型事件新增 7 条"
-        ]
-      },
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 8.2,
-        "currentChampion": 8.3,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.3%",
-        "reasons": [
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 7 条"
-        ]
-      },
-      {
-        "team": "colombia",
-        "name": "哥伦比亚",
-        "code": "COL",
-        "previousChampion": 3.5,
-        "currentChampion": 3.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 7 条"
-        ]
-      },
-      {
-        "team": "japan",
-        "name": "日本",
-        "code": "JPN",
-        "previousChampion": 1.9,
-        "currentChampion": 2.0,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +1.0%",
-        "reasons": [
-          "八强概率上升 +1.0%",
-          "四强概率上升 +0.5%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 7 条"
-        ]
-      },
-      {
-        "team": "australia",
-        "name": "澳大利亚",
-        "code": "AUS",
-        "previousChampion": 0.3,
-        "currentChampion": 0.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 7 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 6,
-      "down": 1,
-      "largestUp": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 20.8,
-        "currentChampion": 21.0,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.2%",
-        "reasons": [
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 7 条"
-        ]
-      },
-      "largestDown": {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 4.7,
-        "currentChampion": 4.1,
-        "change": -0.6,
-        "direction": "down",
-        "reason": "状态盘下调 -2.2",
-        "reasons": [
-          "状态盘下调 -2.2",
-          "八强概率下降 -1.8%",
-          "四强概率下降 -1.5%",
-          "决赛概率下降 -1.0%",
-          "可入模型事件新增 7 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
