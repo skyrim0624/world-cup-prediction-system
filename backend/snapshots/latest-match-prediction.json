@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-29T23:04:05.867739+00:00",
+  "updatedAt": "2026-06-30T01:32:04.838766+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -11541,6 +11541,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 07 Jun 2026 07:00:28 GMT"
+    },
+    {
+      "title": "Germany beaten on penalties as Paraguay reach last 16",
+      "detail": "Four-time winners Germany are knocked out of the 2026 World Cup, losing to Paraguay 4-3 on penalties, following a 1-1 draw after extra time.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 01:06:09 GMT"
+    },
+    {
+      "title": "Canale scores winning penalty after Tah blazes over as Germany knocked out",
+      "detail": "Four-time winners Germany are knocked out of the 2026 World Cup on penalties as Jonathan Tah blazes over in sudden death before Jose Canale scores the winning penalty.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 00:10:40 GMT"
+    },
+    {
+      "title": "'Terrible decision' - Germany have goal controversially disallowed by VAR",
+      "detail": "Germany's Jonathan Tah has an extra-time goal controversially disallowed by VAR for a foul by Waldemar Anton on Paraguay goalkeeper Orlando Gill.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 23:35:04 GMT"
+    },
+    {
+      "title": "Relive thrilling penalty shootout between Germany and Paraguay",
+      "detail": "Watch every penalty from Germany's last 32 match against Paraguay in the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 00:56:07 GMT"
+    },
+    {
+      "title": "Netherlands v Morocco: World Cup 2026 last 32 – live",
+      "detail": "<p>⚽️ Kick-off time: 7pm local/9pm EDT/2am BST/11am AEST<br>⚽️ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:ella.brockway@theguardian.com\">Mail Ella</a></p><p>Mary Waltz writes in on the back of that Germany v Paraguay shootout: <em>“</em>All England fans admit it. Germany losing by penalties is the ultimate of Schadenfreud.”</p><p>The lack of a clinical goalscorer has hampered the Dutch team in recent years, but Brian Brobbey has been the solution at this World Cup. The Sunderland striker didn’t initially project as a starter; Memphis Depay was their leading scorer up top through qualifying, but he was nursing a thigh injury in the run-up to the tournament.</p> <a href=\"https://www.theguardian.com/football/live/2026/jun/29/netherlands-v-morocco-world-cup-2026-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 30 Jun 2026 01:25:22 GMT"
+    },
+    {
+      "title": "Canale and Gill the heroes as Paraguay hand Germany first World Cup shootout defeat",
+      "detail": "<p>Germany exited the World Cup in Boston not with a whimper or even a cry of pain, just an extended wrestle into the dust at the hands of a thrillingly dogged Paraguay, followed by the most extraordinary of penalty shootouts.</p><p>Not only did Germany lose their first shootout since the original Panenka one of 1976. They did so in a whirl of errors, shanked kicks and what amounted to a sporting meltdown in the New England gloaming. Paraguay will now progress to play a last-16 tie in Philadelphia, but not before celebrating this result as surely the greatest in their football history. And rightly so, after a performance of wonderful heart and defensive discipline.</p> <a href=\"https://www.theguardian.com/football/2026/jun/30/germany-paraguay-world-cup-2026-last-32-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 23:59:01 GMT"
+    },
+    {
+      "title": "‘One of our own’: Cristian Volpato flourishes after Socceroos switch",
+      "detail": "<p>Junior Italy international feels he can develop more as a player after late inclusion to the World Cup squad</p><p>Cristian Volpato is Italian football’s make-good to Australia, a peace offering set to soothe 20 years of pain. The winger flipped allegiances so he could represent the Socceroos on the eve of the World Cup, but his career was shaped by those responsible for perhaps the greatest heartache of Australian football.</p><p>In the closest the Socceroos have come to a World Cup knockout victory, the team remembered as the “golden generation” and led by Mark Viduka were headed for extra time in 2006 against Italy when Fabio Grosso won a penalty, converted by Francesco Totti, for the eventual champions.</p> <a href=\"https://www.theguardian.com/football/2026/jun/29/cristian-volpato-socceroos-australia-italy-egypt-2026-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 29 Jun 2026 22:51:53 GMT"
     }
   ],
   "teams": [
@@ -11557,8 +11606,8 @@
       },
       "tournament": {
         "champion": 0.7,
-        "final": 2.7,
-        "semifinal": 7.7,
+        "final": 2.8,
+        "semifinal": 7.9,
         "quarterfinal": 18.1,
         "change": -0.8
       }
@@ -11702,17 +11751,17 @@
       "code": "BRA",
       "factors": {
         "strength": 91,
-        "form": 85,
+        "form": 84,
         "path": 64,
         "squad": 71,
         "margin": 83
       },
       "tournament": {
-        "champion": 4.7,
-        "final": 10.8,
-        "semifinal": 21.9,
-        "quarterfinal": 39.2,
-        "change": -6.1
+        "champion": 4.1,
+        "final": 9.8,
+        "semifinal": 20.4,
+        "quarterfinal": 37.4,
+        "change": -6.7
       }
     },
     {
@@ -11822,11 +11871,11 @@
         "margin": 77
       },
       "tournament": {
-        "champion": 0.3,
-        "final": 1.5,
+        "champion": 0.4,
+        "final": 1.6,
         "semifinal": 4.7,
         "quarterfinal": 11.6,
-        "change": 0.0
+        "change": 0.1
       }
     },
     {
@@ -11900,8 +11949,8 @@
       "tournament": {
         "champion": 0.3,
         "final": 1.2,
-        "semifinal": 4.3,
-        "quarterfinal": 13.2,
+        "semifinal": 4.4,
+        "quarterfinal": 13.5,
         "change": -0.1
       }
     },
@@ -11918,8 +11967,8 @@
       },
       "tournament": {
         "champion": 1.1,
-        "final": 3.4,
-        "semifinal": 9.4,
+        "final": 3.5,
+        "semifinal": 9.6,
         "quarterfinal": 20.9,
         "change": 0.5
       }
@@ -11955,11 +12004,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 1.9,
-        "final": 5.3,
-        "semifinal": 12.3,
-        "quarterfinal": 25.8,
-        "change": 0.8
+        "champion": 2.0,
+        "final": 5.5,
+        "semifinal": 12.8,
+        "quarterfinal": 26.8,
+        "change": 0.9
       }
     },
     {
@@ -12088,11 +12137,11 @@
         "margin": 85
       },
       "tournament": {
-        "champion": 20.3,
+        "champion": 20.4,
         "final": 30.1,
         "semifinal": 45.8,
         "quarterfinal": 57.2,
-        "change": 8.7
+        "change": 8.8
       }
     },
     {
@@ -12222,9 +12271,9 @@
       },
       "tournament": {
         "champion": 0.9,
-        "final": 3.1,
-        "semifinal": 8.9,
-        "quarterfinal": 21.8,
+        "final": 3.2,
+        "semifinal": 9.1,
+        "quarterfinal": 22.3,
         "change": 0.0
       }
     },
@@ -12240,11 +12289,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 20.8,
-        "final": 37.3,
+        "champion": 21.0,
+        "final": 37.5,
         "semifinal": 55.6,
         "quarterfinal": 75.1,
-        "change": 5.6
+        "change": 5.8
       }
     },
     {
@@ -12337,7 +12386,7 @@
       "tournament": {
         "champion": 0.1,
         "final": 0.3,
-        "semifinal": 1.4,
+        "semifinal": 1.5,
         "quarterfinal": 5.6,
         "change": 0.0
       }
@@ -12373,11 +12422,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 3.5,
-        "final": 9.6,
+        "champion": 3.6,
+        "final": 9.7,
         "semifinal": 19.9,
         "quarterfinal": 49.4,
-        "change": 1.0
+        "change": 1.1
       }
     },
     {
@@ -12392,11 +12441,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 8.2,
-        "final": 17.8,
-        "semifinal": 34.1,
+        "champion": 8.3,
+        "final": 18.0,
+        "semifinal": 34.4,
         "quarterfinal": 55.4,
-        "change": -2.5
+        "change": -2.4
       }
     },
     {
@@ -12476,18 +12525,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1564,
+      "eventCount": 1571,
       "manualEventCount": 3,
-      "rawNewsCount": 1561,
+      "rawNewsCount": 1568,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1564,
-      "applied": 1456,
+      "watched": 1571,
+      "applied": 1463,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1559,
+      "singleSource": 1566,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -12556,7 +12605,7 @@
         "squad": -2.55
       },
       "brazil": {
-        "attack": -2.5,
+        "attack": -4.65,
         "defense": 0.0,
         "goalkeeper": -2.15,
         "path": -10.43,
@@ -23011,13 +23060,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-06-29",
+      "referenceDate": "2026-06-30",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 16,
-      "oldestAgeDays": 90,
+      "newestAgeDays": 17,
+      "oldestAgeDays": 91,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -23128,7 +23177,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-29T23:04:28.076189+00:00",
+    "generatedAt": "2026-06-30T01:32:26.741992+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
@@ -23138,64 +23187,138 @@
         "team": "brazil",
         "name": "巴西",
         "code": "BRA",
-        "previousChampion": 5.0,
-        "currentChampion": 4.7,
-        "change": -0.3,
+        "previousChampion": 4.7,
+        "currentChampion": 4.1,
+        "change": -0.6,
         "direction": "down",
-        "reason": "人员盘下调 -2.2",
+        "reason": "状态盘下调 -2.2",
         "reasons": [
-          "人员盘下调 -2.2",
-          "八强概率下降 -1.1%",
-          "四强概率下降 -1.0%",
-          "决赛概率下降 -0.7%",
-          "可入模型事件新增 19 条"
+          "状态盘下调 -2.2",
+          "八强概率下降 -1.8%",
+          "四强概率下降 -1.5%",
+          "决赛概率下降 -1.0%",
+          "可入模型事件新增 7 条"
         ]
       },
       {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 4.5,
-        "currentChampion": 4.6,
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 20.8,
+        "currentChampion": 21.0,
+        "change": 0.2,
+        "direction": "up",
+        "reason": "决赛概率上升 +0.2%",
+        "reasons": [
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 7 条"
+        ]
+      },
+      {
+        "team": "spain",
+        "name": "西班牙",
+        "code": "ESP",
+        "previousChampion": 20.3,
+        "currentChampion": 20.4,
         "change": 0.1,
         "direction": "up",
-        "reason": "可入模型事件新增 19 条",
+        "reason": "可入模型事件新增 7 条",
         "reasons": [
-          "可入模型事件新增 19 条"
+          "可入模型事件新增 7 条"
+        ]
+      },
+      {
+        "team": "england",
+        "name": "英格兰",
+        "code": "ENG",
+        "previousChampion": 8.2,
+        "currentChampion": 8.3,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.3%",
+        "reasons": [
+          "四强概率上升 +0.3%",
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 7 条"
+        ]
+      },
+      {
+        "team": "colombia",
+        "name": "哥伦比亚",
+        "code": "COL",
+        "previousChampion": 3.5,
+        "currentChampion": 3.6,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "决赛概率上升 +0.1%",
+        "reasons": [
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 7 条"
+        ]
+      },
+      {
+        "team": "japan",
+        "name": "日本",
+        "code": "JPN",
+        "previousChampion": 1.9,
+        "currentChampion": 2.0,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +1.0%",
+        "reasons": [
+          "八强概率上升 +1.0%",
+          "四强概率上升 +0.5%",
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 7 条"
+        ]
+      },
+      {
+        "team": "australia",
+        "name": "澳大利亚",
+        "code": "AUS",
+        "previousChampion": 0.3,
+        "currentChampion": 0.4,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "决赛概率上升 +0.1%",
+        "reasons": [
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 7 条"
         ]
       }
     ],
     "summary": {
-      "up": 1,
+      "up": 6,
       "down": 1,
       "largestUp": {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 4.5,
-        "currentChampion": 4.6,
-        "change": 0.1,
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 20.8,
+        "currentChampion": 21.0,
+        "change": 0.2,
         "direction": "up",
-        "reason": "可入模型事件新增 19 条",
+        "reason": "决赛概率上升 +0.2%",
         "reasons": [
-          "可入模型事件新增 19 条"
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 7 条"
         ]
       },
       "largestDown": {
         "team": "brazil",
         "name": "巴西",
         "code": "BRA",
-        "previousChampion": 5.0,
-        "currentChampion": 4.7,
-        "change": -0.3,
+        "previousChampion": 4.7,
+        "currentChampion": 4.1,
+        "change": -0.6,
         "direction": "down",
-        "reason": "人员盘下调 -2.2",
+        "reason": "状态盘下调 -2.2",
         "reasons": [
-          "人员盘下调 -2.2",
-          "八强概率下降 -1.1%",
-          "四强概率下降 -1.0%",
-          "决赛概率下降 -0.7%",
-          "可入模型事件新增 19 条"
+          "状态盘下调 -2.2",
+          "八强概率下降 -1.8%",
+          "四强概率下降 -1.5%",
+          "决赛概率下降 -1.0%",
+          "可入模型事件新增 7 条"
         ]
       }
     }
