@@ -23250,5 +23250,61 @@
     "factor": "path",
     "direction": -1,
     "confidence": 0.66
+  },
+  {
+    "id": "bbc-69f35f4c268f",
+    "title": "Defying logic - how Haaland could end up with 260 international goals",
+    "summary": "Erling Haaland delivers on the biggest stage yet for Norway - but just how many goals could he end up with in international football?",
+    "source": "bbc",
+    "team": "norway",
+    "status": "single_source",
+    "published_at": "Tue, 30 Jun 2026 21:18:45 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cvge3wkn1v7o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-a2d23ee39eae",
+    "title": "Koeman resigns, while Netherlands report racist abuse",
+    "summary": "Ronald Koeman resigns as Netherlands manager after their World Cup exit, which led to \"appalling\" racist abuse aimed at players who missed penalties.",
+    "source": "bbc",
+    "team": "germany",
+    "status": "single_source",
+    "published_at": "Tue, 30 Jun 2026 22:30:26 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cly0g1y3v00o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-a18d4083c079",
+    "title": "Rosenior nears management return at Paris FC",
+    "summary": "Former Chelsea manager Liam Rosenior is set to return to football at French club Paris FC on a two-year contract, with the option of a further season.",
+    "source": "bbc",
+    "team": "paraguay",
+    "status": "single_source",
+    "published_at": "Tue, 30 Jun 2026 22:06:55 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cx2x0pd01dno?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-ccf092d9f07a",
+    "title": "Ronald Koeman resigns as Netherlands head coach after World Cup loss to Morocco",
+    "summary": "<ul><li><p>‘We fell short. Responsibility rests with me’ he says</p></li><li><p>Netherlands players subject to online racist abuse</p></li></ul><p>Ronald Koeman has resigned in the wake of the Netherlands’ last-32 defeat by Morocco on Monday.</p><p>“Last night I took the decision to end my stint as head coach of the Dutch national team,” Koeman said in a statement on Instagram. “We all shared the dream of making history at this World Cup, but we fell short. No one is more disappointed by that than I am. As head coach, the responsibility ultimately rests with me”.</p> <a href=\"https://www.theguardian.com/football/2026/jun/30/ronald-koeman-resigns-as-netherlands-head-coach-after-world-cup-loss-to-morocco\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Tue, 30 Jun 2026 21:43:49 GMT",
+    "url": "https://www.theguardian.com/football/2026/jun/30/ronald-koeman-resigns-as-netherlands-head-coach-after-world-cup-loss-to-morocco",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
