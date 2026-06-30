@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-30T06:19:03.778257+00:00",
+  "updatedAt": "2026-06-30T10:08:44.943149+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -542,11 +542,11 @@
       "probability": 84,
       "title": "德国小组第一概率上升",
       "details": [
-        "德国夺冠概率 +0.1%",
+        "德国夺冠概率 ±0.0%",
         "库拉索路径盘下调 ±0.0%",
         "同组竞争队出线门槛抬高"
       ],
-      "championShift": "+0.1%",
+      "championShift": "±0.0%",
       "tone": "green"
     },
     {
@@ -554,11 +554,11 @@
       "probability": 11,
       "title": "两队路径保持胶着",
       "details": [
-        "德国夺冠概率 ±0.0%",
+        "德国夺冠概率 -0.1%",
         "库拉索夺冠概率 ±0.0%",
         "小组第一仍取决于末轮和净胜球"
       ],
-      "championShift": "±0.0% / ±0.0%",
+      "championShift": "-0.1% / ±0.0%",
       "tone": "gold"
     },
     {
@@ -567,7 +567,7 @@
       "title": "库拉索半区压力下降",
       "details": [
         "库拉索夺冠概率 ±0.0%",
-        "德国潜在淘汰赛路径变难 ±0.0%",
+        "德国潜在淘汰赛路径变难 -0.1%",
         "小组第二路径风险上升"
       ],
       "championShift": "±0.0%",
@@ -11660,6 +11660,160 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 30 Jun 2026 05:45:24 GMT"
+    },
+    {
+      "title": "Pick Mainoo over Anderson against DR Congo - Rooney",
+      "detail": "Former England captain Wayne Rooney says he would start Manchester United midfielder Kobbie Mainoo instead of Elliot Anderson in Wednesday's World Cup last-32 tie with DR Congo.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 08:06:24 GMT"
+    },
+    {
+      "title": "US security chief 'danced happy dance' after Iran exit",
+      "detail": "The United States' head of homeland security says he \"danced a happy dance\" when Iran's elimination from the World Cup was confirmed.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 07:47:46 GMT"
+    },
+    {
+      "title": "'Indescribably hurt' Son apologises for South Korea World Cup exit",
+      "detail": "Son Heung-min apologises for South Korea's early World Cup exit and says he will \"run to death\" for the nation's football fans.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 06:51:10 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "Germany and the Netherlands crash out as Humphrey Ker joins the pod.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 08:03:00 GMT"
+    },
+    {
+      "title": "Chelsea's George close to permanent Everton move",
+      "detail": "Everton close in on a deal to sign Chelsea winger Tyrique George following his loan spell.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 09:52:45 GMT"
+    },
+    {
+      "title": "Spurs sign Norway keeper Panengstuen from SK Brann",
+      "detail": "Norwegian international goalkeeper Selma Panengstuen says it is a \"dream\" move to join Women's Super League side Tottenham.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 08:33:18 GMT"
+    },
+    {
+      "title": "It's official: Germany are no longer a soccer supe...",
+      "detail": "Germany expected Paraguay to be \"an uncomfortable opponent,\" but the South American side was so much more that it ended Die Mannschaft's World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 00:24:19 EST"
+    },
+    {
+      "title": "Morocco win shootout to send Netherlands home",
+      "detail": "Morocco beat the Netherlands in a penalty shootout after the match finished 1-1 Monday night to advance to the round of 16.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 00:24:27 EST"
+    },
+    {
+      "title": "Paraguay stun Germany on pens after VAR drama",
+      "detail": "Kai Havertz, Nick Woltemade and Jonathan Tah missed crucial penalties as Germany were eliminated from the World Cup in a shootout by Paraguay.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 00:24:24 EST"
+    },
+    {
+      "title": "Nagelsmann: Germany no longer 'first-class team'",
+      "detail": "ulian Nagelsmann said Germany are no longer a \"first-class team\" after another early World Cup exit, but added he wants to stay on as head coach following their penalty shootout defeat to Paraguay.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 00:24:26 EST"
+    },
+    {
+      "title": "Aguirre: Azteca fans can get Mexico past Ecuador",
+      "detail": "Mexico manager Javier Aguirre said he hopes local fans will make the difference for El Tri when the World Cup co-hosts face Ecuador at Mexico City's Estadio Azteca in the round of 32 on Tuesday in a matchup of two Latin American sides.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 00:24:23 EST"
+    },
+    {
+      "title": "Cáceres: Leaks about Uruguay's Bielsa 'twisted'",
+      "detail": "Uruguay defender Sebastián Cáceres said people twisted the narrative around Marcelo Bielsa to make the manager look bad following their elimination from the FIFA World Cup in the group stage.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 00:24:27 EST"
+    },
+    {
+      "title": "World Cup Daily LIVE: Paraguay TV cuts out during ...",
+      "detail": "Follow live below for all the biggest highlights, news, reaction and analysis on another busy day of World Cup action.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 05:33:23 EST"
+    },
+    {
+      "title": "Koeman's lack of Dutch courage exposed by magnific...",
+      "detail": "Setting up a Netherlands team to play anti-football was always a gamble. On Monday, it backfired spectacularly.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 03:02:54 EST"
+    },
+    {
+      "title": "Malik Tillman is having a great World Cup for the ...",
+      "detail": "After a disappointing club season with Bayer Leverkusen, Tillman was shuffled into an unfamiliar position in the U.S. midfield and has flourished.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 03:03:35 EST"
+    },
+    {
+      "title": "England approach World Cup knockouts still with pl...",
+      "detail": "As everyone expected, England reached the World Cup's knockout phase. Thomas Tuchel has said \"the tournament starts now,\" so how far can they go?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 03:06:28 EST"
+    },
+    {
+      "title": "Transfer rumors, news: Olise asks for Bayern meeti...",
+      "detail": "Bayern Munich winger Michael Olise has asked for a meeting about his future amid interest from Europe's biggest clubs. Transfer Talk has the latest.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 03:43:41 EST"
+    },
+    {
+      "title": "World Cup 2026: Dutch despair, Klopp plays down Germany job links after exit – live",
+      "detail": "<ul><li><p><a href=\"https://www.theguardian.com/football/2026/jun/30/germany-paraguay-world-cup-2026-last-32-match-report\">Paraguay stun Germany</a>, <a href=\"https://www.theguardian.com/football/2026/jun/30/netherlands-morocco-world-cup-2026-last-32-match-report\">Morocco send Dutch home</a></p></li><li><p><a href=\"mailto:matchday.live@theguardian.com\">Email us</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"https://www.theguardian.com/football/video/2026/jun/30/germany-paraguay-netherlands-morocco-brazil-japan-world-cup-daily-podcast\">World Cup Daily</a></p></li></ul><p><strong>Tuesday’s World Cup Daily podcast has dropped</strong>. Max, Barry, Archie and Nicky chew over last night’s drama:</p><p><strong>A couple of videos for your delectation now</strong>. Photographer Shaun Botterill has a World Cup portfolio spanning 40 years – here he talks about the moments that made those memorable images:</p> <a href=\"https://www.theguardian.com/football/live/2026/jun/30/world-cup-2026-netherlands-and-germany-crash-out-plus-cote-divoire-v-norway-buildup-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 09:50:54 GMT"
+    },
+    {
+      "title": "How DR Congo’s football team became a rare source of national unity",
+      "detail": "<p>Historic run to the last 32 and a match against England have left proud fans back home dancing late into the night</p><p>The Democratic Republic of the Congo (DRC) had not been at a World&nbsp;Cup finals tournament for 52 years – but they are making up for lost time in North America. After <a href=\"https://www.theguardian.com/football/2026/jun/17/portugal-dr-congo-world-cup-2026-group-k-match-report\">a draw against Portugal</a>, a narrow defeat by Colombia and a 3-1 victory against Uzbekistan – inspired by Yoane Wissa’s two goals – they have already made history by booking a place in the knockout phase. Now they face England.</p><p>“We deserve to play England,” Wissa said when the match-up had been confirmed. “We have worked hard for this. You know, it’s not easy in our country. There is war in eastern Congo. Every time we wear this shirt, we think about them.”</p> <a href=\"https://www.theguardian.com/football/2026/jun/30/dr-congo-england-yoane-wissa-2026-world-cup-last-32\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 07:00:42 GMT"
+    },
+    {
+      "title": "‘The right path’: Carlo Ancelotti keeps cool after Brazil survive Japan scare in last 32",
+      "detail": "<ul><li><p>Ancelotti says late win was Brazil’s ‘most complete game’</p></li><li><p>Hajime Moriyasu says Japan ‘have to improve’</p></li></ul><p>Carlo Ancelotti was characteristically calm after <a href=\"https://www.theguardian.com/football/2026/jun/29/brazil-japan-world-cup-2026-last-32-match-report\">Brazil’s 2-1 victory against Japan</a> on Monday, insisting he had never doubted his team would get back into the game and warning they are getting better and better.</p><p>“At half-time I told the players to be patient because sooner or later we would score,” Ancelotti said. “What was important was to keep our structure. We know we’re going down the right path and we have to continue on this path.”</p> <a href=\"https://www.theguardian.com/football/2026/jun/29/the-right-path-carlo-ancelotti-keeps-cool-as-brazil-come-from-behind-to-beat-japan\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 29 Jun 2026 21:40:25 GMT"
+    },
+    {
+      "title": "From developing photos in a toilet to a viral Messi shot: 40 years shooting the World Cup – video",
+      "detail": "<p>From taking the photo that became the most-liked post on Instagram as of recording, to developing film in the stadium toilets, legendary World Cup photographer Shaun Botterill speaks with Guardian Australia's picture editor, Carly Earl, about how capturing the World Cup has changed throughout his 40-year career</p> <a href=\"https://www.theguardian.com/artanddesign/video/2026/jun/30/from-developing-photos-in-a-toilet-to-a-viral-messi-shot-40-years-shooting-the-world-cup-video\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 07:27:37 GMT"
+    },
+    {
+      "title": "It’s time to write off the Germans and Brazil battle past Japan | World Cup Daily",
+      "detail": "<p><a href=\"https://bsky.app/profile/maxrushden.bsky.social\">Max Rushden</a> is joined by <a href=\"https://bsky.app/profile/did:plc:i55lfvhkg573wfmby5sdnvq6\">Barry Glendenning</a>, Archie Rhind-Tutt and Nicky Bandini as Germany leave the tournament in dramatic fashion in the last 32</p> <a href=\"https://www.theguardian.com/football/video/2026/jun/30/germany-paraguay-netherlands-morocco-brazil-japan-world-cup-daily-podcast\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 09:06:05 GMT"
     }
   ],
   "teams": [
@@ -11677,7 +11831,7 @@
       "tournament": {
         "champion": 0.7,
         "final": 2.8,
-        "semifinal": 7.9,
+        "semifinal": 8.0,
         "quarterfinal": 18.1,
         "change": -0.8
       }
@@ -11823,15 +11977,15 @@
         "strength": 91,
         "form": 84,
         "path": 64,
-        "squad": 71,
+        "squad": 68,
         "margin": 83
       },
       "tournament": {
-        "champion": 4.1,
-        "final": 9.8,
-        "semifinal": 20.4,
-        "quarterfinal": 37.4,
-        "change": -6.7
+        "champion": 3.6,
+        "final": 8.9,
+        "semifinal": 19.0,
+        "quarterfinal": 35.8,
+        "change": -7.2
       }
     },
     {
@@ -11979,11 +12133,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 3.5,
+        "champion": 3.6,
         "final": 7.9,
         "semifinal": 18.1,
         "quarterfinal": 32.5,
-        "change": -2.3
+        "change": -2.2
       }
     },
     {
@@ -12018,9 +12172,9 @@
       },
       "tournament": {
         "champion": 0.3,
-        "final": 1.2,
-        "semifinal": 4.4,
-        "quarterfinal": 13.5,
+        "final": 1.3,
+        "semifinal": 4.5,
+        "quarterfinal": 13.8,
         "change": -0.1
       }
     },
@@ -12037,8 +12191,8 @@
       },
       "tournament": {
         "champion": 1.1,
-        "final": 3.5,
-        "semifinal": 9.6,
+        "final": 3.6,
+        "semifinal": 9.7,
         "quarterfinal": 20.9,
         "change": 0.5
       }
@@ -12055,11 +12209,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 6.5,
+        "champion": 6.6,
         "final": 12.8,
         "semifinal": 27.1,
         "quarterfinal": 56.3,
-        "change": -0.3
+        "change": -0.2
       }
     },
     {
@@ -12074,11 +12228,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 2.0,
-        "final": 5.5,
-        "semifinal": 12.8,
-        "quarterfinal": 26.8,
-        "change": 0.9
+        "champion": 2.1,
+        "final": 5.6,
+        "semifinal": 13.2,
+        "quarterfinal": 27.6,
+        "change": 1.0
       }
     },
     {
@@ -12283,11 +12437,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 14.5,
+        "champion": 14.6,
         "final": 23.9,
         "semifinal": 41.0,
         "quarterfinal": 58.9,
-        "change": 1.0
+        "change": 1.1
       }
     },
     {
@@ -12340,11 +12494,11 @@
         "margin": 76
       },
       "tournament": {
-        "champion": 0.9,
-        "final": 3.2,
-        "semifinal": 9.1,
-        "quarterfinal": 22.3,
-        "change": 0.0
+        "champion": 1.0,
+        "final": 3.3,
+        "semifinal": 9.3,
+        "quarterfinal": 22.8,
+        "change": 0.1
       }
     },
     {
@@ -12359,11 +12513,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 21.0,
-        "final": 37.5,
+        "champion": 21.1,
+        "final": 37.7,
         "semifinal": 55.6,
         "quarterfinal": 75.1,
-        "change": 5.8
+        "change": 5.9
       }
     },
     {
@@ -12379,7 +12533,7 @@
       },
       "tournament": {
         "champion": 0.5,
-        "final": 2.0,
+        "final": 2.1,
         "semifinal": 5.6,
         "quarterfinal": 19.4,
         "change": -0.1
@@ -12511,11 +12665,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 8.3,
-        "final": 18.0,
-        "semifinal": 34.4,
+        "champion": 8.4,
+        "final": 18.2,
+        "semifinal": 34.8,
         "quarterfinal": 55.4,
-        "change": -2.4
+        "change": -2.3
       }
     },
     {
@@ -12595,18 +12749,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1581,
+      "eventCount": 1603,
       "manualEventCount": 3,
-      "rawNewsCount": 1578,
+      "rawNewsCount": 1600,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1581,
-      "applied": 1472,
+      "watched": 1603,
+      "applied": 1494,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1576,
+      "singleSource": 1598,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -12679,7 +12833,7 @@
         "defense": 0.0,
         "goalkeeper": -2.15,
         "path": -10.43,
-        "squad": -15.45
+        "squad": -17.599999999999998
       },
       "morocco": {
         "attack": -4.699999999999999,
@@ -23247,17 +23401,164 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-30T06:19:25.777535+00:00",
+    "generatedAt": "2026-06-30T10:09:06.809143+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "brazil",
+        "name": "巴西",
+        "code": "BRA",
+        "previousChampion": 4.1,
+        "currentChampion": 3.6,
+        "change": -0.5,
+        "direction": "down",
+        "reason": "人员盘下调 -2.1",
+        "reasons": [
+          "人员盘下调 -2.1",
+          "八强概率下降 -1.6%",
+          "四强概率下降 -1.4%",
+          "决赛概率下降 -0.9%",
+          "可入模型事件新增 22 条"
+        ]
+      },
+      {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 21.0,
+        "currentChampion": 21.1,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "决赛概率上升 +0.2%",
+        "reasons": [
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 22 条"
+        ]
+      },
+      {
+        "team": "france",
+        "name": "法国",
+        "code": "FRA",
+        "previousChampion": 14.5,
+        "currentChampion": 14.6,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 22 条",
+        "reasons": [
+          "可入模型事件新增 22 条"
+        ]
+      },
+      {
+        "team": "england",
+        "name": "英格兰",
+        "code": "ENG",
+        "previousChampion": 8.3,
+        "currentChampion": 8.4,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.4%",
+        "reasons": [
+          "四强概率上升 +0.4%",
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 22 条"
+        ]
+      },
+      {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 6.5,
+        "currentChampion": 6.6,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 22 条",
+        "reasons": [
+          "可入模型事件新增 22 条"
+        ]
+      },
+      {
+        "team": "germany",
+        "name": "德国",
+        "code": "GER",
+        "previousChampion": 3.5,
+        "currentChampion": 3.6,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 22 条",
+        "reasons": [
+          "可入模型事件新增 22 条"
+        ]
+      },
+      {
+        "team": "japan",
+        "name": "日本",
+        "code": "JPN",
+        "previousChampion": 2.0,
+        "currentChampion": 2.1,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.8%",
+        "reasons": [
+          "八强概率上升 +0.8%",
+          "四强概率上升 +0.4%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 22 条"
+        ]
+      },
+      {
+        "team": "norway",
+        "name": "挪威",
+        "code": "NOR",
+        "previousChampion": 0.9,
+        "currentChampion": 1.0,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.5%",
+        "reasons": [
+          "八强概率上升 +0.5%",
+          "四强概率上升 +0.2%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 22 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 7,
+      "down": 1,
+      "largestUp": {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 21.0,
+        "currentChampion": 21.1,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "决赛概率上升 +0.2%",
+        "reasons": [
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 22 条"
+        ]
+      },
+      "largestDown": {
+        "team": "brazil",
+        "name": "巴西",
+        "code": "BRA",
+        "previousChampion": 4.1,
+        "currentChampion": 3.6,
+        "change": -0.5,
+        "direction": "down",
+        "reason": "人员盘下调 -2.1",
+        "reasons": [
+          "人员盘下调 -2.1",
+          "八强概率下降 -1.6%",
+          "四强概率下降 -1.4%",
+          "决赛概率下降 -0.9%",
+          "可入模型事件新增 22 条"
+        ]
+      }
     }
   }
 }
