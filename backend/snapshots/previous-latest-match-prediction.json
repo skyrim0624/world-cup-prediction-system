@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-06-30T21:16:16.593613+00:00",
+  "updatedAt": "2026-06-30T22:52:05.946097+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -12248,6 +12248,34 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Tue, 30 Jun 2026 18:48:03 GMT"
+    },
+    {
+      "title": "Defying logic - how Haaland could end up with 260 international goals",
+      "detail": "Erling Haaland delivers on the biggest stage yet for Norway - but just how many goals could he end up with in international football?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 21:18:45 GMT"
+    },
+    {
+      "title": "Koeman resigns, while Netherlands report racist abuse",
+      "detail": "Ronald Koeman resigns as Netherlands manager after their World Cup exit, which led to \"appalling\" racist abuse aimed at players who missed penalties.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 22:30:26 GMT"
+    },
+    {
+      "title": "Rosenior nears management return at Paris FC",
+      "detail": "Former Chelsea manager Liam Rosenior is set to return to football at French club Paris FC on a two-year contract, with the option of a further season.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 22:06:55 GMT"
+    },
+    {
+      "title": "Ronald Koeman resigns as Netherlands head coach after World Cup loss to Morocco",
+      "detail": "<ul><li><p>‘We fell short. Responsibility rests with me’ he says</p></li><li><p>Netherlands players subject to online racist abuse</p></li></ul><p>Ronald Koeman has resigned in the wake of the Netherlands’ last-32 defeat by Morocco on Monday.</p><p>“Last night I took the decision to end my stint as head coach of the Dutch national team,” Koeman said in a statement on Instagram. “We all shared the dream of making history at this World Cup, but we fell short. No one is more disappointed by that than I am. As head coach, the responsibility ultimately rests with me”.</p> <a href=\"https://www.theguardian.com/football/2026/jun/30/ronald-koeman-resigns-as-netherlands-head-coach-after-world-cup-loss-to-morocco\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 30 Jun 2026 21:43:49 GMT"
     }
   ],
   "teams": [
@@ -13183,18 +13211,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1665,
+      "eventCount": 1669,
       "manualEventCount": 3,
-      "rawNewsCount": 1662,
+      "rawNewsCount": 1666,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1665,
-      "applied": 1545,
+      "watched": 1669,
+      "applied": 1549,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1660,
+      "singleSource": 1664,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -23835,7 +23863,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-06-30T21:16:38.394950+00:00",
+    "generatedAt": "2026-06-30T22:52:27.588286+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
