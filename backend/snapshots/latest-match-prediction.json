@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-01T19:22:15.077691+00:00",
+  "updatedAt": "2026-07-01T21:08:53.320574+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -12759,6 +12759,69 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 01 Jul 2026 10:29:13 GMT"
+    },
+    {
+      "title": "Genuine superstar Kane produces his biggest England moment",
+      "detail": "Harry Kane's England career is filled with great moments - his World Cup rescue act against DR Congo in Atlanta is his greatest, says chief football writer Phil McNulty.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 20:41:03 GMT"
+    },
+    {
+      "title": "Energy and team spirit at highest level - Tuchel",
+      "detail": "England manager Thomas Tuchel praises his sides team spirit as they come from behind to beat DR Congo 2-1 and advance to the round of 16.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 19:19:20 GMT"
+    },
+    {
+      "title": "All the angles of Kane's brilliant winner",
+      "detail": "All the angles of Harry Kane's winning goal against DR Congo for England in their round of 32 game in Atlanta.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 20:04:00 GMT"
+    },
+    {
+      "title": "'He is ridiculous' - Rice praise for match-winner Kane",
+      "detail": "Declan Rice describes England captain Harry Kane as \"ridiculous\" after he scores twice during their World Cup victory over DR Congo in Atlanta.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 19:25:59 GMT"
+    },
+    {
+      "title": "Spurs target West Ham's Summerville - Thursday's gossip",
+      "detail": "Tottenham target West Ham's Crysencio Summerville, Juventus consider Sunderland striker Brian Brobbey, Everton look at Pape Gueye and Mandela Keita to replace Idrissa Gueye, plus more.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 20:20:23 GMT"
+    },
+    {
+      "title": "Gordon was 'already celebrating' before Kane had scored the winner",
+      "detail": "Anthony Gordon praises England's \"togetherness\" in their 2-1 victory over DR Congo in their round of 32 match in Atlanta.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 19:21:48 GMT"
+    },
+    {
+      "title": "England avert disaster against DR Congo but they must be better in Mexico City | Jacob Steinberg",
+      "detail": "<p>It was an almost Iceland in Atlanta but Thomas Tuchel will have to get it right from the start in the cauldron of Azteca</p><p>It was looking bleak out there. Ten years on, it was looking like Iceland all over again. The clock was ticking and the panic was rising. The Democratic Republic of the Congo (DRC), so impressive during that early surge at a disbelieving Atlanta Stadium, were starting to dream and England were about to become the punchline in one of the biggest shocks in World Cup history.</p><p>The obituaries were written, the calls for root-and-branch reform sure to follow. Nothing was going England’s way. Harry Kane, his hopes of winning the Ballon d’Or fading before his eyes, had a penalty claim waved away by the Jordanian referee. Lionel Mpasi, if not the best Lionel to play in a World Cup, was certainly looking a sure bet to win superior player of the match. The DRC goalkeeper was in astonishing form, making saves like Poland’s Jan Tomaszewski at Wembley in 1973, and with time running out during the second half it seemed an increasingly frantic England had run out of ideas against the dreaded low block.</p> <a href=\"https://www.theguardian.com/football/2026/jul/01/england-avert-disaster-against-dr-congo-but-they-must-be-better-in-mexico-city\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 19:46:03 GMT"
+    },
+    {
+      "title": "‘Watching England is emotional’: fans celebrate win over DR Congo",
+      "detail": "<p>Hundreds watched England in first round of knockout stages at Prospect Building in Bristol</p><ul><li><p><a href=\"https://www.theguardian.com/football/2026/jul/01/england-dr-congo-world-cup-2026-last-32-match-report\">Kane to the rescue with late double as England edge past DR Congo into last 16</a></p></li></ul><p>Sisters Angela and Christine hugged, danced and shed a tear or two at the final whistle as <a href=\"https://www.theguardian.com/football/2026/jul/01/england-dr-congo-world-cup-2026-last-32-match-report\">England squeezed past the Democratic Republic of the Congo</a> (DRC).</p><p>“That was brilliant,” said Christine, a 51-year-old lifeguard. “Watching England is exhausting, emotional, often heart-breaking but we love it. You’ve got to relish the ups and downs.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/01/watching-england-is-emotional-fans-celebrate-win-over-dr-congo\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 19:28:19 GMT"
+    },
+    {
+      "title": "England 2-1 DR Congo: World Cup last 32 player ratings",
+      "detail": "<p>Anthony Gordon showed why he is joining Barcelona but a brilliant Lionel Mpasi in goal could not stop Harry Kane</p><p><strong>Jordan Pickford</strong> Got a hand to Cipenga’s strike but could have done better. Will be relieved that England rescued themselves. <strong>5</strong></p> <a href=\"https://www.theguardian.com/football/2026/jul/01/england-2-1-dr-congo-world-cup-last-32-player-ratings\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 18:24:07 GMT"
     }
   ],
   "teams": [
@@ -13694,18 +13757,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1738,
+      "eventCount": 1747,
       "manualEventCount": 3,
-      "rawNewsCount": 1735,
+      "rawNewsCount": 1744,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1738,
-      "applied": 1613,
+      "watched": 1747,
+      "applied": 1622,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1733,
+      "singleSource": 1742,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -24346,7 +24409,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-01T19:22:36.764491+00:00",
+    "generatedAt": "2026-07-01T21:09:15.366228+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
