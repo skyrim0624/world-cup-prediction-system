@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-02T19:44:24.039041+00:00",
+  "updatedAt": "2026-07-02T21:15:41.806115+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -13466,6 +13466,83 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 02 Jul 2026 18:00:06 GMT"
+    },
+    {
+      "title": "Boycott of Israel games would cause 'significant and lasting harm' - FAI",
+      "detail": "The Football Association of Ireland says any boycott of the Republic of Ireland's Nations League games against Israel in the autumn would have potentially extensive repercussions.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 20:28:49 GMT"
+    },
+    {
+      "title": "'He ended up in Preston!' - Murphy gives update on Bob the cat",
+      "detail": "BBC commentator Danny Murphy provides an update on the fate of his cat Bob.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 20:37:41 GMT"
+    },
+    {
+      "title": "'Spain are furious' - Cucurella has goal ruled out",
+      "detail": "Marc Cucurella sees his goal ruled out for a foul on Austrian goalkeeper Alexander Schlager during their round of 32 game in Los Angeles.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 20:17:07 GMT"
+    },
+    {
+      "title": "'It had been coming' - Oyarzabal puts Spain ahead",
+      "detail": "Mikel Oyarzabal gives Spain the lead against Austria, during their World Cup round of 32 match in Los Angeles.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 20:00:00 GMT"
+    },
+    {
+      "title": "Man Utd ready for Baleba move - Friday gossip",
+      "detail": "Manchester United want Brighton midfielder Carlos Baleba, Arsenal are keen on Aston Villa favourite Ezri Konsa and Bruno Guimaraes, and is Mason Greenwood heading to Madrid?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 20:32:29 GMT"
+    },
+    {
+      "title": "Tuchel wants young England fans to stay up for 1am World Cup clash - but should they?",
+      "detail": "England's must-win match against Mexico kicks off at 01:00 BST on Monday - disco naps and spoiler-free recaps may be needed.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 19:22:43 GMT"
+    },
+    {
+      "title": "Maddy Cusack's coach her 'nemesis', mum tells inquest",
+      "detail": "Cusack would still be alive if the coach of the women's team had not been employed, her mother says.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 17:41:32 GMT"
+    },
+    {
+      "title": "Oyarzabal fires Spain past Austria to WC last 16",
+      "detail": "Mikel Oyarzabal scored twice as Spain cruised into the World Cup round of 16 with a 3-0 win over Austria at SoFi Stadium on Thursday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 2 Jul 2026 17:03:40 EST"
+    },
+    {
+      "title": "Fernández exploring Chelsea exit options - agent",
+      "detail": "Enzo Fernández's agent has confirmed the midfielder is exploring options to leave Chelsea this summer.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 2 Jul 2026 17:03:41 EST"
+    },
+    {
+      "title": "Kerr says NWSL only choice after Chelsea exit",
+      "detail": "Gotham FC forward Sam Kerr said that she only considered returning to the NWSL, where she is still the league's leader in regular season goals, when she decided to leave Chelsea after six years at the London club.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 2 Jul 2026 17:03:41 EST"
+    },
+    {
+      "title": "USMNT World Cup scenarios and path: How far can th...",
+      "detail": "Who will Team USA face in the World Cup knockout rounds? What's the likely path? What are the odds? What do projection models say?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 2 Jul 2026 14:37:22 EST"
     }
   ],
   "teams": [
@@ -13647,7 +13724,7 @@
       "factors": {
         "strength": 84,
         "form": 76,
-        "path": 64,
+        "path": 65,
         "squad": 74,
         "margin": 79
       },
@@ -14401,18 +14478,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1839,
+      "eventCount": 1850,
       "manualEventCount": 3,
-      "rawNewsCount": 1836,
+      "rawNewsCount": 1847,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1839,
-      "applied": 1704,
+      "watched": 1850,
+      "applied": 1713,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1834,
+      "singleSource": 1845,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -14491,7 +14568,7 @@
         "attack": -7.249999999999999,
         "defense": -4.3,
         "goalkeeper": -2.15,
-        "path": -6.54,
+        "path": -5.67,
         "squad": -6.449999999999999
       },
       "haiti": {
@@ -25053,7 +25130,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-02T19:44:45.816055+00:00",
+    "generatedAt": "2026-07-02T21:16:03.718407+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
