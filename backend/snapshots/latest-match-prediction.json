@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-02T04:43:01.618169+00:00",
+  "updatedAt": "2026-07-02T08:15:11.900809+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -12962,6 +12962,69 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 02 Jul 2026 00:28:50 GMT"
+    },
+    {
+      "title": "Who am I? Guess World Cup star No 25",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 05:51:25 GMT"
+    },
+    {
+      "title": "London City Lionesses sign Germany striker Anyomi",
+      "detail": "Germany forward Nicole Anyomi joins London City Lionesses on a three-year contract.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 08:06:11 GMT"
+    },
+    {
+      "title": "Lopes will relish Messi duel, says Cape Verde defender's mother",
+      "detail": "The prospect of facing World Cup record goalscorer Lionel Messi in a knockout game would strike fear into most defenders, but not Roberto Lopes, according to the Cape Verde defender's mother.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 07:02:26 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "England are through... now the Azteca awaits.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 06:58:00 GMT"
+    },
+    {
+      "title": "San Jose close in on deal for Scotland's Gunn - gossip",
+      "detail": "Scotland goalkeeper linked with MLS move plus domestic transfer news.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 07:48:41 GMT"
+    },
+    {
+      "title": "From playing with the boys to fulfilling a WSL dream",
+      "detail": "BBC Sport meets 16-year-old Molly Stroud, who is set to leave Plymouth to join Manchester City's academy.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 05:21:37 GMT"
+    },
+    {
+      "title": "World Cup 2026: England, USA and and Belgium through; Spain and Portugal face last-32 tests – live",
+      "detail": "<p>⚽ All the latest news from day 22 of the tournament<br>⚽ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"https://www.theguardian.com/football/world-cup-2026/overview\">Knockout stage draw</a> | And <a href=\"mailto:matchday.live@theguardian.com\">email us</a> </p><p><strong>And I appreciate all this has been forgotten because England won but Harry Kane should have been awarded a first-half penalty.</strong> When a goalkeeper slides and does not get the ball, of course the forward is going to take the contact. Kane is just being punished for being as clever as the officials desire.</p><p><strong>Maurico Pochettino was rather unhappy with Folarin Balogun’s dismissal.</strong> The striker painfully caught the Bosnia and Herzegovina defender Tarik Muharemovic on the ankle but it was a complete accident with two players going for the ball.</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/02/world-cup-2026-england-and-belgium-fight-back-spain-v-austria-buildup-and-more-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 08:02:37 GMT"
+    },
+    {
+      "title": "Modric and Ronaldo reunited at World Cup as Croatia aim to snap Portugal’s streak",
+      "detail": "<p>Two of international football’s 200 club have had parallel careers with their countries, but will this be their last meeting?</p><p>Can you remember what you were doing on 1&nbsp;March 2006? Perhaps you were at Anfield, watching England beat Uruguay 2-1. You might have seen Switzerland put three goals past Scotland at Hampden&nbsp;Park.</p><p>Or you might have watched Luka Modric make his debut for Croatia. They beat Argentina 3-2, with Lionel Messi scoring his first international goal. The same evening, Cristiano Ronaldo scored twice in a 3-0 Portugal victory against Saudi Arabia, no doubt dreaming of the day he would live and work in the country.</p> <a href=\"https://www.theguardian.com/football/2026/jul/02/modric-ronaldo-reunited-world-cup-croatia-portugal\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 02 Jul 2026 07:00:06 GMT"
+    },
+    {
+      "title": "A goal, a red and a LeBron James shout: Folarin Balogun gets the spotlight in US’s wild World Cup win",
+      "detail": "<p>The versatile striker was dangerous in his time on the field on Wednesday, but that time was prematurely ended with a surprising ejection</p><p>The day after<strong> </strong>the US supreme court <a href=\"https://www.theguardian.com/us-news/2026/jun/30/us-supreme-court-bithright-citizenship\">upheld</a> birthright citizenship, Folarin Balogun – a player who wouldn’t have even been on the pitch if not for the longstanding, constitutional law – pushed the United States through to the World Cup last 16. Just two days short of his 25th birthday, Balogun scored the opening goal in <a href=\"https://www.theguardian.com/football/2026/jul/01/usa-bosnia-and-herzegovina-game-report-world-cup\">the US’s 2-0 victory over Bosnia and Herzegovina</a>, his third of the tournament.</p><p>Then, about 20 minutes later, Balogun was sent off, given a straight red card for what appeared to be inadvertent contact with Bosnia and Herzegovina defender Tarik Muharemović. It was a shocking turn of events for the Monaco forward, who was among the US’s best performers on Wednesday, as he has been for the entirety of the tournament.</p> <a href=\"https://www.theguardian.com/football/2026/jul/01/folarin-balogun-red-card-goal-usmnt-world-cup-birthright-citizenship\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 02 Jul 2026 05:11:35 GMT"
     }
   ],
   "teams": [
@@ -12990,16 +13053,16 @@
       "code": "RSA",
       "factors": {
         "strength": 66,
-        "form": 74,
+        "form": 72,
         "path": 66,
         "squad": 70,
-        "margin": 72
+        "margin": 71
       },
       "tournament": {
         "champion": 0.0,
         "final": 0.2,
-        "semifinal": 1.3,
-        "quarterfinal": 8.6,
+        "semifinal": 1.2,
+        "quarterfinal": 8.1,
         "change": -0.1
       }
     },
@@ -13049,15 +13112,15 @@
         "strength": 76,
         "form": 72,
         "path": 61,
-        "squad": 56,
+        "squad": 54,
         "margin": 74
       },
       "tournament": {
-        "champion": 0.1,
+        "champion": 0.0,
         "final": 0.2,
         "semifinal": 1.5,
-        "quarterfinal": 10.3,
-        "change": -0.3
+        "quarterfinal": 10.1,
+        "change": -0.4
       }
     },
     {
@@ -13150,8 +13213,8 @@
       "tournament": {
         "champion": 0.8,
         "final": 2.2,
-        "semifinal": 7.1,
-        "quarterfinal": 23.0,
+        "semifinal": 7.2,
+        "quarterfinal": 23.3,
         "change": -0.7
       }
     },
@@ -13358,9 +13421,9 @@
       },
       "tournament": {
         "champion": 6.8,
-        "final": 13.2,
-        "semifinal": 28.0,
-        "quarterfinal": 58.2,
+        "final": 13.3,
+        "semifinal": 28.2,
+        "quarterfinal": 58.5,
         "change": 0.0
       }
     },
@@ -13586,8 +13649,8 @@
       },
       "tournament": {
         "champion": 14.5,
-        "final": 23.9,
-        "semifinal": 41.1,
+        "final": 23.8,
+        "semifinal": 41.0,
         "quarterfinal": 58.9,
         "change": 1.0
       }
@@ -13897,18 +13960,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1767,
+      "eventCount": 1776,
       "manualEventCount": 3,
-      "rawNewsCount": 1764,
+      "rawNewsCount": 1773,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1767,
-      "applied": 1642,
+      "watched": 1776,
+      "applied": 1650,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1762,
+      "singleSource": 1771,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -13929,7 +13992,7 @@
       },
       "south-africa": {
         "attack": 0.0,
-        "defense": 0.0,
+        "defense": -2.55,
         "goalkeeper": -2.15,
         "path": -0.10000000000000009,
         "squad": -3.15
@@ -13953,7 +14016,7 @@
         "defense": -2.55,
         "goalkeeper": -2.15,
         "path": -6.789999999999999,
-        "squad": -20.75
+        "squad": -22.9
       },
       "bosnia-herzegovina": {
         "attack": -2.55,
@@ -24549,107 +24612,44 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-02T04:43:23.481026+00:00",
+    "generatedAt": "2026-07-02T08:15:33.499102+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
     "items": [
       {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 6.6,
-        "currentChampion": 6.8,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "八强概率上升 +1.7%",
-        "reasons": [
-          "八强概率上升 +1.7%",
-          "四强概率上升 +0.7%",
-          "决赛概率上升 +0.3%",
-          "可入模型事件新增 8 条"
-        ]
-      },
-      {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 1.0,
-        "currentChampion": 0.8,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "状态盘下调 -2.5",
-        "reasons": [
-          "状态盘下调 -2.5",
-          "八强概率下降 -1.9%",
-          "四强概率下降 -1.1%",
-          "决赛概率下降 -0.4%",
-          "可入模型事件新增 8 条"
-        ]
-      },
-      {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 3.5,
-        "currentChampion": 3.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.1%",
-        "reasons": [
-          "四强概率上升 +0.1%",
-          "可入模型事件新增 8 条"
-        ]
-      },
-      {
         "team": "canada",
         "name": "加拿大",
         "code": "CAN",
-        "previousChampion": 0.0,
-        "currentChampion": 0.1,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.2%",
+        "previousChampion": 0.1,
+        "currentChampion": 0.0,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "人员盘下调 -2.1",
         "reasons": [
-          "八强概率上升 +0.2%",
+          "人员盘下调 -2.1",
+          "八强概率下降 -0.2%",
           "可入模型事件新增 8 条"
         ]
       }
     ],
     "summary": {
-      "up": 3,
+      "up": 0,
       "down": 1,
-      "largestUp": {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 6.6,
-        "currentChampion": 6.8,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "八强概率上升 +1.7%",
-        "reasons": [
-          "八强概率上升 +1.7%",
-          "四强概率上升 +0.7%",
-          "决赛概率上升 +0.3%",
-          "可入模型事件新增 8 条"
-        ]
-      },
+      "largestUp": null,
       "largestDown": {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 1.0,
-        "currentChampion": 0.8,
-        "change": -0.2,
+        "team": "canada",
+        "name": "加拿大",
+        "code": "CAN",
+        "previousChampion": 0.1,
+        "currentChampion": 0.0,
+        "change": -0.1,
         "direction": "down",
-        "reason": "状态盘下调 -2.5",
+        "reason": "人员盘下调 -2.1",
         "reasons": [
-          "状态盘下调 -2.5",
-          "八强概率下降 -1.9%",
-          "四强概率下降 -1.1%",
-          "决赛概率下降 -0.4%",
+          "人员盘下调 -2.1",
+          "八强概率下降 -0.2%",
           "可入模型事件新增 8 条"
         ]
       }
