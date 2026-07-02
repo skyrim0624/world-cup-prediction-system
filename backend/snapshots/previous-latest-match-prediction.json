@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-01T21:08:53.320574+00:00",
+  "updatedAt": "2026-07-01T22:49:19.022467+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -12822,6 +12822,41 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 01 Jul 2026 18:24:07 GMT"
+    },
+    {
+      "title": "No time for England to adapt to altitude - Tuchel",
+      "detail": "Mexico will have a \"huge advantage\" against England in the World Cup last-16 tie because of the altitude of the Azteca Stadium in Mexico City, says head coach Thomas Tuchel.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 22:11:59 GMT"
+    },
+    {
+      "title": "'Why not take advantage?' - did hydration breaks spark England comeback?",
+      "detail": "England came from behind to beat DR Congo and reach the last 16 of the World Cup, but did the momentum noticeably swing their way after the hydration breaks?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 21:23:18 GMT"
+    },
+    {
+      "title": "World Cup: Kane rescues England - 5 Live reaction",
+      "detail": "Harry Kane scores twice to see off DR Congo and send England to the Azteca Stadium.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 19:43:00 GMT"
+    },
+    {
+      "title": "USA v Bosnia and Herzegovina: World Cup 2026 last 32 – live",
+      "detail": "<p>⚽️ Kick-off time: 5pm local/10am AEST/1am BST/8pm EDT<br>⚽️ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"https://www.theguardian.com/football/world-cup-2026/overview\">Bracket</a> | <a href=\"mailto:beau.dure@theguardian.com\">Mail Beau</a></p><p><strong>Familiar face</strong></p><p>For many years, Wisconsin-born <strong>Esmir Bajraktarević</strong> was part of the US soccer pipeline. He played for youth national teams. He worked his way up through the youth ranks at the New England Revolution and overlapped just slightly with US goalkeeper <strong>Matt Turner.</strong></p><p>He didn’t miss, slotting his attempt just underneath Donnarumma’s gloves as the keeper dove to his left. Bajraktarević peeled off to the corner flag and held his Bosnia aloft for the home supporters to admire: <em>Zmajevi</em> were back in the World Cup at Italy’s expense.</p><p>That sort of fearlessness in the big moment, coupled with experience scuppering a 2026 World Cup co-host’s home-field advantage, makes Bajraktarević and his team a compelling first knockout adversary. for the US.</p><p>Bajraktarević started against Canada and Qatar and came off the bench against the Swiss, logging 214 minutes (including stoppage time) and operating as a recipient for progressive passes. Only Ivan Bašić has played more passes into the box than Bajraktarević’s five for Bosnia and Herzegovina, per Futi, while his 70 attacking-third touches trail his opposite winger, Kerim Alajbegović.</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/01/usa-v-bosnia-and-herzegovina-world-cup-2026-last-32-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 22:28:56 GMT"
+    },
+    {
+      "title": "Harry Kane the one who saves Tuchel as England avoid another traumatic exit | Barney Ronay",
+      "detail": "<p>Captain played in deep horror of Iceland defeat and he rescued an England team who were sliding towards disaster</p><p>Well maybe, you’re gonna be the one that saves me. On a wild, boisterous, often agonising afternoon under the giant Victorian railway dome of the Atlanta Stadium, the Democratic Republic of Harry Kane progressed to the last 16 of the World Cup.</p><p>With England playing like a team terrified of their own feet and 1-0 down to an excellent DR Congo, Kane decided <a href=\"https://www.theguardian.com/football/2026/jul/01/england-dr-congo-world-cup-2026-last-32-match-report\">something else was going to happen</a>, scoring two goals in 11 minutes towards the end to turn disastrous defeat into joyful relief. In the process he also saved Thomas Tuchel’s job and perhaps the jobs of his bosses at the Football Association. Because England really had gone at points in this game.</p> <a href=\"https://www.theguardian.com/football/2026/jul/01/harry-kane-saves-england-a-moment-of-generational-trauma-in-waiting\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 20:51:22 GMT"
     }
   ],
   "teams": [
@@ -13757,18 +13792,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1747,
+      "eventCount": 1752,
       "manualEventCount": 3,
-      "rawNewsCount": 1744,
+      "rawNewsCount": 1749,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1747,
-      "applied": 1622,
+      "watched": 1752,
+      "applied": 1627,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1742,
+      "singleSource": 1747,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -24409,7 +24444,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-01T21:09:15.366228+00:00",
+    "generatedAt": "2026-07-01T22:49:38.940933+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
