@@ -25658,5 +25658,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-aaa7f82eba63",
+    "title": "Secret location & sleep devices: England bid to combat noisy Mexico fans",
+    "summary": "England are taking precautions to ensure boisterous locals do not disrupt their preparations in Mexico.",
+    "source": "bbc",
+    "team": "mexico",
+    "status": "single_source",
+    "published_at": "Thu, 02 Jul 2026 19:26:15 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c74y7jwj30eo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-2070eef8028a",
+    "title": "Ghosts of the Azteca: England return to scene of infamous Maradona handball",
+    "summary": "<p>Mexico have a formidable record in their iconic stadium but for many it will always be associated with one player</p><p>As soon as the World Cup draw was completed in Washington DC last December, the date went into the diary, circled in bold by every England fan that hoped to travel, and millions more who knew they would not. Sunday 5 July, Mexico City. If everything went to plan and Thomas Tuchel’s team topped Group L and won their last-32 tie, they would be going to the Azteca Stadium for the last 16.</p><p>There was another element in play. If Mexico won their group and advanced in the last 32, they would provide the opposition. Just imagine. England to play a critical knockout tie against one of the host nations in their back yard. It is a back yard where Mexico boast a fearsome record, where they feel close to invincible, owing in part to it being about 2,240 metres above sea level. The altitude can spin the heads of opposing players, burn their lungs. It does not affect Mexico.</p> <a href=\"https://www.theguardian.com/football/2026/jul/02/azteca-england-diego-maradona-handball-mexico-world-cup\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "mexico",
+    "status": "single_source",
+    "published_at": "Thu, 02 Jul 2026 18:00:06 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/02/azteca-england-diego-maradona-handball-mexico-world-cup",
+    "category": "general",
+    "factor": "path",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

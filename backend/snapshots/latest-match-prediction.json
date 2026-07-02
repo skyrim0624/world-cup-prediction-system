@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-02T17:56:59.374838+00:00",
+  "updatedAt": "2026-07-02T19:44:24.039041+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -13452,6 +13452,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 02 Jul 2026 17:46:33 GMT"
+    },
+    {
+      "title": "Secret location & sleep devices: England bid to combat noisy Mexico fans",
+      "detail": "England are taking precautions to ensure boisterous locals do not disrupt their preparations in Mexico.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 19:26:15 GMT"
+    },
+    {
+      "title": "Ghosts of the Azteca: England return to scene of infamous Maradona handball",
+      "detail": "<p>Mexico have a formidable record in their iconic stadium but for many it will always be associated with one player</p><p>As soon as the World Cup draw was completed in Washington DC last December, the date went into the diary, circled in bold by every England fan that hoped to travel, and millions more who knew they would not. Sunday 5 July, Mexico City. If everything went to plan and Thomas Tuchel’s team topped Group L and won their last-32 tie, they would be going to the Azteca Stadium for the last 16.</p><p>There was another element in play. If Mexico won their group and advanced in the last 32, they would provide the opposition. Just imagine. England to play a critical knockout tie against one of the host nations in their back yard. It is a back yard where Mexico boast a fearsome record, where they feel close to invincible, owing in part to it being about 2,240 metres above sea level. The altitude can spin the heads of opposing players, burn their lungs. It does not affect Mexico.</p> <a href=\"https://www.theguardian.com/football/2026/jul/02/azteca-england-diego-maradona-handball-mexico-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 18:00:06 GMT"
     }
   ],
   "teams": [
@@ -14387,18 +14401,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1837,
+      "eventCount": 1839,
       "manualEventCount": 3,
-      "rawNewsCount": 1834,
+      "rawNewsCount": 1836,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1837,
-      "applied": 1702,
+      "watched": 1839,
+      "applied": 1704,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1832,
+      "singleSource": 1834,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -25039,90 +25053,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-02T17:57:21.342446+00:00",
+    "generatedAt": "2026-07-02T19:44:45.816055+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.2,
-        "currentChampion": 21.3,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.4%",
-        "reasons": [
-          "八强概率上升 +0.4%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 23 条"
-        ]
-      },
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 6.8,
-        "currentChampion": 6.9,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.2%",
-        "reasons": [
-          "八强概率上升 +0.2%",
-          "四强概率上升 +0.1%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 23 条"
-        ]
-      },
-      {
-        "team": "japan",
-        "name": "日本",
-        "code": "JPN",
-        "previousChampion": 2.1,
-        "currentChampion": 2.0,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 23 条",
-        "reasons": [
-          "可入模型事件新增 23 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 2,
-      "down": 1,
-      "largestUp": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.2,
-        "currentChampion": 21.3,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.4%",
-        "reasons": [
-          "八强概率上升 +0.4%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 23 条"
-        ]
-      },
-      "largestDown": {
-        "team": "japan",
-        "name": "日本",
-        "code": "JPN",
-        "previousChampion": 2.1,
-        "currentChampion": 2.0,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 23 条",
-        "reasons": [
-          "可入模型事件新增 23 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
