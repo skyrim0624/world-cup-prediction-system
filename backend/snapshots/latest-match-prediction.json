@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-02T00:15:27.987734+00:00",
+  "updatedAt": "2026-07-02T04:43:01.618169+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -542,11 +542,11 @@
       "probability": 84,
       "title": "德国小组第一概率上升",
       "details": [
-        "德国夺冠概率 +0.1%",
+        "德国夺冠概率 ±0.0%",
         "库拉索路径盘下调 ±0.0%",
         "同组竞争队出线门槛抬高"
       ],
-      "championShift": "+0.1%",
+      "championShift": "±0.0%",
       "tone": "green"
     },
     {
@@ -554,11 +554,11 @@
       "probability": 11,
       "title": "两队路径保持胶着",
       "details": [
-        "德国夺冠概率 ±0.0%",
+        "德国夺冠概率 -0.1%",
         "库拉索夺冠概率 ±0.0%",
         "小组第一仍取决于末轮和净胜球"
       ],
-      "championShift": "±0.0% / ±0.0%",
+      "championShift": "-0.1% / ±0.0%",
       "tone": "gold"
     },
     {
@@ -567,7 +567,7 @@
       "title": "库拉索半区压力下降",
       "details": [
         "库拉索夺冠概率 ±0.0%",
-        "德国潜在淘汰赛路径变难 ±0.0%",
+        "德国潜在淘汰赛路径变难 -0.1%",
         "小组第二路径风险上升"
       ],
       "championShift": "±0.0%",
@@ -12906,6 +12906,62 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 01 Jul 2026 22:58:29 GMT"
+    },
+    {
+      "title": "USA march on but will Balogun red card prove costly?",
+      "detail": "Mauricio Pochettino's USA side set up a World Cup last-16 meeting with Belgium, but how costly will forward Folarin Balogun's red card prove?",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 02 Jul 2026 03:53:14 GMT"
+    },
+    {
+      "title": "Latest ever winner, comeback and controversy - Senegal's remarkable exit",
+      "detail": "Late drama, controversy, history and heartbreak - the World Cup last-32 tie between Belgium and Senegal had everything.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 01:28:40 GMT"
+    },
+    {
+      "title": "Balogun scores & sees red as USA beat Bosnia",
+      "detail": "Folarin Balogun scores and is later sent off as the United States advance past a lacklustre Bosnia-Herzegovina in Santa Clara to reach the last 16 of the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 03:11:24 GMT"
+    },
+    {
+      "title": "Goalscorer Balogun sent off for USA",
+      "detail": "USA forward Folarin Balogun is shown a straight red card for a challenge on Bosnia-Herzegovina's Tarik Muharemovic during their World Cup match.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 02 Jul 2026 02:12:05 GMT"
+    },
+    {
+      "title": "Balogun gives USA deserved lead over Bosnia",
+      "detail": "Folarin Balogun gives the USA the lead against Bosnia-Herzegovina in their round of 32 match at the San Francisco Bay Area Stadium.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 01:15:26 GMT"
+    },
+    {
+      "title": "Steely USA overcome Bosnia and Herzegovina and controversial red to reach World Cup last 16",
+      "detail": "<p><a href=\"https://www.theguardian.com/football/usfootballteam\">The US</a> had their hands on their heads. Weston McKennie’s face betrayed a look of total disbelief. <a href=\"https://www.theguardian.com/football/mauricio-pochettino\">Mauricio Pochettino</a> waved his hands towards the sky, incredulous.</p><p><a href=\"https://www.theguardian.com/football/live/2026/jul/01/usa-v-bosnia-and-herzegovina-world-cup-2026-last-32-live\">Folarin Balogun had been sent off</a> after a seemingly innocent collision with Bosnia and Herzegovina’s Tarik Muharemović that saw the US striker land a foot on his opponent’s ankle. Just like that, the US’s high-flying World Cup journey had the feel of impending doom. The temperature had soared on a previously cool, sunny evening at San Francisco Bay Area Stadium. And it wouldn’t fall until Malik Tillman had his say.</p> <a href=\"https://www.theguardian.com/football/2026/jul/01/usa-bosnia-and-herzegovina-game-report-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 02:44:56 GMT"
+    },
+    {
+      "title": "Germany are no longer a tournament team and must reconnect with our own identity | Philipp Lahm",
+      "detail": "<p>Germany’s third early World Cup exit in a row is not down to a lack of talent or the name of the coach, but not knowing how they want to play </p><p>I am stunned. Germany <a href=\"https://www.theguardian.com/football/2026/jun/30/germany-paraguay-world-cup-2026-last-32-match-report\">have been eliminated</a> early from a World Cup for the third time in a row. I need time to recover from this. The key word that needs to be discussed is continuity – something the national team have lacked for a decade. <a href=\"https://www.theguardian.com/football/2026/jun/28/germany-world-cup-2024-jurgen-klopp-julian-nagelsmann\">German football hasn’t decided how it wants to play</a>. There are constantly new ideas, and time and again new players in new positions. Julian Nagelsmann has experimented too much, and not just during this tournament. Yet developing a team takes years.</p><p>Germany have always been successful when player roles were clearly defined, the hierarchy was established and the team had a clear concept of how to attack and defend. That conviction was completely missing. At this World Cup, the team didn’t look as if they had gone through the process that every team must undergo.</p> <a href=\"https://www.theguardian.com/football/2026/jul/02/germany-no-longer-tournament-team-must-reconnect-with-own-identity-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 02:59:08 GMT"
+    },
+    {
+      "title": "David beats Goliath: the biggest upsets of the World Cup so far | Nick Evershed",
+      "detail": "<p>Results with the greatest rankings difference at the tournament in North America</p><p>Ghana and Cape Verde were ranked 73rd and 67th in the world respectively heading into the World Cup. However, defying the odds, both teams have managed to push through the group stage and into the last 32, winning and drawing against opponents with far higher Fifa rankings.</p><p>This chart shows the biggest upsets of the tournament so far, and the difference in ranking for every team. This only shows results with a rankings difference greater than 30, so some matches, like <a href=\"https://www.theguardian.com/football/2026/jun/14/australia-socceroos-turkey-world-cup-2026-group-d-match-report\">Australia’s win against Turkey</a>, don’t make the cut.</p> <a href=\"https://www.theguardian.com/news/ng-interactive/2026/jul/02/world-cup-2026-biggest-upsets-data\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 00:28:50 GMT"
     }
   ],
   "teams": [
@@ -12943,7 +12999,7 @@
         "champion": 0.0,
         "final": 0.2,
         "semifinal": 1.3,
-        "quarterfinal": 8.5,
+        "quarterfinal": 8.6,
         "change": -0.1
       }
     },
@@ -12997,11 +13053,11 @@
         "margin": 74
       },
       "tournament": {
-        "champion": 0.0,
+        "champion": 0.1,
         "final": 0.2,
         "semifinal": 1.5,
-        "quarterfinal": 10.1,
-        "change": -0.4
+        "quarterfinal": 10.3,
+        "change": -0.3
       }
     },
     {
@@ -13010,7 +13066,7 @@
       "code": "BIH",
       "factors": {
         "strength": 66,
-        "form": 74,
+        "form": 72,
         "path": 65,
         "squad": 74,
         "margin": 74
@@ -13018,8 +13074,8 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 0.9,
-        "quarterfinal": 6.9,
+        "semifinal": 0.8,
+        "quarterfinal": 6.3,
         "change": -0.1
       }
     },
@@ -13086,17 +13142,17 @@
       "code": "MAR",
       "factors": {
         "strength": 84,
-        "form": 78,
+        "form": 76,
         "path": 64,
         "squad": 74,
         "margin": 79
       },
       "tournament": {
-        "champion": 1.0,
-        "final": 2.6,
-        "semifinal": 8.2,
-        "quarterfinal": 24.9,
-        "change": -0.5
+        "champion": 0.8,
+        "final": 2.2,
+        "semifinal": 7.1,
+        "quarterfinal": 23.0,
+        "change": -0.7
       }
     },
     {
@@ -13151,8 +13207,8 @@
       "tournament": {
         "champion": 0.7,
         "final": 2.2,
-        "semifinal": 7.2,
-        "quarterfinal": 29.0,
+        "semifinal": 7.3,
+        "quarterfinal": 29.5,
         "change": -0.3
       }
     },
@@ -13225,11 +13281,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 3.5,
+        "champion": 3.6,
         "final": 7.9,
-        "semifinal": 18.1,
+        "semifinal": 18.2,
         "quarterfinal": 32.5,
-        "change": -2.3
+        "change": -2.2
       }
     },
     {
@@ -13301,11 +13357,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 6.6,
-        "final": 12.9,
-        "semifinal": 27.3,
-        "quarterfinal": 56.5,
-        "change": -0.2
+        "champion": 6.8,
+        "final": 13.2,
+        "semifinal": 28.0,
+        "quarterfinal": 58.2,
+        "change": 0.0
       }
     },
     {
@@ -13380,7 +13436,7 @@
         "champion": 2.1,
         "final": 5.1,
         "semifinal": 12.8,
-        "quarterfinal": 38.8,
+        "quarterfinal": 38.9,
         "change": -1.0
       }
     },
@@ -13454,7 +13510,7 @@
       },
       "tournament": {
         "champion": 20.5,
-        "final": 30.3,
+        "final": 30.2,
         "semifinal": 46.0,
         "quarterfinal": 57.2,
         "change": 8.9
@@ -13530,8 +13586,8 @@
       },
       "tournament": {
         "champion": 14.5,
-        "final": 23.8,
-        "semifinal": 41.0,
+        "final": 23.9,
+        "semifinal": 41.1,
         "quarterfinal": 58.9,
         "change": 1.0
       }
@@ -13841,18 +13897,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1759,
+      "eventCount": 1767,
       "manualEventCount": 3,
-      "rawNewsCount": 1756,
+      "rawNewsCount": 1764,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1759,
-      "applied": 1634,
+      "watched": 1767,
+      "applied": 1642,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1754,
+      "singleSource": 1762,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -13900,7 +13956,7 @@
         "squad": -20.75
       },
       "bosnia-herzegovina": {
-        "attack": 0.0,
+        "attack": -2.55,
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": 0.0,
@@ -13928,7 +13984,7 @@
         "squad": -17.599999999999998
       },
       "morocco": {
-        "attack": -4.699999999999999,
+        "attack": -7.249999999999999,
         "defense": -4.3,
         "goalkeeper": -2.15,
         "path": -6.54,
@@ -24493,17 +24549,110 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-02T00:15:50.288858+00:00",
+    "generatedAt": "2026-07-02T04:43:23.481026+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 6.6,
+        "currentChampion": 6.8,
+        "change": 0.2,
+        "direction": "up",
+        "reason": "八强概率上升 +1.7%",
+        "reasons": [
+          "八强概率上升 +1.7%",
+          "四强概率上升 +0.7%",
+          "决赛概率上升 +0.3%",
+          "可入模型事件新增 8 条"
+        ]
+      },
+      {
+        "team": "morocco",
+        "name": "摩洛哥",
+        "code": "MAR",
+        "previousChampion": 1.0,
+        "currentChampion": 0.8,
+        "change": -0.2,
+        "direction": "down",
+        "reason": "状态盘下调 -2.5",
+        "reasons": [
+          "状态盘下调 -2.5",
+          "八强概率下降 -1.9%",
+          "四强概率下降 -1.1%",
+          "决赛概率下降 -0.4%",
+          "可入模型事件新增 8 条"
+        ]
+      },
+      {
+        "team": "germany",
+        "name": "德国",
+        "code": "GER",
+        "previousChampion": 3.5,
+        "currentChampion": 3.6,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.1%",
+        "reasons": [
+          "四强概率上升 +0.1%",
+          "可入模型事件新增 8 条"
+        ]
+      },
+      {
+        "team": "canada",
+        "name": "加拿大",
+        "code": "CAN",
+        "previousChampion": 0.0,
+        "currentChampion": 0.1,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.2%",
+        "reasons": [
+          "八强概率上升 +0.2%",
+          "可入模型事件新增 8 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 3,
+      "down": 1,
+      "largestUp": {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 6.6,
+        "currentChampion": 6.8,
+        "change": 0.2,
+        "direction": "up",
+        "reason": "八强概率上升 +1.7%",
+        "reasons": [
+          "八强概率上升 +1.7%",
+          "四强概率上升 +0.7%",
+          "决赛概率上升 +0.3%",
+          "可入模型事件新增 8 条"
+        ]
+      },
+      "largestDown": {
+        "team": "morocco",
+        "name": "摩洛哥",
+        "code": "MAR",
+        "previousChampion": 1.0,
+        "currentChampion": 0.8,
+        "change": -0.2,
+        "direction": "down",
+        "reason": "状态盘下调 -2.5",
+        "reasons": [
+          "状态盘下调 -2.5",
+          "八强概率下降 -1.9%",
+          "四强概率下降 -1.1%",
+          "决赛概率下降 -0.4%",
+          "可入模型事件新增 8 条"
+        ]
+      }
     }
   }
 }

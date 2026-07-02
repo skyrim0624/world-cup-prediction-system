@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-01T22:49:19.022467+00:00",
+  "updatedAt": "2026-07-02T00:15:27.987734+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -12857,6 +12857,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 01 Jul 2026 20:51:22 GMT"
+    },
+    {
+      "title": "Why did England struggle against DR Congo - and what can they learn?",
+      "detail": "A tactical analysis of England's victory over DR Congo - and what it might teach them for their next World Cup match against Mexico.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 00:07:51 GMT"
+    },
+    {
+      "title": "Tielemans & Trossard go from heated row to rescuing Belgium",
+      "detail": "Belgium's Leandro Trossard and Youri Tielemans go from arguing with each other during the hydration break to combining to get a crucial equalising goal against Senegal in Seattle.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Wed, 01 Jul 2026 22:50:40 GMT"
+    },
+    {
+      "title": "Tielemans scores late extra-time penalty to send Belgium into last 16",
+      "detail": "Belgium score two late goals to force extra time against Senegal where Youri Tielemans scores a late penalty following a VAR review as Belgium win 3-2 to reach the last 16.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 23:32:22 GMT"
+    },
+    {
+      "title": "Tielemans scores late extra-time penalty in dramatic end to match",
+      "detail": "Youri Tielemans scores a dramatic late penalty in extra time to see Belgium advance to the last 16 after a 3-2 victory over Senegal in Seattle.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 23:40:23 GMT"
+    },
+    {
+      "title": "What you need to know about England's last-16 opponents Mexico",
+      "detail": "England will face Mexico in the World Cup round of 16. Here is what you need to know about them.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 23:02:52 GMT"
+    },
+    {
+      "title": "Sarr fires home to double Senegal's lead against Belgium",
+      "detail": "Ismaila Sarr shows off his speed to get on the end of Moussa Niakhaté's long ball, before slamming the ball into the net to put Senegal further in control of their World Cup round of 32 clash against Belgium.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 23:43:34 GMT"
+    },
+    {
+      "title": "Tielemans’ controversial late penalty caps Belgium comeback over Senegal",
+      "detail": "<p>A seesawing classic of a contest had just ticked into the 122nd ­minute, penalties all but a formality, when the referee, Saíd Martínez, wandered back towards the centre circle to award Belgium a stoppage-time penalty. The VAR, Guillermo Pacheco Larios, had highlighted Lamine Kamara swiping away Youri Tielemans’s left ankle in the seconds before Dodi Lukébakio had skimmed the crossbar. For Belgium, it was a get out of jail card, Tielemans converting the spot-kick to propel Rudi Garcia’s side into the last 16. After 85 minutes, they trailed Senegal 2-0.</p><p>Just as it seemed Belgium would join Germany and the Netherlands in the World Cup departures lounge, Garcia’s side rallied to take an entertaining game to extra time. With an early exit and second-half stoppage time looming, Romelu Lukaku, a half-time substitute, and Tielemans scored a goal apiece as Belgium struck twice in three minutes to cancel out goals by Habib Diarra and Ismaïla Sarr.</p> <a href=\"https://www.theguardian.com/football/2026/jul/01/belgium-senegal-2026-world-cup-last-32-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 01 Jul 2026 22:58:29 GMT"
     }
   ],
   "teams": [
@@ -13323,7 +13372,7 @@
       "factors": {
         "strength": 84,
         "form": 83,
-        "path": 74,
+        "path": 73,
         "squad": 75,
         "margin": 80
       },
@@ -13792,18 +13841,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1752,
+      "eventCount": 1759,
       "manualEventCount": 3,
-      "rawNewsCount": 1749,
+      "rawNewsCount": 1756,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1752,
-      "applied": 1627,
+      "watched": 1759,
+      "applied": 1634,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1747,
+      "singleSource": 1754,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -13987,7 +14036,7 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 1.69,
+        "path": 0.7699999999999999,
         "squad": -7.25
       },
       "egypt": {
@@ -24327,13 +24376,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-07-01",
+      "referenceDate": "2026-07-02",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 18,
-      "oldestAgeDays": 92,
+      "newestAgeDays": 19,
+      "oldestAgeDays": 93,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -24444,7 +24493,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-01T22:49:38.940933+00:00",
+    "generatedAt": "2026-07-02T00:15:50.288858+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
