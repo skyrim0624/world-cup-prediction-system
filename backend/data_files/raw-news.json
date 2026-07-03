@@ -26736,5 +26736,61 @@
     "factor": "path",
     "direction": -1,
     "confidence": 0.66
+  },
+  {
+    "id": "bbc-6d11e71295e2",
+    "title": "'Everyone loved Diogo' - Jota remembered one year on",
+    "summary": "On the first anniversary of Diogo Jota's death, Caoimhin Kelleher, Arne Slot, Nuno Espirito Santo, Conor Coady and Paulo Goncalves share their memories of the former Liverpool and Wolves forward.",
+    "source": "bbc",
+    "team": "south-africa",
+    "status": "single_source",
+    "published_at": "Fri, 03 Jul 2026 13:18:43 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cm2j8lzg2wjo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-018038b7c723",
+    "title": "Denmark defender Thomsen signs two-year London City deal",
+    "summary": "London City Lionesses sign Denmark international defender Janni Thomsen from Utah Royals FC.",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Fri, 03 Jul 2026 14:20:27 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c77ym71vn50o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "defense",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-88745901bf35",
+    "title": "What might Robinson's Aberdeen look like this season?",
+    "summary": "As Stephen Robinson gets set for his first full season as Aberdeen head coach, BBC Sport Scotland assesses what his side might look like.",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Fri, 03 Jul 2026 14:53:55 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c4gyv1k597do?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-e9eb766b67c2",
+    "title": "Listen: Can Simoball survive Premiership? St Johnstone season preview",
+    "summary": "Saints are back. Can Simoball, new signings and Toby Steward keep them up?",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Fri, 03 Jul 2026 15:00:00 GMT",
+    "url": "https://www.bbc.co.uk/sounds/play/p0nwpgph?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

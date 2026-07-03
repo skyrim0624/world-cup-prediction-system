@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-03T13:00:38.822021+00:00",
+  "updatedAt": "2026-07-03T15:34:37.906234+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -13991,6 +13991,34 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Fri, 03 Jul 2026 11:12:57 GMT"
+    },
+    {
+      "title": "'Everyone loved Diogo' - Jota remembered one year on",
+      "detail": "On the first anniversary of Diogo Jota's death, Caoimhin Kelleher, Arne Slot, Nuno Espirito Santo, Conor Coady and Paulo Goncalves share their memories of the former Liverpool and Wolves forward.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 13:18:43 GMT"
+    },
+    {
+      "title": "Denmark defender Thomsen signs two-year London City deal",
+      "detail": "London City Lionesses sign Denmark international defender Janni Thomsen from Utah Royals FC.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 14:20:27 GMT"
+    },
+    {
+      "title": "What might Robinson's Aberdeen look like this season?",
+      "detail": "As Stephen Robinson gets set for his first full season as Aberdeen head coach, BBC Sport Scotland assesses what his side might look like.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 14:53:55 GMT"
+    },
+    {
+      "title": "Listen: Can Simoball survive Premiership? St Johnstone season preview",
+      "detail": "Saints are back. Can Simoball, new signings and Toby Steward keep them up?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 15:00:00 GMT"
     }
   ],
   "teams": [
@@ -14926,18 +14954,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1914,
+      "eventCount": 1918,
       "manualEventCount": 3,
-      "rawNewsCount": 1911,
+      "rawNewsCount": 1915,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1914,
-      "applied": 1773,
+      "watched": 1918,
+      "applied": 1777,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1909,
+      "singleSource": 1913,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -25578,108 +25606,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-03T13:00:55.826011+00:00",
+    "generatedAt": "2026-07-03T15:34:59.760020+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "belgium",
-        "name": "比利时",
-        "code": "BEL",
-        "previousChampion": 2.1,
-        "currentChampion": 1.9,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "人员盘下调 -2.6",
-        "reasons": [
-          "人员盘下调 -2.6",
-          "八强概率下降 -1.8%",
-          "四强概率下降 -0.9%",
-          "决赛概率下降 -0.5%",
-          "可入模型事件新增 12 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 20.4,
-        "currentChampion": 20.5,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.2%",
-        "reasons": [
-          "四强概率上升 +0.2%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 12 条"
-        ]
-      },
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 6.8,
-        "currentChampion": 6.9,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 12 条",
-        "reasons": [
-          "可入模型事件新增 12 条"
-        ]
-      },
-      {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 4.6,
-        "currentChampion": 4.7,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.1%",
-        "reasons": [
-          "四强概率上升 +0.1%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 12 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 3,
-      "down": 1,
-      "largestUp": {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 20.4,
-        "currentChampion": 20.5,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.2%",
-        "reasons": [
-          "四强概率上升 +0.2%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 12 条"
-        ]
-      },
-      "largestDown": {
-        "team": "belgium",
-        "name": "比利时",
-        "code": "BEL",
-        "previousChampion": 2.1,
-        "currentChampion": 1.9,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "人员盘下调 -2.6",
-        "reasons": [
-          "人员盘下调 -2.6",
-          "八强概率下降 -1.8%",
-          "四强概率下降 -0.9%",
-          "决赛概率下降 -0.5%",
-          "可入模型事件新增 12 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
