@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-03T21:15:00.423045+00:00",
+  "updatedAt": "2026-07-03T22:36:03.560367+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -14166,6 +14166,41 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 03 Jul 2026 10:36:26 GMT"
+    },
+    {
+      "title": "Rice likely to be available for England v Mexico",
+      "detail": "Declan Rice is likely to be available to start England's World Cup tie against Mexico despite an ongoing injury issue.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 03 Jul 2026 22:02:50 GMT"
+    },
+    {
+      "title": "Egypt into last 16 after shootout victory against Australia",
+      "detail": "Egypt defeated Australia on penalties to claim their first ever win in the World Cup knockout stage and set up a last-16 tie with either Argentina or Cape Verde.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 21:45:03 GMT"
+    },
+    {
+      "title": "'I decided last minute!' - Salah on Panenka penalty",
+      "detail": "Mo Salah explains it was a last-minute decision to \"Panenka\" his penalty for Egypt after they beat Australia in a shootout to progress to the last 16 of the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 21:31:17 GMT"
+    },
+    {
+      "title": "Watch the full shootout as Egypt hold nerve to make World Cup last 16",
+      "detail": "Egypt defeat Australia on penalties to claim their first ever win in the World Cup knockout stage, and make it through to the last 16.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 21:54:10 GMT"
+    },
+    {
+      "title": "'History for the Pharaohs' - Egypt celebrate after winning shootout",
+      "detail": "Egypt celebrate as they win a World Cup knockout match for the first time after beating Australia 4-2 on penalties in Dallas to reach the last 16.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 21:27:02 GMT"
     }
   ],
   "teams": [
@@ -14177,15 +14212,15 @@
         "strength": 82,
         "form": 76,
         "path": 65,
-        "squad": 68,
+        "squad": 66,
         "margin": 76
       },
       "tournament": {
-        "champion": 0.5,
-        "final": 1.9,
-        "semifinal": 5.9,
-        "quarterfinal": 14.8,
-        "change": -1.0
+        "champion": 0.4,
+        "final": 1.7,
+        "semifinal": 5.5,
+        "quarterfinal": 14.1,
+        "change": -1.1
       }
     },
     {
@@ -14544,8 +14579,8 @@
       "tournament": {
         "champion": 1.2,
         "final": 3.9,
-        "semifinal": 10.6,
-        "quarterfinal": 22.7,
+        "semifinal": 10.7,
+        "quarterfinal": 23.1,
         "change": 0.6
       }
     },
@@ -14848,7 +14883,7 @@
       "tournament": {
         "champion": 1.0,
         "final": 3.3,
-        "semifinal": 9.3,
+        "semifinal": 9.4,
         "quarterfinal": 22.8,
         "change": 0.1
       }
@@ -14963,7 +14998,7 @@
         "champion": 0.1,
         "final": 0.4,
         "semifinal": 1.6,
-        "quarterfinal": 5.8,
+        "quarterfinal": 5.9,
         "change": 0.0
       }
     },
@@ -15019,8 +15054,8 @@
       "tournament": {
         "champion": 8.5,
         "final": 18.6,
-        "semifinal": 35.6,
-        "quarterfinal": 56.7,
+        "semifinal": 35.7,
+        "quarterfinal": 56.9,
         "change": -2.2
       }
     },
@@ -15101,18 +15136,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1939,
+      "eventCount": 1944,
       "manualEventCount": 3,
-      "rawNewsCount": 1936,
+      "rawNewsCount": 1941,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1939,
-      "applied": 1797,
+      "watched": 1944,
+      "applied": 1802,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1934,
+      "singleSource": 1939,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -15129,7 +15164,7 @@
         "defense": -7.25,
         "goalkeeper": 0.0,
         "path": -7.659999999999999,
-        "squad": -11.549999999999999
+        "squad": -13.7
       },
       "south-africa": {
         "attack": 0.0,
@@ -25753,23 +25788,27 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-03T21:15:22.705763+00:00",
+    "generatedAt": "2026-07-03T22:36:25.451614+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
     "items": [
       {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 4.7,
-        "currentChampion": 4.6,
+        "team": "mexico",
+        "name": "墨西哥",
+        "code": "MEX",
+        "previousChampion": 0.5,
+        "currentChampion": 0.4,
         "change": -0.1,
         "direction": "down",
-        "reason": "可入模型事件新增 9 条",
+        "reason": "人员盘下调 -2.2",
         "reasons": [
-          "可入模型事件新增 9 条"
+          "人员盘下调 -2.2",
+          "八强概率下降 -0.7%",
+          "四强概率下降 -0.4%",
+          "决赛概率下降 -0.2%",
+          "可入模型事件新增 5 条"
         ]
       }
     ],
@@ -25778,16 +25817,20 @@
       "down": 1,
       "largestUp": null,
       "largestDown": {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 4.7,
-        "currentChampion": 4.6,
+        "team": "mexico",
+        "name": "墨西哥",
+        "code": "MEX",
+        "previousChampion": 0.5,
+        "currentChampion": 0.4,
         "change": -0.1,
         "direction": "down",
-        "reason": "可入模型事件新增 9 条",
+        "reason": "人员盘下调 -2.2",
         "reasons": [
-          "可入模型事件新增 9 条"
+          "人员盘下调 -2.2",
+          "八强概率下降 -0.7%",
+          "四强概率下降 -0.4%",
+          "决赛概率下降 -0.2%",
+          "可入模型事件新增 5 条"
         ]
       }
     }
