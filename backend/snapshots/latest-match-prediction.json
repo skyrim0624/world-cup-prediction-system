@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-03T07:48:04.726702+00:00",
+  "updatedAt": "2026-07-03T10:44:25.707430+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -13816,6 +13816,97 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 03 Jul 2026 04:41:23 GMT"
+    },
+    {
+      "title": "Germany want Klopp talks as Nagelsmann resigns",
+      "detail": "The German football association is seeking talks with Jurgen Klopp about becoming their men's national team coach after Julian Nagelsmann resigned.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 10:17:01 GMT"
+    },
+    {
+      "title": "After World Cup goals are last year's signings finally set to deliver for Newcastle?",
+      "detail": "Anthony Elanga and Yoane Wissa both struggled in their first season at Newcastle, but five goals between at the World Cup them suggest things will be different next term.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 10:23:35 GMT"
+    },
+    {
+      "title": "BBC offers 'Stay Up or Catch Up' for England v Mexico",
+      "detail": "The BBC will be launching a special 'Stay Up or Catch Up' offer for its live coverage of England's game against Mexico at the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 10:39:10 GMT"
+    },
+    {
+      "title": "Real Madrid have 'no intention' of signing Fernandez",
+      "detail": "Real Madrid say they have \"no intention\" of trying to sign Enzo Fernandez from Chelsea this summer.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 09:32:28 GMT"
+    },
+    {
+      "title": "Arsenal sign Lioness Stanway from Bayern",
+      "detail": "England midfielder Georgia Stanway says she is joining Arsenal to \"win trophies and grow as a player\".",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 08:00:10 GMT"
+    },
+    {
+      "title": "Mahrez retires from Algeria duty after World Cup exit",
+      "detail": "Algeria captain Riyad Mahrez announces his retirement from international football after the Desert Foxes’ 2-0 defeat by Switzerland in the World Cup round of 32.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 08:41:00 GMT"
+    },
+    {
+      "title": "Aston Villa sign Norway midfielder Kielland",
+      "detail": "Norway midfielder Justine Kielland joins Aston Villa from German club Wolfsburg, subject to visa approval. Kielland joined Norwegian side Brann in 2023. During her time there, she helped the club reach the quarter-finals of the Women's Champions League, playing in 12 matches and scoring four goals.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 10:02:54 GMT"
+    },
+    {
+      "title": "Napoli appoint Allegri as Conte's successor",
+      "detail": "Napoli appoint former AC Milan and Juventus boss Massimiliano Allegri as head coach on a three-year contract following Antonio Conte’s departure.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 09:59:57 GMT"
+    },
+    {
+      "title": "Cremers leaves Wales role as key Bellamy assistant",
+      "detail": "Piet Cremers quits his position as Wales men's assistant coach, leaving boss Craig Bellamy without one of his key backroom staff.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 09:47:34 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "David Villa on Spain, Messi and winning the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 08:11:00 GMT"
+    },
+    {
+      "title": "Lionel Messi makes his Miami homecoming with Argentina: ‘For us this is a chance to celebrate him’",
+      "detail": "<p>The Albiceleste’s last-32 match against Cape Verde will see the Inter Miami star’s paths for club and country meet at last</p><p>Take a walk around Miami’s Little Buenos Aires neighborhood, and nearly everyone there will tell you a story about meeting Lionel Messi.</p><p>There’s the bakery employee, working at the counter, who will tell you about Messi’s visitthere and how much the Inter Miami and Argentina captain enjoyed the <em>medialunas. </em>Down the street, someone at the coffee shop will talk of spotting Messi in traffic, behind the wheel of a luxury SUV. Messi, that person and others will tell you, will flash you a wide smile as he waits for the signal to change, and might even entertain the idea of an autograph.</p> <a href=\"https://www.theguardian.com/football/2026/jul/03/lionel-messi-argentina-miami-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 09:00:24 GMT"
+    },
+    {
+      "title": "England must go low against Mexico to hit heights with Total Arsenalball",
+      "detail": "<p>Thomas Tuchel needs to slow game down so his side can handle altitude challenge – it is time for the low block</p><p>If any win will do then England do not have to worry about putting on an exhibition of attacking football against Mexico. They have no time to acclimatise to the altitude in Mexico City and will have to box clever if they are to handle the challenge of playing at more than 7,000ft (2,200m) above sea level at the Azteca Stadium.</p><p>No wonder Thomas Tuchel predicted this World Cup would be defined by suffering. England have prepared for the heat in the US but they are about to step into new territory. Mexico, rampant in <a href=\"https://www.theguardian.com/football/2026/jul/01/mexico-ecuador-world-cup-2026-last-32-match-report\">their last-32 tie against Ecuador</a>, are close to unstoppable at the Azteca. They have lost there twice in 89 competitive games, will be backed by a passionate crowd and have a physical advantage because of the altitude.</p> <a href=\"https://www.theguardian.com/football/2026/jul/03/total-arsenalball-england-low-block-mexico-azteca\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 03 Jul 2026 10:00:26 GMT"
+    },
+    {
+      "title": "Croatia snicked off late on and Ronaldo finally scores knockout goal | World Cup Daily – video",
+      "detail": "<p><a href=\"https://bsky.app/profile/maxrushden.bsky.social\">Max Rushden</a> is joined by <a href=\"https://bsky.app/profile/did:plc:i55lfvhkg573wfmby5sdnvq6\">Barry Glendenning</a>, Archie Rhind-Tutt and Jonathan Wilson as Cristiano Ronaldo breaks his World Cup knockout duck in a dramatic win over Croatia</p> <a href=\"https://www.theguardian.com/football/video/2026/jul/03/croatia-snicked-off-late-on-and-ronaldo-finally-scores-knockout-goal-world-cup-daily-video\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 09:42:17 GMT"
     }
   ],
   "teams": [
@@ -13826,7 +13917,7 @@
       "factors": {
         "strength": 82,
         "form": 76,
-        "path": 66,
+        "path": 65,
         "squad": 68,
         "margin": 76
       },
@@ -14751,18 +14842,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1889,
+      "eventCount": 1902,
       "manualEventCount": 3,
-      "rawNewsCount": 1886,
+      "rawNewsCount": 1899,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1889,
-      "applied": 1750,
+      "watched": 1902,
+      "applied": 1761,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1884,
+      "singleSource": 1897,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -14778,7 +14869,7 @@
         "attack": -2.15,
         "defense": -7.25,
         "goalkeeper": 0.0,
-        "path": -6.739999999999999,
+        "path": -7.659999999999999,
         "squad": -11.549999999999999
       },
       "south-africa": {
@@ -25403,7 +25494,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-03T07:48:26.667805+00:00",
+    "generatedAt": "2026-07-03T10:44:47.157553+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
