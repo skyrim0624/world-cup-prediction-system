@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-03T00:12:26.352199+00:00",
+  "updatedAt": "2026-07-03T04:27:16.234625+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -13641,6 +13641,83 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Thu, 02 Jul 2026 23:09:44 GMT"
+    },
+    {
+      "title": "Portugal through to last 16 after dramatic victory over Croatia",
+      "detail": "Portugal beat Croatia 2-1 with goals from Cristiano Ronaldo and Goncalo Ramos after a chaotic second-half in Toronto to set up a last 16 tie with Iberian rivals Spain.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 02:57:22 GMT"
+    },
+    {
+      "title": "Late VAR drama as Croatia denied equaliser",
+      "detail": "Josko Gvardiol's stoppage-time goal is ruled out for offside after a VAR review, denying Croatia an equaliser against Portugal in their World Cup knockout match in Toronto.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 01:38:29 GMT"
+    },
+    {
+      "title": "Ronaldo levels from penalty spot for Portugal",
+      "detail": "Portugal captain Cristiano Ronaldo draws his side level from the penalty spot against Croatia during their round of 32 game in Toronto.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 01:19:45 GMT"
+    },
+    {
+      "title": "Ronaldo has equaliser ruled out for offside",
+      "detail": "Cristiano Ronaldo has an equalising goal ruled out for offside during Portugal's round of 32 game with Croatia in Toronto.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 00:56:00 GMT"
+    },
+    {
+      "title": "Follow live: Switzerland double lead over Algeria ...",
+      "detail": "null",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 3 Jul 2026 00:08:05 EST"
+    },
+    {
+      "title": "Portugal, Ronaldo survive late scare from Croatia",
+      "detail": "Gonçalo Ramos headed in a pass from Rafael Leão in stoppage time as Cristiano Ronaldo, who had earlier converted a penalty kick, watched from the bench while Portugal defeated Croatia 2-1 on Thursday, ending Luka Modrić's fifth bid for a World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 2 Jul 2026 22:57:41 EST"
+    },
+    {
+      "title": "Ronaldo pays 'special' tribute to Jota after WC wi...",
+      "detail": "Cristiano Ronaldo and Portugal paid an emotional tribute to former teammate Diogo Jota after their 2-1 World Cup win over Croatia in Toronto on Thursday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 2 Jul 2026 22:57:41 EST"
+    },
+    {
+      "title": "Sources: Sears requests trade from Louisville",
+      "detail": "USWNT winger Emma Sears has requested a trade from Racing Louisville, and several NWSL teams have expressed serious interest in Sears, sources told ESPN.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 2 Jul 2026 22:57:42 EST"
+    },
+    {
+      "title": "Switzerland v Algeria: World Cup 2026 last 32 – live",
+      "detail": "<p>⚽️ Kick-off time: 8pm local/1pm AEST/4am BST/11pm EDT<br>⚽️ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:martin.pegan@theguardian.com\">Mail Martin</a></p><p>The smallest details can make a difference at the World Cup.</p><p><strong>All eyes will be on Switzerland’s 20-year-old attacker Johan Manzambi against Algeria</strong>, with the emerging talent living up to the hype so far with three goals in the group stage. Only Kylian Mbappé and Thomas Müller have scored more at a World Cup under the age of 21 this century. The France and Germany greats of course went on to win the golden boot at previous World Cups – without wanting to pile more pressure on Manzambi, here is where he sits in this year’s race …</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/03/fifa-world-cup-2026-live-switzerland-v-algeria-updates-sui-vs-alg-last-round-32-match-score-latest\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 04:20:58 GMT"
+    },
+    {
+      "title": "Ramos sends Portugal into last 16 as VAR drama caps wild finish against Croatia",
+      "detail": "<p>Rafael Leão dropped to his knees. His cross had just been flicked into the net by Gonçalo Ramos to take Portugal to the last 16 of the World Cup. Leão’s expression was not one of delight, but relief.</p><p>Billed as the last dance for two footballing icons, it was Luka Modrić who, at the age of 40, had to leave what will surely be his final World Cup. Cristiano Ronaldo, meanwhile, plays on, and both scored and was even substituted in a match of endless incident. But this was a contest about more than two individuals, who were far from the most influential players on show, even if Ronaldo was bewilderingly named player of the match. Instead this was an old-fashioned World Cup battle between hardened teams, with momentum swinging first one way then the other then back again. It was also a match stuffed with incident, including – for the first time in World Cup history – a total of four disallowed goals, one of them denying Croatia an equaliser in the very last second of the match.</p> <a href=\"https://www.theguardian.com/football/2026/jul/02/portugal-croatia-world-cup-2026-last-32-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 01:32:31 GMT"
+    },
+    {
+      "title": "Melting hot! When Ireland played Mexico in 43C heat at 1994 World Cup",
+      "detail": "<p>As the mercury rises at this year’s World Cup, we asked former Republic of Ireland footballers <strong>Jason McAteer</strong> and <strong>John Aldridge</strong> about the infamous match in Orlando that was played in 43 degree heat</p><p>“Some of the boys were melting,” says Jason McAteer as he recalls one of the most notorious matches in World Cup history. “Especially Steve Staunton and Tommy Coyne, they really struggled in the heat.”</p><p>It was the group stage of the 1994 World Cup and the Republic of Ireland, having just defeated eventual finalists Italy in their opening match, were facing Mexico at the Citrus Bowl in Florida.</p> <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jul/03/melting-hot-when-ireland-played-mexico-in-sweltering-1994-world-cup-clash\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 03 Jul 2026 02:00:15 GMT"
     }
   ],
   "teams": [
@@ -13651,7 +13728,7 @@
       "factors": {
         "strength": 82,
         "form": 76,
-        "path": 67,
+        "path": 66,
         "squad": 68,
         "margin": 76
       },
@@ -14576,18 +14653,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1864,
+      "eventCount": 1875,
       "manualEventCount": 3,
-      "rawNewsCount": 1861,
+      "rawNewsCount": 1872,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1864,
-      "applied": 1727,
+      "watched": 1875,
+      "applied": 1738,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1859,
+      "singleSource": 1870,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -14603,7 +14680,7 @@
         "attack": -2.15,
         "defense": -7.25,
         "goalkeeper": 0.0,
-        "path": -5.819999999999999,
+        "path": -6.739999999999999,
         "squad": -11.549999999999999
       },
       "south-africa": {
@@ -25228,104 +25305,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-03T00:12:48.288953+00:00",
+    "generatedAt": "2026-07-03T04:27:38.443440+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.3,
-        "currentChampion": 21.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.2%",
-        "reasons": [
-          "四强概率上升 +0.2%",
-          "决赛概率上升 +0.2%",
-          "八强概率上升 +0.2%",
-          "可入模型事件新增 7 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 20.5,
-        "currentChampion": 20.4,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 7 条",
-        "reasons": [
-          "可入模型事件新增 7 条"
-        ]
-      },
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 6.9,
-        "currentChampion": 6.8,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 7 条",
-        "reasons": [
-          "可入模型事件新增 7 条"
-        ]
-      },
-      {
-        "team": "australia",
-        "name": "澳大利亚",
-        "code": "AUS",
-        "previousChampion": 0.3,
-        "currentChampion": 0.2,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "状态盘下调 -2.1",
-        "reasons": [
-          "状态盘下调 -2.1",
-          "八强概率下降 -0.6%",
-          "四强概率下降 -0.4%",
-          "决赛概率下降 -0.2%",
-          "可入模型事件新增 7 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
-      "down": 3,
-      "largestUp": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.3,
-        "currentChampion": 21.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.2%",
-        "reasons": [
-          "四强概率上升 +0.2%",
-          "决赛概率上升 +0.2%",
-          "八强概率上升 +0.2%",
-          "可入模型事件新增 7 条"
-        ]
-      },
-      "largestDown": {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 20.5,
-        "currentChampion": 20.4,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 7 条",
-        "reasons": [
-          "可入模型事件新增 7 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
