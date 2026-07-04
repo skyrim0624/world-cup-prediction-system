@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-04T00:11:18.469354+00:00",
+  "updatedAt": "2026-07-04T04:21:32.925257+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -14264,6 +14264,76 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 03 Jul 2026 22:53:18 GMT"
+    },
+    {
+      "title": "Farewell Cape Verde - the underdogs the World Cup will never forget",
+      "detail": "Cape Verde may have been the World Cup's smallest nation but they leave the largest impact as they depart following defeat by defending champions Argentina in an epic.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 03:09:37 GMT"
+    },
+    {
+      "title": "Five and a half hours that left England's World Cup tie in chaos",
+      "detail": "For several hours on Friday, no-one seemed to know when England's World Cup last-16 match against co-hosts Mexico would kick off. BBC Sport tells how a story of confusion and anger - culminating in a Fifa U-turn - unfolded.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 01:36:43 GMT"
+    },
+    {
+      "title": "Argentina overcome Cape Verde in extra-time thriller",
+      "detail": "Argentina overcome a huge scare as they beat Cape Verde 3-2 in extra time thanks to a deflected header from Cristian Romero to advance to the last 16.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 01:55:42 GMT"
+    },
+    {
+      "title": "'Sensational' Messi finish gives Argentina the lead",
+      "detail": "Lionel Messi hits Argentina's opening goal against Cape Verde with a \"sensational\" finish in Miami, as he scores in an eighth consecutive World Cup game.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 00:44:21 GMT"
+    },
+    {
+      "title": "'What a strike!' - Cabral hits brilliant goal to draw Cape Verde level in extra time",
+      "detail": "Sidny Cabral scores an incredible goal in extra time for Cape Verde as they equalise for a second time against Argentina.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 00:58:28 GMT"
+    },
+    {
+      "title": "Arias strike sends Colombia into last 16 with victory over Ghana",
+      "detail": "Jhon Arias scores the only goal of the game as Colombia become the last team to book their place in the last 16 following a 1-0 win over Ghana in Kansas City.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 04:12:20 GMT"
+    },
+    {
+      "title": "Argentina stunned as Duarte equalises for Cape Verde",
+      "detail": "Deroy Duarte stuns Argentina as he equalises for Cape Verde during their World Cup round of 32 match in Miami.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 00:45:00 GMT"
+    },
+    {
+      "title": "Martinez restores Argentina's lead against Cape Verde",
+      "detail": "Lisandro Martinez restores Argentina's lead against Cape Verde in the knockout stage of the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 00:48:33 GMT"
+    },
+    {
+      "title": "Cape Verde threaten shock for the ages before Argentina break hearts in World Cup classic",
+      "detail": "<p>What a game, what a series of moments, what a display of spirit and skill from Cape Verde, a tiny island nation with a far-flung diaspora team, who took Argentina right to the brink of one of the great sporting shocks in Miami.</p><p>How to tell the story of this game? Imagine being pounded around the head for 120 minutes, first slowly, then much more quickly, with moments of brilliance, narrative shifts, epic subplots and violent tonal contrasts, from the Messi-Vozinha double header, to the elite cinematic brilliance of Cape Verde’s second equalising goal deep into extra time. Well, it was a bit like that.</p> <a href=\"https://www.theguardian.com/football/2026/jul/04/argentina-cape-verde-world-cup-2026-last-32-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 01:06:10 GMT"
+    },
+    {
+      "title": "Jhon Arias goal sends Colombia into last 16 as Ghana bow out of World Cup",
+      "detail": "<p>Ghana can only have feared the worst when Luis Suárez’s number came up in the seventh minute. A day on from the 16th anniversary of one of the most infamous episodes in World Cup history, the Colombia forward who shares a name with the man whose handball broke the hearts of Black Stars supporters in the quarter-finals of the 2010 World Cup returned to haunt them.</p><p>Not long after coming off the bench, it was the Sporting striker who provided the assist for what turned out to be the winning goal from Jhon Arias to set up a last-16 clash against Switzerland in Vancouver on Tuesday. Even if they couldn’t find another goal that their superiority clearly warranted, Colombia were deserved winners and look more than capable of at least matching their previous best result at the 2014 World Cup when they reached the last eight.</p> <a href=\"https://www.theguardian.com/football/2026/jul/04/colombia-ghana-world-cup-2026-last-32-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 03:44:49 GMT"
     }
   ],
   "teams": [
@@ -15199,18 +15269,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1953,
+      "eventCount": 1963,
       "manualEventCount": 3,
-      "rawNewsCount": 1950,
+      "rawNewsCount": 1960,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1953,
-      "applied": 1811,
+      "watched": 1963,
+      "applied": 1821,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1948,
+      "singleSource": 1958,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -25851,135 +25921,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-04T00:11:40.302965+00:00",
+    "generatedAt": "2026-07-04T04:21:54.597392+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 3.6,
-        "currentChampion": 3.3,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "八强概率下降 -1.1%",
-          "四强概率下降 -0.9%",
-          "决赛概率下降 -0.5%",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.4,
-        "currentChampion": 21.5,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 8.5,
-        "currentChampion": 8.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.3%",
-        "reasons": [
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 4.6,
-        "currentChampion": 4.7,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 9 条",
-        "reasons": [
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "japan",
-        "name": "日本",
-        "code": "JPN",
-        "previousChampion": 2.0,
-        "currentChampion": 2.1,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "croatia",
-        "name": "克罗地亚",
-        "code": "CRO",
-        "previousChampion": 0.8,
-        "currentChampion": 0.9,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 9 条",
-        "reasons": [
-          "可入模型事件新增 9 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 5,
-      "down": 1,
-      "largestUp": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.4,
-        "currentChampion": 21.5,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      "largestDown": {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 3.6,
-        "currentChampion": 3.3,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "八强概率下降 -1.1%",
-          "四强概率下降 -0.9%",
-          "决赛概率下降 -0.5%",
-          "可入模型事件新增 9 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
