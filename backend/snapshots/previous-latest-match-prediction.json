@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-04T11:38:56.393559+00:00",
+  "updatedAt": "2026-07-04T13:47:13.591169+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -14551,6 +14551,34 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 04 Jul 2026 11:00:11 GMT"
+    },
+    {
+      "title": "Oxlade-Chamberlain signs new one-year Celtic deal",
+      "detail": "England-capped midfielder Alex Oxlade-Chamberlain signs a new one-year contract with Celtic.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 11:54:18 GMT"
+    },
+    {
+      "title": "World Cup quiz: How well do you remember the last 32?",
+      "detail": "The World Cup's last-32 ties were decided in a busy six-day spell. But how closely were you paying attention?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 11:44:57 GMT"
+    },
+    {
+      "title": "‘This is a hellhole’: Aramco makes its presence hurt in the shadow of the World Cup",
+      "detail": "<p>The oil giant’s sponsorship deal with Fifa has featured prominently at matches in Houston. But 100 miles away in another Texas city, residents say the firm’s refinery is exposing them to poisonous gases and long-term health problems</p><p>The street is wide, its grass verges thick and scruffy after a week of rainstorms. Jamal Johnson will walk home straight down the middle carrying his plastic shopping bag, a jot of motion through the stillness. He lives in one of the modest wood-panelled houses spaced out on each side, most lovingly kept and passed through at least two generations. There is nobody else in sight, but a freight train breaks the silence, grinding left to right along the line flanking the north-facing gardens. The west side of Port Arthur, Texas, could be any lower-income neighbourhood in the southern states if it were not for the looming menace on the other side of the track.</p><p>This is a sad, unsettling place. “I’ve got a load of friends and family who’ve had weird diseases,” says Johnson, his face contorting at the thought. He lists a grandfather and aunt who died of cancer, the latter at a young age after relocating here to care for other relatives. An uncle died with complications from ALS (motor neurone disease). “You know what I’m saying? Man, they’ve let off all these poisonous gases; it’s like that all the time. It’s fucked up.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/04/aramco-world-cup-fifa-port-arthur-texas-houston\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sat, 04 Jul 2026 13:00:13 GMT"
+    },
+    {
+      "title": "Delirium, despair, pride: with the fans on Cape Verde’s World Cup rollercoaster",
+      "detail": "<p>Rotterdam is home to 25,000 Cape Verdeans and 1,600 of them gathered in a beer garden to watch an unforgettable game against Argentina</p><p>Rotterdam knows how to script a football fairytale. Six players from the Cape Verde side who have lit up the World Cup were born here, nearly 5,000km from their parents’ islands. Five of them played against Argentina, the defending champions, in a bittersweet <a href=\"https://www.theguardian.com/football/2026/jul/04/argentina-cape-verde-world-cup-2026-last-32-match-report\">3-2 defeat</a>.</p><p>After last Saturday’s<a href=\"https://www.theguardian.com/football/2026/jun/27/cape-verde-saudi-arabia-world-cup-match-report\">draw with Saudi Arabia</a> took Cape Verde into the last 32, the streets of Rotterdam were full of honking cars, flags streaming from the windows and people dancing. This is the city the locals call the 10th island of Cape Verde. The diasporas from Curaçao and Morocco have also set their own corners of Rotterdam alight during this tournament.</p> <a href=\"https://www.theguardian.com/football/2026/jul/04/cape-verde-world-cup-fans-argentina-rotterdam\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 13:08:01 GMT"
     }
   ],
   "teams": [
@@ -14637,7 +14665,7 @@
       "factors": {
         "strength": 76,
         "form": 70,
-        "path": 61,
+        "path": 60,
         "squad": 52,
         "margin": 74
       },
@@ -15486,18 +15514,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1994,
+      "eventCount": 1998,
       "manualEventCount": 3,
-      "rawNewsCount": 1991,
+      "rawNewsCount": 1995,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1994,
-      "applied": 1849,
+      "watched": 1998,
+      "applied": 1852,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1989,
+      "singleSource": 1993,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -15541,7 +15569,7 @@
         "attack": -11.55,
         "defense": -2.55,
         "goalkeeper": -2.15,
-        "path": -6.789999999999999,
+        "path": -7.709999999999999,
         "squad": -25.45
       },
       "bosnia-herzegovina": {
@@ -26138,7 +26166,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-04T11:39:18.299817+00:00",
+    "generatedAt": "2026-07-04T13:47:35.590185+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
