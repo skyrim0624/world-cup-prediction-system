@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-04T13:47:13.591169+00:00",
+  "updatedAt": "2026-07-04T15:12:02.199508+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -14579,6 +14579,34 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 04 Jul 2026 13:08:01 GMT"
+    },
+    {
+      "title": "Why Europe's top clubs are eyeing Morocco's teenage sensation Bouaddi",
+      "detail": "After lighting up the 2022 World Cup Morocco are once again shining on the global stage - but this time they have teenage sensation Ayyoub Bouaddi in their ranks.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 14:22:20 GMT"
+    },
+    {
+      "title": "World Cup 2026 Power Rankings before round of 16: ...",
+      "detail": "In the blink of an eye, we're down to the final 16 nations left competing for the 2026 World Cup. What do our writers and experts think the field looks like from worst to best of the teams remaining?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sat, 4 Jul 2026 10:33:03 EST"
+    },
+    {
+      "title": "Why Ancelotti is key to Brazil winning sixth World...",
+      "detail": "Carlo Ancelotti was not everyone's choice for the Brazil job, but while the days of Jogo Bonito are gone, the experienced coach has the nation dreaming of success.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 4 Jul 2026 09:01:05 EST"
+    },
+    {
+      "title": "Best bets for the 2026 World Cup round of 16",
+      "detail": "Looking to place some World Cup bets? Take a look at what our experts are considering ahead of the round of 16.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sat, 4 Jul 2026 09:42:39 EST"
     }
   ],
   "teams": [
@@ -15514,18 +15542,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1998,
+      "eventCount": 2002,
       "manualEventCount": 3,
-      "rawNewsCount": 1995,
+      "rawNewsCount": 1999,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1998,
-      "applied": 1852,
+      "watched": 2002,
+      "applied": 1854,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1993,
+      "singleSource": 1997,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -26166,7 +26194,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-04T13:47:35.590185+00:00",
+    "generatedAt": "2026-07-04T15:12:24.366621+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
