@@ -27856,5 +27856,61 @@
     "factor": "goalkeeper",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-f45283f9d814",
+    "title": "Oxlade-Chamberlain signs new one-year Celtic deal",
+    "summary": "England-capped midfielder Alex Oxlade-Chamberlain signs a new one-year contract with Celtic.",
+    "source": "bbc",
+    "team": "england",
+    "status": "single_source",
+    "published_at": "Sat, 04 Jul 2026 11:54:18 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c77y5zvjd8zo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-4775506994a9",
+    "title": "World Cup quiz: How well do you remember the last 32?",
+    "summary": "The World Cup's last-32 ties were decided in a busy six-day spell. But how closely were you paying attention?",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Sat, 04 Jul 2026 11:44:57 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/ce8j485z1ppo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-c287344f6f29",
+    "title": "‘This is a hellhole’: Aramco makes its presence hurt in the shadow of the World Cup",
+    "summary": "<p>The oil giant’s sponsorship deal with Fifa has featured prominently at matches in Houston. But 100 miles away in another Texas city, residents say the firm’s refinery is exposing them to poisonous gases and long-term health problems</p><p>The street is wide, its grass verges thick and scruffy after a week of rainstorms. Jamal Johnson will walk home straight down the middle carrying his plastic shopping bag, a jot of motion through the stillness. He lives in one of the modest wood-panelled houses spaced out on each side, most lovingly kept and passed through at least two generations. There is nobody else in sight, but a freight train breaks the silence, grinding left to right along the line flanking the north-facing gardens. The west side of Port Arthur, Texas, could be any lower-income neighbourhood in the southern states if it were not for the looming menace on the other side of the track.</p><p>This is a sad, unsettling place. “I’ve got a load of friends and family who’ve had weird diseases,” says Johnson, his face contorting at the thought. He lists a grandfather and aunt who died of cancer, the latter at a young age after relocating here to care for other relatives. An uncle died with complications from ALS (motor neurone disease). “You know what I’m saying? Man, they’ve let off all these poisonous gases; it’s like that all the time. It’s fucked up.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/04/aramco-world-cup-fifa-port-arthur-texas-houston\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Sat, 04 Jul 2026 13:00:13 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/04/aramco-world-cup-fifa-port-arthur-texas-houston",
+    "category": "weather",
+    "factor": "path",
+    "direction": -1,
+    "confidence": 0.66
+  },
+  {
+    "id": "guardian-cd85c9a428d6",
+    "title": "Delirium, despair, pride: with the fans on Cape Verde’s World Cup rollercoaster",
+    "summary": "<p>Rotterdam is home to 25,000 Cape Verdeans and 1,600 of them gathered in a beer garden to watch an unforgettable game against Argentina</p><p>Rotterdam knows how to script a football fairytale. Six players from the Cape Verde side who have lit up the World Cup were born here, nearly 5,000km from their parents’ islands. Five of them played against Argentina, the defending champions, in a bittersweet <a href=\"https://www.theguardian.com/football/2026/jul/04/argentina-cape-verde-world-cup-2026-last-32-match-report\">3-2 defeat</a>.</p><p>After last Saturday’s<a href=\"https://www.theguardian.com/football/2026/jun/27/cape-verde-saudi-arabia-world-cup-match-report\">draw with Saudi Arabia</a> took Cape Verde into the last 32, the streets of Rotterdam were full of honking cars, flags streaming from the windows and people dancing. This is the city the locals call the 10th island of Cape Verde. The diasporas from Curaçao and Morocco have also set their own corners of Rotterdam alight during this tournament.</p> <a href=\"https://www.theguardian.com/football/2026/jul/04/cape-verde-world-cup-fans-argentina-rotterdam\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Sat, 04 Jul 2026 13:08:01 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/04/cape-verde-world-cup-fans-argentina-rotterdam",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
