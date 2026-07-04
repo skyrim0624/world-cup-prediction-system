@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-04T04:21:32.925257+00:00",
+  "updatedAt": "2026-07-04T07:24:35.206578+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -14334,6 +14334,48 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 04 Jul 2026 03:44:49 GMT"
+    },
+    {
+      "title": "Murals, flags and beef dishes - Messi mania takes hold in Miami",
+      "detail": "Lionel Messi's World Cup goals roadshow continued with his seventh of the tournament for Argentina against Cape Verde - and delighted the fans who were in Miami to see their hero.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 05:37:08 GMT"
+    },
+    {
+      "title": "Who am I? Guess World Cup star No 27",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 06:06:21 GMT"
+    },
+    {
+      "title": "World Cup 2026: Cape Verde give Argentina mighty scare; last 16 begins amid Mexico v England fixture chaos – live",
+      "detail": "<p>⚽ All the latest news and reaction from the World Cup<br>⚽ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"https://www.theguardian.com/football/world-cup-2026/overview\">Knockout draw</a> | <a href=\"mailto:david.tindall.casual@theguardian.com\">Mail us</a></p><p><strong>In an early tactical reshuffle, Will Unwin (better adjusted to altitude) will now take over while I catch my breath.</strong> Lots more to come from last night’s games, including Australia really botching their penalty shootout against Egypt.</p><p><strong>A game like that deserves its own photo gallery so we’ve obliged.</strong> Some crackers in the set below.</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/04/world-cup-2026-cape-verde-give-argentina-mighty-scare-last-16-mexico-v-england-fixture-chaos-morocco-canada-france-paraguay-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 07:20:24 GMT"
+    },
+    {
+      "title": "Shootout heartbreak leaves Socceroos still searching for elusive World Cup knockout win | Jack Snape",
+      "detail": "<p>Following their painful defeat on penalties to Egypt, there is a nagging suspicion Australia may not get a better chance to break their duck </p><p>Lucas Herrington did not deserve to be the face of this painful defeat. The 18-year-old was already the youngest starter the Socceroos have ever fielded at a World Cup. Now he will be forever connected with one of Australian football’s great tragedies.</p><p>Once he missed his penalty kick – his side-footed effort placed too high and into the crossbar – first Awer Mabil ran to him, the gesture acknowledging the pain that will never leave him. When Egypt finished the shootout moments later, Herrington quickly turned his back to the crossbar that did him wrong, and put one arm to his mop of curly hair.</p> <a href=\"https://www.theguardian.com/football/2026/jul/04/australia-socceroos-egypt-world-cup-last-32-penalty-shootout-defeat\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 03 Jul 2026 21:17:22 GMT"
+    },
+    {
+      "title": "Survival is key for England in epic test or it will be a Mexican wave goodbye",
+      "detail": "<p>Azteca tie is one of those World Cup occasions that transcend sport – and Tuchel’s side face a challenge all about progress, not process</p><p>Nausea, cramps, shortness of breath. Time-lagged, unacclimatised, eyes bulging as the vertigo hits. Not to mention three times more likely to suffer unwanted swelling of the brain. Watching England play football at this World Cup has certainly been a physical trial at times. Not least for those back home hunkered around the screen, feeling the energy surge then sag again through the dead periods in Boston, New York and Atlanta.</p><p>And now we move on to the altitude of Mexico City, the Azteca, host nation energy and a beautifully pitched last-16 game, one of those occasions that seems to go beyond sport, to carry its own sense of something epic and gravitational, an emotional weather front about to break.</p> <a href=\"https://www.theguardian.com/football/2026/jul/04/england-survival-mexico-world-cup-2026-thomas-tuchel\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sat, 04 Jul 2026 07:00:08 GMT"
+    },
+    {
+      "title": "‘An incredible man’: how Carlo Ancelotti has turned Brazil into potential World Cup winners",
+      "detail": "<p>Italian’s man-management and decisiveness has shielded the talented Seleção squad and made fans believe again</p><p>Brazil arrived at the World Cup with several open wounds. Since Qatar in 2022 there were four changes of manager, 95 players called up and a political crisis, including the ousting of the Brazilian Football Confederation (CBF)<strong> </strong>president. It has been a big mess, with many uncertainties, and the mood among the fans was one of pessimism. But then Carlo Ancelotti arrived. Gradually under the Italian, the team has taken shape and transformed its relationship with fans, who are again dreaming of a sixth World Cup after 24 years without one, the longest such drought alongside the period between 1970 and 1994.</p><p>Ancelotti has become a shield for the players. Even the most experienced ones, such as Alisson, Danilo, Marquinhos and Casemiro, feel more at ease having such a great figure on the bench, the most successful manager in the Champions League, with five titles.</p> <a href=\"https://www.theguardian.com/football/2026/jul/04/brazil-carlo-ancelotti-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 07:00:06 GMT"
     }
   ],
   "teams": [
@@ -14344,7 +14386,7 @@
       "factors": {
         "strength": 82,
         "form": 76,
-        "path": 65,
+        "path": 64,
         "squad": 66,
         "margin": 76
       },
@@ -15269,18 +15311,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 1963,
+      "eventCount": 1969,
       "manualEventCount": 3,
-      "rawNewsCount": 1960,
+      "rawNewsCount": 1966,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 1963,
-      "applied": 1821,
+      "watched": 1969,
+      "applied": 1826,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 1958,
+      "singleSource": 1964,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -15296,7 +15338,7 @@
         "attack": -2.15,
         "defense": -7.25,
         "goalkeeper": 0.0,
-        "path": -7.659999999999999,
+        "path": -8.58,
         "squad": -13.7
       },
       "south-africa": {
@@ -25921,7 +25963,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-04T04:21:54.597392+00:00",
+    "generatedAt": "2026-07-04T07:24:57.615878+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
