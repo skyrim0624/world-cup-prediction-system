@@ -28318,5 +28318,19 @@
     "factor": "squad",
     "direction": -1,
     "confidence": 0.78
+  },
+  {
+    "id": "bbc-0549f00e90f4",
+    "title": "Mbappe coolly fires France into lead from penalty spot",
+    "summary": "France's Kylian Mbappe keeps his cool to send Paraguay goalkeeper Orlando Gill the wrong way to score his seventh goal of the 2026 World Cup.",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Sat, 04 Jul 2026 23:06:35 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/videos/c1dy2y6xyr5o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "goalkeeper",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

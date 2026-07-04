@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-04T21:05:30.757310+00:00",
+  "updatedAt": "2026-07-04T22:30:23.856330+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -14712,6 +14712,76 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 04 Jul 2026 19:49:57 GMT"
+    },
+    {
+      "title": "James doubtful for Mexico tie but Quansah fit again",
+      "detail": "Reece James misses training on the eve of England's World Cup last-16 tie against Mexico but Jarell Quansah is available again.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sat, 04 Jul 2026 22:13:11 GMT"
+    },
+    {
+      "title": "Unbeaten in 34 matches - why Morocco are World Cup contenders",
+      "detail": "As Morocco beat Canada to book their place in the last-8, their World Cup campaign can no longer be seen as a fairytale.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 21:20:25 GMT"
+    },
+    {
+      "title": "Premier League quartet want Scott - Sunday's gossip",
+      "detail": "Bournemouth's Alex Scott wanted by Premier League quartet, Arsenal agree to sell Leandro Trossard, Manchester United's Kobbie Mainoo on Real Madrid's radar, plus more.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 21:52:22 GMT"
+    },
+    {
+      "title": "Ream: USMNT a 'true representation of America'",
+      "detail": "USMNT defender Tim Ream said the diverse background of the players on the USMNT is \"a true representation of what America is.\"",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 4 Jul 2026 18:15:38 EST"
+    },
+    {
+      "title": "Marsch on Canada exit: We were the better team",
+      "detail": "Canada coach Jesse Marsch insisted that his side were \"the better team\" in their 3-0 World Cup defeat to Morocco on Saturday, saying \"I'd rather be us than them.\"",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 4 Jul 2026 18:15:38 EST"
+    },
+    {
+      "title": "Mexico aim for 'best game of our lives' vs. Englan...",
+      "detail": "Mexico's players are aiming for \"the best game\" of their lives against England, confident that an intimidating Estadio Azteca crowd can help preserve a historic home record in the World Cup round of 16 clash.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 4 Jul 2026 18:15:38 EST"
+    },
+    {
+      "title": "Brazil deny 'anti-Haaland plan' for World Cup tie",
+      "detail": "Brazil coach Carlo Ancelotti maintains he is not about to set up an \"anti Erling Haaland plan\" against Norway at the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 4 Jul 2026 18:15:39 EST"
+    },
+    {
+      "title": "Norway boss denies Ancelotti disrespect at WC",
+      "detail": "Norway coach Stale Solbakken said it is a \"great honour\" to face Carlo Ancelotti in Sunday's World Cup round of 16 tie against Brazil after rejecting claims he disrespected the Selecao coach.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 4 Jul 2026 18:15:39 EST"
+    },
+    {
+      "title": "Thanks to Ounahi magic, Morocco sweep past Canada ...",
+      "detail": "Canada boss Jesse Marsch may have felt his side was the better team on Saturday, but Morocco's 3-0 win -- led by Azzedine Ounahi -- told a different story.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 4 Jul 2026 17:17:08 EST"
+    },
+    {
+      "title": "Canada’s World Cup exit revives questions over Alphonso Davies injury management",
+      "detail": "<p>Canada’s World Cup run ended without Alphonso Davies playing against Morocco, reviving debate over the injury that derailed the team’s biggest star</p><p>Coming into this World Cup, Canada’s hopes hinged on the form of their one world-class player, Alphonso Davies. This has been the case for every major competition they have entered since he made his international debut in 2017, and it’s easy to see why: over the last nine years, Davies has transformed Canada’s fortunes.</p><p>After being grouped in each of the first three Gold Cups in the 2010s, Canada have reached the quarter-final or further in five consecutive installments. The Bayern Munich star was also at the fore as they qualified for the 2022 World Cup, the first time they reached men’s football’s biggest stage since 1986. And their fourth-place finish at the 2024 Copa América involved a fit and firing Davies.</p> <a href=\"https://www.theguardian.com/football/2026/jul/04/canada-world-cup-alphonso-davies-injury-management\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sat, 04 Jul 2026 21:23:43 GMT"
     }
   ],
   "teams": [
@@ -14723,14 +14793,14 @@
         "strength": 82,
         "form": 76,
         "path": 64,
-        "squad": 66,
+        "squad": 64,
         "margin": 76
       },
       "tournament": {
         "champion": 0.4,
-        "final": 1.7,
-        "semifinal": 5.6,
-        "quarterfinal": 14.1,
+        "final": 1.6,
+        "semifinal": 5.2,
+        "quarterfinal": 13.5,
         "change": -1.1
       }
     },
@@ -15090,8 +15160,8 @@
       "tournament": {
         "champion": 1.2,
         "final": 4.0,
-        "semifinal": 10.8,
-        "quarterfinal": 23.1,
+        "semifinal": 11.0,
+        "quarterfinal": 23.5,
         "change": 0.6
       }
     },
@@ -15393,7 +15463,7 @@
       },
       "tournament": {
         "champion": 1.0,
-        "final": 3.3,
+        "final": 3.4,
         "semifinal": 9.5,
         "quarterfinal": 23.1,
         "change": 0.1
@@ -15411,11 +15481,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 21.5,
+        "champion": 21.4,
         "final": 38.4,
         "semifinal": 56.4,
         "quarterfinal": 75.9,
-        "change": 6.3
+        "change": 6.2
       }
     },
     {
@@ -15564,9 +15634,9 @@
       },
       "tournament": {
         "champion": 8.6,
-        "final": 18.7,
-        "semifinal": 36.0,
-        "quarterfinal": 56.9,
+        "final": 18.8,
+        "semifinal": 36.1,
+        "quarterfinal": 57.2,
         "change": -2.1
       }
     },
@@ -15647,18 +15717,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2017,
+      "eventCount": 2027,
       "manualEventCount": 3,
-      "rawNewsCount": 2014,
+      "rawNewsCount": 2024,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2017,
-      "applied": 1869,
+      "watched": 2027,
+      "applied": 1879,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2012,
+      "singleSource": 2022,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -15675,7 +15745,7 @@
         "defense": -7.25,
         "goalkeeper": 0.0,
         "path": -8.58,
-        "squad": -13.7
+        "squad": -15.85
       },
       "south-africa": {
         "attack": 0.0,
@@ -15703,7 +15773,7 @@
         "defense": -2.55,
         "goalkeeper": -2.15,
         "path": -7.709999999999999,
-        "squad": -27.599999999999998
+        "squad": -29.749999999999996
       },
       "bosnia-herzegovina": {
         "attack": -2.55,
@@ -26299,17 +26369,43 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-04T21:05:52.393552+00:00",
+    "generatedAt": "2026-07-04T22:30:45.735978+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 21.5,
+        "currentChampion": 21.4,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 10 条",
+        "reasons": [
+          "可入模型事件新增 10 条"
+        ]
+      }
+    ],
     "summary": {
       "up": 0,
-      "down": 0,
+      "down": 1,
       "largestUp": null,
-      "largestDown": null
+      "largestDown": {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 21.5,
+        "currentChampion": 21.4,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 10 条",
+        "reasons": [
+          "可入模型事件新增 10 条"
+        ]
+      }
     }
   }
 }
