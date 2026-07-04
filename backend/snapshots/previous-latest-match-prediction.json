@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-04T19:46:22.982004+00:00",
+  "updatedAt": "2026-07-04T21:05:30.757310+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -14698,6 +14698,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 04 Jul 2026 19:04:37 GMT"
+    },
+    {
+      "title": "Everton agree £25m deal for Chelsea winger George",
+      "detail": "Everton agree a deal worth up to £25m including add-ons to sign Chelsea winger Tyrique George, subject to personal terms and a medical.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 20:59:23 GMT"
+    },
+    {
+      "title": "Morocco reach quarter-finals as co-hosts Canada knocked out",
+      "detail": "Canada become the first of co-hosts to exit the 2026 World Cup, after being beaten 3-0 by Morocco in Houston.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 19:49:57 GMT"
     }
   ],
   "teams": [
@@ -15633,18 +15647,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2015,
+      "eventCount": 2017,
       "manualEventCount": 3,
-      "rawNewsCount": 2012,
+      "rawNewsCount": 2014,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2015,
-      "applied": 1867,
+      "watched": 2017,
+      "applied": 1869,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2010,
+      "singleSource": 2012,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -26285,7 +26299,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-04T19:46:44.648542+00:00",
+    "generatedAt": "2026-07-04T21:05:52.393552+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
