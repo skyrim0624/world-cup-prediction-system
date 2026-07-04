@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-04T16:33:24.665780+00:00",
+  "updatedAt": "2026-07-04T18:06:47.572751+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -14635,6 +14635,13 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 04 Jul 2026 15:00:00 GMT"
+    },
+    {
+      "title": "Listen: Sportsound with Lennon, Levein & Neilson",
+      "detail": "All the news from the World Cup plus Neil Lennon, Robbie Neilson, Craig McLeish and more",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 16:41:00 GMT"
     }
   ],
   "teams": [
@@ -15570,18 +15577,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2006,
+      "eventCount": 2007,
       "manualEventCount": 3,
-      "rawNewsCount": 2003,
+      "rawNewsCount": 2004,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2006,
-      "applied": 1858,
+      "watched": 2007,
+      "applied": 1859,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2001,
+      "singleSource": 2002,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -26222,44 +26229,16 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-04T16:33:46.785507+00:00",
+    "generatedAt": "2026-07-04T18:07:09.440333+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 6.9,
-        "currentChampion": 7.0,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.1%",
-        "reasons": [
-          "八强概率上升 +0.1%",
-          "可入模型事件新增 4 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
+      "up": 0,
       "down": 0,
-      "largestUp": {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 6.9,
-        "currentChampion": 7.0,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.1%",
-        "reasons": [
-          "八强概率上升 +0.1%",
-          "可入模型事件新增 4 条"
-        ]
-      },
+      "largestUp": null,
       "largestDown": null
     }
   }

@@ -28024,5 +28024,19 @@
     "factor": "goalkeeper",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-72697c5f152d",
+    "title": "Listen: Sportsound with Lennon, Levein & Neilson",
+    "summary": "All the news from the World Cup plus Neil Lennon, Robbie Neilson, Craig McLeish and more",
+    "source": "bbc",
+    "team": "portugal",
+    "status": "single_source",
+    "published_at": "Sat, 04 Jul 2026 16:41:00 GMT",
+    "url": "https://www.bbc.co.uk/sounds/play/p0nwwwr8?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
