@@ -28150,5 +28150,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-034925425836",
+    "title": "Everton agree £25m deal for Chelsea winger George",
+    "summary": "Everton agree a deal worth up to £25m including add-ons to sign Chelsea winger Tyrique George, subject to personal terms and a medical.",
+    "source": "bbc",
+    "team": "germany",
+    "status": "single_source",
+    "published_at": "Sat, 04 Jul 2026 20:59:23 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cly7pvqde72o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-da7e57ecd1be",
+    "title": "Morocco reach quarter-finals as co-hosts Canada knocked out",
+    "summary": "Canada become the first of co-hosts to exit the 2026 World Cup, after being beaten 3-0 by Morocco in Houston.",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Sat, 04 Jul 2026 19:49:57 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/videos/cddlpql2e98o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
