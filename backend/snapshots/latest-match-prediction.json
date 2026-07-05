@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-05T16:36:33.217446+00:00",
+  "updatedAt": "2026-07-05T18:09:54.663089+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -15090,6 +15090,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 05 Jul 2026 16:08:33 GMT"
+    },
+    {
+      "title": "Trump thanks Fifa after USA striker Balogun's ban suspended",
+      "detail": "Folarin Balogun is available to play for the United States in their World Cup last-16 tie against Belgium after his one-game ban is suspended by Fifa.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 05 Jul 2026 17:15:30 GMT"
+    },
+    {
+      "title": "Newcastle sign Toure for £43m - what will he bring to club?",
+      "detail": "Newcastle United reporter Ciaran Kelly looks at why the club have bought forward Bazoumana Toure from Hoffenheim for £43m.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 16:33:57 GMT"
+    },
+    {
+      "title": "Folarin Balogun eligible to play for US v Belgium as Fifa rescinds suspension for red card",
+      "detail": "<ul><li><p>US striker was shown red in last-32 match</p></li><li><p>Fifa disciplinary committee cites article of Fifa code</p></li></ul><p>USA striker Folarin Balogun will play in his team’s last-16 game against Belgium on Monday after Fifa announced it has suspended the red card and accompanying one-game ban he received <a href=\"https://www.theguardian.com/football/2026/jul/01/usa-bosnia-and-herzegovina-game-report-world-cup\">against Bosnia and Herzegovina</a>.</p><p>The decision gives the US a huge boost as they attempt to reach the World Cup quarter-finals for the first time since 2002. Balogun has been a constant threat for the US so far this tournament, and has scored three goals in three starts. Without him, US coach Mauricio Pochettino was scrambling to come up with other options in attack.</p> <a href=\"https://www.theguardian.com/football/2026/jul/05/folarin-balogun-red-card-suspension-lifted-usmnt-belgium-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 05 Jul 2026 17:04:15 GMT"
     }
   ],
   "teams": [
@@ -15202,8 +15223,8 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 0.8,
-        "quarterfinal": 6.5,
+        "semifinal": 0.9,
+        "quarterfinal": 6.9,
         "change": -0.1
       }
     },
@@ -15308,7 +15329,7 @@
       "code": "SCO",
       "factors": {
         "strength": 75,
-        "form": 74,
+        "form": 72,
         "path": 66,
         "squad": 63,
         "margin": 78
@@ -15327,17 +15348,17 @@
       "code": "USA",
       "factors": {
         "strength": 78,
-        "form": 78,
+        "form": 76,
         "path": 70,
         "squad": 79,
         "margin": 78
       },
       "tournament": {
-        "champion": 0.7,
-        "final": 2.2,
-        "semifinal": 7.4,
-        "quarterfinal": 30.1,
-        "change": -0.3
+        "champion": 0.6,
+        "final": 1.9,
+        "semifinal": 6.5,
+        "quarterfinal": 28.0,
+        "change": -0.4
       }
     },
     {
@@ -15562,9 +15583,9 @@
       },
       "tournament": {
         "champion": 1.9,
-        "final": 4.6,
-        "semifinal": 11.9,
-        "quarterfinal": 37.1,
+        "final": 4.7,
+        "semifinal": 12.2,
+        "quarterfinal": 38.1,
         "change": -1.2
       }
     },
@@ -15637,11 +15658,11 @@
         "margin": 85
       },
       "tournament": {
-        "champion": 20.5,
-        "final": 30.4,
-        "semifinal": 46.2,
+        "champion": 20.6,
+        "final": 30.5,
+        "semifinal": 46.4,
         "quarterfinal": 57.2,
-        "change": 8.9
+        "change": 9.0
       }
     },
     {
@@ -15733,9 +15754,9 @@
       },
       "tournament": {
         "champion": 0.8,
-        "final": 2.3,
-        "semifinal": 7.1,
-        "quarterfinal": 26.2,
+        "final": 2.4,
+        "semifinal": 7.4,
+        "quarterfinal": 27.0,
         "change": -0.2
       }
     },
@@ -15829,7 +15850,7 @@
       "tournament": {
         "champion": 0.3,
         "final": 1.1,
-        "semifinal": 3.4,
+        "semifinal": 3.5,
         "quarterfinal": 6.7,
         "change": -0.3
       }
@@ -15865,11 +15886,11 @@
         "margin": 83
       },
       "tournament": {
-        "champion": 4.6,
+        "champion": 4.7,
         "final": 8.7,
-        "semifinal": 17.3,
+        "semifinal": 17.4,
         "quarterfinal": 25.6,
-        "change": -1.6
+        "change": -1.5
       }
     },
     {
@@ -15962,7 +15983,7 @@
       "tournament": {
         "champion": 0.9,
         "final": 2.1,
-        "semifinal": 5.7,
+        "semifinal": 5.8,
         "quarterfinal": 10.5,
         "change": 0.0
       }
@@ -16025,18 +16046,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2071,
+      "eventCount": 2074,
       "manualEventCount": 3,
-      "rawNewsCount": 2068,
+      "rawNewsCount": 2071,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2071,
-      "applied": 1920,
+      "watched": 2074,
+      "applied": 1923,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2066,
+      "singleSource": 2069,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -16126,14 +16147,14 @@
         "squad": 0.0
       },
       "scotland": {
-        "attack": -6.85,
+        "attack": -9.399999999999999,
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -1.94,
         "squad": -12.9
       },
       "usa": {
-        "attack": -4.3,
+        "attack": -6.85,
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -2.7600000000000002,
@@ -26677,17 +26698,94 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-05T16:36:55.449857+00:00",
+    "generatedAt": "2026-07-05T18:10:17.070800+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "spain",
+        "name": "西班牙",
+        "code": "ESP",
+        "previousChampion": 20.5,
+        "currentChampion": 20.6,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.2%",
+        "reasons": [
+          "四强概率上升 +0.2%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 3 条"
+        ]
+      },
+      {
+        "team": "portugal",
+        "name": "葡萄牙",
+        "code": "POR",
+        "previousChampion": 4.6,
+        "currentChampion": 4.7,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.1%",
+        "reasons": [
+          "四强概率上升 +0.1%",
+          "可入模型事件新增 3 条"
+        ]
+      },
+      {
+        "team": "usa",
+        "name": "美国",
+        "code": "USA",
+        "previousChampion": 0.7,
+        "currentChampion": 0.6,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "状态盘下调 -2.5",
+        "reasons": [
+          "状态盘下调 -2.5",
+          "八强概率下降 -2.1%",
+          "四强概率下降 -0.9%",
+          "决赛概率下降 -0.3%",
+          "可入模型事件新增 3 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 2,
+      "down": 1,
+      "largestUp": {
+        "team": "spain",
+        "name": "西班牙",
+        "code": "ESP",
+        "previousChampion": 20.5,
+        "currentChampion": 20.6,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.2%",
+        "reasons": [
+          "四强概率上升 +0.2%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 3 条"
+        ]
+      },
+      "largestDown": {
+        "team": "usa",
+        "name": "美国",
+        "code": "USA",
+        "previousChampion": 0.7,
+        "currentChampion": 0.6,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "状态盘下调 -2.5",
+        "reasons": [
+          "状态盘下调 -2.5",
+          "八强概率下降 -2.1%",
+          "四强概率下降 -0.9%",
+          "决赛概率下降 -0.3%",
+          "可入模型事件新增 3 条"
+        ]
+      }
     }
   }
 }

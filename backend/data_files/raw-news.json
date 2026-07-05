@@ -28934,5 +28934,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-858c9b88907c",
+    "title": "Trump thanks Fifa after USA striker Balogun's ban suspended",
+    "summary": "Folarin Balogun is available to play for the United States in their World Cup last-16 tie against Belgium after his one-game ban is suspended by Fifa.",
+    "source": "bbc",
+    "team": "usa",
+    "status": "single_source",
+    "published_at": "Sun, 05 Jul 2026 17:15:30 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cewqq5q8v41o?at_medium=RSS&at_campaign=rss",
+    "category": "suspension",
+    "factor": "attack",
+    "direction": -1,
+    "confidence": 0.9
+  },
+  {
+    "id": "bbc-be45fa507f78",
+    "title": "Newcastle sign Toure for £43m - what will he bring to club?",
+    "summary": "Newcastle United reporter Ciaran Kelly looks at why the club have bought forward Bazoumana Toure from Hoffenheim for £43m.",
+    "source": "bbc",
+    "team": "portugal",
+    "status": "single_source",
+    "published_at": "Sun, 05 Jul 2026 16:33:57 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cgqjkq3kwdgo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-d766bbff8249",
+    "title": "Folarin Balogun eligible to play for US v Belgium as Fifa rescinds suspension for red card",
+    "summary": "<ul><li><p>US striker was shown red in last-32 match</p></li><li><p>Fifa disciplinary committee cites article of Fifa code</p></li></ul><p>USA striker Folarin Balogun will play in his team’s last-16 game against Belgium on Monday after Fifa announced it has suspended the red card and accompanying one-game ban he received <a href=\"https://www.theguardian.com/football/2026/jul/01/usa-bosnia-and-herzegovina-game-report-world-cup\">against Bosnia and Herzegovina</a>.</p><p>The decision gives the US a huge boost as they attempt to reach the World Cup quarter-finals for the first time since 2002. Balogun has been a constant threat for the US so far this tournament, and has scored three goals in three starts. Without him, US coach Mauricio Pochettino was scrambling to come up with other options in attack.</p> <a href=\"https://www.theguardian.com/football/2026/jul/05/folarin-balogun-red-card-suspension-lifted-usmnt-belgium-world-cup\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Sun, 05 Jul 2026 17:04:15 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/05/folarin-balogun-red-card-suspension-lifted-usmnt-belgium-world-cup",
+    "category": "suspension",
+    "factor": "attack",
+    "direction": -1,
+    "confidence": 0.9
   }
 ]
