@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-05T14:00:12.058101+00:00",
+  "updatedAt": "2026-07-05T15:22:59.025457+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -15034,6 +15034,41 @@
       "impact": "全局备注",
       "tone": "green",
       "time": "Sun, 5 Jul 2026 09:23:48 EST"
+    },
+    {
+      "title": "Mexico fans fail in bid to wake up England players",
+      "detail": "England players feel little to no impact of Mexico fans attempting to disturb their sleep by letting off fireworks outside their hotel.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 14:47:25 GMT"
+    },
+    {
+      "title": "England have struggled against low block - could they use it to beat Mexico?",
+      "detail": "England face Mexico in the last 16 of the World Cup in Mexico City - Thomas Tuchel could change tactics to combat the hosts and the altitude to book a place in the quarter-finals.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 14:08:59 GMT"
+    },
+    {
+      "title": "Thousands welcome home Cape Verde players after stunning World Cup run",
+      "detail": "Tens of thousands of fans formed an ocean of blue outside the airport in capital city, Praia.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 14:59:10 GMT"
+    },
+    {
+      "title": "Canada co-hosted the World Cup – but whose party was it?",
+      "detail": "<p>Les Rouges brought moments of joy to their nation. But there are plenty of questions around Canadian soccer as the tournament moves on</p><p>It was standing room only in Toronto’s oldest bar, The Wheatsheaf, on Saturday lunchtime. For some, the wake had already begun. Nestled in the corner was a group of sullen Irish GAA fans, who had just witnessed Cork’s demoralizing defeat to Galway in the All-Ireland Hurling semi-final. Resplendent in their red and white as they gazed despairingly into the middle distance, at least they had another team to root for.</p><p>It was an odd scenario. Canada is co-hosting this tournament but, due to the team’s second-place finish in the group stage, they were playing Morocco far to the south in Houston, Texas. But The Wheatsheaf was a sea of red and white as Canada fans gathered for the last-16 clash. Some guy even dusted off a vintage Manchester United 1999 jersey with ‘Beckham’ on the back. Anything for Canada. And that sense of collective patriotism soared when Wayne Gretzky – the once Great One now <a href=\"https://www.theguardian.com/commentisfree/2025/mar/27/wayne-gretzky-canadian-pro-trump-rebrand\">derided in his native land</a> for cosying up to Donald Trump, amongst other curious missteps – popped up on TV screens and was booed mercilessly and enthusiastically by the crowd.</p> <a href=\"https://www.theguardian.com/football/2026/jul/05/canada-co-hosted-the-world-cup-but-whose-party-was-it\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 05 Jul 2026 13:48:26 GMT"
+    },
+    {
+      "title": "Tony Popovic gets FA backing but is he is right man to take Socceroos forward? | Jack Snape",
+      "detail": "<p>The coach has the support of his employers and players for now but there will be a push for creativity to trump his defensive mindset </p><p>There has been an avalanche of criticism tumble upon Tony Popovic in the wake of Australia’s shootout loss to Egypt, for which he brought on Maty Ryan and asked 18-year-old Lucas Herrington to take a crucial penalty. Yet the morning after in Dallas, none of it was coming from Popovic’s boss, who instead delivered an endorsement for the Socceroos coach. “Every fan believes he’s a great national coach, right?” said Football Australia chief executive Martin Kugeler.</p><p>It sounded like a contentious statement, but until you realise the “he” in the sentence was referring to a fan, not the Socceroos coach. Either way, Popovic is a capable manager who has shown he has a place in professional football, and has guided this team out of a challenging World Cup group.</p> <a href=\"https://www.theguardian.com/football/blog/2026/jul/06/tony-popovic-socceroos-australia-world-cup-analysis\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 15:00:30 GMT"
     }
   ],
   "teams": [
@@ -15120,7 +15155,7 @@
       "factors": {
         "strength": 76,
         "form": 70,
-        "path": 60,
+        "path": 59,
         "squad": 50,
         "margin": 74
       },
@@ -15969,18 +16004,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2063,
+      "eventCount": 2068,
       "manualEventCount": 3,
-      "rawNewsCount": 2060,
+      "rawNewsCount": 2065,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2063,
-      "applied": 1912,
+      "watched": 2068,
+      "applied": 1917,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2058,
+      "singleSource": 2063,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -16024,7 +16059,7 @@
         "attack": -11.55,
         "defense": -2.55,
         "goalkeeper": -2.15,
-        "path": -7.709999999999999,
+        "path": -8.629999999999999,
         "squad": -29.749999999999996
       },
       "bosnia-herzegovina": {
@@ -26621,7 +26656,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-05T14:00:33.986633+00:00",
+    "generatedAt": "2026-07-05T15:23:20.943696+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
