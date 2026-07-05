@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-04T22:30:23.856330+00:00",
+  "updatedAt": "2026-07-04T23:38:51.831196+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -14782,6 +14782,13 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Sat, 04 Jul 2026 21:23:43 GMT"
+    },
+    {
+      "title": "Mbappe coolly fires France into lead from penalty spot",
+      "detail": "France's Kylian Mbappe keeps his cool to send Paraguay goalkeeper Orlando Gill the wrong way to score his seventh goal of the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 23:06:35 GMT"
     }
   ],
   "teams": [
@@ -15717,18 +15724,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2027,
+      "eventCount": 2028,
       "manualEventCount": 3,
-      "rawNewsCount": 2024,
+      "rawNewsCount": 2025,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2027,
-      "applied": 1879,
+      "watched": 2028,
+      "applied": 1880,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2022,
+      "singleSource": 2023,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -26369,43 +26376,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-04T22:30:45.735978+00:00",
+    "generatedAt": "2026-07-04T23:39:13.738489+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.5,
-        "currentChampion": 21.4,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 10 条",
-        "reasons": [
-          "可入模型事件新增 10 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
       "up": 0,
-      "down": 1,
+      "down": 0,
       "largestUp": null,
-      "largestDown": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.5,
-        "currentChampion": 21.4,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 10 条",
-        "reasons": [
-          "可入模型事件新增 10 条"
-        ]
-      }
+      "largestDown": null
     }
   }
 }
