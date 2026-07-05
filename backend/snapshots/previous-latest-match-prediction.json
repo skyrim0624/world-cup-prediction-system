@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-05T07:44:23.019243+00:00",
+  "updatedAt": "2026-07-05T10:23:15.018991+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -14901,6 +14901,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 05 Jul 2026 07:00:20 GMT"
+    },
+    {
+      "title": "England enter the Azteca - where football kings are crowned",
+      "detail": "BBC Sport explores the history and cultural power of the Azteca, one of the great cathedrals of world football, as England prepare to face Mexico there in the last 16 of the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 08:26:39 GMT"
+    },
+    {
+      "title": "Stay humble - the Premier League feud about to hit world stage",
+      "detail": "The Premier League between Manchester City's Erling Haaland and Arsenal defender Erling Haaland goes global as Norway meet Brazil at the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 09:25:03 GMT"
+    },
+    {
+      "title": "Tuchel praises respectful Mexico fans amid increased security",
+      "detail": "Thomas Tuchel dismisses concerns over England's treatment in Mexico, saying it has been \"nicer than I expected\" and that home fans are \"friendly and respectful\".",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 05 Jul 2026 02:15:19 GMT"
+    },
+    {
+      "title": "Mexico return luxury watches gifted by YouTuber",
+      "detail": "World Cup co-hosts Mexico - who play England on Sunday night - return luxury watches gifted to them by a content creator because Fifa rules prohibit expensive gifts.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 07:57:34 GMT"
+    },
+    {
+      "title": "'Sassuolo and Bologna in Bowie transfer talks' - gossip",
+      "detail": "Sassuolo and Bologna are reportedly in talks with Hellas Verona about Kieron Bowie, while Celtic are linked with Norwegian striker Tobias Lauritsen and three clubs are said to be chasing former Rangers loanee Mikey Moore.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 08:03:15 GMT"
+    },
+    {
+      "title": "England at the Azteca Stadium: a potted history – in pictures",
+      "detail": "<p>England return to the Azteca Stadium for the first time in 40 years as they take on co-hosts Mexico in the last 16 of the World Cup. We take a look at the games the Three Lions have played in this iconic setting. And yes, Maradona is featured</p> <a href=\"https://www.theguardian.com/football/gallery/2026/jul/05/england-azteca-stadium-mexico-potted-history-in-pictures\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 09:00:22 GMT"
+    },
+    {
+      "title": "France find a way past Paraguay and what awaits England in Mexico? | World Cup Daily – video",
+      "detail": "<p><a href=\"https://bsky.app/profile/maxrushden.bsky.social\">Max Rushden</a> is joined by <a href=\"https://bsky.app/profile/did:plc:i55lfvhkg573wfmby5sdnvq6\">Barry Glendenning</a>, Archie Rhind-Tutt, Barney Ronay and Philippe Auclair as France beat a spiky Paraguay side to reach the quarter-finals</p> <a href=\"https://www.theguardian.com/football/video/2026/jul/05/france-paraguay-england-mexico-world-cup-daily-podcast-video\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 07:49:38 GMT"
     }
   ],
   "teams": [
@@ -14912,14 +14961,14 @@
         "strength": 82,
         "form": 76,
         "path": 63,
-        "squad": 62,
+        "squad": 59,
         "margin": 76
       },
       "tournament": {
         "champion": 0.3,
-        "final": 1.4,
-        "semifinal": 4.9,
-        "quarterfinal": 12.9,
+        "final": 1.2,
+        "semifinal": 4.4,
+        "quarterfinal": 12.0,
         "change": -1.2
       }
     },
@@ -15278,9 +15327,9 @@
       },
       "tournament": {
         "champion": 1.3,
-        "final": 4.1,
-        "semifinal": 11.2,
-        "quarterfinal": 23.8,
+        "final": 4.2,
+        "semifinal": 11.5,
+        "quarterfinal": 24.4,
         "change": 0.7
       }
     },
@@ -15317,7 +15366,7 @@
       "tournament": {
         "champion": 2.1,
         "final": 5.7,
-        "semifinal": 13.6,
+        "semifinal": 13.7,
         "quarterfinal": 28.2,
         "change": 1.0
       }
@@ -15676,11 +15725,11 @@
         "margin": 83
       },
       "tournament": {
-        "champion": 4.7,
+        "champion": 4.6,
         "final": 8.7,
         "semifinal": 17.3,
         "quarterfinal": 25.6,
-        "change": -1.5
+        "change": -1.6
       }
     },
     {
@@ -15697,8 +15746,8 @@
       "tournament": {
         "champion": 0.1,
         "final": 0.4,
-        "semifinal": 1.6,
-        "quarterfinal": 6.0,
+        "semifinal": 1.7,
+        "quarterfinal": 6.1,
         "change": 0.0
       }
     },
@@ -15752,11 +15801,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 8.6,
+        "champion": 8.7,
         "final": 18.9,
-        "semifinal": 36.2,
-        "quarterfinal": 57.3,
-        "change": -2.1
+        "semifinal": 36.4,
+        "quarterfinal": 57.6,
+        "change": -2.0
       }
     },
     {
@@ -15836,18 +15885,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2044,
+      "eventCount": 2051,
       "manualEventCount": 3,
-      "rawNewsCount": 2041,
+      "rawNewsCount": 2048,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2044,
-      "applied": 1895,
+      "watched": 2051,
+      "applied": 1902,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2039,
+      "singleSource": 2046,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -15864,7 +15913,7 @@
         "defense": -7.25,
         "goalkeeper": 0.0,
         "path": -9.5,
-        "squad": -18.4
+        "squad": -20.549999999999997
       },
       "south-africa": {
         "attack": 0.0,
@@ -26488,17 +26537,72 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-05T07:44:48.197584+00:00",
+    "generatedAt": "2026-07-05T10:23:36.660341+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "england",
+        "name": "英格兰",
+        "code": "ENG",
+        "previousChampion": 8.6,
+        "currentChampion": 8.7,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.3%",
+        "reasons": [
+          "八强概率上升 +0.3%",
+          "四强概率上升 +0.2%",
+          "可入模型事件新增 7 条"
+        ]
+      },
+      {
+        "team": "portugal",
+        "name": "葡萄牙",
+        "code": "POR",
+        "previousChampion": 4.7,
+        "currentChampion": 4.6,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 7 条",
+        "reasons": [
+          "可入模型事件新增 7 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 1,
+      "down": 1,
+      "largestUp": {
+        "team": "england",
+        "name": "英格兰",
+        "code": "ENG",
+        "previousChampion": 8.6,
+        "currentChampion": 8.7,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.3%",
+        "reasons": [
+          "八强概率上升 +0.3%",
+          "四强概率上升 +0.2%",
+          "可入模型事件新增 7 条"
+        ]
+      },
+      "largestDown": {
+        "team": "portugal",
+        "name": "葡萄牙",
+        "code": "POR",
+        "previousChampion": 4.7,
+        "currentChampion": 4.6,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 7 条",
+        "reasons": [
+          "可入模型事件新增 7 条"
+        ]
+      }
     }
   }
 }
