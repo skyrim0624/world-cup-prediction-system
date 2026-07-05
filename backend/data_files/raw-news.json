@@ -28794,5 +28794,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-985a630fa2b5",
+    "title": "Real Madrid sign defender Dumfries from Inter Milan",
+    "summary": "Real Madrid sign Netherlands full-back Denzel Dumfries from Inter Milan on a four-year deal.",
+    "source": "bbc",
+    "team": "netherlands",
+    "status": "single_source",
+    "published_at": "Sun, 05 Jul 2026 12:23:41 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c20yyg6n3zwo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "defense",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "espn-881f3cc5f9a0",
+    "title": "Copy of Pride, joy and anxiety: What watching a family mem...",
+    "summary": "It's incredible for families who have seen loved ones go from kicking a ball around the house to walking out on the biggest stage there is at a World Cup.",
+    "source": "espn",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Sun, 5 Jul 2026 09:23:48 EST",
+    "url": "https://www.espn.com/soccer/story/_/id/49266645/world-cup-pride-joy-anxiety-watching-family-member-play-means",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
