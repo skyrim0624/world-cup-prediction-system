@@ -29046,5 +29046,19 @@
     "factor": "path",
     "direction": 1,
     "confidence": 0.52
+  },
+  {
+    "id": "guardian-4d3287633449",
+    "title": "‘They’ve tried to kill me for 23 years’: Cristiano Ronaldo says this World Cup will be his last",
+    "summary": "<ul><li><p>‘God has been generous to me,’ says 41-year-old</p></li><li><p>Portugal face Spain in last 16 in Dallas on Monday</p></li></ul><p>Twenty-three years, 232 games, 146 goals and six World Cups later, at 41, this really could be the end, and Cristiano Ronaldo will depart at peace. The day before potentially the final match of his extraordinary international career, the truth that everyone knew but Portugal’s captain had tried not to actually express, eventually came out. “This will be my last World Cup; God willing tomorrow is not my last game,” he said. And if it is, well, it is. If he has to go without lifting the only trophy to resist him, so be it.</p><p>“I’m not missing anything; God has been generous to me,” Ronaldo said. “I won’t be more Cristiano or less Cristiano if I win the World Cup or not.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/05/kill-me-23-years-cristiano-ronaldo-world-cup-last-portugal-spain\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "paraguay",
+    "status": "single_source",
+    "published_at": "Sun, 05 Jul 2026 20:41:28 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/05/kill-me-23-years-cristiano-ronaldo-world-cup-last-portugal-spain",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

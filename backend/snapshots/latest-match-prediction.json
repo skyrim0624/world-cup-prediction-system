@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-05T19:52:57.571374+00:00",
+  "updatedAt": "2026-07-05T21:09:02.258165+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -15146,6 +15146,13 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 05 Jul 2026 17:39:30 GMT"
+    },
+    {
+      "title": "‘They’ve tried to kill me for 23 years’: Cristiano Ronaldo says this World Cup will be his last",
+      "detail": "<ul><li><p>‘God has been generous to me,’ says 41-year-old</p></li><li><p>Portugal face Spain in last 16 in Dallas on Monday</p></li></ul><p>Twenty-three years, 232 games, 146 goals and six World Cups later, at 41, this really could be the end, and Cristiano Ronaldo will depart at peace. The day before potentially the final match of his extraordinary international career, the truth that everyone knew but Portugal’s captain had tried not to actually express, eventually came out. “This will be my last World Cup; God willing tomorrow is not my last game,” he said. And if it is, well, it is. If he has to go without lifting the only trophy to resist him, so be it.</p><p>“I’m not missing anything; God has been generous to me,” Ronaldo said. “I won’t be more Cristiano or less Cristiano if I win the World Cup or not.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/05/kill-me-23-years-cristiano-ronaldo-world-cup-last-portugal-spain\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 20:41:28 GMT"
     }
   ],
   "teams": [
@@ -16081,18 +16088,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2079,
+      "eventCount": 2080,
       "manualEventCount": 3,
-      "rawNewsCount": 2076,
+      "rawNewsCount": 2077,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2079,
-      "applied": 1928,
+      "watched": 2080,
+      "applied": 1929,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2074,
+      "singleSource": 2075,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -26733,7 +26740,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-05T19:53:19.555703+00:00",
+    "generatedAt": "2026-07-05T21:09:22.676114+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
