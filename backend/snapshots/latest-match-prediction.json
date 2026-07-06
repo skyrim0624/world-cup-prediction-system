@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-06T09:04:32.262427+00:00",
+  "updatedAt": "2026-07-06T13:05:40.501434+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -15419,6 +15419,76 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 06 Jul 2026 06:59:18 GMT"
+    },
+    {
+      "title": "Tottenham seal £100m move for Newcastle's Tonali",
+      "detail": "Tottenham complete the signing of midfielder Sandro Tonali from Newcastle United for a club-record fee which could reach £100m.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 10:01:11 GMT"
+    },
+    {
+      "title": "'You've been trying to kill me for 23 years' - should Ronaldo start?",
+      "detail": "Appearing at his sixth World Cup, will Cristiano Ronaldo lift the famous trophy for the first time before he retires?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 11:21:44 GMT"
+    },
+    {
+      "title": "How England's epic night at the Azteca unfolded",
+      "detail": "Relive all the drama from England’s 3-2 win over Mexico, as Thomas Tuchel’s team progressed to a quarter-final meeting with Norway on Saturday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 11:05:52 GMT"
+    },
+    {
+      "title": "Glasner becomes Forest's fifth head coach in a year",
+      "detail": "Former Crystal Palace manager Oliver Glasner replaces Vitor Pereira following his sacking last week.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 12:03:31 GMT"
+    },
+    {
+      "title": "How England used five mini games to beat Mexico",
+      "detail": "The tactical breakdown of how Thomas Tuchel's 10-man England pulled off a remarkable World Cup win in a hostile Mexico City.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 11:57:53 GMT"
+    },
+    {
+      "title": "The numbers behind Spain defence chasing World Cup history",
+      "detail": "With Spain yet to concede at the 2026 World Cup and on the brink of another tournament record, BBC Sport examines the numbers behind the shutouts.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 11:07:49 GMT"
+    },
+    {
+      "title": "Arsenal sign Germany striker Cerci on free",
+      "detail": "Arsenal have confirmed the signing of Germany striker Selina Cerci from Hoffenheim on a free transfer.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 12:47:50 GMT"
+    },
+    {
+      "title": "How Mexico's World Cup run brought joy after a year of fear",
+      "detail": "For Mexico's football-loving community, the World Cup has been a triumph, despite their last-16 exit. The joy has spread to Southern California, home to one of the largest Mexican communities outside Mexico.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 05:29:00 GMT"
+    },
+    {
+      "title": "The Scottish set-piece guru plotting Portugal's World Cup glory",
+      "detail": "Austin MacPhee helped steer Aston Villa to European glory and now is integral to Portugal's hopes of winning the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 12:16:52 GMT"
+    },
+    {
+      "title": "Unwelcome and undue: Trump’s red-card intervention hurts the US’s World Cup more than it helps | Pablo Iglesias Maurer",
+      "detail": "<p>In pushing Fifa to reverse Folarin Balogun’s suspension, the president did the most American thing possible: assert unasked-for power to get his way</p><p>The story of Garrincha’s red card in the 1962 World Cup is the stuff of legend. The Brazilian great was sent off in the semi-finals for lashing out at an opponent, but back then, Fifa had no automatic one-match suspension in place. So a disciplinary committee convened the next day to decide his fate for the final.</p><p>As the story goes, the assistant referee who had the best view of the offense was paid off and disappeared, and the president of Chile, the tournament’s host, put in a call to Fifa, urging them to decide against any additional suspension. He did so for the sake of keeping one of the tournament’s most entertaining players on the field. Garrincha emerged scot-free, and Brazil won their second World Cup days later.</p> <a href=\"https://www.theguardian.com/football/2026/jul/06/donald-trump-folarin-balogun-world-cup-usmnt-intervention\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 06 Jul 2026 09:00:01 GMT"
     }
   ],
   "teams": [
@@ -16354,18 +16424,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2118,
+      "eventCount": 2128,
       "manualEventCount": 3,
-      "rawNewsCount": 2115,
+      "rawNewsCount": 2125,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2118,
-      "applied": 1967,
+      "watched": 2128,
+      "applied": 1975,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2113,
+      "singleSource": 2123,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -16410,7 +16480,7 @@
         "defense": -2.55,
         "goalkeeper": -2.15,
         "path": -7.759999999999999,
-        "squad": -29.749999999999996
+        "squad": -32.3
       },
       "bosnia-herzegovina": {
         "attack": -2.55,
@@ -27006,50 +27076,16 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-06T09:04:54.003623+00:00",
+    "generatedAt": "2026-07-06T13:06:02.366193+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "australia",
-        "name": "澳大利亚",
-        "code": "AUS",
-        "previousChampion": 0.2,
-        "currentChampion": 0.3,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "人员盘上调 +1.7",
-        "reasons": [
-          "人员盘上调 +1.7",
-          "八强概率上升 +0.4%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 17 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
+      "up": 0,
       "down": 0,
-      "largestUp": {
-        "team": "australia",
-        "name": "澳大利亚",
-        "code": "AUS",
-        "previousChampion": 0.2,
-        "currentChampion": 0.3,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "人员盘上调 +1.7",
-        "reasons": [
-          "人员盘上调 +1.7",
-          "八强概率上升 +0.4%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 17 条"
-        ]
-      },
+      "largestUp": null,
       "largestDown": null
     }
   }
