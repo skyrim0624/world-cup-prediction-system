@@ -29130,5 +29130,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-af51798efe2f",
+    "title": "England's match with Mexico delayed by an hour",
+    "summary": "England's World Cup last-16 match with Mexico in Mexico City is delayed by one hour because of severe weather and is set to kick off at 02:00 BST.",
+    "source": "bbc",
+    "team": "mexico",
+    "status": "single_source",
+    "published_at": "Sun, 05 Jul 2026 23:35:38 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c78yy4x7n5jo?at_medium=RSS&at_campaign=rss",
+    "category": "weather",
+    "factor": "path",
+    "direction": -1,
+    "confidence": 0.66
+  },
+  {
+    "id": "bbc-d84db04eb611",
+    "title": "Red card system in disarray over Trump, Fifa and Balogun decision",
+    "summary": "The decision to effectively overturn the red card shown to United States forward Florian Balogun's leaves many unanswered questions.",
+    "source": "bbc",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Sun, 05 Jul 2026 23:57:10 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cly99dxjkxxo?at_medium=RSS&at_campaign=rss",
+    "category": "suspension",
+    "factor": "attack",
+    "direction": -1,
+    "confidence": 0.9
+  },
+  {
+    "id": "bbc-4a1d55a04b98",
+    "title": "Haaland sends Norway into quarter-finals as Brazil crash out",
+    "summary": "Erling Haaland scores twice for Norway as they beat Brazil 2-1 at the New York New Jersey Stadium to reach the quarter-finals of the World Cup for the first time.",
+    "source": "bbc",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Sun, 05 Jul 2026 22:47:49 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/videos/c8e226j15rpo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-55a13f34f4c2",
+    "title": "Queiroz leaves Ghana following World Cup exit",
+    "summary": "Carlos Queiroz steps down as Ghana head coach after three months in charge following their World Cup exit.",
+    "source": "bbc",
+    "team": "argentina",
+    "status": "single_source",
+    "published_at": "Sun, 05 Jul 2026 22:55:27 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/clyxx288yr6o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-05T22:32:48.946606+00:00",
+  "updatedAt": "2026-07-06T00:13:11.566908+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -15188,6 +15188,34 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 05 Jul 2026 22:27:18 GMT"
+    },
+    {
+      "title": "England's match with Mexico delayed by an hour",
+      "detail": "England's World Cup last-16 match with Mexico in Mexico City is delayed by one hour because of severe weather and is set to kick off at 02:00 BST.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 05 Jul 2026 23:35:38 GMT"
+    },
+    {
+      "title": "Red card system in disarray over Trump, Fifa and Balogun decision",
+      "detail": "The decision to effectively overturn the red card shown to United States forward Florian Balogun's leaves many unanswered questions.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 05 Jul 2026 23:57:10 GMT"
+    },
+    {
+      "title": "Haaland sends Norway into quarter-finals as Brazil crash out",
+      "detail": "Erling Haaland scores twice for Norway as they beat Brazil 2-1 at the New York New Jersey Stadium to reach the quarter-finals of the World Cup for the first time.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 22:47:49 GMT"
+    },
+    {
+      "title": "Queiroz leaves Ghana following World Cup exit",
+      "detail": "Carlos Queiroz steps down as Ghana head coach after three months in charge following their World Cup exit.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 22:55:27 GMT"
     }
   ],
   "teams": [
@@ -15198,7 +15226,7 @@
       "factors": {
         "strength": 82,
         "form": 76,
-        "path": 63,
+        "path": 62,
         "squad": 59,
         "margin": 76
       },
@@ -15482,7 +15510,7 @@
       "code": "TUR",
       "factors": {
         "strength": 79,
-        "form": 78,
+        "form": 76,
         "path": 67,
         "squad": 81,
         "margin": 77
@@ -16123,18 +16151,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2085,
+      "eventCount": 2089,
       "manualEventCount": 3,
-      "rawNewsCount": 2082,
+      "rawNewsCount": 2086,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2085,
-      "applied": 1934,
+      "watched": 2089,
+      "applied": 1938,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2080,
+      "singleSource": 2084,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -16150,7 +16178,7 @@
         "attack": -2.15,
         "defense": -7.25,
         "goalkeeper": 0.0,
-        "path": -9.5,
+        "path": -10.42,
         "squad": -20.549999999999997
       },
       "south-africa": {
@@ -16252,7 +16280,7 @@
         "squad": -8.6
       },
       "turkiye": {
-        "attack": -2.15,
+        "attack": -4.699999999999999,
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -1.02,
@@ -26658,13 +26686,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-07-05",
+      "referenceDate": "2026-07-06",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 22,
-      "oldestAgeDays": 96,
+      "newestAgeDays": 23,
+      "oldestAgeDays": 97,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -26775,7 +26803,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-05T22:33:11.294815+00:00",
+    "generatedAt": "2026-07-06T00:13:33.500607+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

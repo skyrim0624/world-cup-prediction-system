@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-05T21:09:02.258165+00:00",
+  "updatedAt": "2026-07-05T22:32:48.946606+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -15153,6 +15153,41 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 05 Jul 2026 20:41:28 GMT"
+    },
+    {
+      "title": "Shelter-in-place order amid storm at Azteca before Mexico-England",
+      "detail": "Supporters are told to stay in their seats as an electrical storm approaches the Azteca Stadium before Mexico v England in the last 16 of the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 22:28:10 GMT"
+    },
+    {
+      "title": "Real Madrid plot £188m Olise deal - Monday's gossip",
+      "detail": "Real Madrid are preparing a mammoth deal for Michael Olise, Tottenham exploring move for Rafael Leao, while Newcastle target Angelo Stiller, plus more.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 21:15:50 GMT"
+    },
+    {
+      "title": "Haaland double fires Norway into World Cup quarter-finals",
+      "detail": "Erling Haaland scores twice as Norway knock out five-time champions Brazil, and progress to the quarter-finals of the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 22:27:08 GMT"
+    },
+    {
+      "title": "Haaland’s heroic double stuns Brazil and sends Norway into World Cup quarter-finals",
+      "detail": "<p>We’re going to need a bigger longboat. Norway are into the quarter-finals of the World Cup for the first time ever after edging this contest thanks to the man whose smile, and choice in cowboy apparel, has charmed the USA. Erling Haaland delivered again for his country, scoring two goals in the last 10 minutes – his sixth and seventh of the tournament – to send Brazil back home and keep the Viking invasion rolling on.</p><p>The result is a massive vindication for Ståle Solbakken and the team he has built over the past half decade. Norway set out to dominate Brazil in the first half, without much in the way of success. A double substitution at half-time signalled a shift in approach and on the counterattack Norway proved able to carve open a Brazil side which had their chances in this match but failed to take them.</p> <a href=\"https://www.theguardian.com/football/2026/jul/05/brazil-norway-world-cup-2026-last-16-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 22:15:11 GMT"
+    },
+    {
+      "title": "Mexico v England: storm delays arrival of teams at stadium before World Cup 2026 last 16 tie – live",
+      "detail": "<p>⚽️ Kick-off time: 6pm local/8pm EDT/1am BST/10am AEST<br>⚽️ <a href=\"https://preview.gutools.co.uk/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://preview.gutools.co.uk/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"https://www.theguardian.com/football/world-cup-2026/overview\">World Cup draw</a> | <a href=\"mailto:beau.dure@guardian.co.uk\">Email Beau</a></p><p><strong>It has just been announced</strong> that the arrival of the teams at the stadium has been put on hold. So, maybe we won’t be fine ....</p><p><strong>And another!</strong> Norway are heading through. There’s gonna be a lot of rowing routines on the floors of New York bars tonight.</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/05/mexico-v-england-world-cup-2026-last-16-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 05 Jul 2026 22:27:18 GMT"
     }
   ],
   "teams": [
@@ -16088,18 +16123,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2080,
+      "eventCount": 2085,
       "manualEventCount": 3,
-      "rawNewsCount": 2077,
+      "rawNewsCount": 2082,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2080,
-      "applied": 1929,
+      "watched": 2085,
+      "applied": 1934,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2075,
+      "singleSource": 2080,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -26740,7 +26775,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-05T21:09:22.676114+00:00",
+    "generatedAt": "2026-07-05T22:33:11.294815+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
