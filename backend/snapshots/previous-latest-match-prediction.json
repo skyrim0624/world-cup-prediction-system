@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-06T19:00:08.456824+00:00",
+  "updatedAt": "2026-07-06T20:58:13.389892+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -542,11 +542,11 @@
       "probability": 84,
       "title": "德国小组第一概率上升",
       "details": [
-        "德国夺冠概率 +0.1%",
+        "德国夺冠概率 ±0.0%",
         "库拉索路径盘下调 ±0.0%",
         "同组竞争队出线门槛抬高"
       ],
-      "championShift": "+0.1%",
+      "championShift": "±0.0%",
       "tone": "green"
     },
     {
@@ -15790,6 +15790,48 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 06 Jul 2026 15:38:11 GMT"
+    },
+    {
+      "title": "FA considering appeal after Quansah red card",
+      "detail": "The Football Association is considering whether to appeal after England defender Jarell Quansah's red card against Mexico.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 06 Jul 2026 20:15:41 GMT"
+    },
+    {
+      "title": "Mbappe condemns racist posts from Paraguay senator",
+      "detail": "France forward Kylian Mbappe condemns a Paraguayan senator as \"despicable\" and unworthy of her position after she made a number of racist remarks mocking his origin and education.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 18:58:18 GMT"
+    },
+    {
+      "title": "Tottenham to bid for Kroupi - Tuesday gossip",
+      "detail": "Tottenham to target Bournemouth's Kroupi, Atletico Madrid a possible home for Salah, Wan-Bissaka a potential White replacement for Arsenal, plus more.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 20:33:16 GMT"
+    },
+    {
+      "title": "Will Irish League clubs make more European history?",
+      "detail": "European football has become a stage where Irish Premiership teams can dream bigger than ever, but will any clubs achieve more history this season?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 18:02:47 GMT"
+    },
+    {
+      "title": "Trump confirms he asked Infantino for review of Folarin Balogun red card",
+      "detail": "<ul><li><p>Trump says he asked Fifa to review red card</p></li><li><p>Infantino confirms Trump called over Balogun</p></li><li><p>US president insists he did not pressure Fifa</p></li></ul><p>Donald Trump said on Monday that he personally asked Fifa president Gianni Infantino <a href=\"https://www.theguardian.com/football/2026/jul/06/folarin-balogun-red-card-reversal-trump-calls-fifa-explainer\">to review the red card</a> shown to USA striker Folarin Balogun, saying he believed the dismissal was unfair but insisting he did not pressure football’s governing body to overturn the suspension.</p><p>The intervention by the president of a World Cup host nation has thrust Fifa’s disciplinary process into the spotlight and <a href=\"https://www.theguardian.com/football/2026/jul/06/belgium-appeal-fifa-lifting-folarin-balogun-red-card-ban-last-16-us-world-cup\">prompted an angry response</a> from Belgium, who face the USA on Monday night for a place in the quarter-finals.</p> <a href=\"https://www.theguardian.com/football/2026/jul/06/trump-fifa-balogun-red-card-review-intervention\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 06 Jul 2026 15:04:32 GMT"
+    },
+    {
+      "title": "Haaland beats his own drum as Norway get set for England epic | Paul MacInnes",
+      "detail": "<p>Ståle Solbakken’s side have played with smiles on their faces – and none more so than the talismanic striker</p><p>Erling Haaland saves his best content for Snapchat. Norway’s No 9, fresh off another decisive double to <a href=\"https://www.theguardian.com/football/2026/jul/05/brazil-norway-world-cup-2026-last-16-match-report\">dispatch Brazil from the World Cup</a>, posted clips overnight of what looked like a party on the team bus. Haaland was delirious, staggering around in the aisle, singing along to a largely forgotten summer tune by a French DJ called Kungs. “We are never going home,” runs the chorus.</p><p>Norway will go home at some point, maybe even on Saturday <a href=\"https://www.theguardian.com/football/2026/jul/06/john-stones-england-thomas-tuchel-world-cup-dream\">when they play England in a World Cup quarter-final</a> in Miami. But there can be no doubt that the country, the team, the supporters and their superstar have been making the most of their time in the US. From the longboat rowing ceremony, to the accumulation of cowboy gear (T-shirt: “Y’all can kiss my Dallas”), to Haaland’s performative taking-it-all-in pose – hands on hips, eyes raised to the horizon, bemused smile – they’ve been loving every minute of it.</p> <a href=\"https://www.theguardian.com/football/2026/jul/06/erling-haaland-norway-england-world-cup-quarter-finals\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 06 Jul 2026 18:50:18 GMT"
     }
   ],
   "teams": [
@@ -15799,16 +15841,16 @@
       "code": "MEX",
       "factors": {
         "strength": 82,
-        "form": 75,
+        "form": 74,
         "path": 61,
         "squad": 50,
-        "margin": 76
+        "margin": 74
       },
       "tournament": {
         "champion": 0.1,
-        "final": 0.7,
-        "semifinal": 2.7,
-        "quarterfinal": 8.7,
+        "final": 0.6,
+        "semifinal": 2.4,
+        "quarterfinal": 8.0,
         "change": -1.4
       }
     },
@@ -15818,7 +15860,7 @@
       "code": "RSA",
       "factors": {
         "strength": 66,
-        "form": 70,
+        "form": 68,
         "path": 65,
         "squad": 67,
         "margin": 70
@@ -15826,8 +15868,8 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 0.9,
-        "quarterfinal": 7.1,
+        "semifinal": 0.8,
+        "quarterfinal": 6.9,
         "change": -0.1
       }
     },
@@ -15875,7 +15917,7 @@
       "code": "CAN",
       "factors": {
         "strength": 76,
-        "form": 69,
+        "form": 68,
         "path": 60,
         "squad": 50,
         "margin": 74
@@ -15883,8 +15925,8 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 1.0,
-        "quarterfinal": 8.2,
+        "semifinal": 0.8,
+        "quarterfinal": 7.6,
         "change": -0.4
       }
     },
@@ -15977,9 +16019,9 @@
       },
       "tournament": {
         "champion": 0.8,
-        "final": 2.3,
-        "semifinal": 7.6,
-        "quarterfinal": 24.5,
+        "final": 2.4,
+        "semifinal": 7.7,
+        "quarterfinal": 24.9,
         "change": -0.7
       }
     },
@@ -16111,7 +16153,7 @@
       "tournament": {
         "champion": 3.5,
         "final": 7.9,
-        "semifinal": 18.1,
+        "semifinal": 18.0,
         "quarterfinal": 32.5,
         "change": -2.3
       }
@@ -16167,9 +16209,9 @@
       },
       "tournament": {
         "champion": 1.4,
-        "final": 4.5,
-        "semifinal": 12.5,
-        "quarterfinal": 26.7,
+        "final": 4.6,
+        "semifinal": 12.8,
+        "quarterfinal": 27.2,
         "change": 0.8
       }
     },
@@ -16185,11 +16227,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 7.0,
-        "final": 13.7,
-        "semifinal": 28.9,
-        "quarterfinal": 60.1,
-        "change": 0.2
+        "champion": 7.1,
+        "final": 13.9,
+        "semifinal": 29.1,
+        "quarterfinal": 60.6,
+        "change": 0.3
       }
     },
     {
@@ -16338,7 +16380,7 @@
       },
       "tournament": {
         "champion": 20.7,
-        "final": 30.7,
+        "final": 30.6,
         "semifinal": 46.7,
         "quarterfinal": 57.2,
         "change": 9.1
@@ -16413,11 +16455,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 14.5,
-        "final": 23.8,
-        "semifinal": 40.8,
+        "champion": 14.4,
+        "final": 23.7,
+        "semifinal": 40.7,
         "quarterfinal": 58.9,
-        "change": 1.0
+        "change": 0.9
       }
     },
     {
@@ -16587,7 +16629,7 @@
         "champion": 0.1,
         "final": 0.4,
         "semifinal": 1.7,
-        "quarterfinal": 6.3,
+        "quarterfinal": 6.4,
         "change": 0.0
       }
     },
@@ -16623,7 +16665,7 @@
       },
       "tournament": {
         "champion": 3.6,
-        "final": 9.8,
+        "final": 9.9,
         "semifinal": 20.1,
         "quarterfinal": 49.8,
         "change": 1.1
@@ -16644,7 +16686,7 @@
         "champion": 8.8,
         "final": 19.2,
         "semifinal": 36.9,
-        "quarterfinal": 58.3,
+        "quarterfinal": 58.4,
         "change": -1.9
       }
     },
@@ -16725,18 +16767,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2171,
+      "eventCount": 2177,
       "manualEventCount": 3,
-      "rawNewsCount": 2168,
+      "rawNewsCount": 2174,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2171,
-      "applied": 2014,
+      "watched": 2177,
+      "applied": 2020,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2166,
+      "singleSource": 2172,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -16750,13 +16792,13 @@
     "factorImpacts": {
       "mexico": {
         "attack": -4.699999999999999,
-        "defense": -8.98,
+        "defense": -11.530000000000001,
         "goalkeeper": 0.0,
         "path": -11.34,
         "squad": -29.949999999999996
       },
       "south-africa": {
-        "attack": -2.55,
+        "attack": -5.1,
         "defense": -4.699999999999999,
         "goalkeeper": -2.15,
         "path": -1.02,
@@ -16777,7 +16819,7 @@
         "squad": 0.0
       },
       "canada": {
-        "attack": -14.100000000000001,
+        "attack": -16.25,
         "defense": -2.55,
         "goalkeeper": -2.15,
         "path": -7.759999999999999,
@@ -27377,17 +27419,78 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-06T19:00:30.203997+00:00",
+    "generatedAt": "2026-07-06T20:58:35.580738+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "france",
+        "name": "法国",
+        "code": "FRA",
+        "previousChampion": 14.5,
+        "currentChampion": 14.4,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "四强概率下降 -0.1%",
+        "reasons": [
+          "四强概率下降 -0.1%",
+          "决赛概率下降 -0.1%",
+          "可入模型事件新增 6 条"
+        ]
+      },
+      {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.0,
+        "currentChampion": 7.1,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.5%",
+        "reasons": [
+          "八强概率上升 +0.5%",
+          "四强概率上升 +0.2%",
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 6 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 1,
+      "down": 1,
+      "largestUp": {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.0,
+        "currentChampion": 7.1,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.5%",
+        "reasons": [
+          "八强概率上升 +0.5%",
+          "四强概率上升 +0.2%",
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 6 条"
+        ]
+      },
+      "largestDown": {
+        "team": "france",
+        "name": "法国",
+        "code": "FRA",
+        "previousChampion": 14.5,
+        "currentChampion": 14.4,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "四强概率下降 -0.1%",
+        "reasons": [
+          "四强概率下降 -0.1%",
+          "决赛概率下降 -0.1%",
+          "可入模型事件新增 6 条"
+        ]
+      }
     }
   }
 }
