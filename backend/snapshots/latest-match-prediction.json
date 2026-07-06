@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-06T00:13:11.566908+00:00",
+  "updatedAt": "2026-07-06T04:53:43.098596+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -15216,6 +15216,90 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 05 Jul 2026 22:55:27 GMT"
+    },
+    {
+      "title": "The man England will fear most - Haaland fires Norway to history",
+      "detail": "Erling Haaland has scored seven goals in four World Cup games and he is the striker that nobody wants to face as he fires Norway into an historic quarter-final.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 03:20:59 GMT"
+    },
+    {
+      "title": "England win thriller against Mexico to reach quarter-finals",
+      "detail": "Jude Bellingham scores twice and Harry Kane converts a penalty as 10-man England hold on for a 3-2 World Cup victory against Mexico.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 04:06:23 GMT"
+    },
+    {
+      "title": "Where does Mexico win rank among England's best results?",
+      "detail": "BBC Sport looks at some of England's most famous away victories after their epic win against Mexico at the Azteca - plus you can have your say.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 04:20:22 GMT"
+    },
+    {
+      "title": "'Referees just not good enough' - Tuchel anger over penalty",
+      "detail": "England head coach Thomas Tuchel said referees at the World Cup \"are just not good enough\" after the dramatic last-16 win over Mexico.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 02:50:51 GMT"
+    },
+    {
+      "title": "Who produced another iconic performance? England player ratings",
+      "detail": "BBC Sport England reporter Alex Howell rates how the Three Lions players performed in the last-16 win over Mexico.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 03:09:44 GMT"
+    },
+    {
+      "title": "Ageing Brazil need major surgery - but is Ancelotti the man to do it?",
+      "detail": "There was nothing unlucky about Brazil's loss to Norway in the last 16 of the World Cup and their exit at this stage is an unmitigated disaster, writes Tim Vickery.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 00:51:36 GMT"
+    },
+    {
+      "title": "Bellingham scores two in 98 seconds to silence the Azteca",
+      "detail": "Jude Bellingham scores two goals in 98 seconds to give England a 2-0 lead over Mexico during their last 16 match at the Mexico City Stadium.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 01:58:08 GMT"
+    },
+    {
+      "title": "'Nasty, nasty challenge' - Quansah shown red card",
+      "detail": "England are reduced to ten men as Jarrel Quansah is shown a red card following a VAR review for a \"nasty\" challenge on Mexico's Jesus Gallardo.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 06 Jul 2026 02:49:54 GMT"
+    },
+    {
+      "title": "'I'm speechless' - Kane reacts to England's victory over Mexico",
+      "detail": "A very hoarse sounding England captain Harry Kane gives his reaction to England's 3-2 victory over Mexico and praises the fans support.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 03:49:33 GMT"
+    },
+    {
+      "title": "How 'remarkable' Haaland lead Norway to win over Brazil",
+      "detail": "BBC Sport World Cup pundits Wayne Rooney, Joe Hart, and Micah Richards look at how \"absolute monster\" Erling Haaland inspired Norway to victory over Brazil in the last 16 of the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 00:13:36 GMT"
+    },
+    {
+      "title": "'Sportsmanship in question' after decision to suspend Balogun red card",
+      "detail": "BBC Sport World Cup pundits Wayne Rooney, Joe Hart, and Micah Richards react to the decision to suspend the red card shown to the USA's Florian Balogun during their round of 32 tie with Bosnia-Herzegovina.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 06 Jul 2026 00:38:09 GMT"
+    },
+    {
+      "title": "England’s 10 men hang on after Kane penalty to beat Mexico in World Cup thriller",
+      "detail": "<p>File it as England’s finest World Cup knockout phase victory since 1966. There have not been a huge number of them; only nine previously, each a gripping drama in its own right. Yet it was the context of this one that set it apart.</p><p>England stepped into the mayhem of the Estadio Azteca, a venue that contains a very particular ghost for them, to face the full force of the Mexican nation. Plus a team that almost never lose here. Javier Aguirre’s men brought flawless form to the showpiece; four wins out of four so far at the tournament; <em>their</em> tournament. It was the cohosts’ grand send-off from their own turf, arguably the biggest game in their history. An unofficial final for them.</p> <a href=\"https://www.theguardian.com/football/2026/jul/06/england-mexico-match-report-jude-bellingham-harry-kane-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 06 Jul 2026 03:06:05 GMT"
     }
   ],
   "teams": [
@@ -15227,15 +15311,15 @@
         "strength": 82,
         "form": 76,
         "path": 62,
-        "squad": 59,
+        "squad": 57,
         "margin": 76
       },
       "tournament": {
-        "champion": 0.3,
-        "final": 1.2,
-        "semifinal": 4.4,
-        "quarterfinal": 12.0,
-        "change": -1.2
+        "champion": 0.2,
+        "final": 1.1,
+        "semifinal": 4.1,
+        "quarterfinal": 11.4,
+        "change": -1.3
       }
     },
     {
@@ -15322,14 +15406,14 @@
         "strength": 66,
         "form": 72,
         "path": 65,
-        "squad": 74,
+        "squad": 71,
         "margin": 74
       },
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 0.9,
-        "quarterfinal": 6.9,
+        "semifinal": 0.8,
+        "quarterfinal": 6.3,
         "change": -0.1
       }
     },
@@ -15461,8 +15545,8 @@
       "tournament": {
         "champion": 0.6,
         "final": 1.9,
-        "semifinal": 6.5,
-        "quarterfinal": 28.0,
+        "semifinal": 6.6,
+        "quarterfinal": 28.4,
         "change": -0.4
       }
     },
@@ -15594,8 +15678,8 @@
       "tournament": {
         "champion": 1.3,
         "final": 4.2,
-        "semifinal": 11.5,
-        "quarterfinal": 24.4,
+        "semifinal": 11.7,
+        "quarterfinal": 24.8,
         "change": 0.7
       }
     },
@@ -15690,7 +15774,7 @@
         "champion": 1.9,
         "final": 4.7,
         "semifinal": 12.2,
-        "quarterfinal": 38.1,
+        "quarterfinal": 38.2,
         "change": -1.2
       }
     },
@@ -15765,7 +15849,7 @@
       "tournament": {
         "champion": 20.6,
         "final": 30.5,
-        "semifinal": 46.4,
+        "semifinal": 46.3,
         "quarterfinal": 57.2,
         "change": 9.0
       }
@@ -15861,7 +15945,7 @@
         "champion": 0.8,
         "final": 2.4,
         "semifinal": 7.4,
-        "quarterfinal": 27.0,
+        "quarterfinal": 27.1,
         "change": -0.2
       }
     },
@@ -15955,7 +16039,7 @@
       "tournament": {
         "champion": 0.3,
         "final": 1.1,
-        "semifinal": 3.5,
+        "semifinal": 3.4,
         "quarterfinal": 6.7,
         "change": -0.3
       }
@@ -16068,9 +16152,9 @@
       },
       "tournament": {
         "champion": 8.7,
-        "final": 18.9,
-        "semifinal": 36.4,
-        "quarterfinal": 57.6,
+        "final": 19.0,
+        "semifinal": 36.5,
+        "quarterfinal": 57.7,
         "change": -2.0
       }
     },
@@ -16151,18 +16235,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2089,
+      "eventCount": 2101,
       "manualEventCount": 3,
-      "rawNewsCount": 2086,
+      "rawNewsCount": 2098,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2089,
-      "applied": 1938,
+      "watched": 2101,
+      "applied": 1950,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2084,
+      "singleSource": 2096,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -16179,7 +16263,7 @@
         "defense": -7.25,
         "goalkeeper": 0.0,
         "path": -10.42,
-        "squad": -20.549999999999997
+        "squad": -23.099999999999998
       },
       "south-africa": {
         "attack": 0.0,
@@ -16214,7 +16298,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": 0.0,
-        "squad": 0.0
+        "squad": -2.55
       },
       "qatar": {
         "attack": 0.0,
@@ -26803,17 +26887,51 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-06T00:13:33.500607+00:00",
+    "generatedAt": "2026-07-06T04:54:05.308730+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "mexico",
+        "name": "墨西哥",
+        "code": "MEX",
+        "previousChampion": 0.3,
+        "currentChampion": 0.2,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "人员盘下调 -2.6",
+        "reasons": [
+          "人员盘下调 -2.6",
+          "八强概率下降 -0.6%",
+          "四强概率下降 -0.3%",
+          "决赛概率下降 -0.1%",
+          "可入模型事件新增 12 条"
+        ]
+      }
+    ],
     "summary": {
       "up": 0,
-      "down": 0,
+      "down": 1,
       "largestUp": null,
-      "largestDown": null
+      "largestDown": {
+        "team": "mexico",
+        "name": "墨西哥",
+        "code": "MEX",
+        "previousChampion": 0.3,
+        "currentChampion": 0.2,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "人员盘下调 -2.6",
+        "reasons": [
+          "人员盘下调 -2.6",
+          "八强概率下降 -0.6%",
+          "四强概率下降 -0.3%",
+          "决赛概率下降 -0.1%",
+          "可入模型事件新增 12 条"
+        ]
+      }
     }
   }
 }
