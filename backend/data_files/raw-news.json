@@ -30502,5 +30502,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-d8fc83bde992",
+    "title": "Spain's World Cup challenge built on historic defence",
+    "summary": "If Spain are to get their hands on the World Cup trophy again, they may have their defence, rather than their attack, to thank.",
+    "source": "bbc",
+    "team": "spain",
+    "status": "single_source",
+    "published_at": "Mon, 06 Jul 2026 23:16:51 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cyv00rzd3lpo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "defense",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-6a3b3c8ebe3b",
+    "title": "Why European backlash over Trump intervention won't worry Infantino",
+    "summary": "After 10 years as Fifa president, could the Folarin Balogun controversy tip the balance against Gianni Infantino? Don't bet on it.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Mon, 06 Jul 2026 22:26:20 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cvgmmmgemd8o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-73eaca040548",
+    "title": "Mikel Merino comes full circle with Spain in touching tale of fathers and sons | Sid Lowe",
+    "summary": "<p>Having battled back from injury to make the World Cup, the matchwinner’s goal was a deserved payoff for unsung sacrifices</p><p>And then, suddenly, there was Mikel Merino circling the corner flag again, another marvellous moment to emulate his father Ángel Miguel and embrace his son Marco. To hold those who got him here and the whole of Spain, who would have hugged him back if they had the chance. There was pandemonium up in Pamplona especially: on the day the San Fermín <em>fiesta</em><em>s</em> begin with the city wearing white shirts and red neckerchiefs in celebration of their patron saint, they celebrated the son they have out in the US too.</p><p>Merino was born in the Navarrese capital the day Spain lost to England at Euro 96. Now, wearing white and red like everyone back home, he had scored the late, late goal <a href=\"https://www.theguardian.com/football/2026/jul/06/portugal-spain-world-cup-last-16-match-report\">that sent the </a><em><a href=\"https://www.theguardian.com/football/2026/jul/06/portugal-spain-world-cup-last-16-match-report\">selecci</a></em><em><a href=\"https://www.theguardian.com/football/2026/jul/06/portugal-spain-world-cup-last-16-match-report\">ón</a></em><a href=\"https://www.theguardian.com/football/2026/jul/06/portugal-spain-world-cup-last-16-match-report\"> into the World Cup quarter-finals</a>: a hero once more, the <em>fiesta</em> was taken to every corner of the country.</p> <a href=\"https://www.theguardian.com/football/2026/jul/06/mikel-merino-spain-world-cup-winner-portugal\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Mon, 06 Jul 2026 22:42:14 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/06/mikel-merino-spain-world-cup-winner-portugal",
+    "category": "injury",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.78
   }
 ]
