@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-07T16:35:48.771299+00:00",
+  "updatedAt": "2026-07-07T19:06:06.131642+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -16273,6 +16273,83 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 07 Jul 2026 13:39:23 GMT"
+    },
+    {
+      "title": "Villa and Belgium midfielder Onana ruptures ACL",
+      "detail": "Aston Villa midfielder Amadou Onana ruptures an anterior cruciate ligament while playing for Belgium at the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 18:51:59 GMT"
+    },
+    {
+      "title": "England players to get hoarding warning after freak Henderson injury",
+      "detail": "England players will be advised not to jump over advertising hoardings after Jordan Henderson suffered a freak injury.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 07 Jul 2026 17:49:34 GMT"
+    },
+    {
+      "title": "Arsenal set to sign Meslier on free transfer after Leeds exit",
+      "detail": "Arsenal are set to seal the signing of goalkeeper Illan Meslier on a free transfer",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 17:32:49 GMT"
+    },
+    {
+      "title": "Qarabag's Duran poised for Celtic medical",
+      "detail": "Colombian forward Camilo Duran is poised to become Celtic's first summer signing, arriving for an undisclosed fee from Qarabag, manager Martin O'Neill confirms.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 17:51:53 GMT"
+    },
+    {
+      "title": "Fernandez header seals dramatic Argentina comeback",
+      "detail": "Enzo Fernandez scores late to give Argentina the lead against Egypt in their last 16 match at the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 18:19:14 GMT"
+    },
+    {
+      "title": "Messi rescues Argentina with equaliser against Egypt",
+      "detail": "Lionel Messi scores a late equaliser for Argentina against Egypt to level the game at 2-2 during their match in Atlanta.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 18:13:01 GMT"
+    },
+    {
+      "title": "Did VAR correctly rule out this Egypt goal?",
+      "detail": "Mostafa Zico has his goal for Egypt ruled out following a VAR review, for a foul on Lisandro Martinez in the build up, during their World Cup last 16 match in Atlanta.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 18:05:31 GMT"
+    },
+    {
+      "title": "Messi denied from penalty spot by 'brilliant' Shobeir save",
+      "detail": "Lionel Messi misses his second penalty of the 2026 World Cup, as his effort is saved by Egypt's Mostafa Shobeir in Atlanta.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 07 Jul 2026 18:05:36 GMT"
+    },
+    {
+      "title": "England's Best Since 1966 - Tuchel's Biggest Statement Yet?",
+      "detail": "Is this what World Cup winners look like?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 17:00:00 GMT"
+    },
+    {
+      "title": "Tearful Messi inspires Argentina’s great escape in World Cup thriller with Egypt",
+      "detail": "<p></p><p>The golden rule of football? Never write off Lionel Messi. Just when it looked like his dream of leading Argentina to the <em>bicampeonato</em> was in tatters, the 39-year-old came to his country’s rescue for the umpteenth time in spectacular fashion.</p><p>With 11 minutes to play and still reeling from Yasser Ibrahim’s early header and a second from Mostafa Ziko – named after the Brazil legend – Lionel Scaloni’s side were heading for the mother of all upsets against Egypt. Mostafa Shobair, whose father,Ahmed was the Pharaohs’ goalkeeper at the 1990 World Cup and whose time-wasting tactics against the Republic of Ireland resulted in the introduction of the back-pass rule two years later, seemed set to write a more positive chapter in his family’s history after a brilliant performance that saw him repel everything that the world champions could throw at them.</p> <a href=\"https://www.theguardian.com/football/2026/jul/07/argentina-egypt-world-cup-2026-last-16-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 18:31:54 GMT"
+    },
+    {
+      "title": "Switzerland v Colombia: World Cup 2026 last 16 – live",
+      "detail": "<p>⚽️ Kick-off time: 1pm local/4pm EDT//9pm BST/6am AEST<br>⚽️ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:billy.munday.casual@theguardian.com\">Mail Billy</a></p><p><strong>Colombia’s route to the last 16</strong></p><p><strong>Group K – P3 W2 D1 L0</strong><br> Won 3-1 v Uzbekistan, Mexico City<br> Won 1-0 v DR Congo, Guadalajara<br> Drew 0-0 v Portugal, Miami</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/07/switzerland-v-colombia-world-cup-2026-last-16-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 19:02:35 GMT"
     }
   ],
   "teams": [
@@ -16556,8 +16633,8 @@
       "tournament": {
         "champion": 0.3,
         "final": 1.3,
-        "semifinal": 3.9,
-        "quarterfinal": 10.2,
+        "semifinal": 4.0,
+        "quarterfinal": 10.4,
         "change": 0.0
       }
     },
@@ -16759,14 +16836,14 @@
         "strength": 75,
         "form": 77,
         "path": 66,
-        "squad": 77,
+        "squad": 75,
         "margin": 76
       },
       "tournament": {
         "champion": 0.3,
-        "final": 1.5,
-        "semifinal": 4.5,
-        "quarterfinal": 11.5,
+        "final": 1.4,
+        "semifinal": 4.3,
+        "quarterfinal": 11.0,
         "change": -0.2
       }
     },
@@ -16972,11 +17049,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 21.5,
-        "final": 38.5,
-        "semifinal": 56.3,
-        "quarterfinal": 75.7,
-        "change": 6.3
+        "champion": 21.6,
+        "final": 38.6,
+        "semifinal": 56.5,
+        "quarterfinal": 76.0,
+        "change": 6.4
       }
     },
     {
@@ -16993,7 +17070,7 @@
       "tournament": {
         "champion": 0.6,
         "final": 2.2,
-        "semifinal": 5.8,
+        "semifinal": 5.7,
         "quarterfinal": 19.7,
         "change": 0.0
       }
@@ -17025,7 +17102,7 @@
         "strength": 68,
         "form": 70,
         "path": 61,
-        "squad": 70,
+        "squad": 68,
         "margin": 70
       },
       "tournament": {
@@ -17208,18 +17285,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2240,
+      "eventCount": 2251,
       "manualEventCount": 3,
-      "rawNewsCount": 2237,
+      "rawNewsCount": 2248,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2240,
-      "applied": 2074,
+      "watched": 2251,
+      "applied": 2085,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2235,
+      "singleSource": 2246,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -17411,7 +17488,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": 0.0,
-        "squad": 0.0
+        "squad": -2.15
       },
       "iran": {
         "attack": 0.0,
@@ -17509,7 +17586,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": 0.0,
-        "squad": 0.0
+        "squad": -2.15
       },
       "portugal": {
         "attack": 0.0,
@@ -27860,124 +27937,49 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-07T16:36:10.786277+00:00",
+    "generatedAt": "2026-07-07T19:06:27.922071+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
     "items": [
       {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 3.1,
-        "currentChampion": 2.5,
-        "change": -0.6,
-        "direction": "down",
-        "reason": "状态盘下调 -2.5",
-        "reasons": [
-          "状态盘下调 -2.5",
-          "八强概率下降 -2.4%",
-          "四强概率下降 -1.9%",
-          "决赛概率下降 -1.2%",
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
-        "team": "japan",
-        "name": "日本",
-        "code": "JPN",
-        "previousChampion": 2.1,
-        "currentChampion": 2.3,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "八强概率上升 +1.3%",
-        "reasons": [
-          "八强概率上升 +1.3%",
-          "四强概率上升 +0.8%",
-          "决赛概率上升 +0.3%",
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
         "team": "argentina",
         "name": "阿根廷",
         "code": "ARG",
-        "previousChampion": 21.4,
-        "currentChampion": 21.5,
+        "previousChampion": 21.5,
+        "currentChampion": 21.6,
         "change": 0.1,
         "direction": "up",
-        "reason": "决赛概率上升 +0.2%",
+        "reason": "八强概率上升 +0.3%",
         "reasons": [
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 8.9,
-        "currentChampion": 9.0,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.5%",
-        "reasons": [
-          "四强概率上升 +0.5%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 11 条"
-        ]
-      },
-      {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 3.5,
-        "currentChampion": 3.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 11 条",
-        "reasons": [
+          "八强概率上升 +0.3%",
+          "四强概率上升 +0.2%",
+          "决赛概率上升 +0.1%",
           "可入模型事件新增 11 条"
         ]
       }
     ],
     "summary": {
-      "up": 4,
-      "down": 1,
+      "up": 1,
+      "down": 0,
       "largestUp": {
-        "team": "japan",
-        "name": "日本",
-        "code": "JPN",
-        "previousChampion": 2.1,
-        "currentChampion": 2.3,
-        "change": 0.2,
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 21.5,
+        "currentChampion": 21.6,
+        "change": 0.1,
         "direction": "up",
-        "reason": "八强概率上升 +1.3%",
+        "reason": "八强概率上升 +0.3%",
         "reasons": [
-          "八强概率上升 +1.3%",
-          "四强概率上升 +0.8%",
-          "决赛概率上升 +0.3%",
+          "八强概率上升 +0.3%",
+          "四强概率上升 +0.2%",
+          "决赛概率上升 +0.1%",
           "可入模型事件新增 11 条"
         ]
       },
-      "largestDown": {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 3.1,
-        "currentChampion": 2.5,
-        "change": -0.6,
-        "direction": "down",
-        "reason": "状态盘下调 -2.5",
-        "reasons": [
-          "状态盘下调 -2.5",
-          "八强概率下降 -2.4%",
-          "四强概率下降 -1.9%",
-          "决赛概率下降 -1.2%",
-          "可入模型事件新增 11 条"
-        ]
-      }
+      "largestDown": null
     }
   }
 }

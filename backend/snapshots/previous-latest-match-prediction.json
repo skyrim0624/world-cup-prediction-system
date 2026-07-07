@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-07T13:37:18.409350+00:00",
+  "updatedAt": "2026-07-07T16:35:48.771299+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -542,11 +542,11 @@
       "probability": 84,
       "title": "德国小组第一概率上升",
       "details": [
-        "德国夺冠概率 ±0.0%",
+        "德国夺冠概率 -0.1%",
         "库拉索路径盘下调 ±0.0%",
         "同组竞争队出线门槛抬高"
       ],
-      "championShift": "±0.0%",
+      "championShift": "-0.1%",
       "tone": "green"
     },
     {
@@ -554,11 +554,11 @@
       "probability": 11,
       "title": "两队路径保持胶着",
       "details": [
-        "德国夺冠概率 ±0.0%",
+        "德国夺冠概率 -0.1%",
         "库拉索夺冠概率 ±0.0%",
         "小组第一仍取决于末轮和净胜球"
       ],
-      "championShift": "±0.0% / ±0.0%",
+      "championShift": "-0.1% / ±0.0%",
       "tone": "gold"
     },
     {
@@ -567,7 +567,7 @@
       "title": "库拉索半区压力下降",
       "details": [
         "库拉索夺冠概率 ±0.0%",
-        "德国潜在淘汰赛路径变难 ±0.0%",
+        "德国潜在淘汰赛路径变难 -0.1%",
         "小组第二路径风险上升"
       ],
       "championShift": "±0.0%",
@@ -16189,6 +16189,90 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 07 Jul 2026 08:34:00 GMT"
+    },
+    {
+      "title": "Can Scotland learn from history-making Norway?",
+      "detail": "Norway, a nation of a similar size to Scotland, are through to the World Cup quarter-finals, so can lessons be learned from their neighbours from across the North Sea?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 15:54:46 GMT"
+    },
+    {
+      "title": "Inside Liverpool's pre-season plans as Iraola starts work",
+      "detail": "New Liverpool head coach Andoni Iraola has arrived at the club's training ground and is preparing to start work with his new squad ahead of the Premier League season.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 15:43:40 GMT"
+    },
+    {
+      "title": "Fifa's Balogun decision could lead to football 'cesspit' - McAllister",
+      "detail": "Uefa vice-president Laura McAllister says there is a risk of \"an absolute cesspit\" of political interference in football after USA striker Folarin Balogun avoided a ban at the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 15:43:41 GMT"
+    },
+    {
+      "title": "Coach was 'happy' to have Maddy Cusack on team",
+      "detail": "Jonathan Morgan, Maddy Cusack's coach at Sheffield United, gave evidence earlier on Tuesday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 15:27:38 GMT"
+    },
+    {
+      "title": "Burnley in talks to appoint Hayen as boss",
+      "detail": "Burnley are progressing in talks to appoint Genk head coach Nicky Hayen to fill their managerial vacancy.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 13:53:47 GMT"
+    },
+    {
+      "title": "Chelsea's Bartel closing in on move to Juventus",
+      "detail": "Chelsea midfielder Julia Bartel is closing in on a move to Italian club Juventus this summer.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 16:18:17 GMT"
+    },
+    {
+      "title": "How can Stoke City keep spending on transfer fees?",
+      "detail": "Football finance expert Kieran Maguire explains how Stoke can manage the Championship's Squad Cost Rules this summer.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 15:21:07 GMT"
+    },
+    {
+      "title": "Partick's Clarke moves to Doncaster immediately after Celtic switch",
+      "detail": "Doncaster Rovers sign Partick Thistle goalkeeper Josh Clarke on a loan deal that will become a permanent in January.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 12:08:36 GMT"
+    },
+    {
+      "title": "Argentina v Egypt: World Cup 2026 last 16 – live",
+      "detail": "<p>⚽️ World Cup kick-off time: 12pm EDT/5pm BST, 2am AEST<br>⚽️ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a>| <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:scott.murray.casual@theguardian.com\">Email Scott</a></p><p><strong>You wait all day for one Ed Aarons post … then two come along at once!</strong> Just as I was trailing his preview piece, Ed gets in touch with this communiqué from Georgia.</p><p>The atmosphere is building at the Atlanta Stadium, where temperatures are already in the 30s. Thankfully it’s fully air-conditioned inside. As you might expect, there are thousands of Argentina fans here to see if the reigning champions can book their place in the quarterfinals but not all have managed to get tickets. One has even cycled all the way from Buenos Aires to be here so let’s hope he gets lucky. There’s also plenty of Pharaohs fans wearing Mohamed Salah shirts. Can the Egyptian King inspire them to a famous victory?</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/07/argentina-v-egypt-world-cup-2026-last-16-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 16:24:59 GMT"
+    },
+    {
+      "title": "The US had the biggest opportunity in the history of American soccer. They wasted it | Alexander Abnos",
+      "detail": "<p>The USMNT’s run at a home World Cup had attracted people who usually ignore soccer. Instead of triumph, they saw a humbling at the hands of Belgium</p><p>In the closing moments of the United States’ <a href=\"https://www.theguardian.com/football/2002/jun/05/worldcupfootball2002.sport26\">3-2 win over Portugal</a> at the 2002 World Cup, ESPN commentator Jack Edwards took a moment to remind viewers who had stayed up all night of the profound result they were witnessing. From his perch in Suwon, South Korea – where he was watching the first match of a campaign that would end in a quarter-final that remains the high-water mark for the modern US men’s national team – Edwards delivered a soliloquy that cut straight to the heart of the profound role World Cups play not just for the US men’s national team, but for soccer as a force in American life.</p><p>“The players on that 1950 team that beat England … this [result] is about the foundation that they laid,” Edwards said in his booming bravado as the hour crept toward 7am ET. “This is about the thousands of American families who have helped this sport grow, and the people in those pockets all over the country who have stuck with soccer. And it’s also for those seven- or eight- or nine-year-old kids, who are going to hear about this result when they wake up in the morning and rush outside, and knock a ball against a wall, and dream of something even greater than this.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/07/usmnt-world-cup-belgium\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 14:00:02 GMT"
+    },
+    {
+      "title": "Belgium unites to enjoy national team’s World Cup success over USA and Trump",
+      "detail": "<ul><li><p>Fans across Belgium watched 4-1 win in early hours</p></li><li><p>Victory ‘a real slap in the face for Trump and Infantino’</p></li></ul><p>Belgium fans reacted with jubilation after the national team trounced the USA in a World Cup game that was overshadowed by the controversy over Donald Trump’s lobbying to overturn the suspension of the striker Falorin Balogun.</p><p>Belgium’s prime minister, Bart De Wever, has yet to comment on the national team’s triumph, but the official Instagram account of his cat offered a sardonic, albeit indirect sign of satisfaction. Maximus, De Wever’s beloved cat, was shown lying on a rug holding a soft toy in the image of the US president. “I slept really well last night. And you?” reads the speech bubble in Dutch.</p> <a href=\"https://www.theguardian.com/football/2026/jul/07/belgium-fans-celebrate-world-cup-usa-donald-trump\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 07 Jul 2026 12:47:17 GMT"
+    },
+    {
+      "title": "Why Jude Bellingham’s world is bigger than most of us can understand",
+      "detail": "<p>The boy who has it all has ambitions to play James Bond but for the time being he is more reminiscent of Novak Djokovic</p><p>There has never been an English footballer quite like Jude Bellingham. He has the cockiness and explosiveness of a teenage Wayne Rooney and the vision of Paul Scholes, but that doesn’t come close to covering it. There are endless layers to Bellingham, the boy who has it all. He can be the No 8, the No 9 or the No 10. He has the flair of Glenn Hoddle and the chest-out bravado of Paul Gascoigne, but he also has the bravery of Bryan Robson, the rampaging qualities of Steven Gerrard and, as Mexico discovered at the Estadio Azteca, the ability to morph into the world’s best defender and drag his team out of the mire with a goal-saving challenge.</p><p>More? Bellingham has film-star looks, can charm like David Beckham and, given how much he has achieved, does not sound ridiculous when he says his post-retirement ambition is to play James Bond.</p> <a href=\"https://www.theguardian.com/football/2026/jul/07/genius-jude-bellingham-becoming-one-of-englands-leaders\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 13:39:23 GMT"
     }
   ],
   "teams": [
@@ -16206,7 +16290,7 @@
       "tournament": {
         "champion": 0.1,
         "final": 0.6,
-        "semifinal": 2.4,
+        "semifinal": 2.5,
         "quarterfinal": 8.0,
         "change": -1.4
       }
@@ -16350,17 +16434,17 @@
       "code": "BRA",
       "factors": {
         "strength": 91,
-        "form": 84,
+        "form": 82,
         "path": 64,
         "squad": 64,
         "margin": 83
       },
       "tournament": {
-        "champion": 3.1,
-        "final": 7.9,
-        "semifinal": 17.4,
-        "quarterfinal": 33.6,
-        "change": -7.7
+        "champion": 2.5,
+        "final": 6.7,
+        "semifinal": 15.5,
+        "quarterfinal": 31.2,
+        "change": -8.3
       }
     },
     {
@@ -16471,7 +16555,7 @@
       },
       "tournament": {
         "champion": 0.3,
-        "final": 1.2,
+        "final": 1.3,
         "semifinal": 3.9,
         "quarterfinal": 10.2,
         "change": 0.0
@@ -16508,11 +16592,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 3.5,
+        "champion": 3.6,
         "final": 7.9,
         "semifinal": 18.0,
         "quarterfinal": 32.5,
-        "change": -2.3
+        "change": -2.2
       }
     },
     {
@@ -16548,8 +16632,8 @@
       "tournament": {
         "champion": 0.3,
         "final": 1.3,
-        "semifinal": 4.8,
-        "quarterfinal": 14.2,
+        "semifinal": 4.9,
+        "quarterfinal": 14.6,
         "change": -0.1
       }
     },
@@ -16566,8 +16650,8 @@
       },
       "tournament": {
         "champion": 1.5,
-        "final": 4.7,
-        "semifinal": 12.9,
+        "final": 4.8,
+        "semifinal": 13.1,
         "quarterfinal": 27.2,
         "change": 0.9
       }
@@ -16603,11 +16687,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 2.1,
-        "final": 5.9,
-        "semifinal": 13.9,
-        "quarterfinal": 28.8,
-        "change": 1.0
+        "champion": 2.3,
+        "final": 6.2,
+        "semifinal": 14.7,
+        "quarterfinal": 30.1,
+        "change": 1.2
       }
     },
     {
@@ -16870,9 +16954,9 @@
       },
       "tournament": {
         "champion": 1.0,
-        "final": 3.4,
-        "semifinal": 9.6,
-        "quarterfinal": 23.4,
+        "final": 3.5,
+        "semifinal": 9.9,
+        "quarterfinal": 24.0,
         "change": 0.1
       }
     },
@@ -16888,11 +16972,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 21.4,
-        "final": 38.3,
+        "champion": 21.5,
+        "final": 38.5,
         "semifinal": 56.3,
         "quarterfinal": 75.7,
-        "change": 6.2
+        "change": 6.3
       }
     },
     {
@@ -16908,7 +16992,7 @@
       },
       "tournament": {
         "champion": 0.6,
-        "final": 2.1,
+        "final": 2.2,
         "semifinal": 5.8,
         "quarterfinal": 19.7,
         "change": 0.0
@@ -17022,7 +17106,7 @@
       },
       "tournament": {
         "champion": 3.6,
-        "final": 9.9,
+        "final": 10.0,
         "semifinal": 20.1,
         "quarterfinal": 49.8,
         "change": 1.1
@@ -17040,11 +17124,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 8.9,
-        "final": 19.4,
-        "semifinal": 37.2,
+        "champion": 9.0,
+        "final": 19.6,
+        "semifinal": 37.7,
         "quarterfinal": 58.4,
-        "change": -1.8
+        "change": -1.7
       }
     },
     {
@@ -17124,18 +17208,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2228,
+      "eventCount": 2240,
       "manualEventCount": 3,
-      "rawNewsCount": 2225,
+      "rawNewsCount": 2237,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2228,
-      "applied": 2063,
+      "watched": 2240,
+      "applied": 2074,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2223,
+      "singleSource": 2235,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -17204,7 +17288,7 @@
         "squad": -4.699999999999999
       },
       "brazil": {
-        "attack": -5.15,
+        "attack": -7.7,
         "defense": 0.0,
         "goalkeeper": -2.15,
         "path": -10.48,
@@ -27776,17 +27860,124 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-07T13:37:40.236967+00:00",
+    "generatedAt": "2026-07-07T16:36:10.786277+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "brazil",
+        "name": "巴西",
+        "code": "BRA",
+        "previousChampion": 3.1,
+        "currentChampion": 2.5,
+        "change": -0.6,
+        "direction": "down",
+        "reason": "状态盘下调 -2.5",
+        "reasons": [
+          "状态盘下调 -2.5",
+          "八强概率下降 -2.4%",
+          "四强概率下降 -1.9%",
+          "决赛概率下降 -1.2%",
+          "可入模型事件新增 11 条"
+        ]
+      },
+      {
+        "team": "japan",
+        "name": "日本",
+        "code": "JPN",
+        "previousChampion": 2.1,
+        "currentChampion": 2.3,
+        "change": 0.2,
+        "direction": "up",
+        "reason": "八强概率上升 +1.3%",
+        "reasons": [
+          "八强概率上升 +1.3%",
+          "四强概率上升 +0.8%",
+          "决赛概率上升 +0.3%",
+          "可入模型事件新增 11 条"
+        ]
+      },
+      {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 21.4,
+        "currentChampion": 21.5,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "决赛概率上升 +0.2%",
+        "reasons": [
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 11 条"
+        ]
+      },
+      {
+        "team": "england",
+        "name": "英格兰",
+        "code": "ENG",
+        "previousChampion": 8.9,
+        "currentChampion": 9.0,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.5%",
+        "reasons": [
+          "四强概率上升 +0.5%",
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 11 条"
+        ]
+      },
+      {
+        "team": "germany",
+        "name": "德国",
+        "code": "GER",
+        "previousChampion": 3.5,
+        "currentChampion": 3.6,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 11 条",
+        "reasons": [
+          "可入模型事件新增 11 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 4,
+      "down": 1,
+      "largestUp": {
+        "team": "japan",
+        "name": "日本",
+        "code": "JPN",
+        "previousChampion": 2.1,
+        "currentChampion": 2.3,
+        "change": 0.2,
+        "direction": "up",
+        "reason": "八强概率上升 +1.3%",
+        "reasons": [
+          "八强概率上升 +1.3%",
+          "四强概率上升 +0.8%",
+          "决赛概率上升 +0.3%",
+          "可入模型事件新增 11 条"
+        ]
+      },
+      "largestDown": {
+        "team": "brazil",
+        "name": "巴西",
+        "code": "BRA",
+        "previousChampion": 3.1,
+        "currentChampion": 2.5,
+        "change": -0.6,
+        "direction": "down",
+        "reason": "状态盘下调 -2.5",
+        "reasons": [
+          "状态盘下调 -2.5",
+          "八强概率下降 -2.4%",
+          "四强概率下降 -1.9%",
+          "决赛概率下降 -1.2%",
+          "可入模型事件新增 11 条"
+        ]
+      }
     }
   }
 }
