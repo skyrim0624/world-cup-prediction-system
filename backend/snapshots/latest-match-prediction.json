@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-07T07:50:10.322647+00:00",
+  "updatedAt": "2026-07-07T11:14:40.919036+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -15979,6 +15979,195 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 07 Jul 2026 06:48:04 GMT"
+    },
+    {
+      "title": "Kane and Bellingham: How superstar double act became England's Wonderwall",
+      "detail": "With 10 of England's 11 goals at the World Cup scored by either Harry Kane or Jude Bellingham, BBC Sport looks at how dependent on them the team is.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 11:11:58 GMT"
+    },
+    {
+      "title": "Messi v Salah: A World Cup meeting of two national icons",
+      "detail": "Mohamed Salah and Lionel Messi will meet in the last 16 of the World Cup on Tuesday with their nations' hopes resting firmly on their shoulders.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 09:58:33 GMT"
+    },
+    {
+      "title": "Former Chelsea boss Rosenior named Paris FC manager",
+      "detail": "Liam Rosenior is back in football management with Ligue 1 club Paris FC after being sacked by Chelsea in April.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 08:58:21 GMT"
+    },
+    {
+      "title": "Zimbabwean football star survives gun attack in South Africa",
+      "detail": "South African police say they are investigating a case of attempted murder but that no arrests have been made so far.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 11:12:00 GMT"
+    },
+    {
+      "title": "Newcastle closing in on signing of Ajax's Steur",
+      "detail": "Newcastle United are closing in on the signing of 18-year-old Ajax midfielder Sean Steur.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 08:34:28 GMT"
+    },
+    {
+      "title": "Kirk named Durham boss two years after Leicester sacking",
+      "detail": "Willie Kirk has been appointed head coach of WSL 2 side Durham two years after he was sacked by Leicester City Women's team for having a relationship with a player.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 11:09:03 GMT"
+    },
+    {
+      "title": "What is the 'Trump dance'? And where have we seen it in sport?",
+      "detail": "As the 'Trump dance' gains attention once again, we look at which sportspeople are doing it - and why.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 09:59:26 GMT"
+    },
+    {
+      "title": "USMNT will look back at 2026 World Cup as a missed...",
+      "detail": "It all broke right for the U.S. this tournament: the draw, the injuries, the decisions. And yet America is once again coming to terms with a round-of-16 exit.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 05:01:05 EST"
+    },
+    {
+      "title": "Belgium handed U.S. a World Cup reality check -- a...",
+      "detail": "The World Cup dream for the U.S. went up in smoke Monday, comprehensively dismantled 4-1 by Belgium.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 05:01:05 EST"
+    },
+    {
+      "title": "USMNT's World Cup dream crushed by Belgium",
+      "detail": "Even with Folarin Balogun back up front, the United States men's national team crashed out of the World Cup in the round of 16 again.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 05:08:35 EST"
+    },
+    {
+      "title": "Poch mum on U.S. future; tells fans to keep faith",
+      "detail": "Mauricio Pochettino would not offer an indication about whether he wants to remain as coach of the United States men's national team following the Americans' exit from the World Cup here on Monday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 05:09:02 EST"
+    },
+    {
+      "title": "Pulisic forced off injured for USMNT vs. Belgium",
+      "detail": "Christian Pulisic was forced off with an ankle injury in the second half of the United States' World Cup round of 16 loss against Belgium.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 7 Jul 2026 05:08:34 EST"
+    },
+    {
+      "title": "Ronaldo exits in tears as Spain end final World Cu...",
+      "detail": "An emotional Cristiano Ronaldo said he had a \"clear conscience\" as he exited his final World Cup as Portugal were eliminated 1-0 by Spain in the round of 16 in Arlington, Texas, on Monday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 05:08:35 EST"
+    },
+    {
+      "title": "Martinez steps down, says Portugal 'didn't fail'",
+      "detail": "Roberto Martinez confirmed that he is leaving his job as Portugal coach after Monday's 1-0 World Cup round-of-16 defeat to Spain, while denying that the result was \"a failure.\"",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 05:08:35 EST"
+    },
+    {
+      "title": "MVP Rodri shines, seeks more from Spain in QFs",
+      "detail": "Spain midfielder Rodri was named the best player in his team's 1-0 victory over Portugal but warned they still have \"room for improvement\" ahead of the World Cup quarterfinals",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 05:08:35 EST"
+    },
+    {
+      "title": "Mbappé: Paraguay senator remarks spread racism",
+      "detail": "France star Kylian Mbappé on Monday spoke out against racist comments made by a Paraguay senator.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 05:08:35 EST"
+    },
+    {
+      "title": "Scaloni: 'No truly dominant team' at World Cup",
+      "detail": "Argentina manager Lionel Scaloni said the 2026 World Cup is presenting a strong challenge for the tournament favorites, who are struggling to overcome lower-ranked opponents",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 05:09:02 EST"
+    },
+    {
+      "title": "⚽Bellingham, Yamal, Messi unveil WC final ball",
+      "detail": "In a move that is in no way tempting fate, Lionel Messi, Jude Bellingham and Lamine Yamal have all posed with the new-look World Cup final match ball.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 05:09:03 EST"
+    },
+    {
+      "title": "'Overturn this': Belgium troll U.S. after dominant...",
+      "detail": "Belgium defeated the USMNT 4-1 in the 2026 World Cup round-of-16 match Monday night -- and poked fun at the U.S. afterward.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 05:29:32 EST"
+    },
+    {
+      "title": "USMNT dismisses Balogun noise in World Cup exit: '...",
+      "detail": "The U.S. men's national team crashed out of the World Cup on Tuesday in a 4-1 loss to Belgium, but players denied that the whirlwind surrounding Folarin Balogun's reversed suspension was a distraction.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 7 Jul 2026 05:29:31 EST"
+    },
+    {
+      "title": "Ronaldo's World Cup career ends with a whimper as ...",
+      "detail": "Spain's late winner knocked out Portugal and closed the book on Cristiano Ronaldo's time on the world's biggest stage.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 03:02:09 EST"
+    },
+    {
+      "title": "World Cup daily live: Messi fans troll Speed after...",
+      "detail": "Enjoy all the features, news, video analysis and color from around the 2026 World Cup as we figure out the last two teams to make the quarterfinals.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 05:16:40 EST"
+    },
+    {
+      "title": "London City are set to sign 'Queen' Putellas. Is that a good thing?",
+      "detail": "Alexia Putellas' arrival at London City Lionesses is a monumental moment for the club and the WSL, but will it work?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 03:11:24 EST"
+    },
+    {
+      "title": "Transfer rumors, news: Liverpool ahead of Man Unit...",
+      "detail": "Liverpool have made contact over a move for Mexico wonderkid Gilberto Mora. Transfer Talk has the latest.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 04:10:55 EST"
+    },
+    {
+      "title": "Neymar was Ancelotti's gamble at the World Cup, an...",
+      "detail": "Carlo Ancelotti calling up Neymar to Brazil's World Cup squad was always a risk, and it backfired badly when they got eliminated to Norway in the round of 16.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 03:09:13 EST"
+    },
+    {
+      "title": "David Squires on … England’s World Cup classic in Mexico and a Trump novelty",
+      "detail": "<p>Our cartoonist looks at the big stories from the World Cup as England reach the last eight but the US slump out</p><ul><li><p><a href=\"https://guardianprintshop.com/collections/david-squires\">Buy David’s cartoons</a> | <a href=\"https://www.theguardian.com/football/2025/dec/04/david-squires-picks-his-favourite-cartoons-of-2025\">Some of his favourite works</a></p></li><li><p><a href=\"https://guardianbookshop.com/chaos-in-the-box-9781783352838/?utm_source=editoriallink&amp;utm_medium=merch&amp;utm_campaign=article\">And his latest book, Chaos in the Box: get it now</a></p></li></ul> <a href=\"https://www.theguardian.com/football/picture/2026/jul/07/david-squires-on-england-world-cup-classic-mexico-donald-trump-fifa-usa-belgium\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 09:50:04 GMT"
+    },
+    {
+      "title": "Fifa accuses Uefa of hypocrisy in latest war of words over Folarin Balogun decision",
+      "detail": "<ul><li><p>It says overturning red cards is a common measure</p></li><li><p>No talk from Uefa before about ‘red line’, Fifa states</p></li></ul><p>Fifa has hit back at Uefa in the war of words over <a href=\"https://www.theguardian.com/football/2026/jul/05/folarin-balogun-red-card-suspension-lifted-usmnt-belgium-world-cup\">the lifting</a> of the USA striker Folarin Balogun’s suspension by accusing it of hypocrisy in its <a href=\"https://www.theguardian.com/football/2026/jul/06/belgium-appeal-fifa-lifting-folarin-balogun-red-card-ban-last-16-us-world-cup\">condemnation of the decision</a>.</p><p>In a statement attributed to the chair of Fifa’s disciplinary committee, Mohammad Al Kamali, published before the <a href=\"https://www.theguardian.com/football/2026/jul/06/usa-belgium-world-cup-2026-match-report\">USA’s last-16 defeat by Belgium</a>, Fifa insisted that “the overturning of red cards is a common disciplinary measure” in Uefa-affiliated leagues, “yet this has never raised concerns about crossing any ‘red line’”.</p> <a href=\"https://www.theguardian.com/football/2026/jul/07/fifa-accuses-uefa-hypocrisy-folarin-balogun-world-cup-decision-red-card\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 07 Jul 2026 08:58:35 GMT"
     }
   ],
   "teams": [
@@ -15989,7 +16178,7 @@
       "factors": {
         "strength": 82,
         "form": 74,
-        "path": 61,
+        "path": 62,
         "squad": 50,
         "margin": 74
       },
@@ -16092,7 +16281,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.7,
-        "quarterfinal": 6.0,
+        "quarterfinal": 6.2,
         "change": -0.1
       }
     },
@@ -16178,7 +16367,7 @@
       "code": "HAI",
       "factors": {
         "strength": 64,
-        "form": 69,
+        "form": 68,
         "path": 61,
         "squad": 69,
         "margin": 69
@@ -16223,9 +16412,9 @@
       },
       "tournament": {
         "champion": 0.5,
-        "final": 1.7,
-        "semifinal": 6.3,
-        "quarterfinal": 28.2,
+        "final": 1.8,
+        "semifinal": 6.5,
+        "quarterfinal": 29.1,
         "change": -0.5
       }
     },
@@ -16293,7 +16482,7 @@
       "factors": {
         "strength": 87,
         "form": 81,
-        "path": 71,
+        "path": 72,
         "squad": 82,
         "margin": 82
       },
@@ -16374,11 +16563,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 7.1,
+        "champion": 7.2,
         "final": 13.9,
         "semifinal": 29.3,
         "quarterfinal": 60.8,
-        "change": 0.3
+        "change": 0.4
       }
     },
     {
@@ -16446,15 +16635,15 @@
         "strength": 84,
         "form": 82,
         "path": 73,
-        "squad": 74,
+        "squad": 69,
         "margin": 80
       },
       "tournament": {
-        "champion": 1.7,
-        "final": 4.4,
-        "semifinal": 11.6,
-        "quarterfinal": 37.4,
-        "change": -1.4
+        "champion": 1.4,
+        "final": 3.7,
+        "semifinal": 10.2,
+        "quarterfinal": 34.8,
+        "change": -1.7
       }
     },
     {
@@ -16526,11 +16715,11 @@
         "margin": 85
       },
       "tournament": {
-        "champion": 20.7,
-        "final": 30.6,
-        "semifinal": 46.7,
+        "champion": 20.9,
+        "final": 30.9,
+        "semifinal": 47.1,
         "quarterfinal": 57.2,
-        "change": 9.1
+        "change": 9.3
       }
     },
     {
@@ -16603,7 +16792,7 @@
       },
       "tournament": {
         "champion": 14.5,
-        "final": 23.7,
+        "final": 23.8,
         "semifinal": 40.7,
         "quarterfinal": 58.9,
         "change": 1.0
@@ -16622,9 +16811,9 @@
       },
       "tournament": {
         "champion": 0.9,
-        "final": 2.5,
-        "semifinal": 7.8,
-        "quarterfinal": 28.5,
+        "final": 2.7,
+        "semifinal": 8.1,
+        "quarterfinal": 29.9,
         "change": -0.1
       }
     },
@@ -16718,7 +16907,7 @@
       "tournament": {
         "champion": 0.3,
         "final": 1.1,
-        "semifinal": 3.5,
+        "semifinal": 3.6,
         "quarterfinal": 6.7,
         "change": -0.3
       }
@@ -16754,11 +16943,11 @@
         "margin": 83
       },
       "tournament": {
-        "champion": 4.7,
-        "final": 8.8,
-        "semifinal": 17.6,
+        "champion": 4.8,
+        "final": 8.9,
+        "semifinal": 17.9,
         "quarterfinal": 25.6,
-        "change": -1.5
+        "change": -1.4
       }
     },
     {
@@ -16851,7 +17040,7 @@
       "tournament": {
         "champion": 0.9,
         "final": 2.2,
-        "semifinal": 5.9,
+        "semifinal": 6.0,
         "quarterfinal": 10.5,
         "change": 0.0
       }
@@ -16914,18 +17103,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2198,
+      "eventCount": 2225,
       "manualEventCount": 3,
-      "rawNewsCount": 2195,
+      "rawNewsCount": 2222,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2198,
-      "applied": 2039,
+      "watched": 2225,
+      "applied": 2061,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2193,
+      "singleSource": 2220,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -16941,7 +17130,7 @@
         "attack": -4.699999999999999,
         "defense": -11.530000000000001,
         "goalkeeper": 0.0,
-        "path": -11.34,
+        "path": -10.47,
         "squad": -29.949999999999996
       },
       "south-africa": {
@@ -17008,7 +17197,7 @@
         "squad": -6.449999999999999
       },
       "haiti": {
-        "attack": 0.0,
+        "attack": -2.55,
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -0.92,
@@ -17053,7 +17242,7 @@
         "attack": -4.3,
         "defense": -4.3,
         "goalkeeper": 0.0,
-        "path": -3.68,
+        "path": -2.81,
         "squad": -2.55
       },
       "curacao": {
@@ -17110,7 +17299,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": 0.7699999999999999,
-        "squad": -8.15
+        "squad": -12.850000000000001
       },
       "egypt": {
         "attack": 0.0,
@@ -27566,17 +27755,108 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-07T07:50:32.265164+00:00",
+    "generatedAt": "2026-07-07T11:15:02.862546+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "belgium",
+        "name": "比利时",
+        "code": "BEL",
+        "previousChampion": 1.7,
+        "currentChampion": 1.4,
+        "change": -0.3,
+        "direction": "down",
+        "reason": "人员盘下调 -4.7",
+        "reasons": [
+          "人员盘下调 -4.7",
+          "八强概率下降 -2.6%",
+          "四强概率下降 -1.4%",
+          "决赛概率下降 -0.7%",
+          "可入模型事件新增 22 条"
+        ]
+      },
+      {
+        "team": "spain",
+        "name": "西班牙",
+        "code": "ESP",
+        "previousChampion": 20.7,
+        "currentChampion": 20.9,
+        "change": 0.2,
+        "direction": "up",
+        "reason": "四强概率上升 +0.4%",
+        "reasons": [
+          "四强概率上升 +0.4%",
+          "决赛概率上升 +0.3%",
+          "可入模型事件新增 22 条"
+        ]
+      },
+      {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.1,
+        "currentChampion": 7.2,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 22 条",
+        "reasons": [
+          "可入模型事件新增 22 条"
+        ]
+      },
+      {
+        "team": "portugal",
+        "name": "葡萄牙",
+        "code": "POR",
+        "previousChampion": 4.7,
+        "currentChampion": 4.8,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.3%",
+        "reasons": [
+          "四强概率上升 +0.3%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 22 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 3,
+      "down": 1,
+      "largestUp": {
+        "team": "spain",
+        "name": "西班牙",
+        "code": "ESP",
+        "previousChampion": 20.7,
+        "currentChampion": 20.9,
+        "change": 0.2,
+        "direction": "up",
+        "reason": "四强概率上升 +0.4%",
+        "reasons": [
+          "四强概率上升 +0.4%",
+          "决赛概率上升 +0.3%",
+          "可入模型事件新增 22 条"
+        ]
+      },
+      "largestDown": {
+        "team": "belgium",
+        "name": "比利时",
+        "code": "BEL",
+        "previousChampion": 1.7,
+        "currentChampion": 1.4,
+        "change": -0.3,
+        "direction": "down",
+        "reason": "人员盘下调 -4.7",
+        "reasons": [
+          "人员盘下调 -4.7",
+          "八强概率下降 -2.6%",
+          "四强概率下降 -1.4%",
+          "决赛概率下降 -0.7%",
+          "可入模型事件新增 22 条"
+        ]
+      }
     }
   }
 }
