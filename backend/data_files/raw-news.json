@@ -30544,5 +30544,61 @@
     "factor": "squad",
     "direction": -1,
     "confidence": 0.78
+  },
+  {
+    "id": "bbc-ec5f737d5efa",
+    "title": "Ronaldo's World Cup career ends in tears as 'pandering' Martinez departs",
+    "summary": "BBC Sport looks at the end of Cristiano Ronaldo's World Cup career as he fails to win football's biggest prize.",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Mon, 06 Jul 2026 23:51:04 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c3vyyq1kg5go?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-352e2f17d7b1",
+    "title": "Belgium make light work of US to set up quarter-final tie with Spain",
+    "summary": "Belgium ease past a defensively sloppy USA in a match shrouded in controversy surrounding Folarin Balogun's delayed suspension, a scandal that made little impact on the pitch.",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Tue, 07 Jul 2026 02:39:07 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/videos/cj0gg55613do?at_medium=RSS&at_campaign=rss",
+    "category": "suspension",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.9
+  },
+  {
+    "id": "bbc-97232543fa4c",
+    "title": "'Total calamity!' US gift Belgium a third goal",
+    "summary": "USA goalkeeper Matt Freese with a huge error in judgement as he gifts Belgium's Hans Vanaken the ball, leaving him with an easy finish that defender Tim Ream could've done more to stop. Errors all around as Belgium take control of the round of 16 tie.",
+    "source": "bbc",
+    "team": "usa",
+    "status": "single_source",
+    "published_at": "Tue, 07 Jul 2026 01:55:57 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/videos/cx266ee3v2mo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "goalkeeper",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-1243acb0ba50",
+    "title": "Ragged USA crash out of World Cup with last-16 defeat to Belgium",
+    "summary": "<p>The United States’ quest to get <a href=\"https://www.theguardian.com/football/2026/jul/06/belgium-appeal-fifa-lifting-folarin-balogun-red-card-ban-last-16-us-world-cup\">Folarin Balogun’s red card overturned</a> may have opened a Pandora’s box – one specifically designed to contain the national team’s worst nightmares.</p><p>With a country on the verge of falling in love with this team, and tens of millions eager for a reason to embrace the glory and pride this sport can provide, there were instead questions of fairness and propriety. A star striker, who made an honest, unintentional mistake – and said and did all the right things – <a href=\"https://www.theguardian.com/football/2026/jul/06/trump-fifa-balogun-red-card-review-intervention\">became a talking point</a>. And a day later, on an otherwise beautiful Monday evening in the Pacific north-west, the United States’ World Cup dream ended with a thud.</p> <a href=\"https://www.theguardian.com/football/2026/jul/06/usa-belgium-world-cup-2026-match-report\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Tue, 07 Jul 2026 01:59:04 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/06/usa-belgium-world-cup-2026-match-report",
+    "category": "suspension",
+    "factor": "attack",
+    "direction": -1,
+    "confidence": 0.9
   }
 ]
