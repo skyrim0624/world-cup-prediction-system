@@ -31090,5 +31090,47 @@
     "factor": "attack",
     "direction": -1,
     "confidence": 0.9
+  },
+  {
+    "id": "bbc-6bf0c39accf3",
+    "title": "La Liga chief critical of 'complicit silence' surrounding Fifa",
+    "summary": "La Liga president Javier Tebas has criticised the \"complicit silence\" which surrounds Fifa after the Folarin Balogun controversy.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Tue, 07 Jul 2026 12:49:44 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c0ly51j7grxo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-290d72cb25b8",
+    "title": "9.1m watch England's epic win over Mexico",
+    "summary": "A peak audience of 9.1 million tuned in overnight to watch England beat Mexico to reach the quarter-finals of the World Cup.",
+    "source": "bbc",
+    "team": "mexico",
+    "status": "single_source",
+    "published_at": "Tue, 07 Jul 2026 11:50:56 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cdejw7xxe23o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-2bf20aae6504",
+    "title": "Football Daily",
+    "summary": "USA are out and Ronaldo bows out.",
+    "source": "bbc",
+    "team": "usa",
+    "status": "single_source",
+    "published_at": "Tue, 07 Jul 2026 08:34:00 GMT",
+    "url": "https://www.bbc.co.uk/sounds/play/p0ns8bpy?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
