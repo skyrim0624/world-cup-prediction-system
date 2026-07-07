@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-07T19:06:06.131642+00:00",
+  "updatedAt": "2026-07-07T21:08:34.174862+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -554,11 +554,11 @@
       "probability": 11,
       "title": "两队路径保持胶着",
       "details": [
-        "德国夺冠概率 -0.1%",
+        "德国夺冠概率 ±0.0%",
         "库拉索夺冠概率 ±0.0%",
         "小组第一仍取决于末轮和净胜球"
       ],
-      "championShift": "-0.1% / ±0.0%",
+      "championShift": "±0.0% / ±0.0%",
       "tone": "gold"
     },
     {
@@ -16350,6 +16350,132 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 07 Jul 2026 19:02:35 GMT"
+    },
+    {
+      "title": "Tears of relief? Messi adds another incredible chapter to World Cup career",
+      "detail": "Argentina great Lionel Messi sheds tears as they fight back to beat Egypt and reach the World Cup quarter-finals.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 20:28:19 GMT"
+    },
+    {
+      "title": "Shades of Keane and Gerrard in Bellingham display - Rooney",
+      "detail": "Wayne Rooney believes Jude Bellingham's performance against Mexico ranks alongside iconic Steven Gerrard and Roy Keane displays",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 19:23:35 GMT"
+    },
+    {
+      "title": "Fifa investigating alleged racist abuse of IShowSpeed",
+      "detail": "Fifa has opened an investigation following allegations of racist abuse involving American social media influencer IShowSpeed and a supporter during Argentina's 3-2 win over Cape Verde on Friday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 19:13:36 GMT"
+    },
+    {
+      "title": "Argentina make incredible late comeback to beat Egypt",
+      "detail": "Argentina survive an almighty scare before delivering a scarcely believable second-half comeback to break Egypt hearts and reach the quarter-finals of the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 19:13:22 GMT"
+    },
+    {
+      "title": "Rogers is Arsenal's main target - Wednesday's gossip",
+      "detail": "Arsenal make Morgan Rogers their main target, Liverpool interested in Mexico teenager and Everton eye England defender Spence.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 20:58:10 GMT"
+    },
+    {
+      "title": "TNS fall to Champions League defeat in Azerbaijan",
+      "detail": "The New Saints need to turn tie around in home leg after losing 2-0 at Sabah in first qualifying round of Champions League.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 18:12:53 GMT"
+    },
+    {
+      "title": "Why did England’s 2006 World Cup dream end in agony?",
+      "detail": "Why did the England football team not fulfil their potential at the 2006 World Cup?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 11 May 2026 05:00:00 GMT"
+    },
+    {
+      "title": "Messi saves Argentina in dramatic win over Egypt",
+      "detail": "Lionel Messi scored in a record sixth straight World Cup knockout match to help Argentina reach the quarterfinals with a stunning late comeback to beat Egypt 3-2 in Atlanta.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 16:43:22 EST"
+    },
+    {
+      "title": "Egypt bemoan 'injustice' after Argentina defeat",
+      "detail": "Hossam Hassan said Egypt were the victim of an \"injustice\" in their 3-2 World Cup defeat against Argentina due to FIFA \"wanting Lionel Messi to stay in the running.\"",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 16:22:12 EST"
+    },
+    {
+      "title": "Belgium say beating U.S. 'justice' after ban U-tur...",
+      "detail": "Belgium midfielder Nicolas Raskin said \"there's always justice somewhere in life\" after beating a U.S. team controversially featuring Folarin Balogun,",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 16:43:22 EST"
+    },
+    {
+      "title": "U.S. loss sets record as most-watched soccer game",
+      "detail": "The United States game against Belgium in the round of 16 at the FIFA World Cup set another record as the most-watched soccer telecast in U.S. history, Fox said after preliminary ratings came out Tuesday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 16:43:22 EST"
+    },
+    {
+      "title": "Belgium's Onana out of World Cup with ACL injury",
+      "detail": "Belgium midfielder Amadou Onana has been ruled out of the World Cup after suffering an anterior cruciate ligament injury, the Red Devils have confirmed.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 7 Jul 2026 16:43:22 EST"
+    },
+    {
+      "title": "Galaxy send Pec to Cruzeiro for club-record fee",
+      "detail": "The LA Galaxy sent attacker Gabriel Pec to Brazilian side Cruzeiro for a club-record fee, the MLS side announced Tuesday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 16:22:13 EST"
+    },
+    {
+      "title": "Paraguayan senator demands apology from Mbappé",
+      "detail": "The Paraguayan senator embroiled in a racism row with Kylian Mbappé has demanded an apology from the France forward and threatened legal action against him for \"gender-based violence.\"",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 16:43:22 EST"
+    },
+    {
+      "title": "Gotham FC, NYCFC to share new Queens stadium",
+      "detail": "Gotham FC will play home games at Etihad Park in Queens, New York, beginning in 2028, putting the reigning NWSL champions inside New York City limits for the first time.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 16:22:12 EST"
+    },
+    {
+      "title": "Argentina, Messi complete epic comeback vs. Egypt,...",
+      "detail": "Argentina left it until late again to muscle their way past Egypt in a game that had everything: VAR drama, Messi magic, underdog brilliance and another unforgettable World Cup moment.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 15:24:58 EST"
+    },
+    {
+      "title": "Pay-to-play youth soccer explains America's World Cup losses",
+      "detail": "Focus is more on parents' ability to pay for travel matches than on young player development",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 14:50:13 EST"
+    },
+    {
+      "title": "Copy of So, Ronaldo's World Cup era is over. Where did eac...",
+      "detail": "Cristiano Ronaldo said this would be his last World Cup, and after losing to Spain on Monday night, this chapter of his incredible career is now closed. Let's look back to see where each campaign went wrong.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 7 Jul 2026 16:31:29 EST"
     }
   ],
   "teams": [
@@ -16463,7 +16589,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.7,
-        "quarterfinal": 6.2,
+        "quarterfinal": 6.3,
         "change": -0.1
       }
     },
@@ -16595,8 +16721,8 @@
       "tournament": {
         "champion": 0.5,
         "final": 1.8,
-        "semifinal": 6.5,
-        "quarterfinal": 29.1,
+        "semifinal": 6.6,
+        "quarterfinal": 29.5,
         "change": -0.5
       }
     },
@@ -16746,7 +16872,7 @@
       },
       "tournament": {
         "champion": 7.2,
-        "final": 13.9,
+        "final": 14.0,
         "semifinal": 29.3,
         "quarterfinal": 60.8,
         "change": 0.4
@@ -16817,15 +16943,15 @@
         "strength": 84,
         "form": 82,
         "path": 73,
-        "squad": 69,
+        "squad": 67,
         "margin": 80
       },
       "tournament": {
-        "champion": 1.4,
-        "final": 3.7,
-        "semifinal": 10.2,
-        "quarterfinal": 34.8,
-        "change": -1.7
+        "champion": 1.3,
+        "final": 3.3,
+        "semifinal": 9.6,
+        "quarterfinal": 33.8,
+        "change": -1.8
       }
     },
     {
@@ -16898,8 +17024,8 @@
       },
       "tournament": {
         "champion": 20.9,
-        "final": 30.9,
-        "semifinal": 47.1,
+        "final": 31.0,
+        "semifinal": 47.2,
         "quarterfinal": 57.2,
         "change": 9.3
       }
@@ -16994,8 +17120,8 @@
       "tournament": {
         "champion": 0.9,
         "final": 2.7,
-        "semifinal": 8.1,
-        "quarterfinal": 29.9,
+        "semifinal": 8.3,
+        "quarterfinal": 30.5,
         "change": -0.1
       }
     },
@@ -17049,11 +17175,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 21.6,
+        "champion": 21.5,
         "final": 38.6,
         "semifinal": 56.5,
         "quarterfinal": 76.0,
-        "change": 6.4
+        "change": 6.3
       }
     },
     {
@@ -17087,11 +17213,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 0.3,
+        "champion": 0.4,
         "final": 1.1,
         "semifinal": 3.6,
         "quarterfinal": 6.7,
-        "change": -0.3
+        "change": -0.2
       }
     },
     {
@@ -17126,8 +17252,8 @@
       },
       "tournament": {
         "champion": 4.8,
-        "final": 8.9,
-        "semifinal": 17.9,
+        "final": 9.0,
+        "semifinal": 18.0,
         "quarterfinal": 25.6,
         "change": -1.4
       }
@@ -17285,18 +17411,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2251,
+      "eventCount": 2269,
       "manualEventCount": 3,
-      "rawNewsCount": 2248,
+      "rawNewsCount": 2266,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2251,
-      "applied": 2085,
+      "watched": 2269,
+      "applied": 2103,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2246,
+      "singleSource": 2264,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -17481,7 +17607,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": 0.7699999999999999,
-        "squad": -12.850000000000001
+        "squad": -15.000000000000002
       },
       "egypt": {
         "attack": 0.0,
@@ -27937,7 +28063,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-07T19:06:27.922071+00:00",
+    "generatedAt": "2026-07-07T21:08:50.859376+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
@@ -27947,39 +28073,75 @@
         "team": "argentina",
         "name": "阿根廷",
         "code": "ARG",
-        "previousChampion": 21.5,
-        "currentChampion": 21.6,
+        "previousChampion": 21.6,
+        "currentChampion": 21.5,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 18 条",
+        "reasons": [
+          "可入模型事件新增 18 条"
+        ]
+      },
+      {
+        "team": "belgium",
+        "name": "比利时",
+        "code": "BEL",
+        "previousChampion": 1.4,
+        "currentChampion": 1.3,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "人员盘下调 -2.2",
+        "reasons": [
+          "人员盘下调 -2.2",
+          "八强概率下降 -1.0%",
+          "四强概率下降 -0.6%",
+          "决赛概率下降 -0.4%",
+          "可入模型事件新增 18 条"
+        ]
+      },
+      {
+        "team": "austria",
+        "name": "奥地利",
+        "code": "AUT",
+        "previousChampion": 0.3,
+        "currentChampion": 0.4,
         "change": 0.1,
         "direction": "up",
-        "reason": "八强概率上升 +0.3%",
+        "reason": "可入模型事件新增 18 条",
         "reasons": [
-          "八强概率上升 +0.3%",
-          "四强概率上升 +0.2%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 11 条"
+          "可入模型事件新增 18 条"
         ]
       }
     ],
     "summary": {
       "up": 1,
-      "down": 0,
+      "down": 2,
       "largestUp": {
+        "team": "austria",
+        "name": "奥地利",
+        "code": "AUT",
+        "previousChampion": 0.3,
+        "currentChampion": 0.4,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 18 条",
+        "reasons": [
+          "可入模型事件新增 18 条"
+        ]
+      },
+      "largestDown": {
         "team": "argentina",
         "name": "阿根廷",
         "code": "ARG",
-        "previousChampion": 21.5,
-        "currentChampion": 21.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.3%",
+        "previousChampion": 21.6,
+        "currentChampion": 21.5,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 18 条",
         "reasons": [
-          "八强概率上升 +0.3%",
-          "四强概率上升 +0.2%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 11 条"
+          "可入模型事件新增 18 条"
         ]
-      },
-      "largestDown": null
+      }
     }
   }
 }
