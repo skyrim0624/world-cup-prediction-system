@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-07T11:14:40.919036+00:00",
+  "updatedAt": "2026-07-07T13:37:18.409350+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -16168,6 +16168,27 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Tue, 07 Jul 2026 08:58:35 GMT"
+    },
+    {
+      "title": "La Liga chief critical of 'complicit silence' surrounding Fifa",
+      "detail": "La Liga president Javier Tebas has criticised the \"complicit silence\" which surrounds Fifa after the Folarin Balogun controversy.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 12:49:44 GMT"
+    },
+    {
+      "title": "9.1m watch England's epic win over Mexico",
+      "detail": "A peak audience of 9.1 million tuned in overnight to watch England beat Mexico to reach the quarter-finals of the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 11:50:56 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "USA are out and Ronaldo bows out.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 08:34:00 GMT"
     }
   ],
   "teams": [
@@ -17103,18 +17124,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2225,
+      "eventCount": 2228,
       "manualEventCount": 3,
-      "rawNewsCount": 2222,
+      "rawNewsCount": 2225,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2225,
-      "applied": 2061,
+      "watched": 2228,
+      "applied": 2063,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2220,
+      "singleSource": 2223,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -27755,108 +27776,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-07T11:15:02.862546+00:00",
+    "generatedAt": "2026-07-07T13:37:40.236967+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "belgium",
-        "name": "比利时",
-        "code": "BEL",
-        "previousChampion": 1.7,
-        "currentChampion": 1.4,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "人员盘下调 -4.7",
-        "reasons": [
-          "人员盘下调 -4.7",
-          "八强概率下降 -2.6%",
-          "四强概率下降 -1.4%",
-          "决赛概率下降 -0.7%",
-          "可入模型事件新增 22 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 20.7,
-        "currentChampion": 20.9,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "四强概率上升 +0.4%",
-        "reasons": [
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.3%",
-          "可入模型事件新增 22 条"
-        ]
-      },
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.1,
-        "currentChampion": 7.2,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 22 条",
-        "reasons": [
-          "可入模型事件新增 22 条"
-        ]
-      },
-      {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 4.7,
-        "currentChampion": 4.8,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.3%",
-        "reasons": [
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 22 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 3,
-      "down": 1,
-      "largestUp": {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 20.7,
-        "currentChampion": 20.9,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "四强概率上升 +0.4%",
-        "reasons": [
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.3%",
-          "可入模型事件新增 22 条"
-        ]
-      },
-      "largestDown": {
-        "team": "belgium",
-        "name": "比利时",
-        "code": "BEL",
-        "previousChampion": 1.7,
-        "currentChampion": 1.4,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "人员盘下调 -4.7",
-        "reasons": [
-          "人员盘下调 -4.7",
-          "八强概率下降 -2.6%",
-          "四强概率下降 -1.4%",
-          "决赛概率下降 -0.7%",
-          "可入模型事件新增 22 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
