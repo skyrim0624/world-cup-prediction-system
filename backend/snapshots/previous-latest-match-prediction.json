@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-08T19:42:46.728323+00:00",
+  "updatedAt": "2026-07-08T21:15:15.954965+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -16903,6 +16903,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 08 Jul 2026 17:35:08 GMT"
+    },
+    {
+      "title": "Fenerbahce confident of Greenwood deal",
+      "detail": "Fenerbahce are growing increasingly confident of signing Mason Greenwood from Marseille.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 19:55:15 GMT"
+    },
+    {
+      "title": "Rashford dilemma for Man Utd - Thursday's gossip",
+      "detail": "Manchester United are in a quandary over Marcus Rashford's future, Arsenal and Tottenham eye Antonio Nusa, Barcelona shortlist Bournemouth's Eli Junior Kroupi, plus more.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 20:58:59 GMT"
+    },
+    {
+      "title": "FAI motion to continue with Israel games passed at EGM",
+      "detail": "The Football Association of Ireland's (FAI) General Assembly endorses a motion for Republic of Ireland to go ahead with their upcoming Nations League fixtures against Israel.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 20:26:49 GMT"
     }
   ],
   "teams": [
@@ -17838,18 +17859,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2330,
+      "eventCount": 2333,
       "manualEventCount": 3,
-      "rawNewsCount": 2327,
+      "rawNewsCount": 2330,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2330,
-      "applied": 2155,
+      "watched": 2333,
+      "applied": 2158,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2325,
+      "singleSource": 2328,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -28490,82 +28511,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-08T19:43:08.849184+00:00",
+    "generatedAt": "2026-07-08T21:15:38.060706+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.2,
-        "currentChampion": 7.4,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "八强概率上升 +1.1%",
-        "reasons": [
-          "八强概率上升 +1.1%",
-          "四强概率上升 +0.5%",
-          "决赛概率上升 +0.3%",
-          "可入模型事件新增 8 条"
-        ]
-      },
-      {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 0.9,
-        "currentChampion": 0.7,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "状态盘下调 -2.1",
-        "reasons": [
-          "状态盘下调 -2.1",
-          "八强概率下降 -1.3%",
-          "四强概率下降 -0.7%",
-          "决赛概率下降 -0.3%",
-          "可入模型事件新增 8 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
-      "down": 1,
-      "largestUp": {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.2,
-        "currentChampion": 7.4,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "八强概率上升 +1.1%",
-        "reasons": [
-          "八强概率上升 +1.1%",
-          "四强概率上升 +0.5%",
-          "决赛概率上升 +0.3%",
-          "可入模型事件新增 8 条"
-        ]
-      },
-      "largestDown": {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 0.9,
-        "currentChampion": 0.7,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "状态盘下调 -2.1",
-        "reasons": [
-          "状态盘下调 -2.1",
-          "八强概率下降 -1.3%",
-          "四强概率下降 -0.7%",
-          "决赛概率下降 -0.3%",
-          "可入模型事件新增 8 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }

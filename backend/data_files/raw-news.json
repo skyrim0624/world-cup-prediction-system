@@ -32602,5 +32602,19 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "guardian-c3b993322b13",
+    "title": "White House’s World Cup head defends Trump lobbying Fifa over red card",
+    "summary": "<p>Andrew Giuliani claims actions of referee Raphael Claus over US player Folarin Balogun ‘very, very highly suspicious’</p><p>Andrew Giuliani, head of the White House’s World Cup taskforce, has defended Donald Trump’s <a href=\"https://www.theguardian.com/football/2026/jul/05/folarin-balogun-red-card-suspension-lifted-usmnt-belgium-world-cup\">lobbying of Fifa</a> to lift the suspension of US player Folarin Balogun for Monday’s game against Belgium.</p><p>The US president claimed that Brazilian referee <a href=\"https://en.wikipedia.org/wiki/Raphael_Claus\">Raphael Claus</a>, who showed Balogun a red card in the match against Bosnia and Herzegovina, was “a little bit suspect, if you check his past”. This was apparently a reference to a match-fixing investigation by Brazil’s senate in 2024 that examined how referees were assigned to games but did not accuse Claus of wrongdoing.</p> <a href=\"https://www.theguardian.com/us-news/2026/jul/08/trump-fifa-red-card\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Wed, 08 Jul 2026 22:20:18 GMT",
+    "url": "https://www.theguardian.com/us-news/2026/jul/08/trump-fifa-red-card",
+    "category": "suspension",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.9
   }
 ]
