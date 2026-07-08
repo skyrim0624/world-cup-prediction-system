@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-08T13:09:27.730228+00:00",
+  "updatedAt": "2026-07-08T15:51:44.705238+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -16714,6 +16714,76 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 08 Jul 2026 12:08:06 GMT"
+    },
+    {
+      "title": "Are Argentina being treated favourably at World Cup?",
+      "detail": "Egypt have alleged bias in favour of Argentina and favouritism towards their star player, Lionel Messi. Is this fair?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 15:37:07 GMT"
+    },
+    {
+      "title": "The key players walking disciplinary tightrope",
+      "detail": "Four England players are at risk of missing a potential World Cup semi-final because of the tournament's yellow-card rules.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 15:07:12 GMT"
+    },
+    {
+      "title": "London City sign Ballon d'Or winner Putellas",
+      "detail": "London City Lionesses sign two-time Ballon d'Or winner Alexia Putellas on a three-year deal in one of the biggest scoops in women's football history.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 14:40:50 GMT"
+    },
+    {
+      "title": "Henderson has surgery in USA after breaking arm",
+      "detail": "Jordan Henderson has had surgery after breaking his arm during the celebrations of England's win over Mexico on Sunday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 15:28:28 GMT"
+    },
+    {
+      "title": "Portugal confirm departure of coach Martinez",
+      "detail": "The Portuguese football federation (FPF) confirm the departure of national team coach Roberto Martinez following Portugal's last-16 loss to Spain.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 14:31:21 GMT"
+    },
+    {
+      "title": "World Cup quiz: Teams to have played the most quarter-finals",
+      "detail": "With the first World Cup quarter-final taking place tomorrow we've been inspired to make this quiz.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 14:04:38 GMT"
+    },
+    {
+      "title": "Wrexham to 'hold nerve' in transfer window - Parkinson",
+      "detail": "Wrexham manager Phil Parkinson urging patience after a slow start to the transfer window by the Championship club.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 13:17:51 GMT"
+    },
+    {
+      "title": "Podcast: How do St Mirren follow Hampden glory & top flight survival?",
+      "detail": "A League Cup win, a great escape and now a new beginning.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 15:00:00 GMT"
+    },
+    {
+      "title": "A World Cup free agent XI: summer bargains and top targets among clubless players",
+      "detail": "<p>A goalkeeper with 27.5m Instagram followers and a forward whose future is opaque make our team of players looking for new clubs</p><p>As late bloomers and cult heroes go, few have made an impact on a World Cup quite like the goalkeeper who first defied Spain’s attackers and, after Cape Verde’s qualification for the knockouts, reduced Lionel Messi to a single goal. Vozinha departed Chaves in Liga Portugal 2 at the end of last season, having previously played in Cyprus, Slovakia and Moldova. With 27.5m Instagram followers, he would be a social media marketer’s dream, as well as a handy goalkeeper with a taste for the big occasion.</p> <a href=\"https://www.theguardian.com/football/2026/jul/08/world-cup-free-agent-xi-vozinha-salah-clubless-players\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 13:21:06 GMT"
+    },
+    {
+      "title": "No league tables, no trophies: how Norway made sport fun for kids – and built a football team that beat Brazil",
+      "detail": "<p>Country’s model prioritises joy while offering choice – and Erling Haaland’s World Cup exploits show that it works</p><p>At full time, the arithmetic felt wrong. A team from a country of 5.5 million people, back at a World Cup after 28 years away, had just beaten the five-time champions to reach a first quarter-final.</p><p>During <a href=\"https://www.theguardian.com/football/2026/jul/05/brazil-norway-world-cup-2026-last-16-match-report\">Norway’s victory over Brazil</a> on Sunday there was little between the fast feet of Vinícius Júnior and the raw power of Erling Haaland. But look at how that pair and others on the two teams were raised and a different story emerges. Neymar, Matheus<strong> </strong>Cunha and Vinícius grew up in a system that prioritises prodigies – spotting talent early and fast-tracking it through academies built around a single sport. Haaland, Martin Ødegaard and Antonio Nusa grew up inside something altogether different.</p> <a href=\"https://www.theguardian.com/football/2026/jul/08/how-norway-made-sport-fun-kids-built-football-team-beat-brazil-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 13:13:57 GMT"
     }
   ],
   "teams": [
@@ -17649,18 +17719,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2303,
+      "eventCount": 2313,
       "manualEventCount": 3,
-      "rawNewsCount": 2300,
+      "rawNewsCount": 2310,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2303,
-      "applied": 2135,
+      "watched": 2313,
+      "applied": 2143,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2298,
+      "singleSource": 2308,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -28301,7 +28371,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-08T13:09:49.275353+00:00",
+    "generatedAt": "2026-07-08T15:52:06.648736+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
