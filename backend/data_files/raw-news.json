@@ -31790,5 +31790,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-cdd9025cfac9",
+    "title": "Unusual or predictable? How Europe is dominating the World Cup",
+    "summary": "Six of the eight quarter-finalists at the World Cup in North America are from Europe, so why are they doing so well and what does history tell us about the chances of one of them winning it all?",
+    "source": "bbc",
+    "team": "norway",
+    "status": "single_source",
+    "published_at": "Wed, 08 Jul 2026 05:02:22 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cr479drd159o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-f9dc39e1d357",
+    "title": "Who am I? Guess World Cup star No 31",
+    "summary": "Will you get today's player in as few attempts as possible?",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Wed, 08 Jul 2026 05:47:35 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c3r2325v399o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
