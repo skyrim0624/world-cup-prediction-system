@@ -31720,5 +31720,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-d55da7a536cb",
+    "title": "Fulham appoint Arbeloa as Silva's successor",
+    "summary": "Fulham appoint Alvaro Arbeloa as their new manager on a three-year contract, succeeding Marco Silva who left for Benfica.",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Tue, 07 Jul 2026 23:04:42 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cvgjnlj0d1go?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-2b99362b06a9",
+    "title": "Switzerland knock out Colombia on penalties to reach World Cup quarter-finals",
+    "summary": "<p>Davinson Sánchez looked to the heavens. Cucho Hernández trudged back to his teammates. And by the end, the rest of the Colombian team were on the grass as Switzerland danced, nearly alone in a sea of yellow. Switzerland had prevailed on penalties, 4-3, bringing an emotional end to more than two hours of tense, tentative, and ludicrously goal-free football in the World Cup last 16.</p><p>Switzerland advance to the quarter-finals for the first time since 1954, when that stage was the first in the knockout round of a Swiss-hosted tournament featuring a total of 16 teams. They will face a tall task to better that result, facing Lionel Messi and Argentina in Kansas City in four days’ time.</p> <a href=\"https://www.theguardian.com/football/2026/jul/08/switzerland-colombia-world-cup-2026-last-16-match-report\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "switzerland",
+    "status": "single_source",
+    "published_at": "Tue, 07 Jul 2026 23:06:57 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/08/switzerland-colombia-world-cup-2026-last-16-match-report",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-64d444744ae0",
+    "title": "All the presidents’ meddling: the Balogun scandal shows how Fifa can break football | Barney Ronay",
+    "summary": "<p>The suspension of the USA striker’s red card after Trump’s intervention has shown what Gianni Infantino’s organisation is trying to turn the sport into: scripted entertainment</p><p>Frites 4 Cheats 1. Tintin 4 Tonto 1. Some good news here, perhaps. It seems Gianni Infantino was right after all. Football has united the world. Mainly football has united the world in gleeful satisfaction at the <a href=\"https://www.theguardian.com/football/2026/jul/07/usmnt-world-cup-belgium\">USA exiting its own World Cup</a> tournament as soon as possible following the great and glorious <a href=\"https://www.theguardian.com/football/2026/jul/06/trump-fifa-balogun-red-card-review-intervention\">Donald Trump Mr-Fix-It intervention</a>.</p><p>This was the tone of the immediate global reaction to the USA’s <a href=\"https://www.theguardian.com/football/2026/jul/06/usa-belgium-world-cup-2026-match-report\">invertebrate defeat in Seattle</a> on Monday night, soundly beaten by a righteous and highly motivated Belgium: land of beer, waffles and sporting vigilante justice. Ghent 4 Bent 1. Antwerp 4 A twerp 1. Mayonnaise 4 May-have-interfered-in-due-process 1. I can go on. How long have you got?</p> <a href=\"https://www.theguardian.com/football/2026/jul/07/donald-trump-gianni-infantino-folarin-balogun-fifa-world-cup-2026\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Tue, 07 Jul 2026 20:45:02 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/07/donald-trump-gianni-infantino-folarin-balogun-fifa-world-cup-2026",
+    "category": "suspension",
+    "factor": "attack",
+    "direction": -1,
+    "confidence": 0.9
   }
 ]
