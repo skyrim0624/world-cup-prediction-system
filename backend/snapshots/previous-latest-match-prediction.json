@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-08T17:44:12.246241+00:00",
+  "updatedAt": "2026-07-08T19:42:46.728323+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -16833,6 +16833,76 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Wed, 08 Jul 2026 15:21:49 GMT"
+    },
+    {
+      "title": "Chelsea announce £40m Quenda signing",
+      "detail": "Chelsea announce the signing of Sporting winger Geovany Quenda in a deal worth £40m.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 18:01:38 GMT"
+    },
+    {
+      "title": "Arsenal target Guimaraes asks to leave Newcastle",
+      "detail": "Newcastle midfielder Bruno Guimaraes asks to leave the club with Arsenal accelerating their interest in the 28-year-old.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 17:52:11 GMT"
+    },
+    {
+      "title": "Scotland goalkeeper Gunn signs for San Jose Earthquakes",
+      "detail": "Scotland goalkeeper Angus Gunn signs for San Jose Earthquakes after being released by Nottingham Forest.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 18:33:28 GMT"
+    },
+    {
+      "title": "Former Sheffield Utd owners claim they are owed £35m",
+      "detail": "The former owners of Sheffield United file a winding-up petition against the current owners, claiming they are owed over £35m.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 19:11:11 GMT"
+    },
+    {
+      "title": "Leeds confirm Wilson arrival on free transfer",
+      "detail": "Leeds confirm the signing attacking midfielder Harry Wilson on a four-year deal.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 18:03:09 GMT"
+    },
+    {
+      "title": "Podcast: Hands off McGlynn! Falkirk's season preview",
+      "detail": "Can Falkirk build on a stunning season amid Scotland links for McGlynn?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 17:00:00 GMT"
+    },
+    {
+      "title": "Reece James remains injury doubt as England’s World Cup right-back woes go on",
+      "detail": "<ul><li><p>Defender unable to train with squad on Wednesday</p></li><li><p>Declan Rice and Marc Guéhi also trained individually</p></li></ul><p>Reece James is a doubt for England’s World Cup quarter-final against Norway in Miami on Saturday after he was again unable to train with the squad on Wednesday.</p><p>The right-back has been unavailable since <a href=\"https://www.theguardian.com/football/2026/jun/26/england-reece-james-ruled-out-two-games-world-cup-hamstring-injury-panama\">he injured a hamstring</a> in England’s second group game – <a href=\"https://www.theguardian.com/football/2026/jun/23/england-ghana-world-cup-group-l-match-report\">the 0-0 draw against Ghana</a> in Boston. Thomas Tuchel knew at the time he would be without him for at least two games and probably for a potential last 16 tie, which is what transpired.</p> <a href=\"https://www.theguardian.com/football/2026/jul/08/reece-james-remains-injury-doubt-england-right-back-woes-norway-world-cup-quarter-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Wed, 08 Jul 2026 19:08:24 GMT"
+    },
+    {
+      "title": "Egyptian FA questions ‘fairness’ of loss to Argentina amid refereeing furore",
+      "detail": "<ul><li><p>Statement says decisions ‘raised serious concerns’</p></li><li><p>Association rues ‘controversial and influential incidents’</p></li></ul><p>The Egyptian Football Association has questioned the “fairness” of the national team’s <a href=\"https://www.theguardian.com/football/2026/jul/07/argentina-egypt-world-cup-2026-last-16-match-report\">3-2 loss to Argentina</a> in Tuesday’s World Cup last-16 encounter.</p><p>Having gone 1-0 up through Yasser Ibrahim early on, Egypt thought they had doubled their lead in the second half when Mostafa Ziko scored at the end of an excellent move. The goal was disallowed after a VAR review, however, with the referee, François Letexier, adjudging Marwan Attia to have committed a foul in the buildup.</p> <a href=\"https://www.theguardian.com/football/2026/jul/08/egyptian-fa-questions-fairness-of-loss-to-argentina-amid-refereeing-furore\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 18:23:18 GMT"
+    },
+    {
+      "title": "France’s Deschamps unruffled by Argentinian officials helming Morocco quarter-final",
+      "detail": "<ul><li><p>Repeat of last World Cup final v Argentina still possible</p></li><li><p>‘We have to deal with it,’ France’s head coach says</p></li></ul><p>Didier Deschamps has insisted he is not concerned by the appointment of Argentinian officials to oversee the World Cup quarter-final between France and Morocco on Thursday, with a repeat of <a href=\"https://www.theguardian.com/football/2022/dec/18/world-cup-final-argentina-france-match-report\">the 2022 final</a> against Argentina still possible. “We have to deal with it,” he said. “I trust the referees. Our opponent is Morocco, not the referee.”</p><p>The France head coach, though, is not a natural diplomat. This was a characteristically combative display from Deschamps, who spent at least 90 seconds at the end of his press conference explaining why he really did not have time to answer one final question, before reluctantly answering, grumpily. He could not resist a jibe at those, many in the north African media, who had criticised the French official François Letexier’s performance during the last-16 game between <a href=\"https://www.theguardian.com/football/2026/jul/07/argentina-egypt-world-cup-2026-last-16-match-report\">Argentina and Egypt</a> on Tuesday.</p> <a href=\"https://www.theguardian.com/football/2026/jul/08/france-deschamps-unruffled-argentinian-officials-morocco-world-cup-quarter-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 16:57:16 GMT"
+    },
+    {
+      "title": "Aid worker who organised World Cup screenings in Gaza killed in Israeli strike",
+      "detail": "<p>Mohamed al-Wahidi died when a missile struck his taxi shortly before Egypt played Argentina in their last 16 match</p><p>A Palestinian aid worker who had organised screenings of World Cup matches in Gaza was killed by an Israeli missile strike just before the game between <a href=\"https://www.theguardian.com/football/2026/jul/07/argentina-egypt-world-cup-2026-last-16-match-report\">Egypt and Argentina</a> on Tuesday evening.</p><p>Two brothers aged eight and 10 and another man who was in the street near the site of the attack were also killed.</p> <a href=\"https://www.theguardian.com/world/2026/jul/08/aid-worker-world-cup-screenings-gaza-killed-israeli-strike\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 17:35:08 GMT"
     }
   ],
   "teams": [
@@ -16870,7 +16940,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.9,
-        "quarterfinal": 7.4,
+        "quarterfinal": 7.5,
         "change": -0.1
       }
     },
@@ -17013,17 +17083,17 @@
       "code": "MAR",
       "factors": {
         "strength": 84,
-        "form": 76,
+        "form": 75,
         "path": 65,
         "squad": 74,
-        "margin": 79
+        "margin": 78
       },
       "tournament": {
-        "champion": 0.9,
-        "final": 2.4,
-        "semifinal": 7.8,
-        "quarterfinal": 25.3,
-        "change": -0.6
+        "champion": 0.7,
+        "final": 2.1,
+        "semifinal": 7.1,
+        "quarterfinal": 24.0,
+        "change": -0.8
       }
     },
     {
@@ -17077,7 +17147,7 @@
       },
       "tournament": {
         "champion": 0.4,
-        "final": 1.5,
+        "final": 1.6,
         "semifinal": 6.0,
         "quarterfinal": 28.0,
         "change": -0.6
@@ -17228,11 +17298,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 7.2,
-        "final": 14.0,
-        "semifinal": 29.4,
-        "quarterfinal": 61.1,
-        "change": 0.4
+        "champion": 7.4,
+        "final": 14.3,
+        "semifinal": 29.9,
+        "quarterfinal": 62.2,
+        "change": 0.6
       }
     },
     {
@@ -17457,7 +17527,7 @@
       },
       "tournament": {
         "champion": 14.5,
-        "final": 23.7,
+        "final": 23.8,
         "semifinal": 40.7,
         "quarterfinal": 58.9,
         "change": 1.0
@@ -17768,18 +17838,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2320,
+      "eventCount": 2330,
       "manualEventCount": 3,
-      "rawNewsCount": 2317,
+      "rawNewsCount": 2327,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2320,
-      "applied": 2147,
+      "watched": 2330,
+      "applied": 2155,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2315,
+      "singleSource": 2325,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -17856,7 +17926,7 @@
       },
       "morocco": {
         "attack": -7.249999999999999,
-        "defense": -4.3,
+        "defense": -6.449999999999999,
         "goalkeeper": -2.15,
         "path": -5.67,
         "squad": -6.449999999999999
@@ -28420,101 +28490,80 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-08T17:44:34.228084+00:00",
+    "generatedAt": "2026-07-08T19:43:08.849184+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
     "items": [
       {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.6,
-        "currentChampion": 21.5,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 4 条",
-        "reasons": [
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 20.9,
-        "currentChampion": 21.0,
-        "change": 0.1,
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.2,
+        "currentChampion": 7.4,
+        "change": 0.2,
         "direction": "up",
-        "reason": "四强概率上升 +0.1%",
+        "reason": "八强概率上升 +1.1%",
         "reasons": [
-          "四强概率上升 +0.1%",
-          "可入模型事件新增 4 条"
+          "八强概率上升 +1.1%",
+          "四强概率上升 +0.5%",
+          "决赛概率上升 +0.3%",
+          "可入模型事件新增 8 条"
         ]
       },
       {
-        "team": "senegal",
-        "name": "塞内加尔",
-        "code": "SEN",
+        "team": "morocco",
+        "name": "摩洛哥",
+        "code": "MAR",
         "previousChampion": 0.9,
-        "currentChampion": 1.0,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.5%",
-        "reasons": [
-          "八强概率上升 +0.5%",
-          "四强概率上升 +0.2%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "usa",
-        "name": "美国",
-        "code": "USA",
-        "previousChampion": 0.5,
-        "currentChampion": 0.4,
-        "change": -0.1,
+        "currentChampion": 0.7,
+        "change": -0.2,
         "direction": "down",
-        "reason": "人员盘下调 -2.5",
+        "reason": "状态盘下调 -2.1",
         "reasons": [
-          "人员盘下调 -2.5",
-          "八强概率下降 -1.5%",
-          "四强概率下降 -0.6%",
+          "状态盘下调 -2.1",
+          "八强概率下降 -1.3%",
+          "四强概率下降 -0.7%",
           "决赛概率下降 -0.3%",
-          "可入模型事件新增 4 条"
+          "可入模型事件新增 8 条"
         ]
       }
     ],
     "summary": {
-      "up": 2,
-      "down": 2,
+      "up": 1,
+      "down": 1,
       "largestUp": {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 20.9,
-        "currentChampion": 21.0,
-        "change": 0.1,
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.2,
+        "currentChampion": 7.4,
+        "change": 0.2,
         "direction": "up",
-        "reason": "四强概率上升 +0.1%",
+        "reason": "八强概率上升 +1.1%",
         "reasons": [
-          "四强概率上升 +0.1%",
-          "可入模型事件新增 4 条"
+          "八强概率上升 +1.1%",
+          "四强概率上升 +0.5%",
+          "决赛概率上升 +0.3%",
+          "可入模型事件新增 8 条"
         ]
       },
       "largestDown": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.6,
-        "currentChampion": 21.5,
-        "change": -0.1,
+        "team": "morocco",
+        "name": "摩洛哥",
+        "code": "MAR",
+        "previousChampion": 0.9,
+        "currentChampion": 0.7,
+        "change": -0.2,
         "direction": "down",
-        "reason": "可入模型事件新增 4 条",
+        "reason": "状态盘下调 -2.1",
         "reasons": [
-          "可入模型事件新增 4 条"
+          "状态盘下调 -2.1",
+          "八强概率下降 -1.3%",
+          "四强概率下降 -0.7%",
+          "决赛概率下降 -0.3%",
+          "可入模型事件新增 8 条"
         ]
       }
     }

@@ -32560,5 +32560,47 @@
     "factor": "attack",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-0e6e1c0952da",
+    "title": "Fenerbahce confident of Greenwood deal",
+    "summary": "Fenerbahce are growing increasingly confident of signing Mason Greenwood from Marseille.",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Wed, 08 Jul 2026 19:55:15 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c24yjpggq13o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-412a9a0376d3",
+    "title": "Rashford dilemma for Man Utd - Thursday's gossip",
+    "summary": "Manchester United are in a quandary over Marcus Rashford's future, Arsenal and Tottenham eye Antonio Nusa, Barcelona shortlist Bournemouth's Eli Junior Kroupi, plus more.",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Wed, 08 Jul 2026 20:58:59 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c3eykl8751vo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-67176970a7eb",
+    "title": "FAI motion to continue with Israel games passed at EGM",
+    "summary": "The Football Association of Ireland's (FAI) General Assembly endorses a motion for Republic of Ireland to go ahead with their upcoming Nations League fixtures against Israel.",
+    "source": "bbc",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Wed, 08 Jul 2026 20:26:49 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c8x2nk7g485o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
