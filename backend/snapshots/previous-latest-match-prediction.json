@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-08T15:51:44.705238+00:00",
+  "updatedAt": "2026-07-08T17:44:12.246241+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -16784,6 +16784,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 08 Jul 2026 13:13:57 GMT"
+    },
+    {
+      "title": "Man Utd agree deal for Chelsea's Santos",
+      "detail": "Manchester United agree a £50m deal with Chelsea for their Brazilian midfielder Andrey Santos.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 17:09:53 GMT"
+    },
+    {
+      "title": "From Barcelona to Bromley: Inside Putellas' move to LCL",
+      "detail": "London City Lionesses have pulled off one of the biggest signings in WSL history - but how did they persuade Alexia Putellas to join?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 17:39:10 GMT"
+    },
+    {
+      "title": "A Golden Boot race for the ages - but who will come out on top?",
+      "detail": "It's fast becoming a World Cup Golden Boot for the ages. But who will win it?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 16:31:05 GMT"
+    },
+    {
+      "title": "England players granted day off after Mexico win",
+      "detail": "England manager Thomas Tuchel gave his players permission for an offsite family day on Tuesday as the squad recharged after their euphoric win over Mexico.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 16:03:41 GMT"
+    },
+    {
+      "title": "Amorim apologises for silence towards Man Utd fans",
+      "detail": "Ruben Amorim apologises for not speaking to Manchester United's fans since his dismissal in January but says he was \"proud\" to have been their coach.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 16:04:26 GMT"
+    },
+    {
+      "title": "'Gutted' Christie 'desperate' to help Scotland to more finals",
+      "detail": "At 31, Bournemouth midfielder Ryan Christie is determined to help Scotland reach more major finals after his World Cup disappointment.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 16:45:20 GMT"
+    },
+    {
+      "title": "Uefa could block Russia returning to football in potential new clash with Fifa",
+      "detail": "<ul><li><p>Russia banned since full-scale invasion of Ukraine</p></li><li><p>Many national associations opposed to reintegration</p></li></ul><p>Uefa is prepared to block the return of Russian teams to international football after the International Olympic Committee (IOC) <a href=\"https://www.theguardian.com/sport/2026/jul/07/ioc-lifts-suspension-russia-compete-la-2028-olympics\">provisionally lifted the country’s suspension</a> from global competition.</p><p>Fifa has indicated it will review its position after imposing a ban on Russian teams in the wake of the full-scale invasion of Ukraine four years ago. It said on Tuesday that it would “analyse the decision before deciding on next steps”, and Uefa’s stance sets up <a href=\"https://www.theguardian.com/football/2026/jul/06/uefa-fifa-folarin-balogun-controversy-decision-usa-belgium-gianni-infantino-aleksander-ceferin\">another potential clash</a> with the world governing body.</p> <a href=\"https://www.theguardian.com/football/2026/jul/08/uefa-ioc-fifa-russia-football-teams-ukraine-invasion\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Wed, 08 Jul 2026 15:21:49 GMT"
     }
   ],
   "teams": [
@@ -16897,7 +16946,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.7,
-        "quarterfinal": 6.3,
+        "quarterfinal": 6.6,
         "change": -0.1
       }
     },
@@ -17023,15 +17072,15 @@
         "strength": 78,
         "form": 75,
         "path": 70,
-        "squad": 79,
+        "squad": 76,
         "margin": 78
       },
       "tournament": {
-        "champion": 0.5,
-        "final": 1.8,
-        "semifinal": 6.6,
-        "quarterfinal": 29.5,
-        "change": -0.5
+        "champion": 0.4,
+        "final": 1.5,
+        "semifinal": 6.0,
+        "quarterfinal": 28.0,
+        "change": -0.6
       }
     },
     {
@@ -17256,9 +17305,9 @@
       },
       "tournament": {
         "champion": 1.3,
-        "final": 3.3,
-        "semifinal": 9.6,
-        "quarterfinal": 33.8,
+        "final": 3.4,
+        "semifinal": 9.7,
+        "quarterfinal": 34.4,
         "change": -1.8
       }
     },
@@ -17331,11 +17380,11 @@
         "margin": 85
       },
       "tournament": {
-        "champion": 20.9,
+        "champion": 21.0,
         "final": 31.0,
-        "semifinal": 47.2,
+        "semifinal": 47.3,
         "quarterfinal": 57.2,
-        "change": 9.3
+        "change": 9.4
       }
     },
     {
@@ -17426,11 +17475,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 0.9,
-        "final": 2.7,
-        "semifinal": 8.3,
-        "quarterfinal": 30.5,
-        "change": -0.1
+        "champion": 1.0,
+        "final": 2.8,
+        "semifinal": 8.5,
+        "quarterfinal": 31.0,
+        "change": 0.0
       }
     },
     {
@@ -17483,11 +17532,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 21.6,
+        "champion": 21.5,
         "final": 38.6,
         "semifinal": 56.5,
         "quarterfinal": 76.0,
-        "change": 6.4
+        "change": 6.3
       }
     },
     {
@@ -17561,7 +17610,7 @@
       "tournament": {
         "champion": 4.8,
         "final": 9.0,
-        "semifinal": 18.0,
+        "semifinal": 18.1,
         "quarterfinal": 25.6,
         "change": -1.4
       }
@@ -17656,7 +17705,7 @@
       "tournament": {
         "champion": 0.9,
         "final": 2.2,
-        "semifinal": 6.0,
+        "semifinal": 6.1,
         "quarterfinal": 10.5,
         "change": 0.0
       }
@@ -17719,18 +17768,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2313,
+      "eventCount": 2320,
       "manualEventCount": 3,
-      "rawNewsCount": 2310,
+      "rawNewsCount": 2317,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2313,
-      "applied": 2143,
+      "watched": 2320,
+      "applied": 2147,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2308,
+      "singleSource": 2315,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -17831,7 +17880,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -2.7600000000000002,
-        "squad": 0.0
+        "squad": -2.55
       },
       "paraguay": {
         "attack": -4.8,
@@ -28371,17 +28420,103 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-08T15:52:06.648736+00:00",
+    "generatedAt": "2026-07-08T17:44:34.228084+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 21.6,
+        "currentChampion": 21.5,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 4 条",
+        "reasons": [
+          "可入模型事件新增 4 条"
+        ]
+      },
+      {
+        "team": "spain",
+        "name": "西班牙",
+        "code": "ESP",
+        "previousChampion": 20.9,
+        "currentChampion": 21.0,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.1%",
+        "reasons": [
+          "四强概率上升 +0.1%",
+          "可入模型事件新增 4 条"
+        ]
+      },
+      {
+        "team": "senegal",
+        "name": "塞内加尔",
+        "code": "SEN",
+        "previousChampion": 0.9,
+        "currentChampion": 1.0,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.5%",
+        "reasons": [
+          "八强概率上升 +0.5%",
+          "四强概率上升 +0.2%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 4 条"
+        ]
+      },
+      {
+        "team": "usa",
+        "name": "美国",
+        "code": "USA",
+        "previousChampion": 0.5,
+        "currentChampion": 0.4,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "人员盘下调 -2.5",
+        "reasons": [
+          "人员盘下调 -2.5",
+          "八强概率下降 -1.5%",
+          "四强概率下降 -0.6%",
+          "决赛概率下降 -0.3%",
+          "可入模型事件新增 4 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 2,
+      "down": 2,
+      "largestUp": {
+        "team": "spain",
+        "name": "西班牙",
+        "code": "ESP",
+        "previousChampion": 20.9,
+        "currentChampion": 21.0,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.1%",
+        "reasons": [
+          "四强概率上升 +0.1%",
+          "可入模型事件新增 4 条"
+        ]
+      },
+      "largestDown": {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 21.6,
+        "currentChampion": 21.5,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 4 条",
+        "reasons": [
+          "可入模型事件新增 4 条"
+        ]
+      }
     }
   }
 }
