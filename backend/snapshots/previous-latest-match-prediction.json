@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-08T03:56:08.030685+00:00",
+  "updatedAt": "2026-07-08T06:35:16.390001+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -16518,6 +16518,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 08 Jul 2026 00:08:31 GMT"
+    },
+    {
+      "title": "Unusual or predictable? How Europe is dominating the World Cup",
+      "detail": "Six of the eight quarter-finalists at the World Cup in North America are from Europe, so why are they doing so well and what does history tell us about the chances of one of them winning it all?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 05:02:22 GMT"
+    },
+    {
+      "title": "Who am I? Guess World Cup star No 31",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 05:47:35 GMT"
     }
   ],
   "teams": [
@@ -17453,18 +17467,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2275,
+      "eventCount": 2277,
       "manualEventCount": 3,
-      "rawNewsCount": 2272,
+      "rawNewsCount": 2274,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2275,
-      "applied": 2109,
+      "watched": 2277,
+      "applied": 2110,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2270,
+      "singleSource": 2272,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -28105,7 +28119,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-08T03:56:29.867275+00:00",
+    "generatedAt": "2026-07-08T06:35:38.407289+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
