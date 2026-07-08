@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-08T11:25:52.553069+00:00",
+  "updatedAt": "2026-07-08T13:09:27.730228+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -16658,6 +16658,62 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 08 Jul 2026 10:00:27 GMT"
+    },
+    {
+      "title": "Egypt want officials kicked out of World Cup",
+      "detail": "The Egyptian FA lodges a complaint with Fifa and demands an investigation into \"double standards\" of officiating in the controversial defeat by Argentina.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 11:42:01 GMT"
+    },
+    {
+      "title": "Has the World Cup signalled the end of chaos at corners?",
+      "detail": "Can the Premier League learn anything from the refereeing of corners at the World Cup?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 12:50:16 GMT"
+    },
+    {
+      "title": "Dalic leaves as Croatia coach after nine years",
+      "detail": "Croatia head coach Zlatko Dalic steps down after nine years in charge following their defeat against Portugal in the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 12:27:04 GMT"
+    },
+    {
+      "title": "Meet the duo visiting all 16 World Cup venues in a London cab",
+      "detail": "Meet Ollie Jenks and Seth Scott, who are attempting to visit all 16 World Cup stadiums in a traditional London taxi.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 11:51:49 GMT"
+    },
+    {
+      "title": "How to take a World Cup shootout penalty",
+      "detail": "We have a look at what can be learned from every World Cup penalty taken in a shootout ever.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 12:46:23 GMT"
+    },
+    {
+      "title": "Blackburn Rovers sued for £500k by kit suppliers",
+      "detail": "The Lancashire club is facing the proceedings after negotiations for a kit renewal deal broke down.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 12:08:33 GMT"
+    },
+    {
+      "title": "Statesman, comedian and dealer of hard truths: how Kylian Mbappé became the king of this World Cup",
+      "detail": "<p>The Frenchman is a footballer, flautist and a thespian. There’s no question he is the most thrilling and compelling figure at this year’s tournament</p><p>This has been the World Cup of characters, bold fashion statements, and bantz: we’ve had Thomas Tuchel <a href=\"https://x.com/England/status/2074221850645684252?s=20\">rubber-banding</a> around the England dressing room like a teen at his first all-ages rave, and Iván Barton booting Miguel Almirón from the field <a href=\"https://x.com/MenInBlazers/status/2068180357971890541?s=20\">as if sentencing him to death</a>. Mauricio Pochettino and his $500 overshirt have brought fresh energy and inspiration to the wardrobes of convex middle-aged men the world over. Jokester Javier Aguirre’s avuncular “<a href=\"https://x.com/dekunlz/status/2074029530251989179?s=20\">fuck you</a>” at Anthony Gordon has pushed bilateral relations between Mexico and England to their warmest point since the British-brokered peace that ended the <a href=\"https://en.wikipedia.org/wiki/Pastry_War\">Pastry War</a> of 1839.</p><p>Erling Haaland has shown it’s possible to be <a href=\"https://x.com/tparsi/status/2074188925313360038?s=20\">Jaws</a> in front of goal and <a href=\"https://x.com/Trevornoah/status/2073933628837343420?s=20\">Scooby Doo</a> once the ball is in the back of the net, that there’s nothing about football so important that it can’t make way for some silly bit of online comedy. Even Harry Kane, a man who often seems like he was media trained in the womb, has squeaked thrillingly, <a href=\"https://x.com/FOXSports/status/2073971099272954018?s=20\">if briefly</a>, to life.</p> <a href=\"https://www.theguardian.com/football/2026/jul/08/kylian-mbappe-france-world-cup-2026\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Wed, 08 Jul 2026 12:14:52 GMT"
+    },
+    {
+      "title": "From Hart to Seedorf to Kewell: standout pundits of the 2026 World Cup",
+      "detail": "<p>We pick six of the best analysts to feature at the World Cup in North America on screens in the UK, US and Australia</p><p><strong>Joe Hart</strong> There’s long been a feeling that, when it comes to punditry, only goalkeepers should talk about goalkeepers given the unique nature of the role. That view will have been strengthened by Hart’s appearances during this World Cup. The former England No 1 has been an authoritative voice on all things shot-stopping, providing the sort of insight and analysis only a man who has been there, done that and worn the gloves can. Highlights include his flagging of keepers getting a hand to long-range efforts but not being able to keep them out and how this definitely wasn’t normal, and how a subtle left-sided weight emphasis was the reason Jordan Pickford was done at his near post for the Democratic Republic of the Congo’s goal against England in Atlanta. This sort of thing, allied to passionate yet crisp oratory, has made Hart a big asset for the BBC, whose decision to stay at home has meant it needs as much punch as it can get. <strong>Sachin Nakrani</strong></p> <a href=\"https://www.theguardian.com/football/2026/jul/08/standout-pundits-2026-world-cup-joe-hart-clarence-seedorf-harry-kewell\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 12:08:06 GMT"
     }
   ],
   "teams": [
@@ -16668,7 +16724,7 @@
       "factors": {
         "strength": 82,
         "form": 74,
-        "path": 62,
+        "path": 61,
         "squad": 50,
         "margin": 74
       },
@@ -17593,18 +17649,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2295,
+      "eventCount": 2303,
       "manualEventCount": 3,
-      "rawNewsCount": 2292,
+      "rawNewsCount": 2300,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2295,
-      "applied": 2128,
+      "watched": 2303,
+      "applied": 2135,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2290,
+      "singleSource": 2298,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -17620,7 +17676,7 @@
         "attack": -4.699999999999999,
         "defense": -11.530000000000001,
         "goalkeeper": 0.0,
-        "path": -10.47,
+        "path": -11.39,
         "squad": -29.949999999999996
       },
       "south-africa": {
@@ -28245,7 +28301,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-08T11:26:14.382769+00:00",
+    "generatedAt": "2026-07-08T13:09:49.275353+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
