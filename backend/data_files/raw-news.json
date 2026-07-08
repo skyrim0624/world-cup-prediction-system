@@ -31762,5 +31762,33 @@
     "factor": "attack",
     "direction": -1,
     "confidence": 0.9
+  },
+  {
+    "id": "bbc-885a7d8c51df",
+    "title": "Watch every penalty from Switzerland v Colombia shootout",
+    "summary": "Watch the full penalties as Switzerland beat Colombia 4-3 in the shootout to advance to the quarter-finals.",
+    "source": "bbc",
+    "team": "switzerland",
+    "status": "single_source",
+    "published_at": "Wed, 08 Jul 2026 00:07:31 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/videos/cn0vn94je8qo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-abad0d9d0443",
+    "title": "Switzerland beat Colombia on penalties to reach quarter-finals",
+    "summary": "Gregor Kobel is Switzerland's penalty hero, after pulling off a stunning shootout save from Colombia's Cucho Hernandez to help set up a quarter-final clash with Argentina.",
+    "source": "bbc",
+    "team": "switzerland",
+    "status": "single_source",
+    "published_at": "Wed, 08 Jul 2026 00:08:31 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/videos/c6219n0yezno?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

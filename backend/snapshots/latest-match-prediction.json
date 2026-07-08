@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-08T00:03:27.621889+00:00",
+  "updatedAt": "2026-07-08T03:56:08.030685+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -16504,6 +16504,20 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Tue, 07 Jul 2026 20:45:02 GMT"
+    },
+    {
+      "title": "Watch every penalty from Switzerland v Colombia shootout",
+      "detail": "Watch the full penalties as Switzerland beat Colombia 4-3 in the shootout to advance to the quarter-finals.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 00:07:31 GMT"
+    },
+    {
+      "title": "Switzerland beat Colombia on penalties to reach quarter-finals",
+      "detail": "Gregor Kobel is Switzerland's penalty hero, after pulling off a stunning shootout save from Colombia's Cucho Hernandez to help set up a quarter-final clash with Argentina.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 00:08:31 GMT"
     }
   ],
   "teams": [
@@ -17439,18 +17453,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2273,
+      "eventCount": 2275,
       "manualEventCount": 3,
-      "rawNewsCount": 2270,
+      "rawNewsCount": 2272,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2273,
-      "applied": 2107,
+      "watched": 2275,
+      "applied": 2109,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2268,
+      "singleSource": 2270,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -28091,57 +28105,16 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-08T00:03:49.263940+00:00",
+    "generatedAt": "2026-07-08T03:56:29.867275+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.5,
-        "currentChampion": 21.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 3 条",
-        "reasons": [
-          "可入模型事件新增 3 条"
-        ]
-      },
-      {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 0.8,
-        "currentChampion": 0.9,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.2%",
-        "reasons": [
-          "八强概率上升 +0.2%",
-          "四强概率上升 +0.1%",
-          "可入模型事件新增 3 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 2,
+      "up": 0,
       "down": 0,
-      "largestUp": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.5,
-        "currentChampion": 21.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 3 条",
-        "reasons": [
-          "可入模型事件新增 3 条"
-        ]
-      },
+      "largestUp": null,
       "largestDown": null
     }
   }

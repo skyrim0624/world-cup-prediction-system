@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-07T22:39:47.995402+00:00",
+  "updatedAt": "2026-07-08T00:03:27.621889+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -16483,6 +16483,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 07 Jul 2026 21:33:21 GMT"
+    },
+    {
+      "title": "Fulham appoint Arbeloa as Silva's successor",
+      "detail": "Fulham appoint Alvaro Arbeloa as their new manager on a three-year contract, succeeding Marco Silva who left for Benfica.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 23:04:42 GMT"
+    },
+    {
+      "title": "Switzerland knock out Colombia on penalties to reach World Cup quarter-finals",
+      "detail": "<p>Davinson Sánchez looked to the heavens. Cucho Hernández trudged back to his teammates. And by the end, the rest of the Colombian team were on the grass as Switzerland danced, nearly alone in a sea of yellow. Switzerland had prevailed on penalties, 4-3, bringing an emotional end to more than two hours of tense, tentative, and ludicrously goal-free football in the World Cup last 16.</p><p>Switzerland advance to the quarter-finals for the first time since 1954, when that stage was the first in the knockout round of a Swiss-hosted tournament featuring a total of 16 teams. They will face a tall task to better that result, facing Lionel Messi and Argentina in Kansas City in four days’ time.</p> <a href=\"https://www.theguardian.com/football/2026/jul/08/switzerland-colombia-world-cup-2026-last-16-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 07 Jul 2026 23:06:57 GMT"
+    },
+    {
+      "title": "All the presidents’ meddling: the Balogun scandal shows how Fifa can break football | Barney Ronay",
+      "detail": "<p>The suspension of the USA striker’s red card after Trump’s intervention has shown what Gianni Infantino’s organisation is trying to turn the sport into: scripted entertainment</p><p>Frites 4 Cheats 1. Tintin 4 Tonto 1. Some good news here, perhaps. It seems Gianni Infantino was right after all. Football has united the world. Mainly football has united the world in gleeful satisfaction at the <a href=\"https://www.theguardian.com/football/2026/jul/07/usmnt-world-cup-belgium\">USA exiting its own World Cup</a> tournament as soon as possible following the great and glorious <a href=\"https://www.theguardian.com/football/2026/jul/06/trump-fifa-balogun-red-card-review-intervention\">Donald Trump Mr-Fix-It intervention</a>.</p><p>This was the tone of the immediate global reaction to the USA’s <a href=\"https://www.theguardian.com/football/2026/jul/06/usa-belgium-world-cup-2026-match-report\">invertebrate defeat in Seattle</a> on Monday night, soundly beaten by a righteous and highly motivated Belgium: land of beer, waffles and sporting vigilante justice. Ghent 4 Bent 1. Antwerp 4 A twerp 1. Mayonnaise 4 May-have-interfered-in-due-process 1. I can go on. How long have you got?</p> <a href=\"https://www.theguardian.com/football/2026/jul/07/donald-trump-gianni-infantino-folarin-balogun-fifa-world-cup-2026\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 07 Jul 2026 20:45:02 GMT"
     }
   ],
   "teams": [
@@ -16520,7 +16541,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.9,
-        "quarterfinal": 7.1,
+        "quarterfinal": 7.4,
         "change": -0.1
       }
     },
@@ -16568,7 +16589,7 @@
       "code": "CAN",
       "factors": {
         "strength": 76,
-        "form": 66,
+        "form": 65,
         "path": 60,
         "squad": 50,
         "margin": 74
@@ -16576,8 +16597,8 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 0.7,
-        "quarterfinal": 7.0,
+        "semifinal": 0.6,
+        "quarterfinal": 6.3,
         "change": -0.4
       }
     },
@@ -16669,11 +16690,11 @@
         "margin": 79
       },
       "tournament": {
-        "champion": 0.8,
+        "champion": 0.9,
         "final": 2.4,
-        "semifinal": 7.7,
-        "quarterfinal": 25.1,
-        "change": -0.7
+        "semifinal": 7.8,
+        "quarterfinal": 25.3,
+        "change": -0.6
       }
     },
     {
@@ -16880,8 +16901,8 @@
       "tournament": {
         "champion": 7.2,
         "final": 14.0,
-        "semifinal": 29.3,
-        "quarterfinal": 60.8,
+        "semifinal": 29.4,
+        "quarterfinal": 61.1,
         "change": 0.4
       }
     },
@@ -17107,7 +17128,7 @@
       },
       "tournament": {
         "champion": 14.5,
-        "final": 23.8,
+        "final": 23.7,
         "semifinal": 40.7,
         "quarterfinal": 58.9,
         "change": 1.0
@@ -17182,11 +17203,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 21.5,
+        "champion": 21.6,
         "final": 38.6,
         "semifinal": 56.5,
         "quarterfinal": 76.0,
-        "change": 6.3
+        "change": 6.4
       }
     },
     {
@@ -17418,18 +17439,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2270,
+      "eventCount": 2273,
       "manualEventCount": 3,
-      "rawNewsCount": 2267,
+      "rawNewsCount": 2270,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2270,
-      "applied": 2104,
+      "watched": 2273,
+      "applied": 2107,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2265,
+      "singleSource": 2268,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -17470,7 +17491,7 @@
         "squad": 0.0
       },
       "canada": {
-        "attack": -18.8,
+        "attack": -21.35,
         "defense": -2.55,
         "goalkeeper": -2.15,
         "path": -7.759999999999999,
@@ -27953,13 +27974,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-07-07",
+      "referenceDate": "2026-07-08",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 24,
-      "oldestAgeDays": 98,
+      "newestAgeDays": 25,
+      "oldestAgeDays": 99,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -28070,16 +28091,57 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-07T22:40:09.888624+00:00",
+    "generatedAt": "2026-07-08T00:03:49.263940+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 21.5,
+        "currentChampion": 21.6,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 3 条",
+        "reasons": [
+          "可入模型事件新增 3 条"
+        ]
+      },
+      {
+        "team": "morocco",
+        "name": "摩洛哥",
+        "code": "MAR",
+        "previousChampion": 0.8,
+        "currentChampion": 0.9,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.2%",
+        "reasons": [
+          "八强概率上升 +0.2%",
+          "四强概率上升 +0.1%",
+          "可入模型事件新增 3 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
+      "up": 2,
       "down": 0,
-      "largestUp": null,
+      "largestUp": {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 21.5,
+        "currentChampion": 21.6,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 3 条",
+        "reasons": [
+          "可入模型事件新增 3 条"
+        ]
+      },
       "largestDown": null
     }
   }
