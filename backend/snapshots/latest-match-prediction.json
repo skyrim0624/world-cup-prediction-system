@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-09T20:22:34.993676+00:00",
+  "updatedAt": "2026-07-09T22:02:28.495082+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -17547,6 +17547,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 09 Jul 2026 18:00:58 GMT"
+    },
+    {
+      "title": "Spurs make offer for Kolo Muani - Friday gossip",
+      "detail": "Tottenham make an offer for Randal Kolo Muani but Juventus remain favourites to sign the forward, Arsenal are ready to finalise a deal for Christos Tzolis, Marcus Rashford's future at Barcelona could be in doubt, plus more.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 09 Jul 2026 20:41:50 GMT"
+    },
+    {
+      "title": "‘There is a magnificent balance’: how Spain built a record-breaking defence",
+      "detail": "<p>The Spain goalkeeper Unai Simón has not conceded a goal at the World Cup and, worryingly for Belgium, he has not had to face that many shots</p><p>“We’re the villains, there to stop the goals that football lives off,” Unai Simón says. If so, there has never been a bad guy as bad as him, the keeper who could do with an introduction from Don LaFontaine: <em>In a World Cup dominated by forwards, one man resists …</em> There were five minutes to go until half-time during <a href=\"https://www.theguardian.com/football/2026/jul/06/portugal-spain-world-cup-last-16-match-report\">Spain’s battle with Portugal</a> in the last 16 when something historic happened, or there would have been if anything had actually happened. Instead, <em>nothing</em> did, which is the way Simón likes it.</p><p>As the clock rolled into the 40th minute, Spain’s goalkeeper silently moved on to 560 World Cup minutes without conceding, taking in seven games and going all the way back to <a href=\"https://www.theguardian.com/football/2022/dec/01/japan-spain-world-cup-group-e-match-report\">Ao Tanaka’s strike for Japan</a> in Qatar. <a href=\"https://www.theguardian.com/football/2026/jul/02/spain-austria-world-cup-2026-last-32-match-report\">Against Austria</a> in the last 32, he had already left Walter Zenga behind on 517, now he and Spain overtook Switzerland’s record: 559 minutes spread across 14 years and three tournaments in 1994, 2006 and 2010. The next minute, Nuno Mendes hit the bar, but still Simón would not be beaten, <a href=\"https://www.theguardian.com/football/2026/jul/06/mikel-merino-spain-world-cup-winner-portugal\">Mikel Merino’s 90th minute winner</a> the only goal of the game.</p> <a href=\"https://www.theguardian.com/football/2026/jul/09/there-is-a-magnificent-balance-how-spain-built-a-record-breaking-defence\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 21:25:51 GMT"
     }
   ],
   "teams": [
@@ -17583,8 +17597,8 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 0.9,
-        "quarterfinal": 7.8,
+        "semifinal": 1.0,
+        "quarterfinal": 7.9,
         "change": -0.1
       }
     },
@@ -17727,17 +17741,17 @@
       "code": "MAR",
       "factors": {
         "strength": 84,
-        "form": 74,
+        "form": 73,
         "path": 65,
         "squad": 71,
         "margin": 78
       },
       "tournament": {
-        "champion": 0.5,
-        "final": 1.7,
-        "semifinal": 6.1,
-        "quarterfinal": 22.2,
-        "change": -1.0
+        "champion": 0.4,
+        "final": 1.5,
+        "semifinal": 5.6,
+        "quarterfinal": 21.2,
+        "change": -1.1
       }
     },
     {
@@ -17868,7 +17882,7 @@
       "tournament": {
         "champion": 3.7,
         "final": 8.2,
-        "semifinal": 18.6,
+        "semifinal": 18.7,
         "quarterfinal": 32.9,
         "change": -2.1
       }
@@ -17942,11 +17956,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 7.1,
-        "final": 14.0,
-        "semifinal": 29.8,
-        "quarterfinal": 63.3,
-        "change": 0.3
+        "champion": 7.2,
+        "final": 14.2,
+        "semifinal": 30.3,
+        "quarterfinal": 64.3,
+        "change": 0.4
       }
     },
     {
@@ -18482,18 +18496,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2422,
+      "eventCount": 2424,
       "manualEventCount": 3,
-      "rawNewsCount": 2419,
+      "rawNewsCount": 2421,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2422,
-      "applied": 2236,
+      "watched": 2424,
+      "applied": 2238,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2417,
+      "singleSource": 2419,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -18569,7 +18583,7 @@
         "squad": -24.449999999999996
       },
       "morocco": {
-        "attack": -9.799999999999999,
+        "attack": -11.95,
         "defense": -6.449999999999999,
         "goalkeeper": -2.15,
         "path": -5.67,
@@ -29134,43 +29148,43 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-09T20:22:56.857315+00:00",
+    "generatedAt": "2026-07-09T22:02:50.600777+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
     "items": [
       {
-        "team": "colombia",
-        "name": "哥伦比亚",
-        "code": "COL",
-        "previousChampion": 3.6,
-        "currentChampion": 3.7,
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.1,
+        "currentChampion": 7.2,
         "change": 0.1,
         "direction": "up",
-        "reason": "八强概率上升 +0.4%",
+        "reason": "八强概率上升 +1.0%",
         "reasons": [
-          "八强概率上升 +0.4%",
-          "四强概率上升 +0.2%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 9 条"
+          "八强概率上升 +1.0%",
+          "四强概率上升 +0.5%",
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 2 条"
         ]
       },
       {
-        "team": "switzerland",
-        "name": "瑞士",
-        "code": "SUI",
-        "previousChampion": 0.9,
-        "currentChampion": 0.8,
+        "team": "morocco",
+        "name": "摩洛哥",
+        "code": "MAR",
+        "previousChampion": 0.5,
+        "currentChampion": 0.4,
         "change": -0.1,
         "direction": "down",
-        "reason": "人员盘下调 -2.5",
+        "reason": "状态盘下调 -2.2",
         "reasons": [
-          "人员盘下调 -2.5",
-          "八强概率下降 -0.9%",
+          "状态盘下调 -2.2",
+          "八强概率下降 -1.0%",
           "四强概率下降 -0.5%",
           "决赛概率下降 -0.2%",
-          "可入模型事件新增 9 条"
+          "可入模型事件新增 2 条"
         ]
       }
     ],
@@ -29178,36 +29192,36 @@
       "up": 1,
       "down": 1,
       "largestUp": {
-        "team": "colombia",
-        "name": "哥伦比亚",
-        "code": "COL",
-        "previousChampion": 3.6,
-        "currentChampion": 3.7,
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.1,
+        "currentChampion": 7.2,
         "change": 0.1,
         "direction": "up",
-        "reason": "八强概率上升 +0.4%",
+        "reason": "八强概率上升 +1.0%",
         "reasons": [
-          "八强概率上升 +0.4%",
-          "四强概率上升 +0.2%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 9 条"
+          "八强概率上升 +1.0%",
+          "四强概率上升 +0.5%",
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 2 条"
         ]
       },
       "largestDown": {
-        "team": "switzerland",
-        "name": "瑞士",
-        "code": "SUI",
-        "previousChampion": 0.9,
-        "currentChampion": 0.8,
+        "team": "morocco",
+        "name": "摩洛哥",
+        "code": "MAR",
+        "previousChampion": 0.5,
+        "currentChampion": 0.4,
         "change": -0.1,
         "direction": "down",
-        "reason": "人员盘下调 -2.5",
+        "reason": "状态盘下调 -2.2",
         "reasons": [
-          "人员盘下调 -2.5",
-          "八强概率下降 -0.9%",
+          "状态盘下调 -2.2",
+          "八强概率下降 -1.0%",
           "四强概率下降 -0.5%",
           "决赛概率下降 -0.2%",
-          "可入模型事件新增 9 条"
+          "可入模型事件新增 2 条"
         ]
       }
     }

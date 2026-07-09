@@ -33848,5 +33848,33 @@
     "factor": "attack",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-e54c6da05d3c",
+    "title": "Spurs make offer for Kolo Muani - Friday gossip",
+    "summary": "Tottenham make an offer for Randal Kolo Muani but Juventus remain favourites to sign the forward, Arsenal are ready to finalise a deal for Christos Tzolis, Marcus Rashford's future at Barcelona could be in doubt, plus more.",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Thu, 09 Jul 2026 20:41:50 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cz6vz91n7e5o?at_medium=RSS&at_campaign=rss",
+    "category": "injury",
+    "factor": "attack",
+    "direction": -1,
+    "confidence": 0.78
+  },
+  {
+    "id": "guardian-a811b3f85333",
+    "title": "‘There is a magnificent balance’: how Spain built a record-breaking defence",
+    "summary": "<p>The Spain goalkeeper Unai Simón has not conceded a goal at the World Cup and, worryingly for Belgium, he has not had to face that many shots</p><p>“We’re the villains, there to stop the goals that football lives off,” Unai Simón says. If so, there has never been a bad guy as bad as him, the keeper who could do with an introduction from Don LaFontaine: <em>In a World Cup dominated by forwards, one man resists …</em> There were five minutes to go until half-time during <a href=\"https://www.theguardian.com/football/2026/jul/06/portugal-spain-world-cup-last-16-match-report\">Spain’s battle with Portugal</a> in the last 16 when something historic happened, or there would have been if anything had actually happened. Instead, <em>nothing</em> did, which is the way Simón likes it.</p><p>As the clock rolled into the 40th minute, Spain’s goalkeeper silently moved on to 560 World Cup minutes without conceding, taking in seven games and going all the way back to <a href=\"https://www.theguardian.com/football/2022/dec/01/japan-spain-world-cup-group-e-match-report\">Ao Tanaka’s strike for Japan</a> in Qatar. <a href=\"https://www.theguardian.com/football/2026/jul/02/spain-austria-world-cup-2026-last-32-match-report\">Against Austria</a> in the last 32, he had already left Walter Zenga behind on 517, now he and Spain overtook Switzerland’s record: 559 minutes spread across 14 years and three tournaments in 1994, 2006 and 2010. The next minute, Nuno Mendes hit the bar, but still Simón would not be beaten, <a href=\"https://www.theguardian.com/football/2026/jul/06/mikel-merino-spain-world-cup-winner-portugal\">Mikel Merino’s 90th minute winner</a> the only goal of the game.</p> <a href=\"https://www.theguardian.com/football/2026/jul/09/there-is-a-magnificent-balance-how-spain-built-a-record-breaking-defence\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "qatar",
+    "status": "single_source",
+    "published_at": "Thu, 09 Jul 2026 21:25:51 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/09/there-is-a-magnificent-balance-how-spain-built-a-record-breaking-defence",
+    "category": "general",
+    "factor": "goalkeeper",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
