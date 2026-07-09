@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-09T08:32:54.503390+00:00",
+  "updatedAt": "2026-07-09T12:16:24.878803+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -542,11 +542,11 @@
       "probability": 84,
       "title": "德国小组第一概率上升",
       "details": [
-        "德国夺冠概率 ±0.0%",
+        "德国夺冠概率 -0.1%",
         "库拉索路径盘下调 ±0.0%",
         "同组竞争队出线门槛抬高"
       ],
-      "championShift": "±0.0%",
+      "championShift": "-0.1%",
       "tone": "green"
     },
     {
@@ -554,11 +554,11 @@
       "probability": 11,
       "title": "两队路径保持胶着",
       "details": [
-        "德国夺冠概率 +0.1%",
+        "德国夺冠概率 ±0.0%",
         "库拉索夺冠概率 ±0.0%",
         "小组第一仍取决于末轮和净胜球"
       ],
-      "championShift": "+0.1% / ±0.0%",
+      "championShift": "±0.0% / ±0.0%",
       "tone": "gold"
     },
     {
@@ -17183,6 +17183,69 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 09 Jul 2026 07:00:56 GMT"
+    },
+    {
+      "title": "Are France beatable? - BBC experts have their say",
+      "detail": "France are the overwhelming favourites to win the World Cup. BBC Sport's reporters in America look for chinks in their armour.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 11:36:10 GMT"
+    },
+    {
+      "title": "Newcastle sign teenager Steur from Ajax for £23m",
+      "detail": "Newcastle United sign teenage midfielder Sean Steur from Ajax in a deal worth up to £23m.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 12:00:19 GMT"
+    },
+    {
+      "title": "Benitez open to Scotland job - what would he bring and is he affordable?",
+      "detail": "Is Rafa Benitez a realistic contender to replace Steve Clarke as Scotland head coach or would the Spaniard's likely salary demands be an obvious stumbling block?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 10:59:16 GMT"
+    },
+    {
+      "title": "'It was good vibes in there' - Stones on viral prank",
+      "detail": "John Stones talks about the viral dressing-room injury prank that left England boss Thomas Tuchel briefly stunned.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 09 Jul 2026 10:53:47 GMT"
+    },
+    {
+      "title": "Maddy Cusack inquest adjourned over evidence request",
+      "detail": "Maddy Cusack died after being found unconscious at her family home in September 2023.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 11:54:40 GMT"
+    },
+    {
+      "title": "‘Is he a nice guy? No. He’s a good guy’: how Harry Kane became an England great",
+      "detail": "<p>Figures who worked with striker in his formative years recall a self-belief – even when his talent did not stand out</p><p>There is another version of reality in which Harry Kane is not England’s greatest goalscorer but a goalkeeper. On his first day at Ridgeway Rovers, his first club, the coach Dave Bricknell asked whether anyone fancied going in goal. A six-year-old Kane threw up his hand – and he was pretty good.</p><p>“I thought I’d found a goalkeeper,” Bricknell says. “At that age, you don’t get many kids that don’t mind standing in front of a ball.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/09/is-he-a-nice-guy-no-hes-a-good-guy-how-harry-kane-became-an-england-great\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 11:00:03 GMT"
+    },
+    {
+      "title": "Egypt’s World Cup ended in heartbreak but they gave the country reason to smile | Karim Zidan",
+      "detail": "<p>For Egypt this World Cup was about more than football – it was the first glimpse of collective joy that Egyptians have enjoyed in 15 years</p><p>For nearly 15 minutes on Tuesday it seemed Egypt were about to complete one of the great World Cup upsets. The Pharaohs were up 2-0 against Argentina, the world champions. The goalkeeper, Mostafa Shobeir, had earlier saved a penalty to deny Lionel Messi an equaliser. Then, late in the second half, Argentina staged a remarkable comeback. Inspired by their talisman, they scored three goals in 13 minutes to <a href=\"https://www.theguardian.com/football/2026/jul/07/argentina-egypt-world-cup-2026-last-16-match-report\">book a spot in the quarter-finals</a>, ending Egypt’s magical run.</p><p>The dramatic match transformed Egyptians’ triumph into heartbreak, and then into anger over what many regarded as a <a href=\"https://www.nytimes.com/2026/07/08/world/africa/egypt-argentina-goal-referee-conspiracy.html?smid=bsky-nytimes&amp;smtyp=cur\">refereeing decisions that favoured Argentina</a>. Yet amid the frustration, there was also a kindling sense of pride. When the Egypt team returned to their hotel in Atlanta, they were greeted by legions of fans who gathered to show their appreciation. It was an emotional reception, the players standing and applauding in a shared moment of gratitude – a reminder that, despite the heart-wrenching end, this team had given Egyptians their first glimpse of collective joy in 15 years, dating back to the 2011 Egyptian revolution.</p> <a href=\"https://www.theguardian.com/football/2026/jul/09/egypt-world-cup-heartbreak-still-gave-country-reason-to-smile\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 10:51:05 GMT"
+    },
+    {
+      "title": "The US delivered their best modern World Cup performance – and also let themselves down",
+      "detail": "<p>Mauricio Pochettino’s team delivered several thrilling performances on home soil. The way it ended was somewhat less exhilarating</p><p>So now what? How are we supposed to think about this supposedly golden generation of the United States men’s national team who have fallen short of expectations at this World Cup on home soil?</p><p>How do we come to terms with the sense that this team beat Paraguay 4-1 in their opener – the most impressive performance in the program’s history – but also <a href=\"https://www.theguardian.com/football/2026/jul/06/usa-belgium-world-cup-2026-match-report\">lost dismally against Belgium</a> by the same scoreline in the last 16?</p><p><em>Leander Schaerlaeckens is the author of </em>The Long Game: U.S. Men’s Soccer and Its Savage, Four-Decade Journey to the Top, or Thereabouts<em>, <a href=\"https://www.penguinrandomhouse.com/books/722130/the-long-game-by-leander-schaerlaeckens/\">which is out now</a>. He teaches at Marist University.</em></p> <a href=\"https://www.theguardian.com/football/2026/jul/09/the-us-delivered-their-best-modern-world-cup-performance-and-also-let-themselves-down\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 10:00:02 GMT"
+    },
+    {
+      "title": "France’s match with Morocco sums up this diverse, multicultural World Cup",
+      "detail": "<p>Ninety-nine players at the tournament were born in France. Six of them could line up for Morocco in the quarter-final</p><p>By <a href=\"https://www.getfootballnewsfrance.com/\">Get French Football News</a></p><p>When Ayyoub Bouaddi steps on to the pitch in Boston for the World Cup quarter-final on Thursday, he will do so in a Morocco shirt. Just 101 days prior, he was wearing a France kit as he captained the U21 side to a 2-1 win over Iceland in a European Championship qualifier.</p><p>Bouaddi had been coveted by Morocco and, speaking before that game, he said he needed some time to consider his international future. “I don’t want to rush things,” added the Lille midfielder. Six weeks later, he was named in the Morocco squad for the World Cup. “A big loss,” is how Hubert Fournier, the technical director of the French national team, described it. “A lost treasure,” said <em>L’Équipe.</em></p> <a href=\"https://www.theguardian.com/football/2026/jul/09/france-morocco-diverse-multicultural-world-cup-tournament-quarter-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 08:35:29 GMT"
     }
   ],
   "teams": [
@@ -17220,7 +17283,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.9,
-        "quarterfinal": 7.6,
+        "quarterfinal": 7.7,
         "change": -0.1
       }
     },
@@ -17277,7 +17340,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.6,
-        "quarterfinal": 6.4,
+        "quarterfinal": 6.6,
         "change": -0.4
       }
     },
@@ -17370,9 +17433,9 @@
       },
       "tournament": {
         "champion": 0.6,
-        "final": 1.8,
-        "semifinal": 6.5,
-        "quarterfinal": 22.8,
+        "final": 1.9,
+        "semifinal": 6.7,
+        "quarterfinal": 23.4,
         "change": -0.9
       }
     },
@@ -17502,11 +17565,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 3.6,
-        "final": 8.0,
-        "semifinal": 18.3,
+        "champion": 3.7,
+        "final": 8.2,
+        "semifinal": 18.5,
         "quarterfinal": 32.9,
-        "change": -2.2
+        "change": -2.1
       }
     },
     {
@@ -17574,15 +17637,15 @@
         "strength": 87,
         "form": 86,
         "path": 75,
-        "squad": 82,
+        "squad": 80,
         "margin": 84
       },
       "tournament": {
-        "champion": 7.5,
-        "final": 14.5,
-        "semifinal": 30.3,
-        "quarterfinal": 63.2,
-        "change": 0.7
+        "champion": 7.0,
+        "final": 13.8,
+        "semifinal": 29.4,
+        "quarterfinal": 62.3,
+        "change": 0.2
       }
     },
     {
@@ -17637,7 +17700,7 @@
       "tournament": {
         "champion": 0.1,
         "final": 0.4,
-        "semifinal": 1.8,
+        "semifinal": 1.9,
         "quarterfinal": 5.3,
         "change": -0.1
       }
@@ -17730,11 +17793,11 @@
         "margin": 85
       },
       "tournament": {
-        "champion": 21.0,
-        "final": 31.0,
+        "champion": 21.1,
+        "final": 31.1,
         "semifinal": 47.3,
         "quarterfinal": 57.2,
-        "change": 9.4
+        "change": 9.5
       }
     },
     {
@@ -17801,16 +17864,16 @@
       "factors": {
         "strength": 94,
         "form": 86,
-        "path": 76,
+        "path": 77,
         "squad": 88,
         "margin": 84
       },
       "tournament": {
-        "champion": 14.5,
-        "final": 23.7,
-        "semifinal": 40.7,
+        "champion": 14.7,
+        "final": 24.0,
+        "semifinal": 41.1,
         "quarterfinal": 58.8,
-        "change": 1.0
+        "change": 1.2
       }
     },
     {
@@ -17882,11 +17945,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 21.5,
+        "champion": 21.6,
         "final": 38.7,
         "semifinal": 56.5,
         "quarterfinal": 76.0,
-        "change": 6.3
+        "change": 6.4
       }
     },
     {
@@ -17959,7 +18022,7 @@
       },
       "tournament": {
         "champion": 4.8,
-        "final": 9.0,
+        "final": 9.1,
         "semifinal": 18.1,
         "quarterfinal": 25.6,
         "change": -1.4
@@ -18118,18 +18181,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2370,
+      "eventCount": 2379,
       "manualEventCount": 3,
-      "rawNewsCount": 2367,
+      "rawNewsCount": 2376,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2370,
-      "applied": 2189,
+      "watched": 2379,
+      "applied": 2198,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2365,
+      "singleSource": 2374,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -18286,7 +18349,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": 0.87,
-        "squad": -2.55
+        "squad": -4.699999999999999
       },
       "japan": {
         "attack": 0.0,
@@ -18369,7 +18432,7 @@
         "attack": 0.0,
         "defense": -5.5,
         "goalkeeper": 0.0,
-        "path": 0.87,
+        "path": 1.74,
         "squad": 0.0
       },
       "senegal": {
@@ -28770,89 +28833,122 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-09T08:33:16.101492+00:00",
+    "generatedAt": "2026-07-09T12:16:46.877958+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
     "items": [
       {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.6,
-        "currentChampion": 21.5,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 28 条",
-        "reasons": [
-          "可入模型事件新增 28 条"
-        ]
-      },
-      {
         "team": "netherlands",
         "name": "荷兰",
         "code": "NED",
-        "previousChampion": 7.4,
-        "currentChampion": 7.5,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +1.0%",
+        "previousChampion": 7.5,
+        "currentChampion": 7.0,
+        "change": -0.5,
+        "direction": "down",
+        "reason": "人员盘下调 -2.1",
         "reasons": [
-          "八强概率上升 +1.0%",
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 28 条"
+          "人员盘下调 -2.1",
+          "四强概率下降 -0.9%",
+          "八强概率下降 -0.9%",
+          "决赛概率下降 -0.7%",
+          "可入模型事件新增 9 条"
         ]
       },
       {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 0.7,
-        "currentChampion": 0.6,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "状态盘下调 -2.5",
+        "team": "france",
+        "name": "法国",
+        "code": "FRA",
+        "previousChampion": 14.5,
+        "currentChampion": 14.7,
+        "change": 0.2,
+        "direction": "up",
+        "reason": "路径盘上调 +0.9",
         "reasons": [
-          "状态盘下调 -2.5",
-          "八强概率下降 -1.2%",
-          "四强概率下降 -0.6%",
-          "决赛概率下降 -0.3%",
-          "可入模型事件新增 28 条"
+          "路径盘上调 +0.9",
+          "四强概率上升 +0.4%",
+          "决赛概率上升 +0.3%",
+          "可入模型事件新增 9 条"
+        ]
+      },
+      {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 21.5,
+        "currentChampion": 21.6,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 9 条",
+        "reasons": [
+          "可入模型事件新增 9 条"
+        ]
+      },
+      {
+        "team": "spain",
+        "name": "西班牙",
+        "code": "ESP",
+        "previousChampion": 21.0,
+        "currentChampion": 21.1,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "决赛概率上升 +0.1%",
+        "reasons": [
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 9 条"
+        ]
+      },
+      {
+        "team": "germany",
+        "name": "德国",
+        "code": "GER",
+        "previousChampion": 3.6,
+        "currentChampion": 3.7,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.2%",
+        "reasons": [
+          "四强概率上升 +0.2%",
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 9 条"
         ]
       }
     ],
     "summary": {
-      "up": 1,
-      "down": 2,
+      "up": 4,
+      "down": 1,
       "largestUp": {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.4,
-        "currentChampion": 7.5,
-        "change": 0.1,
+        "team": "france",
+        "name": "法国",
+        "code": "FRA",
+        "previousChampion": 14.5,
+        "currentChampion": 14.7,
+        "change": 0.2,
         "direction": "up",
-        "reason": "八强概率上升 +1.0%",
+        "reason": "路径盘上调 +0.9",
         "reasons": [
-          "八强概率上升 +1.0%",
+          "路径盘上调 +0.9",
           "四强概率上升 +0.4%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 28 条"
+          "决赛概率上升 +0.3%",
+          "可入模型事件新增 9 条"
         ]
       },
       "largestDown": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.6,
-        "currentChampion": 21.5,
-        "change": -0.1,
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.5,
+        "currentChampion": 7.0,
+        "change": -0.5,
         "direction": "down",
-        "reason": "可入模型事件新增 28 条",
+        "reason": "人员盘下调 -2.1",
         "reasons": [
-          "可入模型事件新增 28 条"
+          "人员盘下调 -2.1",
+          "四强概率下降 -0.9%",
+          "八强概率下降 -0.9%",
+          "决赛概率下降 -0.7%",
+          "可入模型事件新增 9 条"
         ]
       }
     }
