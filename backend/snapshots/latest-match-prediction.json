@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-08T22:34:44.477922+00:00",
+  "updatedAt": "2026-07-09T00:17:06.239312+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -16931,6 +16931,13 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Wed, 08 Jul 2026 22:20:18 GMT"
+    },
+    {
+      "title": "Chris Sutton's World Cup quarter-final predictions",
+      "detail": "BBC Sport's football expert Chris Sutton gives his predictions for the quarter-final ties at the 2026 World Cup, including England against Norway.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 08 Jul 2026 22:34:48 GMT"
     }
   ],
   "teams": [
@@ -17866,18 +17873,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2334,
+      "eventCount": 2335,
       "manualEventCount": 3,
-      "rawNewsCount": 2331,
+      "rawNewsCount": 2332,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2334,
-      "applied": 2159,
+      "watched": 2335,
+      "applied": 2160,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2329,
+      "singleSource": 2330,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -28401,13 +28408,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-07-08",
+      "referenceDate": "2026-07-09",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 25,
-      "oldestAgeDays": 99,
+      "newestAgeDays": 26,
+      "oldestAgeDays": 100,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -28518,78 +28525,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-08T22:35:06.745520+00:00",
+    "generatedAt": "2026-07-09T00:17:23.162807+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 2.5,
-        "currentChampion": 2.3,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "人员盘下调 -2.6",
-        "reasons": [
-          "人员盘下调 -2.6",
-          "八强概率下降 -1.0%",
-          "四强概率下降 -0.8%",
-          "决赛概率下降 -0.4%",
-          "可入模型事件新增 1 条"
-        ]
-      },
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.5,
-        "currentChampion": 21.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 1 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
-      "down": 1,
-      "largestUp": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.5,
-        "currentChampion": 21.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 1 条"
-        ]
-      },
-      "largestDown": {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 2.5,
-        "currentChampion": 2.3,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "人员盘下调 -2.6",
-        "reasons": [
-          "人员盘下调 -2.6",
-          "八强概率下降 -1.0%",
-          "四强概率下降 -0.8%",
-          "决赛概率下降 -0.4%",
-          "可入模型事件新增 1 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }

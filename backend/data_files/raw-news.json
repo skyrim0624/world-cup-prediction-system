@@ -32616,5 +32616,19 @@
     "factor": "squad",
     "direction": -1,
     "confidence": 0.9
+  },
+  {
+    "id": "bbc-a9e15de318bd",
+    "title": "Chris Sutton's World Cup quarter-final predictions",
+    "summary": "BBC Sport's football expert Chris Sutton gives his predictions for the quarter-final ties at the 2026 World Cup, including England against Norway.",
+    "source": "bbc",
+    "team": "norway",
+    "status": "single_source",
+    "published_at": "Wed, 08 Jul 2026 22:34:48 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c15y1j32jxko?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
