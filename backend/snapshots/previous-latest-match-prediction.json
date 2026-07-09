@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-09T12:16:24.878803+00:00",
+  "updatedAt": "2026-07-09T15:42:40.489999+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -17246,6 +17246,97 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 09 Jul 2026 08:35:29 GMT"
+    },
+    {
+      "title": "I've changed my mind, we might actually be able to win this thing - Shearer",
+      "detail": "Alan Shearer explains why he now has belief and confidence that England can go further in this World Cup than he thought.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 14:19:13 GMT"
+    },
+    {
+      "title": "Man Utd plan naming rights deal for new stadium",
+      "detail": "Manchester United will look at the potential of a naming rights deal for the 'new' Old Trafford as part of their \"sanity, not vanity\" approach to the £2bn stadium plans.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 14:07:17 GMT"
+    },
+    {
+      "title": "Meslier joins Arsenal on free transfer after Leeds exit",
+      "detail": "Arsenal seal the signing of former Leeds United goalkeeper Illan Meslier on a free transfer.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 14:33:22 GMT"
+    },
+    {
+      "title": "Norway shirts sell out before England match",
+      "detail": "Norway's performance has created huge demand for the football jerseys, but this hasn't been met by suppliers.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 14:34:36 GMT"
+    },
+    {
+      "title": "Morocco's unfinished business with France",
+      "detail": "Morocco are set to play in another World Cup quarter-final, but are they football's dreamers or is this where they belong?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 12:40:13 GMT"
+    },
+    {
+      "title": "Has your area gone football mad? We've mapped World Cup viewing",
+      "detail": "We've analysed BBC iPlayer viewing across the UK to see where the tournament has been most popular.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 13:34:22 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "John Murray, Ian Dennis & Ali Bruce-Ball chat ahead of the FIFA World Cup Quarter-Finals.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 13:37:00 GMT"
+    },
+    {
+      "title": "Sunderland women appoint FA's Gray as CEO",
+      "detail": "Sunderland Women appoint James Gray as their new chief executive officer following the recent takeover by Bay Collective.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 14:38:48 GMT"
+    },
+    {
+      "title": "'A bit of a rebel' - what will Celtic get from forward Duran?",
+      "detail": "Celtic are set to sign their first player in the transfer window - 24-year-old Colombian forward Camilo Duran from Qarabag - for a reported £5.5m. But who is he?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 14:37:38 GMT"
+    },
+    {
+      "title": "Podcast: Can Derek McInnes deliver Rangers' next title?",
+      "detail": "Title hopes are back as Rangers begin a new chapter.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 15:00:00 GMT"
+    },
+    {
+      "title": "QPR sign Motherwell goalkeeper Ward",
+      "detail": "Queens Park Rangers sign goalkeeper Calum Ward from Scottish Premiership side Motherwell.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 14:47:20 GMT"
+    },
+    {
+      "title": "‘Maggie Thatcher, can you hear me?’ The story behind the iconic Norway v England commentary",
+      "detail": "<p>Bjørge Lillelien’s famous rant after 1981 clash stemmed from Norwegian obsession with English football</p><p>What do Lord Nelson, Lord Beaverbrook, Sir Winston Churchill, Sir Anthony Eden, Clement Attlee, Henry Cooper and Lady Diana have in common? On 9 September 1981 they were all beaten by Norway.</p><p>At least that is according to the iconic Norwegian radio commentator Bjørge Lillelien. His triumphant, giddy and slightly unhinged rant after Norway beat England 2-1 in a World Cup qualifier has gone down in Norwegian folklore. It has also attained something of a cult status abroad, with the Observer <a href=\"https://www.theguardian.com/observer/toptens/story/0,14034,1080304,00.html\">declaring it in 2002</a> the greatest bit of commentary ever.</p> <a href=\"https://www.theguardian.com/football/2026/jul/09/the-story-behind-iconic-norway-v-england-commentary-bjorge-lillelien-maggie-thatcher\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 11:15:06 GMT"
+    },
+    {
+      "title": "US in talks with Fifa over capitalising on World Cup success with 2029 Club World Cup",
+      "detail": "<ul><li><p>US officials have held talks with Fifa over tournament</p></li><li><p>Unclear whether White House has been involved</p></li></ul><p>The United States has expressed interest in hosting the 2029 Club World Cup as it seeks to capitalise on the commercial and sporting success of staging the World Cup.</p><p>Fifa has held talks with US officials about its plans for 2029, but the World Cup co-hosts have yet to commit to a bid because the details of the selection process have not been confirmed.</p> <a href=\"https://www.theguardian.com/football/2026/jul/09/us-fifa-talks-hosting-2029-club-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 12:15:00 GMT"
     }
   ],
   "teams": [
@@ -18181,18 +18272,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2379,
+      "eventCount": 2392,
       "manualEventCount": 3,
-      "rawNewsCount": 2376,
+      "rawNewsCount": 2389,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2379,
-      "applied": 2198,
+      "watched": 2392,
+      "applied": 2210,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2374,
+      "singleSource": 2387,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -28833,124 +28924,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-09T12:16:46.877958+00:00",
+    "generatedAt": "2026-07-09T15:42:57.211012+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.5,
-        "currentChampion": 7.0,
-        "change": -0.5,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "四强概率下降 -0.9%",
-          "八强概率下降 -0.9%",
-          "决赛概率下降 -0.7%",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 14.5,
-        "currentChampion": 14.7,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "路径盘上调 +0.9",
-        "reasons": [
-          "路径盘上调 +0.9",
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.3%",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.5,
-        "currentChampion": 21.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 9 条",
-        "reasons": [
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 21.0,
-        "currentChampion": 21.1,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 3.6,
-        "currentChampion": 3.7,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.2%",
-        "reasons": [
-          "四强概率上升 +0.2%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 9 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 4,
-      "down": 1,
-      "largestUp": {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 14.5,
-        "currentChampion": 14.7,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "路径盘上调 +0.9",
-        "reasons": [
-          "路径盘上调 +0.9",
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.3%",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      "largestDown": {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.5,
-        "currentChampion": 7.0,
-        "change": -0.5,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "四强概率下降 -0.9%",
-          "八强概率下降 -0.9%",
-          "决赛概率下降 -0.7%",
-          "可入模型事件新增 9 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }

@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-09T15:42:40.489999+00:00",
+  "updatedAt": "2026-07-09T18:02:13.400629+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -17337,6 +17337,153 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 09 Jul 2026 12:15:00 GMT"
+    },
+    {
+      "title": "Quansah banned for two games after Mexico red card",
+      "detail": "England defender Jarell Quansah receives a two-match ban for his red card against Mexico.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 09 Jul 2026 17:00:40 GMT"
+    },
+    {
+      "title": "Premier League pre-season - who are your club playing?",
+      "detail": "The World Cup is still going on but Premier League clubs will soon begin their pre-season friendlies - who is your club taking on and when?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 16:05:27 GMT"
+    },
+    {
+      "title": "What's going on at Newcastle with Bruno's future in doubt?",
+      "detail": "Bruno Guimaraes joined Newcastle in January 2022 and hoped to fulfil all his ambitions at the club. If he leaves to join Arsenal, what does it mean for the Magpies' direction?",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 09 Jul 2026 16:29:27 GMT"
+    },
+    {
+      "title": "Ex-Leeds keeper Darlow set for Man Utd move",
+      "detail": "Manchester United are close to signing Wales and former Leeds goalkeeper Karl Darlow on a free transfer.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 17:49:45 GMT"
+    },
+    {
+      "title": "Palace sign Spain defender Mingueza on free transfer",
+      "detail": "Crystal Palace sign Celta Vigo defender Oscar Mingueza on a free transfer, subject to international clearance.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 16:24:57 GMT"
+    },
+    {
+      "title": "'By far the biggest event ever in Norway'",
+      "detail": "Norweigian pundits look ahead to their quarter-final against England, described as the \"biggest event ever in Norway\".",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 16:24:17 GMT"
+    },
+    {
+      "title": "What are the key dates for the 2026-27 football season?",
+      "detail": "BBC Sport's Ask Me Anything explains the full list of key dates for the 2026-27 men's football season",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 17:04:26 GMT"
+    },
+    {
+      "title": "Eriksen to begin rehab in Denmark after collapse",
+      "detail": "Midfielder Christian Eriksen will begin rehabilitation at home in Denmark after collapsing in an international friendly in June.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 16:27:43 GMT"
+    },
+    {
+      "title": "Brentford sign Wilson after West Ham exit",
+      "detail": "Brentford sign former England striker Callum Wilson on a 12-month contract after his exit from relegated West Ham.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 15:42:07 GMT"
+    },
+    {
+      "title": "Oxford placed under summer transfer embargo by EFL",
+      "detail": "Oxford United are placed under a temporary transfer embargo by the English Football League.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 16:06:35 GMT"
+    },
+    {
+      "title": "Football banning orders strengthened in pitch invasion and pyro crackdown",
+      "detail": "Scottish courts will be granted more powers to hand out football banning orders in order to improve safety at matches.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 15:05:31 GMT"
+    },
+    {
+      "title": "Podcast: Can Aberdeen climb back up the table under Robinson?",
+      "detail": "A fresh start at Pittodrie after a season of chaos and survival fears.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 17:00:00 GMT"
+    },
+    {
+      "title": "Grading the USMNT's World Cup: Did Pochettino, Pul...",
+      "detail": "At this summer's World Cup, the U.S. did its homework, aced the quizzes, and then failed the final exam. How should we grade its World Cup?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 9 Jul 2026 11:17:45 EST"
+    },
+    {
+      "title": "Sources: Pulisic has microfracture, bone bruise",
+      "detail": "USMNT and AC Milan attacker Christian Pulisic sustained a bone bruise and microfracture in his lower leg and will be sidelined for several weeks, U.S. Soccer confirmed on Thursday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 9 Jul 2026 13:08:28 EST"
+    },
+    {
+      "title": "England's Quansah gets 2-game ban for Ro16 red",
+      "detail": "England full-back Jarell Quansah has been suspended for two matches after receiving a red card in his side's World Cup round-of-16 win over Mexico.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 9 Jul 2026 12:56:11 EST"
+    },
+    {
+      "title": "Source: Barça bid for Dortmund's Karim Adeyemi",
+      "detail": "Barcelona have made an offer for Borussia Dortmund's Karim Adeyemi as they continue to build their attack for next season, a source told ESPN.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 9 Jul 2026 12:56:12 EST"
+    },
+    {
+      "title": "U.S.'s Campbell joins Elversberg from Dortmund",
+      "detail": "American forward Cole Campbell is joining Bundesliga newcomer Elversberg from Borussia Dortmund.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 9 Jul 2026 12:56:12 EST"
+    },
+    {
+      "title": "Cherundolo to coach U.S. U-23s at '28 Olympics",
+      "detail": "The U.S. Soccer Federation named former United States international and MLS Cup-winning coach Steve Cherundolo to be the manager of the U.S. U-23 national team that will represent the country at the 2028 Summer Olympics.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 9 Jul 2026 12:56:11 EST"
+    },
+    {
+      "title": "World Cup Daily live: Mexico star Mora's high scho...",
+      "detail": "Enjoy all the features, news, video analysis and color from around the competition as the first day of the 2026 FIFA World Cup quarterfinals begin.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 9 Jul 2026 08:29:23 EST"
+    },
+    {
+      "title": "Remembering the NWSL's viral tiny baseball field f...",
+      "detail": "NWSL games at baseball stadiums are setting attendance records now, but the league's most infamous viral \"disaster\" had to happen first.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 9 Jul 2026 07:18:37 EST"
+    },
+    {
+      "title": "Jarell Quansah handed two-match ban by Fifa for sending off against Mexico",
+      "detail": "<ul><li><p>England defender’s challenge deemed serious foul play</p></li><li><p>Misses quarter-final as well as potential semi-final</p></li></ul><p>Jarell Quansah has been banned for two World Cup matches following his red card in England’s last-16 victory over Mexico on Sunday.</p><p>Quansah was dismissed after a VAR review of a sliding challenge on Jesus Gallardo that Fifa have subsequently deemed to be serious foul play, and in accordance of Article 14 of their code of conduct that has led to a two-game ban for the defender.</p> <a href=\"https://www.theguardian.com/football/2026/jul/09/jarell-quansah-handed-two-match-ban-by-fifa-for-sending-off-against-mexico\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 09 Jul 2026 17:02:40 GMT"
     }
   ],
   "teams": [
@@ -17346,16 +17493,16 @@
       "code": "MEX",
       "factors": {
         "strength": 82,
-        "form": 74,
+        "form": 71,
         "path": 61,
         "squad": 50,
-        "margin": 74
+        "margin": 72
       },
       "tournament": {
         "champion": 0.1,
-        "final": 0.6,
-        "semifinal": 2.5,
-        "quarterfinal": 8.0,
+        "final": 0.4,
+        "semifinal": 2.0,
+        "quarterfinal": 7.0,
         "change": -1.4
       }
     },
@@ -17374,7 +17521,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.9,
-        "quarterfinal": 7.7,
+        "quarterfinal": 7.8,
         "change": -0.1
       }
     },
@@ -17430,8 +17577,8 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 0.6,
-        "quarterfinal": 6.6,
+        "semifinal": 0.7,
+        "quarterfinal": 6.7,
         "change": -0.4
       }
     },
@@ -17519,15 +17666,15 @@
         "strength": 84,
         "form": 74,
         "path": 65,
-        "squad": 74,
+        "squad": 71,
         "margin": 78
       },
       "tournament": {
-        "champion": 0.6,
-        "final": 1.9,
-        "semifinal": 6.7,
-        "quarterfinal": 23.4,
-        "change": -0.9
+        "champion": 0.5,
+        "final": 1.7,
+        "semifinal": 6.1,
+        "quarterfinal": 22.2,
+        "change": -1.0
       }
     },
     {
@@ -17658,7 +17805,7 @@
       "tournament": {
         "champion": 3.7,
         "final": 8.2,
-        "semifinal": 18.5,
+        "semifinal": 18.6,
         "quarterfinal": 32.9,
         "change": -2.1
       }
@@ -17714,9 +17861,9 @@
       },
       "tournament": {
         "champion": 1.5,
-        "final": 4.8,
-        "semifinal": 13.2,
-        "quarterfinal": 27.2,
+        "final": 5.0,
+        "semifinal": 13.7,
+        "quarterfinal": 28.1,
         "change": 0.9
       }
     },
@@ -17732,11 +17879,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 7.0,
-        "final": 13.8,
-        "semifinal": 29.4,
-        "quarterfinal": 62.3,
-        "change": 0.2
+        "champion": 7.1,
+        "final": 14.0,
+        "semifinal": 29.8,
+        "quarterfinal": 63.3,
+        "change": 0.3
       }
     },
     {
@@ -17791,7 +17938,7 @@
       "tournament": {
         "champion": 0.1,
         "final": 0.4,
-        "semifinal": 1.9,
+        "semifinal": 1.8,
         "quarterfinal": 5.3,
         "change": -0.1
       }
@@ -17884,11 +18031,11 @@
         "margin": 85
       },
       "tournament": {
-        "champion": 21.1,
+        "champion": 21.0,
         "final": 31.1,
         "semifinal": 47.3,
         "quarterfinal": 57.2,
-        "change": 9.5
+        "change": 9.4
       }
     },
     {
@@ -17962,7 +18109,7 @@
       "tournament": {
         "champion": 14.7,
         "final": 24.0,
-        "semifinal": 41.1,
+        "semifinal": 41.2,
         "quarterfinal": 58.8,
         "change": 1.2
       }
@@ -18037,7 +18184,7 @@
       },
       "tournament": {
         "champion": 21.6,
-        "final": 38.7,
+        "final": 38.6,
         "semifinal": 56.5,
         "quarterfinal": 76.0,
         "change": 6.4
@@ -18113,7 +18260,7 @@
       },
       "tournament": {
         "champion": 4.8,
-        "final": 9.1,
+        "final": 9.0,
         "semifinal": 18.1,
         "quarterfinal": 25.6,
         "change": -1.4
@@ -18191,7 +18338,7 @@
         "champion": 9.0,
         "final": 19.8,
         "semifinal": 37.9,
-        "quarterfinal": 58.4,
+        "quarterfinal": 58.5,
         "change": -1.7
       }
     },
@@ -18272,18 +18419,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2392,
+      "eventCount": 2413,
       "manualEventCount": 3,
-      "rawNewsCount": 2389,
+      "rawNewsCount": 2410,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2392,
-      "applied": 2210,
+      "watched": 2413,
+      "applied": 2227,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2387,
+      "singleSource": 2408,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -18297,10 +18444,10 @@
     "factorImpacts": {
       "mexico": {
         "attack": -4.699999999999999,
-        "defense": -11.530000000000001,
+        "defense": -16.630000000000003,
         "goalkeeper": 0.0,
         "path": -11.39,
-        "squad": -29.949999999999996
+        "squad": -32.49999999999999
       },
       "south-africa": {
         "attack": -5.1,
@@ -18363,7 +18510,7 @@
         "defense": -6.449999999999999,
         "goalkeeper": -2.15,
         "path": -5.67,
-        "squad": -6.449999999999999
+        "squad": -8.6
       },
       "haiti": {
         "attack": -2.55,
@@ -28924,17 +29071,91 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-09T15:42:57.211012+00:00",
+    "generatedAt": "2026-07-09T18:02:34.965725+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "spain",
+        "name": "西班牙",
+        "code": "ESP",
+        "previousChampion": 21.1,
+        "currentChampion": 21.0,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 17 条",
+        "reasons": [
+          "可入模型事件新增 17 条"
+        ]
+      },
+      {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.0,
+        "currentChampion": 7.1,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +1.0%",
+        "reasons": [
+          "八强概率上升 +1.0%",
+          "四强概率上升 +0.4%",
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 17 条"
+        ]
+      },
+      {
+        "team": "morocco",
+        "name": "摩洛哥",
+        "code": "MAR",
+        "previousChampion": 0.6,
+        "currentChampion": 0.5,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "人员盘下调 -2.2",
+        "reasons": [
+          "人员盘下调 -2.2",
+          "八强概率下降 -1.2%",
+          "四强概率下降 -0.6%",
+          "决赛概率下降 -0.2%",
+          "可入模型事件新增 17 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 1,
+      "down": 2,
+      "largestUp": {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.0,
+        "currentChampion": 7.1,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +1.0%",
+        "reasons": [
+          "八强概率上升 +1.0%",
+          "四强概率上升 +0.4%",
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 17 条"
+        ]
+      },
+      "largestDown": {
+        "team": "spain",
+        "name": "西班牙",
+        "code": "ESP",
+        "previousChampion": 21.1,
+        "currentChampion": 21.0,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 17 条",
+        "reasons": [
+          "可入模型事件新增 17 条"
+        ]
+      }
     }
   }
 }
