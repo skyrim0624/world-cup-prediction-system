@@ -32630,5 +32630,19 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-41f6d20ff733",
+    "title": "Starmer hints at bank holiday if England win World Cup",
+    "summary": "The prime minister says he does not want to \"jinx it\" but \"ask me again if we get to the final\".",
+    "source": "bbc",
+    "team": "england",
+    "status": "single_source",
+    "published_at": "Thu, 09 Jul 2026 01:25:24 GMT",
+    "url": "https://www.bbc.co.uk/news/articles/c20y9g2v2wvo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

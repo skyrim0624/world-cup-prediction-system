@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-09T00:17:06.239312+00:00",
+  "updatedAt": "2026-07-09T04:33:26.838030+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -16938,6 +16938,13 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 08 Jul 2026 22:34:48 GMT"
+    },
+    {
+      "title": "Starmer hints at bank holiday if England win World Cup",
+      "detail": "The prime minister says he does not want to \"jinx it\" but \"ask me again if we get to the final\".",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 01:25:24 GMT"
     }
   ],
   "teams": [
@@ -17873,18 +17880,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2335,
+      "eventCount": 2336,
       "manualEventCount": 3,
-      "rawNewsCount": 2332,
+      "rawNewsCount": 2333,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2335,
-      "applied": 2160,
+      "watched": 2336,
+      "applied": 2161,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2330,
+      "singleSource": 2331,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -28525,7 +28532,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-09T00:17:23.162807+00:00",
+    "generatedAt": "2026-07-09T04:33:48.633388+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
