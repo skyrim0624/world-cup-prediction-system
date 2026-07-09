@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-09T04:33:26.838030+00:00",
+  "updatedAt": "2026-07-09T08:32:54.503390+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -542,11 +542,11 @@
       "probability": 84,
       "title": "德国小组第一概率上升",
       "details": [
-        "德国夺冠概率 -0.1%",
+        "德国夺冠概率 ±0.0%",
         "库拉索路径盘下调 ±0.0%",
         "同组竞争队出线门槛抬高"
       ],
-      "championShift": "-0.1%",
+      "championShift": "±0.0%",
       "tone": "green"
     },
     {
@@ -554,11 +554,11 @@
       "probability": 11,
       "title": "两队路径保持胶着",
       "details": [
-        "德国夺冠概率 ±0.0%",
+        "德国夺冠概率 +0.1%",
         "库拉索夺冠概率 ±0.0%",
         "小组第一仍取决于末轮和净胜球"
       ],
-      "championShift": "±0.0% / ±0.0%",
+      "championShift": "+0.1% / ±0.0%",
       "tone": "gold"
     },
     {
@@ -16945,6 +16945,244 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 09 Jul 2026 01:25:24 GMT"
+    },
+    {
+      "title": "How Kane and Haaland compare - who would you pick?",
+      "detail": "Two of the world's best strikers - Harry Kane and Erling Haaland - meet in the World Cup quarter-finals - but who would you rather have?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 05:18:59 GMT"
+    },
+    {
+      "title": "Olise yellow card stands as Saibari out for Morocco",
+      "detail": "France fail in their bid to have forward Michael Olise's yellow card overturned, while Morocco are without Ismael Saibari for the quarter-final at Boston Stadium.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 09 Jul 2026 07:28:30 GMT"
+    },
+    {
+      "title": "Could Morocco become a football powerhouse?",
+      "detail": "Morocco face France in the 2026 World Cup quarter-finals on Thursday as the Atlas Lions look to reach the last four once again.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 07:50:17 GMT"
+    },
+    {
+      "title": "Noboody can question integrity of World Cup referees - Collina",
+      "detail": "World Cup officials are not \"influenced by anyone\" and \"nobody can question the integrity\" when it comes to decision-making, says Fifa chief refereeing officer Pierluigi Collina.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 07:35:33 GMT"
+    },
+    {
+      "title": "Late goals, comebacks and upsets - is record-breaking World Cup best ever?",
+      "detail": "What a World Cup it has been with great goals, thrilling comebacks, late drama, shock results. But how will this tournament be remembered?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 05:48:18 GMT"
+    },
+    {
+      "title": "Idolises Ronaldo, plays like Saka - meet £40m Chelsea winger Quenda",
+      "detail": "Chelsea's new signing Geovany Quenda hopes to follow in the footsteps of Cristiano Ronaldo by leaving Sporting's academy for the challenge and exposure of the Premier League.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 06:24:28 GMT"
+    },
+    {
+      "title": "Who am I? Guess World Cup star No 32",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 05:44:26 GMT"
+    },
+    {
+      "title": "Wilson delighted boss Bellamy staying with Wales",
+      "detail": "Captain Harry Wilson is delighted head coach Craig Bellamy is staying with Wales after talks about taking over at Burnley fell through.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 07:03:08 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "Rick & Lloyd get a taste of Norway before England's quarter-final.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 04:00:00 GMT"
+    },
+    {
+      "title": "'Celtic go all out for striker Bowie' - gossip",
+      "detail": "Celtic linked with Scotland striker in Italy and Egypt winger in Spain as newly-promoted Premier League side eye move for Hearts striker...",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 06:46:46 GMT"
+    },
+    {
+      "title": "Meet your World Cup quarterfinalists! How they got...",
+      "detail": "And then there were eight. Four weeks after the World Cup began, the quarterfinals start on Thursday with each team three wins away from lifting the trophy.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 9 Jul 2026 01:56:45 EST"
+    },
+    {
+      "title": "The 8 most important players of the World Cup quar...",
+      "detail": "Individual superstars become even more influential at this point in the tournament.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 9 Jul 2026 01:56:44 EST"
+    },
+    {
+      "title": "Sources: Utd, Chelsea agree $67M deal for Santos",
+      "detail": "Manchester United have agreed a deal with Chelsea for midfielder Andrey Santos, sources have told ESPN.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 8 Jul 2026 19:25:50 EST"
+    },
+    {
+      "title": "2x Ballon d'Or winner Putellas joins London City",
+      "detail": "Two-time Ballon d'Or winner and former Barcelona star Alexia Putellas has joined London City Lionesses.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 8 Jul 2026 19:25:50 EST"
+    },
+    {
+      "title": "Sources: Tchouaméni agrees new Real Madrid deal",
+      "detail": "Real Madrid midfielder Aurélien Tchouaméni has agreed a new contract to tie him to the Spanish giants until 2031, sources confirmed to ESPN.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 8 Jul 2026 19:25:51 EST"
+    },
+    {
+      "title": "Sources: Arsenal to step up Guimarães interest",
+      "detail": "Arsenal are set to step up their interest in Bruno Guimarães after receiving encouragement that the midfielder wants to join them but agreeing a fee with Newcastle remains a significant stumbling block, sources told ESPN.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 8 Jul 2026 19:25:51 EST"
+    },
+    {
+      "title": "Egypt FA: Can't be silent on Argentina referee cal...",
+      "detail": "The Egyptian FA said it \"cannot remain silent regarding the refereeing decisions\" following the team's round-of-16 loss to Argentina at the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 9 Jul 2026 01:01:45 EST"
+    },
+    {
+      "title": "Mexico start Márquez era on 'strong foundation'",
+      "detail": "The Mexican Football Federation announced Wednesday that Rafael Márquez is taking the reins as Javier Aguirre's successor to lead the team up to the 2030 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 9 Jul 2026 01:01:45 EST"
+    },
+    {
+      "title": "Messi, Ream, Berhalter headline MLS ASG roster",
+      "detail": "Argentina and Inter Miami CF star Lionel Messi and U.S. players Matt Freese, Max Arfsten, Tim Ream and Sebastian Berhalter were included in MLS' 29-man All-Star Game roster.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 8 Jul 2026 19:25:51 EST"
+    },
+    {
+      "title": "EU lawmakers eye investigating FIFA's Infantino",
+      "detail": "Dozens of European lawmakers are gathering support to launch an investigation in the European Parliament of FIFA boss Gianni Infantino over his involvement in the decision to permit U.S. striker Folarin Balogun to play despite an earlier red card.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 9 Jul 2026 01:01:45 EST"
+    },
+    {
+      "title": "Let's face it: The USMNT's coach doesn't matter --...",
+      "detail": "U.S. fans expected more out of the USMNT's expensive, famous coach at the World Cup, but there was one problem: the players.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 8 Jul 2026 21:59:04 EST"
+    },
+    {
+      "title": "Marcotti's Mini World Cup Musings: Messi is supern...",
+      "detail": "After 28 days of games, Wednesday is the first rest day of the 2026 World Cup: the perfect opportunity to reflect on four weeks of fabulous football.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 9 Jul 2026 00:49:33 EST"
+    },
+    {
+      "title": "If not for Messi, Argentina would surely be out of...",
+      "detail": "Argentina's win vs. Egypt was down to Leo Messi, who seems to be dragging his team to another final.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 9 Jul 2026 00:49:33 EST"
+    },
+    {
+      "title": "World Cup Daily live: Tournament's 3,000th goal on...",
+      "detail": "Enjoy all the features, news, video analysis and color from around the competition as we have our final eight teams of the 2026 FIFA World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 8 Jul 2026 14:42:45 EST"
+    },
+    {
+      "title": "After rejecting France, Bouaddi can end their Worl...",
+      "detail": "Ayyoub Bouaddi chose Morocco over France to ensure he'd play at the 2026 World Cup. Now the two teams collide in a 2022 semifinal rematch.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 8 Jul 2026 14:42:45 EST"
+    },
+    {
+      "title": "Transfer rumors, news: Arsenal, Spurs to battle ov...",
+      "detail": "Norway's RB Leipzig winger Antonio Nusa is a target for North London rivals Arsenal and Tottenham Hotspur. Transfer Talk has the latest.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 9 Jul 2026 04:17:39 EST"
+    },
+    {
+      "title": "Women's transfer grades: London City get A+ for Pu...",
+      "detail": "The women's transfer window is nearly open for the summer. Here are the big deals and how we rated them.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 8 Jul 2026 12:00:54 EST"
+    },
+    {
+      "title": "Best bets for the 2026 World Cup quarterfinal roun...",
+      "detail": "Looking to place some World Cup bets? Take a look at what our expert is considering ahead of the quarterfinal round.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 8 Jul 2026 16:51:42 EST"
+    },
+    {
+      "title": "Inside the 'goalkeepers' union,' where mutual supp...",
+      "detail": "Goalkeepers are unique among soccer players, and so is the supportive bond that (almost) all of them share.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 8 Jul 2026 16:52:19 EST"
+    },
+    {
+      "title": "World Cup 2026: France v Morocco quarter-final buildup, Collina defends refereeing – live",
+      "detail": "<p>⚽ All the latest as we look ahead to the quarter-finals<br>⚽ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a>| <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:matchday.live@theguardian.com\">Email us</a></p><p><strong>Our very own Jonny Weeks has been doing clever things with photos from across the World Cup. </strong></p><p>Check them out!</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/09/world-cup-2026-france-v-morocco-quarter-final-news-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 08:08:52 GMT"
+    },
+    {
+      "title": "England’s big chances and France’s shots: how World Cup quarter-finalists’ stats line up",
+      "detail": "<p>Each of the eight teams has at least one key strength, from Swiss speed to Spanish defence</p><p>The World Cup has reached the quarter-final stage and the favourites to reach the last four in descending order of likelihood, according to Opta, are France, Spain, Argentina and England. All eight remaining teams have positive data in their favour from the tournament, though.</p> <a href=\"https://www.theguardian.com/football/2026/jul/09/england-big-chances-france-shots-how-world-cup-quarter-finalists-stats\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 07:00:56 GMT"
+    },
+    {
+      "title": "World Cup quarter-final predictions: will anyone derail France? Some of our panel believe so …",
+      "detail": "<p>With the World Cup down to eight teams, our writers assesses who’s left, identify the biggest remaining threats to France and make calls on who will lift the trophy</p><p><strong>Lionel Messi</strong>. As he proved in thrilling style against Egypt, Argentina’s No 10 still has magic in his boots even at the age of 39. While his penalty record of four from eight attempts is much worse than you’d expect, he is clinical when it matters most. <strong>EA</strong></p> <a href=\"https://www.theguardian.com/football/2026/jul/09/world-cup-2026-quarter-final-predictions-france-spain-argentina-england-messi-mbappe-haaland\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 07:15:54 GMT"
+    },
+    {
+      "title": "‘Best player England has developed’: Olise’s rise from Hayes to the World Cup",
+      "detail": "<p>One of the Bayern and France playmaker’s early coaches tells the story of how a move to Reading kickstarted a career</p><p>If <a href=\"https://www.theguardian.com/football/2026/jul/01/michael-olise-artist-hearts-france-love-world-cup-bayern-munich\">Michael Olise wins the World Cup</a>, there will be a corner of a Hayes housing estate that is for ever France. It is Olise’s corner, a scrap of parkland grass among the west London suburban homes where a seven-year-old practised his football with his brother, Richard. “Football in these conditions, it’s just freedom,” Olise told L’Équipe last month. “It’s not really learning in the strict sense. It was simply the pleasure of playing football. I just loved it.”</p><p>Sean Conlon, one of Olise’s early coaches with Old Isleworthians in west London, recalls: “I would go over to his house and he would be practising outside with Richard. That little estate probably really aided him; there weren’t a lot of cars but it had quite a lot of concrete open space and then a small green. He’d just be practising out here all the time, obsessed with football.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/09/best-player-england-developed-michael-olise-2026-world-cup-france\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 07:00:54 GMT"
+    },
+    {
+      "title": "Warping the World Cup: the rise of homespun ‘photographs’",
+      "detail": "<p>Using a digital flat-bed scanner, our picture editor <a href=\"https://www.theguardian.com/profile/jonny-weeks\">Jonny Weeks</a> adapts some of his favourite images from the tournament and explores the trend of alternative photography</p><p>Although I’ve edited thousands of football photographs over the years, I’ve never attended a World Cup match. I envy those who get to be pitchside with their cameras for such big events. Yet, as I’ve discovered during this tournament, you don’t have to be there to create experimental images of the tournament.</p><p>Slit-scanning is an alternative photographic process <a href=\"https://www.jonnyweeks.co.uk/hurry-up-harry\">that I first tried many years ago</a>. Using a narrow slit inside an analogue camera, the photographer winds a roll of film past the aperture to record the flow of time. It’s a tricky and laborious technique which produces curiously distorted results – almost like celebrating the problem of “rolling shutter”, which has vexed photographers for generations.</p> <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jul/09/warping-the-world-cup-rise-homespun-photographs\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 07:00:56 GMT"
     }
   ],
   "teams": [
@@ -16982,7 +17220,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.9,
-        "quarterfinal": 7.5,
+        "quarterfinal": 7.6,
         "change": -0.1
       }
     },
@@ -17031,7 +17269,7 @@
       "factors": {
         "strength": 76,
         "form": 65,
-        "path": 60,
+        "path": 61,
         "squad": 50,
         "margin": 74
       },
@@ -17039,7 +17277,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.6,
-        "quarterfinal": 6.3,
+        "quarterfinal": 6.4,
         "change": -0.4
       }
     },
@@ -17125,17 +17363,17 @@
       "code": "MAR",
       "factors": {
         "strength": 84,
-        "form": 75,
+        "form": 74,
         "path": 65,
         "squad": 74,
         "margin": 78
       },
       "tournament": {
-        "champion": 0.7,
-        "final": 2.1,
-        "semifinal": 7.1,
-        "quarterfinal": 24.0,
-        "change": -0.8
+        "champion": 0.6,
+        "final": 1.8,
+        "semifinal": 6.5,
+        "quarterfinal": 22.8,
+        "change": -0.9
       }
     },
     {
@@ -17201,7 +17439,7 @@
       "code": "PAR",
       "factors": {
         "strength": 75,
-        "form": 71,
+        "form": 70,
         "path": 61,
         "squad": 65,
         "margin": 74
@@ -17209,8 +17447,8 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 0.9,
-        "quarterfinal": 3.2,
+        "semifinal": 0.8,
+        "quarterfinal": 2.9,
         "change": -0.1
       }
     },
@@ -17265,9 +17503,9 @@
       },
       "tournament": {
         "champion": 3.6,
-        "final": 7.9,
-        "semifinal": 18.0,
-        "quarterfinal": 32.5,
+        "final": 8.0,
+        "semifinal": 18.3,
+        "quarterfinal": 32.9,
         "change": -2.2
       }
     },
@@ -17340,11 +17578,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 7.4,
-        "final": 14.3,
-        "semifinal": 29.9,
-        "quarterfinal": 62.2,
-        "change": 0.6
+        "champion": 7.5,
+        "final": 14.5,
+        "semifinal": 30.3,
+        "quarterfinal": 63.2,
+        "change": 0.7
       }
     },
     {
@@ -17400,7 +17638,7 @@
         "champion": 0.1,
         "final": 0.4,
         "semifinal": 1.8,
-        "quarterfinal": 5.4,
+        "quarterfinal": 5.3,
         "change": -0.1
       }
     },
@@ -17487,7 +17725,7 @@
       "factors": {
         "strength": 96,
         "form": 89,
-        "path": 77,
+        "path": 78,
         "squad": 87,
         "margin": 85
       },
@@ -17569,9 +17807,9 @@
       },
       "tournament": {
         "champion": 14.5,
-        "final": 23.8,
+        "final": 23.7,
         "semifinal": 40.7,
-        "quarterfinal": 58.9,
+        "quarterfinal": 58.8,
         "change": 1.0
       }
     },
@@ -17644,11 +17882,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 21.6,
+        "champion": 21.5,
         "final": 38.7,
         "semifinal": 56.5,
         "quarterfinal": 76.0,
-        "change": 6.4
+        "change": 6.3
       }
     },
     {
@@ -17880,18 +18118,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2336,
+      "eventCount": 2370,
       "manualEventCount": 3,
-      "rawNewsCount": 2333,
+      "rawNewsCount": 2367,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2336,
-      "applied": 2161,
+      "watched": 2370,
+      "applied": 2189,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2331,
+      "singleSource": 2365,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -17935,7 +18173,7 @@
         "attack": -21.35,
         "defense": -2.55,
         "goalkeeper": -2.15,
-        "path": -7.759999999999999,
+        "path": -6.889999999999999,
         "squad": -34.849999999999994
       },
       "bosnia-herzegovina": {
@@ -17967,7 +18205,7 @@
         "squad": -24.449999999999996
       },
       "morocco": {
-        "attack": -7.249999999999999,
+        "attack": -9.799999999999999,
         "defense": -6.449999999999999,
         "goalkeeper": -2.15,
         "path": -5.67,
@@ -17995,7 +18233,7 @@
         "squad": -2.55
       },
       "paraguay": {
-        "attack": -4.8,
+        "attack": -7.35,
         "defense": -4.699999999999999,
         "goalkeeper": 0.0,
         "path": -3.78,
@@ -18103,7 +18341,7 @@
         "attack": 1.65,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 1.74,
+        "path": 2.61,
         "squad": -0.5
       },
       "cape-verde": {
@@ -28532,17 +28770,91 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-09T04:33:48.633388+00:00",
+    "generatedAt": "2026-07-09T08:33:16.101492+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 21.6,
+        "currentChampion": 21.5,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 28 条",
+        "reasons": [
+          "可入模型事件新增 28 条"
+        ]
+      },
+      {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.4,
+        "currentChampion": 7.5,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +1.0%",
+        "reasons": [
+          "八强概率上升 +1.0%",
+          "四强概率上升 +0.4%",
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 28 条"
+        ]
+      },
+      {
+        "team": "morocco",
+        "name": "摩洛哥",
+        "code": "MAR",
+        "previousChampion": 0.7,
+        "currentChampion": 0.6,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "状态盘下调 -2.5",
+        "reasons": [
+          "状态盘下调 -2.5",
+          "八强概率下降 -1.2%",
+          "四强概率下降 -0.6%",
+          "决赛概率下降 -0.3%",
+          "可入模型事件新增 28 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 1,
+      "down": 2,
+      "largestUp": {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.4,
+        "currentChampion": 7.5,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +1.0%",
+        "reasons": [
+          "八强概率上升 +1.0%",
+          "四强概率上升 +0.4%",
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 28 条"
+        ]
+      },
+      "largestDown": {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 21.6,
+        "currentChampion": 21.5,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 28 条",
+        "reasons": [
+          "可入模型事件新增 28 条"
+        ]
+      }
     }
   }
 }
