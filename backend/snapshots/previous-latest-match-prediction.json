@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-09T22:02:28.495082+00:00",
+  "updatedAt": "2026-07-09T23:47:25.144139+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -17561,6 +17561,69 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 09 Jul 2026 21:25:51 GMT"
+    },
+    {
+      "title": "Guehi a doubt for Norway game with hamstring injury",
+      "detail": "England defender Marc Guehi is managing a slight hamstring injury and could miss Saturday's Norway quarter-final.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 09 Jul 2026 22:33:14 GMT"
+    },
+    {
+      "title": "Klopp reveals how Liverpool tried to sign Mbappe",
+      "detail": "Jurgen Klopp says he \"flew around in a circle\" in a private plane with Kylian Mbappe and his family when he tried to sign him for Liverpool a decade ago.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 23:42:41 GMT"
+    },
+    {
+      "title": "Glens 'deserve huge credit' after RFS loss - Devine",
+      "detail": "Glentoran manager Declan Devine says his side will \"take huge confidence\" into the second leg of their Conference League first round qualifier against RFS.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 21:57:06 GMT"
+    },
+    {
+      "title": "Lynch 'disappointed with goals conceded' as Derry lose to CSKA Sofia",
+      "detail": "Derry City boss Tiernan Lynch says it is still \"all to play for\" after his side were narrowly defeated 3-2 by CSKA Sofia at the Natsionalen Stadion Vasil Levski in Sofia in the Europa League first qualifying round tie.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 22:06:46 GMT"
+    },
+    {
+      "title": "Mbappé stunner ends Morocco resistance to send France into World Cup semi-finals",
+      "detail": "<p>There is a relentlessness to this France that might make them irresistible. Morocco no doubt had the best of intentions, ideas of how they could hurt the side that had beaten them in the semi-final in Qatar, but France press so well that they soon accepted they had no option but to retreat and endure. France have such attacking quality that simply surviving isn’t really a viable option.</p><p>Kylian Mbappé, once again, was the key figure, missing a penalty, scoring a stunning opener and then teeing up Ousmane Dembélé for the second. He went off with 13 minutes remaining to a deserved ovation: the game had seemed to be drifting, and there had just been a sense that Morocco might conceivably pull off an implausible rearguard action, when he produced a goal from nowhere.</p> <a href=\"https://www.theguardian.com/football/2026/jul/09/morocco-france-world-cup-quarter-final-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 09 Jul 2026 22:13:13 GMT"
+    },
+    {
+      "title": "Christian Pulisic suffered leg fracture in US loss to Belgium, out for several weeks",
+      "detail": "<ul><li><p>Milan forward was subbed out in a 4-1 loss</p></li><li><p>Pulisic had been criticized for his lack of availability</p></li></ul><p>Christian Pulisic suffered a microfracture and bone bruise in his leg in the United States’ 4-1 loss to Belgium in the World Cup last 16 on Monday, US Soccer announced.</p><p>Pulisic suffered the injury in the second half in Seattle and was removed shortly afterward. He underwent X-ray and MRI scans on Tuesday to determine the extent of the injury, which is expected to keep Pulisic out for several weeks. US Soccer said the federation and Milan are working collaboratively on his rehab plan.</p> <a href=\"https://www.theguardian.com/football/2026/jul/09/christian-pulisic-injury-world-cup-usmnt\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 09 Jul 2026 17:31:13 GMT"
+    },
+    {
+      "title": "France national team uses ICE deportation planes for World Cup travel",
+      "detail": "<p>The plane that French team used after match with Paraguay flew 44 deportation-related flights this year alone</p><p>The French men’s national soccer team, whose star <a href=\"https://www.theguardian.com/football/kylian-mbappe\">Kylian Mbappé</a> is one of the world’s most outspoken athletes against far-right politicians, has been using a charter airplane company that is at the heart of the Trump administration’s mass deportation campaign.</p><p>Images of the team posted on social media and flight tracking data show the French team have used Global Crossing Airlines (GlobalX) for at least <a href=\"https://www.tiktok.com/@equipedefrance/photo/7658361173426900256?lang=en\">three</a> domestic <a href=\"https://www.tiktok.com/@equipedefrance/photo/7657376001663487264?lang=en\">flights</a> between their World Cup games and base camp in Boston. That same airline charter company has operated <a href=\"https://www.theguardian.com/us-news/ng-interactive/2025/sep/10/trump-globalx-airline-deportation-immigration\">more than half</a> of ICE’s removal flights in 2024 and 2025.</p> <a href=\"https://www.theguardian.com/us-news/2026/jul/09/french-national-team-ice-deportation-planes-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 09:00:01 GMT"
+    },
+    {
+      "title": "World Cup 2026: guide to all 1,248 players",
+      "detail": "<p>Everything you need to know (and more) about every squad member. Click on the player pictures for more information</p> <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 02 Jul 2026 08:59:35 GMT"
+    },
+    {
+      "title": "Bracketology: predict a path to World Cup victory",
+      "detail": "<p>Click your way through the group stage and the knockouts to crown champion</p> <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 28 Jun 2026 11:43:13 GMT"
     }
   ],
   "teams": [
@@ -17598,7 +17661,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 1.0,
-        "quarterfinal": 7.9,
+        "quarterfinal": 8.1,
         "change": -0.1
       }
     },
@@ -17646,7 +17709,7 @@
       "code": "CAN",
       "factors": {
         "strength": 76,
-        "form": 65,
+        "form": 64,
         "path": 61,
         "squad": 50,
         "margin": 74
@@ -17654,8 +17717,8 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 0.7,
-        "quarterfinal": 6.7,
+        "semifinal": 0.6,
+        "quarterfinal": 6.3,
         "change": -0.4
       }
     },
@@ -17684,7 +17747,7 @@
       "code": "QAT",
       "factors": {
         "strength": 66,
-        "form": 72,
+        "form": 71,
         "path": 64,
         "squad": 71,
         "margin": 72
@@ -17741,16 +17804,16 @@
       "code": "MAR",
       "factors": {
         "strength": 84,
-        "form": 73,
+        "form": 72,
         "path": 65,
         "squad": 71,
-        "margin": 78
+        "margin": 76
       },
       "tournament": {
         "champion": 0.4,
-        "final": 1.5,
-        "semifinal": 5.6,
-        "quarterfinal": 21.2,
+        "final": 1.4,
+        "semifinal": 5.3,
+        "quarterfinal": 20.5,
         "change": -1.1
       }
     },
@@ -17956,11 +18019,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 7.2,
-        "final": 14.2,
-        "semifinal": 30.3,
-        "quarterfinal": 64.3,
-        "change": 0.4
+        "champion": 7.3,
+        "final": 14.4,
+        "semifinal": 30.6,
+        "quarterfinal": 65.1,
+        "change": 0.5
       }
     },
     {
@@ -18298,11 +18361,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 0.4,
+        "champion": 0.3,
         "final": 1.1,
         "semifinal": 3.6,
         "quarterfinal": 6.7,
-        "change": -0.2
+        "change": -0.3
       }
     },
     {
@@ -18496,18 +18559,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2424,
+      "eventCount": 2433,
       "manualEventCount": 3,
-      "rawNewsCount": 2421,
+      "rawNewsCount": 2430,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2424,
-      "applied": 2238,
+      "watched": 2433,
+      "applied": 2245,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2419,
+      "singleSource": 2428,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -18548,7 +18611,7 @@
         "squad": 0.0
       },
       "canada": {
-        "attack": -21.35,
+        "attack": -23.5,
         "defense": -2.55,
         "goalkeeper": -2.15,
         "path": -6.889999999999999,
@@ -18562,7 +18625,7 @@
         "squad": -2.55
       },
       "qatar": {
-        "attack": 0.0,
+        "attack": -2.15,
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": 0.0,
@@ -18584,7 +18647,7 @@
       },
       "morocco": {
         "attack": -11.95,
-        "defense": -6.449999999999999,
+        "defense": -8.6,
         "goalkeeper": -2.15,
         "path": -5.67,
         "squad": -8.6
@@ -29148,7 +29211,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-09T22:02:50.600777+00:00",
+    "generatedAt": "2026-07-09T23:47:47.160115+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
@@ -29158,33 +29221,29 @@
         "team": "netherlands",
         "name": "荷兰",
         "code": "NED",
-        "previousChampion": 7.1,
-        "currentChampion": 7.2,
+        "previousChampion": 7.2,
+        "currentChampion": 7.3,
         "change": 0.1,
         "direction": "up",
-        "reason": "八强概率上升 +1.0%",
+        "reason": "八强概率上升 +0.8%",
         "reasons": [
-          "八强概率上升 +1.0%",
-          "四强概率上升 +0.5%",
+          "八强概率上升 +0.8%",
+          "四强概率上升 +0.3%",
           "决赛概率上升 +0.2%",
-          "可入模型事件新增 2 条"
+          "可入模型事件新增 7 条"
         ]
       },
       {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 0.5,
-        "currentChampion": 0.4,
+        "team": "austria",
+        "name": "奥地利",
+        "code": "AUT",
+        "previousChampion": 0.4,
+        "currentChampion": 0.3,
         "change": -0.1,
         "direction": "down",
-        "reason": "状态盘下调 -2.2",
+        "reason": "可入模型事件新增 7 条",
         "reasons": [
-          "状态盘下调 -2.2",
-          "八强概率下降 -1.0%",
-          "四强概率下降 -0.5%",
-          "决赛概率下降 -0.2%",
-          "可入模型事件新增 2 条"
+          "可入模型事件新增 7 条"
         ]
       }
     ],
@@ -29195,33 +29254,29 @@
         "team": "netherlands",
         "name": "荷兰",
         "code": "NED",
-        "previousChampion": 7.1,
-        "currentChampion": 7.2,
+        "previousChampion": 7.2,
+        "currentChampion": 7.3,
         "change": 0.1,
         "direction": "up",
-        "reason": "八强概率上升 +1.0%",
+        "reason": "八强概率上升 +0.8%",
         "reasons": [
-          "八强概率上升 +1.0%",
-          "四强概率上升 +0.5%",
+          "八强概率上升 +0.8%",
+          "四强概率上升 +0.3%",
           "决赛概率上升 +0.2%",
-          "可入模型事件新增 2 条"
+          "可入模型事件新增 7 条"
         ]
       },
       "largestDown": {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 0.5,
-        "currentChampion": 0.4,
+        "team": "austria",
+        "name": "奥地利",
+        "code": "AUT",
+        "previousChampion": 0.4,
+        "currentChampion": 0.3,
         "change": -0.1,
         "direction": "down",
-        "reason": "状态盘下调 -2.2",
+        "reason": "可入模型事件新增 7 条",
         "reasons": [
-          "状态盘下调 -2.2",
-          "八强概率下降 -1.0%",
-          "四强概率下降 -0.5%",
-          "决赛概率下降 -0.2%",
-          "可入模型事件新增 2 条"
+          "可入模型事件新增 7 条"
         ]
       }
     }
