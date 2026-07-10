@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-10T15:59:41.476178+00:00",
+  "updatedAt": "2026-07-10T17:56:17.698071+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18023,6 +18023,48 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 10 Jul 2026 13:18:48 GMT"
+    },
+    {
+      "title": "Hacking worry for Argentine FA over World Cup emails",
+      "detail": "Argentina's football association signals it may have suffered a cyber attack after emails from its accounts reportedly criticised refereeing in the dramatic win against Egypt at the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 17:26:14 GMT"
+    },
+    {
+      "title": "Burnley appoint Hayen as new head coach",
+      "detail": "Burnley appoint Genk boss Nicky Hayen as their new head coach on a three-year deal.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 17:51:52 GMT"
+    },
+    {
+      "title": "England defender Charles joins Man City from Chelsea",
+      "detail": "Manchester City have signed England international Niamh Charles for £500,000 from Women's Super League rivals Chelsea.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 16:00:17 GMT"
+    },
+    {
+      "title": "Aberdeen sell Keskinen to Odense after 'very good offer'",
+      "detail": "Aberdeen sell Topi Keskinen to Odense for an undisclosed fee, which Pittodrie manager Stephen Robinson describes as \"a very good offer\".",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 17:17:03 GMT"
+    },
+    {
+      "title": "Podcast: From relegation fears to top-six dreams - Kilmarnock's season preview",
+      "detail": "Optimism is back at Rugby Park under Neil McCann.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 17:00:00 GMT"
+    },
+    {
+      "title": "Spain v Belgium: World Cup 2026 quarter-final – live",
+      "detail": "<p>⚽ Kick-off time: 12pm local/3pm EDT/8pm BST/5am AEST<br>⚽ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:billy.munday@theguardian.com\">Email Billy</a></p><p><strong>An early dip into the mailbag …</strong></p><p><em>“I hope the Belgians have been practicing their Trumpian tiny-fist dance since that USA game. It was the only disappointing aspect of an otherwise convincing performance. As for the Spanish, a red muleta celebration would be a fun provocation to the bull currently threatening to end all trade with them. He still might find himself handing them a big chuck of gold in nine days time”</em> – Justin Kavanagh</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/10/spain-v-belgium-world-cup-2026-quarter-final-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 17:38:10 GMT"
     }
   ],
   "teams": [
@@ -18958,18 +19000,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2490,
+      "eventCount": 2496,
       "manualEventCount": 3,
-      "rawNewsCount": 2487,
+      "rawNewsCount": 2493,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2490,
-      "applied": 2294,
+      "watched": 2496,
+      "applied": 2299,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2485,
+      "singleSource": 2491,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -29610,7 +29652,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-10T15:59:58.218335+00:00",
+    "generatedAt": "2026-07-10T17:56:39.532145+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
