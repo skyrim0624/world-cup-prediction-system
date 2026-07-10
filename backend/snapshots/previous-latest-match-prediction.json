@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-10T11:11:13.093282+00:00",
+  "updatedAt": "2026-07-10T13:28:58.728396+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -17876,6 +17876,104 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 10 Jul 2026 08:10:41 GMT"
+    },
+    {
+      "title": "How do England stop Norway - and Haaland?",
+      "detail": "As England prepare to face Norway in a World Cup quarter-final on Saturday how do Thomas Tuchel's side prepare for their main threat - star striker Erling Haaland?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 12:39:21 GMT"
+    },
+    {
+      "title": "'What old timers can do' - the evolution of Belgium's golden generation",
+      "detail": "BBC Sport explores what is behind Belgium's progress to the last eight of the World Cup, and whether they were too easily discounted among the contenders.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 11:38:58 GMT"
+    },
+    {
+      "title": "Coroner rules inquest needed into Nobby Stiles' death",
+      "detail": "An inquest into his death will be held after a corner finds injury consistent with repeated head traumas.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 11:14:20 GMT"
+    },
+    {
+      "title": "New St Mirren captain Fraser sets standards - McLeish",
+      "detail": "St Mirren manager Craig McLeish says the way Marcus Fraser \"sets standards\" around the club made him a clear choice to become the Buddies' new captain.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 12:13:45 GMT"
+    },
+    {
+      "title": "Instead of its biggest World Cup star, Pulisic was USMNT's biggest mystery",
+      "detail": "In his prime at a World Cup on home soil, this summer was Christian Pulisic's moment, but for a number of reasons, he failed to meet it.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 07:40:15 EST"
+    },
+    {
+      "title": "Klopp: Mbappé, Liverpool had talks on private jet",
+      "detail": "Jürgen Klopp has revealed the lengths Liverpool went to in an attempt to sign Kylian Mbappé in 2017, citing talks on a private jet in the \"most expensive non-transfer\" the club were involved in.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 09:23:47 EST"
+    },
+    {
+      "title": "Monaco chief casts doubt on Paul Pogba's future",
+      "detail": "null",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 10 Jul 2026 09:23:48 EST"
+    },
+    {
+      "title": "Sources: Guéhi nursing injury before Norway clash",
+      "detail": "Marc Guéhi has emerged as an injury concern ahead of England's World Cup quarterfinal against Norway after suffering a hamstring issue, sources have told ESPN.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 10 Jul 2026 09:23:47 EST"
+    },
+    {
+      "title": "World Cup Daily live: Remix of teen Haaland's rap ...",
+      "detail": "Enjoy all the features, news, video analysis and color from around the 2026 FIFA World Cup as we start the second day of quarterfinals action.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 08:17:19 EST"
+    },
+    {
+      "title": "Transfer rumors, news: Man United, Newcastle eye N...",
+      "detail": "Manchester United are interested in Nottingham Forest's Neco Williams, but they could face competition to sign him. Transfer Talk has the latest.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 08:26:38 EST"
+    },
+    {
+      "title": "Like Nosferatu on a golf weekend – but England players trust Tuchel and his aura | Barney Ronay",
+      "detail": "<p>Imposing head coach is a details man who has got the balance of squad spirit right at the World Cup, and is even proving a hit on Mumsnet</p><p>Let’s set the world on fire. There’s a section in Bill Buford’s classic football hooligan study, Among the Thugs, where he describes being part of a phalanx of England “faces” steaming through the centre of mid-1980s Rotterdam towards some kind of meet, while their leader – the Top Boy, General or similar – runs up and down the column whispering to his men, saying the “energy is high”, “the energy is high”, “feel it”, “the energy is high”.</p><p>As it is currently for this England team, and quite clearly the players can feel it. You will probably have seen the dressing-room video, which has more than 40m views. Declan Rice and John Stones are shown playing a prank on Thomas Tuchel after the electrical storm masquerading as a football match at the Estadio Azteca on Sunday. Rice pretends Stones has injured his shoulder. Stones plays along with it, delivering a minimalist acting masterclass so contained there is almost no acting at all, before raising his fist as the beat drops (song: Talk To You, by ANOTR) and the room falls about in generalised hysteria.</p> <a href=\"https://www.theguardian.com/football/2026/jul/10/nosferatu-golf-weekend-england-players-trust-thomas-tuchel\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 10 Jul 2026 11:30:19 GMT"
+    },
+    {
+      "title": "Wing wizards or worries? England and Norway have choices to make out wide",
+      "detail": "<p>Thomas Tuchel seems undecided, while Ståle Solbakken has been structured before the World Cup quarter-final</p><p>While there will be much focus on Harry Kane and Erling Haaland before England’s match with Norway, they carry no mystery. They will play. They will probably score.</p><p>Of far greater interest is who Thomas Tuchel and Ståle Solbakken choose to deploy as their wingers. Neither team have completed a game this summer fielding the wide forwards who began it.</p> <a href=\"https://www.theguardian.com/football/2026/jul/10/wing-wizards-england-norway-2026-world-cup-quarter-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 12:15:09 GMT"
+    },
+    {
+      "title": "Time marches on: what the next three years will bring for the USMNT",
+      "detail": "<p>After a fun World Cup with a dismal end, the US enters the 2030 cycle with numerous avenues to rebuild the squad</p><p>There are massive questions lingering around the US men’s program. Mauricio Pochettino’s contract is up, US Soccer has made an extension offer, but both parties are taking some time. Matt Crocker’s abrupt exit as sporting director to take a similar job with Saudi Arabia before the World Cup begs more queries about the direction of the sport in this country. And while most of the 2026 squad’s core still projects to contend for 2030, four years is a long time.</p><p>From now, each year offers a major tournament. This is what the US should hope to clarify at every step of the way.</p> <a href=\"https://www.theguardian.com/football/2026/jul/10/usmnt-world-cup-qualifying-gold-cup-copa-america\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 12:00:20 GMT"
+    },
+    {
+      "title": "USMNT’s World Cup exit was most-watched American telecast since Super Bowl",
+      "detail": "<ul><li><p>4-1 defeat to Belgium averaged 33 million viewers on Fox</p></li><li><p>Mexico v England neared 45 million across platforms</p></li></ul><p>The US men’s national team officially broke the record for ⁠most-watched soccer telecast in US history twice in a row.</p><p>As disappointing as ⁠<a href=\"https://www.theguardian.com/football/2026/jul/06/usa-belgium-world-cup-2026-match-report\">Monday’s 4-1 last-16 loss</a> to Belgium was for fans, the pregame excitement helped attract 33.086 million ⁠viewers, according to Nielsen Media research. The audience peaked at 41.033 million during the ⁠9.15-9.30pm eastern time window.</p> <a href=\"https://www.theguardian.com/football/2026/jul/10/usmnt-world-cup-tv-viewership-records\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 12:58:58 GMT"
     }
   ],
   "teams": [
@@ -18058,15 +18156,15 @@
         "strength": 84,
         "form": 72,
         "path": 67,
-        "squad": 69,
+        "squad": 67,
         "margin": 76
       },
       "tournament": {
-        "champion": 0.4,
-        "final": 1.3,
-        "semifinal": 5.0,
-        "quarterfinal": 20.0,
-        "change": -1.1
+        "champion": 0.3,
+        "final": 1.1,
+        "semifinal": 4.7,
+        "quarterfinal": 19.3,
+        "change": -1.2
       }
     },
     {
@@ -18172,7 +18270,7 @@
         "strength": 79,
         "form": 76,
         "path": 67,
-        "squad": 84,
+        "squad": 82,
         "margin": 77
       },
       "tournament": {
@@ -18271,11 +18369,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 7.4,
-        "final": 14.6,
-        "semifinal": 31.1,
-        "quarterfinal": 66.1,
-        "change": 0.6
+        "champion": 7.5,
+        "final": 14.7,
+        "semifinal": 31.4,
+        "quarterfinal": 66.7,
+        "change": 0.7
       }
     },
     {
@@ -18348,7 +18446,7 @@
       },
       "tournament": {
         "champion": 1.3,
-        "final": 3.4,
+        "final": 3.5,
         "semifinal": 9.7,
         "quarterfinal": 34.4,
         "change": -1.8
@@ -18500,7 +18598,7 @@
       },
       "tournament": {
         "champion": 14.7,
-        "final": 23.9,
+        "final": 24.0,
         "semifinal": 41.1,
         "quarterfinal": 58.8,
         "change": 1.2
@@ -18811,18 +18909,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2469,
+      "eventCount": 2483,
       "manualEventCount": 3,
-      "rawNewsCount": 2466,
+      "rawNewsCount": 2480,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2469,
-      "applied": 2276,
+      "watched": 2483,
+      "applied": 2288,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2464,
+      "singleSource": 2478,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -18867,7 +18965,7 @@
         "defense": -2.55,
         "goalkeeper": -2.15,
         "path": -6.889999999999999,
-        "squad": -34.849999999999994
+        "squad": -36.99999999999999
       },
       "bosnia-herzegovina": {
         "attack": -5.1,
@@ -18902,7 +19000,7 @@
         "defense": -8.6,
         "goalkeeper": -2.15,
         "path": -3.9299999999999997,
-        "squad": -10.75
+        "squad": -12.9
       },
       "haiti": {
         "attack": -2.55,
@@ -18944,7 +19042,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -1.02,
-        "squad": 5.1
+        "squad": 2.9499999999999997
       },
       "germany": {
         "attack": -4.3,
@@ -29463,17 +29561,82 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-10T11:11:34.794235+00:00",
+    "generatedAt": "2026-07-10T13:29:20.480850+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.4,
+        "currentChampion": 7.5,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.6%",
+        "reasons": [
+          "八强概率上升 +0.6%",
+          "四强概率上升 +0.3%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 12 条"
+        ]
+      },
+      {
+        "team": "morocco",
+        "name": "摩洛哥",
+        "code": "MAR",
+        "previousChampion": 0.4,
+        "currentChampion": 0.3,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "人员盘下调 -2.2",
+        "reasons": [
+          "人员盘下调 -2.2",
+          "八强概率下降 -0.7%",
+          "四强概率下降 -0.3%",
+          "决赛概率下降 -0.2%",
+          "可入模型事件新增 12 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 1,
+      "down": 1,
+      "largestUp": {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.4,
+        "currentChampion": 7.5,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.6%",
+        "reasons": [
+          "八强概率上升 +0.6%",
+          "四强概率上升 +0.3%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 12 条"
+        ]
+      },
+      "largestDown": {
+        "team": "morocco",
+        "name": "摩洛哥",
+        "code": "MAR",
+        "previousChampion": 0.4,
+        "currentChampion": 0.3,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "人员盘下调 -2.2",
+        "reasons": [
+          "人员盘下调 -2.2",
+          "八强概率下降 -0.7%",
+          "四强概率下降 -0.3%",
+          "决赛概率下降 -0.2%",
+          "可入模型事件新增 12 条"
+        ]
+      }
     }
   }
 }

@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-10T13:28:58.728396+00:00",
+  "updatedAt": "2026-07-10T15:59:41.476178+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -17974,6 +17974,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 10 Jul 2026 12:58:58 GMT"
+    },
+    {
+      "title": "Edwards leaves football chief role with Liverpool owners FSG",
+      "detail": "Liverpool owners Fenway Sports Group announce the departure of Michael Edwards, the company's chief executive of football.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 14:42:49 GMT"
+    },
+    {
+      "title": "Jesus reunites with Ronaldo as new Portugal head coach",
+      "detail": "Jorge Jesus is named Portugal's new head coach on a four-year contract to run through to the 2030 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 15:41:59 GMT"
+    },
+    {
+      "title": "The wild hip-hop parties that started Tuchel's journey to England boss",
+      "detail": "Thomas Tuchel is bidding to become the first foreign manager to win the World Cup. BBC Sport charts the start of his journey to becoming England boss.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 10 Jun 2026 05:45:28 GMT"
+    },
+    {
+      "title": "West Ham sign forward Salmon on two-year deal",
+      "detail": "West Ham have signed England forward Ebony Salmon on a two-year deal following her exit from Aston Villa.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 15:31:05 GMT"
+    },
+    {
+      "title": "Man City offer £10 match tickets for local residents",
+      "detail": "Manchester City are to trial an initiative next season offering Premier League matchday tickets priced at £10 for adults living in the local area.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 14:14:54 GMT"
+    },
+    {
+      "title": "Podcast: Ross County's response, East Kilbride's ambition & League 2 chaos",
+      "detail": "Everything you need to know before the new lower-league season.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 15:00:00 GMT"
+    },
+    {
+      "title": "Football Daily | Mbappé and France are on the march. Who’s going to stop them?",
+      "detail": "<p><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\"><strong>Sign up now! Sign up now! Sign up now? Sign up now!</strong></a></p><p><em>Marchons, marchons. </em>Fans of France’s remaining rivals at the Geopolitics World Cup – and lovers of business-end big tournament jeopardy – were left sorely disappointed as the favourites steamrolled Morocco. Didier Deschamps’ cohort of strutting roosters had their feathers ruffled by Paraguay’s spectacular heel turn in the last 16, but were largely back in cruise control for their <a href=\"https://www.theguardian.com/football/2026/jul/09/morocco-france-world-cup-quarter-final-match-report\">2-0 quarter-final victory</a> in (a venue near) Boston on Thursday.</p><p>With the wealth of signings (Cerci, Stanway, Reuteler) already this summer, I wasn’t expecting any more. But then Arsenal follow in Hollywood’s footsteps and <a href=\"https://www.theguardian.com/football/2026/jul/10/arsenal-sign-ona-batlle-spain-barcelona-defender\">get Ona Batlle after another</a>!” – James Vortkamp-Tong.</p><p>Please don’t refer to the USA USA USA as ‘Trump’s boys’ (<a href=\"https://www.theguardian.com/global/2026/jul/09/football-daily-email-gwc-fireworks\">yesterday’s Football Daily</a>). From what I understand, they are sane, good sportsmen, well-liked, and a team to be proud of, quite unlike the person in question” – James Driskell.</p><p>A fellow reader of the France v Morocco MBM commented on how inevitable France look at the moment. This made me wonder, could this team go down in history as <em>Les Inévitables</em>?” – Peter Oh.</p><p>That was a rather touching last line reference to Bonnie Tyler (yesterday’s Football Daily, full email edition). One would like to read a story about the England team – average year of birth around 1998 – playing her classic tune in the locker room and singing along. Until they got to the hooky lyric, ‘Every now and then, I fall apart’. Good luck on Saturday, lads!’ – Mike Wilner.</p><p><em><strong>This is an extract from our daily football email … Football Daily. To get the full version,<a href=\"https://preview.gutools.co.uk/info/2016/jan/05/the-fiver-email-sign-up\"> </a><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\">just visit this page and follow the instructions</a>.</strong></em></p> <a href=\"https://www.theguardian.com/football/2026/jul/10/football-daily-email-gwc-france-morocco\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 13:18:48 GMT"
     }
   ],
   "teams": [
@@ -18155,7 +18204,7 @@
       "factors": {
         "strength": 84,
         "form": 72,
-        "path": 67,
+        "path": 68,
         "squad": 67,
         "margin": 76
       },
@@ -18909,18 +18958,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2483,
+      "eventCount": 2490,
       "manualEventCount": 3,
-      "rawNewsCount": 2480,
+      "rawNewsCount": 2487,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2483,
-      "applied": 2288,
+      "watched": 2490,
+      "applied": 2294,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2478,
+      "singleSource": 2485,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -18999,7 +19048,7 @@
         "attack": -11.95,
         "defense": -8.6,
         "goalkeeper": -2.15,
-        "path": -3.9299999999999997,
+        "path": -3.0599999999999996,
         "squad": -12.9
       },
       "haiti": {
@@ -29561,82 +29610,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-10T13:29:20.480850+00:00",
+    "generatedAt": "2026-07-10T15:59:58.218335+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.4,
-        "currentChampion": 7.5,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 12 条"
-        ]
-      },
-      {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 0.4,
-        "currentChampion": 0.3,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "人员盘下调 -2.2",
-        "reasons": [
-          "人员盘下调 -2.2",
-          "八强概率下降 -0.7%",
-          "四强概率下降 -0.3%",
-          "决赛概率下降 -0.2%",
-          "可入模型事件新增 12 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
-      "down": 1,
-      "largestUp": {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.4,
-        "currentChampion": 7.5,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 12 条"
-        ]
-      },
-      "largestDown": {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 0.4,
-        "currentChampion": 0.3,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "人员盘下调 -2.2",
-        "reasons": [
-          "人员盘下调 -2.2",
-          "八强概率下降 -0.7%",
-          "四强概率下降 -0.3%",
-          "决赛概率下降 -0.2%",
-          "可入模型事件新增 12 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
