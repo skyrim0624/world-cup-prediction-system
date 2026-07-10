@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-10T07:42:28.771132+00:00",
+  "updatedAt": "2026-07-10T11:11:13.093282+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -17778,6 +17778,104 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Fri, 10 Jul 2026 04:18:50 GMT"
+    },
+    {
+      "title": "Arsenal sign Spain defender Batlle on free transfer",
+      "detail": "Arsenal sign Spain international Ona Batlle on a free transfer following her exit from Barcelona.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 11:01:28 GMT"
+    },
+    {
+      "title": "Loyal and royal: How the future King became a football superfan",
+      "detail": "A love of football connects William to the country he will one day reign over in a way polo would not.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 01:55:21 GMT"
+    },
+    {
+      "title": "A-Z World Cup quiz: Name the best performing team for every letter",
+      "detail": "When it comes to the World Cup it's not all about the numbers - the letters are important too!",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 10:51:06 GMT"
+    },
+    {
+      "title": "Michael Olise: Origins",
+      "detail": "The origin story of France's newest superstar begins closer to home than you might think.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 04 Jul 2026 17:00:00 GMT"
+    },
+    {
+      "title": "Duran completes switch to Celtic from Qarabag",
+      "detail": "Celtic confirm the signing of Colombian forward Camilo Duran from Qarabag on a five-year deal.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 08:15:45 GMT"
+    },
+    {
+      "title": "How football has helped immigrants make a home in the US",
+      "detail": "Football is the common bond for the immigrants and refugees who play matches in a Maine park, and has helped them develop a sense of community in a foreign land.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 10:35:08 GMT"
+    },
+    {
+      "title": "Worthing to visit Carlisle in National League bow",
+      "detail": "Promoted Worthing will visit Carlisle United in the first National League game in their history.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 10:01:20 GMT"
+    },
+    {
+      "title": "More than the Score",
+      "detail": "How does a breakout performance at the World Cup affect a player’s transfer value?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 09:49:00 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "England Assistant Manager Anthony Barry speaks with Ian Dennis ahead of Norway match.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 09:08:00 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "France march on into the semi-finals. Can anyone stop them?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 07:34:00 GMT"
+    },
+    {
+      "title": "William McCrum: The Irishman who invented the penalty kick",
+      "detail": "This BBC Bitesize article explains the origins of the penalty kick, the story of the Irishman who invented it and when the first penalty was taken.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 10:47:26 GMT"
+    },
+    {
+      "title": "France’s attacking evolution under Didier Deschamps passes latest Morocco test | Raphaël Jucobin",
+      "detail": "<p>With the head coach having released the handbrake, his side were far superior compared with four years ago in Qatar against the same opponents </p><p>The scorelines may have been exactly the same, but the stylistic gulf in France’s two World Cup knockout performances against Morocco could not have been greater.</p><p>In the space of just a single tournament cycle, Didier Deschamps has embraced a vastly different style, one based on a freeform attacking line. As a one-two punch from Kylian Mbappé and Ousmane Dembélé sent the team into this year’s semi-finals, the 57-year-old’s tactical reinvention was once again vindicated.</p> <a href=\"https://www.theguardian.com/football/2026/jul/10/france-morocco-world-cup-attacking-evolution-didier-deschamps-analysis\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 00:10:10 GMT"
+    },
+    {
+      "title": "Exit strategies: how and why 27% of World Cup coaches have left their jobs",
+      "detail": "<p>Thirteen coaches have been sacked or walked away from their national teams – here’s a full rundown</p><p><strong>Sabri Lamouchi</strong> Appointed on 14 January to succeed Sami Trabelsi after Tunisia <a href=\"https://www.theguardian.com/football/2026/jan/03/paranoia-and-mali-get-the-better-of-timid-tetchy-tunisia\">lost on penalties to Mali</a> in the last 16 of the Africa Cup of Nations. <a href=\"https://www.theguardian.com/football/2026/jun/15/tunisia-sack-sabri-lamouchi-one-game-into-world-cup-2026-5-1-defeat-sweden\">Sacked after Tunisia lost 5-1 to Sweden</a> in their opening group match. Said after the game: “We have our pride. We need to react.” The Tunisian FA said: “The Federation Tunisienne de Football announces the termination of its contractual relationship with head coach Sabri Lamouchi by mutual agreement and wishes him every success in his future professional endeavours.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/10/world-cup-coaches-left-their-jobs\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 09:03:32 GMT"
+    },
+    {
+      "title": "France maul meek Morocco to reach semi-finals | World Cup Daily – video",
+      "detail": "<p><a href=\"https://bsky.app/profile/maxrushden.bsky.social\">Max Rushden</a> is joined by <a href=\"https://bsky.app/profile/did:plc:i55lfvhkg573wfmby5sdnvq6\">Barry Glendenning</a>, <a href=\"https://bsky.app/profile/brewin.bsky.social\">John Brewin</a> and <a href=\"https://bsky.app/profile/philippeauclair.bsky.social\">Philippe Auclair</a> as France comfortably beat Morocco 2-0 to become the first team to book their place in the World Cup semi-finals</p> <a href=\"https://www.theguardian.com/football/video/2026/jul/10/france-maul-meek-morocco-to-reach-semi-finals-world-cup-daily-video\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 08:10:41 GMT"
     }
   ],
   "teams": [
@@ -18713,18 +18811,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2455,
+      "eventCount": 2469,
       "manualEventCount": 3,
-      "rawNewsCount": 2452,
+      "rawNewsCount": 2466,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2455,
-      "applied": 2264,
+      "watched": 2469,
+      "applied": 2276,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2450,
+      "singleSource": 2464,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -29365,7 +29463,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-10T07:42:50.880519+00:00",
+    "generatedAt": "2026-07-10T11:11:34.794235+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
