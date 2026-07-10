@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-10T21:11:27.783101+00:00",
+  "updatedAt": "2026-07-10T22:33:39.083615+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18128,6 +18128,34 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Fri, 10 Jul 2026 20:32:14 GMT"
+    },
+    {
+      "title": "Football's best bromance: Why Bellingham and Haaland break the mould",
+      "detail": "The two players have won an army of admirers from social media clips for their honesty in interviews.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 19:53:49 GMT"
+    },
+    {
+      "title": "Spain into semi-finals at expense of Belgium after Merino's late winner",
+      "detail": "Mikel Merino emerges as Spain's hero yet again as the substitute scores in the 88th minute to stun Belgium and set up a World Cup semi-final against France.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 22:01:20 GMT"
+    },
+    {
+      "title": "'Influential' Lamine Yamal has 'more to give' to Spain",
+      "detail": "BBC Sport World Cup pundits Cesar Azpilicueta and Wayne Rooney look at how Lamine Yamal performed against Belgium and feel there is \"more to come\" from the Spain forward.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 21:52:15 GMT"
+    },
+    {
+      "title": "Merino puts Spain into World Cup semi-finals as Belgium rue costly Courtois injury",
+      "detail": "<p>Mikel Merino’s amazing moment arrived once more, a country circling the corner flag with him. The man who came on to scored the late, late goals that took Spain into a European championship semi final two years ago and a World Cup quarter final four days ago, only went and did it again. This is some hat-trick, history made here. Introduced as sub on 85.32 with Spain struggling to find a way through against Belgium, Merino was the man most alert in the whole of Los Angeles, pouncing on a loose ball on 87.28 to send Spain to the semi-final against France next week.</p><p>As he set off on that now familiar celebration in honour of his father, poor Thibaut Courtois the man who might have prevented this could only watch from the bench. Senne Lammers, who had dropped Pau Cubarsi’s shot at his feet could only do the same. Spain, meanwhile, went mad. They had done it. It had started with a big decision vindicated and it had ended with one too; it had ended with them heading to Dallas once more.</p> <a href=\"https://www.theguardian.com/football/2026/jul/10/spain-belgium-world-cup-2026-quarter-final-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 10 Jul 2026 21:13:02 GMT"
     }
   ],
   "teams": [
@@ -18291,15 +18319,15 @@
         "strength": 91,
         "form": 82,
         "path": 65,
-        "squad": 62,
+        "squad": 59,
         "margin": 83
       },
       "tournament": {
-        "champion": 2.3,
-        "final": 6.3,
-        "semifinal": 14.7,
-        "quarterfinal": 30.2,
-        "change": -8.5
+        "champion": 2.0,
+        "final": 5.7,
+        "semifinal": 13.6,
+        "quarterfinal": 28.7,
+        "change": -8.8
       }
     },
     {
@@ -18485,11 +18513,11 @@
         "margin": 76
       },
       "tournament": {
-        "champion": 0.3,
+        "champion": 0.4,
         "final": 1.4,
-        "semifinal": 5.0,
-        "quarterfinal": 14.8,
-        "change": -0.1
+        "semifinal": 5.1,
+        "quarterfinal": 15.1,
+        "change": 0.0
       }
     },
     {
@@ -18504,11 +18532,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 1.5,
+        "champion": 1.6,
         "final": 5.0,
-        "semifinal": 13.7,
+        "semifinal": 13.8,
         "quarterfinal": 28.1,
-        "change": 0.9
+        "change": 1.0
       }
     },
     {
@@ -18543,9 +18571,9 @@
       },
       "tournament": {
         "champion": 2.3,
-        "final": 6.3,
-        "semifinal": 14.9,
-        "quarterfinal": 30.7,
+        "final": 6.4,
+        "semifinal": 15.3,
+        "quarterfinal": 31.5,
         "change": 1.2
       }
     },
@@ -18809,9 +18837,9 @@
       },
       "tournament": {
         "champion": 1.0,
-        "final": 3.5,
-        "semifinal": 10.0,
-        "quarterfinal": 24.3,
+        "final": 3.6,
+        "semifinal": 10.1,
+        "quarterfinal": 24.6,
         "change": 0.1
       }
     },
@@ -18828,7 +18856,7 @@
       },
       "tournament": {
         "champion": 21.6,
-        "final": 38.7,
+        "final": 38.8,
         "semifinal": 56.6,
         "quarterfinal": 76.0,
         "change": 6.4
@@ -18865,11 +18893,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 0.3,
+        "champion": 0.4,
         "final": 1.1,
         "semifinal": 3.6,
         "quarterfinal": 6.7,
-        "change": -0.3
+        "change": -0.2
       }
     },
     {
@@ -18924,7 +18952,7 @@
       "tournament": {
         "champion": 0.1,
         "final": 0.4,
-        "semifinal": 1.8,
+        "semifinal": 1.9,
         "quarterfinal": 6.4,
         "change": 0.0
       }
@@ -18979,11 +19007,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 9.0,
-        "final": 19.8,
-        "semifinal": 37.9,
+        "champion": 9.1,
+        "final": 19.9,
+        "semifinal": 38.2,
         "quarterfinal": 58.5,
-        "change": -1.7
+        "change": -1.6
       }
     },
     {
@@ -19063,18 +19091,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2505,
+      "eventCount": 2509,
       "manualEventCount": 3,
-      "rawNewsCount": 2502,
+      "rawNewsCount": 2506,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2505,
-      "applied": 2306,
+      "watched": 2509,
+      "applied": 2310,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2500,
+      "singleSource": 2504,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -19147,7 +19175,7 @@
         "defense": 0.0,
         "goalkeeper": -2.15,
         "path": -9.610000000000001,
-        "squad": -24.449999999999996
+        "squad": -26.599999999999994
       },
       "morocco": {
         "attack": -11.95,
@@ -29715,17 +29743,122 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-10T21:11:49.496591+00:00",
+    "generatedAt": "2026-07-10T22:33:59.174937+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "brazil",
+        "name": "巴西",
+        "code": "BRA",
+        "previousChampion": 2.3,
+        "currentChampion": 2.0,
+        "change": -0.3,
+        "direction": "down",
+        "reason": "人员盘下调 -2.1",
+        "reasons": [
+          "人员盘下调 -2.1",
+          "八强概率下降 -1.5%",
+          "四强概率下降 -1.1%",
+          "决赛概率下降 -0.6%",
+          "可入模型事件新增 4 条"
+        ]
+      },
+      {
+        "team": "england",
+        "name": "英格兰",
+        "code": "ENG",
+        "previousChampion": 9.0,
+        "currentChampion": 9.1,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.3%",
+        "reasons": [
+          "四强概率上升 +0.3%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 4 条"
+        ]
+      },
+      {
+        "team": "ecuador",
+        "name": "厄瓜多尔",
+        "code": "ECU",
+        "previousChampion": 1.5,
+        "currentChampion": 1.6,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.1%",
+        "reasons": [
+          "四强概率上升 +0.1%",
+          "可入模型事件新增 4 条"
+        ]
+      },
+      {
+        "team": "cote-divoire",
+        "name": "科特迪瓦",
+        "code": "CIV",
+        "previousChampion": 0.3,
+        "currentChampion": 0.4,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.3%",
+        "reasons": [
+          "八强概率上升 +0.3%",
+          "四强概率上升 +0.1%",
+          "可入模型事件新增 4 条"
+        ]
+      },
+      {
+        "team": "austria",
+        "name": "奥地利",
+        "code": "AUT",
+        "previousChampion": 0.3,
+        "currentChampion": 0.4,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 4 条",
+        "reasons": [
+          "可入模型事件新增 4 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 4,
+      "down": 1,
+      "largestUp": {
+        "team": "england",
+        "name": "英格兰",
+        "code": "ENG",
+        "previousChampion": 9.0,
+        "currentChampion": 9.1,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.3%",
+        "reasons": [
+          "四强概率上升 +0.3%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 4 条"
+        ]
+      },
+      "largestDown": {
+        "team": "brazil",
+        "name": "巴西",
+        "code": "BRA",
+        "previousChampion": 2.3,
+        "currentChampion": 2.0,
+        "change": -0.3,
+        "direction": "down",
+        "reason": "人员盘下调 -2.1",
+        "reasons": [
+          "人员盘下调 -2.1",
+          "八强概率下降 -1.5%",
+          "四强概率下降 -1.1%",
+          "决赛概率下降 -0.6%",
+          "可入模型事件新增 4 条"
+        ]
+      }
     }
   }
 }

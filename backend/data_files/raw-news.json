@@ -35010,5 +35010,61 @@
     "factor": "squad",
     "direction": -1,
     "confidence": 0.78
+  },
+  {
+    "id": "bbc-fb25264e09f1",
+    "title": "Football's best bromance: Why Bellingham and Haaland break the mould",
+    "summary": "The two players have won an army of admirers from social media clips for their honesty in interviews.",
+    "source": "bbc",
+    "team": "belgium",
+    "status": "single_source",
+    "published_at": "Fri, 10 Jul 2026 19:53:49 GMT",
+    "url": "https://www.bbc.co.uk/news/articles/cz9l8pzxv7vo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-e2abb6ff9f17",
+    "title": "Spain into semi-finals at expense of Belgium after Merino's late winner",
+    "summary": "Mikel Merino emerges as Spain's hero yet again as the substitute scores in the 88th minute to stun Belgium and set up a World Cup semi-final against France.",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Fri, 10 Jul 2026 22:01:20 GMT",
+    "url": "https://www.bbc.co.uk/sport/videos/cd0m9e88g0vo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-5f1dd8515c63",
+    "title": "'Influential' Lamine Yamal has 'more to give' to Spain",
+    "summary": "BBC Sport World Cup pundits Cesar Azpilicueta and Wayne Rooney look at how Lamine Yamal performed against Belgium and feel there is \"more to come\" from the Spain forward.",
+    "source": "bbc",
+    "team": "belgium",
+    "status": "single_source",
+    "published_at": "Fri, 10 Jul 2026 21:52:15 GMT",
+    "url": "https://www.bbc.co.uk/sport/videos/cy9r3dnngqno?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-37ef394de3c4",
+    "title": "Merino puts Spain into World Cup semi-finals as Belgium rue costly Courtois injury",
+    "summary": "<p>Mikel Merino’s amazing moment arrived once more, a country circling the corner flag with him. The man who came on to scored the late, late goals that took Spain into a European championship semi final two years ago and a World Cup quarter final four days ago, only went and did it again. This is some hat-trick, history made here. Introduced as sub on 85.32 with Spain struggling to find a way through against Belgium, Merino was the man most alert in the whole of Los Angeles, pouncing on a loose ball on 87.28 to send Spain to the semi-final against France next week.</p><p>As he set off on that now familiar celebration in honour of his father, poor Thibaut Courtois the man who might have prevented this could only watch from the bench. Senne Lammers, who had dropped Pau Cubarsi’s shot at his feet could only do the same. Spain, meanwhile, went mad. They had done it. It had started with a big decision vindicated and it had ended with one too; it had ended with them heading to Dallas once more.</p> <a href=\"https://www.theguardian.com/football/2026/jul/10/spain-belgium-world-cup-2026-quarter-final-match-report\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Fri, 10 Jul 2026 21:13:02 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/10/spain-belgium-world-cup-2026-quarter-final-match-report",
+    "category": "injury",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.78
   }
 ]
