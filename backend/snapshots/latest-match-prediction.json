@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-10T17:56:17.698071+00:00",
+  "updatedAt": "2026-07-10T19:45:22.618044+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18065,6 +18065,48 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 10 Jul 2026 17:38:10 GMT"
+    },
+    {
+      "title": "New species named after Cape Verde keeper Vozinha",
+      "detail": "A new species of sea snail has been named after Cape Verde goalkeeper Vozinha to mark his performance against Spain at the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 19:30:06 GMT"
+    },
+    {
+      "title": "Haaland & Heggem inspiring Baggies' striker Heggebo",
+      "detail": "West Bromwich Albion striker Aune Heggebo says watching Erling Haaland and his old Baggies team-mate Torbjorn Heggem exploits for Norway at the World Cup has been amazing.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 17:38:16 GMT"
+    },
+    {
+      "title": "Man City's Lewis on faith, football and helping the homeless",
+      "detail": "Manchester City midfielder Rico Lewis talks about finding God and his charity work involving football that is aiming to tackle homelessness.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 17:52:23 GMT"
+    },
+    {
+      "title": "Cutting off Erling Haaland is key but Norway are not just a one-man team | Emma Hayes",
+      "detail": "<p>England need to be wary of a united Ståle Solbakken side who know their strengths before the World Cup quarter-final</p><p>England fans are going to have to be really patient on Saturday night because this World Cup quarter-final against Norway will feel like a grind and I would not be surprised if the match goes the full distance and we see 120 close-fought minutes. Let me be clear: this will not be an easy game and do not expect it to be played at a fast pace.</p><p>With a weapon like Erling Haaland, Norway are a dangerous team to face. The crucial thing England have to do, tactically, is try to starve Haaland of service, because if that ball arrives in his proximity and he is given half a chance, you know it is going into the back of the net. He doesn’t need many chances because he’s so clinical. England have to work so hard to deny him service.</p> <a href=\"https://www.theguardian.com/football/2026/jul/10/erling-haaland-england-norway-2026-world-cup-quarter-final-emma-hayes\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 17:59:57 GMT"
+    },
+    {
+      "title": "Players and staff to reap £19m bonus bonanza if England win World Cup",
+      "detail": "<ul><li><p>FA would pay out half its £38m Fifa prize money</p></li><li><p>Players could net £15m, Thomas Tuchel £3m</p></li></ul><p>England’s players and coaching staff will receive around half of the FA’s £38m Fifa prize money in bonuses if they win the World Cup.</p><p>The Guardian has learned that as part of a bonus scheme agreed with the players’ leadership group before the tournament, the FA will pay bonuses of around £15m to the squad, £3m to Tuchel and approximately £1m to his backroom team should Harry Kane lift the trophy in New York next weekend.</p> <a href=\"https://www.theguardian.com/football/2026/jul/10/players-and-staff-to-reap-19m-bonus-bonanza-if-england-win-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 18:11:13 GMT"
+    },
+    {
+      "title": "Kylian Mbappé embraces leadership role for France to urge team humility",
+      "detail": "<p>Didier Deschamps’ decision to give the inspirational forward the captaincy has paid off with no complacency on their run to the semi-finals</p><p>The driving force behind France’s semi-final win over Morocco in 2022, Antoine Griezmann, was watching on from the stands this time as <em>Les Bleus</em> powered past the Atlas Lions to reach a third consecutive World Cup semi-final.</p><p>The 35-year-old, who recently completed a move to Orlando City, had not attended a France match since his international retirement in 2024 following a brief stint as vice-captain.</p> <a href=\"https://www.theguardian.com/football/2026/jul/10/kylian-mbappe-france-world-cup-2026-semi-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 18:02:50 GMT"
     }
   ],
   "teams": [
@@ -19000,18 +19042,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2496,
+      "eventCount": 2502,
       "manualEventCount": 3,
-      "rawNewsCount": 2493,
+      "rawNewsCount": 2499,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2496,
-      "applied": 2299,
+      "watched": 2502,
+      "applied": 2304,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2491,
+      "singleSource": 2497,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -29652,7 +29694,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-10T17:56:39.532145+00:00",
+    "generatedAt": "2026-07-10T19:45:44.534014+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
