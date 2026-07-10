@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-09T23:47:25.144139+00:00",
+  "updatedAt": "2026-07-10T03:53:34.893901+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -542,11 +542,11 @@
       "probability": 84,
       "title": "德国小组第一概率上升",
       "details": [
-        "德国夺冠概率 -0.1%",
+        "德国夺冠概率 ±0.0%",
         "库拉索路径盘下调 ±0.0%",
         "同组竞争队出线门槛抬高"
       ],
-      "championShift": "-0.1%",
+      "championShift": "±0.0%",
       "tone": "green"
     },
     {
@@ -17624,6 +17624,48 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 28 Jun 2026 11:43:13 GMT"
+    },
+    {
+      "title": "France cruise into semi-finals - could this be the best Les Bleus ever?",
+      "detail": "World Cup winners in 1998 and 2018, France have created another special team and in beating Morocco showed why they are favourites to win the 2026 competition.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 00:43:10 GMT"
+    },
+    {
+      "title": "What's going on with penalties - is it time to end the 'stutter'?",
+      "detail": "Kylian Mbappe's penalty miss in France's win against Morocco is the latest example of a player missing a penalty after stuttering in the run-up.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 00:02:46 GMT"
+    },
+    {
+      "title": "Mbappé, France dispatch Morocco with latest lethal...",
+      "detail": "France are favorites to win the World Cup for many reasons -- the first being Kylian Mbappé, perhaps the best player in the world right now.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 9 Jul 2026 21:04:18 EST"
+    },
+    {
+      "title": "Player rating: Mbappé and Dembelé strike to seal W...",
+      "detail": "Here's how the France team rated as Les Bleus went one step closer to a third consecutive World Cup final.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 9 Jul 2026 19:58:27 EST"
+    },
+    {
+      "title": "Mbappé allays WC injury concern: 'I'm all good'",
+      "detail": "Kylian Mbappé has downplayed concerns over what he described as a \"knock on his ankle\" during France's 2-0 World Cup quarterfinal win over Morocco.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 9 Jul 2026 20:40:12 EST"
+    },
+    {
+      "title": "Man United reveal location of new stadium",
+      "detail": "Manchester United have confirmed the location for their proposed 100,000-seater stadium.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 9 Jul 2026 20:40:13 EST"
     }
   ],
   "teams": [
@@ -17661,7 +17703,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 1.0,
-        "quarterfinal": 8.1,
+        "quarterfinal": 8.2,
         "change": -0.1
       }
     },
@@ -17805,15 +17847,15 @@
       "factors": {
         "strength": 84,
         "form": 72,
-        "path": 65,
-        "squad": 71,
+        "path": 67,
+        "squad": 69,
         "margin": 76
       },
       "tournament": {
         "champion": 0.4,
-        "final": 1.4,
-        "semifinal": 5.3,
-        "quarterfinal": 20.5,
+        "final": 1.3,
+        "semifinal": 4.9,
+        "quarterfinal": 19.8,
         "change": -1.1
       }
     },
@@ -18019,11 +18061,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 7.3,
-        "final": 14.4,
-        "semifinal": 30.6,
-        "quarterfinal": 65.1,
-        "change": 0.5
+        "champion": 7.4,
+        "final": 14.5,
+        "semifinal": 31.0,
+        "quarterfinal": 65.7,
+        "change": 0.6
       }
     },
     {
@@ -18077,7 +18119,7 @@
       },
       "tournament": {
         "champion": 0.1,
-        "final": 0.4,
+        "final": 0.5,
         "semifinal": 1.8,
         "quarterfinal": 5.3,
         "change": -0.1
@@ -18172,7 +18214,7 @@
       },
       "tournament": {
         "champion": 21.0,
-        "final": 31.1,
+        "final": 31.0,
         "semifinal": 47.3,
         "quarterfinal": 57.2,
         "change": 9.4
@@ -18249,7 +18291,7 @@
       "tournament": {
         "champion": 14.7,
         "final": 24.0,
-        "semifinal": 41.2,
+        "semifinal": 41.1,
         "quarterfinal": 58.8,
         "change": 1.2
       }
@@ -18559,18 +18601,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2433,
+      "eventCount": 2439,
       "manualEventCount": 3,
-      "rawNewsCount": 2430,
+      "rawNewsCount": 2436,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2433,
-      "applied": 2245,
+      "watched": 2439,
+      "applied": 2250,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2428,
+      "singleSource": 2434,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -18649,8 +18691,8 @@
         "attack": -11.95,
         "defense": -8.6,
         "goalkeeper": -2.15,
-        "path": -5.67,
-        "squad": -8.6
+        "path": -3.9299999999999997,
+        "squad": -10.75
       },
       "haiti": {
         "attack": -2.55,
@@ -29094,13 +29136,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-07-09",
+      "referenceDate": "2026-07-10",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 26,
-      "oldestAgeDays": 100,
+      "newestAgeDays": 27,
+      "oldestAgeDays": 101,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -29211,7 +29253,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-09T23:47:47.160115+00:00",
+    "generatedAt": "2026-07-10T03:53:56.782897+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
@@ -29221,64 +29263,39 @@
         "team": "netherlands",
         "name": "荷兰",
         "code": "NED",
-        "previousChampion": 7.2,
-        "currentChampion": 7.3,
+        "previousChampion": 7.3,
+        "currentChampion": 7.4,
         "change": 0.1,
         "direction": "up",
-        "reason": "八强概率上升 +0.8%",
+        "reason": "八强概率上升 +0.6%",
         "reasons": [
-          "八强概率上升 +0.8%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 7 条"
-        ]
-      },
-      {
-        "team": "austria",
-        "name": "奥地利",
-        "code": "AUT",
-        "previousChampion": 0.4,
-        "currentChampion": 0.3,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 7 条",
-        "reasons": [
-          "可入模型事件新增 7 条"
+          "八强概率上升 +0.6%",
+          "四强概率上升 +0.4%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 5 条"
         ]
       }
     ],
     "summary": {
       "up": 1,
-      "down": 1,
+      "down": 0,
       "largestUp": {
         "team": "netherlands",
         "name": "荷兰",
         "code": "NED",
-        "previousChampion": 7.2,
-        "currentChampion": 7.3,
+        "previousChampion": 7.3,
+        "currentChampion": 7.4,
         "change": 0.1,
         "direction": "up",
-        "reason": "八强概率上升 +0.8%",
+        "reason": "八强概率上升 +0.6%",
         "reasons": [
-          "八强概率上升 +0.8%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 7 条"
+          "八强概率上升 +0.6%",
+          "四强概率上升 +0.4%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 5 条"
         ]
       },
-      "largestDown": {
-        "team": "austria",
-        "name": "奥地利",
-        "code": "AUT",
-        "previousChampion": 0.4,
-        "currentChampion": 0.3,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 7 条",
-        "reasons": [
-          "可入模型事件新增 7 条"
-        ]
-      }
+      "largestDown": null
     }
   }
 }

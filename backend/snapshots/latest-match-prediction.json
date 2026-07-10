@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-10T03:53:34.893901+00:00",
+  "updatedAt": "2026-07-10T07:42:28.771132+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -542,11 +542,11 @@
       "probability": 84,
       "title": "德国小组第一概率上升",
       "details": [
-        "德国夺冠概率 ±0.0%",
+        "德国夺冠概率 -0.1%",
         "库拉索路径盘下调 ±0.0%",
         "同组竞争队出线门槛抬高"
       ],
-      "championShift": "±0.0%",
+      "championShift": "-0.1%",
       "tone": "green"
     },
     {
@@ -17666,6 +17666,118 @@
       "impact": "全局备注",
       "tone": "green",
       "time": "Thu, 9 Jul 2026 20:40:13 EST"
+    },
+    {
+      "title": "Mexico boss' explicit heckle a bit of fun - Gordon",
+      "detail": "England winger Anthony Gordon says being sworn at by Mexico boss Javier Aguirre in a viral moment of their World Cup match was \"just a bit of fun\".",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 06:36:59 GMT"
+    },
+    {
+      "title": "Culture, consistency and Lamine Yamal - inside De la Fuente's Spain",
+      "detail": "Before Spain's World Cup quarter-final against Belgium, Guillem Balague talks to Spain boss Luis de la Fuente about their identity and Lamine Yamal.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 06:47:29 GMT"
+    },
+    {
+      "title": "Born in Leeds, crafted in Norway - Haaland's worlds about to collide",
+      "detail": "Erling Haaland has guided Norway to their first World Cup since 1998. So what is it like being a global name from a nation with a population of just 5.5 million?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 05:47:23 GMT"
+    },
+    {
+      "title": "How good is Monga and what role could he play at Man City?",
+      "detail": "Manchester City appear to have struck an early blow on Arsenal by agreeing a deal to sign teenage starlet Jeremy Monga from Leicester City.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 06:06:42 GMT"
+    },
+    {
+      "title": "Who am I? Guess World Cup star No 33",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 05:20:12 GMT"
+    },
+    {
+      "title": "France into semi-finals after comfortable win over Morocco",
+      "detail": "Kylian Mbappe scores his eighth goal of this World Cup to make up for an earlier penalty miss with Ousmane Dembele adding a second as France prove too good for Morocco and move into the semi-finals.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 22:49:40 GMT"
+    },
+    {
+      "title": "'Absolute perfection!' Mbappe fires France ahead against Morocco",
+      "detail": "All the angles of Kylian Mbappe's opener for France against Morocco in the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 09 Jul 2026 22:00:43 GMT"
+    },
+    {
+      "title": "Rangers pursue midfielder Fosso - gossip",
+      "detail": "Rangers linked with midfielders in Austria and Serbia as Hearts hold talks with key player over a contract extension...",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 06:44:44 GMT"
+    },
+    {
+      "title": "Instead of its biggest World Cup star, Pulisic was...",
+      "detail": "In his prime at a World Cup on home soil, this summer was Christian Pulisic's moment, but for a number of reasons, he failed to meet it.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 02:48:43 EST"
+    },
+    {
+      "title": "Haaland is not just Norway's talisman, but also th...",
+      "detail": "In a different timeline, Haaland could have played for England, but the man has become the avatar for Norway and, in many ways, the World Cup as a whole. Can he launch them past England in the quarterfinals?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 02:54:56 EST"
+    },
+    {
+      "title": "Pickford is about to break an England World Cup re...",
+      "detail": "Jordan Pickford has been a mainstay as England goalkeeper for eight years. Somwhow, he has not yet won the trust of the country's supporters.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 02:54:56 EST"
+    },
+    {
+      "title": "World Cup 2026: ‘violent disorder’ in London after France’s win over Morocco, Spain v Belgium buildup – live",
+      "detail": "<p>⚽ All the latest news as the quarter-finals continue<br>⚽ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\">Bracketology</a>| <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:matchday.live@theguardian.com\">Email us</a></p><p><strong>Quotes here from both managers – Didier Deschamps and Mohamed Ouahbi – after France’s victory.</strong> Plenty of praise from the Morocco boss.</p><p><strong>Kylian Mbappé:</strong> Despite scoring the opener against Morocco and playing a big role in the second, there was some concern when Mbappé was taken off with 13 minutes remaining.</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/10/world-cup-2026-france-power-on-quansah-ban-fallout-spain-v-belgium-buildup-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 07:31:09 GMT"
+    },
+    {
+      "title": "‘Give me another medal!’: meet the hair stylist who has taken over the World Cup",
+      "detail": "<p>Jayèma on working with England stars, a new look for Raphinha and forging a friendship with Lamine Yamal’s family </p><p>Jayèma has had a World Cup like no other. Who else but the London hair stylist has worked with footballers from England, Brazil, the United States and Canada, and hung out with Lamine Yamal and his family, while having no idea who Lionel Messi is until recently?</p><p>Who else but Jayèma has been to her first game of men’s football and left before the end of a <a href=\"https://www.theguardian.com/football/2026/jul/06/england-azteca-mexico-world-cup\">tumultuous match between Mexico and England</a> at the Azteca Stadium because the atmosphere was too “rowdy”? Who else has made so many footballers feel especially good about their hair and themselves, but the hardest-working stylist and male groomer in elite sport?</p> <a href=\"https://www.theguardian.com/football/2026/jul/10/give-me-another-medal-hair-stylist-world-cup-jayema-lamine-yamal-raphinha\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 07:00:15 GMT"
+    },
+    {
+      "title": "London to Lisbon and back every game: England rack up the World Cup miles",
+      "detail": "<p>England have been happy with their Kansas City base but it has led to them travelling more than the other quarter-finalists – here’s just how much more</p><p>Much was made of the challenge England faced <a href=\"https://www.theguardian.com/football/2026/jul/03/mexico-england-world-cup-2026-altitude\">by playing Mexico at altitude</a> in the Azteca Stadium. The greater concern might be the enormous cumulative distance the team has travelled at the World Cup. It is far greater than any of their rivals.</p><p>The Football Association <a href=\"https://www.theguardian.com/football/2026/jun/15/england-base-camp-hotel-kansas-city-world-cup-2026\">chose to base England in Kansas City</a>, even though the team were not scheduled to play any of their matches there. They <a href=\"https://www.theguardian.com/football/2026/jun/15/england-base-camp-hotel-kansas-city-world-cup-2026\">reasoned</a> that a central location would limit the length of flights the players had to take for any of their fixtures. But it has also ensured they have made round trips of at least 670 miles for every game, if we keep things simple by measuring straight lines between the cities of their base camp and match venues.</p> <a href=\"https://www.theguardian.com/football/2026/jul/10/london-to-lisbon-and-back-every-game-england-rack-up-the-world-cup-miles\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 07:00:13 GMT"
+    },
+    {
+      "title": "Haaland and Bellingham: Dortmund friends taking centre stage in Norway v England battle",
+      "detail": "<p>The attacking players spent two years together at BVB, forming a friendship on their way to the very top</p><p>This World Cup has been about the biggest names from the beginning but as Miami welcomes back its new favourite sporting pleasure on Saturday night, the man in with a shout of the Ballon d’Or probably won’t be the headline. With apologies to Harry Kane, in a football world moving past its two-decades-long domination by the Lionel Messi/Cristiano Ronaldo duopoly, a pair of younger world-class stars will be drawing the majority of the glare as England take on Norway.</p><p>Jude Bellingham and Erling Haaland have met regularly in the Champions League for Real Madrid and Manchester City over the past three years, but this is different. Their first encounter at international level is news in the front pages of the tabloids and gossip mags alike, Hello! running a feature entitled “Inside Jude Bellingham and Erling Haaland’s unlikely friendship before fierce Fifa showdown” before Saturday’s World Cup quarter-final in Florida. If Bellingham and Haaland were the game’s next superstar rivalry in the years to come (again, with apologies to Kylian Mbappé and Lamine Yamal) they would define the competition in starkly different parameters to their Argentinian and Portuguese predecessors.</p> <a href=\"https://www.theguardian.com/football/2026/jul/10/haaland-bellingham-dortmund-friends-centre-stage-norway-v-england-battle-world-cup-2026\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 07:00:15 GMT"
+    },
+    {
+      "title": "Belgium take strength from ‘millions and millions’ of new fans before Spain clash",
+      "detail": "<ul><li><p>Rudi Garcia says his team can benefit from Balogun red card saga</p></li><li><p>‘Everyone is talking about us going home but we can do it,’ coach says</p></li></ul><p>Rudi Garcia has claimed that Belgium have got “millions and millions” of new supporters after Donald Trump lobbied Fifa to overturn Folarin Balogun’s red card ahead of their <a href=\"https://www.theguardian.com/football/2026/jul/06/belgium-reaction-victory-usa-world-cup-red-card\">victory against the USA</a> in the last 16 – and that they will take “incredible strength” from that against Spain in their quarter-final. The Belgium coach also insisted that he has faith in his team, even though “everyone thinks we are going home”. Garcia, after all, has a not-so-secret weapon sitting on the bench: when striker Romelu Lukaku is introduced, he said, opponents “quake in their boots”.</p><p><a href=\"https://www.theguardian.com/football/2026/jul/05/folarin-balogun-red-card-suspension-lifted-usmnt-belgium-world-cup\">Trump boasted that he had phoned Fifa</a> to get <a href=\"https://www.theguardian.com/football/2026/jul/06/folarin-balogun-red-card-reversal-trump-calls-fifa-explainer\">Balogun’s punishment put on hold</a> after the <a href=\"https://www.theguardian.com/football/2026/jul/01/folarin-balogun-red-card-goal-usmnt-world-cup-birthright-citizenship\">direct red card</a> he was shown against Bosnia and Herzegovina. But despite Fifa’s unprecedented decision to suspended the striker’s ban for a year, <a href=\"https://www.theguardian.com/football/2026/jul/06/usa-belgium-world-cup-2026-match-report\">Belgium still defeated the USA</a> 4-1. At full-time, the Belgium football federation’s social media accounts declared <a href=\"https://www.theguardian.com/football/2026/jul/06/belgium-reaction-victory-usa-world-cup-red-card\">“overturn this”</a> and <a href=\"https://www.theguardian.com/football/gallery/2026/jul/06/world-cup-2026-usa-v-belgium-in-pictures\">players celebrated</a> by parodying Trump’s dance. Garcia also confirmed that he had spoken to Balogun, telling him he could not be blamed for Trump’s lobbying or Fifa’s willingness to cede to it.</p> <a href=\"https://www.theguardian.com/football/2026/jul/10/belgium-rudi-garcia-world-cup-quarter-final-spain\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 10 Jul 2026 04:18:50 GMT"
     }
   ],
   "teams": [
@@ -17694,7 +17806,7 @@
       "code": "RSA",
       "factors": {
         "strength": 66,
-        "form": 68,
+        "form": 67,
         "path": 65,
         "squad": 67,
         "margin": 70
@@ -17702,8 +17814,8 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 1.0,
-        "quarterfinal": 8.2,
+        "semifinal": 0.8,
+        "quarterfinal": 7.3,
         "change": -0.1
       }
     },
@@ -17760,7 +17872,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.6,
-        "quarterfinal": 6.3,
+        "quarterfinal": 6.6,
         "change": -0.4
       }
     },
@@ -17854,8 +17966,8 @@
       "tournament": {
         "champion": 0.4,
         "final": 1.3,
-        "semifinal": 4.9,
-        "quarterfinal": 19.8,
+        "semifinal": 5.0,
+        "quarterfinal": 20.0,
         "change": -1.1
       }
     },
@@ -17923,7 +18035,7 @@
       "factors": {
         "strength": 75,
         "form": 70,
-        "path": 61,
+        "path": 62,
         "squad": 65,
         "margin": 74
       },
@@ -18062,9 +18174,9 @@
       },
       "tournament": {
         "champion": 7.4,
-        "final": 14.5,
-        "semifinal": 31.0,
-        "quarterfinal": 65.7,
+        "final": 14.6,
+        "semifinal": 31.1,
+        "quarterfinal": 66.1,
         "change": 0.6
       }
     },
@@ -18119,7 +18231,7 @@
       },
       "tournament": {
         "champion": 0.1,
-        "final": 0.5,
+        "final": 0.4,
         "semifinal": 1.8,
         "quarterfinal": 5.3,
         "change": -0.1
@@ -18290,7 +18402,7 @@
       },
       "tournament": {
         "champion": 14.7,
-        "final": 24.0,
+        "final": 23.9,
         "semifinal": 41.1,
         "quarterfinal": 58.8,
         "change": 1.2
@@ -18601,18 +18713,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2439,
+      "eventCount": 2455,
       "manualEventCount": 3,
-      "rawNewsCount": 2436,
+      "rawNewsCount": 2452,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2439,
-      "applied": 2250,
+      "watched": 2455,
+      "applied": 2264,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2434,
+      "singleSource": 2450,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -18632,7 +18744,7 @@
         "squad": -32.49999999999999
       },
       "south-africa": {
-        "attack": -5.1,
+        "attack": -7.6499999999999995,
         "defense": -4.699999999999999,
         "goalkeeper": -2.15,
         "path": -1.02,
@@ -18719,7 +18831,7 @@
         "attack": -7.35,
         "defense": -4.699999999999999,
         "goalkeeper": 0.0,
-        "path": -3.78,
+        "path": -2.9099999999999997,
         "squad": -9.799999999999999
       },
       "australia": {
@@ -29253,48 +29365,16 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-10T03:53:56.782897+00:00",
+    "generatedAt": "2026-07-10T07:42:50.880519+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.3,
-        "currentChampion": 7.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 5 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
+      "up": 0,
       "down": 0,
-      "largestUp": {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.3,
-        "currentChampion": 7.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 5 条"
-        ]
-      },
+      "largestUp": null,
       "largestDown": null
     }
   }
