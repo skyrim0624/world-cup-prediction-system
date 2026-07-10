@@ -34968,5 +34968,47 @@
     "factor": "attack",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-5060e8657582",
+    "title": "England favourites to reach semis, says Norway boss",
+    "summary": "England are favourites to reach the semi-finals of the World Cup, Norway boss Stale Solbakken has told BBC Sport.",
+    "source": "bbc",
+    "team": "norway",
+    "status": "single_source",
+    "published_at": "Fri, 10 Jul 2026 20:10:44 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cq61n2gqqv0o?at_medium=RSS&at_campaign=rss",
+    "category": "market_proxy",
+    "factor": "path",
+    "direction": 1,
+    "confidence": 0.52
+  },
+  {
+    "id": "bbc-e869032cb7db",
+    "title": "Man Utd's Ederson move in doubt",
+    "summary": "Manchester United's attempt to complete a £35m deal for Atalanta midfielder is in doubt",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Fri, 10 Jul 2026 20:27:18 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c9d2z59596eo?at_medium=RSS&at_campaign=rss",
+    "category": "injury",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.78
+  },
+  {
+    "id": "bbc-b8221be1c1de",
+    "title": "Salah demands put Saudi switch in doubt - Saturday's gossip",
+    "summary": "Mohamed Salah's financial demands putting off Saudi clubs, Bayern Munich rebuff Real Madrid move for Michael Olise, Barcelona agree to sign Karim Adeyemi, plus more.",
+    "source": "bbc",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Fri, 10 Jul 2026 20:32:14 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cy06rnjzxkyo?at_medium=RSS&at_campaign=rss",
+    "category": "injury",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.78
   }
 ]

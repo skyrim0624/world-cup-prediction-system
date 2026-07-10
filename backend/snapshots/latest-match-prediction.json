@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-10T19:45:22.618044+00:00",
+  "updatedAt": "2026-07-10T21:11:27.783101+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18107,6 +18107,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 10 Jul 2026 18:02:50 GMT"
+    },
+    {
+      "title": "England favourites to reach semis, says Norway boss",
+      "detail": "England are favourites to reach the semi-finals of the World Cup, Norway boss Stale Solbakken has told BBC Sport.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 20:10:44 GMT"
+    },
+    {
+      "title": "Man Utd's Ederson move in doubt",
+      "detail": "Manchester United's attempt to complete a £35m deal for Atalanta midfielder is in doubt",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 20:27:18 GMT"
+    },
+    {
+      "title": "Salah demands put Saudi switch in doubt - Saturday's gossip",
+      "detail": "Mohamed Salah's financial demands putting off Saudi clubs, Bayern Munich rebuff Real Madrid move for Michael Olise, Barcelona agree to sign Karim Adeyemi, plus more.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 10 Jul 2026 20:32:14 GMT"
     }
   ],
   "teams": [
@@ -18403,7 +18424,7 @@
         "strength": 79,
         "form": 76,
         "path": 67,
-        "squad": 82,
+        "squad": 80,
         "margin": 77
       },
       "tournament": {
@@ -18782,7 +18803,7 @@
       "factors": {
         "strength": 79,
         "form": 80,
-        "path": 68,
+        "path": 69,
         "squad": 79,
         "margin": 76
       },
@@ -19042,18 +19063,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2502,
+      "eventCount": 2505,
       "manualEventCount": 3,
-      "rawNewsCount": 2499,
+      "rawNewsCount": 2502,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2502,
-      "applied": 2304,
+      "watched": 2505,
+      "applied": 2306,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2497,
+      "singleSource": 2500,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -19175,7 +19196,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -1.02,
-        "squad": 2.9499999999999997
+        "squad": 0.7999999999999998
       },
       "germany": {
         "attack": -4.3,
@@ -19314,7 +19335,7 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 0.0,
+        "path": 0.87,
         "squad": 0.0
       },
       "argentina": {
@@ -29694,7 +29715,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-10T19:45:44.534014+00:00",
+    "generatedAt": "2026-07-10T21:11:49.496591+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
