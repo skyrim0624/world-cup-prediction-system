@@ -35836,5 +35836,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-ef2fb4eed1fa",
+    "title": "Colourful, controversial and significant - ex-Chelsea and Leeds owner Bates dies",
+    "summary": "Former Chelsea and Leeds owner Ken Bates, who has died aged 94, was a colourful and controversial figure - but also a significant one for English football, writes Phil McNulty.",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Sat, 11 Jul 2026 16:28:15 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c4gy1ve57d5o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-001909ff81c1",
+    "title": "Bournemouth's Jimenez set for Fiorentina loan amid investigation",
+    "summary": "Bournemouth defender Alex Jimenez - suspended by his club while they investigate social media allegations - is set for a loan move to Fiorentina.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Sat, 11 Jul 2026 17:06:11 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cvgd7z5xjvno?at_medium=RSS&at_campaign=rss",
+    "category": "suspension",
+    "factor": "defense",
+    "direction": -1,
+    "confidence": 0.9
+  },
+  {
+    "id": "bbc-88d3314e116c",
+    "title": "Coventry City sign winger Tchaouna from Burnley",
+    "summary": "Premier League Coventry City signed winger Loum Tchaouna from relegated Burnley for an undisclosed fee.",
+    "source": "bbc",
+    "team": "germany",
+    "status": "single_source",
+    "published_at": "Sat, 11 Jul 2026 16:26:14 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cpv3gxer241o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

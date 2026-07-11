@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-11T16:05:46.675763+00:00",
+  "updatedAt": "2026-07-11T17:31:57.213252+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18541,6 +18541,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 11 Jul 2026 09:56:00 EST"
+    },
+    {
+      "title": "Colourful, controversial and significant - ex-Chelsea and Leeds owner Bates dies",
+      "detail": "Former Chelsea and Leeds owner Ken Bates, who has died aged 94, was a colourful and controversial figure - but also a significant one for English football, writes Phil McNulty.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 16:28:15 GMT"
+    },
+    {
+      "title": "Bournemouth's Jimenez set for Fiorentina loan amid investigation",
+      "detail": "Bournemouth defender Alex Jimenez - suspended by his club while they investigate social media allegations - is set for a loan move to Fiorentina.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 17:06:11 GMT"
+    },
+    {
+      "title": "Coventry City sign winger Tchaouna from Burnley",
+      "detail": "Premier League Coventry City signed winger Loum Tchaouna from relegated Burnley for an undisclosed fee.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 16:26:14 GMT"
     }
   ],
   "teams": [
@@ -19476,18 +19497,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2564,
+      "eventCount": 2567,
       "manualEventCount": 3,
-      "rawNewsCount": 2561,
+      "rawNewsCount": 2564,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2564,
-      "applied": 2364,
+      "watched": 2567,
+      "applied": 2366,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2559,
+      "singleSource": 2562,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -30128,7 +30149,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-11T16:06:08.567589+00:00",
+    "generatedAt": "2026-07-11T17:32:19.108928+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
