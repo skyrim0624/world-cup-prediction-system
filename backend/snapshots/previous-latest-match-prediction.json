@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-11T03:53:30.986438+00:00",
+  "updatedAt": "2026-07-11T06:20:15.002348+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18184,6 +18184,55 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Fri, 10 Jul 2026 08:28:38 GMT"
+    },
+    {
+      "title": "Is it time to give record-breaker Pickford the credit he deserves?",
+      "detail": "Is it time to finally give England keeper Jordan Pickford the credit he deserves as he enters the World Cup history books, asks chief football writer Phil McNulty.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 05:55:32 GMT"
+    },
+    {
+      "title": "Artificial turf & coaching revolution - how Norway shaped golden generation",
+      "detail": "Artificial turf, investment from gambling and a coaching revolution based on collaboration over egos help Norway build a golden generation of players.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 05:31:12 GMT"
+    },
+    {
+      "title": "England set for open-air Miami heat - but do Norway hold the edge?",
+      "detail": "England will head into unknown territory at this World Cup when they face Norway in Miami - playing in searing temperatures.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sat, 11 Jul 2026 05:08:35 GMT"
+    },
+    {
+      "title": "All the goals from England's 2026 World Cup campaign so far",
+      "detail": "As England gear up to face Norway at the Miami Stadium for the World Cup quarter-finals, re-live all the goals that got Thomas Tuchel's side there.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 05:13:35 GMT"
+    },
+    {
+      "title": "Haaland has advantage over Man City team-mates",
+      "detail": "BBC Sport World Cup pundits Micah Richards, Wayne Rooney and Cesar Azpilicueta look ahead to England's match against Norway and feel that Erling Haaland will have an advantage over his Manchester City team-mates in the match.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 05:10:53 GMT"
+    },
+    {
+      "title": "When the World Cup finishes, the football continues on BBC Sport",
+      "detail": "When the World Cup ends we'll still have loads of great content every day as we build up to the new football season.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 06:03:35 GMT"
+    },
+    {
+      "title": "Tuchel fears more Haaland heroics as England seek identity against Norway",
+      "detail": "<p>Head coach says ‘you can’t avoid focusing’ on the forward, who has form against Tuchel’s sides, before the World Cup quarter-final</p><p>The way that Thomas Tuchel remembers it, he was the only choice for the award. He had led <a href=\"https://www.theguardian.com/football/2021/may/29/manchester-city-chelsea-champions-league-final-match-report-kai-havertz\">Chelsea to Champions League glory</a> in 2020-21 so when the German publication <em>Sport</em><em> Bild</em> named its coach of the season, it had to give it to him. “Yeah, there was no way out,” the England head coach says, with a smile. “Because if Jürgen Klopp won at the same time the Charity Shield they give it to him …”</p><p>The line is delivered in trademark style: deadpan, apart from the twinkle in his eye and it is especially funny to imagine Klopp’s reaction when he reads it. What happened next for Tuchel was less of a laughing matter. As a part of the deal, he gave an interview to <em>Sport </em><em>Bild</em> and during it he joked about how he would have “no problem” bringing Erling Haaland to Chelsea and playing him up front with Romelu Lukaku.</p> <a href=\"https://www.theguardian.com/football/2026/jul/11/thomas-tuchel-erling-haaland-england-norway-2026-world-cup-quarter-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 00:00:34 GMT"
     }
   ],
   "teams": [
@@ -18479,7 +18528,7 @@
       "factors": {
         "strength": 79,
         "form": 76,
-        "path": 67,
+        "path": 66,
         "squad": 80,
         "margin": 77
       },
@@ -19119,18 +19168,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2513,
+      "eventCount": 2520,
       "manualEventCount": 3,
-      "rawNewsCount": 2510,
+      "rawNewsCount": 2517,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2513,
-      "applied": 2314,
+      "watched": 2520,
+      "applied": 2321,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2508,
+      "singleSource": 2515,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -19251,7 +19300,7 @@
         "attack": -4.699999999999999,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": -1.02,
+        "path": -1.94,
         "squad": 0.7999999999999998
       },
       "germany": {
@@ -29771,7 +29820,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-11T03:53:47.156035+00:00",
+    "generatedAt": "2026-07-11T06:20:36.728218+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
