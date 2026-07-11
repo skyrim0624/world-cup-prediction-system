@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-11T00:03:54.224543+00:00",
+  "updatedAt": "2026-07-11T03:53:30.986438+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -29771,109 +29771,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-11T00:04:16.195595+00:00",
+    "generatedAt": "2026-07-11T03:53:47.156035+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.6,
-        "currentChampion": 21.7,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "japan",
-        "name": "日本",
-        "code": "JPN",
-        "previousChampion": 2.3,
-        "currentChampion": 2.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 2.0,
-        "currentChampion": 1.9,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "八强概率下降 -0.9%",
-          "四强概率下降 -0.7%",
-          "决赛概率下降 -0.4%",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "norway",
-        "name": "挪威",
-        "code": "NOR",
-        "previousChampion": 1.0,
-        "currentChampion": 1.1,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.3%",
-        "reasons": [
-          "八强概率上升 +0.3%",
-          "四强概率上升 +0.1%",
-          "可入模型事件新增 4 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 3,
-      "down": 1,
-      "largestUp": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.6,
-        "currentChampion": 21.7,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      "largestDown": {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 2.0,
-        "currentChampion": 1.9,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "八强概率下降 -0.9%",
-          "四强概率下降 -0.7%",
-          "决赛概率下降 -0.4%",
-          "可入模型事件新增 4 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
