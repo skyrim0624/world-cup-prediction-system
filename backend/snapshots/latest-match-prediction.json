@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-10T22:33:39.083615+00:00",
+  "updatedAt": "2026-07-11T00:03:54.224543+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18156,6 +18156,34 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Fri, 10 Jul 2026 21:13:02 GMT"
+    },
+    {
+      "title": "Merino the unlikely hero again - as Spain wait for Lamine Yamal show",
+      "detail": "Mikel Merino came off the bench to send Spain into the World Cup semi-finals - but Lamine Yamal is still waiting for his moment to truly shine.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 23:29:52 GMT"
+    },
+    {
+      "title": "Lammens' error spells end for Belgium's golden generation",
+      "detail": "Belgium's World Cup campaign ends after Senne Lammens' error against Spain - could it all be over for their golden generation too?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 23:14:51 GMT"
+    },
+    {
+      "title": "Argentina continue to show ‘heart’ but flaws are apparent before Switzerland clash",
+      "detail": "<p>Close calls against Cape Verde and Egypt show Scaloni’s side are vulnerable, despite all the brilliance of Lionel Messi</p><p>It is among the defining moments of this World Cup: Lionel Messi wandering the pitch in Atlanta with tears rolling down his face. Minutes earlier, Argentina had been down two goals to Egypt and on the brink of elimination in the last 16. Messi had missed a penalty and was set to bear blame for the result. Instead, the Argentina legend created the same magic he always seems to, spearheading a miraculous, three-goal swing in just over 10 minutes and pushing the <em><a href=\"https://www.theguardian.com/football/2026/jul/07/argentina-egypt-world-cup-2026-last-16-match-report\">Albiceleste</a></em><a href=\"https://www.theguardian.com/football/2026/jul/07/argentina-egypt-world-cup-2026-last-16-match-report\"> into the quarter-finals</a>.</p><p>And now he was crying. And so were his teammates. And so was his head coach, Lionel Scaloni, who could not contain his emotion in a post-game interview. His own players, the coach says, have taken to calling him <em>el llorón. </em>The crybaby. “I can’t even look at you,” Scaloni told a touchline reporter, in tears. “I’m sorry. I’m obviously very emotional. What a group of players, brother. I’m sorry. That’s it, I have to go.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/10/argentina-show-heart-flaws-apparent-swizerland-world-cup-quarter-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 10 Jul 2026 11:52:53 GMT"
+    },
+    {
+      "title": "Police officer hurt amid violent disorder in London after France beat Morocco",
+      "detail": "<ul><li><p>Four arrests after Edgware Road incidents, say police</p></li><li><p>Teenager dies in France while celebrating team’s win</p></li></ul><p>A police officer has been hurt and several people were arrested after disorder in London on Thursday night in the wake of <a href=\"https://www.theguardian.com/football/2026/jul/09/morocco-france-world-cup-quarter-final-match-report\">France beating Morocco 2-0</a> in a World Cup quarter-final in Boston in the United States. Police and fans clashed on Edgware Road.</p><p>Footage on social media appears to show flares being set off and missiles being thrown at officers in the middle of a London street. The Metropolitan police said four people were arrested for violent disorder and one officer had been taken to hospital with a head injury after being hit by a glass bottle.</p> <a href=\"https://www.theguardian.com/football/2026/jul/10/violent-disorder-in-london-france-morocco-world-cup-police-officer-hurt-arrests\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 10 Jul 2026 08:28:38 GMT"
     }
   ],
   "teams": [
@@ -18173,7 +18201,7 @@
       "tournament": {
         "champion": 0.1,
         "final": 0.4,
-        "semifinal": 2.0,
+        "semifinal": 2.1,
         "quarterfinal": 7.0,
         "change": -1.4
       }
@@ -18319,15 +18347,15 @@
         "strength": 91,
         "form": 82,
         "path": 65,
-        "squad": 59,
+        "squad": 57,
         "margin": 83
       },
       "tournament": {
-        "champion": 2.0,
-        "final": 5.7,
-        "semifinal": 13.6,
-        "quarterfinal": 28.7,
-        "change": -8.8
+        "champion": 1.9,
+        "final": 5.3,
+        "semifinal": 12.9,
+        "quarterfinal": 27.8,
+        "change": -8.9
       }
     },
     {
@@ -18515,8 +18543,8 @@
       "tournament": {
         "champion": 0.4,
         "final": 1.4,
-        "semifinal": 5.1,
-        "quarterfinal": 15.1,
+        "semifinal": 5.2,
+        "quarterfinal": 15.3,
         "change": 0.0
       }
     },
@@ -18534,7 +18562,7 @@
       "tournament": {
         "champion": 1.6,
         "final": 5.0,
-        "semifinal": 13.8,
+        "semifinal": 13.9,
         "quarterfinal": 28.1,
         "change": 1.0
       }
@@ -18570,11 +18598,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 2.3,
-        "final": 6.4,
-        "semifinal": 15.3,
-        "quarterfinal": 31.5,
-        "change": 1.2
+        "champion": 2.4,
+        "final": 6.6,
+        "semifinal": 15.6,
+        "quarterfinal": 32.1,
+        "change": 1.3
       }
     },
     {
@@ -18836,11 +18864,11 @@
         "margin": 76
       },
       "tournament": {
-        "champion": 1.0,
+        "champion": 1.1,
         "final": 3.6,
-        "semifinal": 10.1,
-        "quarterfinal": 24.6,
-        "change": 0.1
+        "semifinal": 10.2,
+        "quarterfinal": 24.9,
+        "change": 0.2
       }
     },
     {
@@ -18855,11 +18883,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 21.6,
-        "final": 38.8,
+        "champion": 21.7,
+        "final": 38.9,
         "semifinal": 56.6,
         "quarterfinal": 76.0,
-        "change": 6.4
+        "change": 6.5
       }
     },
     {
@@ -18989,7 +19017,7 @@
       },
       "tournament": {
         "champion": 3.7,
-        "final": 10.1,
+        "final": 10.2,
         "semifinal": 20.3,
         "quarterfinal": 50.2,
         "change": 1.2
@@ -19008,8 +19036,8 @@
       },
       "tournament": {
         "champion": 9.1,
-        "final": 19.9,
-        "semifinal": 38.2,
+        "final": 20.0,
+        "semifinal": 38.3,
         "quarterfinal": 58.5,
         "change": -1.6
       }
@@ -19091,18 +19119,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2509,
+      "eventCount": 2513,
       "manualEventCount": 3,
-      "rawNewsCount": 2506,
+      "rawNewsCount": 2510,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2509,
-      "applied": 2310,
+      "watched": 2513,
+      "applied": 2314,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2504,
+      "singleSource": 2508,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -19175,7 +19203,7 @@
         "defense": 0.0,
         "goalkeeper": -2.15,
         "path": -9.610000000000001,
-        "squad": -26.599999999999994
+        "squad": -28.749999999999993
       },
       "morocco": {
         "attack": -11.95,
@@ -29626,13 +29654,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-07-10",
+      "referenceDate": "2026-07-11",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 27,
-      "oldestAgeDays": 101,
+      "newestAgeDays": 28,
+      "oldestAgeDays": 102,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -29743,64 +29771,65 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-10T22:33:59.174937+00:00",
+    "generatedAt": "2026-07-11T00:04:16.195595+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
     "items": [
       {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 2.3,
-        "currentChampion": 2.0,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "八强概率下降 -1.5%",
-          "四强概率下降 -1.1%",
-          "决赛概率下降 -0.6%",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 9.0,
-        "currentChampion": 9.1,
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 21.6,
+        "currentChampion": 21.7,
         "change": 0.1,
         "direction": "up",
-        "reason": "四强概率上升 +0.3%",
+        "reason": "决赛概率上升 +0.1%",
         "reasons": [
-          "四强概率上升 +0.3%",
           "决赛概率上升 +0.1%",
           "可入模型事件新增 4 条"
         ]
       },
       {
-        "team": "ecuador",
-        "name": "厄瓜多尔",
-        "code": "ECU",
-        "previousChampion": 1.5,
-        "currentChampion": 1.6,
+        "team": "japan",
+        "name": "日本",
+        "code": "JPN",
+        "previousChampion": 2.3,
+        "currentChampion": 2.4,
         "change": 0.1,
         "direction": "up",
-        "reason": "四强概率上升 +0.1%",
+        "reason": "八强概率上升 +0.6%",
         "reasons": [
-          "四强概率上升 +0.1%",
+          "八强概率上升 +0.6%",
+          "四强概率上升 +0.3%",
+          "决赛概率上升 +0.2%",
           "可入模型事件新增 4 条"
         ]
       },
       {
-        "team": "cote-divoire",
-        "name": "科特迪瓦",
-        "code": "CIV",
-        "previousChampion": 0.3,
-        "currentChampion": 0.4,
+        "team": "brazil",
+        "name": "巴西",
+        "code": "BRA",
+        "previousChampion": 2.0,
+        "currentChampion": 1.9,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "人员盘下调 -2.1",
+        "reasons": [
+          "人员盘下调 -2.1",
+          "八强概率下降 -0.9%",
+          "四强概率下降 -0.7%",
+          "决赛概率下降 -0.4%",
+          "可入模型事件新增 4 条"
+        ]
+      },
+      {
+        "team": "norway",
+        "name": "挪威",
+        "code": "NOR",
+        "previousChampion": 1.0,
+        "currentChampion": 1.1,
         "change": 0.1,
         "direction": "up",
         "reason": "八强概率上升 +0.3%",
@@ -29809,35 +29838,21 @@
           "四强概率上升 +0.1%",
           "可入模型事件新增 4 条"
         ]
-      },
-      {
-        "team": "austria",
-        "name": "奥地利",
-        "code": "AUT",
-        "previousChampion": 0.3,
-        "currentChampion": 0.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 4 条",
-        "reasons": [
-          "可入模型事件新增 4 条"
-        ]
       }
     ],
     "summary": {
-      "up": 4,
+      "up": 3,
       "down": 1,
       "largestUp": {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 9.0,
-        "currentChampion": 9.1,
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 21.6,
+        "currentChampion": 21.7,
         "change": 0.1,
         "direction": "up",
-        "reason": "四强概率上升 +0.3%",
+        "reason": "决赛概率上升 +0.1%",
         "reasons": [
-          "四强概率上升 +0.3%",
           "决赛概率上升 +0.1%",
           "可入模型事件新增 4 条"
         ]
@@ -29846,16 +29861,16 @@
         "team": "brazil",
         "name": "巴西",
         "code": "BRA",
-        "previousChampion": 2.3,
-        "currentChampion": 2.0,
-        "change": -0.3,
+        "previousChampion": 2.0,
+        "currentChampion": 1.9,
+        "change": -0.1,
         "direction": "down",
         "reason": "人员盘下调 -2.1",
         "reasons": [
           "人员盘下调 -2.1",
-          "八强概率下降 -1.5%",
-          "四强概率下降 -1.1%",
-          "决赛概率下降 -0.6%",
+          "八强概率下降 -0.9%",
+          "四强概率下降 -0.7%",
+          "决赛概率下降 -0.4%",
           "可入模型事件新增 4 条"
         ]
       }
