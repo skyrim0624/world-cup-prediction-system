@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-11T13:40:15.261675+00:00",
+  "updatedAt": "2026-07-11T15:00:29.074654+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18506,6 +18506,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 11 Jul 2026 12:00:49 GMT"
+    },
+    {
+      "title": "Klopp agrees to replace Nagelsmann as Germany coach",
+      "detail": "Jurgen Klopp agrees a deal in principle to become the new head coach of Germany's men's national team after the resignation of Julian Nagelsmann.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 14:48:39 GMT"
+    },
+    {
+      "title": "South Africa World Cup midfielder Jayden Adams dies aged 25",
+      "detail": "<ul><li><p>Adams played in South Africa’s World Cup group games</p></li><li><p>Midfielder played for Mamelodi Sundowns</p></li></ul><p>Jayden Adams, who played in South Africa’s three group games at the World Cup, has died aged 25.</p><p>The Mamelodi Sundowns midfielder started the tournament opener, a 2-0 defeat by Mexico, and the 1-1 draw with Czechia, being substituted in both matches. He then came off the bench in the 1-0 win against South Korea, but took no part in the 1-0 last-32 defeat by Canada.</p> <a href=\"https://www.theguardian.com/football/2026/jul/11/south-africa-world-cup-midfielder-jayden-adams-dies-aged-25\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 13:29:10 GMT"
+    },
+    {
+      "title": "Football Daily | Belgium and the End Of The Golden Generation Klaxon",
+      "detail": "<p><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\"><strong>Sign up now! Sign up now! Sign up now? Sign up now!</strong></a></p><p>Look at it up there on the hill, shining in the sunlight, an almost imperceptible aura of melancholia surrounding it like a halo. Look at the ornate carvings, the faces etched across its flanks. There’s Davor Suker! Preben Elkjær! Ferenc Puskas! Is that … it is! It’s Danny Mills, his face almost entirely worn away by the years of tourists rubbing it for luck. Yes, it’s the End Of The Golden Generation Klaxon and it’s sounding its low mournful drone across the California plains as Belgium’s best depart following their <a href=\"https://www.theguardian.com/football/2026/jul/10/spain-belgium-world-cup-2026-quarter-final-match-report\">quarter-final loss to Spain</a> in Los Angeles.<br><br> Though in truth it has been whining in the background for a while now. The Red Devils’ real recent high point was probably all the way back in 2018 when peak De Bruyne, Lukaku and Courtois were joined by Alderweireld, Vermaelen, Kompany, Vertonghen, Fellaini, Hazard, Carrasco, you know, Mertens, Dembélé … Sessions. But there was no escaping the symbolism of the botched torch pass – a tearful Courtois heading off with an injury in the second half at SoFi Stadium, his replacement Senne Lammens fluffling his lines and handing Mikel Merino Spain’s winner on a plate.<br><br> “I gave him a big hug. He’s a great goalkeeper. You only get stronger from this,” Courtois said of his hapless teammate. “Eventually you cannot say much more to him or give him much more advice. He is a strong guy, strong personality. I’m sure he’ll be fine. You know, he will have some holidays and then regroup in Manchester and have a great season.”<br><br> Belgium – who were further hamstrung by the loss of their captain, Youri Tielemans, to knack in the warm-up – have a rebuilding job to do, although those waters are slightly muddied by reports suggesting Courtois fancies an unhelpful year off from the international game before returning for the Euro 2028 qualifiers. Spain, meanwhile, can look forward (if that is the right phrase) to a semi-final meeting with France. “They’ll be just as worried as we are,” roared Luis de la Fuente, perhaps slightly being stitched up in translation.</p><p>I can only hope that when Jürgen Klopp flew Team Mbappé around for what turned out to be no good reason, he at least booked the flight on Trivago” – Scott Pratt.</p><p>As the Bayeux Tapestry was being unloaded at the British Museum in the dead of night I couldn’t help thinking ‘it’s coming home.’ An omen perhaps? 1,000 years of hurt?” – Allastair McGillivray.</p><p><em><strong>This is an extract from our daily football email … Football Daily. To get the full version,<a href=\"https://preview.gutools.co.uk/info/2016/jan/05/the-fiver-email-sign-up\"> </a><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\">just visit this page and follow the instructions</a>.</strong></em></p> <a href=\"https://www.theguardian.com/football/2026/jul/11/belgium-golden-generation-football-daily-newsletter\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sat, 11 Jul 2026 12:44:07 GMT"
     }
   ],
   "teams": [
@@ -19441,18 +19462,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2559,
+      "eventCount": 2562,
       "manualEventCount": 3,
-      "rawNewsCount": 2556,
+      "rawNewsCount": 2559,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2559,
-      "applied": 2359,
+      "watched": 2562,
+      "applied": 2362,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2554,
+      "singleSource": 2557,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -19495,7 +19516,7 @@
       "canada": {
         "attack": -23.5,
         "defense": -4.699999999999999,
-        "goalkeeper": -2.15,
+        "goalkeeper": -4.3,
         "path": -6.889999999999999,
         "squad": -36.99999999999999
       },
@@ -30093,7 +30114,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-11T13:40:37.366208+00:00",
+    "generatedAt": "2026-07-11T15:00:45.631681+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
