@@ -35808,5 +35808,33 @@
     "factor": "goalkeeper",
     "direction": -1,
     "confidence": 0.78
+  },
+  {
+    "id": "espn-dbb082eccec7",
+    "title": "South Africa's Adams, who played at WC, dies at 25...",
+    "summary": "South Africa and Mamelodi Sundowns midfielder Jayden Adams has died aged 25, the South African Football Players Union has confirmed.",
+    "source": "espn",
+    "team": "south-africa",
+    "status": "single_source",
+    "published_at": "Sat, 11 Jul 2026 09:56:21 EST",
+    "url": "https://www.espn.com/soccer/story/_/id/49333373/south-africa-midfielder-jayden-adams-dies-aged-25-weeks-world-cup-appearance",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "espn-1e991c3529d5",
+    "title": "Former Chelsea chairman Ken Bates dies aged 94",
+    "summary": "Former Chelsea chairman Ken Bates has died at the age of 94, the club announced on Saturday.",
+    "source": "espn",
+    "team": "haiti",
+    "status": "single_source",
+    "published_at": "Sat, 11 Jul 2026 09:56:00 EST",
+    "url": "https://www.espn.com/soccer/story/_/id/49333624/former-chelsea-chairman-ken-bates-dies-aged-94",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
