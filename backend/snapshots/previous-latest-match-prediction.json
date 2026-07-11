@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-11T08:21:07.872228+00:00",
+  "updatedAt": "2026-07-11T10:01:28.878467+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18366,6 +18366,48 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 11 Jul 2026 07:00:43 GMT"
+    },
+    {
+      "title": "Who am I? Guess World Cup star No 34",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 09:00:05 GMT"
+    },
+    {
+      "title": "The Man Utd youngsters to look out for in Finland and Norway",
+      "detail": "Manchester United's pre-season schedule begins before the World Cup final. Which so many senior players still missing, who are the youngsters who could impress?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 08:25:58 GMT"
+    },
+    {
+      "title": "Devlin joins Rangers after Hearts exit - what will he bring to club?",
+      "detail": "Midfielder Cammy Devlin says it is \"an absolute honour and privilege\" to join Rangers under freedom of contract after leaving Hearts.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 09:47:46 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "England manager Thomas Tuchel & captain Harry Kane speak to John Murray ahead of Norway.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 09:07:00 GMT"
+    },
+    {
+      "title": "More than the Score",
+      "detail": "Erling Haaland's Norway face England in their first ever World Cup quarter-final",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 05:02:00 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "Spain set up to face France... and Guillem reveals he has Lionel Messi's email.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 05:00:00 GMT"
     }
   ],
   "teams": [
@@ -19301,18 +19343,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2539,
+      "eventCount": 2545,
       "manualEventCount": 3,
-      "rawNewsCount": 2536,
+      "rawNewsCount": 2542,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2539,
-      "applied": 2340,
+      "watched": 2545,
+      "applied": 2345,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2534,
+      "singleSource": 2540,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -29953,7 +29995,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-11T08:21:23.282585+00:00",
+    "generatedAt": "2026-07-11T10:01:51.039790+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
