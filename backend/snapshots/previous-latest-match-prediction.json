@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-11T10:01:28.878467+00:00",
+  "updatedAt": "2026-07-11T11:31:32.595655+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18408,6 +18408,62 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 11 Jul 2026 05:00:00 GMT"
+    },
+    {
+      "title": "Should Argentina take Messi off penalties?",
+      "detail": "Lionel Messi keeps rewriting World Cup history, but after his latest miss from the spot, should Argentina hand penalty duties to someone else?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 10:51:33 GMT"
+    },
+    {
+      "title": "Playing golf with Trump surreal - Kane",
+      "detail": "England captain Harry Kane says he once played golf with United States President Donald Trump, describing the experience as \"surreal\".",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 10:34:09 GMT"
+    },
+    {
+      "title": "Wales defender Lockyer signs for Melbourne Victory",
+      "detail": "Wales defender Tom Lockyer agrees a deal to join Australian A-League side Melbourne Victory.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 10:16:59 GMT"
+    },
+    {
+      "title": "Pubs can stay open for full Norway game - even if kick-off delayed",
+      "detail": "The extended hours means fans can watch the entire game, even if the start is delayed.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 10:38:18 GMT"
+    },
+    {
+      "title": "World Cup daily: Free England-Norway ticket for Er...",
+      "detail": "Enjoy all the features, news, video analysis and color from around the 2026 FIFA World Cup as we have our final two quarterfinals.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 04:42:47 EST"
+    },
+    {
+      "title": "Transfer rumors, news: Could Man United sign Parag...",
+      "detail": "Manchester United are rumoured to be interested in Paraguay goalkeeper Orlando Gill. Transfer talk has the latest.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 04:39:52 EST"
+    },
+    {
+      "title": "Tunnel vision: candid photos of World Cup 2026 stars",
+      "detail": "<p>Footballers are known for their eclectic matchday rituals: Lionel Messi likes to drink maté with teammate Rodrigo De Paul at exactly 9.30am, while Harry Kane always dons the left side of his kit first. These candid photos show the 2026 World Cup’s elite players finalising their mental and physical preparations</p> <a href=\"https://www.theguardian.com/football/gallery/2026/jul/11/tunnel-vision-candid-photos-of-world-cup-2026-stars\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 11:00:48 GMT"
+    },
+    {
+      "title": "Lammens laments late mistake as Spain make the semis | World Cup Daily",
+      "detail": "<p><a href=\"https://bsky.app/profile/maxrushden.bsky.social\">Max Rushden</a> is joined by <a href=\"https://bsky.app/profile/did:plc:i55lfvhkg573wfmby5sdnvq6\">Barry Glendenning</a>, John Brewin and Nicky Bandini as Spain win it late on against Belgium and to preview England v Norway.</p> <a href=\"https://www.theguardian.com/football/video/2026/jul/11/lammens-laments-late-mistake-as-spain-make-the-semis-world-cup-daily\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 09:47:30 GMT"
     }
   ],
   "teams": [
@@ -19343,18 +19399,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2545,
+      "eventCount": 2553,
       "manualEventCount": 3,
-      "rawNewsCount": 2542,
+      "rawNewsCount": 2550,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2545,
-      "applied": 2345,
+      "watched": 2553,
+      "applied": 2353,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2540,
+      "singleSource": 2548,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -29995,7 +30051,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-11T10:01:51.039790+00:00",
+    "generatedAt": "2026-07-11T11:31:54.838768+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

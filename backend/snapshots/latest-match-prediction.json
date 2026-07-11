@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-11T11:31:32.595655+00:00",
+  "updatedAt": "2026-07-11T13:40:15.261675+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18464,6 +18464,48 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 11 Jul 2026 09:47:30 GMT"
+    },
+    {
+      "title": "South Africa World Cup midfielder Adams dies aged 25",
+      "detail": "South Africa and Mamelodi Sundowns midfielder Jayden Adams dies at the age of 25, just weeks after featuring for his country at the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 13:29:51 GMT"
+    },
+    {
+      "title": "Former Chelsea and Leeds owner Bates dies aged 94",
+      "detail": "Former Chelsea and Leeds United owner Ken Bates has died aged 94, Chelsea announced on Saturday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 13:21:14 GMT"
+    },
+    {
+      "title": "From Arsenal jeers to Swiss tears: Xhaka's redemption",
+      "detail": "Granit Xhaka has battled back from being booed by his own fans at Arsenal to being one of the most influential players for club and country as he looks to help Switzerland make history at the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 11:58:58 GMT"
+    },
+    {
+      "title": "Garnacho absent from Chelsea pre-season training",
+      "detail": "Alejandro Garnacho has not yet joined up with Chelsea for pre-season as the club actively look to sell the winger.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sat, 11 Jul 2026 13:10:36 GMT"
+    },
+    {
+      "title": "Man City beat Arsenal to signing of teen Monga",
+      "detail": "Manchester City have completed the signing of winger Jeremy Monga from Leicester City.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 09:06:53 EST"
+    },
+    {
+      "title": "‘A brilliant reprieve, a unifying force’: America falls in love with World Cup",
+      "detail": "<p>Packed stadiums, record TV viewers, and an outlet for joyous multiculturalism under attack by Trump – the tournament has taken the US by storm</p><p>There were plenty of reasons to believe the US hosting the World Cup would be a disaster.</p><p>In the year and a half leading up to the kick-off, Donald Trump had threatened to annex tournament co-host Canada, and to invade the other co-host, Mexico; he was at war with one of the tournament’s participants, Iran. Harsh travel restrictions were preventing fans from Senegal, Ivory Coast and Haiti from getting visas. Ticket prices were outrageous. Hotels weren’t filling up as promised. Fifa was introducing “hydration breaks” during games, allowing TV commercials in what appeared to be a shameless cash grab that threatened the flow of play.</p> <a href=\"https://www.theguardian.com/football/2026/jul/11/america-world-cup-love-football\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 12:00:49 GMT"
     }
   ],
   "teams": [
@@ -18778,7 +18820,7 @@
       "factors": {
         "strength": 87,
         "form": 81,
-        "path": 72,
+        "path": 71,
         "squad": 82,
         "margin": 82
       },
@@ -19399,18 +19441,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2553,
+      "eventCount": 2559,
       "manualEventCount": 3,
-      "rawNewsCount": 2550,
+      "rawNewsCount": 2556,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2553,
-      "applied": 2353,
+      "watched": 2559,
+      "applied": 2359,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2548,
+      "singleSource": 2554,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -19538,7 +19580,7 @@
         "attack": -4.3,
         "defense": -4.3,
         "goalkeeper": 0.0,
-        "path": -2.81,
+        "path": -3.73,
         "squad": -2.55
       },
       "curacao": {
@@ -30051,7 +30093,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-11T11:31:54.838768+00:00",
+    "generatedAt": "2026-07-11T13:40:37.366208+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
