@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-11T19:12:46.078698+00:00",
+  "updatedAt": "2026-07-11T20:24:21.816262+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18611,6 +18611,41 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Sat, 11 Jul 2026 17:00:54 GMT"
+    },
+    {
+      "title": "Man Utd and Liverpool want Gomes - Sunday's gossip",
+      "detail": "Manchester United and Liverpool make Joao Gomes contact, Chelsea open talks over Jonathan Rowe, an MLS side are looking to sign Mohamed Salah, plus more.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 19:24:34 GMT"
+    },
+    {
+      "title": "Holders St Mirren start with win as Linlithgow cause shock",
+      "detail": "Holders St Mirren start the defence of the Premier Sports Cup with a comfortable 4-0 win over Dumbarton as second-tier Greenock Morton suffer a shock defeat at home to Lowland League champions Linlithgow Rose.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 19:22:42 GMT"
+    },
+    {
+      "title": "Spain beat Germany to win U19 Euros in Wrexham",
+      "detail": "Spain claim the Uefa Men's Under-19 Championship for the 10th time with a 2-0 victory over Germany at Wrexham's Racecourse Ground.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 20:01:09 GMT"
+    },
+    {
+      "title": "Comoros winger Said joins Wolves on three-year deal",
+      "detail": "Wolves sign left winger Rafiki Said from Belgian side Standard Liege on a three-year deal, with the option of a further 12 months.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 11:48:34 GMT"
+    },
+    {
+      "title": "Rudi Garcia faces Belgian backlash for taking Courtois off in World Cup loss to Spain",
+      "detail": "<ul><li><p>Replacement keeper Lammens made crucial error</p></li><li><p>Garcia: ‘Only players who are 100% fit can play’</p></li></ul><p>Rudi Garcia came under a barrage of fire for replacing his injured first-choice goalkeeper, Thibaut Courtois, in Belgium’s World Cup quarter-final defeat by Spain on Friday, adding to questions about the coach’s ⁠future.</p><p>Courtois felt he could continue ⁠despite a twinge in ​his leg, but Garcia insisted that he came off as he was not 100% fit. Senne Lammens went on as his replacement after 71 minutes but spilt a low strike by Pau ⁠Cubarsí, allowing the Spain substitute Mikel Merino to pounce in the 86th minute and secure a 2-1 victory.</p> <a href=\"https://www.theguardian.com/football/2026/jul/11/rudi-garcia-belgium-world-cup-thibaut-courtois-spain\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sat, 11 Jul 2026 19:03:34 GMT"
     }
   ],
   "teams": [
@@ -18699,7 +18734,7 @@
         "form": 62,
         "path": 61,
         "squad": 50,
-        "margin": 72
+        "margin": 70
       },
       "tournament": {
         "champion": 0.0,
@@ -19546,18 +19581,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2574,
+      "eventCount": 2579,
       "manualEventCount": 3,
-      "rawNewsCount": 2571,
+      "rawNewsCount": 2576,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2574,
-      "applied": 2373,
+      "watched": 2579,
+      "applied": 2377,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2569,
+      "singleSource": 2574,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -19600,7 +19635,7 @@
       "canada": {
         "attack": -23.5,
         "defense": -4.699999999999999,
-        "goalkeeper": -4.3,
+        "goalkeeper": -6.449999999999999,
         "path": -6.889999999999999,
         "squad": -36.99999999999999
       },
@@ -30198,76 +30233,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-11T19:13:08.281667+00:00",
+    "generatedAt": "2026-07-11T20:24:43.665404+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 1.9,
-        "currentChampion": 1.7,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "八强概率下降 -1.0%",
-          "四强概率下降 -0.7%",
-          "决赛概率下降 -0.4%",
-          "可入模型事件新增 7 条"
-        ]
-      },
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.5,
-        "currentChampion": 7.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 7 条",
-        "reasons": [
-          "可入模型事件新增 7 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
-      "down": 1,
-      "largestUp": {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.5,
-        "currentChampion": 7.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 7 条",
-        "reasons": [
-          "可入模型事件新增 7 条"
-        ]
-      },
-      "largestDown": {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 1.9,
-        "currentChampion": 1.7,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "八强概率下降 -1.0%",
-          "四强概率下降 -0.7%",
-          "决赛概率下降 -0.4%",
-          "可入模型事件新增 7 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
