@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-11T21:24:01.575495+00:00",
+  "updatedAt": "2026-07-11T22:25:08.377413+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18646,6 +18646,20 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Sat, 11 Jul 2026 19:03:34 GMT"
+    },
+    {
+      "title": "Rate the players as England face Norway",
+      "detail": "Rate the Norway and England players out of 10 below and come back 30 minutes after full-time to see the final ratings.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 21:50:51 GMT"
+    },
+    {
+      "title": "Fifa official refuses to answer BBC's ban questions",
+      "detail": "The head of Fifa's disciplinary committee refuses to answer BBC questions about the decision-making process which led to England's Jarell Quansah being banned for two World Cup games.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 21:42:56 GMT"
     }
   ],
   "teams": [
@@ -19581,18 +19595,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2579,
+      "eventCount": 2581,
       "manualEventCount": 3,
-      "rawNewsCount": 2576,
+      "rawNewsCount": 2578,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2579,
-      "applied": 2377,
+      "watched": 2581,
+      "applied": 2379,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2574,
+      "singleSource": 2576,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -30233,7 +30247,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-11T21:24:23.964584+00:00",
+    "generatedAt": "2026-07-11T22:25:30.863543+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

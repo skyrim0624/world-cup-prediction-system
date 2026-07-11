@@ -36046,5 +36046,33 @@
     "factor": "goalkeeper",
     "direction": -1,
     "confidence": 0.78
+  },
+  {
+    "id": "bbc-9ab2c41ca60a",
+    "title": "Rate the players as England face Norway",
+    "summary": "Rate the Norway and England players out of 10 below and come back 30 minutes after full-time to see the final ratings.",
+    "source": "bbc",
+    "team": "belgium",
+    "status": "single_source",
+    "published_at": "Sat, 11 Jul 2026 21:50:51 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/ckg0qpjeeryo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-27d98b7bae8c",
+    "title": "Fifa official refuses to answer BBC's ban questions",
+    "summary": "The head of Fifa's disciplinary committee refuses to answer BBC questions about the decision-making process which led to England's Jarell Quansah being banned for two World Cup games.",
+    "source": "bbc",
+    "team": "netherlands",
+    "status": "single_source",
+    "published_at": "Sat, 11 Jul 2026 21:42:56 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c4gy1j87e1yo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
