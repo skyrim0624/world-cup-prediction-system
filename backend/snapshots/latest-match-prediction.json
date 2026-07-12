@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-12T19:44:16.909703+00:00",
+  "updatedAt": "2026-07-12T20:58:25.151606+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -19220,6 +19220,13 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 12 Jul 2026 18:58:20 GMT"
+    },
+    {
+      "title": "England on collision course with Messi and Argentina in World Cup semi-final grudge match",
+      "detail": "<ul><li><p>First competitive game between teams since 2002 World Cup</p></li><li><p>Georgia braced for potential flashpoints in Atlanta buildup</p></li></ul><p>It has been billed as one of the biggest grudge matches in the history of international football. After England’s players rode their luck against Erling Haaland’s Norway on a steamy night in Miami, they spent Sunday recuperating at their base in Kansas City as thoughts turn to facing Argentina in the World Cup semi-final on Wednesday.</p><p>Thomas Tuchel’s team will take on the reigning champions on what promises to be an emotionally charged occasion in Atlanta for the chance to play France or Spain in the final.</p> <a href=\"https://www.theguardian.com/football/2026/jul/12/england-lionel-messi-argentina-world-cup-2026-semi-final-norway\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 19:51:33 GMT"
     }
   ],
   "teams": [
@@ -20155,18 +20162,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2661,
+      "eventCount": 2662,
       "manualEventCount": 3,
-      "rawNewsCount": 2658,
+      "rawNewsCount": 2659,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2661,
-      "applied": 2453,
+      "watched": 2662,
+      "applied": 2454,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2656,
+      "singleSource": 2657,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -30807,7 +30814,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-12T19:44:28.971441+00:00",
+    "generatedAt": "2026-07-12T20:58:47.377817+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

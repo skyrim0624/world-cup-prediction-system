@@ -37194,5 +37194,19 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "guardian-783f3e4b79fb",
+    "title": "England on collision course with Messi and Argentina in World Cup semi-final grudge match",
+    "summary": "<ul><li><p>First competitive game between teams since 2002 World Cup</p></li><li><p>Georgia braced for potential flashpoints in Atlanta buildup</p></li></ul><p>It has been billed as one of the biggest grudge matches in the history of international football. After England’s players rode their luck against Erling Haaland’s Norway on a steamy night in Miami, they spent Sunday recuperating at their base in Kansas City as thoughts turn to facing Argentina in the World Cup semi-final on Wednesday.</p><p>Thomas Tuchel’s team will take on the reigning champions on what promises to be an emotionally charged occasion in Atlanta for the chance to play France or Spain in the final.</p> <a href=\"https://www.theguardian.com/football/2026/jul/12/england-lionel-messi-argentina-world-cup-2026-semi-final-norway\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Sun, 12 Jul 2026 19:51:33 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/12/england-lionel-messi-argentina-world-cup-2026-semi-final-norway",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
