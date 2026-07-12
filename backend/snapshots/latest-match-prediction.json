@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-12T18:29:29.000289+00:00",
+  "updatedAt": "2026-07-12T19:44:16.909703+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -19178,6 +19178,48 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 11 Jul 2026 21:20:20 GMT"
+    },
+    {
+      "title": "Infantino opens door to 64-team World Cup",
+      "detail": "Plans for a 64-team men's world cup are set to be picked up and assessed in detail after the 2026 tournament with Fifa boss Gianni Infantino saying football needs to be \"for the whole world\".",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 19:18:56 GMT"
+    },
+    {
+      "title": "Arsenal want Argentina's Alvarez - Monday's gossip",
+      "detail": "Arsenal want to sign Atletico Madrid's Julian Alvarez, Aston Villa hijack Newcastle's move for Johan Manzambi, plus more.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 19:41:32 GMT"
+    },
+    {
+      "title": "Argentina v England 1998 - Owen, Beckham and penalty pain",
+      "detail": "England meet Argentina in the last 16 of the 1998 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 18:51:53 GMT"
+    },
+    {
+      "title": "'Written off as too old' - France beat up-and-coming Spain in 2006",
+      "detail": "Spain meet France in the last 16 of the 2006 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 19:07:01 GMT"
+    },
+    {
+      "title": "Argentina v England 2002 - Redemption for Beckham",
+      "detail": "England meet Argentina in the group stage of the 2002 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 18:54:43 GMT"
+    },
+    {
+      "title": "How Maradona dominated England in 1986",
+      "detail": "Diego Maradona leads his Argentina team to victory against England in the quarter-final of the World Cup in 1986.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 18:58:20 GMT"
     }
   ],
   "teams": [
@@ -20113,18 +20155,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2655,
+      "eventCount": 2661,
       "manualEventCount": 3,
-      "rawNewsCount": 2652,
+      "rawNewsCount": 2658,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2655,
-      "applied": 2448,
+      "watched": 2661,
+      "applied": 2453,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2650,
+      "singleSource": 2656,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -30765,7 +30807,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-12T18:29:51.517878+00:00",
+    "generatedAt": "2026-07-12T19:44:28.971441+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
