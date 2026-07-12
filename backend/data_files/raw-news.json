@@ -36690,5 +36690,19 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-f32208cf8c94",
+    "title": "'Animals', Hand of God and Beckham - Argentina and England's World Cup rivalry",
+    "summary": "As England and Argentina prepare to go head-to-head in Wednesday's World Cup semi-final, BBC Sport looks at their footballing rivalry.",
+    "source": "bbc",
+    "team": "paraguay",
+    "status": "single_source",
+    "published_at": "Sun, 12 Jul 2026 10:10:33 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c621y75w2x2o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

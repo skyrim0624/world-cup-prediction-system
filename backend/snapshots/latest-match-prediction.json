@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-12T09:56:26.828930+00:00",
+  "updatedAt": "2026-07-12T11:18:04.201147+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18968,6 +18968,13 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 12 Jul 2026 08:36:57 GMT"
+    },
+    {
+      "title": "'Animals', Hand of God and Beckham - Argentina and England's World Cup rivalry",
+      "detail": "As England and Argentina prepare to go head-to-head in Wednesday's World Cup semi-final, BBC Sport looks at their footballing rivalry.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 10:10:33 GMT"
     }
   ],
   "teams": [
@@ -19903,18 +19910,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2625,
+      "eventCount": 2626,
       "manualEventCount": 3,
-      "rawNewsCount": 2622,
+      "rawNewsCount": 2623,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2625,
-      "applied": 2420,
+      "watched": 2626,
+      "applied": 2421,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2620,
+      "singleSource": 2621,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -30555,7 +30562,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-12T09:56:38.132731+00:00",
+    "generatedAt": "2026-07-12T11:18:25.869095+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

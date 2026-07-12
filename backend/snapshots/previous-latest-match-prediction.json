@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-12T07:33:07.673753+00:00",
+  "updatedAt": "2026-07-12T09:56:26.828930+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18905,6 +18905,69 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Sun, 12 Jul 2026 05:20:50 GMT"
+    },
+    {
+      "title": "'We should all be excited' - Messi set for first England meeting",
+      "detail": "Lionel Messi is set for his first match against England after Argentina beat Switzerland in the World Cup quarter-finals.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 04:48:18 GMT"
+    },
+    {
+      "title": "Bellingham scores extra-time winner as England reach semi-finals",
+      "detail": "Jude Bellingham scores twice, including an extra-time winner, as England come from behind to beat Norway 2-1 in Miami to reach the World Cup semi-finals.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 00:50:48 GMT"
+    },
+    {
+      "title": "Argentina set up England semi-final with extra-time victory over Switzerland",
+      "detail": "Argentina set up a World Cup semi-final with England after scoring twice in extra-time to beat 10-man Switzerland 3-1 in Kansas City.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 04:35:35 GMT"
+    },
+    {
+      "title": "Did spider cam impact England's opener?",
+      "detail": "BBC Sport World Cup pundits Wayne Rooney, Ellen White and Micah Richards look at whether the spider cam had an impact in Jude Bellingham's first goal for England against Norway.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 01:08:52 GMT"
+    },
+    {
+      "title": "Alvarez's stunning strike gives Argentina lead against 10-man Switzerland",
+      "detail": "Argentina retake the lead in their quarter-final against Switzerland through a stunning strike from Julian Alvarez during extra-time in Kansas City.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 04:00:45 GMT"
+    },
+    {
+      "title": "O'Sullivan set to leave Liverpool six months after joining",
+      "detail": "Liverpool club record signing Denise O'Sullivan is expected to leave this summer just six months after joining.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 08:26:04 GMT"
+    },
+    {
+      "title": "England 'got lucky' with disallowed goal",
+      "detail": "BBC Sport World Cup pundits Wayne Rooney and Ellen White believe England \"got lucky\" after Torbjorn Heggem's second-half goal was ruled out for a foul on Elliott Anderson by Erling Haaland.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 01:45:01 GMT"
+    },
+    {
+      "title": "Italian & German interest in Rangers' Barron - gossip",
+      "detail": "Three clubs track Rangers midfielder as Celtic consider Manchester United goalkeeper.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 07:37:16 GMT"
+    },
+    {
+      "title": "Bellingham blunts Norway as England make the semis | World Cup Daily – video",
+      "detail": "<p><a href=\"https://bsky.app/profile/maxrushden.bsky.social\">Max Rushden</a> is joined by <a href=\"https://bsky.app/profile/did:plc:i55lfvhkg573wfmby5sdnvq6\">Barry Glendenning</a>, John Brewin, Lars Sivertsen and Leander Schaerlaeckens as England beat Norway 2-1 in extra time to set up a semi-final against Argentina</p> <a href=\"https://www.theguardian.com/football/video/2026/jul/12/bellingham-blunts-norway-as-england-make-the-semis-world-cup-daily\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 08:36:57 GMT"
     }
   ],
   "teams": [
@@ -19840,18 +19903,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2616,
+      "eventCount": 2625,
       "manualEventCount": 3,
-      "rawNewsCount": 2613,
+      "rawNewsCount": 2622,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2616,
-      "applied": 2412,
+      "watched": 2625,
+      "applied": 2420,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2611,
+      "singleSource": 2620,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -30492,91 +30555,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-12T07:33:29.756282+00:00",
+    "generatedAt": "2026-07-12T09:56:38.132731+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.6,
-        "currentChampion": 7.5,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 6 条",
-        "reasons": [
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "colombia",
-        "name": "哥伦比亚",
-        "code": "COL",
-        "previousChampion": 3.7,
-        "currentChampion": 3.8,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "switzerland",
-        "name": "瑞士",
-        "code": "SUI",
-        "previousChampion": 0.8,
-        "currentChampion": 0.7,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "状态盘下调 -2.5",
-        "reasons": [
-          "状态盘下调 -2.5",
-          "八强概率下降 -1.4%",
-          "四强概率下降 -0.7%",
-          "决赛概率下降 -0.3%",
-          "可入模型事件新增 6 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
-      "down": 2,
-      "largestUp": {
-        "team": "colombia",
-        "name": "哥伦比亚",
-        "code": "COL",
-        "previousChampion": 3.7,
-        "currentChampion": 3.8,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      "largestDown": {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.6,
-        "currentChampion": 7.5,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 6 条",
-        "reasons": [
-          "可入模型事件新增 6 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
