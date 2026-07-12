@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-12T20:58:25.151606+00:00",
+  "updatedAt": "2026-07-12T22:00:39.997203+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -19227,6 +19227,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 12 Jul 2026 19:51:33 GMT"
+    },
+    {
+      "title": "A-List: FIFA's top-4 make WC semis for first time",
+      "detail": "Argentina, Spain, France and England went into the tournament as the top four in FIFA's rankings and are two wins away from being crowned champions again.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 16:58:33 EST"
+    },
+    {
+      "title": "Infantino: 64-team World Cup will be 'looked at'",
+      "detail": "Gianni Infantino has confirmed FIFA will discuss expanding the men's World Cup to 64 teams after the 2026 tournament, saying every nation should have the chance to dream of playing at football's biggest event.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 16:58:33 EST"
+    },
+    {
+      "title": "Sources: FIFA, FIFPRO in talks over heat protocol ...",
+      "detail": "FIFA and global players' union FIFPRO are in discussions over establishing protocols to avoid games being played in excessive heat, sources have told ESPN.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 12 Jul 2026 16:58:33 EST"
+    },
+    {
+      "title": "Haaland Sr: Norway 'robbed' in QF, 'well done ref'...",
+      "detail": "Alf-Inge Haaland claims Norway were \"robbed\" in their World Cup quarterfinal but hopes England go on to win the tournament after knocking out his homeland.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 16:58:17 EST"
+    },
+    {
+      "title": "⚽ 'Ted Lasso' actor Fernández debuts in USL",
+      "detail": "Fernández, a forward like Rojas, was subbed on in the 79th minute of El Paso's USL Cup match against New Mexico United on Saturday night.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 16:58:18 EST"
+    },
+    {
+      "title": "Copy of Transfer rumors, news: Man United, Liverpool turn ...",
+      "detail": "Chelsea are looking at Bologna winger Jonathan Rowe as part of their search for attacking reinforcements Transfer talk has the latest.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 14:49:23 EST"
+    },
+    {
+      "title": "Norway and Haaland are rowing home, but this World...",
+      "detail": "Erling Haaland couldn't lift Norway past England into the World Cup semifinals. But the Scandinavian side had a memorable tournament.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 14:41:43 EST"
     }
   ],
   "teams": [
@@ -19769,7 +19818,7 @@
       "factors": {
         "strength": 96,
         "form": 89,
-        "path": 78,
+        "path": 77,
         "squad": 87,
         "margin": 85
       },
@@ -20162,18 +20211,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2662,
+      "eventCount": 2669,
       "manualEventCount": 3,
-      "rawNewsCount": 2659,
+      "rawNewsCount": 2666,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2662,
-      "applied": 2454,
+      "watched": 2669,
+      "applied": 2461,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2657,
+      "singleSource": 2664,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -20385,7 +20434,7 @@
         "attack": 1.65,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 2.61,
+        "path": 1.69,
         "squad": -0.5
       },
       "cape-verde": {
@@ -30814,7 +30863,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-12T20:58:47.377817+00:00",
+    "generatedAt": "2026-07-12T22:01:01.896269+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
