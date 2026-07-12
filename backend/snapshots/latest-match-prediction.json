@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-12T11:18:04.201147+00:00",
+  "updatedAt": "2026-07-12T12:29:10.137440+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18975,6 +18975,90 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 12 Jul 2026 10:10:33 GMT"
+    },
+    {
+      "title": "'Not happy with the performance' - so why do England keep winning?",
+      "detail": "Football tactics correspondent Umir Irfan examines why England are still winning games despite Thomas Tuchel insisting performances are not good.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 12:19:03 GMT"
+    },
+    {
+      "title": "Rice in bed for nearly three days before Norway game - Tuchel",
+      "detail": "England boss Thomas Tuchel says Declan Rice was in bed for most of the three days prior to the World Cup quarter-final win against Norway because of a sickness bug.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 11:15:14 GMT"
+    },
+    {
+      "title": "Magic from Álvarez, not Messi, sees Argentina thro...",
+      "detail": "It wasn't Lionel Messi coming up with the goods, but Argentina's supporting cast stepped up after the Switzerland defense muted their captain.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 03:05:43 EST"
+    },
+    {
+      "title": "Norway boss fumes at 'clear' TV wire goal assist",
+      "detail": "Norway boss Stale Solbakken has said he believes the overhead wires deserve an assist for England's equaliser.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 06:30:25 EST"
+    },
+    {
+      "title": "Messi praises 'not normal' Argentina in WC defense...",
+      "detail": "Lionel Messi has said Argentina's remarkable run of success is \"not normal\" after the reigning world champions beat Switzerland to reach the World Cup semifinals, where they will face England.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 06:29:41 EST"
+    },
+    {
+      "title": "Álvarez's screamer a 'huge release' for Argentina",
+      "detail": "Julián Álvarez said he felt a 'huge release of emotions' after he scored his first World Cup goal for Argentina to propel his team into the semifinals against England.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 06:29:42 EST"
+    },
+    {
+      "title": "Copy of Embolo red-carded for diving after VAR review",
+      "detail": "Switzerland forward Breel Embolo was sent off in the second half of a World Cup quarterfinal match with Argentina on Saturday night after a video review showed he was guilty of simulation.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 06:29:42 EST"
+    },
+    {
+      "title": "Copy of England's grit to overcome adversity at this World...",
+      "detail": "England have a belief strengthened by their comeback successes against Mexico and Norway. Next up: Argentina and Lionel Messi.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 07:41:45 EST"
+    },
+    {
+      "title": "World Cup Daily Live: Spidercam debate rumbles on ...",
+      "detail": "Enjoy all the features, news, video analysis and color from around the competition as we now know our four World Cup semifinalists.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 07:43:39 EST"
+    },
+    {
+      "title": "Breakout stars of the 2026 World Cup: Diomande, Freeman, Manzambi, more",
+      "detail": "The 2026 World Cup will be remembered for how all the superstars showed up and dominated, but we've also had a few young talents breaking though. Here are four of the best we'll remember going into the 2026-27 season.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 03:16:23 EST"
+    },
+    {
+      "title": "Copy of Transfer rumors, news: Man United, Liverpool turn ...",
+      "detail": "Wolves star João Gomes looked set for Atlético Madrid but could now head to Manchester United or Liverpool. Transfer talk has the latest.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 07:43:49 EST"
+    },
+    {
+      "title": "Copy of What it's like to transfer clubs during a World Cu...",
+      "detail": "Plenty of players have moved clubs during a major tournament, but what is that experience like and how much does it impact negotiations?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 07:43:49 EST"
     }
   ],
   "teams": [
@@ -19910,18 +19994,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2626,
+      "eventCount": 2638,
       "manualEventCount": 3,
-      "rawNewsCount": 2623,
+      "rawNewsCount": 2635,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2626,
-      "applied": 2421,
+      "watched": 2638,
+      "applied": 2432,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2621,
+      "singleSource": 2633,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -30562,7 +30646,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-12T11:18:25.869095+00:00",
+    "generatedAt": "2026-07-12T12:29:32.428403+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
