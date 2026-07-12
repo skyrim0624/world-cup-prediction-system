@@ -36970,5 +36970,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-95bb1a89f22f",
+    "title": "Podcast: Falkirk, Scottish football & the World Cup",
+    "summary": "All the Scottish football news including Falkirk's John McGlynn and the World Cup latest",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Sun, 12 Jul 2026 16:16:00 GMT",
+    "url": "https://www.bbc.co.uk/sounds/play/p0nyd6sc?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-801c9874503e",
+    "title": "World Cup 2026 power rankings: who leads the pack as semi-finals loom?",
+    "summary": "<p>We assess the teams who played in the last eight as the business end of the tournament approaches</p><p>Didier Deschamps has seen it all before and certainly does not fear even the lowest of blocks. It is clear everyone is afraid of Les Bleus, which is understandable, and they are using it to their advantage. It is admirable how teams keep France quiet for lengthy periods but the game is too long to completely silence Kylian Mbappé and Ousmane Dembélé. Against Morocco an hour of patience was required but these forwards are used to it and <a href=\"https://www.theguardian.com/football/2026/jul/09/morocco-france-world-cup-quarter-final-match-report\">Mbappé produced the magic</a> that has powered this run, following it up with an assist. In a tournament defined by individuals, France has the best of a talented bunch.</p> <a href=\"https://www.theguardian.com/football/2026/jul/12/world-cup-2026-power-rankings-france-spain-england-argentina\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Sun, 12 Jul 2026 16:00:22 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/12/world-cup-2026-power-rankings-france-spain-england-argentina",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-8fb9d2159819",
+    "title": "Big game Bellingham steps up again with show-stopping World Cup run for England | Andrew Beasley",
+    "summary": "<p>Real Madrid forward is thriving on the global stage as the first player to score twice in consecutive knockout matches at the tournament since Maradona in 1986</p><p>England’s World Cup journey has rapidly become the Jude Bellingham show. He scored twice to see off Norway on Saturday having also bagged a double in the previous round against Mexico. The 23-year-old forward loves delivering on the biggest of stages.</p><p>This is the greatest era of World Cup goal scoring, aided by the expansion of the tournament. The <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/17/who-is-highest-goalscorer-world-cup-history-messi-mbappe\">two leading scorers of all time</a> are still in the 2026 edition, with Lionel Messi (21 goals) and Kylian Mbappé (20) joined by Harry Kane (14) in the top six. Erling Haaland scored seven times in only five matches this summer, meaning he may be in the upper reaches of the chart by the time he retires, too.</p> <a href=\"https://www.theguardian.com/football/2026/jul/12/jude-bellingham-england-world-cup-2026-international-goals-leading-scorers\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "mexico",
+    "status": "single_source",
+    "published_at": "Sun, 12 Jul 2026 15:48:14 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/12/jude-bellingham-england-world-cup-2026-international-goals-leading-scorers",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-ab3b746068ac",
+    "title": "Gianni Infantino hints at expansion to 64-team World Cup before 2030 event",
+    "summary": "<ul><li><p>‘Definitely ​an issue that will be examined and discussed’</p></li><li><p>Fifa president calls 48-team tournament a ‘huge success’</p></li></ul><p>Fifa officials will look at the possibility of expanding the World Cup by another 16 teams before the ⁠2030 event, Gianni Infantino said in an interview. The Fifa president told Bluewin, a Swiss media outlet, that growing from 48 to ⁠64 teams could make ⁠sense.</p><p>“That’s definitely ​an issue that will be examined and discussed in the relevant committees after this World Cup,” Infantino said. “When organising ⁠a World Cup, it’s important to organise it for the whole world – not just Europe and South America – but effectively the ⁠entire world.</p> <a href=\"https://www.theguardian.com/football/2026/jul/12/gianni-infantino-expansion-64-team-world-cup-2030-fifa\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "netherlands",
+    "status": "single_source",
+    "published_at": "Sun, 12 Jul 2026 15:16:56 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/12/gianni-infantino-expansion-64-team-world-cup-2030-fifa",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
