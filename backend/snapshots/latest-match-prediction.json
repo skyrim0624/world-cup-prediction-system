@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-12T01:08:56.530405+00:00",
+  "updatedAt": "2026-07-12T04:56:19.467071+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18744,6 +18744,118 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 12 Jul 2026 00:57:51 GMT"
+    },
+    {
+      "title": "Bellingham reaching heights of World Cup legends with Messi next",
+      "detail": "Jude Bellingham against dazzled England and the World Cup with his brilliance, matching some records of the all-time records.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 04:35:19 GMT"
+    },
+    {
+      "title": "Tuchel angry at 'lucky' and 'sloppy' England – can 'mentality' be enough?",
+      "detail": "England head coach Thomas Tuchel is praised by former England players for saying his players \"got lucky\" in World Cup quarter-final win over Norway – but match-winner Jude Bellingham disagrees.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 03:08:42 GMT"
+    },
+    {
+      "title": "Embolo sent off as result of mistaken identity rule",
+      "detail": "Switzerland's Breel Embolo becomes first player to be sent off as a result of a new law for mistaken identity at the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 04:22:57 GMT"
+    },
+    {
+      "title": "Did ball hit spidercam before England goal? Snicko says not - Norway unsure",
+      "detail": "Norway's World Cup campaign ends in a quarter-final defeat by England, but they leave frustrated, arguing that Jude Bellingham's equaliser should not have counted.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 02:20:21 GMT"
+    },
+    {
+      "title": "Pick your England XI for World Cup semi-final",
+      "detail": "England are through to the World Cup semi-finals, but who would you pick in your starting XI?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 01:38:05 GMT"
+    },
+    {
+      "title": "Top four ranked teams make semi-finals for first time",
+      "detail": "For the first time since there have been Fifa rankings the top four ranked teams have made the semi-final of the World Cup.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 04:26:44 GMT"
+    },
+    {
+      "title": "Argentina survive again to book England semifinal",
+      "detail": "Julián Álvarez sent defending champions Argentina into the World Cup semifinals with an extra-time goal against Switzerland.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 00:01:27 EST"
+    },
+    {
+      "title": "Bellingham lifts England past Norway, into semis",
+      "detail": "Jude Bellingham sent England into the World Cup semifinals with two goals as the Three Lions overturned a 1-0 deficit to seal a 2-1 extra-time win over Norway.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 00:01:27 EST"
+    },
+    {
+      "title": "FIFA denies ball hit wire in England's first goal",
+      "detail": "FIFA stated there is \"no evidence\" the ball struck an overhead wire before England's equalizing goal against Norway in the Three Lions' 2-1 World Cup quarterfinals victory.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 00:01:27 EST"
+    },
+    {
+      "title": "Bellingham backs England stars after Tuchel fury",
+      "detail": "Jude Bellingham praised England's fighting spirit and ability to \"win dirty\" after coach Thomas Tuchel criticized their performance in beating Norway on Saturday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 00:01:27 EST"
+    },
+    {
+      "title": "England end Haaland's 'insane journey' at WCup",
+      "detail": "Erling Haaland was subbed off late in extra time as Norway's World Cup run ended in a 2-1 quarterfinal loss to England.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 00:01:27 EST"
+    },
+    {
+      "title": "Bellingham's big night eclipses anonymous Haaland ...",
+      "detail": "Jude Bellingham struck twice as England came from behind to beat Norway 2-1 in extra time and reach the World Cup semifinals amid sweltering Florida heat.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sat, 11 Jul 2026 20:59:02 EST"
+    },
+    {
+      "title": "2026 FIFA World Cup match schedule: All fixtures, results and coverage",
+      "detail": "Check out all the fixtures, features and results for the 2026 FIFA World Cup in the United States, Mexico and Canada.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 00:45:35 EST"
+    },
+    {
+      "title": "Jude Bellingham excels in parallel World Cup but cannot win trophy alone | Barney Ronay",
+      "detail": "<p>Up against Norway’s heart and skill and Florida’s heat, talisman got England through – but there is much to fix</p><p>Jude against the sun. For much of <a href=\"https://www.theguardian.com/football/2026/jul/12/norway-england-world-cup-quarter-final-match-report\">this game</a> there was a feeling of three separate entities struggling to assert their will in the heavy air of Miami Gardens. First, Norway, in their first World Cup quarter-final, who played with heart, skill and patience, and were by any Jude-free metric probably the better team.</p><p>Alongside this, forcing itself centre stage, was the July Florida heat, the kind of air that congeals around you like an invisible white sauce, that makes your vision blur and your brain sag, and to which England seemed uniquely vulnerable.</p> <a href=\"https://www.theguardian.com/football/2026/jul/12/jude-bellingham-parallel-world-cup-norway-england\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 12 Jul 2026 02:37:55 GMT"
+    },
+    {
+      "title": "England wobble but Djed Spence and John Stones make case for the defence",
+      "detail": "<p>Tuchel’s half-time changes and Pickford’s skittishness lifted Norway, but backline finally rose to occasion</p><p>England were back <a href=\"https://www.theguardian.com/football/2026/jul/06/england-mexico-match-report-jude-bellingham-harry-kane-world-cup\">in Azteca mode</a> in the end. Big Dan Burn was on to thump those headers away. Reece James and the magnificent Djed Spence were covering the flanks, Elliot Anderson was taking care of midfield on his own and the problem for Norway was that the hulking figure leading their attack was no longer on the pitch as they tried to find a way through England’s back five at the end of extra time in Miami.</p><p>It would be a push to call this a tactical or defensive masterclass from Thomas Tuchel. The German made a rare misstep at half-time, handing the game to Martin Ødegaard when the unwell Declan Rice had to go off, and spent the rest of the second half trying to correct his mistake. First James had to come on for Anthony Gordon, depriving England of one of their main counterattacking outlets as a sense of dread took over, and it was only when the counterpressing of Morgan Rogers was added to the midfield mix that a semblance of order was restored.</p> <a href=\"https://www.theguardian.com/football/2026/jul/12/england-djed-spence-john-stones-defence-world-cup-norway\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 01:25:27 GMT"
+    },
+    {
+      "title": "World Cup 2026: England edge Norway in quarter-final – in pictures",
+      "detail": "<p>All the best images from Miami Stadium as England come from behind to beat Norway and reach the World Cup semi-finals</p> <a href=\"https://www.theguardian.com/football/gallery/2026/jul/11/world-cup-2026-norway-v-england-in-pictures\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 11 Jul 2026 22:19:33 GMT"
     }
   ],
   "teams": [
@@ -18830,7 +18942,7 @@
       "factors": {
         "strength": 76,
         "form": 62,
-        "path": 61,
+        "path": 60,
         "squad": 50,
         "margin": 70
       },
@@ -19191,7 +19303,7 @@
       "factors": {
         "strength": 72,
         "form": 78,
-        "path": 67,
+        "path": 66,
         "squad": 77,
         "margin": 78
       },
@@ -19679,18 +19791,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2593,
+      "eventCount": 2609,
       "manualEventCount": 3,
-      "rawNewsCount": 2590,
+      "rawNewsCount": 2606,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2593,
-      "applied": 2391,
+      "watched": 2609,
+      "applied": 2406,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2588,
+      "singleSource": 2604,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -19734,7 +19846,7 @@
         "attack": -23.5,
         "defense": -4.699999999999999,
         "goalkeeper": -6.449999999999999,
-        "path": -6.889999999999999,
+        "path": -7.809999999999999,
         "squad": -36.99999999999999
       },
       "bosnia-herzegovina": {
@@ -19867,7 +19979,7 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 0.0,
+        "path": -0.92,
         "squad": 0.0
       },
       "belgium": {
@@ -30331,7 +30443,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-12T01:09:12.950023+00:00",
+    "generatedAt": "2026-07-12T04:56:41.463952+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
