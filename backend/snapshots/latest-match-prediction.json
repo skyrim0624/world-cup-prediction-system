@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-12T04:56:19.467071+00:00",
+  "updatedAt": "2026-07-12T07:33:07.673753+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -18856,6 +18856,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 11 Jul 2026 22:19:33 GMT"
+    },
+    {
+      "title": "Senegal sack manager Thiaw in wake of World Cup exit",
+      "detail": "Senegal sack manager Pape Thiaw in the aftermath of the country's exit at the last-32 stage of the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 07:25:09 GMT"
+    },
+    {
+      "title": "Who am I? Guess World Cup star No 35",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 06:15:52 GMT"
+    },
+    {
+      "title": "Footballers more likely to suffer depression and anxiety - study",
+      "detail": "A new study finds evidence of reduced brain volume in former elite footballers, who also report difficulties with thinking skills and decision-making.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 12 Jul 2026 05:09:55 GMT"
+    },
+    {
+      "title": "World Cup 2026: England battle past Norway to set up Argentina semi-final – live",
+      "detail": "<p><strong>⚽ </strong>All the latest as the quarter-finals conclude<strong><br>⚽ </strong><a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\"><strong>Player guide</strong></a><strong> | </strong><a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/bracketology-predict-a-path-to-world-cup-victory\"><strong>Bracketology</strong></a><strong> | </strong><a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\"><strong>Golden Boot</strong></a><strong> | </strong><a href=\"mailto:matchday.live@theguardian.com\"><strong>Email us</strong></a></p><p>Sidebar, <em>Whatever</em> bears such a striking resemblance to Neil Innes’ <em>I’m Free to be an Idiot</em> that the former Monty Python collaborator received a songwriting credit and a share of the royalties in an out of court settlement.</p><p><a href=\"https://www.theguardian.com/football/2026/jul/04/wonderwall-england-world-cup-anthem\">Wonderwall might be the England team’s Oasis song of choice</a>, but surely they change it up to this more apposite (and far better imo) number.</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/12/world-cup-2026-reaction-england-norway-argentina-switzerland-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 07:15:57 GMT"
+    },
+    {
+      "title": "Jude Bellingham unimpressed after Tuchel criticises ‘lucky’ England’s performance",
+      "detail": "<ul><li><p>Head coach says team were ‘sloppy’ and ‘not fast enough’</p></li><li><p>Two-goal Bellingham responds: ‘Yeah, well, whatever’</p></li></ul><p>Jude Bellingham hit back at criticism of England’s performance from Thomas Tuchel after his two goals against Norway <a href=\"https://www.theguardian.com/football/2026/jul/12/norway-england-world-cup-quarter-final-match-report\">booked a place in the World Cup semi-finals</a> for the fourth time.</p><p>A virtuoso display from the Real Madrid star inspired a comeback victory after Andreas Schjelderup had given Norway the lead, with Bellingham scoring a controversial equaliser just before half-time. Replays appeared to show a Norway goal-kick hitting an overhead cable in the buildup, although Fifa released a statement saying a sensor in the ball showed no evidence it had touched. Norway’s coach, <a href=\"https://www.theguardian.com/football/2026/jul/12/norway-ball-struck-cable-england-equaliser-stale-solbakken\">Ståle Solbakken, said it was “pretty clear” it had</a>.</p> <a href=\"https://www.theguardian.com/football/2026/jul/12/jude-bellingham-thomas-tuchel-criticises-lucky-england-performance\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 00:44:08 GMT"
+    },
+    {
+      "title": "Julián Álvarez’s extra-time stunner sinks 10-man Switzerland to send Argentina into semi-finals",
+      "detail": "<p>Did anyone think they would do it the easy way? If Argentina are to win this World Cup they will only get there via rollercoaster. A seemingly straightforward night’s work against Switzerland became their tournament in microcosm, threatening to squander it all before finding salvation through a moment of unfettered genius.</p><p>Just this once it did not come from the left boot of Lionel Messi. In fact, with his side labouring towards penalties midway through the second period of extra time, Messi had just been denied by Gregor Kobel when the decisive thunderbolt was unleashed. Switzerland were unable to clear their lines and the recently introduced José López, taking possession on the left, passed backwards to a hitherto anonymous Julián Álvarez.</p> <a href=\"https://www.theguardian.com/football/2026/jul/12/switzerland-argentina-world-cup-quarter-final-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 03:58:37 GMT"
+    },
+    {
+      "title": "Switzerland hit out at VAR after ‘mistaken identity’ check ends in Breel Embolo red card",
+      "detail": "<ul><li><p>Attacker shown second yellow card for simulation</p></li><li><p><a href=\"https://www.theguardian.com/football/2026/jul/12/switzerland-argentina-world-cup-quarter-final-match-report\">Argentina topple Swiss with two goals in extra time</a></p></li></ul><p>Fifa match officials’ novel use of the term “mistaken identity” reared its head again in sensational circumstances during <a href=\"https://www.theguardian.com/football/2026/jul/12/switzerland-argentina-world-cup-quarter-final-match-report\">Saturday’s World Cup quarter-final between Argentina and Switzerland</a>, leaving Swiss forward Breel Embolo in tears and the European side a man down for a total of 67 minutes against the defending champions.</p><p>“It’s completely not understandable,” Switzerland head coach Murat Yakin said afterward. “I know that they will protect their referee but this rule destroyed the game today.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/12/switzerland-argentina-world-cup-var-mistaken-identity-red-card-breel-emobolo\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 12 Jul 2026 05:20:50 GMT"
     }
   ],
   "teams": [
@@ -18872,7 +18921,7 @@
       },
       "tournament": {
         "champion": 0.1,
-        "final": 0.4,
+        "final": 0.5,
         "semifinal": 2.1,
         "quarterfinal": 7.0,
         "change": -1.4
@@ -18998,17 +19047,17 @@
       "code": "SUI",
       "factors": {
         "strength": 80,
-        "form": 80,
+        "form": 79,
         "path": 68,
         "squad": 73,
         "margin": 80
       },
       "tournament": {
-        "champion": 0.8,
-        "final": 2.9,
-        "semifinal": 7.3,
-        "quarterfinal": 23.6,
-        "change": -0.7
+        "champion": 0.7,
+        "final": 2.6,
+        "semifinal": 6.6,
+        "quarterfinal": 22.2,
+        "change": -0.8
       }
     },
     {
@@ -19018,7 +19067,7 @@
       "factors": {
         "strength": 91,
         "form": 82,
-        "path": 65,
+        "path": 64,
         "squad": 55,
         "margin": 83
       },
@@ -19251,11 +19300,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 7.6,
+        "champion": 7.5,
         "final": 14.8,
         "semifinal": 31.5,
         "quarterfinal": 66.9,
-        "change": 0.8
+        "change": 0.7
       }
     },
     {
@@ -19557,7 +19606,7 @@
       "tournament": {
         "champion": 21.7,
         "final": 39.0,
-        "semifinal": 56.6,
+        "semifinal": 56.7,
         "quarterfinal": 76.0,
         "change": 6.5
       }
@@ -19575,9 +19624,9 @@
       },
       "tournament": {
         "champion": 0.6,
-        "final": 2.2,
-        "semifinal": 5.9,
-        "quarterfinal": 20.1,
+        "final": 2.3,
+        "semifinal": 6.0,
+        "quarterfinal": 20.7,
         "change": 0.0
       }
     },
@@ -19688,11 +19737,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 3.7,
-        "final": 10.2,
-        "semifinal": 20.3,
-        "quarterfinal": 50.2,
-        "change": 1.2
+        "champion": 3.8,
+        "final": 10.3,
+        "semifinal": 20.6,
+        "quarterfinal": 50.8,
+        "change": 1.3
       }
     },
     {
@@ -19708,7 +19757,7 @@
       },
       "tournament": {
         "champion": 9.1,
-        "final": 20.0,
+        "final": 20.1,
         "semifinal": 38.5,
         "quarterfinal": 58.5,
         "change": -1.6
@@ -19747,8 +19796,8 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.2,
-        "semifinal": 1.0,
-        "quarterfinal": 6.1,
+        "semifinal": 1.1,
+        "quarterfinal": 6.2,
         "change": -0.2
       }
     },
@@ -19791,18 +19840,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2609,
+      "eventCount": 2616,
       "manualEventCount": 3,
-      "rawNewsCount": 2606,
+      "rawNewsCount": 2613,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2609,
-      "applied": 2406,
+      "watched": 2616,
+      "applied": 2412,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2604,
+      "singleSource": 2611,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -19864,7 +19913,7 @@
         "squad": -0.8999999999999999
       },
       "switzerland": {
-        "attack": 0.0,
+        "attack": -2.55,
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -1.84,
@@ -19874,7 +19923,7 @@
         "attack": -7.7,
         "defense": 0.0,
         "goalkeeper": -2.15,
-        "path": -9.610000000000001,
+        "path": -10.530000000000001,
         "squad": -30.89999999999999
       },
       "morocco": {
@@ -30443,17 +30492,91 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-12T04:56:41.463952+00:00",
+    "generatedAt": "2026-07-12T07:33:29.756282+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.6,
+        "currentChampion": 7.5,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 6 条",
+        "reasons": [
+          "可入模型事件新增 6 条"
+        ]
+      },
+      {
+        "team": "colombia",
+        "name": "哥伦比亚",
+        "code": "COL",
+        "previousChampion": 3.7,
+        "currentChampion": 3.8,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.6%",
+        "reasons": [
+          "八强概率上升 +0.6%",
+          "四强概率上升 +0.3%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 6 条"
+        ]
+      },
+      {
+        "team": "switzerland",
+        "name": "瑞士",
+        "code": "SUI",
+        "previousChampion": 0.8,
+        "currentChampion": 0.7,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "状态盘下调 -2.5",
+        "reasons": [
+          "状态盘下调 -2.5",
+          "八强概率下降 -1.4%",
+          "四强概率下降 -0.7%",
+          "决赛概率下降 -0.3%",
+          "可入模型事件新增 6 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 1,
+      "down": 2,
+      "largestUp": {
+        "team": "colombia",
+        "name": "哥伦比亚",
+        "code": "COL",
+        "previousChampion": 3.7,
+        "currentChampion": 3.8,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.6%",
+        "reasons": [
+          "八强概率上升 +0.6%",
+          "四强概率上升 +0.3%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 6 条"
+        ]
+      },
+      "largestDown": {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.6,
+        "currentChampion": 7.5,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 6 条",
+        "reasons": [
+          "可入模型事件新增 6 条"
+        ]
+      }
     }
   }
 }
