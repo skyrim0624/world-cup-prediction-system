@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-12T12:29:10.137440+00:00",
+  "updatedAt": "2026-07-12T14:08:49.286290+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -19059,6 +19059,48 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 12 Jul 2026 07:43:49 EST"
+    },
+    {
+      "title": "Big stars and old rivals - what to expect in semi-finals",
+      "detail": "France face Spain and England take on Argentina in heavyweight World Cup semi-final meetings - here's what to expect from the last four.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 12:29:10 GMT"
+    },
+    {
+      "title": "Lamine Yamal? Mbappe? Kane? Pick your World Cup semi-final XI",
+      "detail": "As we look ahead to the World Cup semi-final, BBC Sport pick their last-four combined XI. Do you agree?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 13:29:06 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "England are through. Lloyd reacts from Miami as Argentina await.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 09:32:00 GMT"
+    },
+    {
+      "title": "Get ready for the World Cup semifinals! What you n...",
+      "detail": "With only a week to go until the final of the 2026 FIFA World Cup, there are now just four teams still harboring dreams of becoming world champions.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 09:51:34 EST"
+    },
+    {
+      "title": "Football Daily | Was Tuchel and Bellingham really a Keane v McCarthy moment?",
+      "detail": "<p><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\"><strong>Sign up now! Sign up now! Sign up now? Sign up now!</strong></a></p><p>Breakfast in America was a happy place for an Englishman this Sunday morning. Thanks to Jude Bellingham, (very probably) a hanging cable and a remarkable cameo from Djed Spence that brought back the ghost of Nobby Stiles, <a href=\"https://www.theguardian.com/football/2026/jul/12/norway-england-world-cup-quarter-final-match-report\">Norway were squeezed past in Miami</a>. Lord Nelson, Lord Beaverbrook, Winston Churchill, Anthony Eden, Clement Attlee, Henry Cooper, Lady Diana and Maggie Thatcher could rest easy.</p> <a href=\"https://www.theguardian.com/football/2026/jul/12/tuchel-bellingham-really-keane-v-mccarthy-moment-football-daily\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 13:18:12 GMT"
+    },
+    {
+      "title": "Cablegate: should Jude Bellingham’s first goal against Norway have been disallowed?",
+      "detail": "<p>Midfielder got England back on level terms in fine fashion but pictures suggest illegal interference in the buildup</p><p>Norway’s goalkeeper, Ørjan Håskjold Nyland, launches a goal-kick down the pitch two minutes into stoppage time at the end of the first half. The ball falls just inside England’s half, near the touchline, where Elliot Anderson is able to gather possession and drive forward.</p> <a href=\"https://www.theguardian.com/football/2026/jul/12/cablegate-should-jude-bellingham-first-goal-against-norway-have-been-disallowed-england-world-cup-2026\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 11:57:06 GMT"
     }
   ],
   "teams": [
@@ -19994,18 +20036,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2638,
+      "eventCount": 2644,
       "manualEventCount": 3,
-      "rawNewsCount": 2635,
+      "rawNewsCount": 2641,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2638,
-      "applied": 2432,
+      "watched": 2644,
+      "applied": 2437,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2633,
+      "singleSource": 2639,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -30646,7 +30688,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-12T12:29:32.428403+00:00",
+    "generatedAt": "2026-07-12T14:09:10.858402+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

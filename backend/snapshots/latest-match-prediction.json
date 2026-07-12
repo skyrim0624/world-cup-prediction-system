@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-12T14:08:49.286290+00:00",
+  "updatedAt": "2026-07-12T15:35:24.753363+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -19101,6 +19101,13 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 12 Jul 2026 11:57:06 GMT"
+    },
+    {
+      "title": "Second season always a challenge - Falkirk's McGlynn",
+      "detail": "John McGlynn believes Falkirk will be given \"more respect\" in the coming campaign and matching last season will be \"a challenge\".",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 14:30:10 GMT"
     }
   ],
   "teams": [
@@ -20036,18 +20043,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2644,
+      "eventCount": 2645,
       "manualEventCount": 3,
-      "rawNewsCount": 2641,
+      "rawNewsCount": 2642,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2644,
-      "applied": 2437,
+      "watched": 2645,
+      "applied": 2438,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2639,
+      "singleSource": 2640,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -30688,7 +30695,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-12T14:09:10.858402+00:00",
+    "generatedAt": "2026-07-12T15:35:46.528476+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

@@ -36956,5 +36956,19 @@
     "factor": "goalkeeper",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-7f686a3d2fd4",
+    "title": "Second season always a challenge - Falkirk's McGlynn",
+    "summary": "John McGlynn believes Falkirk will be given \"more respect\" in the coming campaign and matching last season will be \"a challenge\".",
+    "source": "bbc",
+    "team": "belgium",
+    "status": "single_source",
+    "published_at": "Sun, 12 Jul 2026 14:30:10 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cewqv5vwndeo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
