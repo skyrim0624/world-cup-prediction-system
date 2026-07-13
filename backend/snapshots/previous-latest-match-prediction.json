@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-13T19:37:09.320609+00:00",
+  "updatedAt": "2026-07-13T21:03:07.309398+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -19675,6 +19675,34 @@
       "impact": "全局备注",
       "tone": "green",
       "time": "Mon, 13 Jul 2026 12:10:22 EST"
+    },
+    {
+      "title": "Chance to face Messi once in a lifetime - O'Reilly",
+      "detail": "England left-back Nico O'Reilly is relishing the opportunity to face Lionel Messi in Wednesday's World Cup semi-final against Argentina.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 20:33:07 GMT"
+    },
+    {
+      "title": "Villa assess Estupinan move - Tuesday's gossip",
+      "detail": "Aston Villa assess Pervis Estupinan, Bruno Guimaraes is not far sale, Inter Milan give up on signing Trevoh Chalobah, plus more",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 20:28:34 GMT"
+    },
+    {
+      "title": "Everton captain Finnigan signs one-year extension",
+      "detail": "Everton captain Megan Finnigan signs a one-year contract extension with the Women's Super League club.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 19:58:32 GMT"
+    },
+    {
+      "title": "‘Gift from the sky’ Elliot Anderson keeps England running as Rogers makes case",
+      "detail": "<p>Midfielder covered the most ground in win over Norway while Villa man’s cameo impressed Thomas Tuchel</p><p>Elliot Anderson can be forgiven for needing additional time to recover from his exertions in the cauldron of Miami. As <a href=\"https://www.theguardian.com/football/2026/jun/25/manchester-city-agree-british-record-130m-fee-with-nottingham-forest-for-elliot-anderson\">Manchester City’s new record signing</a> reflected on <a href=\"https://www.theguardian.com/football/2026/jul/12/norway-england-world-cup-quarter-final-match-report\">England’s extra-time victory over Norway</a> with his fellow Geordie, John Murray, from BBC Radio 5 Live, there was no hiding his pure exhaustion.</p><p>“It was so tough. So tough,” said Anderson, who covered 14.8km in stifling humidity – the most of any England player, beating his captain, Harry Kane, by a few hundred metres. “I was cramping up a few times [in extra time]. But the fighting spirit the lads have is amazing to be part of. The fans should be proud of the amount of fight and determination we&nbsp;showed.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/13/elliot-anderson-gift-from-the-sky-keeps-on-giving-morgan-rogers-england-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 13 Jul 2026 18:20:43 GMT"
     }
   ],
   "teams": [
@@ -19761,7 +19789,7 @@
       "factors": {
         "strength": 76,
         "form": 62,
-        "path": 59,
+        "path": 58,
         "squad": 50,
         "margin": 70
       },
@@ -20610,18 +20638,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2726,
+      "eventCount": 2730,
       "manualEventCount": 3,
-      "rawNewsCount": 2723,
+      "rawNewsCount": 2727,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2726,
-      "applied": 2511,
+      "watched": 2730,
+      "applied": 2514,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2721,
+      "singleSource": 2725,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -20665,7 +20693,7 @@
         "attack": -23.5,
         "defense": -4.699999999999999,
         "goalkeeper": -6.449999999999999,
-        "path": -8.78,
+        "path": -9.7,
         "squad": -36.99999999999999
       },
       "bosnia-herzegovina": {
@@ -31262,7 +31290,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-13T19:37:30.098352+00:00",
+    "generatedAt": "2026-07-13T21:03:27.641013+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

@@ -38160,5 +38160,61 @@
     "factor": "path",
     "direction": -1,
     "confidence": 0.66
+  },
+  {
+    "id": "bbc-0ca79be58e03",
+    "title": "England to make late call on Rice for World Cup semi-final",
+    "summary": "England will make a late decision on whether Declan Rice is fit to start Wednesday's World Cup semi-final against Argentina.",
+    "source": "bbc",
+    "team": "argentina",
+    "status": "single_source",
+    "published_at": "Mon, 13 Jul 2026 21:30:05 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/ce8m996g9g1o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-d5e123e5a919",
+    "title": "Football Daily",
+    "summary": "Mark Chapman, Chris Sutton, Conor Coady and Rory Smith preview England's semi-final.",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Mon, 13 Jul 2026 21:06:00 GMT",
+    "url": "https://www.bbc.co.uk/sounds/play/p0nylm2l?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-194160116133",
+    "title": "Declan Rice winning fitness battle to start for England against Argentina",
+    "summary": "<ul><li><p>Rice expected to overcome illness for semi-final</p></li><li><p>Jordan Pickford: ‘We can’t focus solely on Messi’</p></li></ul><p>Declan Rice is set to overcome illness and retain his place for England’s World Cup semi-final against Argentina on Wednesday.</p><p>The Arsenal midfielder was substituted at half-time of <a href=\"https://www.theguardian.com/football/2026/jul/12/norway-england-world-cup-quarter-final-match-report\">England’s win over Norway</a> in the quarter-final, with Thomas Tuchel revealing that he had spent most of the previous three days in bed due to illness. But it is understood that Rice has been feeling much better after England returned to their base in Kansas City for the final time before departing for Atlanta on Tuesday and the 27-year-old is expected to start alongside Elliot Anderson in midfield against the reigning world champions.</p> <a href=\"https://www.theguardian.com/football/2026/jul/13/england-declan-rice-winning-fitness-battle-argentina-world-cup\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Mon, 13 Jul 2026 21:30:11 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/13/england-declan-rice-winning-fitness-battle-argentina-world-cup",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-41d17e89535e",
+    "title": "France unleashed: reinvention could earn Deschamps all-time great status | Nick Ames",
+    "summary": "<p>Head coach has found a way to get the best out of his glittering attack and has a second World Cup in sight</p><p>It was a night when, as Didier Deschamps put it, the light went out by half-time. A remodelled France side had been comfortably beaten by Italy in their Nations League opener and a Parisian crowd made their feelings perfectly clear upon the conclusion. Three days later <em>Les Bleus</em>’ roadshow moved to Lyon for a meeting with Belgium, where the head coach’s name was booed before kick-off. Deschamps attributed that to provincial enmities but there was the clear sense of a once glorious tenure outlasting its welcome.</p><p>Almost two years on, Deschamps stands on the verge of genuine greatness. How can the assessment be any other way when, should the next six days go to plan, he would&nbsp;be only the second manager&nbsp;to win the World Cup twice? The power is firmly back on for France and will surge to new levels if they underline his renaissance against&nbsp;Spain.</p> <a href=\"https://www.theguardian.com/football/2026/jul/13/france-didier-deschamps-kylian-mbappe-michael-olise-spain-world-cup-semi-final\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Mon, 13 Jul 2026 20:47:12 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/13/france-didier-deschamps-kylian-mbappe-michael-olise-spain-world-cup-semi-final",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
