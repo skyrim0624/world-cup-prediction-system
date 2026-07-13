@@ -38104,5 +38104,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-cecaac64038b",
+    "title": "Chance to face Messi once in a lifetime - O'Reilly",
+    "summary": "England left-back Nico O'Reilly is relishing the opportunity to face Lionel Messi in Wednesday's World Cup semi-final against Argentina.",
+    "source": "bbc",
+    "team": "tunisia",
+    "status": "single_source",
+    "published_at": "Mon, 13 Jul 2026 20:33:07 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c8924433kjyo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-7969a1bf3a18",
+    "title": "Villa assess Estupinan move - Tuesday's gossip",
+    "summary": "Aston Villa assess Pervis Estupinan, Bruno Guimaraes is not far sale, Inter Milan give up on signing Trevoh Chalobah, plus more",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Mon, 13 Jul 2026 20:28:34 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cm2jlg3el4no?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-e5a4524db8b1",
+    "title": "Everton captain Finnigan signs one-year extension",
+    "summary": "Everton captain Megan Finnigan signs a one-year contract extension with the Women's Super League club.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Mon, 13 Jul 2026 19:58:32 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c89244kyx0jo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-0489e3a2e676",
+    "title": "‘Gift from the sky’ Elliot Anderson keeps England running as Rogers makes case",
+    "summary": "<p>Midfielder covered the most ground in win over Norway while Villa man’s cameo impressed Thomas Tuchel</p><p>Elliot Anderson can be forgiven for needing additional time to recover from his exertions in the cauldron of Miami. As <a href=\"https://www.theguardian.com/football/2026/jun/25/manchester-city-agree-british-record-130m-fee-with-nottingham-forest-for-elliot-anderson\">Manchester City’s new record signing</a> reflected on <a href=\"https://www.theguardian.com/football/2026/jul/12/norway-england-world-cup-quarter-final-match-report\">England’s extra-time victory over Norway</a> with his fellow Geordie, John Murray, from BBC Radio 5 Live, there was no hiding his pure exhaustion.</p><p>“It was so tough. So tough,” said Anderson, who covered 14.8km in stifling humidity – the most of any England player, beating his captain, Harry Kane, by a few hundred metres. “I was cramping up a few times [in extra time]. But the fighting spirit the lads have is amazing to be part of. The fans should be proud of the amount of fight and determination we&nbsp;showed.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/13/elliot-anderson-gift-from-the-sky-keeps-on-giving-morgan-rogers-england-world-cup\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Mon, 13 Jul 2026 18:20:43 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/13/elliot-anderson-gift-from-the-sky-keeps-on-giving-morgan-rogers-england-world-cup",
+    "category": "weather",
+    "factor": "path",
+    "direction": -1,
+    "confidence": 0.66
   }
 ]
