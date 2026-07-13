@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-13T05:02:57.943050+00:00",
+  "updatedAt": "2026-07-13T08:34:07.608218+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -19276,6 +19276,62 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 12 Jul 2026 14:41:43 EST"
+    },
+    {
+      "title": "These are unprecedented times for England - enjoy them",
+      "detail": "A record of four semi-finals in the past five international tournaments for England is outstanding. It is time to accept that this is where England belong.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 05:25:22 GMT"
+    },
+    {
+      "title": "Borrowed shoes, no Golden Boot - the story of the World Cup's greatest scorer",
+      "detail": "Just Fontaine's record of 13 goals in a single World Cup has stood for decades, but he never played in the tournament again after injury ended his career at the age of 28.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 13 Jul 2026 06:57:04 GMT"
+    },
+    {
+      "title": "England top air miles among semi-finalists - does it matter?",
+      "detail": "England have travelled far more than rivals France and Argentina as World Cup 2026 tests teams across North America.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 07:30:25 GMT"
+    },
+    {
+      "title": "Who am I? Guess World Cup star No 36",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 05:29:30 GMT"
+    },
+    {
+      "title": "Bombs, blood, ambushes - football coaching with the army",
+      "detail": "From kidnappings to invasions, military training takes football coaches out of their comfort zone as part of the Football Association of Wales' Uefa pro licence course.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 13 Jul 2026 03:56:53 GMT"
+    },
+    {
+      "title": "Celtic boss resigned to losing Engels and Maeda - gossip",
+      "detail": "Celtic manager Martin O'Neill expects to lose Daizen Maeda and Arne Engels this summer as Rangers counterpart Derek McInnes admits he needs departures before more signings.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 06:22:32 GMT"
+    },
+    {
+      "title": "World Cup 2026: Buildup to blockbuster semi-finals, Infantino hints at 64-team expansion – live",
+      "detail": "<ul><li><p>Latest news as final week of World Cup gets under way</p></li><li><p><a href=\"https://www.theguardian.com/football/2026/jul/12/world-cup-2026-power-rankings-france-spain-england-argentina\">Power rankings</a> | <a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\">Sign up to Football Daily</a> | <a href=\"mailto:matchday.live@guardian.co.uk\">Email us</a></p></li></ul><p><strong>I mean, just look at him.</strong></p><p><strong>In which regard, here are some words on the great man.</strong></p> <a href=\"https://www.theguardian.com/football/live/2026/jul/13/world-cup-2026-buildup-to-blockbuster-semi-finals-infantino-hints-at-64-team-expansion-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 08:25:39 GMT"
+    },
+    {
+      "title": "Norway’s Ståle Solbakken claims ball struck cable before England equaliser",
+      "detail": "<ul><li><p>Replays suggested goal-kick struck a camera cable</p></li><li><p>Fifa says ball sensor showed no evidence of contact</p></li></ul><p>Norway’s head coach, Ståle Solbakken, complained that England had benefited from the ball hitting an overhead cable before Jude Bellingham equalised in <a href=\"https://www.theguardian.com/football/2026/jul/12/norway-england-world-cup-quarter-final-match-report\">the World Cup quarter-final</a>.</p><p>Replays appeared to show a Norway goal-kick hitting a cable in the buildup, although Fifa released a statement saying a sensor in the ball showed no evidence it had touched.</p> <a href=\"https://www.theguardian.com/football/2026/jul/12/norway-ball-struck-cable-england-equaliser-stale-solbakken\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 02:17:00 GMT"
     }
   ],
   "teams": [
@@ -19496,7 +19552,7 @@
         "strength": 75,
         "form": 72,
         "path": 65,
-        "squad": 63,
+        "squad": 61,
         "margin": 78
       },
       "tournament": {
@@ -19533,7 +19589,7 @@
       "factors": {
         "strength": 75,
         "form": 70,
-        "path": 62,
+        "path": 61,
         "squad": 65,
         "margin": 74
       },
@@ -20211,18 +20267,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2669,
+      "eventCount": 2677,
       "manualEventCount": 3,
-      "rawNewsCount": 2666,
+      "rawNewsCount": 2674,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2669,
-      "applied": 2461,
+      "watched": 2677,
+      "applied": 2468,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2664,
+      "singleSource": 2672,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -20316,7 +20372,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -2.86,
-        "squad": -12.9
+        "squad": -15.05
       },
       "usa": {
         "attack": -9.399999999999999,
@@ -20329,7 +20385,7 @@
         "attack": -7.35,
         "defense": -4.699999999999999,
         "goalkeeper": 0.0,
-        "path": -2.9099999999999997,
+        "path": -3.8299999999999996,
         "squad": -9.799999999999999
       },
       "australia": {
@@ -30863,7 +30919,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-13T05:03:19.770751+00:00",
+    "generatedAt": "2026-07-13T08:34:22.935361+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
