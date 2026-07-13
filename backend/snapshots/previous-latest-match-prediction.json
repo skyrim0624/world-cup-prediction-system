@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-13T15:24:10.618214+00:00",
+  "updatedAt": "2026-07-13T17:31:27.157837+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -19584,6 +19584,41 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 08 Jun 2026 07:00:03 GMT"
+    },
+    {
+      "title": "Dutch referee dies weeks after being dropped from World Cup",
+      "detail": "Dutch football referee Rob Dieperink dies aged 38, weeks after he was dropped from officiating at the World Cup because of a police investigation in the UK.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 15:42:41 GMT"
+    },
+    {
+      "title": "Liverpool sign England goalkeeper Keating",
+      "detail": "Liverpool sign England goalkeeper Khiara Keating on a free transfer from Manchester City.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 16:24:20 GMT"
+    },
+    {
+      "title": "Top three should be Hearts' focus - McGowan",
+      "detail": "Hearts' focus should be staying clear in the Scottish Premiership's top three, says former defender Ryan McGowan.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 15:37:17 GMT"
+    },
+    {
+      "title": "Podcast: Can Dundee United take the next step?",
+      "detail": "New signings, a new shape and fresh expectations at Tannadice.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 17:00:00 GMT"
+    },
+    {
+      "title": "‘Knocking you out was a huge joy’: reliving the dramas of England v Argentina in 1998 and 2002",
+      "detail": "<p>How Diego Simeone, Michael Owen and Glenn Hoddle remember the two classic World Cup matches between historical rivals</p><p>Amid the acrimony, the wars, the deep history going back to the British invasions of 1806 and 1807, the hand of God and the boot of Beckham, there is also an acknowledgment from those closest to the struggle that England and Argentina make perfect footballing sparring partners.</p><p>Described as the only trans-continental derby, a rivalry hewn in politics and history as well as football folklore, most Argentinian footballers’ eyes light up when talk turns to England.</p> <a href=\"https://www.theguardian.com/football/2026/jul/13/knocking-you-out-was-a-huge-joy-reliving-the-dramas-of-england-v-argentina-in-1998-and-2002\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 17:00:05 GMT"
     }
   ],
   "teams": [
@@ -20519,18 +20554,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2713,
+      "eventCount": 2718,
       "manualEventCount": 3,
-      "rawNewsCount": 2710,
+      "rawNewsCount": 2715,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2713,
-      "applied": 2499,
+      "watched": 2718,
+      "applied": 2504,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2708,
+      "singleSource": 2713,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -31171,74 +31206,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-13T15:24:32.108048+00:00",
+    "generatedAt": "2026-07-13T17:31:48.955899+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.5,
-        "currentChampion": 7.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 16 条"
-        ]
-      },
-      {
-        "team": "colombia",
-        "name": "哥伦比亚",
-        "code": "COL",
-        "previousChampion": 3.8,
-        "currentChampion": 3.7,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 16 条",
-        "reasons": [
-          "可入模型事件新增 16 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
-      "down": 1,
-      "largestUp": {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.5,
-        "currentChampion": 7.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 16 条"
-        ]
-      },
-      "largestDown": {
-        "team": "colombia",
-        "name": "哥伦比亚",
-        "code": "COL",
-        "previousChampion": 3.8,
-        "currentChampion": 3.7,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 16 条",
-        "reasons": [
-          "可入模型事件新增 16 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }

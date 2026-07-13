@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-13T17:31:27.157837+00:00",
+  "updatedAt": "2026-07-13T19:37:09.320609+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -19619,6 +19619,62 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 13 Jul 2026 17:00:05 GMT"
+    },
+    {
+      "title": "Villa working on deal for Switzerland's Manzambi",
+      "detail": "Aston Villa are working on a deal for Freiburg midfielder Johan Manzambi as they attempt to hijack a move to Newcastle United.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 17:53:34 GMT"
+    },
+    {
+      "title": "Timing took me to Chelsea rather than Liverpool - Alonso",
+      "detail": "Chelsea manager Xabi Alonso says his arrival at Stamford Bridge instead of Liverpool was \"about timings\".",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 19:00:16 GMT"
+    },
+    {
+      "title": "Revs re-sign USMNT's Turner on loan from Lyon",
+      "detail": "The New England Revolution announced on Monday that it has extended the loan of United States men's national team goalkeeper Matt Turner from Ligue 1 side Lyon through the end of 2026.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 14:45:10 EST"
+    },
+    {
+      "title": "Alonso wants Enzo Fernández to stay at Chelsea",
+      "detail": "Chelsea manager Xabi Alonso has said he wants to keep Enzo Fernández at the club amid a potential exit this summer.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 14:45:10 EST"
+    },
+    {
+      "title": "Source: Villa's Digne agrees deal for PSG return",
+      "detail": "Paris Saint-Germain have agreed a deal with Lucas Digne to bring the Aston Villa defender back to Paris after paying his £10 million ($13.3m) release clause, a source told ESPN.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 14:45:10 EST"
+    },
+    {
+      "title": "Preparing for penalties: How goalkeepers get ready...",
+      "detail": "Since the shootout debuted at the 1982 World Cup, 39 knockout games have been decided from the penalty spot. What does preparation look like for the goalkeepers?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 11:55:49 EST"
+    },
+    {
+      "title": "NWSL Power Rankings: Gotham rocket up the order as...",
+      "detail": "Even without Sam Kerr, Gotham are showing the rest of the NWSL how potent their attack is, challenging Washington at the top of ESPN's Power Rankings.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 12:42:21 EST"
+    },
+    {
+      "title": "Best bets for the 2026 World Cup semifinal round: ...",
+      "detail": "Looking to place some World Cup bets? Take a look at what our experts are considering ahead of the semifinal round.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 12:10:22 EST"
     }
   ],
   "teams": [
@@ -20554,18 +20610,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2718,
+      "eventCount": 2726,
       "manualEventCount": 3,
-      "rawNewsCount": 2715,
+      "rawNewsCount": 2723,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2718,
-      "applied": 2504,
+      "watched": 2726,
+      "applied": 2511,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2713,
+      "singleSource": 2721,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -31206,7 +31262,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-13T17:31:48.955899+00:00",
+    "generatedAt": "2026-07-13T19:37:30.098352+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
