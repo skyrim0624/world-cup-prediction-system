@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-13T08:34:07.608218+00:00",
+  "updatedAt": "2026-07-13T12:12:03.517510+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -19332,6 +19332,132 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 12 Jul 2026 02:17:00 GMT"
+    },
+    {
+      "title": "Most clinical? Least creative? Best in the air? Comparing the last four",
+      "detail": "BBC Sport compares statistics for France, Spain, Argentina and England in the World Cup so far as the semi-finalists prepare to meet.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 11:05:25 GMT"
+    },
+    {
+      "title": "Man Utd close to completing Tielemans deal",
+      "detail": "Manchester United are in advanced talks with Aston Villa over Belgium midfielder Youri Tielemans",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 11:22:25 GMT"
+    },
+    {
+      "title": "Chris Sutton's World Cup semi-final predictions",
+      "detail": "BBC Sport's football expert Chris Sutton gives his predictions for the semi-final ties at the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 09:55:54 GMT"
+    },
+    {
+      "title": "Spain defender Leon joins London City Lionesses",
+      "detail": "Spain defender Mapi Leon joins London City Lionesses on a three-year deal following her exit from Barcelona.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 11:01:16 GMT"
+    },
+    {
+      "title": "Ted Lasso actor Fernandez makes professional debut",
+      "detail": "Ted Lasso actor Cristo Fernandez makes his professional football debut for American second-tier side El Paso Locomotive.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 09:43:13 GMT"
+    },
+    {
+      "title": "More than the Score",
+      "detail": "The stories of World Cup stars from refugee families",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 10:26:00 GMT"
+    },
+    {
+      "title": "Turning the page: 30 players who could represent t...",
+      "detail": "The tears are barely dry from the USMNT's 2026 World Cup exit, but the page immediately turns to the 2030 World Cup. Here's who could represent the U.S. in four years.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 07:35:31 EST"
+    },
+    {
+      "title": "Sources: United in advanced talks for Tielemans",
+      "detail": "Manchester United are in advanced talks to sign Youri Tielemans from Aston Villa, sources have told ESPN.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 07:35:35 EST"
+    },
+    {
+      "title": "Cubarsí calls for tolerance after ex-PM comments",
+      "detail": "Spain defender Pau Cubarsí has called for tolerance after the nation's former Prime Minister, Mariano Rajoy, claimed that France \"don't have any French players.\"",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 07:35:35 EST"
+    },
+    {
+      "title": "Iraola: Liverpool working hard to sign new players...",
+      "detail": "Liverpool head coach Andoni Iraola has admitted the club \"need more\" players but are \"working hard\" behind the scenes to bolster his squad in this transfer window.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 07:35:35 EST"
+    },
+    {
+      "title": "Ex-Man U striker Forlán to become Uruguay coach",
+      "detail": "Uruguay's Football Association (AUF) is in advanced talks with Diego Forlán to become head coach of the national team on an interim basis.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 07:35:35 EST"
+    },
+    {
+      "title": "Will hydration breaks live on beyond the World Cup?",
+      "detail": "FIFA's mandated three-minute breaks have been a talking point throughout the 2026 World Cup.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 08:01:54 EST"
+    },
+    {
+      "title": "Inside Spain's World Cup camp: Can good vibes coul...",
+      "detail": "As they prepare to face France's four musketeers, Spain have built their own powerful \"all for one\" mentality together in their World Cup summer camp.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 08:06:44 EST"
+    },
+    {
+      "title": "World Cup Daily live: Happy Birthday to Lamine Yam...",
+      "detail": "Enjoy all the features, news, video analysis and color from around the competition as we now know our four World Cup semifinalists.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 04:25:11 EST"
+    },
+    {
+      "title": "Copy of Hate extra time and penalties? One man is on a mis...",
+      "detail": "Soccer's format for deciding cup games that end in a tie is a flawed system. So what is an alternative?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 04:25:12 EST"
+    },
+    {
+      "title": "Transfer rumors, news: Arsenal step up move for Ar...",
+      "detail": "Arsenal are stepping up their pursuit of Atlético Madrid forward Julián Álvarez. Transfer talk has the latest.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 03:41:09 EST"
+    },
+    {
+      "title": "Rodri: ‘France are one of the best teams here, in great form, but so are Spain. We can beat them’",
+      "detail": "<p>The Spain captain on his team’s chances in the World Cup semi-final, analysing every game so far and how to get the best out of Lamine Yamal</p><p>“I’m not <em>that </em>bad,” Rodri Hernández says. It’s the morning after the World Cup’s 100th game and in a conference room at the Cotton Bowl where old posters line the walls and Spain are about to start their penultimate training session before the 101st, their captain is doing the calculations. Even with the six he’s played in and all the travel, from Atlanta to Guadalajara and Dallas to Los Angeles and back, 9,000 miles so far, he reckons he’s watched the “immense majority”. More than anyone else here, anyway. “Some as a fan, teams we can’t face; others I analyse. But it’s not like I’m there with pen and paper,” he says. Then he cracks up and concedes: “But, yeah, I probably am the worst.”</p><p>They wouldn’t have it another way; he <em>couldn’t </em>have it any other way. This is who Rodri is: <a href=\"https://www.theguardian.com/football/2024/oct/29/rodri-ballon-dor-manchester-city-spain\">Ballon d’Or winner</a> and <a href=\"https://www.theguardian.com/football/2019/oct/18/rodri-manchester-city-klopp-teams-animals-knife-university-improve\">business graduate from Castellón University</a>. The kid who was on camp in the Connecticut woods, aged 14, when Spain last won the World Cup and the captain who aspires to lift the trophy again, back in the US 16 years on. The midfielder who sometimes seems like a <em>de facto</em> coach, analysing everything. The adult in the room, a leader aware of his responsibility. When Rodri talks, they listen. Sometimes they have to. And, oh, <a href=\"https://www.theguardian.com/football/article/2024/jul/08/rodri-always-watch-games-back-alone-spain-euro-2024-manchester-city\">Rodri talks</a>, a calm authority about him.</p> <a href=\"https://www.theguardian.com/football/2026/jul/13/rodri-interview-spain-captain-world-cup-2026\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 13 Jul 2026 11:00:46 GMT"
+    },
+    {
+      "title": "World Cup quiz: how well do you remember USA 94?",
+      "detail": "<p>How much do you know about the first tournament played in the United States?</p> <a href=\"https://www.theguardian.com/football/2026/jul/13/world-cup-quiz-usa-94-united-states\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 09:33:37 GMT"
     }
   ],
   "teams": [
@@ -19418,7 +19544,7 @@
       "factors": {
         "strength": 76,
         "form": 62,
-        "path": 59,
+        "path": 58,
         "squad": 50,
         "margin": 70
       },
@@ -20267,18 +20393,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2677,
+      "eventCount": 2695,
       "manualEventCount": 3,
-      "rawNewsCount": 2674,
+      "rawNewsCount": 2692,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2677,
-      "applied": 2468,
+      "watched": 2695,
+      "applied": 2483,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2672,
+      "singleSource": 2690,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -20322,7 +20448,7 @@
         "attack": -23.5,
         "defense": -4.699999999999999,
         "goalkeeper": -6.449999999999999,
-        "path": -8.729999999999999,
+        "path": -9.649999999999999,
         "squad": -36.99999999999999
       },
       "bosnia-herzegovina": {
@@ -30919,7 +31045,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-13T08:34:22.935361+00:00",
+    "generatedAt": "2026-07-13T12:12:23.653114+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
