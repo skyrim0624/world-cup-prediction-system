@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-13T21:03:07.309398+00:00",
+  "updatedAt": "2026-07-13T22:29:59.515771+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -19703,6 +19703,34 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Mon, 13 Jul 2026 18:20:43 GMT"
+    },
+    {
+      "title": "England to make late call on Rice for World Cup semi-final",
+      "detail": "England will make a late decision on whether Declan Rice is fit to start Wednesday's World Cup semi-final against Argentina.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 21:30:05 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "Mark Chapman, Chris Sutton, Conor Coady and Rory Smith preview England's semi-final.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 21:06:00 GMT"
+    },
+    {
+      "title": "Declan Rice winning fitness battle to start for England against Argentina",
+      "detail": "<ul><li><p>Rice expected to overcome illness for semi-final</p></li><li><p>Jordan Pickford: ‘We can’t focus solely on Messi’</p></li></ul><p>Declan Rice is set to overcome illness and retain his place for England’s World Cup semi-final against Argentina on Wednesday.</p><p>The Arsenal midfielder was substituted at half-time of <a href=\"https://www.theguardian.com/football/2026/jul/12/norway-england-world-cup-quarter-final-match-report\">England’s win over Norway</a> in the quarter-final, with Thomas Tuchel revealing that he had spent most of the previous three days in bed due to illness. But it is understood that Rice has been feeling much better after England returned to their base in Kansas City for the final time before departing for Atlanta on Tuesday and the 27-year-old is expected to start alongside Elliot Anderson in midfield against the reigning world champions.</p> <a href=\"https://www.theguardian.com/football/2026/jul/13/england-declan-rice-winning-fitness-battle-argentina-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 21:30:11 GMT"
+    },
+    {
+      "title": "France unleashed: reinvention could earn Deschamps all-time great status | Nick Ames",
+      "detail": "<p>Head coach has found a way to get the best out of his glittering attack and has a second World Cup in sight</p><p>It was a night when, as Didier Deschamps put it, the light went out by half-time. A remodelled France side had been comfortably beaten by Italy in their Nations League opener and a Parisian crowd made their feelings perfectly clear upon the conclusion. Three days later <em>Les Bleus</em>’ roadshow moved to Lyon for a meeting with Belgium, where the head coach’s name was booed before kick-off. Deschamps attributed that to provincial enmities but there was the clear sense of a once glorious tenure outlasting its welcome.</p><p>Almost two years on, Deschamps stands on the verge of genuine greatness. How can the assessment be any other way when, should the next six days go to plan, he would&nbsp;be only the second manager&nbsp;to win the World Cup twice? The power is firmly back on for France and will surge to new levels if they underline his renaissance against&nbsp;Spain.</p> <a href=\"https://www.theguardian.com/football/2026/jul/13/france-didier-deschamps-kylian-mbappe-michael-olise-spain-world-cup-semi-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 20:47:12 GMT"
     }
   ],
   "teams": [
@@ -20638,18 +20666,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2730,
+      "eventCount": 2734,
       "manualEventCount": 3,
-      "rawNewsCount": 2727,
+      "rawNewsCount": 2731,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2730,
-      "applied": 2514,
+      "watched": 2734,
+      "applied": 2518,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2725,
+      "singleSource": 2729,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -31290,7 +31318,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-13T21:03:27.641013+00:00",
+    "generatedAt": "2026-07-13T22:30:21.654505+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

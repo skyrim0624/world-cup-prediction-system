@@ -38216,5 +38216,19 @@
     "factor": "attack",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "espn-5b94bc3d58a3",
+    "title": "Haaland, Norway return home to heroes' welcome",
+    "summary": "Erling Haaland and his Norway teammates were welcomed home by a crowd of thousands following their historic World Cup achievements in North America.",
+    "source": "espn",
+    "team": "usa",
+    "status": "single_source",
+    "published_at": "Mon, 13 Jul 2026 18:23:39 EST",
+    "url": "https://www.espn.com/soccer/story/_/id/49353144/erling-haaland-norway-return-home-heroes-welcome-world-cup-exit",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

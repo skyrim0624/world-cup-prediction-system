@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-13T22:29:59.515771+00:00",
+  "updatedAt": "2026-07-13T23:30:15.949484+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -19731,6 +19731,13 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 13 Jul 2026 20:47:12 GMT"
+    },
+    {
+      "title": "Haaland, Norway return home to heroes' welcome",
+      "detail": "Erling Haaland and his Norway teammates were welcomed home by a crowd of thousands following their historic World Cup achievements in North America.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 18:23:39 EST"
     }
   ],
   "teams": [
@@ -20666,18 +20673,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2734,
+      "eventCount": 2735,
       "manualEventCount": 3,
-      "rawNewsCount": 2731,
+      "rawNewsCount": 2732,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2734,
-      "applied": 2518,
+      "watched": 2735,
+      "applied": 2519,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2729,
+      "singleSource": 2730,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -31318,7 +31325,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-13T22:30:21.654505+00:00",
+    "generatedAt": "2026-07-13T23:30:37.742678+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
