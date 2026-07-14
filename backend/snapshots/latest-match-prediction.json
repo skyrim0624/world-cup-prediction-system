@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-14T16:22:59.160531+00:00",
+  "updatedAt": "2026-07-14T17:42:16.277662+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -20158,6 +20158,62 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 14 Jul 2026 15:33:54 GMT"
+    },
+    {
+      "title": "Man Utd sign Tielemans from Aston Villa",
+      "detail": "Manchester United complete the signing of Youri Tielemans from Aston Villa on a five-year deal.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 17:39:55 GMT"
+    },
+    {
+      "title": "Balogun expected controversy after World Cup ban waived",
+      "detail": "United States striker Folarin Balogun knew the decision by Fifa to suspend his one-game ban at the World Cup was going to bring \"a lot of controversy\" and said it brought \"nerves\" on his team-mates.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 17:02:17 GMT"
+    },
+    {
+      "title": "Balogun: Red card 'controversy' affected USMNT",
+      "detail": "United States striker Folarin Balogun revealed that he predicted President Donald Trump's involvement in overturning his World Cup suspension would \"cause a lot of controversy.\"",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 14 Jul 2026 12:19:39 EST"
+    },
+    {
+      "title": "Kane: England can't focus on Argentina history",
+      "detail": "Harry Kane says a World Cup semifinal against historic rivals Argentina is \"as big as it gets\" but stressed England cannot be drawn into the emotional baggage surrounding the fixture.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 12:20:00 EST"
+    },
+    {
+      "title": "Besiktas, Arsenal agree $22.8M deal for Trossard",
+      "detail": "Besiktas have agreed a deal with Arsenal for winger Leandro Trossard, the north London club have announced.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 12:48:12 EST"
+    },
+    {
+      "title": "Why England vs. Argentina is World Cup's best, ang...",
+      "detail": "Wednesday will see England and Argentina meet for the first time since 2005, and it's a rivalry that has defined the World Cup thanks to some unforgettable encounters. Here's why this game is so compelling.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 12:09:08 EST"
+    },
+    {
+      "title": "France v Spain: World Cup 2026 semi-final – live",
+      "detail": "<p>⚽ Kick-off time: 2pm local/3pm EST/8pm BST/5am AEST<br>⚽ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\">Football Daily</a> | <a href=\"mailto:scott.murray.casual@guardian.co.uk\">Mail Scott</a></p><p><strong>This will be France’s eighth semi-final.</strong> Their hit rate is pretty good: three losses (against Brazil in 1958 and West Germany in 1982 and 1986) followed by four wins (against Croatia in 1998, Portugal in 2006, Belgium in 2018 and Morocco in 2022).</p><p><strong>By contrast, it’s just Spain’s second appearance at this stage,</strong> though they can boast a 100-percent record, having seen off Germany in 2010. They also participated in the 1950 final pool, which could have been a damp squib but … wasn’t.</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/14/france-v-spain-world-cup-2026-semi-final-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 17:35:11 GMT"
+    },
+    {
+      "title": "War, antics and vitriol – the England v Argentina rivalry is real but now it is only about football",
+      "detail": "<p>Mexico 1986, France 1998, Japan 2002 … this is a match that transcends, with Argentina head coach Lionel Scaloni calling for the focus to be on football, not the Falklands</p><p>After confirmation that match 102, one of the World Cup semi-finals, would be England v Argentina, the 1982 Falklands/Malvinas conflict was mentioned at Lionel Scaloni’s press conference. “No, no, no,” the Argentina head coach tut-tutted emphatically. “This is just a football match. Let’s not look for other stuff. It’s a football game against a great team, with a great manager who I admire. But it’s a football match. End of.”</p><p>The Argentina midfielder Rodrigo De Paul concurred: “We understand it’s a football game that transcends; it brings back memories of what Diego did. We sing songs about our Malvinas heroes, mainly to remember them, but we have to understand that it’s a football match and that the Malvinas have to be discussed elsewhere. What happened was an atrocity and we always remember the fallen, but what we want is to win this match to get to the final.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/14/england-argentina-world-cup-2026-rivalry\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 16:23:02 GMT"
     }
   ],
   "teams": [
@@ -20308,7 +20364,7 @@
       "tournament": {
         "champion": 0.7,
         "final": 2.6,
-        "semifinal": 6.6,
+        "semifinal": 6.7,
         "quarterfinal": 22.2,
         "change": -0.8
       }
@@ -20433,17 +20489,17 @@
       "code": "AUS",
       "factors": {
         "strength": 78,
-        "form": 76,
+        "form": 75,
         "path": 64,
         "squad": 69,
         "margin": 77
       },
       "tournament": {
-        "champion": 0.3,
-        "final": 1.3,
-        "semifinal": 4.0,
-        "quarterfinal": 10.4,
-        "change": 0.0
+        "champion": 0.2,
+        "final": 1.2,
+        "semifinal": 3.6,
+        "quarterfinal": 9.8,
+        "change": -0.1
       }
     },
     {
@@ -20649,9 +20705,9 @@
       },
       "tournament": {
         "champion": 0.3,
-        "final": 1.4,
-        "semifinal": 4.3,
-        "quarterfinal": 11.0,
+        "final": 1.5,
+        "semifinal": 4.4,
+        "quarterfinal": 11.3,
         "change": -0.2
       }
     },
@@ -20727,7 +20783,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.6,
-        "quarterfinal": 2.6,
+        "quarterfinal": 2.7,
         "change": 0.0
       }
     },
@@ -20857,11 +20913,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 22.0,
-        "final": 39.0,
-        "semifinal": 56.7,
-        "quarterfinal": 76.0,
-        "change": 6.8
+        "champion": 22.1,
+        "final": 39.2,
+        "semifinal": 57.0,
+        "quarterfinal": 76.3,
+        "change": 6.9
       }
     },
     {
@@ -20878,7 +20934,7 @@
       "tournament": {
         "champion": 0.6,
         "final": 2.3,
-        "semifinal": 6.0,
+        "semifinal": 6.1,
         "quarterfinal": 20.7,
         "change": 0.0
       }
@@ -20992,7 +21048,7 @@
       "tournament": {
         "champion": 3.8,
         "final": 10.3,
-        "semifinal": 20.6,
+        "semifinal": 20.5,
         "quarterfinal": 50.8,
         "change": 1.3
       }
@@ -21009,11 +21065,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 9.3,
-        "final": 20.1,
+        "champion": 9.2,
+        "final": 20.0,
         "semifinal": 38.5,
         "quarterfinal": 58.5,
-        "change": -1.4
+        "change": -1.5
       }
     },
     {
@@ -21093,18 +21149,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2795,
+      "eventCount": 2803,
       "manualEventCount": 3,
-      "rawNewsCount": 2792,
+      "rawNewsCount": 2800,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2795,
-      "applied": 2571,
+      "watched": 2803,
+      "applied": 2577,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2790,
+      "singleSource": 2798,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -21215,7 +21271,7 @@
         "squad": -9.799999999999999
       },
       "australia": {
-        "attack": -2.15,
+        "attack": -4.699999999999999,
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -3.73,
@@ -31745,41 +31801,91 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-14T16:23:19.125250+00:00",
+    "generatedAt": "2026-07-14T17:42:37.888186+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
     "items": [
       {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 3.8,
-        "currentChampion": 3.7,
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 22.0,
+        "currentChampion": 22.1,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.3%",
+        "reasons": [
+          "四强概率上升 +0.3%",
+          "八强概率上升 +0.3%",
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 6 条"
+        ]
+      },
+      {
+        "team": "england",
+        "name": "英格兰",
+        "code": "ENG",
+        "previousChampion": 9.3,
+        "currentChampion": 9.2,
         "change": -0.1,
         "direction": "down",
-        "reason": "可入模型事件新增 9 条",
+        "reason": "决赛概率下降 -0.1%",
         "reasons": [
-          "可入模型事件新增 9 条"
+          "决赛概率下降 -0.1%",
+          "可入模型事件新增 6 条"
+        ]
+      },
+      {
+        "team": "australia",
+        "name": "澳大利亚",
+        "code": "AUS",
+        "previousChampion": 0.3,
+        "currentChampion": 0.2,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "状态盘下调 -2.5",
+        "reasons": [
+          "状态盘下调 -2.5",
+          "八强概率下降 -0.6%",
+          "四强概率下降 -0.4%",
+          "决赛概率下降 -0.1%",
+          "可入模型事件新增 6 条"
         ]
       }
     ],
     "summary": {
-      "up": 0,
-      "down": 1,
-      "largestUp": null,
+      "up": 1,
+      "down": 2,
+      "largestUp": {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 22.0,
+        "currentChampion": 22.1,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.3%",
+        "reasons": [
+          "四强概率上升 +0.3%",
+          "八强概率上升 +0.3%",
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 6 条"
+        ]
+      },
       "largestDown": {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 3.8,
-        "currentChampion": 3.7,
+        "team": "england",
+        "name": "英格兰",
+        "code": "ENG",
+        "previousChampion": 9.3,
+        "currentChampion": 9.2,
         "change": -0.1,
         "direction": "down",
-        "reason": "可入模型事件新增 9 条",
+        "reason": "决赛概率下降 -0.1%",
         "reasons": [
-          "可入模型事件新增 9 条"
+          "决赛概率下降 -0.1%",
+          "可入模型事件新增 6 条"
         ]
       }
     }
