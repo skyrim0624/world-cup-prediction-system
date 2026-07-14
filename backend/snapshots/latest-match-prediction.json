@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-14T19:28:26.512941+00:00",
+  "updatedAt": "2026-07-14T20:40:31.707991+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -20256,6 +20256,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 14 Jul 2026 17:54:07 GMT"
+    },
+    {
+      "title": "Henderson & Quansah only England absentees for Argentina",
+      "detail": "Jordan Henderson and Jarell Quansah are set to be the only players unavailable for England's World Cup semi-final against Argentina.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 20:16:52 GMT"
+    },
+    {
+      "title": "Leeds agree £34.1m fee for defender Muharemovic",
+      "detail": "Leeds United agree a £34.1m fee with Italian club Sassuolo for defender Tarik Muharemovic.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 20:18:11 GMT"
+    },
+    {
+      "title": "Why has the ball changed for World Cup semi-finals?",
+      "detail": "Why has Fifa changed the match ball after 100 games of the World Cup?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 20:21:34 GMT"
     }
   ],
   "teams": [
@@ -20369,7 +20390,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.8,
-        "quarterfinal": 6.9,
+        "quarterfinal": 6.8,
         "change": -0.1
       }
     },
@@ -20502,7 +20523,7 @@
         "champion": 0.5,
         "final": 1.7,
         "semifinal": 6.4,
-        "quarterfinal": 29.1,
+        "quarterfinal": 28.9,
         "change": -0.5
       }
     },
@@ -20728,9 +20749,9 @@
       },
       "tournament": {
         "champion": 1.4,
-        "final": 3.8,
-        "semifinal": 10.7,
-        "quarterfinal": 36.8,
+        "final": 3.7,
+        "semifinal": 10.5,
+        "quarterfinal": 36.2,
         "change": -1.7
       }
     },
@@ -20804,8 +20825,8 @@
       },
       "tournament": {
         "champion": 19.7,
-        "final": 29.6,
-        "semifinal": 46.0,
+        "final": 29.5,
+        "semifinal": 45.9,
         "quarterfinal": 55.7,
         "change": 8.1
       }
@@ -20894,15 +20915,15 @@
         "strength": 81,
         "form": 78,
         "path": 69,
-        "squad": 74,
+        "squad": 76,
         "margin": 80
       },
       "tournament": {
-        "champion": 0.7,
-        "final": 2.0,
-        "semifinal": 6.8,
-        "quarterfinal": 27.1,
-        "change": -0.3
+        "champion": 0.8,
+        "final": 2.2,
+        "semifinal": 7.3,
+        "quarterfinal": 28.1,
+        "change": -0.2
       }
     },
     {
@@ -21033,7 +21054,7 @@
       "tournament": {
         "champion": 5.0,
         "final": 9.4,
-        "semifinal": 18.9,
+        "semifinal": 18.8,
         "quarterfinal": 26.4,
         "change": -1.2
       }
@@ -21191,18 +21212,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2809,
+      "eventCount": 2812,
       "manualEventCount": 3,
-      "rawNewsCount": 2806,
+      "rawNewsCount": 2809,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2809,
-      "applied": 2581,
+      "watched": 2812,
+      "applied": 2582,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2804,
+      "singleSource": 2807,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -21450,7 +21471,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": 0.0,
-        "squad": -5.1
+        "squad": -3.4499999999999997
       },
       "iraq": {
         "attack": 0.0,
@@ -31843,16 +31864,50 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-14T19:28:48.636421+00:00",
+    "generatedAt": "2026-07-14T20:40:53.949538+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "senegal",
+        "name": "塞内加尔",
+        "code": "SEN",
+        "previousChampion": 0.7,
+        "currentChampion": 0.8,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "人员盘上调 +1.6",
+        "reasons": [
+          "人员盘上调 +1.6",
+          "八强概率上升 +1.0%",
+          "四强概率上升 +0.5%",
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 1 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
+      "up": 1,
       "down": 0,
-      "largestUp": null,
+      "largestUp": {
+        "team": "senegal",
+        "name": "塞内加尔",
+        "code": "SEN",
+        "previousChampion": 0.7,
+        "currentChampion": 0.8,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "人员盘上调 +1.6",
+        "reasons": [
+          "人员盘上调 +1.6",
+          "八强概率上升 +1.0%",
+          "四强概率上升 +0.5%",
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 1 条"
+        ]
+      },
       "largestDown": null
     }
   }

@@ -39266,5 +39266,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.72
+  },
+  {
+    "id": "bbc-5b55c2eab8a6",
+    "title": "Henderson & Quansah only England absentees for Argentina",
+    "summary": "Jordan Henderson and Jarell Quansah are set to be the only players unavailable for England's World Cup semi-final against Argentina.",
+    "source": "bbc",
+    "team": "senegal",
+    "status": "single_source",
+    "published_at": "Tue, 14 Jul 2026 20:16:52 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c20y0gp3p70o?at_medium=RSS&at_campaign=rss",
+    "category": "availability",
+    "factor": "squad",
+    "direction": 1,
+    "confidence": 0.76
+  },
+  {
+    "id": "bbc-e7f15d7b078d",
+    "title": "Leeds agree £34.1m fee for defender Muharemovic",
+    "summary": "Leeds United agree a £34.1m fee with Italian club Sassuolo for defender Tarik Muharemovic.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Tue, 14 Jul 2026 20:18:11 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cpd3d6vx803o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "defense",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-5e13ac3c95c1",
+    "title": "Why has the ball changed for World Cup semi-finals?",
+    "summary": "Why has Fifa changed the match ball after 100 games of the World Cup?",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Tue, 14 Jul 2026 20:21:34 GMT",
+    "url": "https://www.bbc.co.uk/sport/articles/c3wyw7pjv6qo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
