@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-13T23:30:15.949484+00:00",
+  "updatedAt": "2026-07-14T00:58:30.596192+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -19738,6 +19738,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 13 Jul 2026 18:23:39 EST"
+    },
+    {
+      "title": "Deschamps predicts 'spectacular' France v Spain semi-final",
+      "detail": "France boss Didier Deschamps is predicting a \"spectacular\" semi-final when his exciting side take on Spain in a heavyweight World Cup showdown in Dallas.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 00:10:04 GMT"
+    },
+    {
+      "title": "‘We have a different team’: Revenge for Euro exit drives France ahead of Spain semi-final",
+      "detail": "<ul><li><p>Zaïre-Emery confident Les Bleus will deliver in Dallas</p></li><li><p>Deschamps to bring Tchouaméni into lineup if fit</p></li></ul><p>The France midfielder Warren Zaïre-Emery says his team want to exact revenge on Spain and banish painful memories of their exit in the Euro 2024 semi-final.</p><p>France and Spain meet again on Tuesday in search of a place in the World Cup final, an even more glittering prize than the one Luis de la Fuente’s team grabbed two years ago. Back then Spain were worthy winners in Munich but a revitalised France have turned their fortunes around, blazing a trail to the last four with some scintillating attacking football.</p> <a href=\"https://www.theguardian.com/football/2026/jul/14/france-team-news-spain-world-cup-semi-final-euro-revenge\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 23:45:26 GMT"
     }
   ],
   "teams": [
@@ -20673,18 +20687,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2735,
+      "eventCount": 2737,
       "manualEventCount": 3,
-      "rawNewsCount": 2732,
+      "rawNewsCount": 2734,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2735,
-      "applied": 2519,
+      "watched": 2737,
+      "applied": 2521,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2730,
+      "singleSource": 2732,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -31208,13 +31222,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-07-13",
+      "referenceDate": "2026-07-14",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 30,
-      "oldestAgeDays": 104,
+      "newestAgeDays": 31,
+      "oldestAgeDays": 105,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -31325,7 +31339,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-13T23:30:37.742678+00:00",
+    "generatedAt": "2026-07-14T00:58:52.529453+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

@@ -38258,5 +38258,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.72
+  },
+  {
+    "id": "espn-a363e029b3bd",
+    "title": "Deschamps says Spain-France will be 'spectacular'",
+    "summary": "France head coach Didier Deschamps deflected questions about his team's World Cup favorite status and projected a \"spectacular game\" against Spain in Tuesday's semifinal.",
+    "source": "espn",
+    "team": "spain",
+    "status": "single_source",
+    "published_at": "Mon, 13 Jul 2026 21:48:22 EST",
+    "url": "https://www.espn.com/soccer/story/_/id/49354271/france-deschamps-predicts-spectacular-semifinal-clash-vs-spain",
+    "category": "market_proxy",
+    "factor": "path",
+    "direction": 1,
+    "confidence": 0.52
+  },
+  {
+    "id": "guardian-36dce4ef0eed",
+    "title": "Lamine Yamal enjoys birthday with a kickabout and a show before France World Cup semi-final test",
+    "summary": "<ul><li><p>‘What I want as a present is a win,’ says Spain’s young star</p></li><li><p>Luis de la Fuente hopes best is still to come at World Cup</p></li></ul><p>Lamine Yamal’s 19th birthday started with a kickabout with his mates and took in a show. He played the lead role himself, taking centre stage before a packed house in the World Cup semi-final pre-match press conference. Walking in, he peeled back his tracksuit top like Superman to reveal the gift that he got: a huge white gold and diamond chain BA Baracas would have been proud of.</p><p>“Actually, no, I bought this for myself so it doesn’t count as a gift,” he said, flashing a smile at the room of journalists who he thanked for accepting the invitation to be there on his big day. A glint in his eye, he said he hadn’t had many presents yet, but he knew what he wanted: “A trip to New York.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/14/lamine-yamal-birthday-spain-vs-france-world-cup-semi-final\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "switzerland",
+    "status": "single_source",
+    "published_at": "Tue, 14 Jul 2026 03:16:30 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/14/lamine-yamal-birthday-spain-vs-france-world-cup-semi-final",
+    "category": "training",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.58
   }
 ]

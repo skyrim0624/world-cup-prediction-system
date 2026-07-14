@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-14T00:58:30.596192+00:00",
+  "updatedAt": "2026-07-14T04:11:17.824089+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -19752,6 +19752,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 13 Jul 2026 23:45:26 GMT"
+    },
+    {
+      "title": "Deschamps says Spain-France will be 'spectacular'",
+      "detail": "France head coach Didier Deschamps deflected questions about his team's World Cup favorite status and projected a \"spectacular game\" against Spain in Tuesday's semifinal.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 21:48:22 EST"
+    },
+    {
+      "title": "Lamine Yamal enjoys birthday with a kickabout and a show before France World Cup semi-final test",
+      "detail": "<ul><li><p>‘What I want as a present is a win,’ says Spain’s young star</p></li><li><p>Luis de la Fuente hopes best is still to come at World Cup</p></li></ul><p>Lamine Yamal’s 19th birthday started with a kickabout with his mates and took in a show. He played the lead role himself, taking centre stage before a packed house in the World Cup semi-final pre-match press conference. Walking in, he peeled back his tracksuit top like Superman to reveal the gift that he got: a huge white gold and diamond chain BA Baracas would have been proud of.</p><p>“Actually, no, I bought this for myself so it doesn’t count as a gift,” he said, flashing a smile at the room of journalists who he thanked for accepting the invitation to be there on his big day. A glint in his eye, he said he hadn’t had many presents yet, but he knew what he wanted: “A trip to New York.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/14/lamine-yamal-birthday-spain-vs-france-world-cup-semi-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 03:16:30 GMT"
     }
   ],
   "teams": [
@@ -20294,7 +20308,7 @@
       "factors": {
         "strength": 96,
         "form": 89,
-        "path": 77,
+        "path": 78,
         "squad": 87,
         "margin": 85
       },
@@ -20687,18 +20701,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2737,
+      "eventCount": 2739,
       "manualEventCount": 3,
-      "rawNewsCount": 2734,
+      "rawNewsCount": 2736,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2737,
-      "applied": 2521,
+      "watched": 2739,
+      "applied": 2523,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2732,
+      "singleSource": 2734,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -20910,7 +20924,7 @@
         "attack": 1.65,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 1.69,
+        "path": 2.56,
         "squad": -0.5
       },
       "cape-verde": {
@@ -31339,7 +31353,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-14T00:58:52.529453+00:00",
+    "generatedAt": "2026-07-14T04:11:39.661697+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
