@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-14T17:42:16.277662+00:00",
+  "updatedAt": "2026-07-14T19:28:26.512941+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -20214,6 +20214,48 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 14 Jul 2026 16:23:02 GMT"
+    },
+    {
+      "title": "Villa warned over sportswashing after Visit Rwanda deal",
+      "detail": "Aston Villa are warned their new £20m-a-year sponsorship deal with Visit Rwanda will be used by the nation to sportswash its human rights record.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 18:44:04 GMT"
+    },
+    {
+      "title": "Secret friendlies and promoting youngsters - Alonso's first week at Chelsea",
+      "detail": "Chelsea's entire pre-season is already mapped out by new boss Xabi Alonso, keen to make an early impact on his players before the season begins.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 17:44:27 GMT"
+    },
+    {
+      "title": "Chelsea agree fee for Man Utd striker Malard",
+      "detail": "Chelsea agree a deal worth about £850,000 to sign Manchester United striker Melvine Malard.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 18:35:30 GMT"
+    },
+    {
+      "title": "Celtic's McGregor keen to build with O'Neill despite exit talk",
+      "detail": "Callum McGregor feels he can help \"build something special\" with Martin O'Neill's Celtic, despite speculation surrounding the captain's future.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 18:17:45 GMT"
+    },
+    {
+      "title": "Parkinson eyes progress as Wrexham meet top clubs",
+      "detail": "Wrexham are set for a quartet of friendlies against Premier League opponents with Phil Parkinson confident his side will be better prepared for the Championship in 2026-27 than they were last season.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 17:46:13 GMT"
+    },
+    {
+      "title": "Tom Cruise among names set to take part in World Cup closing ceremony",
+      "detail": "<p>Mission: Impossible star to appear in a pre-game show that will also feature Robbie Williams and Jennifer Hudson</p><p>A wide array of performers, from actor Tom Cruise to streamer IShowSpeed, will help close out the World Cup, Fifa announced on Tuesday.</p><p>Soccer’s governing body released the lineup for the closing ceremony, which will take place 90 minutes before Sunday’s final. The show is meant to “celebrate the 48 teams’ unforgettable journey” through 16 host cities across three countries, Fifa said in a statement.</p> <a href=\"https://www.theguardian.com/film/2026/jul/14/tom-cruise-world-cup-closing-ceremony\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 17:54:07 GMT"
     }
   ],
   "teams": [
@@ -21149,18 +21191,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2803,
+      "eventCount": 2809,
       "manualEventCount": 3,
-      "rawNewsCount": 2800,
+      "rawNewsCount": 2806,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2803,
-      "applied": 2577,
+      "watched": 2809,
+      "applied": 2581,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2798,
+      "singleSource": 2804,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -31801,93 +31843,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-14T17:42:37.888186+00:00",
+    "generatedAt": "2026-07-14T19:28:48.636421+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 22.0,
-        "currentChampion": 22.1,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.3%",
-        "reasons": [
-          "四强概率上升 +0.3%",
-          "八强概率上升 +0.3%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 9.3,
-        "currentChampion": 9.2,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.1%",
-        "reasons": [
-          "决赛概率下降 -0.1%",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "australia",
-        "name": "澳大利亚",
-        "code": "AUS",
-        "previousChampion": 0.3,
-        "currentChampion": 0.2,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "状态盘下调 -2.5",
-        "reasons": [
-          "状态盘下调 -2.5",
-          "八强概率下降 -0.6%",
-          "四强概率下降 -0.4%",
-          "决赛概率下降 -0.1%",
-          "可入模型事件新增 6 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
-      "down": 2,
-      "largestUp": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 22.0,
-        "currentChampion": 22.1,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.3%",
-        "reasons": [
-          "四强概率上升 +0.3%",
-          "八强概率上升 +0.3%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      "largestDown": {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 9.3,
-        "currentChampion": 9.2,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.1%",
-        "reasons": [
-          "决赛概率下降 -0.1%",
-          "可入模型事件新增 6 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
