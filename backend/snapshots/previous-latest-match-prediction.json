@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-14T06:36:06.544886+00:00",
+  "updatedAt": "2026-07-14T09:08:54.322805+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -19815,6 +19815,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 14 Jul 2026 06:24:28 GMT"
+    },
+    {
+      "title": "Increased security for England and Argentina tie",
+      "detail": "Authorities say there will be increased security measures in place for Wednesday's World Cup semi-final between England and Argentina in Atlanta.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 07:14:16 GMT"
+    },
+    {
+      "title": "A winner and true friend - Bartoli on France boss Deschamps",
+      "detail": "Former Wimbledon champion Marion Bartoli speaks about her friendship with France boss Didier Deschamps.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 09:03:14 GMT"
+    },
+    {
+      "title": "London City's Asllani to sign one-year extension",
+      "detail": "London City Lionesses captain Kosovare Asllani signs a one-year contract extension despite suffering a serious injury.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 14 Jul 2026 07:27:27 GMT"
+    },
+    {
+      "title": "Everton close in on permament deal for Blundell",
+      "detail": "Everton are in advanced discussions with defender Hannah Blundell about a permanent deal following her successful loan spell last season.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 08:43:33 GMT"
+    },
+    {
+      "title": "World Cup 2026: France v Spain semi-final buildup; Atlanta police step up security for England v Argentina – live",
+      "detail": "<p>⚽️ Latest news before first of the semi-finals in Dallas<br>⚽️ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\">Football Daily</a> | <a href=\"mailto:matchday.live@theguardian.com\">Email us</a></p><p>Atlanta police are increasing staffing and resources for Wednesday’s World Cup semi-final between England and Argentina.</p><p><a href=\"https://www.atlantapd.org/Home/Components/News/News/8335/17\">The department says</a> additional officers will be deployed around the stadium and across the city’s entertainment and high-traffic areas, with large crowds expected before and after the match:</p><p>As Atlanta prepares to host an upcoming World Cup semi-final match and welcomes increased numbers of residents and visitors, the Atlanta Police Department has enhanced its citywide public safety and security posture. Additional personnel and resources are already deployed and will continue to be strategically assigned in and around the event venues, entertainment districts, and other high-traffic areas to help ensure a safe and enjoyable experience for everyone. These proactive measures are designed to protect the public, deter criminal activity, and ensure residents and visitors can safely enjoy this historic event.”</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/14/world-cup-2026-france-spain-buildup-england-argentina-news-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 09:01:29 GMT"
+    },
+    {
+      "title": "‘Spain’s superstar fan’: Lamine Yamal’s little brother takes World Cup by storm",
+      "detail": "<p>The Spain winger says three-year-old Keyne ‘means everything to me’ – and fans have taken him to their hearts</p><p>He’s become a social media staple; captured on camera blowing kisses, joyfully cheering on his team and careening through the stands of stadiums. Standing at just a few feet tall, the tiny toddler has become the unexpected breakout star of Spain’s World Cup run.</p><p>“This time around, the biggest sensation of the competition isn’t an athlete, the goals, or even the trophy itself,” was how Hola! – Spain’s version of Hello! magazine – <a href=\"https://www.youtube.com/watch?v=3cqcbSomwn0\">summed</a> it up. “It’s Keyne, Lamine Yamal’s three-year-old brother, who’s taking the tournament by storm with his hilarious moments.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/14/spain-superstar-fan-lamine-yamal-little-brother-takes-world-cup-by-storm\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 07:00:23 GMT"
+    },
+    {
+      "title": "The other Lionel: how Scaloni went from accidental manager to World Cup hero",
+      "detail": "<p>After forming an almost paternal relationship with Lionel Messi and providing a rare sense of stability, Argentina’s unheralded saviour is on the verge of World Cup history</p><p>On Lionel Messi’s ill-fated international debut in Budapest in 2005, when he was (very harshly) sent off 45 seconds after coming off the bench for swinging an arm at the Hungary defender Vilmos Vanczak, he received only two passes. Both came from Lionel Scaloni. It may not be much, but those two passes were the first contact in a relationship that <a href=\"https://www.theguardian.com/football/2026/jul/13/world-cup-2026-scouting-report-the-lowdown-on-england-semi-final-opponents-argentina\">may culminate in Argentina becoming only the third nation to successfully defend the World Cup</a>.</p><p>Messi has spoken of Scaloni as one of the first members of the squad to truly welcome him. After he had scored against Serbia and Montenegro in the World Cup group stage in 2006, when at the age of 18 years and 357 days he became the youngest player to play for Argentina at the tournament, the first player to come up to Messi in the tunnel, grabbing him from behind in a congratulatory hug, was Scaloni. The former West Ham full-back is only nine years Messi’s senior but there has been an almost paternal aspect to their relationship ever since.</p> <a href=\"https://www.theguardian.com/football/2026/jul/14/lionel-scaloni-messi-argentina-england-world-cup-hero\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 07:00:23 GMT"
     }
   ],
   "teams": [
@@ -20059,8 +20108,8 @@
       },
       "tournament": {
         "champion": 0.5,
-        "final": 1.6,
-        "semifinal": 6.2,
+        "final": 1.7,
+        "semifinal": 6.3,
         "quarterfinal": 28.7,
         "change": -0.5
       }
@@ -20134,11 +20183,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 3.7,
-        "final": 8.2,
+        "champion": 3.8,
+        "final": 8.4,
         "semifinal": 18.7,
         "quarterfinal": 32.9,
-        "change": -2.1
+        "change": -2.0
       }
     },
     {
@@ -20210,11 +20259,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 7.6,
-        "final": 15.0,
+        "champion": 7.8,
+        "final": 15.3,
         "semifinal": 31.8,
         "quarterfinal": 67.5,
-        "change": 0.8
+        "change": 1.0
       }
     },
     {
@@ -20229,11 +20278,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 2.4,
+        "champion": 2.5,
         "final": 6.7,
         "semifinal": 15.9,
         "quarterfinal": 32.7,
-        "change": 1.3
+        "change": 1.4
       }
     },
     {
@@ -20268,7 +20317,7 @@
       },
       "tournament": {
         "champion": 0.1,
-        "final": 0.4,
+        "final": 0.5,
         "semifinal": 1.8,
         "quarterfinal": 5.3,
         "change": -0.1
@@ -20286,11 +20335,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 1.3,
-        "final": 3.6,
-        "semifinal": 10.2,
+        "champion": 1.4,
+        "final": 3.7,
+        "semifinal": 10.5,
         "quarterfinal": 35.9,
-        "change": -1.8
+        "change": -1.7
       }
     },
     {
@@ -20358,15 +20407,15 @@
         "strength": 96,
         "form": 89,
         "path": 78,
-        "squad": 87,
+        "squad": 84,
         "margin": 85
       },
       "tournament": {
-        "champion": 21.1,
-        "final": 31.1,
-        "semifinal": 47.6,
-        "quarterfinal": 57.2,
-        "change": 9.5
+        "champion": 19.6,
+        "final": 29.5,
+        "semifinal": 45.9,
+        "quarterfinal": 55.7,
+        "change": 8.0
       }
     },
     {
@@ -20438,11 +20487,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 14.7,
-        "final": 23.9,
+        "champion": 14.9,
+        "final": 24.4,
         "semifinal": 41.0,
         "quarterfinal": 58.8,
-        "change": 1.2
+        "change": 1.4
       }
     },
     {
@@ -20458,8 +20507,8 @@
       },
       "tournament": {
         "champion": 0.8,
-        "final": 2.2,
-        "semifinal": 7.3,
+        "final": 2.3,
+        "semifinal": 7.5,
         "quarterfinal": 28.6,
         "change": -0.2
       }
@@ -20514,11 +20563,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 21.7,
+        "champion": 22.0,
         "final": 39.0,
         "semifinal": 56.7,
         "quarterfinal": 76.0,
-        "change": 6.5
+        "change": 6.8
       }
     },
     {
@@ -20553,9 +20602,9 @@
       },
       "tournament": {
         "champion": 0.4,
-        "final": 1.1,
-        "semifinal": 3.7,
-        "quarterfinal": 6.7,
+        "final": 1.2,
+        "semifinal": 3.9,
+        "quarterfinal": 7.0,
         "change": -0.2
       }
     },
@@ -20590,11 +20639,11 @@
         "margin": 83
       },
       "tournament": {
-        "champion": 4.9,
-        "final": 9.1,
-        "semifinal": 18.2,
-        "quarterfinal": 25.6,
-        "change": -1.3
+        "champion": 5.0,
+        "final": 9.4,
+        "semifinal": 18.8,
+        "quarterfinal": 26.4,
+        "change": -1.2
       }
     },
     {
@@ -20647,11 +20696,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 3.7,
+        "champion": 3.8,
         "final": 10.3,
         "semifinal": 20.6,
         "quarterfinal": 50.8,
-        "change": 1.2
+        "change": 1.3
       }
     },
     {
@@ -20666,11 +20715,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 9.1,
+        "champion": 9.3,
         "final": 20.1,
         "semifinal": 38.5,
         "quarterfinal": 58.5,
-        "change": -1.6
+        "change": -1.4
       }
     },
     {
@@ -20686,9 +20735,9 @@
       },
       "tournament": {
         "champion": 0.9,
-        "final": 2.2,
-        "semifinal": 6.1,
-        "quarterfinal": 10.5,
+        "final": 2.3,
+        "semifinal": 6.4,
+        "quarterfinal": 10.9,
         "change": 0.0
       }
     },
@@ -20750,18 +20799,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2746,
+      "eventCount": 2753,
       "manualEventCount": 3,
-      "rawNewsCount": 2743,
+      "rawNewsCount": 2750,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2746,
-      "applied": 2529,
+      "watched": 2753,
+      "applied": 2535,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2741,
+      "singleSource": 2748,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -20974,7 +21023,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": 2.56,
-        "squad": -0.5
+        "squad": -2.65
       },
       "cape-verde": {
         "attack": 0.0,
@@ -31402,17 +31451,160 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-14T06:36:28.509165+00:00",
+    "generatedAt": "2026-07-14T09:09:15.966339+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "spain",
+        "name": "西班牙",
+        "code": "ESP",
+        "previousChampion": 21.1,
+        "currentChampion": 19.6,
+        "change": -1.5,
+        "direction": "down",
+        "reason": "人员盘下调 -2.1",
+        "reasons": [
+          "人员盘下调 -2.1",
+          "四强概率下降 -1.7%",
+          "决赛概率下降 -1.6%",
+          "八强概率下降 -1.5%",
+          "可入模型事件新增 6 条"
+        ]
+      },
+      {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 21.7,
+        "currentChampion": 22.0,
+        "change": 0.3,
+        "direction": "up",
+        "reason": "可入模型事件新增 6 条",
+        "reasons": [
+          "可入模型事件新增 6 条"
+        ]
+      },
+      {
+        "team": "france",
+        "name": "法国",
+        "code": "FRA",
+        "previousChampion": 14.7,
+        "currentChampion": 14.9,
+        "change": 0.2,
+        "direction": "up",
+        "reason": "决赛概率上升 +0.5%",
+        "reasons": [
+          "决赛概率上升 +0.5%",
+          "可入模型事件新增 6 条"
+        ]
+      },
+      {
+        "team": "england",
+        "name": "英格兰",
+        "code": "ENG",
+        "previousChampion": 9.1,
+        "currentChampion": 9.3,
+        "change": 0.2,
+        "direction": "up",
+        "reason": "可入模型事件新增 6 条",
+        "reasons": [
+          "可入模型事件新增 6 条"
+        ]
+      },
+      {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.6,
+        "currentChampion": 7.8,
+        "change": 0.2,
+        "direction": "up",
+        "reason": "决赛概率上升 +0.3%",
+        "reasons": [
+          "决赛概率上升 +0.3%",
+          "可入模型事件新增 6 条"
+        ]
+      },
+      {
+        "team": "portugal",
+        "name": "葡萄牙",
+        "code": "POR",
+        "previousChampion": 4.9,
+        "currentChampion": 5.0,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.8%",
+        "reasons": [
+          "八强概率上升 +0.8%",
+          "四强概率上升 +0.6%",
+          "决赛概率上升 +0.3%",
+          "可入模型事件新增 6 条"
+        ]
+      },
+      {
+        "team": "germany",
+        "name": "德国",
+        "code": "GER",
+        "previousChampion": 3.7,
+        "currentChampion": 3.8,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "决赛概率上升 +0.2%",
+        "reasons": [
+          "决赛概率上升 +0.2%",
+          "可入模型事件新增 6 条"
+        ]
+      },
+      {
+        "team": "colombia",
+        "name": "哥伦比亚",
+        "code": "COL",
+        "previousChampion": 3.7,
+        "currentChampion": 3.8,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 6 条",
+        "reasons": [
+          "可入模型事件新增 6 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 9,
+      "down": 1,
+      "largestUp": {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 21.7,
+        "currentChampion": 22.0,
+        "change": 0.3,
+        "direction": "up",
+        "reason": "可入模型事件新增 6 条",
+        "reasons": [
+          "可入模型事件新增 6 条"
+        ]
+      },
+      "largestDown": {
+        "team": "spain",
+        "name": "西班牙",
+        "code": "ESP",
+        "previousChampion": 21.1,
+        "currentChampion": 19.6,
+        "change": -1.5,
+        "direction": "down",
+        "reason": "人员盘下调 -2.1",
+        "reasons": [
+          "人员盘下调 -2.1",
+          "四强概率下降 -1.7%",
+          "决赛概率下降 -1.6%",
+          "八强概率下降 -1.5%",
+          "可入模型事件新增 6 条"
+        ]
+      }
     }
   }
 }
