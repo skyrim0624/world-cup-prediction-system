@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-14T04:11:17.824089+00:00",
+  "updatedAt": "2026-07-14T06:36:06.544886+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -19766,6 +19766,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 14 Jul 2026 03:16:30 GMT"
+    },
+    {
+      "title": "Time for Lamine Yamal to ignite? Or another Mbappe World Cup masterclass?",
+      "detail": "France face Spain for a place in the World Cup final on Tuesday, meaning a showdown between Kylian Mbappe and Lamine Yamal. Who comes out on top?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 05:13:23 GMT"
+    },
+    {
+      "title": "Who will win the World Cup? The view from the semi-finalists",
+      "detail": "BBC Sport speaks to journalists and fans from the World Cup's four semi-finalists to see who they think will win the tournament.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 05:43:53 GMT"
+    },
+    {
+      "title": "Who am I? Guess World Cup star No 37",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 05:25:53 GMT"
+    },
+    {
+      "title": "All the goals from France's run to semi-finals",
+      "detail": "Watch every goal scored by France on their way to the 2026 World Cup semi-finals and a mouth-watering tie against Spain.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 05:11:18 GMT"
+    },
+    {
+      "title": "Spain's road to semi-final - every goal so far",
+      "detail": "Relive every goal Spain have scored on their way to the 2026 World Cup semi-finals, where a thrilling meeting with France at Dallas Stadium awaits.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 05:12:51 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "Did Rick & Lloyd follow Denno's pants rule?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 04:00:00 GMT"
+    },
+    {
+      "title": "Chermiti claims no plans to leave Rangers - gossip",
+      "detail": "Youssef Chermiti says he has no intention of leaving Rangers, but Celtic's Daizen Maeda repeats his ambition to play in England's Premier League as Heart of Midlothian are told one of their targets is not for sale.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 06:24:28 GMT"
     }
   ],
   "teams": [
@@ -20701,18 +20750,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2739,
+      "eventCount": 2746,
       "manualEventCount": 3,
-      "rawNewsCount": 2736,
+      "rawNewsCount": 2743,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2739,
-      "applied": 2523,
+      "watched": 2746,
+      "applied": 2529,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2734,
+      "singleSource": 2741,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -31353,7 +31402,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-14T04:11:39.661697+00:00",
+    "generatedAt": "2026-07-14T06:36:28.509165+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
