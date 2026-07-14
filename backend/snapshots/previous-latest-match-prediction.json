@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-14T12:49:16.088586+00:00",
+  "updatedAt": "2026-07-14T14:58:43.178083+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -20032,6 +20032,48 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 14 Jul 2026 12:00:25 GMT"
+    },
+    {
+      "title": "Arsenal agree fee for Trossard move to Besiktas",
+      "detail": "Arsenal have agreed a transfer fee to sell Belgium forward Leandro Trossard to Beskitas.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 14:11:47 GMT"
+    },
+    {
+      "title": "What age gives a squad best chance to win World Cup?",
+      "detail": "BBC Sport's Ask Me Anything team looks into the typical age of a World Cup-winning team",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 13:12:48 GMT"
+    },
+    {
+      "title": "Huge haul of fake Scotland and England football strips seized in raid",
+      "detail": "The trading standards seizure in Edinburgh found about 58,000 strips and is estimated to be one of the largest of its kind in the UK.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 12:41:49 GMT"
+    },
+    {
+      "title": "Infantino reported to IOC over Trump ties at WC",
+      "detail": "A complaint alleging FIFA president Gianni Infantino has breached rules on political neutrality in his dealings with President Donald Trump has been submitted to the International Olympic Committee.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 09:32:55 EST"
+    },
+    {
+      "title": "Yamal: France SF most important match of career",
+      "detail": "Spain winger Lamine Yamal has described the World Cup semifinal against France as \"the most important match\" in his career.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 09:32:55 EST"
+    },
+    {
+      "title": "Close encounters: England have to crack Argentina’s ability to prevent close-range shots",
+      "detail": "<p>Argentina’s underlying defensive process has been stronger than the outcomes so England must make potent use of their set pieces</p><p>Argentina’s defence has not always looked befitting of World Cup champions this summer. Cape Verde, Egypt and Jordan have collectively scored five goals against them, with their only clean sheets coming against Algeria and Austria.</p><p>The ease with which relative minnows have broken the backline of Lionel Scaloni’s side should offer ample encouragement to Jude Bellingham and Harry Kane. Argentina’s underlying defensive process has been stronger than the outcomes, though. Their average of 0.52 expected goals conceded per 90 minutes is only bettered by Spain (0.31) among all 48 teams.</p> <a href=\"https://www.theguardian.com/football/2026/jul/14/england-argentina-world-cup-close-range-shots\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 14 Jul 2026 13:30:26 GMT"
     }
   ],
   "teams": [
@@ -20253,7 +20295,7 @@
         "form": 72,
         "path": 65,
         "squad": 61,
-        "margin": 78
+        "margin": 77
       },
       "tournament": {
         "champion": 0.0,
@@ -20967,18 +21009,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2777,
+      "eventCount": 2783,
       "manualEventCount": 3,
-      "rawNewsCount": 2774,
+      "rawNewsCount": 2780,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2777,
-      "applied": 2556,
+      "watched": 2783,
+      "applied": 2562,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2772,
+      "singleSource": 2778,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -21069,7 +21111,7 @@
       },
       "scotland": {
         "attack": -9.399999999999999,
-        "defense": 0.0,
+        "defense": -1.73,
         "goalkeeper": 0.0,
         "path": -2.86,
         "squad": -15.05
@@ -31619,7 +31661,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-14T12:49:38.018977+00:00",
+    "generatedAt": "2026-07-14T14:59:04.805525+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

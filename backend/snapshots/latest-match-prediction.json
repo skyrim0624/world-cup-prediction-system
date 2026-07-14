@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-14T14:58:43.178083+00:00",
+  "updatedAt": "2026-07-14T16:22:59.160531+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -542,11 +542,11 @@
       "probability": 84,
       "title": "德国小组第一概率上升",
       "details": [
-        "德国夺冠概率 -0.1%",
+        "德国夺冠概率 ±0.0%",
         "库拉索路径盘下调 ±0.0%",
         "同组竞争队出线门槛抬高"
       ],
-      "championShift": "-0.1%",
+      "championShift": "±0.0%",
       "tone": "green"
     },
     {
@@ -554,11 +554,11 @@
       "probability": 11,
       "title": "两队路径保持胶着",
       "details": [
-        "德国夺冠概率 ±0.0%",
+        "德国夺冠概率 +0.1%",
         "库拉索夺冠概率 ±0.0%",
         "小组第一仍取决于末轮和净胜球"
       ],
-      "championShift": "±0.0% / ±0.0%",
+      "championShift": "+0.1% / ±0.0%",
       "tone": "gold"
     },
     {
@@ -567,7 +567,7 @@
       "title": "库拉索半区压力下降",
       "details": [
         "库拉索夺冠概率 ±0.0%",
-        "德国潜在淘汰赛路径变难 -0.1%",
+        "德国潜在淘汰赛路径变难 ±0.0%",
         "小组第二路径风险上升"
       ],
       "championShift": "±0.0%",
@@ -20074,6 +20074,90 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Tue, 14 Jul 2026 13:30:26 GMT"
+    },
+    {
+      "title": "Why do Argentina sing about England and the Falklands?",
+      "detail": "While England see Argentina as football rivals, for Argentina the rivalry is much more than that.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 14:57:59 GMT"
+    },
+    {
+      "title": "Premier League rules World Cup defences - but not attacks",
+      "detail": "Do the World Cup semi-final line-ups show the world’s best attacking talent plays outside the Premier League?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 15:19:17 GMT"
+    },
+    {
+      "title": "Bournemouth sign £25.7m striker Rodriguez",
+      "detail": "Bournemouth announce the signing of striker Alvaro Rodriguez from Spanish club Elche in a deal worth up to £25.7m.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 15:28:51 GMT"
+    },
+    {
+      "title": "Everton sign France forward Mouchon from Leicester",
+      "detail": "Everton sign France forward Noemie Mouchon on a free transfer from Leicester City.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 15:44:03 GMT"
+    },
+    {
+      "title": "World Cup quiz: Name every team to have reached semi-finals",
+      "detail": "You smashed our quarter-finalists quiz, now it's time to name every nation that's reached a World Cup semi-final!",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 16:14:53 GMT"
+    },
+    {
+      "title": "London City to sign Diani for over £500k as spending spree continues",
+      "detail": "London City Lionesses are set to sign France forward Kadidiatou Diani.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 15:29:25 GMT"
+    },
+    {
+      "title": "Podcast: From euphoria to uncertainty at Celtic",
+      "detail": "Champions again, but uncertainty surrounds Celtic's summer.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 15:00:00 GMT"
+    },
+    {
+      "title": "Lionel Messi’s first meeting with England will be a contest of will and aura",
+      "detail": "<p>The Messi arc reaches a decisive point in Atlanta – passage to a third final or an exit to test the limits of Argentina’s love for their unassuming athlete-genius</p><p>Wednesday night, Atlanta Stadium, 101 games down, three left to play, and finally it makes sense. Bring on The Countdown, that moment just before kick-off in every one of those quietly fascinating World Cup matches where suddenly the world’s most excited man is bellowing over the PA system in a state of outraged, crowing transport, like the last voice you’ll ever hear before the American century explodes in a ball of inanity, fried chicken and porn.</p><p>“NAYYYN!! EEEIGHYYT!! SEEEVEERRN!! …” the world’s most excited man shouts, prelude to some cautious rolling possession, maybe an early back-pass, and an agreeable reminder that the game itself will not be stage managed. You want quiet bathos? This World Cup will deliver the greatest goddam quiet bathos the galaxy has ever seen.</p> <a href=\"https://www.theguardian.com/football/2026/jul/14/lionel-messis-first-meeting-with-england-will-be-a-contest-of-will-and-aura\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 15:00:29 GMT"
+    },
+    {
+      "title": "Football Daily | Will France’s showdown with Spain be the World Cup final in spirit?",
+      "detail": "<p><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\"><strong>Sign up now! Sign up now! Sign up now? Sign up now!</strong></a></p><p>Sure, an Argentina-England Geopolitics World Cup semi-final <a href=\"https://www.theguardian.com/football/2026/jul/13/knocking-you-out-was-a-huge-joy-reliving-the-dramas-of-england-v-argentina-in-1998-and-2002\">has a lot going for it</a>. It’ll be 40 years since <a href=\"https://www.theguardian.com/football/blog/2014/apr/08/world-cup-moments-maradona-hand-god\">the Hand of God</a> and, somehow, the first meeting between the two teams since an incredibly rare event: a memorable friendly, with Michael Owen’s late headers setting up <a href=\"https://www.theguardian.com/football/2005/nov/14/newsstory.sport6\">a 3-2 victory in Geneva 21 years ago</a>. In Atlanta, England supporters will finally have the chance to send some choice words in the direction of Lionel Messi. But we all know that the real show – the final in spirit, the game that’ll be far easier on the eye – is the other one: <em>Les Bleus</em> against <em>La Roja</em>.</p><p>Filling the gap in GWC action, I just watched <a href=\"https://www.youtube.com/watch?v=8QRBwhwIKTA\">Ein Sommer in Italien</a>, the story of the 1990 World Cup from the perspective of the West German national team. It’s a fascinating documentary piece that mixes old home movie clips, archive TV footage, and fresh interviews with the 1990 squad. One moment really stood out. Having beaten Czechoslovakia to reach the semi-final, their manager Franz Beckenbauer wasn’t impressed. Interviewed on German TV straight after the game, he said: ‘It was an awful performance. I simply cannot understand how we played worse against 10 Czechs than against 11.’ As (substitute goalkeeper) Raimond Aumann recalled: ‘We’d won 1-0 and we were actually very happy with the result. Only one person wasn’t happy, and that was Franz.’ With the knowledge of what that German team went on to achieve, here’s hoping there’s a parallel with today’s England squad/manager dynamic” – Roger Mart.</p> <a href=\"https://www.theguardian.com/football/2026/jul/14/football-daily-email-gwc-france-spain\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 14:54:28 GMT"
+    },
+    {
+      "title": "Folarin Balogun: Ban reversal caused ‘a lot of outside noise, and that’s hard to avoid’",
+      "detail": "<ul><li><p>US striker’s red card was suspended after Trump calls</p></li><li><p>Fifa president accused of breaching neutrality rules</p></li></ul><p>The United States striker Folarin Balogun has revealed he predicted President Trump’s involvement in overturning his World Cup suspension would “cause a lot of controversy”.</p><p>The Monaco forward was sent off with a red card in the United States’ round-of-32 meeting with Bosnia and Herzegovina, but Fifa’s disciplinary committee then <a href=\"https://www.theguardian.com/football/2026/jul/05/folarin-balogun-red-card-suspension-lifted-usmnt-belgium-world-cup\">suspended the one-match ban</a> for a year, allowing Balogun to participate in the Americans’ last-16 loss to Belgium.</p> <a href=\"https://www.theguardian.com/football/2026/jul/14/folarin-balogun-ban-usa-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 14 Jul 2026 16:06:14 GMT"
+    },
+    {
+      "title": "‘For Diego’: spectre of Maradona looms over Argentina ahead of England clash",
+      "detail": "<p>The image of the national icon has been ever present through this World Cup, in banners and songs and memory. It adds a fresh layer to Wednesday’s semi-final</p><p>Not two minutes after <a href=\"https://www.theguardian.com/football/2026/jul/12/switzerland-argentina-world-cup-quarter-final-match-report\">his side’s dramatic, extra-time quarter-final victory</a> over Switzerland on Saturday, Argentina head coach Lionel Scaloni was already getting asked about the semi-final. Looming on the horizon was a matchup against bitter rivals England.</p><p>“This won’t just be a special game from a footballing standpoint,” the reporter asked in Spanish, “but also in an emotional sense. How do you imagine you and the players will come out for this game and what message would you give to all of us Argentines that are …”</p> <a href=\"https://www.theguardian.com/football/2026/jul/14/diego-maradona-argentina-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 15:08:25 GMT"
+    },
+    {
+      "title": "Of all England’s great Black footballers, none has been the defining figure of the national side – until now | Calum Jacobs",
+      "detail": "<p>Bellingham has transcended the hostility he has faced from press and pundits to become the emotional and symbolic focal point of the team</p><p>Months before the World Cup, the familiar chorus of antipathy that had followed Jude Bellingham almost since his emergence on the international stage grew louder. A number of writers, pundits and former professionals questioned whether one of England’s most gifted footballers might prove detrimental to the squad’s harmony. The clearest expression of these arguments appeared in a Daily Mail article in November 2025 beneath one of the most ignominious headlines in English footballing history: “Leave Jude at home.”</p><p>Amid a wave of criticism directed at Bellingham, Ian Wright felt compelled to defend him on <a href=\"https://www.youtube.com/watch?v=a4MopdT8fmg\">an episode of Stick to Football</a>. Once clipped, his remarks spread rapidly across football’s social media ecosystem and beyond, both because of Wright’s candour, and for placing the hostility directed at Bellingham within a historical tradition of policing Black men’s behaviour. “Someone like Jude, for some reason, frightens these people,” Wright said, before adding: “It’s something you’re taught as a Black man … to keep your head down and be, for want of a better word, a humble fucking slave.”</p><p>Calum Jacobs is the author of A New Formation: How Black Footballers Shaped the Modern Game and the founder of CARICOM magazine</p> <a href=\"https://www.theguardian.com/commentisfree/2026/jul/14/england-great-black-footballers-national-figure-jude-bellingham\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 15:33:54 GMT"
     }
   ],
   "teams": [
@@ -20102,7 +20186,7 @@
       "code": "RSA",
       "factors": {
         "strength": 66,
-        "form": 67,
+        "form": 66,
         "path": 65,
         "squad": 67,
         "margin": 70
@@ -20110,8 +20194,8 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 0.8,
-        "quarterfinal": 7.5,
+        "semifinal": 0.7,
+        "quarterfinal": 7.0,
         "change": -0.1
       }
     },
@@ -20167,8 +20251,8 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 0.5,
-        "quarterfinal": 6.1,
+        "semifinal": 0.6,
+        "quarterfinal": 6.3,
         "change": -0.4
       }
     },
@@ -20263,7 +20347,7 @@
         "champion": 0.3,
         "final": 1.1,
         "semifinal": 4.4,
-        "quarterfinal": 18.8,
+        "quarterfinal": 18.9,
         "change": -1.2
       }
     },
@@ -20393,11 +20477,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 3.8,
+        "champion": 3.7,
         "final": 8.4,
         "semifinal": 18.7,
         "quarterfinal": 32.9,
-        "change": -2.0
+        "change": -2.1
       }
     },
     {
@@ -20471,8 +20555,8 @@
       "tournament": {
         "champion": 7.8,
         "final": 15.3,
-        "semifinal": 31.8,
-        "quarterfinal": 67.5,
+        "semifinal": 31.9,
+        "quarterfinal": 67.8,
         "change": 1.0
       }
     },
@@ -21009,18 +21093,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2783,
+      "eventCount": 2795,
       "manualEventCount": 3,
-      "rawNewsCount": 2780,
+      "rawNewsCount": 2792,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2783,
-      "applied": 2562,
+      "watched": 2795,
+      "applied": 2571,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2778,
+      "singleSource": 2790,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -21040,7 +21124,7 @@
         "squad": -32.49999999999999
       },
       "south-africa": {
-        "attack": -7.6499999999999995,
+        "attack": -10.2,
         "defense": -4.699999999999999,
         "goalkeeper": -2.15,
         "path": -1.02,
@@ -31661,17 +31745,43 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-14T14:59:04.805525+00:00",
+    "generatedAt": "2026-07-14T16:23:19.125250+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "germany",
+        "name": "德国",
+        "code": "GER",
+        "previousChampion": 3.8,
+        "currentChampion": 3.7,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 9 条",
+        "reasons": [
+          "可入模型事件新增 9 条"
+        ]
+      }
+    ],
     "summary": {
       "up": 0,
-      "down": 0,
+      "down": 1,
       "largestUp": null,
-      "largestDown": null
+      "largestDown": {
+        "team": "germany",
+        "name": "德国",
+        "code": "GER",
+        "previousChampion": 3.8,
+        "currentChampion": 3.7,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "可入模型事件新增 9 条",
+        "reasons": [
+          "可入模型事件新增 9 条"
+        ]
+      }
     }
   }
 }
