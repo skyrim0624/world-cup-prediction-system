@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-14T22:03:50.633893+00:00",
+  "updatedAt": "2026-07-14T23:26:46.926563+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -20333,6 +20333,90 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Tue, 14 Jul 2026 21:01:54 GMT"
+    },
+    {
+      "title": "End of incredible Deschamps era as France exit World Cup with a whimper",
+      "detail": "Didier Deschamps' long, storied career with France will come to an end not how he would have wanted it - in Saturday's World Cup third-place play-off.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 23:15:55 GMT"
+    },
+    {
+      "title": "World Cup final half-time to last up to 25 minutes",
+      "detail": "The half-time break in Sunday's World Cup final is expected to last between 20 and 25 minutes.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 22:01:52 GMT"
+    },
+    {
+      "title": "Will Scots back Three Lions against Argentina - or it is 'anyone but England'?",
+      "detail": "As England progress, possibly to a final, some Scottish football fans are making tricky decisions about where their loyalties lie.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 22:02:32 GMT"
+    },
+    {
+      "title": "World Cup favorites France unravel as Spain book s...",
+      "detail": "Spain have sealed their place in the 2026 World Cup final, but why did France collapse so easily?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 18:39:59 EST"
+    },
+    {
+      "title": "France-Spain player ratings: Porro, Rodri earn hig...",
+      "detail": "Spain received strong performances up and down the lineup as they beat France to make the World Cup final.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 18:39:59 EST"
+    },
+    {
+      "title": "Spain end France's bid for 3rd-straight WC final",
+      "detail": "Spain beat France 2-0 in their FIFA World Cup semifinal in Arlington, Texas, on Tuesday to make it three wins in a row against their European heavyweight rival.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 18:53:11 EST"
+    },
+    {
+      "title": "Deschamps: France not good enough to beat Spain",
+      "detail": "France head coach Didier Deschamps said his team wasn't technically sound enough in his team's 2-0 loss to Spain in the FIFA World Cup semifinals.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 18:53:11 EST"
+    },
+    {
+      "title": "Matt Freese: USMNT criticism 'hurts my heart'",
+      "detail": "USMNT goalkeeper Matt Freese said he felt hurt by the backlash following the elimination from the 2026 World Cup after losing 4-1 to Belgium in the round of 16.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 18:53:11 EST"
+    },
+    {
+      "title": "Lewa on Fire: No Euro club would do after Barça",
+      "detail": "New Chicago Fire signing Robert Lewandowski said he couldn't imagine playing for another European club after his four-season stint with Barcelona, and that explains in part his decision to move to MLS.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 18:53:11 EST"
+    },
+    {
+      "title": "Man United sign Villa's Tielemans in $47M deal",
+      "detail": "Manchester United have announced the signing of midfielder Youri Tielemans from Aston Villa.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 18:53:11 EST"
+    },
+    {
+      "title": "New Napoli coach Allegri regrets collapse at Milan...",
+      "detail": "Massimiliano Allegri is not looking for redemption at Napoli despite still being troubled by the end of his second spell in charge of AC Milan.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 18:53:11 EST"
+    },
+    {
+      "title": "How Argentina coach Scaloni unlocked Messi's scori...",
+      "detail": "Lionel Messi went from six goals in four World Cups to 15 (and counting) in 2022 and 2026. What changed?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 18:43:00 EST"
     }
   ],
   "teams": [
@@ -20875,7 +20959,7 @@
       "factors": {
         "strength": 96,
         "form": 89,
-        "path": 78,
+        "path": 79,
         "squad": 84,
         "margin": 85
       },
@@ -21268,18 +21352,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2820,
+      "eventCount": 2832,
       "manualEventCount": 3,
-      "rawNewsCount": 2817,
+      "rawNewsCount": 2829,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2820,
-      "applied": 2590,
+      "watched": 2832,
+      "applied": 2600,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2815,
+      "singleSource": 2827,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -21491,7 +21575,7 @@
         "attack": 1.65,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 2.56,
+        "path": 3.43,
         "squad": -2.65
       },
       "cape-verde": {
@@ -31920,48 +32004,16 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-14T22:04:12.732657+00:00",
+    "generatedAt": "2026-07-14T23:27:08.605562+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 3.7,
-        "currentChampion": 3.8,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.5%",
-        "reasons": [
-          "八强概率上升 +0.5%",
-          "四强概率上升 +0.2%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 8 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
+      "up": 0,
       "down": 0,
-      "largestUp": {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 3.7,
-        "currentChampion": 3.8,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.5%",
-        "reasons": [
-          "八强概率上升 +0.5%",
-          "四强概率上升 +0.2%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 8 条"
-        ]
-      },
+      "largestUp": null,
       "largestDown": null
     }
   }

@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-14T20:40:31.707991+00:00",
+  "updatedAt": "2026-07-14T22:03:50.633893+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -567,7 +567,7 @@
       "title": "库拉索半区压力下降",
       "details": [
         "库拉索夺冠概率 ±0.0%",
-        "德国潜在淘汰赛路径变难 ±0.0%",
+        "德国潜在淘汰赛路径变难 -0.1%",
         "小组第二路径风险上升"
       ],
       "championShift": "±0.0%",
@@ -20277,6 +20277,62 @@
       "impact": "全局备注",
       "tone": "green",
       "time": "Tue, 14 Jul 2026 20:21:34 GMT"
+    },
+    {
+      "title": "Spain into World Cup final after victory over France",
+      "detail": "Spain are into the 2026 World Cup final after goals from Mikel Oyarzabal and Pedro Porro see them convincingly beat France 2-0 in their semi-final in Dallas.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 21:32:59 GMT"
+    },
+    {
+      "title": "Who 'came alive' in the semi-final? France v Spain player ratings",
+      "detail": "Spain produce a masterclass to see off France and reach their first World Cup final since 2010 - but who were the stars?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 21:10:54 GMT"
+    },
+    {
+      "title": "Gyokeres part of Alvarez offer - Wednesday's gossip",
+      "detail": "Viktor Gyokeres may be used as a makeweight to bring Julian Alvarez to Arsenal, Liverpool have made contract with Paris St-Germain over a transfer for Bradley Barcola, while Tottenham captain Cristian Romero is set to leave the club.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 21:20:26 GMT"
+    },
+    {
+      "title": "Fenerbahce sign Greenwood from Marseille",
+      "detail": "Fenerbahce sign Mason Greenwood from Marseille on a four-year contract.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 20:42:19 GMT"
+    },
+    {
+      "title": "Montrose stun Dundee Utd as Ayr shock Falkirk in League Cup groups",
+      "detail": "Dundee United and fellow Premiership side Falkirk’s hopes of progressing from the Scottish League Cup group stage are in the balance after they were beaten by lower-league opponents.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 21:16:41 GMT"
+    },
+    {
+      "title": "Porro doubles Spain's lead over France",
+      "detail": "Pedro Porro plays a one-two with Dani Olmo and doubles Spain's lead against France in the semi-finals of the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 21:00:28 GMT"
+    },
+    {
+      "title": "Oyarzabal coolly converts penalty to give Spain lead against France",
+      "detail": "Mikel Oyarzabal gives Spain the lead from the penalty spot during their semi-final against France after a clumsy challenge from Lucas Digne on Lamine Yamal.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 21:00:40 GMT"
+    },
+    {
+      "title": "Spain reach World Cup final after Oyarzabal and Porro sink sorry France",
+      "detail": "<p>Consider this a spectacular telling-off for anyone tempted to cast Spain as underdogs. How they enjoyed dishing the lesson out here, booking a showdown in New Jersey on Sunday and reducing France to passengers. Didier Deschamps’ team had been billed as champions elect but their feted attack was never in the game. For Kylian Mbappé it will be another four-year wait to reconquer the globe; he was an isolated figure, snuffed out by opponents who completely dictated after going ahead.</p><p>Spain could partly thank Lucas Digne for terrible defending that conceded a penalty midway through the first half, even if there were some doubts about the award’s validity. Mikel Oyarzabal converted emphatically and the jeopardy thereafter was entirely superficial. Pedro Porro’s slickly-worked second settled the issue emphatically. Nobody will make the mistake of downplaying their prospects of seeing the job through now; France, dazed and resoundingly beaten, cut the figure of a side that could not comprehend what was happening.</p> <a href=\"https://www.theguardian.com/football/2026/jul/14/france-spain-world-cup-semi-final-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 14 Jul 2026 21:01:54 GMT"
     }
   ],
   "teams": [
@@ -20533,7 +20589,7 @@
       "code": "PAR",
       "factors": {
         "strength": 75,
-        "form": 70,
+        "form": 68,
         "path": 61,
         "squad": 65,
         "margin": 74
@@ -20541,8 +20597,8 @@
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 0.8,
-        "quarterfinal": 2.9,
+        "semifinal": 0.7,
+        "quarterfinal": 2.6,
         "change": -0.1
       }
     },
@@ -20596,11 +20652,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 3.7,
-        "final": 8.4,
-        "semifinal": 18.7,
-        "quarterfinal": 32.9,
-        "change": -2.1
+        "champion": 3.8,
+        "final": 8.5,
+        "semifinal": 18.9,
+        "quarterfinal": 33.4,
+        "change": -2.0
       }
     },
     {
@@ -20901,9 +20957,9 @@
       },
       "tournament": {
         "champion": 14.9,
-        "final": 24.4,
-        "semifinal": 41.0,
-        "quarterfinal": 58.8,
+        "final": 24.3,
+        "semifinal": 40.9,
+        "quarterfinal": 58.7,
         "change": 1.4
       }
     },
@@ -21212,18 +21268,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2812,
+      "eventCount": 2820,
       "manualEventCount": 3,
-      "rawNewsCount": 2809,
+      "rawNewsCount": 2817,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2812,
-      "applied": 2582,
+      "watched": 2820,
+      "applied": 2590,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2807,
+      "singleSource": 2815,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -21327,7 +21383,7 @@
         "squad": -2.55
       },
       "paraguay": {
-        "attack": -7.35,
+        "attack": -9.5,
         "defense": -4.699999999999999,
         "goalkeeper": 0.0,
         "path": -3.8299999999999996,
@@ -31864,27 +31920,26 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-14T20:40:53.949538+00:00",
+    "generatedAt": "2026-07-14T22:04:12.732657+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
     "items": [
       {
-        "team": "senegal",
-        "name": "塞内加尔",
-        "code": "SEN",
-        "previousChampion": 0.7,
-        "currentChampion": 0.8,
+        "team": "germany",
+        "name": "德国",
+        "code": "GER",
+        "previousChampion": 3.7,
+        "currentChampion": 3.8,
         "change": 0.1,
         "direction": "up",
-        "reason": "人员盘上调 +1.6",
+        "reason": "八强概率上升 +0.5%",
         "reasons": [
-          "人员盘上调 +1.6",
-          "八强概率上升 +1.0%",
-          "四强概率上升 +0.5%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 1 条"
+          "八强概率上升 +0.5%",
+          "四强概率上升 +0.2%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 8 条"
         ]
       }
     ],
@@ -31892,20 +31947,19 @@
       "up": 1,
       "down": 0,
       "largestUp": {
-        "team": "senegal",
-        "name": "塞内加尔",
-        "code": "SEN",
-        "previousChampion": 0.7,
-        "currentChampion": 0.8,
+        "team": "germany",
+        "name": "德国",
+        "code": "GER",
+        "previousChampion": 3.7,
+        "currentChampion": 3.8,
         "change": 0.1,
         "direction": "up",
-        "reason": "人员盘上调 +1.6",
+        "reason": "八强概率上升 +0.5%",
         "reasons": [
-          "人员盘上调 +1.6",
-          "八强概率上升 +1.0%",
-          "四强概率上升 +0.5%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 1 条"
+          "八强概率上升 +0.5%",
+          "四强概率上升 +0.2%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 8 条"
         ]
       },
       "largestDown": null
