@@ -38230,5 +38230,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-975961caf27b",
+    "title": "Deschamps predicts 'spectacular' France v Spain semi-final",
+    "summary": "France boss Didier Deschamps is predicting a \"spectacular\" semi-final when his exciting side take on Spain in a heavyweight World Cup showdown in Dallas.",
+    "source": "bbc",
+    "team": "spain",
+    "status": "single_source",
+    "published_at": "Tue, 14 Jul 2026 00:10:04 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c79y29l32gxo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-d799cebddf9f",
+    "title": "‘We have a different team’: Revenge for Euro exit drives France ahead of Spain semi-final",
+    "summary": "<ul><li><p>Zaïre-Emery confident Les Bleus will deliver in Dallas</p></li><li><p>Deschamps to bring Tchouaméni into lineup if fit</p></li></ul><p>The France midfielder Warren Zaïre-Emery says his team want to exact revenge on Spain and banish painful memories of their exit in the Euro 2024 semi-final.</p><p>France and Spain meet again on Tuesday in search of a place in the World Cup final, an even more glittering prize than the one Luis de la Fuente’s team grabbed two years ago. Back then Spain were worthy winners in Munich but a revitalised France have turned their fortunes around, blazing a trail to the last four with some scintillating attacking football.</p> <a href=\"https://www.theguardian.com/football/2026/jul/14/france-team-news-spain-world-cup-semi-final-euro-revenge\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Mon, 13 Jul 2026 23:45:26 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/14/france-team-news-spain-world-cup-semi-final-euro-revenge",
+    "category": "lineup",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.72
   }
 ]
