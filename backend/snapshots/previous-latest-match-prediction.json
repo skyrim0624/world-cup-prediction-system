@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-14T09:08:54.322805+00:00",
+  "updatedAt": "2026-07-14T11:09:08.692851+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -542,11 +542,11 @@
       "probability": 84,
       "title": "德国小组第一概率上升",
       "details": [
-        "德国夺冠概率 ±0.0%",
+        "德国夺冠概率 -0.1%",
         "库拉索路径盘下调 ±0.0%",
         "同组竞争队出线门槛抬高"
       ],
-      "championShift": "±0.0%",
+      "championShift": "-0.1%",
       "tone": "green"
     },
     {
@@ -19864,6 +19864,76 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 14 Jul 2026 07:00:23 GMT"
+    },
+    {
+      "title": "Brighton sign Vuskovic from Spurs for club record £46m",
+      "detail": "Brighton sign Croatia defender Luka Vuskovic from Tottenham for a club record fee of £46m on a five-year contract, with an option for a further year.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 10:08:08 GMT"
+    },
+    {
+      "title": "Walked for 47% of the World Cup - the evolution of Messi",
+      "detail": "Lionel Messi is looking to beat England and reach a third World Cup final with Argentina. Guillem Balague looks at the evolution of one of the game's all-time greats.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 11:00:53 GMT"
+    },
+    {
+      "title": "Arsenal sign Germany forward Baum from RB Leipzig",
+      "detail": "Arsenal have signed Germany forward Lisa Baum on a permanent deal from RB Leipzig.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 11:00:09 GMT"
+    },
+    {
+      "title": "The origin story of France star Michael Olise",
+      "detail": "The origin story of France star Michael Olise begins much closer to home than you might think.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 09:09:12 GMT"
+    },
+    {
+      "title": "All done deals in July 2026",
+      "detail": "Check out the significant signings and departures in the Premier League, Scottish Premiership, EFL and Women's Super League.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 12 Jul 2026 19:11:19 GMT"
+    },
+    {
+      "title": "Murphy on verge of joining Brighton from Newcastle",
+      "detail": "Republic of Ireland international Emily Murphy is on the verge of joining Women’s Super League club Brighton.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 09:11:10 GMT"
+    },
+    {
+      "title": "World Cup and Ballon d’Or in reach as Harry Kane enters defining week of his career",
+      "detail": "<p>The striker is driven by a sense of destiny but to be remembered as an all-time great outside England requires big-game performances</p><p>Five days to win the Ballon d’Or. The way to do it: outshine Lionel Messi in Atlanta, then see off Kylian Mbappé or Lamine Yamal on Sunday. For Harry Kane, nothing will come without a fight. The England captain was doubted when he was a kid, back when the youth coaches at Tottenham wondered if it was worth keeping him, and he faces another seismic battle against Argentina on Wednesday.</p><p>This could be the crowning moment of Kane’s career. The Bayern Munich striker has enjoyed the season of his life, with more domestic trophies in the bag and 73 goals in 64 appearances for club and country. There are more steps to take, though. The chance to lead England into a first World Cup final abroad is within reach. All Kane has to do to is outperform the greatest footballer of all time.</p> <a href=\"https://www.theguardian.com/football/2026/jul/14/world-cup-and-ballon-dor-england-harry-kane\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 14 Jul 2026 10:45:00 GMT"
+    },
+    {
+      "title": "Norway turn World Cup heartbreak into celebration as huge crowds pack Oslo",
+      "detail": "<ul><li><p>Squad perform one last ‘Viking row’ on palace steps</p></li><li><p>Parade briefly halted by low-hanging overhead cables</p></li></ul><p>More than 100,000 fans flooded the streets of Oslo, Norway’s capital, to give their team a warm welcome, turning the heartbreak of their World Cup exit into ⁠a massive national celebration.</p><p><a href=\"https://www.theguardian.com/football/2026/jul/12/norway-england-world-cup-quarter-final-match-report\">A 2-1 ⁠extra-time defeat by England</a> on ​Saturday brought Norway’s historic run to an end in the quarter-finals, shattering their dreams of a place in the last four. However, it did not stop the country celebrating their heroes. Massive crowds under ⁠the Norwegian summer sun filled the grounds of the Royal Palace early on Monday afternoon, with an unofficial turnout estimated at more than 100,000 people.</p> <a href=\"https://www.theguardian.com/football/2026/jul/14/norway-world-cup-heartbreak-celebration-fans-oslo\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 09:42:27 GMT"
+    },
+    {
+      "title": "David Squires on … England’s high-wire act continuing to the World Cup semis",
+      "detail": "<p>Our cartoonist sets the scene before the semi-finals, with Thomas Tuchel’s team taking on old rivals Argentina</p><ul><li><p><a href=\"https://guardianprintshop.com/collections/david-squires\">Buy David’s cartoons</a> | <a href=\"https://www.theguardian.com/football/2025/dec/04/david-squires-picks-his-favourite-cartoons-of-2025\">Some of his favourite works</a></p></li><li><p><a href=\"https://guardianbookshop.com/chaos-in-the-box-9781783352838/?utm_source=editoriallink&amp;utm_medium=merch&amp;utm_campaign=article\">And his latest book, Chaos in the Box: get it now</a></p></li></ul> <a href=\"https://www.theguardian.com/football/picture/2026/jul/14/david-squires-england-high-wire-act-world-cup-semis-cartoon\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 10:01:57 GMT"
+    },
+    {
+      "title": "BBC heads from Salford to Atlanta for live England v Argentina broadcast",
+      "detail": "<ul><li><p>Corporation finally going to US for blockbuster semi-final</p></li><li><p>Viewing figures set to top ITV’s 18m for win over Norway</p></li></ul><p>The BBC will present its coverage of England’s World Cup semi-final against Argentina live from Atlanta, with the corporation’s gamble on Thomas Tuchel’s side set to be rewarded with record viewing figures.</p><p>ITV attracted a peak audience of 18 million for <a href=\"https://www.theguardian.com/football/2026/jul/12/norway-england-world-cup-quarter-final-match-report\">Saturday’s dramatic extra-time win over Norway</a>, a figure that is likely to be beaten on Wednesday as England seeking to reach their first World Cup final since 1966 with a primetime 8pm UK kick-off. The BBC have exclusive live rights and will also have all their main pundits in place having taken the decision to present the World Cup from its Salford studio for the bulk of the tournament.</p> <a href=\"https://www.theguardian.com/football/2026/jul/14/bbc-salford-atlanta-present-england-v-argentina-live-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 10:22:58 GMT"
     }
   ],
   "teams": [
@@ -19977,7 +20047,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.8,
-        "quarterfinal": 6.8,
+        "quarterfinal": 6.9,
         "change": -0.1
       }
     },
@@ -20109,8 +20179,8 @@
       "tournament": {
         "champion": 0.5,
         "final": 1.7,
-        "semifinal": 6.3,
-        "quarterfinal": 28.7,
+        "semifinal": 6.4,
+        "quarterfinal": 29.1,
         "change": -0.5
       }
     },
@@ -20159,7 +20229,7 @@
       "factors": {
         "strength": 79,
         "form": 76,
-        "path": 66,
+        "path": 67,
         "squad": 80,
         "margin": 77
       },
@@ -20336,9 +20406,9 @@
       },
       "tournament": {
         "champion": 1.4,
-        "final": 3.7,
-        "semifinal": 10.5,
-        "quarterfinal": 35.9,
+        "final": 3.8,
+        "semifinal": 10.7,
+        "quarterfinal": 36.8,
         "change": -1.7
       }
     },
@@ -20411,11 +20481,11 @@
         "margin": 85
       },
       "tournament": {
-        "champion": 19.6,
-        "final": 29.5,
-        "semifinal": 45.9,
+        "champion": 19.7,
+        "final": 29.6,
+        "semifinal": 46.0,
         "quarterfinal": 55.7,
-        "change": 8.0
+        "change": 8.1
       }
     },
     {
@@ -20506,11 +20576,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 0.8,
-        "final": 2.3,
-        "semifinal": 7.5,
-        "quarterfinal": 28.6,
-        "change": -0.2
+        "champion": 0.7,
+        "final": 2.0,
+        "semifinal": 6.8,
+        "quarterfinal": 27.1,
+        "change": -0.3
       }
     },
     {
@@ -20641,7 +20711,7 @@
       "tournament": {
         "champion": 5.0,
         "final": 9.4,
-        "semifinal": 18.8,
+        "semifinal": 18.9,
         "quarterfinal": 26.4,
         "change": -1.2
       }
@@ -20799,18 +20869,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2753,
+      "eventCount": 2763,
       "manualEventCount": 3,
-      "rawNewsCount": 2750,
+      "rawNewsCount": 2760,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2753,
-      "applied": 2535,
+      "watched": 2763,
+      "applied": 2544,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2748,
+      "singleSource": 2758,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -20931,7 +21001,7 @@
         "attack": -4.699999999999999,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": -1.94,
+        "path": -1.0699999999999998,
         "squad": 0.7999999999999998
       },
       "germany": {
@@ -21054,7 +21124,7 @@
         "squad": 0.0
       },
       "senegal": {
-        "attack": -2.55,
+        "attack": -4.699999999999999,
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": 0.0,
@@ -31451,7 +31521,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-14T09:09:15.966339+00:00",
+    "generatedAt": "2026-07-14T11:09:25.921824+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
@@ -31461,148 +31531,68 @@
         "team": "spain",
         "name": "西班牙",
         "code": "ESP",
-        "previousChampion": 21.1,
-        "currentChampion": 19.6,
-        "change": -1.5,
+        "previousChampion": 19.6,
+        "currentChampion": 19.7,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.1%",
+        "reasons": [
+          "四强概率上升 +0.1%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 9 条"
+        ]
+      },
+      {
+        "team": "senegal",
+        "name": "塞内加尔",
+        "code": "SEN",
+        "previousChampion": 0.8,
+        "currentChampion": 0.7,
+        "change": -0.1,
         "direction": "down",
-        "reason": "人员盘下调 -2.1",
+        "reason": "状态盘下调 -2.1",
         "reasons": [
-          "人员盘下调 -2.1",
-          "四强概率下降 -1.7%",
-          "决赛概率下降 -1.6%",
+          "状态盘下调 -2.1",
           "八强概率下降 -1.5%",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.7,
-        "currentChampion": 22.0,
-        "change": 0.3,
-        "direction": "up",
-        "reason": "可入模型事件新增 6 条",
-        "reasons": [
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 14.7,
-        "currentChampion": 14.9,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.5%",
-        "reasons": [
-          "决赛概率上升 +0.5%",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 9.1,
-        "currentChampion": 9.3,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "可入模型事件新增 6 条",
-        "reasons": [
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.6,
-        "currentChampion": 7.8,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.3%",
-        "reasons": [
-          "决赛概率上升 +0.3%",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 4.9,
-        "currentChampion": 5.0,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.8%",
-        "reasons": [
-          "八强概率上升 +0.8%",
-          "四强概率上升 +0.6%",
-          "决赛概率上升 +0.3%",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 3.7,
-        "currentChampion": 3.8,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.2%",
-        "reasons": [
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "colombia",
-        "name": "哥伦比亚",
-        "code": "COL",
-        "previousChampion": 3.7,
-        "currentChampion": 3.8,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 6 条",
-        "reasons": [
-          "可入模型事件新增 6 条"
+          "四强概率下降 -0.7%",
+          "决赛概率下降 -0.3%",
+          "可入模型事件新增 9 条"
         ]
       }
     ],
     "summary": {
-      "up": 9,
+      "up": 1,
       "down": 1,
       "largestUp": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 21.7,
-        "currentChampion": 22.0,
-        "change": 0.3,
-        "direction": "up",
-        "reason": "可入模型事件新增 6 条",
-        "reasons": [
-          "可入模型事件新增 6 条"
-        ]
-      },
-      "largestDown": {
         "team": "spain",
         "name": "西班牙",
         "code": "ESP",
-        "previousChampion": 21.1,
-        "currentChampion": 19.6,
-        "change": -1.5,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
+        "previousChampion": 19.6,
+        "currentChampion": 19.7,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.1%",
         "reasons": [
-          "人员盘下调 -2.1",
-          "四强概率下降 -1.7%",
-          "决赛概率下降 -1.6%",
+          "四强概率上升 +0.1%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 9 条"
+        ]
+      },
+      "largestDown": {
+        "team": "senegal",
+        "name": "塞内加尔",
+        "code": "SEN",
+        "previousChampion": 0.8,
+        "currentChampion": 0.7,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "状态盘下调 -2.1",
+        "reasons": [
+          "状态盘下调 -2.1",
           "八强概率下降 -1.5%",
-          "可入模型事件新增 6 条"
+          "四强概率下降 -0.7%",
+          "决赛概率下降 -0.3%",
+          "可入模型事件新增 9 条"
         ]
       }
     }

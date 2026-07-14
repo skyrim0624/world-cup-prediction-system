@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-14T11:09:08.692851+00:00",
+  "updatedAt": "2026-07-14T12:49:16.088586+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -19934,6 +19934,104 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 14 Jul 2026 10:22:58 GMT"
+    },
+    {
+      "title": "Barry's journey from Accrington Stanley to World Cup semi-final",
+      "detail": "His playing career peaked at Accrington Stanley - now Anthony Barry is Thomas Tuchel's right-hand man in England's bid for World Cup glory.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 11:35:08 GMT"
+    },
+    {
+      "title": "Darlow joins Man Utd after Leeds exit",
+      "detail": "Manchester United sign veteran goalkeeper Karl Darlow after his contract expires at Leeds.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 11:52:08 GMT"
+    },
+    {
+      "title": "American Elfath to referee England v Argentina",
+      "detail": "Fifa announce American referee Ismail Elfath will take charge of England's World Cup semi-final against Argentina.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 12:42:41 GMT"
+    },
+    {
+      "title": "What's next at Liverpool for Argentina's proven winner Mac Allister?",
+      "detail": "After a poor season at Liverpool, Alexis Mac Allister is back thriving for Argentina - so what does his future look like at Anfield?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 11:38:31 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "England Harry Kane speaks ahead of England's World Cup semi-final against Argentina.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 11:18:00 GMT"
+    },
+    {
+      "title": "The USMNT's struggles at the World Cup can't be fixed by overhauling youth development",
+      "detail": "Everyone thinks they can fix the USMNT. But maybe the U.S. is actually making progress and luck just hasn't been on its side -- what then?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 03:38:48 EST"
+    },
+    {
+      "title": "Balogun joins LeBron's agency after breakout WC",
+      "detail": "United States forward Folarin Balogun has signed with LeBron James' agency Klutch Sports following a breakout World Cup that elevated his profile on and off the pitch.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 08:04:56 EST"
+    },
+    {
+      "title": "Alonso: Chelsea job over Liverpool 'about timings'...",
+      "detail": "Chelsea manager Xabi Alonso has said that his decision to join Chelsea over Liverpool was \"about timings.\"",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 08:04:56 EST"
+    },
+    {
+      "title": "Kane rejects England 'division,' backs Bellingham",
+      "detail": "Captain Harry Kane has dismissed the idea of division in the England squad, insisting there is \"complete togetherness\" ahead of the World Cup semifinal with Argentina.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 08:05:01 EST"
+    },
+    {
+      "title": "Inside Man United's summer rebuild, as Santos and ...",
+      "detail": "Manchester United have had to adapt their summer transfer window plans, but the club continue to be active and more signings are expected.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 08:23:49 EST"
+    },
+    {
+      "title": "World Cup Daily live: Haaland latest star to inspi...",
+      "detail": "Enjoy all the features, news, video analysis and color from around the 2026 World Cup as we build up to the first semifinal -- France vs. Spain.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 08:26:15 EST"
+    },
+    {
+      "title": "Transfer rumors, news: Liverpool, Chelsea, Spurs e...",
+      "detail": "Liverpool, Chelsea and Tottenham Hotspur are interested in Benfica winger Andreas Schjelderup. Transfer Talk has the latest.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 08:18:56 EST"
+    },
+    {
+      "title": "Messi is about to play England for the first time ...",
+      "detail": "Until Wednesday's second semifinal of the 2026 World Cup kicks off, it's a strange historical quirk that Lionel Messi has never played against England.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 08:19:30 EST"
+    },
+    {
+      "title": "The agony and ecstasy of World Cup penalty shootouts – in pictures",
+      "detail": "<p>Ever since France midfielder Alain Giresse struck the World Cup’s first shootout penalty in 1982, a total of 342 players have stepped up to face the goalkeeper for the most nerve wracking test in football. We take a look at some of the players who took their shot at glory from the spot</p> <a href=\"https://www.theguardian.com/football/gallery/2026/jul/14/the-agony-and-ecstasy-of-world-cup-penalty-shootouts-in-pictures\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 12:00:25 GMT"
     }
   ],
   "teams": [
@@ -20869,18 +20967,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2763,
+      "eventCount": 2777,
       "manualEventCount": 3,
-      "rawNewsCount": 2760,
+      "rawNewsCount": 2774,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2763,
-      "applied": 2544,
+      "watched": 2777,
+      "applied": 2556,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2758,
+      "singleSource": 2772,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -31521,80 +31619,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-14T11:09:25.921824+00:00",
+    "generatedAt": "2026-07-14T12:49:38.018977+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 19.6,
-        "currentChampion": 19.7,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.1%",
-        "reasons": [
-          "四强概率上升 +0.1%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      {
-        "team": "senegal",
-        "name": "塞内加尔",
-        "code": "SEN",
-        "previousChampion": 0.8,
-        "currentChampion": 0.7,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "状态盘下调 -2.1",
-        "reasons": [
-          "状态盘下调 -2.1",
-          "八强概率下降 -1.5%",
-          "四强概率下降 -0.7%",
-          "决赛概率下降 -0.3%",
-          "可入模型事件新增 9 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
-      "down": 1,
-      "largestUp": {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 19.6,
-        "currentChampion": 19.7,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.1%",
-        "reasons": [
-          "四强概率上升 +0.1%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 9 条"
-        ]
-      },
-      "largestDown": {
-        "team": "senegal",
-        "name": "塞内加尔",
-        "code": "SEN",
-        "previousChampion": 0.8,
-        "currentChampion": 0.7,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "状态盘下调 -2.1",
-        "reasons": [
-          "状态盘下调 -2.1",
-          "八强概率下降 -1.5%",
-          "四强概率下降 -0.7%",
-          "决赛概率下降 -0.3%",
-          "可入模型事件新增 9 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
