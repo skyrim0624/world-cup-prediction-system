@@ -39644,5 +39644,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-1dd223eeb30f",
+    "title": "I still feel pain of '98 but this can be different for England - Shearer",
+    "summary": "England's defeat by Argentina at the 1998 World Cup still burns deep for Alan Shearer, but he explains why this team can take their chance to change their lives forever.",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Wed, 15 Jul 2026 01:59:13 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c6212j5zw3ko?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-f2dabb5d9692",
+    "title": "Mates, mate and freedom - how Argentina got the best out of Messi",
+    "summary": "Guillem Balague examines how the Argentina squad is built around Lionel Messi as they prepare to play against England in the World Cup semi-finals.",
+    "source": "bbc",
+    "team": "paraguay",
+    "status": "single_source",
+    "published_at": "Wed, 15 Jul 2026 02:05:33 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cx2j24y9jzyo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-0c9520e6d81b",
+    "title": "England's biggest match since 1966 as Three Lions close in on immortality",
+    "summary": "England face Argentina in the World Cup semi-finals on Wednesday - and BBC Sport's Phil McNulty explains why it is the Three Lions' biggest match since 1966.",
+    "source": "bbc",
+    "team": "argentina",
+    "status": "single_source",
+    "published_at": "Wed, 15 Jul 2026 02:05:15 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c20y0zzdx9go?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
