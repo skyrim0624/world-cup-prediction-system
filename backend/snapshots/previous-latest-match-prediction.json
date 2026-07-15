@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-15T19:46:34.582479+00:00",
+  "updatedAt": "2026-07-15T21:06:25.038907+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -20865,6 +20865,34 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 15 Jul 2026 19:31:52 GMT"
+    },
+    {
+      "title": "Gordon puts England ahead against Argentina",
+      "detail": "Anthony Gordon puts England 1-0 up against Argentina in the 2026 World Cup semi-final at the Atlanta Stadium.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 20:28:54 GMT"
+    },
+    {
+      "title": "Rate the players as England face Argentina",
+      "detail": "Rate the England and Argentina players out of 10 below and come back 30 minutes after full-time to see the final ratings.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 19:49:54 GMT"
+    },
+    {
+      "title": "England and Argentina national anthems drowned out",
+      "detail": "Both England and Argentina's national anthems are drowned out by crowd noise, before the teams kick off their 2026 World Cup semi-final at the Atlanta Stadium.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 19:51:31 GMT"
+    },
+    {
+      "title": "Jude Bellingham lookalikes compete for a £1,966 Deliveroo voucher",
+      "detail": "<p>The match-winning England striker is ‘a good ambassador for young people’, says one contestant</p><p>All together now, with arms in the air: One Jude Bellingham, there’s only one Jude Bellingham …</p><p>Unless, that is, you happened to find yourself in Shoreditch, east London, on Wednesday, where a dozen young men who looked vaguely like the England midfielder gathered for a lookalike contest almost as competitive as the one currently continuing in the US.</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/jude-bellingham-lookalikes-compete-for-a-1966-deliveroo-voucher\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 18:28:24 GMT"
     }
   ],
   "teams": [
@@ -21800,18 +21828,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2896,
+      "eventCount": 2900,
       "manualEventCount": 3,
-      "rawNewsCount": 2893,
+      "rawNewsCount": 2897,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2896,
-      "applied": 2657,
+      "watched": 2900,
+      "applied": 2661,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2891,
+      "singleSource": 2895,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -32452,7 +32480,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-15T19:46:56.491836+00:00",
+    "generatedAt": "2026-07-15T21:06:47.199697+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
