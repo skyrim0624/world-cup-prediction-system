@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-15T09:13:12.349718+00:00",
+  "updatedAt": "2026-07-15T11:10:54.245384+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -20613,6 +20613,62 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 15 Jul 2026 07:25:43 GMT"
+    },
+    {
+      "title": "Sunderland sign Belgium World Cup defender Meunier",
+      "detail": "Experienced Belgian defender Thomas Meunier signs for Sunderland after his contract with Lille comes to an end.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 09:44:49 GMT"
+    },
+    {
+      "title": "Bournemouth in talks for Benfica defender Silva",
+      "detail": "Bournemouth enter talks to sign Benfica and Portugal defender Antonio Silva as Marcos Senesi's replacement.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 09:22:33 GMT"
+    },
+    {
+      "title": "Coventry close on £17m Switzerland defender Amenda",
+      "detail": "Coventry City close in on a deal worth more than £17m for Eintracht Frankfurt defender Aurele Amenda.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 10:59:16 GMT"
+    },
+    {
+      "title": "Promoted Crystal Palace sign striker England",
+      "detail": "Newly promoted Women's Super League club Crystal Palace sign striker Bethany England on free transfer.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 10:21:44 GMT"
+    },
+    {
+      "title": "Promoted Birmingham City sign Man Utd's Turner",
+      "detail": "Birmingham City complete the signing of Manchester United defender Millie Turner for an undisclosed six-figure fee.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 10:36:54 GMT"
+    },
+    {
+      "title": "Football Extra: Readers' World Cup memorabilia",
+      "detail": "Football extra readers share their memorabilia from World Cups ranging from 1966 to 2010, including mascots, tickets, programmes, coin collections and even vuvuzelas.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 10:37:14 GMT"
+    },
+    {
+      "title": "The World Cup of Calvinball: Fifa’s hasty changes turn refereeing into a free-for-all | Beau Dure",
+      "detail": "<p>Match officials are enforcing tweaks to the laws of the game that have hardly been tested. The results? Drama, ‘mistaken identities’ and lots of confusion</p><p>In the comic strip Calvin and Hobbes, the titular characters occasionally played a game known as <a href=\"https://calvinandhobbes.fandom.com/wiki/Calvinball\">Calvinball</a>.</p><p>The rules were amorphous. At any moment, something like a “30-yard base wicket” may become part of the game. Determining a “winner” was besides the point, as the score for one game was given as “Q to 12.” The fictional, farcical sport entered public consciousness and was even cited by US supreme court justice Ketanji Brown Jackson in <a href=\"https://www.theguardian.com/us-news/2025/aug/21/supreme-court-trump-research-dei\">a blistering dissent</a> last year.</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/world-cup-refereeing-var\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 09:00:51 GMT"
+    },
+    {
+      "title": "‘I root for underdogs’: football fans who don’t support their home country",
+      "detail": "<p>Not everyone supports the country where they were born or grew up. Sometimes fans are won over by a player, place, population or style of play</p><p>Footballers need to be born in a country or have a family tie to that place to represent them at the World Cup, but those rules do not apply to supporters. Sometimes fans are won over by a team, a star player or even a country. Here six fans tell us why they decided not to support the country of their birth and instead root for teams with whom they have no family ties.</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/world-cup-football-fans-home-country-underdogs\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 09:08:03 GMT"
     }
   ],
   "teams": [
@@ -21548,18 +21604,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2860,
+      "eventCount": 2868,
       "manualEventCount": 3,
-      "rawNewsCount": 2857,
+      "rawNewsCount": 2865,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2860,
-      "applied": 2627,
+      "watched": 2868,
+      "applied": 2635,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2855,
+      "singleSource": 2863,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -32200,7 +32256,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-15T09:13:29.208893+00:00",
+    "generatedAt": "2026-07-15T11:11:16.504152+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
