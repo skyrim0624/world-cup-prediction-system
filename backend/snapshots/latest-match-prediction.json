@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-15T18:12:56.853697+00:00",
+  "updatedAt": "2026-07-15T19:46:34.582479+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -20844,6 +20844,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 15 Jul 2026 11:19:45 GMT"
+    },
+    {
+      "title": "Man Utd target Summerville - Thursday's gossip",
+      "detail": "West Ham winger Crysencio Summerville is a target for Manchester United, Arsenal are preparing an offer for Norway winger Antonio Nusa, Everton consider moving for Manchester City's Rico Lewis, plus more.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 18:53:17 GMT"
+    },
+    {
+      "title": "ITV and BBC to screen full World Cup final half-time show despite time concerns",
+      "detail": "<ul><li><p>Broadcasters expect to have time to analyse the game</p></li><li><p>Channels planning for break to last 25 to 30 minutes</p></li></ul><p>ITV and BBC are planning to screen in full Fifa’s controversial half-time show from the final at the New York New Jersey Stadium on Sunday, but the broadcasters remain in the dark over how long it will last.</p><p>The Guardian <a href=\"https://www.theguardian.com/football/2026/jun/10/tv-rights-holders-frustrated-over-world-cup-final-half-time-show-delay\">revealed last month</a> that there were concerns among broadcasters at the length of the half-time spectacle, which has been curated by Coldplay’s Chris Martin and will feature Madonna, Justin Bieber, Shakira and the K‑pop boyband BTS. They are planning for the interval to last between 25 and 30 minutes.</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/itv-bbc-world-cup-final-half-time-show\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 18:22:54 GMT"
+    },
+    {
+      "title": "Kylian Mbappé feels sands of time shifting as France suffer fresh World Cup angst",
+      "detail": "<p>France’s captain has played with a sense of unfinished business but he will be 31 when the next World Cup begins</p><p>It was only last month that Kylian Mbappé suggested all roads may lead to Florida. He was in sufficiently mischievous mood to reveal David Beckham had been chewing his ear off about a move to Major League Soccer, dangling the prospect of a reunion with Lionel Messi at Inter Miami.</p><p>“We will see, I don’t know,” he said. “The American culture is different. There are no limits to ambitions, I like it.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/kylian-mbappe-next-chapter-world-cup-angst\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 19:31:52 GMT"
     }
   ],
   "teams": [
@@ -21779,18 +21800,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2893,
+      "eventCount": 2896,
       "manualEventCount": 3,
-      "rawNewsCount": 2890,
+      "rawNewsCount": 2893,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2893,
-      "applied": 2654,
+      "watched": 2896,
+      "applied": 2657,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2888,
+      "singleSource": 2891,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -32431,7 +32452,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-15T18:13:16.823444+00:00",
+    "generatedAt": "2026-07-15T19:46:56.491836+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

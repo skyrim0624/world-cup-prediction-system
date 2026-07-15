@@ -40442,5 +40442,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-540d049d5deb",
+    "title": "Man Utd target Summerville - Thursday's gossip",
+    "summary": "West Ham winger Crysencio Summerville is a target for Manchester United, Arsenal are preparing an offer for Norway winger Antonio Nusa, Everton consider moving for Manchester City's Rico Lewis, plus more.",
+    "source": "bbc",
+    "team": "usa",
+    "status": "single_source",
+    "published_at": "Wed, 15 Jul 2026 18:53:17 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c1mymdm2rp8o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-8c5cf6cb55d6",
+    "title": "ITV and BBC to screen full World Cup final half-time show despite time concerns",
+    "summary": "<ul><li><p>Broadcasters expect to have time to analyse the game</p></li><li><p>Channels planning for break to last 25 to 30 minutes</p></li></ul><p>ITV and BBC are planning to screen in full Fifa’s controversial half-time show from the final at the New York New Jersey Stadium on Sunday, but the broadcasters remain in the dark over how long it will last.</p><p>The Guardian <a href=\"https://www.theguardian.com/football/2026/jun/10/tv-rights-holders-frustrated-over-world-cup-final-half-time-show-delay\">revealed last month</a> that there were concerns among broadcasters at the length of the half-time spectacle, which has been curated by Coldplay’s Chris Martin and will feature Madonna, Justin Bieber, Shakira and the K‑pop boyband BTS. They are planning for the interval to last between 25 and 30 minutes.</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/itv-bbc-world-cup-final-half-time-show\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Wed, 15 Jul 2026 18:22:54 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/15/itv-bbc-world-cup-final-half-time-show",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-0a0e2f72d352",
+    "title": "Kylian Mbappé feels sands of time shifting as France suffer fresh World Cup angst",
+    "summary": "<p>France’s captain has played with a sense of unfinished business but he will be 31 when the next World Cup begins</p><p>It was only last month that Kylian Mbappé suggested all roads may lead to Florida. He was in sufficiently mischievous mood to reveal David Beckham had been chewing his ear off about a move to Major League Soccer, dangling the prospect of a reunion with Lionel Messi at Inter Miami.</p><p>“We will see, I don’t know,” he said. “The American culture is different. There are no limits to ambitions, I like it.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/kylian-mbappe-next-chapter-world-cup-angst\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Wed, 15 Jul 2026 19:31:52 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/15/kylian-mbappe-next-chapter-world-cup-angst",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
