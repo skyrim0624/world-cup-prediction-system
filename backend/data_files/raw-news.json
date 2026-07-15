@@ -40484,5 +40484,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-ab6947821866",
+    "title": "Gordon puts England ahead against Argentina",
+    "summary": "Anthony Gordon puts England 1-0 up against Argentina in the 2026 World Cup semi-final at the Atlanta Stadium.",
+    "source": "bbc",
+    "team": "argentina",
+    "status": "single_source",
+    "published_at": "Wed, 15 Jul 2026 20:28:54 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/videos/c07re9rxd29o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-757e65bdc26c",
+    "title": "Rate the players as England face Argentina",
+    "summary": "Rate the England and Argentina players out of 10 below and come back 30 minutes after full-time to see the final ratings.",
+    "source": "bbc",
+    "team": "belgium",
+    "status": "single_source",
+    "published_at": "Wed, 15 Jul 2026 19:49:54 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cx2w3rqp6w1o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-2baae4374459",
+    "title": "England and Argentina national anthems drowned out",
+    "summary": "Both England and Argentina's national anthems are drowned out by crowd noise, before the teams kick off their 2026 World Cup semi-final at the Atlanta Stadium.",
+    "source": "bbc",
+    "team": "netherlands",
+    "status": "single_source",
+    "published_at": "Wed, 15 Jul 2026 19:51:31 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/videos/c04yw0dz035o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-6762c10da353",
+    "title": "Jude Bellingham lookalikes compete for a £1,966 Deliveroo voucher",
+    "summary": "<p>The match-winning England striker is ‘a good ambassador for young people’, says one contestant</p><p>All together now, with arms in the air: One Jude Bellingham, there’s only one Jude Bellingham …</p><p>Unless, that is, you happened to find yourself in Shoreditch, east London, on Wednesday, where a dozen young men who looked vaguely like the England midfielder gathered for a lookalike contest almost as competitive as the one currently continuing in the US.</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/jude-bellingham-lookalikes-compete-for-a-1966-deliveroo-voucher\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "netherlands",
+    "status": "single_source",
+    "published_at": "Wed, 15 Jul 2026 18:28:24 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/15/jude-bellingham-lookalikes-compete-for-a-1966-deliveroo-voucher",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
