@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-15T00:53:52.659347+00:00",
+  "updatedAt": "2026-07-15T04:09:34.237548+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -20445,6 +20445,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 14 Jul 2026 23:33:08 GMT"
+    },
+    {
+      "title": "I still feel pain of '98 but this can be different for England - Shearer",
+      "detail": "England's defeat by Argentina at the 1998 World Cup still burns deep for Alan Shearer, but he explains why this team can take their chance to change their lives forever.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 01:59:13 GMT"
+    },
+    {
+      "title": "Mates, mate and freedom - how Argentina got the best out of Messi",
+      "detail": "Guillem Balague examines how the Argentina squad is built around Lionel Messi as they prepare to play against England in the World Cup semi-finals.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 02:05:33 GMT"
+    },
+    {
+      "title": "England's biggest match since 1966 as Three Lions close in on immortality",
+      "detail": "England face Argentina in the World Cup semi-finals on Wednesday - and BBC Sport's Phil McNulty explains why it is the Three Lions' biggest match since 1966.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 02:05:15 GMT"
     }
   ],
   "teams": [
@@ -21380,18 +21401,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2836,
+      "eventCount": 2839,
       "manualEventCount": 3,
-      "rawNewsCount": 2833,
+      "rawNewsCount": 2836,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2836,
-      "applied": 2604,
+      "watched": 2839,
+      "applied": 2607,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2831,
+      "singleSource": 2834,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -32032,7 +32053,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-15T00:54:14.494779+00:00",
+    "generatedAt": "2026-07-15T04:09:56.062372+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
