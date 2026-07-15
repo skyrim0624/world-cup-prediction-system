@@ -40316,5 +40316,61 @@
     "factor": "path",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-aeb3ea376c5c",
+    "title": "Podcast: Dundee’s top-six dream? Pressley’s project starts to take shape",
+    "summary": "SPFL Preview - can Dundee build on last season and challenge for a top-six finish?",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Wed, 15 Jul 2026 15:00:00 GMT",
+    "url": "https://www.bbc.co.uk/sounds/play/p0nywxq4?at_medium=RSS&at_campaign=rss",
+    "category": "lineup",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.72
+  },
+  {
+    "id": "guardian-f1a3e1b01ec6",
+    "title": "England v Argentina: World Cup 2026 semi-final – live",
+    "summary": "<p>⚽ Kick-off in Atlanta is 3pm EST/8pm BST/5am AEST<br>⚽ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\">And get Football Daily</a></p><p><strong>“I saw somewhere on the internet the incredibly valid point</strong> that this England <em>team</em> aren’t actually scarred with memories of bad days against Argentina,” writes Eddy Nason. “Even old man Jordan Henderson was -4 years old for the Hand of God. Us oldie fans however...”</p><p>Yeah, I don’t think that particular scarring – lived or historical - is a problem in the way it is for, say, England cricketers when they go to Australia. The more relevant scarring comes from the semi-final and final defeats in the last eight years and the historical reality that England usually go out to the first really big team they face. I’m 99.94% sure that the only time England have beaten a higher-ranked team in a knockout game was the quarter-final against Spain at Euro 96, and they should have lost that game.</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/15/england-v-argentina-world-cup-2026-semi-final-live\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Wed, 15 Jul 2026 16:36:39 GMT",
+    "url": "https://www.theguardian.com/football/live/2026/jul/15/england-v-argentina-world-cup-2026-semi-final-live",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-688fd75c3e2d",
+    "title": "Football Daily | Spain leave France at sixes and sevens as L’Équipe dish out the twos",
+    "summary": "<p><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\"><strong>Sign up now! Sign up now! Sign up now? Sign up now!</strong></a></p><p>For a second there, it felt as if this was going to be a rerun for France of <a href=\"https://www.theguardian.com/football/live/2022/dec/18/argentina-france-world-cup-2022-final-live\">the Human Rights World Cup final</a>. Conceding a penalty at the end of the first quarter and looking lost for most of the game, <em>Les Bleus</em> would eventually click. Kylian Mbappé would lock into PlayStation mode, thundering down the left-hand side before cutting in to erase the two-goal deficit. It would be another game for the ages, going beyond normal time – but Luis de la Fuente’s lads weren’t keen on any drama. In reality, <a href=\"https://www.theguardian.com/football/2026/jul/14/france-spain-world-cup-semi-final-match-report\">Spain put on a suffocating display of control</a>, even if there was little between the two sides in terms of possession. France, the great entertainers of this Geopolitics World Cup, are off home … though not before a jaunt to Miami for the bronze medal game.</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/football-daily-email-gwc-spain-france\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "spain",
+    "status": "single_source",
+    "published_at": "Wed, 15 Jul 2026 14:09:18 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/15/football-daily-email-gwc-spain-france",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-f7d3736510d5",
+    "title": "Fifa hit by injunction in Germany over World Cup ticket resale prices",
+    "summary": "<ul><li><p>Fifa did not appear before court in Frankfurt</p></li><li><p>Governing body receives 15% commission from buyer and seller</p></li></ul><p>Fifa has been hit with an injunction by a German court ordering it to stop “manipulative processes” in the sale of World Cup tickets. The Frankfurt regional court has granted a request for a preliminary injunction from Ticombo, an online ticket resale site based in Germany, which has instructed Fifa to be more transparent regarding its secondary ticketing sales by disclosing the identity and address of any commercial sellers.</p><p>The court has ordered Fifa “to cease facilitating ticket sales without informing buyers of the seller’s identity and address [specifically for sellers acting in a commercial capacity] in a timely manner prior to the buyer completing their purchase”.</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/fifa-injunction-germany-world-cup-ticket-resale-prices\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "paraguay",
+    "status": "single_source",
+    "published_at": "Wed, 15 Jul 2026 15:04:55 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/15/fifa-injunction-germany-world-cup-ticket-resale-prices",
+    "category": "market_proxy",
+    "factor": "path",
+    "direction": 0,
+    "confidence": 0.52
   }
 ]

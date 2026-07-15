@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-15T12:54:05.347741+00:00",
+  "updatedAt": "2026-07-15T14:57:24.461830+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -20746,6 +20746,41 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 14 Jul 2026 23:01:01 GMT"
+    },
+    {
+      "title": "Cardiff to appeal dismissed £100m Sala claim",
+      "detail": "Cardiff City will appeal against a French judge's decision to throw out the club's claim for more than £100m in compensation following the death of footballer Emiliano Sala.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 14:36:04 GMT"
+    },
+    {
+      "title": "Italian prosecutors drop case against referees boss",
+      "detail": "Prosecutors ask that a sports fraud case against the man in charge of assigning Serie A referees in Italy be dropped.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 13:05:55 GMT"
+    },
+    {
+      "title": "Aston Villa sign keeper Ramsey on free transfer",
+      "detail": "Aston Villa have confirmed the signing of goalkeeper Emily Ramsey on a free transfer from Everton.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 14:16:40 GMT"
+    },
+    {
+      "title": "Duran can be 'second Maeda' for Celtic - O'Neill",
+      "detail": "Celtic manager Martin O'Neill believes new signing Camilo Duran has similar attributes to influential forward Daizen Maeda after the club's summer signing scored in a friendly defeat by Sporting.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 14:51:05 GMT"
+    },
+    {
+      "title": "Brazilian World Cup legend Jairzinho takes a shot: Michael Donald’s best photograph",
+      "detail": "<p>‘Nowadays Jairzinho works with kids in the favelas of Rio where the unwritten rule is that you have to be out by 5pm. I asked for 10 more minutes and when I turned round, a guy had pulled a gun on my crew’</p><p>I’m not a mad football fan. What I most love about the game is its universal appeal – it’s all about a ball crossing a line, and a goal is a goal whether it involves two jerseys in a park or the one that determines the outcome of a World Cup. But when I realised in 2007 that only 58 people had ever scored a goal in a World Cup final and that only 34 of these men were still alive, I thought it would be a great idea to photograph them.</p><p>It quickly became apparent that book sales alone would never finance the project – there were only two English players, the rest were in Europe or South America. But a successful pitch to a film producer won me the opportunity to travel to 13 countries with a documentary crew. Over the course of four years, we interviewed every member of the exclusive World Cup club, and I made portraits of them all.</p> <a href=\"https://www.theguardian.com/artanddesign/2026/jul/15/jairzinho-footballer-brazil-rio-favelas-michael-donalds-best-photograph\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 14:23:53 GMT"
     }
   ],
   "teams": [
@@ -21681,18 +21716,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2879,
+      "eventCount": 2884,
       "manualEventCount": 3,
-      "rawNewsCount": 2876,
+      "rawNewsCount": 2881,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2879,
-      "applied": 2643,
+      "watched": 2884,
+      "applied": 2646,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2874,
+      "singleSource": 2879,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -32333,48 +32368,16 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-15T12:54:27.103096+00:00",
+    "generatedAt": "2026-07-15T14:57:46.859385+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.8,
-        "currentChampion": 7.9,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 8 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
+      "up": 0,
       "down": 0,
-      "largestUp": {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 7.8,
-        "currentChampion": 7.9,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 8 条"
-        ]
-      },
+      "largestUp": null,
       "largestDown": null
     }
   }
