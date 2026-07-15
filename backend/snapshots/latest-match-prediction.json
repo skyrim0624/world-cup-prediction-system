@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-15T16:40:29.646453+00:00",
+  "updatedAt": "2026-07-15T18:12:56.853697+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -20809,6 +20809,41 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 15 Jul 2026 15:04:55 GMT"
+    },
+    {
+      "title": "Headers caused Stiles' brain disease, coroner finds",
+      "detail": "England 1966 World Cup winner Nobby Stiles died with a condition caused by heading footballs, his inquest concludes.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Wed, 15 Jul 2026 18:05:19 GMT"
+    },
+    {
+      "title": "Hibs to face Kosovan side Malisheva in Europe",
+      "detail": "Hibernian will face Malisheva in the second round of Conference League qualifying later this month after the Kosovan outfit beat Albanian side Vllaznia 6-2 on aggregate.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 16:42:53 GMT"
+    },
+    {
+      "title": "In this star-powered World Cup, Spain show value of collective and control | Sid Lowe",
+      "detail": "<p>Luis de la Fuente’s final-bound team have been fuelled by togetherness and a commitment to each other that goes back a long way</p><p>On the way out of the dressing room in Arlington, Luis de la Fuente gathered his “family” and delivered one last message before <a href=\"https://www.theguardian.com/football/2026/jul/14/france-spain-world-cup-semi-final-match-report\">the World Cup semi-final against France</a>. He had long known what he was going to say, if not exactly how – it’s what he has been saying for 50 days and more. “I’ll tell them that this is a unique stage, the kind of moment that may never be repeated again, and that we have to be ourselves,” he had suggested 18 hours earlier; now that idea crystallised in a line. “We’re facing one of the best lineups in the world,” the Spain coach told them, “but we’re the best <em>team</em> in the world.”</p><p>By the time they made their way back in again, a voice was heard above the shouts, another line to encapsulate it all, to define this. It belonged to Marc Cucurella and it said: “What a fucking recital!” A call came in to De la Fuente, King Felipe on the phone saying pretty much the same thing, if a little more politely. On went the music, Jamaican (Bam Bam)<em> </em>blasting out, pizza was passed around, and they bounced about. Some did, anyway. Some just sat there taking in what they had done. “It was written: we started in Atlanta and we end in New York,” Dani Olmo said, but a semi-final is not supposed to be like this.</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/in-this-star-powered-world-cup-spain-show-the-value-of-the-collective-and-control\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 18:03:07 GMT"
+    },
+    {
+      "title": "Where did it go wrong for France against Spain – and what comes next?",
+      "detail": "<p>Kylian Mbappé, Michael Olise and Ousmane Dembélé blew teams away in the early rounds of the World Cup but France had no answers when faced with Spain’s tactical superiority</p><p>By <a href=\"https://www.getfootballnewsfrance.com/\">Get French Football News</a></p><p>For the last few weeks, France had seemed destined to reach their third straight World Cup final, but in the end they were <a href=\"https://www.theguardian.com/football/2026/jul/15/pedro-porro-turns-from-defender-to-destroyer-as-spain-outwit-france-once-more\">overrun by a more tactically coherent Spain team</a> in the semi-finals. Once France went behind to Mikel Oyarzabal’s penalty in the 22nd minute – the first time they had trailed in the tournament – Didier Deschamps’ side never looked like mounting a comeback. There would be no bolt from the blue from Kylian Mbappé, with the match instead plodding along to its logical conclusion. Where did it go wrong and what will come next?</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/france-spain-mbappe-olise-dembele-world-cup-tactical-superiority\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 15:26:10 GMT"
+    },
+    {
+      "title": "Fans in Mexico, Canada and the US: have you enjoyed hosting the World Cup?",
+      "detail": "<p>How was the mood in your city? Did anything surprise you? What will be your enduring memory of the tournament?</p><p>It’s nearly all over. The biggest World Cup in history – with 48 teams playing 104 matches over 39 days in three countries – is coming to an end. If you live in one of the 16 cities that hosted games, we would love to hear from you.</p><p>Was the World Cup a success? What was the mood like where you live? Did people buy into the event and enjoy it? Did anything surprise you about the World Cup? Has it changed your view of football or, if you prefer, soccer? Do you think the tournament will have a long-lasting legacy? Has it changed how your country is perceived around the world? What were the highlights and lowlights? And what will be your one enduring memory of the tournament?</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/football-fans-mexico-canada-us-world-cup-hosts-tournament\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 11:19:45 GMT"
     }
   ],
   "teams": [
@@ -20971,7 +21006,7 @@
       "factors": {
         "strength": 91,
         "form": 82,
-        "path": 63,
+        "path": 62,
         "squad": 55,
         "margin": 83
       },
@@ -21744,18 +21779,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2888,
+      "eventCount": 2893,
       "manualEventCount": 3,
-      "rawNewsCount": 2885,
+      "rawNewsCount": 2890,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2888,
-      "applied": 2650,
+      "watched": 2893,
+      "applied": 2654,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2883,
+      "singleSource": 2888,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -21827,7 +21862,7 @@
         "attack": -7.7,
         "defense": 0.0,
         "goalkeeper": -2.15,
-        "path": -11.450000000000001,
+        "path": -12.370000000000001,
         "squad": -30.89999999999999
       },
       "morocco": {
@@ -32396,7 +32431,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-15T16:40:46.697631+00:00",
+    "generatedAt": "2026-07-15T18:13:16.823444+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
