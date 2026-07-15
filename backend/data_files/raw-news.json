@@ -39588,5 +39588,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-1fb091f83bd8",
+    "title": "A special team beats brilliant individuals - how silky Spain flattened France",
+    "summary": "Spain have rather flown under the radar at the 2026 World Cup but will they go all the way and win it?",
+    "source": "bbc",
+    "team": "netherlands",
+    "status": "single_source",
+    "published_at": "Wed, 15 Jul 2026 00:28:35 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cpv3v0gkw9vo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-3cd4aa67eee2",
+    "title": "Pressure is on world champions Argentina in semi-final - Guehi",
+    "summary": "England defender Marc Guehi insists the pressure is on Argentina as the Three Lions prepare to face the reigning champions in the World Cup semi-finals.",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Wed, 15 Jul 2026 00:18:30 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cp8l87vevj2o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "defense",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-b09adab9a0c6",
+    "title": "Thomas Tuchel: ‘Argentina will be fuelled by history – but we are ready’",
+    "summary": "<ul><li><p>Falklands conflict adds ‘emotional’ edge to semi-final</p></li><li><p>Manager has ‘no problem’ with Bellingham after outburst</p></li></ul><p>Thomas Tuchel believes England will face an Argentina team “fuelled by history” in their World Cup semi-final in Atlanta on Wednesday. It will be the sixth time that the nations have met at the tournament with the previous three coming after the Falklands war of 1982.</p><p>The most controversial game was in the 1986 quarter-finals when Diego Maradona scored his “Hand of God” goal and Argentina won 2-1 en route to the title. Argentina triumphed on penalties in the last 16 in 1998 when David Beckham was sent off. Beckham gained a measure of revenge four years later when he scored from the penalty spot for a 1-0 group-stage victory. England won 3-1 at the group phase in 1962 and 1-0 in the quarter-finals in 1966, when they went on to become champions.</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/thomas-tuchel-argentina-fuelled-history-england-world-cup\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Tue, 14 Jul 2026 23:18:21 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/15/thomas-tuchel-argentina-fuelled-history-england-world-cup",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-6e59f6363bf2",
+    "title": "‘It means love’: Scottish World Cup fans celebrate Boston with orange traffic cone",
+    "summary": "<p>‘Boston cone’ arrives to fanfare in first-class seat from Glasgow before planned trip to raise money for mental health</p><p>Fresh off its first-class flight from Glasgow, it received a reception befitting a visiting dignitary: a bagpiper in full regalia playing inside Boston Logan international airport. Waiting to greet it were diplomats, the governor and Boston’s mayor.</p><p>The guest of honor? An orange traffic cone.</p> <a href=\"https://www.theguardian.com/football/2026/jul/14/world-cup-traffic-cone-scotland-boston\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Tue, 14 Jul 2026 23:33:08 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/14/world-cup-traffic-cone-scotland-boston",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
