@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-15T11:10:54.245384+00:00",
+  "updatedAt": "2026-07-15T12:54:05.347741+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -567,7 +567,7 @@
       "title": "库拉索半区压力下降",
       "details": [
         "库拉索夺冠概率 ±0.0%",
-        "德国潜在淘汰赛路径变难 -0.1%",
+        "德国潜在淘汰赛路径变难 ±0.0%",
         "小组第二路径风险上升"
       ],
       "championShift": "±0.0%",
@@ -20669,6 +20669,83 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 15 Jul 2026 09:08:03 GMT"
+    },
+    {
+      "title": "Morecambe first club to face action from regulator",
+      "detail": "The independent football regulator issues a warning to Morecambe after their owners fail to respond to requests for information.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 11:56:10 GMT"
+    },
+    {
+      "title": "More than the Score",
+      "detail": "European champions Spain produce a masterclass to beat France in their semi-final",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 11:48:00 GMT"
+    },
+    {
+      "title": "📈 World Cup stock watch: Who has impressed?",
+      "detail": "The FIFA World Cup is into the semifinals, but which players have impressed and which have struggled during both tournaments?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 08:47:12 EST"
+    },
+    {
+      "title": "France move from Deschamps to Zidane wondering wha...",
+      "detail": "France's Didier Deschamps era ended with a shock World Cup semifinal defeat to Spain. Is Zinedine Zidane better placed to get more out of this clearly talented group?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 08:35:14 EST"
+    },
+    {
+      "title": "Who should be the USMNT's next coach? Here are 11 ...",
+      "detail": "If Mauricio Pochettino leaves the USMNT, the question is who could replace him. Well, here are 11 coaches who could be in U.S. Soccer's hiring pool.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 07:33:32 EST"
+    },
+    {
+      "title": "World Cup Daily live: Argentina fans take over Atl...",
+      "detail": "Enjoy all the features, news, video analysis and color from around the competition as England and Argentina battle for a place in the 2026 FIFA World Cup final.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 06:48:23 EST"
+    },
+    {
+      "title": "Transfer rumors, news: USMNT striker Balogun on Ju...",
+      "detail": "Juventus are considering a move for AS Monaco and USMNT striker Folarin Balogun. Transfer Talk has the latest.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 04:10:25 EST"
+    },
+    {
+      "title": "Thomas Tuchel trusts England’s ‘special breed’ to find a way past Messi’s Argentina | David Hytner",
+      "detail": "<p>Head coach praises his players’ ability to rise to the occasion and ‘put on a fight’ against the defending champions in the semi-final</p><p>“A funny quote for you,” Thomas Tuchel says as he prepares to lead England in the World Cup semi-final against Argentina on Wednesday but peeks back at a subject that has attracted a few column inches of late. “You don’t have to be a horse to be a good jockey.”</p><p>It is a line made famous by Arrigo Sacchi in 1987 when he was appointed as the manager of Milan despite being a relative unknown and having had no professional playing career. It worked out pretty well for Sacchi, just as it has done for Tuchel, who was forced to hang up his boots as a 24-year-old after a knee injury. He played no higher than the Bundesliga 2 with Stuttgart Kickers and spent time at SSV Ulm, a semi-professional club in the third tier. “I had a mediocre career at best,” Tuchel says.</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/thomas-tuchel-england-lionel-messi-argentina-world-cup-2026-semi-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 14 Jul 2026 23:18:12 GMT"
+    },
+    {
+      "title": "‘Collective failure’: French press digests World Cup semi-final defeat by Spain",
+      "detail": "<ul><li><p>L’Équipe laments ‘mentally sunk’ players iin Dallas</p></li><li><p>Ouest France front page reads: ‘End of American dream’</p></li></ul><p>French fans’ expectations of their national team had been at an all-time high: a semi-final on Bastille Day, Kylian Mbappé a hero, a squad unbeaten. Across the country, bars had been packed with viewers spilling on to pavements, ready to crack open the fireworks ahead of hopes for the final.</p><p>But the night was unexpectedly subdued, streets cleared early. On Wednesday morning, the French media were still digesting the disappointment of <a href=\"https://www.theguardian.com/football/2026/jul/14/france-spain-world-cup-semi-final-match-report\">defeat in a World Cup semi-final</a>, praising Spain’s performance in Texas while struggling to comprehend <em>Les Bleus</em>’ fall from a high.</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/france-world-cup-semi-final-media-reactions-spain\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 11:28:20 GMT"
+    },
+    {
+      "title": "Lethal Spain execute plan to perfection against France on way to World Cup final | Jeff Rueter",
+      "detail": "<p>Brilliant buildup play has often withered but control and flawless execution overcame France’s more variable chaos</p><p>When the World Cup came to North America, with its final held in the planet’s biggest media market, the tournament was bound to fixate on stars.</p><p>Fox’s coverage certainly enables that bias. Every game is billed like a boxing bout between two über-talented footballers rather than 22 players figuring things out across 90 minutes. One semi-final has been distilled down to MESSI v KANE (or MESSI v BELLINGHAM, depending on the broadcaster). The other leaned heavily on hope that Lamine Yamal’s hamstring would finally be at 100% after his April injury. MBAPPÉ v 600 PASSES PER GAME isn’t so snappy.</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/spain-game-plan-france-fifa-world-cup-semi-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Wed, 15 Jul 2026 11:00:54 GMT"
+    },
+    {
+      "title": "Pedro Porro turns from defender to destroyer as Spain outwit France once more | Sid Lowe",
+      "detail": "<p>The full-back was supposed to be busy shackling France’s vaunted front line but found time to score the killer goal at the other end</p><p>“Let me loose in a prison and I’ll end up owning the place,” Pedro Porro once said. Let him loose in the penalty area and that will belong to him too. The whole world might: to him and the entire gang. When the Spain right-back burst into the box like a jail break, sprinting on to Dani Olmo’s superb layoff, and steadied himself to guide the ball into the net and score the second goal in Dallas, there was still half an hour to go in this semi-final, but <a href=\"https://www.theguardian.com/football/2026/jul/14/france-spain-world-cup-semi-final-match-report\">it was done</a>. They knew it was. Somehow, it was like they always had.</p><p>Porro kissed the badge and raced to the corner, his teammates streaming across the pitch and off the bench towards him. He was there to protect them from Kylian Mbappé, the tournament’s top scorer and one member of that terrifying French forward line, projected as if they were the four horsemen of the apocalypse: the toughest, most fearful men in the joint. Or so it goes. Yet he won’t back down, never has, and when it came to the decisive blow, he was the one who delivered it. Instinct had taken over, if only for an instant. And what an instant it was, guaranteeing Spain would go to the World Cup final.</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/pedro-porro-turns-from-defender-to-destroyer-as-spain-outwit-france-once-more\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 14 Jul 2026 23:01:01 GMT"
     }
   ],
   "teams": [
@@ -20763,7 +20840,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.6,
-        "quarterfinal": 6.3,
+        "quarterfinal": 6.4,
         "change": -0.4
       }
     },
@@ -20851,14 +20928,14 @@
         "strength": 84,
         "form": 72,
         "path": 68,
-        "squad": 65,
+        "squad": 63,
         "margin": 76
       },
       "tournament": {
         "champion": 0.3,
-        "final": 1.1,
-        "semifinal": 4.4,
-        "quarterfinal": 18.9,
+        "final": 1.0,
+        "semifinal": 4.1,
+        "quarterfinal": 18.2,
         "change": -1.2
       }
     },
@@ -20927,14 +21004,14 @@
         "strength": 75,
         "form": 68,
         "path": 61,
-        "squad": 65,
+        "squad": 63,
         "margin": 74
       },
       "tournament": {
         "champion": 0.0,
         "final": 0.1,
-        "semifinal": 0.7,
-        "quarterfinal": 2.6,
+        "semifinal": 0.6,
+        "quarterfinal": 2.4,
         "change": -0.1
       }
     },
@@ -20989,9 +21066,9 @@
       },
       "tournament": {
         "champion": 3.8,
-        "final": 8.5,
-        "semifinal": 18.9,
-        "quarterfinal": 33.4,
+        "final": 8.6,
+        "semifinal": 19.0,
+        "quarterfinal": 33.6,
         "change": -2.0
       }
     },
@@ -21064,11 +21141,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 7.8,
-        "final": 15.3,
-        "semifinal": 31.9,
-        "quarterfinal": 67.8,
-        "change": 1.0
+        "champion": 7.9,
+        "final": 15.4,
+        "semifinal": 32.2,
+        "quarterfinal": 68.4,
+        "change": 1.1
       }
     },
     {
@@ -21604,18 +21681,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2868,
+      "eventCount": 2879,
       "manualEventCount": 3,
-      "rawNewsCount": 2865,
+      "rawNewsCount": 2876,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2868,
-      "applied": 2635,
+      "watched": 2879,
+      "applied": 2643,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2863,
+      "singleSource": 2874,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -21695,7 +21772,7 @@
         "defense": -8.6,
         "goalkeeper": -2.15,
         "path": -3.0599999999999996,
-        "squad": -15.05
+        "squad": -17.2
       },
       "haiti": {
         "attack": -2.55,
@@ -21723,7 +21800,7 @@
         "defense": -4.699999999999999,
         "goalkeeper": 0.0,
         "path": -3.8299999999999996,
-        "squad": -9.799999999999999
+        "squad": -11.95
       },
       "australia": {
         "attack": -4.699999999999999,
@@ -32256,16 +32333,48 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-15T11:11:16.504152+00:00",
+    "generatedAt": "2026-07-15T12:54:27.103096+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.8,
+        "currentChampion": 7.9,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.6%",
+        "reasons": [
+          "八强概率上升 +0.6%",
+          "四强概率上升 +0.3%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 8 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
+      "up": 1,
       "down": 0,
-      "largestUp": null,
+      "largestUp": {
+        "team": "netherlands",
+        "name": "荷兰",
+        "code": "NED",
+        "previousChampion": 7.8,
+        "currentChampion": 7.9,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "八强概率上升 +0.6%",
+        "reasons": [
+          "八强概率上升 +0.6%",
+          "四强概率上升 +0.3%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 8 条"
+        ]
+      },
       "largestDown": null
     }
   }
