@@ -41114,5 +41114,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-0be6c4412a7e",
+    "title": "'A true miracle of destiny' - Messi and Yamal's incredible first meeting",
+    "summary": "BBC Sport explores a bond between two world-class footballers from different generations who appear bound by destiny",
+    "source": "bbc",
+    "team": "portugal",
+    "status": "single_source",
+    "published_at": "Thu, 16 Jul 2026 12:52:08 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c9w0j104rvgo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-eca11ce23f0e",
+    "title": "24m tune in to watch England-Argentina",
+    "summary": "England's defeat to Argentina in the World Cup semi-final attracts an audience of 24 million on the BBC.",
+    "source": "bbc",
+    "team": "tunisia",
+    "status": "single_source",
+    "published_at": "Thu, 16 Jul 2026 11:51:33 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cwyjwdvq6dno?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-b997a2786f4f",
+    "title": "Parkinson refuses to confirm Moreno Wrexham link",
+    "summary": "Wrexham boss Phil Parkinson would not be drawn on reports linking the Championship club with defender Matias Moreno.",
+    "source": "bbc",
+    "team": "paraguay",
+    "status": "single_source",
+    "published_at": "Thu, 16 Jul 2026 12:15:32 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cvgx4kk7xk1o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "defense",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

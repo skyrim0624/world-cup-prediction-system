@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-16T11:05:10.215960+00:00",
+  "updatedAt": "2026-07-16T13:02:53.477817+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -21180,6 +21180,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 16 Jul 2026 09:06:56 GMT"
+    },
+    {
+      "title": "'A true miracle of destiny' - Messi and Yamal's incredible first meeting",
+      "detail": "BBC Sport explores a bond between two world-class footballers from different generations who appear bound by destiny",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 12:52:08 GMT"
+    },
+    {
+      "title": "24m tune in to watch England-Argentina",
+      "detail": "England's defeat to Argentina in the World Cup semi-final attracts an audience of 24 million on the BBC.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 11:51:33 GMT"
+    },
+    {
+      "title": "Parkinson refuses to confirm Moreno Wrexham link",
+      "detail": "Wrexham boss Phil Parkinson would not be drawn on reports linking the Championship club with defender Matias Moreno.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 12:15:32 GMT"
     }
   ],
   "teams": [
@@ -22115,18 +22136,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2941,
+      "eventCount": 2944,
       "manualEventCount": 3,
-      "rawNewsCount": 2938,
+      "rawNewsCount": 2941,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2941,
-      "applied": 2699,
+      "watched": 2944,
+      "applied": 2702,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2936,
+      "singleSource": 2939,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -32767,7 +32788,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-16T11:05:32.565000+00:00",
+    "generatedAt": "2026-07-16T13:03:15.889694+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
