@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-15T21:06:25.038907+00:00",
+  "updatedAt": "2026-07-15T22:32:11.056869+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -20893,6 +20893,62 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 15 Jul 2026 18:28:24 GMT"
+    },
+    {
+      "title": "Argentina shatter England's World Cup dreams in semi-final",
+      "detail": "Argentina shatter England's World Cup dreams, scoring two late goals to come from behind and knock out Thomas Tuchel's side, in a dramatic semi-final in Atlanta.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 22:05:15 GMT"
+    },
+    {
+      "title": "Final two World Cup matches to be shown live on BBC",
+      "detail": "Saturday's World Cup third-place play-off between England and France and Sunday's World Cup final will both be live on BBC TV.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 21:16:12 GMT"
+    },
+    {
+      "title": "'Gutted!' - Kane disappointed over World Cup exit",
+      "detail": "England captain Harry Kane gives his analysis on their defeat against Argentina in the 2026 World Cup semi-final at Atlanta Stadium.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 22:23:56 GMT"
+    },
+    {
+      "title": "Late Martinez header sends Argentina to World Cup final",
+      "detail": "Substitute Lautaro Martinez is in the right place at the right time to head home Lionel Messi's 92nd-minute cross to send Argentina to the World Cup final at the expense of England.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 21:18:38 GMT"
+    },
+    {
+      "title": "Argentina celebrate progressing to World Cup final",
+      "detail": "Defending champions Argentina celebrate at full time, after beating England 2-1 to make it through to their second successive World Cup final.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 21:53:27 GMT"
+    },
+    {
+      "title": "Fernandez fires in equaliser for Argentina",
+      "detail": "Enzo Fernandez equalises for Argentina against England in the 2026 World Cup semi final at the Atlanta Stadium.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 21:20:38 GMT"
+    },
+    {
+      "title": "European ambition, new signings and big expectations for Hibs",
+      "detail": "Can Hibs build on last season and make a real impact in Europe?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 17:00:00 GMT"
+    },
+    {
+      "title": "England 1-2 Argentina: World Cup semi-final player ratings",
+      "detail": "<p>Lionel Messi was at his effervescent best while Harry Kane struggled to make an impact</p><p><strong>Jordan Pickford</strong> Had little chance with either goal. Pulled off a sensational save from González but that will be forgotten now. <strong>7</strong></p> <a href=\"https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-player-ratings\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 21:44:17 GMT"
     }
   ],
   "teams": [
@@ -21828,18 +21884,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2900,
+      "eventCount": 2908,
       "manualEventCount": 3,
-      "rawNewsCount": 2897,
+      "rawNewsCount": 2905,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2900,
-      "applied": 2661,
+      "watched": 2908,
+      "applied": 2669,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2895,
+      "singleSource": 2903,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -32480,7 +32536,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-15T21:06:47.199697+00:00",
+    "generatedAt": "2026-07-15T22:32:32.409484+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
