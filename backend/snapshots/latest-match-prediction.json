@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-16T06:24:20.954226+00:00",
+  "updatedAt": "2026-07-16T08:42:19.180511+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -21068,6 +21068,41 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Wed, 15 Jul 2026 23:47:15 GMT"
+    },
+    {
+      "title": "Romero labels Neville 'stupid' over criticism",
+      "detail": "Argentina defender Cristian Romero says player-turned-pundit Gary Neville was \"stupid\" to criticise his centre-back partnership with Lisandro Martinez.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 07:33:49 GMT"
+    },
+    {
+      "title": "Bellingham slapped Argentina substitute after England exit",
+      "detail": "Jude Bellingham sparks melee as he slaps Argentina substitute Valentin Barco on the back of the head following England's 2-1 World Cup semi-final defeat.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 08:38:33 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "England are out. Rick and Lloyd react.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 06:52:00 GMT"
+    },
+    {
+      "title": "Rangers agree deal for Partizan's Dragojevic - gossip",
+      "detail": "Rangers agree deal for Partizan Belgrade midfielder, Celtic to listen to striker offers and goalkeeper arrives for Hearts medical.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 08:40:06 GMT"
+    },
+    {
+      "title": "Heartbreak for England, again | World Cup Daily – video",
+      "detail": "<p><a href=\"https://bsky.app/profile/maxrushden.bsky.social\">Max Rushden</a> is joined by <a href=\"https://bsky.app/profile/did:plc:i55lfvhkg573wfmby5sdnvq6\">Barry Glendenning</a>, <a href=\"https://bsky.app/profile/brewin.bsky.social\">John Brewin</a>, <a href=\"https://bsky.app/profile/jonawils.bsky.social\">Jonathan Wilson</a> and <a href=\"https://bsky.app/profile/nickybandini.bsky.social\">Nicky Bandini</a> as England lose 2-1 to Argentina in the World Cup semi-finals</p> <a href=\"https://www.theguardian.com/football/video/2026/jul/16/heartbreak-for-england-again-world-cup-daily-video\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 06:51:44 GMT"
     }
   ],
   "teams": [
@@ -22003,18 +22038,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2925,
+      "eventCount": 2930,
       "manualEventCount": 3,
-      "rawNewsCount": 2922,
+      "rawNewsCount": 2927,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2925,
-      "applied": 2685,
+      "watched": 2930,
+      "applied": 2690,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2920,
+      "singleSource": 2925,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -32655,51 +32690,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-16T06:24:42.821365+00:00",
+    "generatedAt": "2026-07-16T08:42:37.503050+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 0.3,
-        "currentChampion": 0.2,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "八强概率下降 -0.7%",
-          "四强概率下降 -0.3%",
-          "决赛概率下降 -0.1%",
-          "可入模型事件新增 2 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
       "up": 0,
-      "down": 1,
+      "down": 0,
       "largestUp": null,
-      "largestDown": {
-        "team": "morocco",
-        "name": "摩洛哥",
-        "code": "MAR",
-        "previousChampion": 0.3,
-        "currentChampion": 0.2,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "八强概率下降 -0.7%",
-          "四强概率下降 -0.3%",
-          "决赛概率下降 -0.1%",
-          "可入模型事件新增 2 条"
-        ]
-      }
+      "largestDown": null
     }
   }
 }

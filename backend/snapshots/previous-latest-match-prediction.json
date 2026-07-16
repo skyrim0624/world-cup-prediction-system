@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-16T03:48:22.665177+00:00",
+  "updatedAt": "2026-07-16T06:24:20.954226+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -21047,6 +21047,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 15 Jul 2026 22:55:37 GMT"
+    },
+    {
+      "title": "Who am I? Guess World Cup star No 39",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 06:18:31 GMT"
+    },
+    {
+      "title": "World Cup 2026: Argentina break England hearts and head for final with Spain – live",
+      "detail": "<p>⚽ All the latest in the aftermath from dramatic day in Atlanta<br>⚽ <a href=\"https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report\">England 1-2 Argentina</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:taha.hashim@theguardian.com\">Mail us</a></p><p><strong>The Argentina players could not resist doubling down on their triumph</strong> over old rivals England as they celebrated their World Cup win with a banner saying “<em>Las Malvinas son Argentinas</em>”, making reference to the 1982 Falklands war. Lisandro Martínez and Giovani Lo Celso held up the banner, grinning, and waved to fans in the stands.</p><p>Fifa’s stadium code of conduct bans “banners, flags, flyers, apparel and other paraphernalia that are of a political, offensive, and/or discriminatory nature” inside stadiums, so expect to hear more about this one either way.</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/16/world-cup-2026-argentina-break-england-hearts-and-head-for-final-with-spain-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 06:10:42 GMT"
+    },
+    {
+      "title": "Thomas Tuchel accepts responsibility after substitutions backfire in England defeat",
+      "detail": "<ul><li><p>Head coach has no regrets but admits he will be judged</p></li><li><p>Bellingham appears to strike Argentina’s Barco on head</p></li></ul><p>Thomas Tuchel shouldered the blame for England becoming far too passive after taking the lead as <a href=\"https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report\">Argentina ended his team’s World Cup dream</a> with a dramatic late comeback.</p><p>England were within minutes of a first men’s World Cup final on foreign soil after going ahead through Anthony Gordon early in the second half. But the reigning champions equalised through a piledriver from Enzo Fernández before the substitute Lautaro Martínez scored the decisive goal in the second minute of injury time to send Argentina through to Sunday’s final against Spain in New York.</p> <a href=\"https://www.theguardian.com/football/2026/jul/16/thomas-tuchel-accepts-responsibility-substitutions-england-argentina\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Wed, 15 Jul 2026 23:47:15 GMT"
     }
   ],
   "teams": [
@@ -21229,15 +21250,15 @@
         "strength": 84,
         "form": 72,
         "path": 68,
-        "squad": 63,
+        "squad": 61,
         "margin": 76
       },
       "tournament": {
-        "champion": 0.3,
-        "final": 1.0,
-        "semifinal": 4.1,
-        "quarterfinal": 18.2,
-        "change": -1.2
+        "champion": 0.2,
+        "final": 0.9,
+        "semifinal": 3.8,
+        "quarterfinal": 17.5,
+        "change": -1.3
       }
     },
     {
@@ -21367,7 +21388,7 @@
       },
       "tournament": {
         "champion": 3.8,
-        "final": 8.6,
+        "final": 8.5,
         "semifinal": 19.0,
         "quarterfinal": 33.6,
         "change": -2.0
@@ -21443,9 +21464,9 @@
       },
       "tournament": {
         "champion": 7.9,
-        "final": 15.4,
-        "semifinal": 32.2,
-        "quarterfinal": 68.4,
+        "final": 15.6,
+        "semifinal": 32.5,
+        "quarterfinal": 69.0,
         "change": 1.1
       }
     },
@@ -21982,18 +22003,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2922,
+      "eventCount": 2925,
       "manualEventCount": 3,
-      "rawNewsCount": 2919,
+      "rawNewsCount": 2922,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2922,
-      "applied": 2683,
+      "watched": 2925,
+      "applied": 2685,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2917,
+      "singleSource": 2920,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -22073,7 +22094,7 @@
         "defense": -8.6,
         "goalkeeper": -2.15,
         "path": -3.0599999999999996,
-        "squad": -17.2
+        "squad": -19.349999999999998
       },
       "haiti": {
         "attack": -2.55,
@@ -32634,17 +32655,51 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-16T03:48:45.033855+00:00",
+    "generatedAt": "2026-07-16T06:24:42.821365+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "morocco",
+        "name": "摩洛哥",
+        "code": "MAR",
+        "previousChampion": 0.3,
+        "currentChampion": 0.2,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "人员盘下调 -2.1",
+        "reasons": [
+          "人员盘下调 -2.1",
+          "八强概率下降 -0.7%",
+          "四强概率下降 -0.3%",
+          "决赛概率下降 -0.1%",
+          "可入模型事件新增 2 条"
+        ]
+      }
+    ],
     "summary": {
       "up": 0,
-      "down": 0,
+      "down": 1,
       "largestUp": null,
-      "largestDown": null
+      "largestDown": {
+        "team": "morocco",
+        "name": "摩洛哥",
+        "code": "MAR",
+        "previousChampion": 0.3,
+        "currentChampion": 0.2,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "人员盘下调 -2.1",
+        "reasons": [
+          "人员盘下调 -2.1",
+          "八强概率下降 -0.7%",
+          "四强概率下降 -0.3%",
+          "决赛概率下降 -0.1%",
+          "可入模型事件新增 2 条"
+        ]
+      }
     }
   }
 }
