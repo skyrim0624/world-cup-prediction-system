@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-16T18:11:00.298011+00:00",
+  "updatedAt": "2026-07-16T19:42:38.245162+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -21362,6 +21362,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 16 Jul 2026 17:29:47 GMT"
+    },
+    {
+      "title": "Some England players disappointed at Tuchel's tactics",
+      "detail": "BBC Sport understands that Thomas Tuchel's defensive tactics in the World Cup semi-final defeat to Argentina are being hotly debated by the England squad.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 19:14:49 GMT"
+    },
+    {
+      "title": "Fifa 'assessing reports' over Falklands banner",
+      "detail": "Fifa is \"assessing the match reports\" before deciding whether to punish Argentina after players held a banner in support of their country's claims to the Falkland Islands.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 18:44:43 GMT"
+    },
+    {
+      "title": "Forest set to make £45m offer for Spurs' Bergvall",
+      "detail": "Nottingham Forest are set to make an offer of £45m for Tottenham midfielder Lucas Bergvall.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 18:24:16 GMT"
+    },
+    {
+      "title": "Celtic struggling to compete in transfer market - Nicholson",
+      "detail": "Celtic's lack of summer transfer activity is because they are struggling to compete with English Championship clubs and deal with agents, according to the club's chief executive Michael Nicholson.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 18:12:38 GMT"
+    },
+    {
+      "title": "Tuchel ‘100%’ invested in leading England at Euro 2028 despite semi-final failure",
+      "detail": "<ul><li><p>Manager under fire for manner of 2-1 defeat by Argentina</p></li><li><p>‘There is enough to improve and I am happy to do that’</p></li></ul><p>Thomas Tuchel says he is “100%” committed to leading England at Euro 2028 and finding the “extra level” for glory that eluded his team at the World Cup.</p><p>The manager is under fire for the manner of <a href=\"https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report\">Wednesday’s 2-1 semi-final defeat</a> in Atlanta. His switch to a back five for the final quarter at 1-0 up did not work, Argentina scoring two late goals to advance into Sunday’s final against Spain.</p> <a href=\"https://www.theguardian.com/football/2026/jul/16/thomas-tuchel-england-2026-world-cup-semi-final-argentina-euro-2028\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 18:00:45 GMT"
+    },
+    {
+      "title": "White House says Donald Trump will attend World Cup final",
+      "detail": "<ul><li><p>Infantino has said US president will hand over trophy</p></li><li><p>Spain v Argentina final is set for Sunday in New Jersey</p></li></ul><p>Donald Trump will attend Sunday’s World Cup final between Spain and Argentina, White House press secretary Karoline Leavitt said Thursday.</p><p>“We look forward ⁠to the final match on Sunday, ​and I know ‌the president ‌looks forward to attending,” Leavitt said. “This is a fitting conclusion to a tournament that showcased America’s ability to host the world on the grandest stage.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/16/donald-trump-attending-world-cup-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 18:09:48 GMT"
+    },
+    {
+      "title": "Four passes in 19 minutes: damning numbers behind England’s collapse",
+      "detail": "<p>No successful tackles after the 63rd minute and failure to break up play through fouls also played their part in World Cup semi-final defeat</p><p>There will be coaching courses of the future that use footage of England’s performance against Argentina to illustrate how not to defend a one-goal lead. If that sounds harsh, the data from the match justifies that stance.</p><p>Many ugly statistics emerged once the postmortem began. The most damning came from OptaJoe, who noted England had 12% possession in the 30 minutes between Anthony Gordon’s goal and Argentina’s equaliser. “That is the lowest by a team to be winning for at least 10 minutes in a World Cup match in the last 60 years,” they added.</p> <a href=\"https://www.theguardian.com/football/2026/jul/16/four-england-passes-19-minutes-argentina-2026-world-cup-semi-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 18:41:58 GMT"
     }
   ],
   "teams": [
@@ -22297,18 +22346,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2967,
+      "eventCount": 2974,
       "manualEventCount": 3,
-      "rawNewsCount": 2964,
+      "rawNewsCount": 2971,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2967,
-      "applied": 2722,
+      "watched": 2974,
+      "applied": 2729,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2962,
+      "singleSource": 2969,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -32949,7 +32998,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-16T18:11:22.686090+00:00",
+    "generatedAt": "2026-07-16T19:43:00.350786+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

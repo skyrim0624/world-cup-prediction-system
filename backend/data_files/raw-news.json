@@ -41576,5 +41576,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-bf423742a579",
+    "title": "Inter interested in Spence - Friday's gossip",
+    "summary": "Inter Milan work on deals for Djed Spence and Cristian Romero, Liverpool lead the race for Kaishu Sano, Arsenal show interest in Ezri Konsa, plus more.",
+    "source": "bbc",
+    "team": "senegal",
+    "status": "single_source",
+    "published_at": "Thu, 16 Jul 2026 20:20:15 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cvgx4rvz57vo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-f17fbc577890",
+    "title": "Players ‘puzzled’ by tactics but Tuchel left himself no other option with his squad picks",
+    "summary": "<p>The England head coach took a risk by selecting injury-prone players and ignoring creative options such as Foden, Palmer and Gibbs-White</p><p>When Thomas Tuchel became England’s head coach he spoke repeatedly about wanting his side to adopt a Premier League style. He wanted intensity, pace, full-throttle football. Tuchel offered clarity, his analysis was precise and his squad for the World Cup was built around the idea of overwhelming opponents with physicality and relentless running.</p><p>There were roles for specialists and places for individuals who could be trusted to bring the vibes. There were like-for-like alternatives in various positions and Tuchel was granted a lot of leeway. He was bold with his choices and could respond to questions about omitting the creativity of Phil Foden, Cole Palmer, Adam Wharton, Morgan Gibbs-White and Trent Alexander-Arnold by arguing that he had a vision and was going to stick to it.</p> <a href=\"https://www.theguardian.com/football/2026/jul/16/players-puzzled-tactics-tuchel-no-option-england-squad-picks\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "spain",
+    "status": "single_source",
+    "published_at": "Thu, 16 Jul 2026 20:18:40 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/16/players-puzzled-tactics-tuchel-no-option-england-squad-picks",
+    "category": "injury",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.78
   }
 ]
