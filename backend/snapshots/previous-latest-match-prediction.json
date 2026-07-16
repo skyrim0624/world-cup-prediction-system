@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-16T16:50:30.419271+00:00",
+  "updatedAt": "2026-07-16T18:11:00.298011+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -21327,6 +21327,41 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 16 Jul 2026 15:30:42 GMT"
+    },
+    {
+      "title": "From Southgate to Tuchel - has anything changed?",
+      "detail": "Thomas Tuchel was meant to be the man whose fresh approach would win England major honours, but defeat by Argentina felt like a familiar story - has anything really changed from the Gareth Southgate era?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 18:02:35 GMT"
+    },
+    {
+      "title": "UK says Falkland Islands 'definitely ours' after Argentina banner",
+      "detail": "Argentina could be disciplined by Fifa for the celebrations after the World Cup win over England.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 14:12:25 GMT"
+    },
+    {
+      "title": "Palace sign England Under-23 striker Lloyd-Smith",
+      "detail": "Crystal Palace sign last season's WSL2 top scorer Lexi Lloyd-Smith on a three-year deal.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 16:54:37 GMT"
+    },
+    {
+      "title": "Keir Starmer wants Fifa investigation into Argentina players who held Falklands banner",
+      "detail": "<ul><li><p>Spokesperson says islands belong to the UK</p></li><li><p>‘PM wishes both teams well for the final, especially Spain’</p></li></ul><p>Keir Starmer supports the idea of Fifa investigating Argentina players who <a href=\"https://www.theguardian.com/football/2026/jul/15/malvinas-is-argentinian-world-cup-holders-celebrate-win-over-england-with-banner\">displayed a banner</a> touting their country’s claim to the Falklands Islands after their World Cup semi-final win against England, Downing Street has said.</p><p>Starmer, who watched the match while travelling to Ukraine by train for the final overseas trip of his premiership, endorsed a call by Peter Kyle, the business secretary, for Fifa to investigate what rules may have been broken.</p> <a href=\"https://www.theguardian.com/football/2026/jul/16/keir-starmer-fifa-investigation-argentina-players-falklands-banner-malvinas-england-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 16 Jul 2026 12:11:09 GMT"
+    },
+    {
+      "title": "The Guardian view on England’s World Cup disappointment: a tale of the not wholly unexpected | Editorial",
+      "detail": "<p>There was a sense of deja vu as Argentina came from behind to win an intense semi-final. But the players also gave the nation some memorable highs</p><p>Historically, English football-supporting culture has had a well-known darker side. But in recent decades, as the England men’s team’s trophy drought has continued, some of its unofficial anthems have acquired an endearingly melancholy quality. “It was nearly complete, it was nearly so sweet”, as the Three&nbsp;Lions <a href=\"https://www.espn.co.uk/football/story/_/id/48776399/its-coming-home-world-cup-2026-how-three-lions-became-england-unofficial-tournament-song\">song</a> had it in the 1990s, when England exited a <a href=\"https://www.theguardian.com/football/blog/2014/jun/03/world-cup-25-stunning-moments-gazza-cries-1990\">World Cup</a> and a European Championship at the&nbsp;semi-final stage.</p><p>This summer, Oasis’s <a href=\"https://www.youtube.com/watch?v=BTHtve_n3T4\">Wonderwall</a> has been the soundtrack as Harry Kane and co progressed to Wednesday’s climactic semi-final showdown with Argentina. This is a song which, very wisely in an England context, puts a heavy emphasis on the idea of “maybe”. In the end it turned out to be maybe not.</p> <a href=\"https://www.theguardian.com/commentisfree/2026/jul/16/the-guardian-view-on-englands-world-cup-disappointment-a-tale-of-the-not-wholly-unexpected\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 17:29:47 GMT"
     }
   ],
   "teams": [
@@ -21489,7 +21524,7 @@
       "factors": {
         "strength": 91,
         "form": 82,
-        "path": 62,
+        "path": 61,
         "squad": 53,
         "margin": 83
       },
@@ -22262,18 +22297,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2962,
+      "eventCount": 2967,
       "manualEventCount": 3,
-      "rawNewsCount": 2959,
+      "rawNewsCount": 2964,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2962,
-      "applied": 2717,
+      "watched": 2967,
+      "applied": 2722,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2957,
+      "singleSource": 2962,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -22345,7 +22380,7 @@
         "attack": -7.7,
         "defense": 0.0,
         "goalkeeper": -2.15,
-        "path": -12.370000000000001,
+        "path": -13.290000000000001,
         "squad": -33.04999999999999
       },
       "morocco": {
@@ -32914,7 +32949,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-16T16:50:52.555875+00:00",
+    "generatedAt": "2026-07-16T18:11:22.686090+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
