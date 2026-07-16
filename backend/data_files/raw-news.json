@@ -40848,5 +40848,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-93c07d604f24",
+    "title": "Who am I? Guess World Cup star No 39",
+    "summary": "Will you get today's player in as few attempts as possible?",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Thu, 16 Jul 2026 06:18:31 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cg5pn8vm1nyo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-8652ae531836",
+    "title": "World Cup 2026: Argentina break England hearts and head for final with Spain – live",
+    "summary": "<p>⚽ All the latest in the aftermath from dramatic day in Atlanta<br>⚽ <a href=\"https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report\">England 1-2 Argentina</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:taha.hashim@theguardian.com\">Mail us</a></p><p><strong>The Argentina players could not resist doubling down on their triumph</strong> over old rivals England as they celebrated their World Cup win with a banner saying “<em>Las Malvinas son Argentinas</em>”, making reference to the 1982 Falklands war. Lisandro Martínez and Giovani Lo Celso held up the banner, grinning, and waved to fans in the stands.</p><p>Fifa’s stadium code of conduct bans “banners, flags, flyers, apparel and other paraphernalia that are of a political, offensive, and/or discriminatory nature” inside stadiums, so expect to hear more about this one either way.</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/16/world-cup-2026-argentina-break-england-hearts-and-head-for-final-with-spain-live\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Thu, 16 Jul 2026 06:10:42 GMT",
+    "url": "https://www.theguardian.com/football/live/2026/jul/16/world-cup-2026-argentina-break-england-hearts-and-head-for-final-with-spain-live",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-8aebe5d3b5bf",
+    "title": "Thomas Tuchel accepts responsibility after substitutions backfire in England defeat",
+    "summary": "<ul><li><p>Head coach has no regrets but admits he will be judged</p></li><li><p>Bellingham appears to strike Argentina’s Barco on head</p></li></ul><p>Thomas Tuchel shouldered the blame for England becoming far too passive after taking the lead as <a href=\"https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report\">Argentina ended his team’s World Cup dream</a> with a dramatic late comeback.</p><p>England were within minutes of a first men’s World Cup final on foreign soil after going ahead through Anthony Gordon early in the second half. But the reigning champions equalised through a piledriver from Enzo Fernández before the substitute Lautaro Martínez scored the decisive goal in the second minute of injury time to send Argentina through to Sunday’s final against Spain in New York.</p> <a href=\"https://www.theguardian.com/football/2026/jul/16/thomas-tuchel-accepts-responsibility-substitutions-england-argentina\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Wed, 15 Jul 2026 23:47:15 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/16/thomas-tuchel-accepts-responsibility-substitutions-england-argentina",
+    "category": "injury",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.78
   }
 ]
