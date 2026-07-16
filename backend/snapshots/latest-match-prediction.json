@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-16T13:02:53.477817+00:00",
+  "updatedAt": "2026-07-16T15:18:22.366433+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -21201,6 +21201,76 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 16 Jul 2026 12:15:32 GMT"
+    },
+    {
+      "title": "All 11 last-minute winners at the World Cup",
+      "detail": "Watch all 11 winning goals scored in stoppage time at the 2026 Fifa World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 13:41:00 GMT"
+    },
+    {
+      "title": "French defender Rastocle signs for Birmingham",
+      "detail": "Birmingham City sign French defender Jade Rastocle from Montpellier for an undisclosed fee.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 14:15:52 GMT"
+    },
+    {
+      "title": "60 years of hurt - England's World Cup wait in numbers",
+      "detail": "England’s wait for another World Cup triumph wait told through the football, people and moments that have shaped the world since 1966.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 13:03:03 GMT"
+    },
+    {
+      "title": "Arsenal on verge of signing Club Brugge's Tzolis",
+      "detail": "Arsenal reach a verbal agreement with Club Brugge to sign attacker Christos Tzolis for 40m euros (£33.9m).",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 15:12:20 GMT"
+    },
+    {
+      "title": "More than the Score",
+      "detail": "After overcoming England, can Argentina win back-to-back World Cups?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 14:26:00 GMT"
+    },
+    {
+      "title": "Brain injury epidemic coming due to headers, warns Nobby Stiles' son",
+      "detail": "John Stiles says women's football is \"a particular concern\" after an inquest heard headers had contributed to his father's brain disease.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 16 Jul 2026 13:43:54 GMT"
+    },
+    {
+      "title": "Council agrees Swansea.com Stadium sale to Swans",
+      "detail": "Swansea City's proposed purchase of their Swansea.com Stadium home moves a step closer after owner Swansea Council agrees to the sale of the venue.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 12:40:43 GMT"
+    },
+    {
+      "title": "Podcast: Motherwell SPFL preview - Europe, Johansson & big expectations",
+      "detail": "Motherwell fans look ahead to Europe, a new manager and a fresh season.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 15:00:00 GMT"
+    },
+    {
+      "title": "Nearly one in five World Cup matches reached heat levels players’ union warns against",
+      "detail": "<p>Guardian analysis finds 19% of games reached heat levels warranting delays, as Fifa defends its player safeguards</p><p>The climate crisis has come for football.</p><p>During this year’s <a href=\"https://www.theguardian.com/football/world-cup-2026\">World Cup</a>, nearly one in five of the tournament’s 100-plus matches took place in levels of heat and humidity that a football players’ union has previously said should trigger delays or postponements, a Guardian analysis has found. An additional 23 matches were played in cities as they reached those heat levels, but in stadiums where conditions were mitigated by air conditioning.</p> <a href=\"https://www.theguardian.com/football/2026/jul/16/world-cup-heat-players-union\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 16 Jul 2026 15:01:37 GMT"
+    },
+    {
+      "title": "Football Daily | It’s the end of the World Cup as England know it",
+      "detail": "<p><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\"><strong>Sign up now! Sign up now! Sign up now? Sign up now!</strong></a></p><p>They say never go that far back. In the last half an hour of their end-of-days Geopolitics World Cup semi-final with Argentina, England committed to the bit in the Deep South. No wonder there were gaps. Thomas Tuchel stood and watched national trauma unfold in front of his eyes as towering aerial threats such as Alexis Mac Allister and Lautaro Martínez beat his four centre-backs to cross after cross. Forget the ghosts of ‘66, the spectre of Southgate loomed over his successor as realism reared its ugly head at the business end of an England men’s major-tournament run <a href=\"https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-2026-semi-final-news-reaction\">once again</a>.</p> <a href=\"https://www.theguardian.com/football/2026/jul/16/football-daily-email-gwc-england-argentina\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 13:38:05 GMT"
     }
   ],
   "teams": [
@@ -21364,15 +21434,15 @@
         "strength": 91,
         "form": 82,
         "path": 62,
-        "squad": 55,
+        "squad": 53,
         "margin": 83
       },
       "tournament": {
-        "champion": 1.7,
-        "final": 4.9,
-        "semifinal": 12.2,
-        "quarterfinal": 26.8,
-        "change": -9.1
+        "champion": 1.5,
+        "final": 4.5,
+        "semifinal": 11.5,
+        "quarterfinal": 25.8,
+        "change": -9.3
       }
     },
     {
@@ -21515,7 +21585,7 @@
       "factors": {
         "strength": 87,
         "form": 81,
-        "path": 70,
+        "path": 69,
         "squad": 82,
         "margin": 82
       },
@@ -21560,8 +21630,8 @@
       "tournament": {
         "champion": 0.4,
         "final": 1.5,
-        "semifinal": 5.2,
-        "quarterfinal": 15.4,
+        "semifinal": 5.3,
+        "quarterfinal": 15.6,
         "change": 0.0
       }
     },
@@ -21616,9 +21686,9 @@
       },
       "tournament": {
         "champion": 2.5,
-        "final": 6.7,
-        "semifinal": 15.9,
-        "quarterfinal": 32.7,
+        "final": 6.8,
+        "semifinal": 16.2,
+        "quarterfinal": 33.3,
         "change": 1.4
       }
     },
@@ -21883,8 +21953,8 @@
       "tournament": {
         "champion": 1.1,
         "final": 3.7,
-        "semifinal": 10.3,
-        "quarterfinal": 25.1,
+        "semifinal": 10.4,
+        "quarterfinal": 25.3,
         "change": 0.2
       }
     },
@@ -21901,7 +21971,7 @@
       },
       "tournament": {
         "champion": 22.1,
-        "final": 39.2,
+        "final": 39.3,
         "semifinal": 57.0,
         "quarterfinal": 76.3,
         "change": 6.9
@@ -22052,11 +22122,11 @@
         "margin": 82
       },
       "tournament": {
-        "champion": 9.2,
-        "final": 20.0,
-        "semifinal": 38.5,
+        "champion": 9.3,
+        "final": 20.1,
+        "semifinal": 38.6,
         "quarterfinal": 58.5,
-        "change": -1.5
+        "change": -1.4
       }
     },
     {
@@ -22136,18 +22206,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2944,
+      "eventCount": 2954,
       "manualEventCount": 3,
-      "rawNewsCount": 2941,
+      "rawNewsCount": 2951,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2944,
-      "applied": 2702,
+      "watched": 2954,
+      "applied": 2711,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2939,
+      "singleSource": 2949,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -22220,7 +22290,7 @@
         "defense": 0.0,
         "goalkeeper": -2.15,
         "path": -12.370000000000001,
-        "squad": -30.89999999999999
+        "squad": -33.04999999999999
       },
       "morocco": {
         "attack": -11.95,
@@ -22275,7 +22345,7 @@
         "attack": -4.3,
         "defense": -4.3,
         "goalkeeper": 0.0,
-        "path": -4.65,
+        "path": -5.57,
         "squad": -2.55
       },
       "curacao": {
@@ -32788,17 +32858,80 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-16T13:03:15.889694+00:00",
+    "generatedAt": "2026-07-16T15:18:44.422273+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "brazil",
+        "name": "巴西",
+        "code": "BRA",
+        "previousChampion": 1.7,
+        "currentChampion": 1.5,
+        "change": -0.2,
+        "direction": "down",
+        "reason": "人员盘下调 -2.1",
+        "reasons": [
+          "人员盘下调 -2.1",
+          "八强概率下降 -1.0%",
+          "四强概率下降 -0.7%",
+          "决赛概率下降 -0.4%",
+          "可入模型事件新增 9 条"
+        ]
+      },
+      {
+        "team": "england",
+        "name": "英格兰",
+        "code": "ENG",
+        "previousChampion": 9.2,
+        "currentChampion": 9.3,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.1%",
+        "reasons": [
+          "四强概率上升 +0.1%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 9 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 1,
+      "down": 1,
+      "largestUp": {
+        "team": "england",
+        "name": "英格兰",
+        "code": "ENG",
+        "previousChampion": 9.2,
+        "currentChampion": 9.3,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.1%",
+        "reasons": [
+          "四强概率上升 +0.1%",
+          "决赛概率上升 +0.1%",
+          "可入模型事件新增 9 条"
+        ]
+      },
+      "largestDown": {
+        "team": "brazil",
+        "name": "巴西",
+        "code": "BRA",
+        "previousChampion": 1.7,
+        "currentChampion": 1.5,
+        "change": -0.2,
+        "direction": "down",
+        "reason": "人员盘下调 -2.1",
+        "reasons": [
+          "人员盘下调 -2.1",
+          "八强概率下降 -1.0%",
+          "四强概率下降 -0.7%",
+          "决赛概率下降 -0.4%",
+          "可入模型事件新增 9 条"
+        ]
+      }
     }
   }
 }
