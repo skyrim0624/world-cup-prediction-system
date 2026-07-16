@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-16T08:42:19.180511+00:00",
+  "updatedAt": "2026-07-16T11:05:10.215960+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -21103,6 +21103,83 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 16 Jul 2026 06:51:44 GMT"
+    },
+    {
+      "title": "How coach-on-pitch Messi undid England's tactics on the fly",
+      "detail": "England pride themselves on their physicality, so shouldn't it have suited them to face a 39-year-old who spends most of his time walking? Not this 39-year-old. BBC Sport football tactics correspondent Umir Irfan explores a Lionel Messi masterclass.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 10:46:31 GMT"
+    },
+    {
+      "title": "Why you should care about World Cup third-place play-off",
+      "detail": "It might feel like the last thing anyone wants right now - but here is why, actually, you do want to watch the World Cup's third-place play-off.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 10:44:03 GMT"
+    },
+    {
+      "title": "Scotland keeper Gordon retires",
+      "detail": "Goalkeeper Craig Gordon announces his retirement from football, bringing an end to a 25-year playing career.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 09:49:24 GMT"
+    },
+    {
+      "title": "Midfielder Gomes close to £38m Villa move",
+      "detail": "Joao Gomes is set to leave Wolves after their relegation from the Premier League and join Aston Villa.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 09:18:25 GMT"
+    },
+    {
+      "title": "Goalkeeper Muller joins Aberdeen on two-year deal",
+      "detail": "Goalkeeper Marius Muller hopes to \"have plenty to celebrate\" after joining Aberdeen from Wolfsburg.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 10:34:31 GMT"
+    },
+    {
+      "title": "Shankland not feeling pressure at Rangers",
+      "detail": "Lawrence Shankland does not feel \"too much pressure\" to establish himself at Rangers as he has \"always wanted to prove myself\".",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 10:08:52 GMT"
+    },
+    {
+      "title": "Record crowd as Kerr returns to Gotham FC",
+      "detail": "Former Chelsea forward Sam Kerr makes her second debut for Gotham FC in front of the largest ever crowd for a women's sporting event in New York City.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 09:24:35 GMT"
+    },
+    {
+      "title": "Newcastle sign Scotland defender McLauchlan",
+      "detail": "WSL 2 side Newcastle United sign defender Rachel McLauchlan from Brighton for an undisclosed fee.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 10:32:42 GMT"
+    },
+    {
+      "title": "Does third place play-off count towards World Cup golden boot?",
+      "detail": "BBC Sport's Ask Me Anything team looks into the history of World Cup golden boot winners and the third-place play-off",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 08:30:44 GMT"
+    },
+    {
+      "title": "Quiz: Name every team to knock England out of a World Cup",
+      "detail": "England have lost their 12th game during the knockout stage of a World Cup - can you name every country that struck a blow?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 09:39:22 GMT"
+    },
+    {
+      "title": "View from the other side: inside Argentina’s celebrations after semi-final win against England",
+      "detail": "<p>Watching England lose is one thing. Watching them lose surrounded by millions celebrating Argentina’s march to another World Cup final, is completely different</p><p>Look, most people were awfully good about it. Our waiter at a restaurant near Plaza de Mayo shook our hands warmly and said nice things about Jude Bellingham. On the metro ride back from the fan zone there was no massive gloating either, just bright-eyed kids in Lionel Messi shirts swept along by the nationwide euphoria. “Vamos, vamos, Argentina,” they sang, barely able to believe their team were once again in a World Cup final.</p><p>To be a stray English bystander in a city totally awash in sky blue and white was a rare privilege. Some of us covering England’s rugby union tour have been lucky enough to visit a few memorable sporting cauldrons, but to be in Buenos Aires after <a href=\"https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report\">Argentina defeated England at a football World Cup</a> is right up there.</p> <a href=\"https://www.theguardian.com/football/2026/jul/16/argentina-england-celebrations-buenos-aires-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 16 Jul 2026 09:06:56 GMT"
     }
   ],
   "teams": [
@@ -21397,7 +21474,7 @@
       "code": "TUR",
       "factors": {
         "strength": 79,
-        "form": 76,
+        "form": 77,
         "path": 67,
         "squad": 80,
         "margin": 77
@@ -22038,18 +22115,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2930,
+      "eventCount": 2941,
       "manualEventCount": 3,
-      "rawNewsCount": 2927,
+      "rawNewsCount": 2938,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2930,
-      "applied": 2690,
+      "watched": 2941,
+      "applied": 2699,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2925,
+      "singleSource": 2936,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -22167,7 +22244,7 @@
         "squad": -6.949999999999999
       },
       "turkiye": {
-        "attack": -4.699999999999999,
+        "attack": -3.0499999999999994,
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -1.0699999999999998,
@@ -32690,7 +32767,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-16T08:42:37.503050+00:00",
+    "generatedAt": "2026-07-16T11:05:32.565000+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
