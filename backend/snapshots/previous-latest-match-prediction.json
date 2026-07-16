@@ -10,7 +10,7 @@
   "homeWin": 84,
   "draw": 11,
   "awayWin": 5,
-  "updatedAt": "2026-07-15T22:32:11.056869+00:00",
+  "updatedAt": "2026-07-16T00:03:57.540483+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -20949,6 +20949,62 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 15 Jul 2026 21:44:17 GMT"
+    },
+    {
+      "title": "Argentina face fine for displaying Falklands banner after semi-final",
+      "detail": "Argentina face the prospect of a Fifa fine after their players celebrate the World Cup semi-final win against England with a banner in support of their country's claims to the Falkland Islands.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 22:49:47 GMT"
+    },
+    {
+      "title": "'That's why he's the king' - Messi sets up third World Cup final",
+      "detail": "BBC Sport looks at Lionel Messi's masterclass on the right wing to knock England out of the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 23:42:19 GMT"
+    },
+    {
+      "title": "'No regrets' - Tuchel on England's defeat by Argentina",
+      "detail": "England manager Thomas Tuchel believes his team \"got too passive\" after scoring first in the World Cup semi-final against Argentina, which they lost 2-1 at Atlanta Stadium.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 22:40:05 GMT"
+    },
+    {
+      "title": "Prince William tells England to 'hold heads high'",
+      "detail": "The Prince of Wales says England has \"inspired us all\" as he offers his commiserations over the loss to Argentina.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 22:33:43 GMT"
+    },
+    {
+      "title": "'He was my biggest fan' - BBC pundit Richards' father dies",
+      "detail": "Micah Richards pays tribute to his father Lincoln, who died shortly before the BBC pundit went on air for England's World Cup semi-final defeat by Argentina.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 23:41:05 GMT"
+    },
+    {
+      "title": "Argentina’s late double breaks England hearts in dramatic World Cup semi-final",
+      "detail": "<ul><li><p><a href=\"https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-2026-semi-final-news-reaction\">England hearts broken after turnaround in Atlanta</a></p></li><li><p><a href=\"https://www.theguardian.com/football/gallery/2026/jul/15/world-cup-2026-england-argentina-semi-final-in-pictures\">In pictures: our pick of the best big-match images</a></p></li></ul><p>England’s destiny is tournament heartbreak. The only question concerns when it comes and how the fates will contrive to make it as painful as possible. This was an implausibly brutal new low.</p><p>Thomas Tuchel’s team had fought fire with fire on an occasion that was overloaded with shredded nerves. The first half was a physical fight; it was gripping all the same. And the possibilities seemed endless for England when Anthony Gordon put them in front shortly after half-time. A first appearance in the World Cup final since 1966 looked on.</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 21:19:52 GMT"
+    },
+    {
+      "title": "Lionel Messi’s inevitable gravity bends another occasion in Argentina’s favour | Barney Ronay",
+      "detail": "<p>While England shrank away in Atlanta, Argentina’s No 10 was not finished making his mark on the biggest stage</p><p>To strive, to seek, to find, and not to yield. Well, not to this lot anyway. On a day of ceaseless rolling noise under Atlanta’s vast refrigerated dome, England reached the end of the road, the end of their own capacities at this World Cup, the end of the gears within this team. Mainly they ran into Lionel Messi, who wasn’t ready to be done just yet. Not like this anyway.</p><p>With 55 minutes gone England were actually winning this game, 1-0 up thanks to Anthony Gordon’s goal, the only real moment of clarity they produced all match. At which point they simply disappeared as an animate entity from the stage.</p> <a href=\"https://www.theguardian.com/football/2026/jul/16/lionel-messi-england-argentina-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 23:07:35 GMT"
+    },
+    {
+      "title": "‘Malvinas are Argentinian’: World Cup holders celebrate win over England with Falklands banner",
+      "detail": "<ul><li><p>Banner refers to Falkland Islands conflict in 1982</p></li><li><p>Players celebrate on the pitch with the message</p></li></ul><p>The Argentina players celebrated <a href=\"https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report\">their World Cup win over England</a> with a banner saying “<em>Las Malvinas son Argentinas</em>”, making reference to <a href=\"https://www.theguardian.com/football/2026/jul/15/argentina-england-tensions-world-cup-football\">the 1982 Falklands war</a>.</p><p>Argentina were 1-0 down with five minutes to go of the semi-final in Atlanta but rallied and scored twice in quick succession <a href=\"https://www.theguardian.com/football/live/2026/jul/15/england-v-argentina-world-cup-2026-semi-final-live\">to reach a second straight World Cup final</a>, where they will face Spain in New Jersey on Sunday.</p> <a href=\"https://www.theguardian.com/football/2026/jul/15/malvinas-is-argentinian-world-cup-holders-celebrate-win-over-england-with-banner\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 15 Jul 2026 22:03:19 GMT"
     }
   ],
   "teams": [
@@ -21884,18 +21940,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2908,
+      "eventCount": 2916,
       "manualEventCount": 3,
-      "rawNewsCount": 2905,
+      "rawNewsCount": 2913,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2908,
-      "applied": 2669,
+      "watched": 2916,
+      "applied": 2677,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2903,
+      "singleSource": 2911,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -32419,13 +32475,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-07-15",
+      "referenceDate": "2026-07-16",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 32,
-      "oldestAgeDays": 106,
+      "newestAgeDays": 33,
+      "oldestAgeDays": 107,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -32536,7 +32592,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-15T22:32:32.409484+00:00",
+    "generatedAt": "2026-07-16T00:04:19.442039+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
