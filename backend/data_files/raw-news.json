@@ -41688,5 +41688,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-41f76fdb368c",
+    "title": "Effort, spirit and moments - but do England lack all-round quality?",
+    "summary": "As England reflect on their World Cup semi-final defeat by Argentina, BBC Sport's Phil McNulty looks at what Thomas Tuchel's team were lacking.",
+    "source": "bbc",
+    "team": "argentina",
+    "status": "single_source",
+    "published_at": "Fri, 17 Jul 2026 05:32:35 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cz64xyn4vz2o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-1ea68fab48a4",
+    "title": "The financial winners and losers from the World Cup",
+    "summary": "Big bucks are being made from the 2026 tournament off the field, but who is raking in the most?",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Thu, 16 Jul 2026 23:16:14 GMT",
+    "url": "https://www.bbc.co.uk/news/articles/cgrkek8lrzvo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-0e44f9c25d8b",
+    "title": "Who am I? Guess World Cup star No 40",
+    "summary": "Will you get today's player? Try to guess his identity in as few attempts as possible.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Fri, 17 Jul 2026 05:41:57 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c98r2w7dz26o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-46e155b79d13",
+    "title": "Fox’s US World Cup summer: wild mispronunciations, Corden’s sad beers and Lowe’s excellence",
+    "summary": "<p>The broadcaster’s tournament coverage was a mix of flat and fizz. It could also have been a long farewell with World Cup rights up for grabs</p><p>Goodbye, then, to Fox, to its band of upbeat Brits and grown men dressed in suits and sneakers. Goodbye to constant cutaways to <a href=\"https://goldengoal.world/2026/06/08/games-gone/\">Gianni Infantino in the stands</a>, his eyebrows a mournful tipi, his nude head sprinkling under the summer sun. Goodbye to Landon Donovan and his special gift for announcing every celebrity sighting (“And there’s Javier Bardem and Penélope Cruz”) as if delivering the results of a colonoscopy. Goodbye to Rebecca Lowe saying “OK, OK” whenever she’s needed one of her on-set personalities to zip it so she can throw to a break. Goodbye to the momentum graph, which only flashed on screen when a match’s momentum needed no explanation; goodbye to “no golden goal” on the scorebug during extra time, referencing a rule that has not been in force at a World Cup for 24 years; goodbye to the connected ball, which never seemed connected when we needed connection most.</p><p>Goodbye to Geoff Shreeves, Fox’s middle-aged Oliver Twist chirruping on the sideline for the approval of his American masters. Goodbye to Tom Rinaldi, to his pocket squares and his “lyrical” meditations on balls and planets and stars or whatever. Goodbye to Chef Nick, now forced to rein in the extravagance of his early contributions (<a href=\"https://www.youtube.com/shorts/ZhK2SB4sxlU\">kangaroo corndogs</a>, <a href=\"https://www.youtube.com/shorts/8N12zBNturc\">fufu chicken tikka masala</a>) in the face of the tournament’s gastronomically subdued final four. And goodbye to Jameis Winston, the Fox fan correspondent, whose distressingly antic and sweaty stadium dispatches gave him the unvarying appearance of a man being electrocuted in the middle of a baptism.</p> <a href=\"https://www.theguardian.com/football/2026/jul/17/fox-world-cup-coverage-us-2026\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Fri, 17 Jul 2026 05:00:58 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/17/fox-world-cup-coverage-us-2026",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
