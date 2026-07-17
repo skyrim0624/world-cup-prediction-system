@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-17T22:24:49.260688+00:00",
+  "updatedAt": "2026-07-17T23:27:06.848554+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -21859,6 +21859,13 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 17 Jul 2026 20:31:33 GMT"
+    },
+    {
+      "title": "White House defends Argentina team over Falklands banner",
+      "detail": "The comments could further fuel the row over the incident, which has seen Downing Street back calls for Fifa to investigate.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 22:12:54 GMT"
     }
   ],
   "teams": [
@@ -22794,18 +22801,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3038,
+      "eventCount": 3039,
       "manualEventCount": 3,
-      "rawNewsCount": 3035,
+      "rawNewsCount": 3036,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3038,
-      "applied": 2785,
+      "watched": 3039,
+      "applied": 2786,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3033,
+      "singleSource": 3034,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33446,7 +33453,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-17T22:25:11.562299+00:00",
+    "generatedAt": "2026-07-17T23:27:28.890142+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
