@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-17T17:20:20.999967+00:00",
+  "updatedAt": "2026-07-17T18:35:51.632994+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -21796,6 +21796,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 17 Jul 2026 15:00:33 GMT"
+    },
+    {
+      "title": "Villa complete club record Manzambi signing",
+      "detail": "Unai Emery makes his first summer signing by bringing in Johan Manzambi for a club record fee of just over £50m.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 17:25:24 GMT"
+    },
+    {
+      "title": "'It hurts' - Saints boss Eckert on Spygate judgement",
+      "detail": "Southampton head coach Tonda Eckert admits it has been \"tough to read\" judgement on his role in the scandal that saw the club kicked out of the Championship play-offs.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 17:36:52 GMT"
     }
   ],
   "teams": [
@@ -22731,18 +22745,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3029,
+      "eventCount": 3031,
       "manualEventCount": 3,
-      "rawNewsCount": 3026,
+      "rawNewsCount": 3028,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3029,
-      "applied": 2777,
+      "watched": 3031,
+      "applied": 2778,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3024,
+      "singleSource": 3026,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33383,7 +33397,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-17T17:20:42.838263+00:00",
+    "generatedAt": "2026-07-17T18:36:09.862330+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

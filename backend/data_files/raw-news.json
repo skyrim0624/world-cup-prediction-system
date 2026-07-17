@@ -42374,5 +42374,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-ae2462eaa22b",
+    "title": "Stick with Tuchel unless Guardiola is available - Rooney",
+    "summary": "Wayne Rooney thinks the Football Association should stick with Thomas Tuchel as England head coach unless a move for Pep Guardiola is possible.",
+    "source": "bbc",
+    "team": "england",
+    "status": "single_source",
+    "published_at": "Fri, 17 Jul 2026 19:33:38 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c304ldrmmero?at_medium=RSS&at_campaign=rss",
+    "category": "availability",
+    "factor": "squad",
+    "direction": 1,
+    "confidence": 0.76
+  },
+  {
+    "id": "bbc-bac810f4467c",
+    "title": "Ederson extends Atalanta contract after Man Utd move collapses",
+    "summary": "Atalanta midfielder Ederson extends his contract after a move to Manchester United collapses.",
+    "source": "bbc",
+    "team": "colombia",
+    "status": "single_source",
+    "published_at": "Fri, 17 Jul 2026 19:12:58 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c629dxeye0lo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-7518196f1b7c",
+    "title": "God’s will? Destiny? Lionel Messi, Lamine Yamal, that photo and the World Cup final",
+    "summary": "<p>The boy in the baby bath has unbelievably become the successor to Messi at Barcelona and now, maybe, on the world stage too</p><p>“Maybe Lionel Messi has picked up lots of babies, maybe it’s chance, but for those of us who have faith, who believe in something beyond, ‘chance’ is God’s pseudonym when he doesn’t want to sign his name,” Luis de la Fuente says. “In life, everything happens for a reason. Sometimes it’s true that the circle isn’t closed, but in my view there’s something else, something … I don’t know, mystical, spiritual.”</p><p>Contemplate the scene, gaze upon the image of this World Cup, and you may be inclined to agree with Spain’s coach, to reach out and touch faith. How else to comprehend this? <a href=\"https://www.theguardian.com/football/article/2024/jul/09/lionel-messi-lamine-yamal-baby-photos-spain\">You will have seen the picture</a> and will certainly see it again, and still it won’t make sense.</p> <a href=\"https://www.theguardian.com/football/2026/jul/17/gods-will-destiny-lionel-messi-lamine-yamal-that-photo-and-the-world-cup-final\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Fri, 17 Jul 2026 19:00:36 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/17/gods-will-destiny-lionel-messi-lamine-yamal-that-photo-and-the-world-cup-final",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
