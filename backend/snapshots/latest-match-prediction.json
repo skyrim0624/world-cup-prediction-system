@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-16T22:30:49.928077+00:00",
+  "updatedAt": "2026-07-17T00:03:10.840178+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -32937,13 +32937,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-07-16",
+      "referenceDate": "2026-07-17",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 33,
-      "oldestAgeDays": 107,
+      "newestAgeDays": 34,
+      "oldestAgeDays": 108,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -33054,82 +33054,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-16T22:31:11.956839+00:00",
+    "generatedAt": "2026-07-17T00:03:30.955604+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 3.9,
-        "currentChampion": 3.6,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "八强概率下降 -1.0%",
-          "四强概率下降 -0.8%",
-          "决赛概率下降 -0.6%",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 15.1,
-        "currentChampion": 15.3,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "八强概率上升 +0.7%",
-        "reasons": [
-          "八强概率上升 +0.7%",
-          "四强概率上升 +0.6%",
-          "决赛概率上升 +0.4%",
-          "可入模型事件新增 6 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
-      "down": 1,
-      "largestUp": {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 15.1,
-        "currentChampion": 15.3,
-        "change": 0.2,
-        "direction": "up",
-        "reason": "八强概率上升 +0.7%",
-        "reasons": [
-          "八强概率上升 +0.7%",
-          "四强概率上升 +0.6%",
-          "决赛概率上升 +0.4%",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      "largestDown": {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 3.9,
-        "currentChampion": 3.6,
-        "change": -0.3,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "八强概率下降 -1.0%",
-          "四强概率下降 -0.8%",
-          "决赛概率下降 -0.6%",
-          "可入模型事件新增 6 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
