@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-17T06:22:25.006021+00:00",
+  "updatedAt": "2026-07-17T08:36:49.824921+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -21495,6 +21495,48 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 17 Jul 2026 05:00:58 GMT"
+    },
+    {
+      "title": "England missing final piece of jigsaw - Kane",
+      "detail": "England captain Harry Kane says the team are \"missing that final piece of the jigsaw\" and need to \"find a way to get better\" following defeat to Argentina.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 07:46:10 GMT"
+    },
+    {
+      "title": "World Cup stars who could move this summer",
+      "detail": "As the World Cup approaches its end, attentions are turning to the 2026-27 club season - and the players who could be on the move this summer.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 06:30:34 GMT"
+    },
+    {
+      "title": "Sheffield United manager Wilder extends contract",
+      "detail": "Chris Wilder, in his third spell as Sheffield United manager, extends his contract until the summer of 2028.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 07:41:56 GMT"
+    },
+    {
+      "title": "Wrexham boss Parkinson relishing Man Utd 'test'",
+      "detail": "Wrexham take on the Premier League giants in Helsinki on Saturday, although United boss Michael Carrick will be without several of his World Cup players.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 05:51:56 GMT"
+    },
+    {
+      "title": "Dragojevic deal almost done for Rangers - gossip",
+      "detail": "Serbian midfielder close to completing Rangers switch, with Celtic defender on the way to France...",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 06:47:09 GMT"
+    },
+    {
+      "title": "World Cup 2026: Spain v Argentina countdown, Trump to attend final, England news – live",
+      "detail": "<p>⚽ Latest news before Sunday’s World Cup 2026 final<br>⚽ <a href=\"https://www.theguardian.com/football/2026/jul/16/football-daily-email-gwc-england-argentina\">Football Daily</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"mailto:matchday.live@theguardian.com\">Mail us</a></p><p><strong>Spanish Prime Minister Pedro Sanchez will attend the World Cup final to see his country take on reigning champions Argentina, his government said Friday.</strong></p><p>Sanchez, a vocal critic of US President Donald Trump – who also plans to attend Sunday’s final in New Jersey – will then travel to Algeria for an official visit. <strong>AFP</strong></p> <a href=\"https://www.theguardian.com/football/live/2026/jul/17/world-cup-2026-spain-v-argentina-countdown-trump-to-attend-final-england-news-live\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 08:27:10 GMT"
     }
   ],
   "teams": [
@@ -22430,18 +22472,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2986,
+      "eventCount": 2992,
       "manualEventCount": 3,
-      "rawNewsCount": 2983,
+      "rawNewsCount": 2989,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2986,
-      "applied": 2739,
+      "watched": 2992,
+      "applied": 2745,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2981,
+      "singleSource": 2987,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33082,7 +33124,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-17T06:22:42.803408+00:00",
+    "generatedAt": "2026-07-17T08:37:11.966278+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

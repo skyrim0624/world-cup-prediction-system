@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-17T08:36:49.824921+00:00",
+  "updatedAt": "2026-07-17T10:52:31.706741+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -21537,6 +21537,97 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 17 Jul 2026 08:27:10 GMT"
+    },
+    {
+      "title": "World Cup rings for winners as Trump attendance confirmed",
+      "detail": "Donald Trump will present the trophy to the World Cup final winners on Sunday, and rings will be presented to the victorious side.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 08:40:55 GMT"
+    },
+    {
+      "title": "How have missed targets affected Newcastle's summer rebuild?",
+      "detail": "Newcastle United have missed out on Johan Manzambi and Victor Munoz this summer, but the club are targeting players who are \"desperate\" to join.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 09:53:44 GMT"
+    },
+    {
+      "title": "Thousands of tickets still available for England v France",
+      "detail": "Around 7,000 tickets are still listed on Fifa's ticket sites for Saturday's World Cup bronze medal match between England and France.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 09:16:00 GMT"
+    },
+    {
+      "title": "Defender Esteve leaves Burnley to join RB Leipzig",
+      "detail": "Former France Under-21s defender Maxime Esteve leaves Burnley to join Bundesliga club RB Leipzig for a reported fee of £27.3m.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 09:59:26 GMT"
+    },
+    {
+      "title": "Spain 2010 v Spain 2026: How do the two XIs compare?",
+      "detail": "How do Spain's 2010 World Cup winners compare to the current contingent who are looking to match their feat in the 2026 tournament? BBC Sport takes a look.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 09:36:52 GMT"
+    },
+    {
+      "title": "Underdogs, history and late goals - Africa's World Cup",
+      "detail": "The 2026 World Cup saw Africa send its largest ever contingent to the finals, but five sides were eliminated by late goals as underdogs Cape Verde impressed.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 10:18:57 GMT"
+    },
+    {
+      "title": "What happened at Man City's loans exhibition day?",
+      "detail": "Manchester City welcome clubs to their training ground to showcase the talent that is on offer during the summer transfer window.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 17 Jul 2026 10:16:57 GMT"
+    },
+    {
+      "title": "Aston Villa sign defender Harviken from Juventus",
+      "detail": "Aston Villa have signed Norway international Mathilde Harviken from Juventus.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 10:00:16 GMT"
+    },
+    {
+      "title": "Defender Cascarino joins West Ham in permanent deal",
+      "detail": "West Ham have signed France international Estelle Cascarino on a permanent deal following an initial six-month loan spell.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 09:30:47 GMT"
+    },
+    {
+      "title": "Arsenal sign teenage Danish goalkeeper Damm",
+      "detail": "Arsenal have signed Danish youth international goalkeeper Isabella Damm on a permanent transfer from Brondby IF.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 09:00:09 GMT"
+    },
+    {
+      "title": "Listen: How does Gordon rate in goalkeeping greats? Plus League Cup preview",
+      "detail": "Craig Gordon retires, League Cup preview and who's going to win the World Cup?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 07:00:00 GMT"
+    },
+    {
+      "title": "More than 200 countries endorse Infantino for fourth Fifa term despite Balogun scandal",
+      "detail": "<ul><li><p>Only a handful of FAs have not declared their support</p></li><li><p>Uefa has made its opposition clear on number of issues</p></li></ul><p>Gianni Infantino has the formal endorsement of more than 200 countries for re-election as Fifa’s president despite the climate of unrest that has swirled since the scandal surrounding <a href=\"https://www.theguardian.com/football/2026/jul/05/folarin-balogun-red-card-suspension-lifted-usmnt-belgium-world-cup\">Folarin Balogun’s reprieve</a> from suspension.</p><p>The Guardian understands only a handful of Fifa’s 211 member associations are still to send letters of support for Infantino, who is on course to be voted into a fourth term by a landslide at its congress in March. A small number of European countries are among the outliers, with Germany the highest-profile FA yet to provide official backing.</p> <a href=\"https://www.theguardian.com/football/2026/jul/17/gianni-infantino-fifa-reelection-more-than-200-countries-endorse-despite-balogun-scandal\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Fri, 17 Jul 2026 08:36:58 GMT"
+    },
+    {
+      "title": "Concacaf whistleblower Mel Brennan: ‘Fifa survived Blatter and Warner. It will survive Infantino too’",
+      "detail": "<p>Ex-Concacaf executive Mel Brennan reflects on the Fifa corruption scandal, missed reforms and why football’s governance remains stubbornly opaque</p><p>Mel Brennan has seen every level of world football. “I know what the World Cup looks like from the 17th floor of Trump Tower … I know what it looks like from a grass-strewn field in Trinidad where children cannot play because money that was supposed to maintain it went somewhere else entirely,” he says.</p><p>Brennan worked as an executive at Concacaf during the corrupt reign of <a href=\"https://www.theguardian.com/football/2015/sep/29/jack-warner-banned-football-life-fifa-ethics-committee\">its infamous former president Jack Warner</a> and the late general secretary Chuck Blazer, <a href=\"https://www.theguardian.com/football/2015/jun/03/fifa-chuck-blazer-bribes-world-cup\">who once helped run the organization</a> from Trump Tower.</p><p>This interview has been edited for length and clarity.</p> <a href=\"https://www.theguardian.com/football/2026/jul/17/mel-brennan-fifa-concacaf-whistleblower-interview-fixing-football\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 09:00:03 GMT"
     }
   ],
   "teams": [
@@ -21650,7 +21741,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.8,
-        "quarterfinal": 6.8,
+        "quarterfinal": 6.6,
         "change": -0.1
       }
     },
@@ -21776,14 +21867,14 @@
         "strength": 78,
         "form": 75,
         "path": 70,
-        "squad": 76,
+        "squad": 78,
         "margin": 78
       },
       "tournament": {
         "champion": 0.5,
-        "final": 1.7,
-        "semifinal": 6.5,
-        "quarterfinal": 28.9,
+        "final": 1.9,
+        "semifinal": 6.9,
+        "quarterfinal": 29.9,
         "change": -0.5
       }
     },
@@ -21927,7 +22018,7 @@
       "factors": {
         "strength": 87,
         "form": 86,
-        "path": 75,
+        "path": 74,
         "squad": 80,
         "margin": 84
       },
@@ -22009,9 +22100,9 @@
       },
       "tournament": {
         "champion": 1.4,
-        "final": 3.8,
-        "semifinal": 10.7,
-        "quarterfinal": 36.2,
+        "final": 3.7,
+        "semifinal": 10.6,
+        "quarterfinal": 35.8,
         "change": -1.7
       }
     },
@@ -22181,8 +22272,8 @@
       "tournament": {
         "champion": 0.8,
         "final": 2.2,
-        "semifinal": 7.4,
-        "quarterfinal": 28.1,
+        "semifinal": 7.3,
+        "quarterfinal": 27.7,
         "change": -0.2
       }
     },
@@ -22313,7 +22404,7 @@
       },
       "tournament": {
         "champion": 5.1,
-        "final": 9.6,
+        "final": 9.5,
         "semifinal": 19.2,
         "quarterfinal": 26.9,
         "change": -1.1
@@ -22409,7 +22500,7 @@
       "tournament": {
         "champion": 1.0,
         "final": 2.4,
-        "semifinal": 6.6,
+        "semifinal": 6.5,
         "quarterfinal": 11.2,
         "change": 0.1
       }
@@ -22472,18 +22563,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 2992,
+      "eventCount": 3005,
       "manualEventCount": 3,
-      "rawNewsCount": 2989,
+      "rawNewsCount": 3002,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 2992,
-      "applied": 2745,
+      "watched": 3005,
+      "applied": 2757,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 2987,
+      "singleSource": 3000,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -22528,7 +22619,7 @@
         "defense": -4.699999999999999,
         "goalkeeper": -6.449999999999999,
         "path": -9.7,
-        "squad": -36.99999999999999
+        "squad": -39.54999999999999
       },
       "bosnia-herzegovina": {
         "attack": -5.1,
@@ -22584,7 +22675,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -2.7600000000000002,
-        "squad": -2.55
+        "squad": -0.8999999999999999
       },
       "paraguay": {
         "attack": -9.5,
@@ -22639,7 +22730,7 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 0.87,
+        "path": -0.050000000000000044,
         "squad": -4.699999999999999
       },
       "japan": {
@@ -33124,7 +33215,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-17T08:37:11.966278+00:00",
+    "generatedAt": "2026-07-17T10:52:59.551342+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
