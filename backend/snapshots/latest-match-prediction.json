@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-17T20:10:26.072501+00:00",
+  "updatedAt": "2026-07-17T21:23:18.639266+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -21831,6 +21831,34 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 17 Jul 2026 19:00:36 GMT"
+    },
+    {
+      "title": "Tuchel urges England to finish strongly in emotional address",
+      "detail": "England manager Thomas Tuchel urges his players to end the World Cup strongly in an emotional address after their agonising semi-final defeat by Argentina.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 20:39:45 GMT"
+    },
+    {
+      "title": "Arsenal want Villa's Rogers - Saturday's gossip",
+      "detail": "Arsenal want Morgan Rogers, Mohamed Salah is set to join Besiktas, Manchester United are interested in Neco Williams, plus more.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 20:10:09 GMT"
+    },
+    {
+      "title": "Smoke, travel and Trump threaten New York’s grand World Cup finale",
+      "detail": "<p>Wildfires, transport issues and the appearance of the president could overshadow the final for a city that has embraced the tournament</p><p>The thick smoke that has engulfed New York and much of the eastern seaboard over the last few days has drawn wry smiles in Dallas and Los Angeles, where locals will watch on with a sense of schadenfreude when the World Cup final takes place in the New York New Jersey Stadium (usually known as the MetLife Stadium in New Jersey) tomorrow.</p><p>The Dallas and Los Angeles stadiums, which were passed over when Fifa awarded the final in February 2024, are more impressive venues without the same climatic risks as New York, which was chosen because of its global appeal and favourable timezone for European television audiences.</p> <a href=\"https://www.theguardian.com/football/2026/jul/17/smoke-travel-trump-new-york-world-cup-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 20:21:02 GMT"
+    },
+    {
+      "title": "‘Leo has surpassed Diego’: after two decades Argentina embraces Messi",
+      "detail": "<p>The little maestro has hitherto lived in the shadow of Maradona who has for so long coloured the soul and defined the passion of football in Argentina</p><p>It is time to consign <a href=\"https://www.theguardian.com/football/blog/2014/apr/08/world-cup-moments-maradona-hand-god\">Diego Maradona’s Hand of God</a> to a museum piece. For 40 years that moment and Maradona’s unforgettable <a href=\"https://www.youtube.com/watch?v=icBYJMZur2U\">“goal of the century”</a> coloured the soul and passion of Argentinian football. Today things are very different, and the main reason is Lionel Messi. By <a href=\"https://www.theguardian.com/football/2026/jun/06/if-this-is-messis-last-world-cup-could-he-eclipse-maradona-and-win-it-twice\">asserting himself over the memory of Maradona</a>, Messi is establishing a new Argentina.</p><p>An <a href=\"https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report\">impressive 2–1 semi-final victory over England</a> showcased a revitalised Argentina who go into Sunday’s final against Spain relying on a simple, powerful weapon: excellent football.</p> <a href=\"https://www.theguardian.com/football/2026/jul/17/leo-has-surpassed-diego-after-two-decades-argentina-embraces-messi\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 20:31:33 GMT"
     }
   ],
   "teams": [
@@ -22766,18 +22794,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3034,
+      "eventCount": 3038,
       "manualEventCount": 3,
-      "rawNewsCount": 3031,
+      "rawNewsCount": 3035,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3034,
-      "applied": 2781,
+      "watched": 3038,
+      "applied": 2785,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3029,
+      "singleSource": 3033,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33418,131 +33446,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-17T20:10:48.484340+00:00",
+    "generatedAt": "2026-07-17T21:23:41.492330+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 9.4,
-        "currentChampion": 10.0,
-        "change": 0.6,
-        "direction": "up",
-        "reason": "人员盘上调 +1.7",
-        "reasons": [
-          "人员盘上调 +1.7",
-          "四强概率上升 +1.2%",
-          "决赛概率上升 +1.0%",
-          "八强概率上升 +1.0%",
-          "可入模型事件新增 3 条"
-        ]
-      },
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 22.3,
-        "currentChampion": 22.2,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.4%",
-        "reasons": [
-          "决赛概率下降 -0.4%",
-          "可入模型事件新增 3 条"
-        ]
-      },
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 15.3,
-        "currentChampion": 15.2,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 3 条",
-        "reasons": [
-          "可入模型事件新增 3 条"
-        ]
-      },
-      {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 5.1,
-        "currentChampion": 5.0,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 3 条",
-        "reasons": [
-          "可入模型事件新增 3 条"
-        ]
-      },
-      {
-        "team": "colombia",
-        "name": "哥伦比亚",
-        "code": "COL",
-        "previousChampion": 3.9,
-        "currentChampion": 3.8,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.1%",
-        "reasons": [
-          "决赛概率下降 -0.1%",
-          "可入模型事件新增 3 条"
-        ]
-      },
-      {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 3.6,
-        "currentChampion": 3.5,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 3 条",
-        "reasons": [
-          "可入模型事件新增 3 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
-      "down": 5,
-      "largestUp": {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 9.4,
-        "currentChampion": 10.0,
-        "change": 0.6,
-        "direction": "up",
-        "reason": "人员盘上调 +1.7",
-        "reasons": [
-          "人员盘上调 +1.7",
-          "四强概率上升 +1.2%",
-          "决赛概率上升 +1.0%",
-          "八强概率上升 +1.0%",
-          "可入模型事件新增 3 条"
-        ]
-      },
-      "largestDown": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 22.3,
-        "currentChampion": 22.2,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.4%",
-        "reasons": [
-          "决赛概率下降 -0.4%",
-          "可入模型事件新增 3 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
