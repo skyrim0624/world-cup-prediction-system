@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-17T10:52:31.706741+00:00",
+  "updatedAt": "2026-07-17T12:14:41.950905+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -21628,6 +21628,41 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 17 Jul 2026 09:00:03 GMT"
+    },
+    {
+      "title": "Tuchel did not deliver, but his time with England is not up - Shearer",
+      "detail": "Former England captain Alan Shearer says Three Lions boss Thomas Tuchel will not be fazed by criticism he has faced over the World Cup semi-final defeat.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 11:00:24 GMT"
+    },
+    {
+      "title": "West Ham captain Bowen to stay at club",
+      "detail": "West Ham United captain Jarrod Bowen will stay at the club for the forthcoming season in the Championship.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 10:51:02 GMT"
+    },
+    {
+      "title": "Pele at the Azteca? England in '66? Ranking the best World Cup finals",
+      "detail": "Pele and Brazil at the Azteca in 1970? Lionel Messi's first World Cup? England winning it on home soil in 1966? BBC Sport attempts to rank the best finals.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 11:54:14 GMT"
+    },
+    {
+      "title": "England need fearless passers and three Tuchel omissions may point the way",
+      "detail": "<p>Technical class in the fiercest battles was again lacking at the World Cup but there is hope amid the soul-searching</p><p>The post-match inquest into England’s elimination was almost over when Thomas Tuchel offered a revealing analysis of Argentina’s knack of instigating late comebacks at this World Cup.</p><p>“In their culture, ball possession plays a crucial role. It starts from a young age,” he said. “That is in the DNA and it demands a lot of self-confidence – natural self‑confidence to always want the ball, to always be in the gaps, to always define yourself through the ball. I think that is a crucial thing: to show courage.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/17/england-passing-world-cup-thomas-tuchel\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 10:56:48 GMT"
+    },
+    {
+      "title": "BBC v ITV: who won the UK’s battle of the World Cup 2026 broadcasters?",
+      "detail": "<p>Danny Murphy’s decision to start talking about his deceased cat will haunt the rest of his career while Christina Unkel’s referee analysis was no-nonsense and to the point</p><p>The final may be Argentina v Spain, but ardent media watchers in the UK know that in broadcasting terms, a World Cup is always a domestic battle between the BBC and ITV. So who won on these important criteria?</p> <a href=\"https://www.theguardian.com/football/2026/jul/17/world-cup-bbc-itv-broadcast-battle\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 17 Jul 2026 11:00:06 GMT"
     }
   ],
   "teams": [
@@ -22563,18 +22598,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3005,
+      "eventCount": 3010,
       "manualEventCount": 3,
-      "rawNewsCount": 3002,
+      "rawNewsCount": 3007,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3005,
-      "applied": 2757,
+      "watched": 3010,
+      "applied": 2761,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3000,
+      "singleSource": 3005,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33215,7 +33250,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-17T10:52:59.551342+00:00",
+    "generatedAt": "2026-07-17T12:15:04.130762+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
