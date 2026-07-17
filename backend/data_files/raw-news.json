@@ -42206,5 +42206,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-4cb520b03383",
+    "title": "Keep calm and carry on - Spain trust team identity to deliver World Cup",
+    "summary": "Former Spain captain Cesar Azpilicueta explains why Luis de la Fuente's side have confidence in the collective as they prepare for Sunday's World Cup final against Argentina.",
+    "source": "bbc",
+    "team": "paraguay",
+    "status": "single_source",
+    "published_at": "Fri, 17 Jul 2026 15:04:58 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/czxedvre7ryo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-68bda1f15d0d",
+    "title": "Hearts sign goalkeeper Reus as Schwolow departs",
+    "summary": "Heart of Midlothian announce the imminent departure of Alexander Schwolow and the arrival of a replacement goalkeeper, Beau Reus.",
+    "source": "bbc",
+    "team": "paraguay",
+    "status": "single_source",
+    "published_at": "Fri, 17 Jul 2026 14:24:18 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c5y084gy06mo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "goalkeeper",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-0abaafe0a2de",
+    "title": "Genuine hope may have been fleeting for England. But it was still life-affirming | Max Rushden",
+    "summary": "<p>Two minutes and 55 seconds. That’s how long I really had hope of reaching the World Cup final. And it didn’t kill me</p><p>In her book Hope in the Dark the author Rebecca Solnit examines if it is possible to have hope when you consider all of human suffering. She quotes the Bulgarian writer Maria Popova: “Critical thinking without hope is cynicism, but hope without critical thinking is naivety.” By all accounts it is a compelling argument for hope as a catalyst for social change.</p><p>Meanwhile, Graham Burrell wrote: “It <em>is</em> the hope that kills you” following Lincoln City’s 2-1 home defeat to Wigan in 2024. “I feel perhaps our playoff push was finally killed off yesterday.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/17/england-world-cup-final-hope-fleeting-life-affirming\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Fri, 17 Jul 2026 15:00:31 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/17/england-world-cup-final-hope-fleeting-life-affirming",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-d09fea1483be",
+    "title": "How Zohran Mamdani and other US mayors use the World Cup to communicate",
+    "summary": "<p>Whether through livestreams or in-person attendance, America’s mayors have taken a variety of approaches to integrating soccer into their comms strategy</p><p>From the moment he entered office, New York City Zohran Mamdani hasn’t hesitated to make his love of soccer clear. The former New York state assembly member hosted <a href=\"https://www.theguardian.com/football/2026/jan/18/zohran-mamdanis-afcon-watch-party-brings-african-football-to-a-new-york-landmark\">a watch party</a> for the Africa Cup of Nations final soon after moving in to City Hall, littered speeches with references to soccer stars past and present, and remained a fixture at a Brooklyn pub to watch his beloved Arsenal on their way to a Premier League title.</p><p>The World Cup, though, is a different level. And as such, Mamdani <a href=\"https://www.theguardian.com/football/2026/jun/26/zohran-mamdani-world-cup-new-york-mayor\">has stood out</a> over the last month-plus for being one of several municipal politicians in US host cities using the tournament – and soccer in general – as a way to connect with constituents, advance political goals, or in some cases, change the perception of their city among the public at large.</p> <a href=\"https://www.theguardian.com/football/2026/jul/17/world-cup-mayors-zohran-mamdani-matt-mahan\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Fri, 17 Jul 2026 14:44:31 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/17/world-cup-mayors-zohran-mamdani-matt-mahan",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
