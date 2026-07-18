@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-18T12:29:06.407547+00:00",
+  "updatedAt": "2026-07-18T14:01:52.817621+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22048,6 +22048,48 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 18 Jul 2026 11:00:02 GMT"
+    },
+    {
+      "title": "Huge rise in harmful social media posts this World Cup",
+      "detail": "There have been 14 times more harmful social media posts and comments during this World Cup than in 2022, Fifa finds.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 13:07:27 GMT"
+    },
+    {
+      "title": "The Bronze Final - the unwanted tie or a match with a 'golden layer'?",
+      "detail": "Why does the Fifa World Cup Bronze Final still exist?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 13:23:13 GMT"
+    },
+    {
+      "title": "The classroom moment that bonds finalists De la Fuente & Scaloni forever",
+      "detail": "Spain manager Luis de la Fuente and Argentina boss Lionel Scaloni will go head-to-head in the World Cup final on Sunday - and the two men know each other well.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 13:00:18 GMT"
+    },
+    {
+      "title": "Quiz: Name every men's World Cup final host city",
+      "detail": "The World Cup final is where heroes are made and dreams come true for players and fans alike. Can you name every city that has ever hosted the showpiece?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 12:55:03 GMT"
+    },
+    {
+      "title": "No panic, but Celtic not good enough yet - Lambert",
+      "detail": "Paul Lambert believes former club Celtic are \"nowhere near good enough\" without further recruitment but has guarded against \"panic\".",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 13:56:22 GMT"
+    },
+    {
+      "title": "Football Daily | France v England in the third-place playoff: the game nobody wants to play",
+      "detail": "<p><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\"><strong>Sign up now! Sign up now! Sign up now? Sign up now!</strong></a></p><p>Saturday’s rebranded “bronze final” between France and England in Miami might feel like a modern, Gianni-coded exercise in squeezing the product dry, but the third-place playoff is a staple of World Cup history, even if it remains the game nobody wants to play in. The very first TPPO came in 1934, Germany defeating Austria 3-2 in a match engulfed in murky, menacing geopolitics. Thankfully, the fixture quickly became a more knockabout affair – Brazil swaggered on to the world stage by beating Sweden 4-2 in 1938, and France put six past West Germany in a nine-goal feast of football 20 years later. Just Fontaine scored four that day, later to be joined by Thomas Müller, Davor Suker and Toto Schillaci in using the fixture to pad their Golden Boot stats – a tactic Kylian Mbappé might want to try against a punch-drunk England side and pip Lionel Messi to another personal accolade as a result.</p><p>I seem to recall that the GWC has been hosted by three countries, who advanced to the same stage of the competition, making them at least equal as far as ability to compete is concerned. So, surely, any presentations at the final should be represented and handed over by Canada, Mexico and USA USA USA, on behalf of Fifa, and not only by Donald Trump?” – Dave Butler.</p><p>So Donald Trump will be attending the GWC final … what further imaginary award will Infantino pull out of the hat for him at the end? The Ballon d’Orange perhaps?” – Phil Taverner</p><p>Re: naming the 2030 World Cup (Football Daily letters passim): split across three global power zones, it sounds like an Aldous Huxley dystopian vision. How about Brave New World Cup?” – Daniel Solomons</p><p><em><strong>This is an extract from our daily football email … Football Daily. To get the full version,<a href=\"https://preview.gutools.co.uk/info/2016/jan/05/the-fiver-email-sign-up\"> </a><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\">just visit this page and follow the instructions</a>.</strong></em></p> <a href=\"https://www.theguardian.com/football/2026/jul/18/football-daily-email-gwc-england-france\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 11:46:20 GMT"
     }
   ],
   "teams": [
@@ -22983,18 +23025,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3065,
+      "eventCount": 3071,
       "manualEventCount": 3,
-      "rawNewsCount": 3062,
+      "rawNewsCount": 3068,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3065,
-      "applied": 2809,
+      "watched": 3071,
+      "applied": 2813,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3060,
+      "singleSource": 3066,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33635,7 +33677,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-18T12:29:28.974244+00:00",
+    "generatedAt": "2026-07-18T14:02:15.079281+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

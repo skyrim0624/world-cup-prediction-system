@@ -42934,5 +42934,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-a3941e682807",
+    "title": "Will the World Cup affect Arsenal's transfer plans?",
+    "summary": "With the World Cup final taking place on Sunday and the start of the Premier League just over a month away, supporters are starting to think about how their side is shaping up for the new campaign.",
+    "source": "bbc",
+    "team": "senegal",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 14:47:45 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c4gj5z33e2lo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-768ff2ca5b8c",
+    "title": "‘Rifts began to appear’: Why many Latin Americans want Spain to beat Argentina in the World Cup final",
+    "summary": "<p>A history of racism and ongoing footballing rivalries have made the choice of which team to get behind in Sunday’s final a charged topic</p><p>The Brazilian journalist and columnist Julia Duailibi usually writes about politics in her weekly column for the leading Brazilian newspaper O Globo, but last Thursday she took a different tack, writing instead about why she would not be supporting neighbouring Argentina in the World Cup final.</p><p>“I have always been an admirer of the <em>hermanos</em> [as Brazilians affectionately call Argentinians] and would have loved to cheer on a fellow South American team,” she <a href=\"https://oglobo.globo.com/opiniao/julia-duailibi/coluna/2026/07/torcer-pela-argentina-ficou-inviavel.ghtml\">wrote</a> on the morning after Argentina’s dramatic semi-final victory over England. “But I admit that the racist scenes involving a minority of the fans, and the silence of the majority on the pitch, turned my stomach.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/18/argentina-spain-latin-america-support-world-cup-final\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 15:03:00 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/18/argentina-spain-latin-america-support-world-cup-final",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

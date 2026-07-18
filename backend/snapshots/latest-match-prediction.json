@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-18T14:01:52.817621+00:00",
+  "updatedAt": "2026-07-18T15:32:10.520574+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22090,6 +22090,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 18 Jul 2026 11:46:20 GMT"
+    },
+    {
+      "title": "Will the World Cup affect Arsenal's transfer plans?",
+      "detail": "With the World Cup final taking place on Sunday and the start of the Premier League just over a month away, supporters are starting to think about how their side is shaping up for the new campaign.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 14:47:45 GMT"
+    },
+    {
+      "title": "‘Rifts began to appear’: Why many Latin Americans want Spain to beat Argentina in the World Cup final",
+      "detail": "<p>A history of racism and ongoing footballing rivalries have made the choice of which team to get behind in Sunday’s final a charged topic</p><p>The Brazilian journalist and columnist Julia Duailibi usually writes about politics in her weekly column for the leading Brazilian newspaper O Globo, but last Thursday she took a different tack, writing instead about why she would not be supporting neighbouring Argentina in the World Cup final.</p><p>“I have always been an admirer of the <em>hermanos</em> [as Brazilians affectionately call Argentinians] and would have loved to cheer on a fellow South American team,” she <a href=\"https://oglobo.globo.com/opiniao/julia-duailibi/coluna/2026/07/torcer-pela-argentina-ficou-inviavel.ghtml\">wrote</a> on the morning after Argentina’s dramatic semi-final victory over England. “But I admit that the racist scenes involving a minority of the fans, and the silence of the majority on the pitch, turned my stomach.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/18/argentina-spain-latin-america-support-world-cup-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 15:03:00 GMT"
     }
   ],
   "teams": [
@@ -23025,18 +23039,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3071,
+      "eventCount": 3073,
       "manualEventCount": 3,
-      "rawNewsCount": 3068,
+      "rawNewsCount": 3070,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3071,
-      "applied": 2813,
+      "watched": 3073,
+      "applied": 2815,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3066,
+      "singleSource": 3068,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33677,7 +33691,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-18T14:02:15.079281+00:00",
+    "generatedAt": "2026-07-18T15:32:32.476928+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
