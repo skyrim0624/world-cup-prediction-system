@@ -42486,5 +42486,19 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-5b683707b766",
+    "title": "Argentina like to leave mark on opponents - Laporte",
+    "summary": "Spain defender Aymeric Laporte claims World Cup final opponents Argentina are a team that \"likes to leave a mark on their opponents\".",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 00:38:05 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cj63e8l0kjjo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "defense",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
