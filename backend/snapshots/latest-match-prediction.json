@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-18T17:02:53.646748+00:00",
+  "updatedAt": "2026-07-18T18:29:26.113411+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22118,6 +22118,34 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 18 Jul 2026 15:15:43 GMT"
+    },
+    {
+      "title": "Chelsea agree record £117m deal for Villa midfielder Rogers",
+      "detail": "Chelsea have agreed a club record £117m deal to sign England international midfielder Morgan Rogers from Aston Villa.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 18:02:48 GMT"
+    },
+    {
+      "title": "Spain's final training session before World Cup final cancelled",
+      "detail": "Spain's final session before Sunday's World Cup final has been cancelled due to thunderstorms in New Jersey.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sat, 18 Jul 2026 17:32:45 GMT"
+    },
+    {
+      "title": "Ten-man Kilmarnock leave it late against Elgin - League Cup round-up",
+      "detail": "Ten-man Kilmarnock need a stoppage-time goal to defeat Elgin City in the Premier Sports Cup group stage, while St Johnstone and holders St Mirren are also among Saturday's winners.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 17:03:46 GMT"
+    },
+    {
+      "title": "Shackle Rodri the metronome and Argentina’s passion play can floor Spain | Jonathan Wilson",
+      "detail": "<p>The World Cup final is a classic clash of the process team against a side riding an emotional urge to fulfil Messi’s destiny</p><p>In the 37 minutes between England going ahead against Argentina and falling behind, they had 12% possession. It’s fair to assume that in the World Cup final Spain will provide a rather different challenge. They do not suffer the Mafeking tendency of the English, seeking to re-enact some famous siege every time they take the lead. The finalists have averaged 64% possession so far in the tournament. Spain could hardly be more different to England: their way is not of panic but of process.</p><p>There is a clearly defined Spanish style, as there has been since <a href=\"https://www.theguardian.com/football/2015/nov/10/vicente-del-bosque-spain-english-football-style-ronaldo-messi\">Vicente del Bosque</a> replaced <a href=\"https://www.theguardian.com/sport/blog/2008/jul/02/thedefinitivestoryofhowar\">Luis Aragonés </a>as Spain manager in 2008, and arguably before. In that, perhaps, there is hope for England. Spain once were even greater underachievers but Aragonés inspired the revolution against the <em>furia roja</em> orthodoxy. The result has been three Euros and a World Cup in the past two decades, with perhaps another to come on Sunday.</p> <a href=\"https://www.theguardian.com/football/2026/jul/18/shackle-rodri-the-metronome-and-argentinas-passion-play-can-floor-spain\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 17:00:03 GMT"
     }
   ],
   "teams": [
@@ -22204,7 +22232,7 @@
       "factors": {
         "strength": 76,
         "form": 62,
-        "path": 56,
+        "path": 55,
         "squad": 50,
         "margin": 70
       },
@@ -23053,18 +23081,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3075,
+      "eventCount": 3079,
       "manualEventCount": 3,
-      "rawNewsCount": 3072,
+      "rawNewsCount": 3076,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3075,
-      "applied": 2817,
+      "watched": 3079,
+      "applied": 2821,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3070,
+      "singleSource": 3074,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -23108,7 +23136,7 @@
         "attack": -23.5,
         "defense": -4.699999999999999,
         "goalkeeper": -6.449999999999999,
-        "path": -11.54,
+        "path": -12.459999999999999,
         "squad": -39.54999999999999
       },
       "bosnia-herzegovina": {
@@ -33705,7 +33733,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-18T17:03:16.790774+00:00",
+    "generatedAt": "2026-07-18T18:29:48.377507+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
