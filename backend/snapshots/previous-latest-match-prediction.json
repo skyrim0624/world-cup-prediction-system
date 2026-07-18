@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-18T19:46:32.151311+00:00",
+  "updatedAt": "2026-07-18T20:57:16.675503+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22174,6 +22174,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 18 Jul 2026 18:15:43 GMT"
+    },
+    {
+      "title": "O'Neill eyes 'couple of new faces' for Celtic",
+      "detail": "Martin O'Neill insists Celtic are \"making some progress\" in introducing more new faces to his squad as he opens up on the failure to re-sign Kelechi Iheanacho and Marcelo Saracchi.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 19:47:51 GMT"
+    },
+    {
+      "title": "Tottenham confident of Savinho signing - Sunday's gossip",
+      "detail": "Tottenham are hopeful of signing Savinho from Manchester City, Real Madrid cool their interest in Rodri, AC Milan are keeping tabs on Phil Foden, plus more.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 20:46:50 GMT"
     }
   ],
   "teams": [
@@ -23109,18 +23123,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3083,
+      "eventCount": 3085,
       "manualEventCount": 3,
-      "rawNewsCount": 3080,
+      "rawNewsCount": 3082,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3083,
-      "applied": 2825,
+      "watched": 3085,
+      "applied": 2826,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3078,
+      "singleSource": 3080,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33761,161 +33775,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-18T19:46:54.699743+00:00",
+    "generatedAt": "2026-07-18T20:57:39.425940+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 15.2,
-        "currentChampion": 14.3,
-        "change": -0.9,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "四强概率下降 -1.3%",
-          "八强概率下降 -1.1%",
-          "决赛概率下降 -1.0%",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 22.2,
-        "currentChampion": 22.3,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 4 条",
-        "reasons": [
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 18.6,
-        "currentChampion": 18.7,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.2%",
-        "reasons": [
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 10.0,
-        "currentChampion": 10.1,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 4 条",
-        "reasons": [
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 8.1,
-        "currentChampion": 8.2,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.5%",
-        "reasons": [
-          "四强概率上升 +0.5%",
-          "决赛概率上升 +0.3%",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "portugal",
-        "name": "葡萄牙",
-        "code": "POR",
-        "previousChampion": 5.0,
-        "currentChampion": 5.1,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "决赛概率上升 +0.1%",
-        "reasons": [
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "colombia",
-        "name": "哥伦比亚",
-        "code": "COL",
-        "previousChampion": 3.8,
-        "currentChampion": 3.9,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 4 条",
-        "reasons": [
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "germany",
-        "name": "德国",
-        "code": "GER",
-        "previousChampion": 3.5,
-        "currentChampion": 3.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.9%",
-        "reasons": [
-          "八强概率上升 +0.9%",
-          "四强概率上升 +0.5%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 4 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 7,
-      "down": 1,
-      "largestUp": {
-        "team": "argentina",
-        "name": "阿根廷",
-        "code": "ARG",
-        "previousChampion": 22.2,
-        "currentChampion": 22.3,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "可入模型事件新增 4 条",
-        "reasons": [
-          "可入模型事件新增 4 条"
-        ]
-      },
-      "largestDown": {
-        "team": "france",
-        "name": "法国",
-        "code": "FRA",
-        "previousChampion": 15.2,
-        "currentChampion": 14.3,
-        "change": -0.9,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "四强概率下降 -1.3%",
-          "八强概率下降 -1.1%",
-          "决赛概率下降 -1.0%",
-          "可入模型事件新增 4 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }

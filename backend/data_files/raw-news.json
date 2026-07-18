@@ -43130,5 +43130,19 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-1107317d4965",
+    "title": "Hydration breaks not popular and Fifa will review - Wenger",
+    "summary": "Arsene Wenger says he accepts the hydration breaks introduced at the 2026 World Cup have not been popular and Fifa will review their impact after the tournament.",
+    "source": "bbc",
+    "team": "germany",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 21:42:23 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c24m30v0gy9o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
