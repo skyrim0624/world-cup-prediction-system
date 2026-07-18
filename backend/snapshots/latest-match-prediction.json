@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-18T00:59:51.669146+00:00",
+  "updatedAt": "2026-07-18T04:09:32.816386+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -21873,6 +21873,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 18 Jul 2026 00:38:05 GMT"
+    },
+    {
+      "title": "Defiant Tuchel defends decisions and says loss is 'scar we carry now'",
+      "detail": "England head coach Thomas Tuchel defends his tactical decisions during the World Cup semi-final defeat by Argentina in a tense news conference.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 02:50:36 GMT"
+    },
+    {
+      "title": "'They made him a defensive player' - Trump questions Kane role in semi",
+      "detail": "US President Donald Trump joins criticism of England's tactics in their World Cup semi-final loss to Argentina, by questioning Harry Kane's second-half \"defensive\" role.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 02:12:52 GMT"
     }
   ],
   "teams": [
@@ -22808,18 +22822,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3040,
+      "eventCount": 3042,
       "manualEventCount": 3,
-      "rawNewsCount": 3037,
+      "rawNewsCount": 3039,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3040,
-      "applied": 2787,
+      "watched": 3042,
+      "applied": 2789,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3035,
+      "singleSource": 3037,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33460,7 +33474,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-18T01:00:14.436524+00:00",
+    "generatedAt": "2026-07-18T04:09:55.497194+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

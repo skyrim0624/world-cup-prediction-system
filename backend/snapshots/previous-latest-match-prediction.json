@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-17T23:27:06.848554+00:00",
+  "updatedAt": "2026-07-18T00:59:51.669146+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -21866,6 +21866,13 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 17 Jul 2026 22:12:54 GMT"
+    },
+    {
+      "title": "Argentina like to leave mark on opponents - Laporte",
+      "detail": "Spain defender Aymeric Laporte claims World Cup final opponents Argentina are a team that \"likes to leave a mark on their opponents\".",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 00:38:05 GMT"
     }
   ],
   "teams": [
@@ -22801,18 +22808,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3039,
+      "eventCount": 3040,
       "manualEventCount": 3,
-      "rawNewsCount": 3036,
+      "rawNewsCount": 3037,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3039,
-      "applied": 2786,
+      "watched": 3040,
+      "applied": 2787,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3034,
+      "singleSource": 3035,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33336,13 +33343,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-07-17",
+      "referenceDate": "2026-07-18",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 34,
-      "oldestAgeDays": 108,
+      "newestAgeDays": 35,
+      "oldestAgeDays": 109,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -33453,7 +33460,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-17T23:27:28.890142+00:00",
+    "generatedAt": "2026-07-18T01:00:14.436524+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
