@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-18T20:57:16.675503+00:00",
+  "updatedAt": "2026-07-18T21:58:23.592956+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22188,6 +22188,13 @@
       "impact": "全局备注",
       "tone": "green",
       "time": "Sat, 18 Jul 2026 20:46:50 GMT"
+    },
+    {
+      "title": "Hydration breaks not popular and Fifa will review - Wenger",
+      "detail": "Arsene Wenger says he accepts the hydration breaks introduced at the 2026 World Cup have not been popular and Fifa will review their impact after the tournament.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 21:42:23 GMT"
     }
   ],
   "teams": [
@@ -23123,18 +23130,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3085,
+      "eventCount": 3086,
       "manualEventCount": 3,
-      "rawNewsCount": 3082,
+      "rawNewsCount": 3083,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3085,
-      "applied": 2826,
+      "watched": 3086,
+      "applied": 2827,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3080,
+      "singleSource": 3081,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33775,7 +33782,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-18T20:57:39.425940+00:00",
+    "generatedAt": "2026-07-18T21:58:45.902871+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

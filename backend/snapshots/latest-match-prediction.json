@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-18T21:58:23.592956+00:00",
+  "updatedAt": "2026-07-18T23:00:08.252774+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22195,6 +22195,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 18 Jul 2026 21:42:23 GMT"
+    },
+    {
+      "title": "Rate England and France players in third-place play-off",
+      "detail": "Rate the England and France players out of 10 below and come back 30 minutes after full-time to see the final ratings.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 22:40:22 GMT"
+    },
+    {
+      "title": "Fifa to announce record $15bn World Cup revenue, smashing expectations",
+      "detail": "<ul><li><p>Hospitality and secondary ticket market help fuel rise</p></li><li><p>Gianni Infantino will feel this shores up his position</p></li></ul><p>Fifa will announce record $15bn (£11.2bn) revenues from this summer’s World Cup, significantly exceeding the targets set before the tournament.</p><p>Fifa’s member associations were informed of the boost in income by Gianni Infantino on Saturday. Originally the governing body had projected $11bn in earnings. Sources have indicated that hospitality and <a href=\"https://www.theguardian.com/football/2025/oct/11/fifa-2026-world-cup-tickets-dynamic-pricing-nft-resale\">ticketing</a>, especially through the steeply priced secondary market, account for a significant amount of the increase. Fifa takes 15% from the buyer and another 15% from the seller on the secondary market.</p> <a href=\"https://www.theguardian.com/football/2026/jul/18/fifa-record-15bn-world-cup-revenue\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 22:30:09 GMT"
     }
   ],
   "teams": [
@@ -23130,18 +23144,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3086,
+      "eventCount": 3088,
       "manualEventCount": 3,
-      "rawNewsCount": 3083,
+      "rawNewsCount": 3085,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3086,
-      "applied": 2827,
+      "watched": 3088,
+      "applied": 2829,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3081,
+      "singleSource": 3083,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33782,7 +33796,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-18T21:58:45.902871+00:00",
+    "generatedAt": "2026-07-18T23:00:30.798064+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
