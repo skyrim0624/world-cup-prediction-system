@@ -42962,5 +42962,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-b9da0eb78808",
+    "title": "Inside Iraola's first week at Liverpool and big decisions he faces",
+    "summary": "New Liverpool manager Andoni Iraola has lots of decisions to make ahead of the new season. BBC Sport gives an insight into his first week in the job.",
+    "source": "bbc",
+    "team": "germany",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 15:54:39 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/ce34zpppy6qo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-be3c9f9f0d0d",
+    "title": "‘Where did they go?’: homeless people feel force of America’s brutality in World Cup clean-up",
+    "summary": "<p>Fifa says football brings the world together but the unhoused in Atlanta feel targeted and completely excluded from the tournament</p><p><em>“A lot of our community has been pushed out by the World Cup. We’re not just dollar signs, we’re more than that. We’re people and we’re frustrated that they’ve chosen to treat us less than human.”</em></p><p>“<em>They dropped me off there in the middle of the night. They call them Mormon centres or whatever, but it ain’t nothing but a warehouse of cops. It looked like a </em><em>Fema camp. When I saw it, I left, I walked all the way back here. It’s because of the World Cup. They’re trying to make it look good for tourists. They don’t want the eyesores around.”</em></p> <a href=\"https://www.theguardian.com/football/2026/jul/18/where-did-they-go-homeless-people-feel-force-of-americas-brutality-in-world-cup-clean-up\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "australia",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 15:15:43 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/18/where-did-they-go-homeless-people-feel-force-of-americas-brutality-in-world-cup-clean-up",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

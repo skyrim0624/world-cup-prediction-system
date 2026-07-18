@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-18T15:32:10.520574+00:00",
+  "updatedAt": "2026-07-18T17:02:53.646748+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22104,6 +22104,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 18 Jul 2026 15:03:00 GMT"
+    },
+    {
+      "title": "Inside Iraola's first week at Liverpool and big decisions he faces",
+      "detail": "New Liverpool manager Andoni Iraola has lots of decisions to make ahead of the new season. BBC Sport gives an insight into his first week in the job.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 15:54:39 GMT"
+    },
+    {
+      "title": "‘Where did they go?’: homeless people feel force of America’s brutality in World Cup clean-up",
+      "detail": "<p>Fifa says football brings the world together but the unhoused in Atlanta feel targeted and completely excluded from the tournament</p><p><em>“A lot of our community has been pushed out by the World Cup. We’re not just dollar signs, we’re more than that. We’re people and we’re frustrated that they’ve chosen to treat us less than human.”</em></p><p>“<em>They dropped me off there in the middle of the night. They call them Mormon centres or whatever, but it ain’t nothing but a warehouse of cops. It looked like a </em><em>Fema camp. When I saw it, I left, I walked all the way back here. It’s because of the World Cup. They’re trying to make it look good for tourists. They don’t want the eyesores around.”</em></p> <a href=\"https://www.theguardian.com/football/2026/jul/18/where-did-they-go-homeless-people-feel-force-of-americas-brutality-in-world-cup-clean-up\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 15:15:43 GMT"
     }
   ],
   "teams": [
@@ -23039,18 +23053,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3073,
+      "eventCount": 3075,
       "manualEventCount": 3,
-      "rawNewsCount": 3070,
+      "rawNewsCount": 3072,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3073,
-      "applied": 2815,
+      "watched": 3075,
+      "applied": 2817,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3068,
+      "singleSource": 3070,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33691,7 +33705,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-18T15:32:32.476928+00:00",
+    "generatedAt": "2026-07-18T17:03:16.790774+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
