@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-18T04:09:32.816386+00:00",
+  "updatedAt": "2026-07-18T06:29:20.388396+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -21887,6 +21887,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 18 Jul 2026 02:12:52 GMT"
+    },
+    {
+      "title": "Who am I? Guess World Cup star No 41",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 05:51:36 GMT"
+    },
+    {
+      "title": "Tuchel defiant in face of criticism over decisions in England exit: ‘I have no regrets’",
+      "detail": "<ul><li><p>Head coach refuses to engage in ‘blame game’ after defeat by Argentina</p></li><li><p>Trump joins critics of Tuchel’s tactics in World Cup semi-final elimination</p></li></ul><p>Thomas Tuchel has insisted he is not interested in engaging in the “blame game” over England’s World Cup elimination and vowed to close the gap on the leading nations.</p><p>Even Donald Trump has joined <a href=\"https://www.theguardian.com/football/2026/jul/16/thomas-tuchel-england-2026-world-cup-semi-final-exit-argentina\">criticism of Tuchel’s tactics</a> in the semi-final defeat by Argentina, with the US president questioning why he made Harry Kane “a defensive player” as <a href=\"https://www.theguardian.com/football/2026/jul/16/players-puzzled-tactics-tuchel-no-option-england-squad-picks\">England attempted to hold on to a 1-0 lead</a>. But before the third-place playoff against France in Miami on Saturday night that was described by Tuchel as “the match no one wants to play in”, England’s head coach defiantly stood by his decisions and said that he and his players must learn from their experiences.</p> <a href=\"https://www.theguardian.com/football/2026/jul/18/thomas-tuchel-england-2026-world-cup-exit-no-regrets\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 04:28:21 GMT"
     }
   ],
   "teams": [
@@ -22822,18 +22836,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3042,
+      "eventCount": 3044,
       "manualEventCount": 3,
-      "rawNewsCount": 3039,
+      "rawNewsCount": 3041,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3042,
-      "applied": 2789,
+      "watched": 3044,
+      "applied": 2790,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3037,
+      "singleSource": 3039,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33474,7 +33488,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-18T04:09:55.497194+00:00",
+    "generatedAt": "2026-07-18T06:29:42.067786+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
