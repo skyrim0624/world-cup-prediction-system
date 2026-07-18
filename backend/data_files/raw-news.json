@@ -42668,5 +42668,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-b332902ef537",
+    "title": "More games and more controversy - has World Cup been a success?",
+    "summary": "From high ticket prices to hydration breaks, new laws and political interventions, there has rarely been a dull moment at the 2026 World Cup.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 09:16:54 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/ce8k0njm23yo?at_medium=RSS&at_campaign=rss",
+    "category": "market_proxy",
+    "factor": "path",
+    "direction": 0,
+    "confidence": 0.52
+  },
+  {
+    "id": "bbc-f59ac81f1222",
+    "title": "Messi and Brady in disbelief over 'prophetic' Lamine Yamal photo",
+    "summary": "Argentina's Lionel Messi says it is \"crazy\" to be facing Spain's Lamine Yamal in a World Cup final after being photographed with him as a baby.",
+    "source": "bbc",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 08:59:23 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c5yejxqll3go?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-f2b800c3882f",
+    "title": "How Villa's record signing Manzambi can spearhead new era",
+    "summary": "It is a new era for Aston Villa - and Johan Manzambi, who has just joined in a club record deal worth more than £50m - will be one of the poster boys.",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 09:39:08 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c5yzyg028gxo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
