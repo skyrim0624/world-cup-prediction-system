@@ -42794,5 +42794,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-8b1a1158f3d5",
+    "title": "A bit 'blah' or a worthy host? Is MetLife right World Cup final choice?",
+    "summary": "North America correspondent Nada Tawfik explores the decision to award the World Cup final to MetLife Stadium amid competition from rival venues.",
+    "source": "bbc",
+    "team": "spain",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 11:30:47 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cvgj5dlr45zo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-ad85b6d41e2f",
+    "title": "Gemmill leaves Scotland U21 role after 13 years",
+    "summary": "Scot Gemmill will depart from the role of Scotland Under-21 head coach after 13 years, the Scottish FA has announced.",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 11:16:24 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c3ek9weyyv4o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-e44fc5ce8d82",
+    "title": "Gianni Infantino unlikely to face IOC sanctions over Balogun red card scandal",
+    "summary": "<ul><li><p>Donald Trump spoke to Fifa president before ban lifted</p></li><li><p>Human rights body FairSquare sent complaint to IOC</p></li></ul><p>Gianni Infantino is poised to escape without sanction after complaints he breached rules on political neutrality in his dealings with Donald Trump over the Folarin Balogun affair.</p><p>The International Olympic Committee this week received a formal complaint from the human rights organisation FairSquare regarding Infantino’s conduct after Trump revealed he had called the Fifa president asking him to <a href=\"https://www.theguardian.com/football/2026/jul/05/folarin-balogun-red-card-suspension-lifted-usmnt-belgium-world-cup\">review Balogun’s ban</a> from the USA’s <a href=\"https://www.theguardian.com/football/2026/jul/01/usa-bosnia-and-herzegovina-game-report-world-cup\">last-16 tie against Belgium</a>. The ban was <a href=\"https://www.theguardian.com/football/2026/jul/06/folarin-balogun-red-card-reversal-trump-calls-fifa-explainer\">subsequently suspended</a> for 12 months after an unprecedented ruling from Fifa’s disciplinary committee.</p> <a href=\"https://www.theguardian.com/football/2026/jul/18/gianni-infantino-unlikely-to-face-ioc-sanctions-over-balogun-red-card-scandal\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "south-africa",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 11:00:02 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/18/gianni-infantino-unlikely-to-face-ioc-sanctions-over-balogun-red-card-scandal",
+    "category": "suspension",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.9
+  },
+  {
+    "id": "guardian-bee1b49670be",
+    "title": "Hart, Rooney and Richards on rowing the Hudson and if Tuchel should keep his job",
+    "summary": "<p>Pundits set out on the New York river to fulfil forfeit after Wayne’s errant prediction about Norway at the World Cup </p><p>The BBC punditry trio Wayne Rooney, Micah Richards and Joe Hart are fresh off a boat on New York’s Hudson River after an attempt to honour Rooney’s declaration that he would “row the River Mersey” if Norway reached the World Cup quarter-final. They did, prompting Erling Haaland to tease Rooney, saying: “I’m looking forward to seeing you, Wayney boy.”</p><p><strong>How was it?</strong></p> <a href=\"https://www.theguardian.com/football/2026/jul/18/joe-hart-wayne-rooney-micah-richards-rowing-hudson-river-world-cup\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "norway",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 11:00:02 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/18/joe-hart-wayne-rooney-micah-richards-rowing-hudson-river-world-cup",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
