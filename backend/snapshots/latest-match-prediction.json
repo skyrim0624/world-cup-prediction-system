@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-18T10:00:15.384014+00:00",
+  "updatedAt": "2026-07-18T11:15:18.419808+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -21978,6 +21978,48 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 18 Jul 2026 09:39:08 GMT"
+    },
+    {
+      "title": "Life after Kane - are England facing a false nine future?",
+      "detail": "Are England facing the prospect of using a false nine up front once record scorer Harry Kane calls time on his international career?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 10:42:07 GMT"
+    },
+    {
+      "title": "The harrowing dark side of England's World Cup exit",
+      "detail": "During a major football tournament such as the World Cup, some women and girls are constantly living in fear - because domestic abuse rises when England play, research shows.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 09:59:34 GMT"
+    },
+    {
+      "title": "World Cup winner Capdevila appeals to Trump after visa denial",
+      "detail": "Former Spain international Joan Capdevila asks US President Donald Trump for help after he was denied a visa to enter the United States before Sunday's World Cup final.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 10:43:40 GMT"
+    },
+    {
+      "title": "Enzo Fernández shows real quality for Argentina but Chelsea future is up in the air",
+      "detail": "<p>Brash midfielder has admirers in Madrid, though his World Cup displays illustrate what he can offer Xabi Alonso’s Blues</p><p>Enzo Fernández was an unstoppable mix of style and spite during <a href=\"https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report\">Argentina’s win over England</a>. The midfielder’s first contribution during Wednesday’s semi-final in Atlanta was to plough into Elliot Anderson and clobber Manchester City’s new £116m signing round the head. He escaped without a booking, though, and made the most of some generous refereeing by showing the other side to his game when Argentina took control after going 1-0 down early in the second half.</p><p>Much has already been said about England’s attempt to hold on to their lead. A particular frustration for fans who watch the Premier League every week was that not enough was done to disrupt Fernández. The Chelsea midfielder is a wonderful player in possession but can struggle when opponents run past him. That weakness has caused structural issues for Chelsea and will be a factor if they decide to sell the Argentinian this summer. Against England, though, Fernández was given space to do as he pleased during the second half. He pulled the strings next to Alexis Mac Allister and proved his big-game mentality by scoring the equaliser with a bending shot from 25 yards in the 85th minute.</p> <a href=\"https://www.theguardian.com/football/2026/jul/18/enzo-fernandez-argentina-chelsea-future-world-cup\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 10:00:01 GMT"
+    },
+    {
+      "title": "America’s World Cup report card: some As for atmosphere, but F for affordability",
+      "detail": "<p>How did the United States do in its second swing at hosting the men’s showpiece event? The stadiums were mostly received well. The accessibility, less so</p><p>Come rain or smokescreen, Sunday will bring the 2026 World Cup to its bombastic end. The load-bearer of the co-hosting North American trio, the United States held 78 of the tournament’s matches across its 11 host cities. Only two contests remain: the third-place game in Miami, and the big one in East Rutherford, New Jersey.</p><p>Before the dust truly settles and focus shifts to the six-nation, three-continent centennial in 2030, how did the United States fare in its second swing at hosting a men’s World Cup?</p> <a href=\"https://www.theguardian.com/football/2026/jul/18/world-cup-report-card-united-states\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sat, 18 Jul 2026 09:00:00 GMT"
+    },
+    {
+      "title": "Infantino’s Faustian bargain with Trump has stained football’s biggest stage",
+      "detail": "<p>The Fifa president sought influence with the US leader. Instead, Fifa’s president has entangled football in politics and wounded the game’s credibility</p><p>Ever since the United States won the rights to co-host the 2026 World Cup, Fifa president Gianni Infantino has worked to ingratiate himself with Donald Trump at all costs, supposedly to secure preferential treatment for Fifa from the American government. Predictably, he suffered the same fate as everyone who has made a Faustian bargain with the US president: he learned that cozying up to Trump always backfires, tarnishing the entire sport along the way.</p><p>I love soccer because, at its best, it is inclusive, democratic and accessible to everyone. So do billions of other people; the sport’s universal cultural impact truly lends it the potential to be a force for good that “unites the world”, <a href=\"https://inside.fifa.com/campaigns/football-unites-the-world\">as Fifa loves to say</a>. We saw this force in action at the start of the World Cup when, despite Trump’s hardline anti-immigrant and anti-foreigner policies, the prevailing sentiment showed that visiting teams and fans found most Americans really are <a href=\"https://www.theguardian.com/football/2026/jun/16/algeria-lawrence-kansas-world-cup-fans-adopted-team\">warm</a> and <a href=\"https://www.theguardian.com/football/2026/jun/23/scotland-fans-usa-world-cup-joy-fifa\">welcoming</a> people.</p><p><em>Nathán Goldberg Crenier serves as the elected vice-president of the US Soccer Federation. This editorial represents his personal opinions and does not necessarily reflect the positions or views of US Soccer.</em></p> <a href=\"https://www.theguardian.com/football/2026/jul/18/gianni-infantino-donald-trump-fifa-world-cup-comment\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 09:00:00 GMT"
     }
   ],
   "teams": [
@@ -22064,7 +22106,7 @@
       "factors": {
         "strength": 76,
         "form": 62,
-        "path": 57,
+        "path": 56,
         "squad": 50,
         "margin": 70
       },
@@ -22913,18 +22955,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3055,
+      "eventCount": 3061,
       "manualEventCount": 3,
-      "rawNewsCount": 3052,
+      "rawNewsCount": 3058,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3055,
-      "applied": 2799,
+      "watched": 3061,
+      "applied": 2805,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3050,
+      "singleSource": 3056,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -22968,7 +23010,7 @@
         "attack": -23.5,
         "defense": -4.699999999999999,
         "goalkeeper": -6.449999999999999,
-        "path": -10.62,
+        "path": -11.54,
         "squad": -39.54999999999999
       },
       "bosnia-herzegovina": {
@@ -33565,7 +33607,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-18T10:00:37.994529+00:00",
+    "generatedAt": "2026-07-18T11:15:35.109458+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
