@@ -43046,5 +43046,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-f15c5255c3c0",
+    "title": "Make your predictions for the last two games of World Cup 2026",
+    "summary": "Play BBC Sport's new World Cup predictor game to be in with the chance of winning a signed football.",
+    "source": "bbc",
+    "team": "netherlands",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 18:59:30 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/predictor/mwc2026?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-93c4c9330979",
+    "title": "Motherwell midfielder Watt joins Samsunspor",
+    "summary": "Motherwell sell midfielder Elliot Watt to Turkish SuperLig club Samsunspor for an undisclosed fee.",
+    "source": "bbc",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 18:44:02 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cp8em0ndd18o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-ffc59778bc5a",
+    "title": "France v England: World Cup third-place playoff – live",
+    "summary": "<ul><li><p>World Cup updates from 10pm BST/5pm EDT/7am AEST</p></li><li><p><a href=\"https://www.theguardian.com/football/2026/jul/16/players-puzzled-tactics-tuchel-no-option-england-squad-picks\">Players ‘puzzled’ but Tuchel left himself no option</a></p></li><li><p><a href=\"mailto:john.brewin.casual@guardian.co.uk\">Email John</a> | <a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\">Sign up for Football Daily</a></p></li></ul><p><strong>Team news imminent:</strong> the big line is that Kobbie Mainoo is out with an injury. There’s been seven changes from Atlanta.</p><p><strong>On Fox Sports</strong>, where they are currently showing IndyCar, they have just described 2026 as the “greatest World Cup in history”. Is that really so?</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/18/france-v-england-world-cup-third-place-playoff-live\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "france",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 19:39:56 GMT",
+    "url": "https://www.theguardian.com/football/live/2026/jul/18/france-v-england-world-cup-third-place-playoff-live",
+    "category": "injury",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.78
+  },
+  {
+    "id": "guardian-0067fed95f78",
+    "title": "Luis de la Fuente reveals Spain will not man-mark Messi in World Cup final",
+    "summary": "<ul><li><p>Coach tells of first encounter when Messi was 16</p></li><li><p>‘I took man-marker off and Messi scored four’</p></li></ul><p>Luis de la Fuente says he will not man-mark Lionel Messi in the World Cup final, even though the Argentina captain has scored eight times and provided four assists and the Spain coach’s own experience suggests it might not be a bad idea.</p><p>In the buildup to Sunday’s final in New Jersey, De la Fuente told the story of the first time he encountered Messi, 22 years ago, when the Argentinian was a 16-year-old coming through at Barcelona, he was the youth-team coach at Sevilla and the under-19 cup draw brought them together in the last 16 in May 2004 at the Miniestadi.</p> <a href=\"https://www.theguardian.com/football/2026/jul/18/luis-de-la-fuente-reveals-spain-will-not-man-mark-messi-in-world-cup-final\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 18:15:43 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/18/luis-de-la-fuente-reveals-spain-will-not-man-mark-messi-in-world-cup-final",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
