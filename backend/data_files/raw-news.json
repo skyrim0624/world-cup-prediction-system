@@ -43102,5 +43102,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-961e0d1050d1",
+    "title": "O'Neill eyes 'couple of new faces' for Celtic",
+    "summary": "Martin O'Neill insists Celtic are \"making some progress\" in introducing more new faces to his squad as he opens up on the failure to re-sign Kelechi Iheanacho and Marcelo Saracchi.",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 19:47:51 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c8rnd6n1j78o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-98fe7a259e18",
+    "title": "Tottenham confident of Savinho signing - Sunday's gossip",
+    "summary": "Tottenham are hopeful of signing Savinho from Manchester City, Real Madrid cool their interest in Rodri, AC Milan are keeping tabs on Phil Foden, plus more.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 20:46:50 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cn8nypvz22no?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
