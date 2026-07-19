@@ -43662,5 +43662,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-6a8817511333",
+    "title": "Experience this match in 3D",
+    "summary": "Watch the World Cup final from every angle including through the eyes of every player.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 00:00:00 GMT",
+    "url": "https://www.3d-bbc.co.uk/?matchId=151710&at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-488ad3d1730c",
+    "title": "Swansea close in on deal for Motherwell's Just",
+    "summary": "Swansea City hope to tie up a deal for Motherwell's Elijah Just after he impressed for New Zealand at the World Cup.",
+    "source": "bbc",
+    "team": "new-zealand",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 19:16:08 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cqlxreqep15o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-bb99f5d26378",
+    "title": "Kane says Tuchel will ‘learn a lot’ from England pressures after exit to Argentina",
+    "summary": "<ul><li><p>German created ‘best England group for togetherness’</p></li><li><p>Captain underlines importance of Nations League games</p></li></ul><p>Harry Kane has backed Thomas Tuchel to learn from England’s World Cup semi-final defeat against Argentina and believes they must use the forthcoming Nations League campaign to gain experience of playing against the top teams.</p><p>Kane was an unused substitute as England sealed third place with an <a href=\"https://www.theguardian.com/football/2026/jul/19/england-france-world-cup-third-place-playoff-match-report\">entertaining 6-4 victory against France</a> on Saturday – their best finish at a World Cup on foreign soil. Tuchel, who signed a contract extension before the tournament, has been criticised heavily for his tactics <a href=\"https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report\">against Argentina</a> when he opted to switch to a back five to try to defend a 1-0 lead.</p> <a href=\"https://www.theguardian.com/football/2026/jul/19/harry-kane-thomas-tuchel-england-football-world-cup-2026-euro-2028\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 18:00:33 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/19/harry-kane-thomas-tuchel-england-football-world-cup-2026-euro-2028",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-33f33a5ddaac",
+    "title": "The 2026 World Cup final: Spain v Argentina – in pictures",
+    "summary": "<p>After six weeks of football, the 104th and final game of the 2026 World Cup <a href=\"https://www.theguardian.com/football/live/2026/jul/19/spain-v-argentina-world-cup-2026-final-live-updates\">pits Spain against defending champions Argentina</a>. We look at the best images of the action at the New York New Jersey Stadium</p> <a href=\"https://www.theguardian.com/football/gallery/2026/jul/19/world-cup-2026-final-spain-v-argentina-in-pictures\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 18:47:56 GMT",
+    "url": "https://www.theguardian.com/football/gallery/2026/jul/19/world-cup-2026-final-spain-v-argentina-in-pictures",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

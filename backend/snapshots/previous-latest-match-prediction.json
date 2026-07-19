@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-19T17:04:35.623041+00:00",
+  "updatedAt": "2026-07-19T18:29:50.873947+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22440,6 +22440,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 19 Jul 2026 16:54:35 GMT"
+    },
+    {
+      "title": "IShowSpeed kicks off World Cup closing ceremony in blaze of colour",
+      "detail": "Another star-studded performance at half-time will include Shakira, BTS, Madonna and Justin Bieber.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 18:23:31 GMT"
+    },
+    {
+      "title": "World Cup final: Trump, half-time show and everything but the football – live",
+      "detail": "<ul><li><p><a href=\"https://www.theguardian.com/football/2026/jul/16/donald-trump-attending-world-cup-final\">White House confirms Trump will attend World Cup final</a></p></li><li><p>Shakira, Madonna and BTS headline first half-time show</p></li><li><p><a href=\"https://www.theguardian.com/football/live/2026/jul/19/spain-v-argentina-world-cup-2026-final-live-updates\">World Cup final liveblog: all the football</a> | <a href=\"mailto:tom.lutz@theguardian.com\">Mail Tom</a></p></li></ul><p>Streamer IShowSpeed, probably more famous than 98% of the players at this World Cup, is performing too. It’s probably not even watching the match now that he’s been on.</p><p>Post Malone has rocked up to perform at the closing ceremony, which is now taking place. Swae Lee joins him for toe tapper Sunflower.</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/19/world-cup-final-trump-halftime-show-shakira-bts-madonna-everything-but-football\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 18:09:21 GMT"
     }
   ],
   "teams": [
@@ -23375,18 +23389,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3121,
+      "eventCount": 3123,
       "manualEventCount": 3,
-      "rawNewsCount": 3118,
+      "rawNewsCount": 3120,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3121,
-      "applied": 2860,
+      "watched": 3123,
+      "applied": 2862,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3116,
+      "singleSource": 3118,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -34027,7 +34041,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-19T17:04:59.345960+00:00",
+    "generatedAt": "2026-07-19T18:30:13.145647+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
