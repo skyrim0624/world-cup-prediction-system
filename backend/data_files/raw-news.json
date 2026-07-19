@@ -43508,5 +43508,33 @@
     "factor": "path",
     "direction": -1,
     "confidence": 0.66
+  },
+  {
+    "id": "guardian-66d97317de55",
+    "title": "England 2026 World Cup squad: player-by-player ratings",
+    "summary": "<p>After the team’s third-placed finish, we rate the 24 squad members who made an appearance at the tournament</p><p><strong>Jordan Pickford</strong> Could he have done better with Enzo Fernández’s equaliser for Argentina? Jude Bellingham certainly thought so. But the man who has made more World Cup finals appearances than any other Englishman made some crucial saves, including a brilliant stop from Nicolas González in the semi-final. <strong>7</strong></p> <a href=\"https://www.theguardian.com/football/2026/jul/19/england-2026-world-cup-squad-player-by-player-ratings\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "belgium",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 11:00:28 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/19/england-2026-world-cup-squad-player-by-player-ratings",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-ec83db5f2ba1",
+    "title": "Spain’s coaching culture leads the way, thanks to visionary Johan Cruyff | Philipp Lahm",
+    "summary": "<p>Great brought an ideology to Barcelona that Guardiola and Emery refined, defining the playing style of the national team</p><p>Two countries are generating powerful, cross-border momentum in football. Spain represent the leading footballing culture, radiating their influence across the globe. Argentina possess a distinct identity that shapes the South American continent. Consequently, the World Cup is witnessing the perfect final.</p><p>The architect of Spain’s vision is Johan Cruyff. He brought the 4-3-3 formation and a specific ideology to Barcelona. A cadre of tactical purists, such as Pep Guardiola and Unai Emery, refined his approach into a philosophy that has defined the playing style of the entire league, all youth squads and the national team for nearly two decades. Its principles include ball-oriented defending, clearly defined positions and roles, a high level of organisation, and technical, combination-based football. Eleven players operate as a unit, moving like a swarm.</p> <a href=\"https://www.theguardian.com/football/2026/jul/19/spain-argentina-2026-world-cup-final-johan-cruyff-pep-guardiola\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 11:00:24 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/19/spain-argentina-2026-world-cup-final-johan-cruyff-pep-guardiola",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
