@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-19T00:03:48.554045+00:00",
+  "updatedAt": "2026-07-19T04:04:30.129433+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22230,6 +22230,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 18 Jul 2026 23:05:21 GMT"
+    },
+    {
+      "title": "Best England team for a long time? That's a fact, says Rice",
+      "detail": "Midfielder Declan Rice says \"this is the best England group for a very long time\" after the Three Lions secure a third-placed finish at the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 02:29:00 GMT"
+    },
+    {
+      "title": "England beat France in 10-goal thriller to win third-place play-off",
+      "detail": "Bukayo Saka scores a hat-trick as England beat France 6-4 in a thriller to record their best men's World Cup finish since 1966.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 01:12:34 GMT"
+    },
+    {
+      "title": "England's best World Cup for 60 years - but how should it be judged?",
+      "detail": "England have secured their best men's World Cup finish since winning the tournament 60 years ago. Is their performance at the 2026 edition being under-appreciated?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 00:23:05 GMT"
+    },
+    {
+      "title": "Bellingham breaks England World Cup goals record",
+      "detail": "Jude Bellingham becomes the first Englishman to score seven goals at a single World Cup with a late strike against France.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 00:47:11 GMT"
+    },
+    {
+      "title": "Brilliant first half, turbulent second - Tuchel",
+      "detail": "England manager praises his players as England beat France 6-4 for third place in the 2026 World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 00:13:13 GMT"
+    },
+    {
+      "title": "Rice fires England into early lead against France",
+      "detail": "Captain Declan Rice gives England an early lead, scoring in the third minute against France in the World Cup third-place play-off at Miami Stadium.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 21:17:52 GMT"
+    },
+    {
+      "title": "‘Something very special’: Tuchel reflects on World Cup after England claim third",
+      "detail": "<ul><li><p>France beaten 6-4 on ‘very emotional’ day for squad</p></li><li><p>‘This will help – but you never fully celebrate bronze’</p></li></ul><p>Thomas Tuchel has said England’s players can be proud of their efforts after a thrilling <a href=\"https://www.theguardian.com/football/2026/jul/19/england-france-world-cup-third-place-playoff-match-report\">6-4 victory over France</a> sealed third place at the World Cup for the first time.</p><p>England raced into a 4-0 lead at half-time thanks to goals from Declan Rice – the stand-in captain – Ezri Konsa and two from Bukayo Saka. But they were pegged back to within one goal after Didier Deschamps, taking charge of his final France game after 14 years, rang the changes at the break. Kylian Mbappé took his tally at this tournament to 10 goals and 22 at World Cups in total as he pushed to win a second successive Golden Boot and surpassed Lionel Messi’s all-time record. The Argentina forward will have a chance to overhaul him in Sunday’s final against Spain.</p> <a href=\"https://www.theguardian.com/football/2026/jul/19/thomas-tuchel-world-cup-england-third-france\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 01:27:05 GMT"
     }
   ],
   "teams": [
@@ -23165,18 +23214,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3091,
+      "eventCount": 3098,
       "manualEventCount": 3,
-      "rawNewsCount": 3088,
+      "rawNewsCount": 3095,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3091,
-      "applied": 2831,
+      "watched": 3098,
+      "applied": 2838,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3086,
+      "singleSource": 3093,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33817,7 +33866,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-19T00:04:10.738870+00:00",
+    "generatedAt": "2026-07-19T04:04:46.545011+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
