@@ -43634,5 +43634,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-1573541d165b",
+    "title": "IShowSpeed kicks off World Cup closing ceremony in blaze of colour",
+    "summary": "Another star-studded performance at half-time will include Shakira, BTS, Madonna and Justin Bieber.",
+    "source": "bbc",
+    "team": "colombia",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 18:23:31 GMT",
+    "url": "https://www.bbc.co.uk/news/articles/clyxjl0wkl7o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-61fbfbc1487d",
+    "title": "World Cup final: Trump, half-time show and everything but the football – live",
+    "summary": "<ul><li><p><a href=\"https://www.theguardian.com/football/2026/jul/16/donald-trump-attending-world-cup-final\">White House confirms Trump will attend World Cup final</a></p></li><li><p>Shakira, Madonna and BTS headline first half-time show</p></li><li><p><a href=\"https://www.theguardian.com/football/live/2026/jul/19/spain-v-argentina-world-cup-2026-final-live-updates\">World Cup final liveblog: all the football</a> | <a href=\"mailto:tom.lutz@theguardian.com\">Mail Tom</a></p></li></ul><p>Streamer IShowSpeed, probably more famous than 98% of the players at this World Cup, is performing too. It’s probably not even watching the match now that he’s been on.</p><p>Post Malone has rocked up to perform at the closing ceremony, which is now taking place. Swae Lee joins him for toe tapper Sunflower.</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/19/world-cup-final-trump-halftime-show-shakira-bts-madonna-everything-but-football\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "spain",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 18:09:21 GMT",
+    "url": "https://www.theguardian.com/football/live/2026/jul/19/world-cup-final-trump-halftime-show-shakira-bts-madonna-everything-but-football",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
