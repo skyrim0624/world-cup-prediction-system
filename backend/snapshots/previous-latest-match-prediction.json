@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-19T14:04:08.162405+00:00",
+  "updatedAt": "2026-07-19T15:32:11.231779+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22405,6 +22405,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 19 Jul 2026 13:00:51 GMT"
+    },
+    {
+      "title": "World Cup error will make Lammens stronger - Heaton",
+      "detail": "Tom Heaton is backing Manchester United team-mate Senne Lammens to emerge as a stronger character from his World Cup disappointment.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 19 Jul 2026 14:47:08 GMT"
+    },
+    {
+      "title": "Robinson not a fan but can League Cup groups help build momentum?",
+      "detail": "Aberdeen manager Stephen Robinson has criticised the format of the Premier Sports Cup, but can the competition help clubs build early momentum?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 14:37:00 GMT"
+    },
+    {
+      "title": "Football Daily | Give it up for Vozinha, Spence and the 2026 World Cup’s cult heroes",
+      "detail": "<p><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\"><strong>Sign up now! Sign up now! Sign up now? Sign up now!</strong></a></p><p>Every World Cup produces cult heroes, icons who make it possible for us to sit back and start misty-eyed recollections by saying: “Do you remember Roger Milla/Saeed Al-Owairan/Keisuke Honda/Paul the Octopus?” Well, the Geopolitics World Cup has not let us down! Here are 10 cult heroes who’ve emerged from this tournament.</p> <a href=\"https://www.theguardian.com/football/2026/jul/19/football-daily-email-gwc-cult-heroes\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 13:19:30 GMT"
     }
   ],
   "teams": [
@@ -22719,7 +22740,7 @@
       "factors": {
         "strength": 87,
         "form": 81,
-        "path": 69,
+        "path": 68,
         "squad": 80,
         "margin": 82
       },
@@ -23340,18 +23361,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3116,
+      "eventCount": 3119,
       "manualEventCount": 3,
-      "rawNewsCount": 3113,
+      "rawNewsCount": 3116,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3116,
-      "applied": 2855,
+      "watched": 3119,
+      "applied": 2858,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3111,
+      "singleSource": 3114,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -23479,7 +23500,7 @@
         "attack": -4.3,
         "defense": -4.3,
         "goalkeeper": 0.0,
-        "path": -5.57,
+        "path": -6.49,
         "squad": -4.699999999999999
       },
       "curacao": {
@@ -33992,7 +34013,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-19T14:04:30.765984+00:00",
+    "generatedAt": "2026-07-19T15:32:33.623977+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

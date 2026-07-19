@@ -43606,5 +43606,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-6ade05a75281",
+    "title": "Trump presence means two-hour queues for World Cup final",
+    "summary": "Supporters are facing hours of queues to get into New York New Jersey Stadium amid heightened security for the 2026 World Cup final.",
+    "source": "bbc",
+    "team": "ecuador",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 16:17:06 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c304p73m3zgo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-764caf84b470",
+    "title": "Spain v Argentina: World Cup 2026 final – live",
+    "summary": "<p>⚽ World Cup final kick-off: 3pm EST/8pm BST/5am AEST<br>⚽ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"https://www.tiktok.com/@guardiansport\">Follow on TikTok</a> | <a href=\"mailto:matchday.live@theguardian.com\">Mail us</a></p><p><strong>You can also follow the build up on our news blog, which contains <a href=\"https://www.theguardian.com/football/live/2026/jul/19/world-cup-2026-spain-v-argentina-final-buildup-england-win-10-goal-thriller-live?page=with%3Ablock-6a5cfcd88f0826309aef6854#block-6a5cfcd88f0826309aef6854\">photographtic proof that things are livening up in NYC</a></strong></p><p><strong>“One of the big questions for those of us in the UK</strong> is how to watch the final,” writes David Wall. “For all that has been made about ITV’s coverage with their New York studio and one of two excellent pundits, I think their coverage has been less than the sum of its parts, as usual. They’ve not had people other than the commentators in the stadiums so all that studio showed was that it was quite windy in New York sometimes.</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/19/spain-v-argentina-world-cup-2026-final-live-updates\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 16:54:35 GMT",
+    "url": "https://www.theguardian.com/football/live/2026/jul/19/spain-v-argentina-world-cup-2026-final-live-updates",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
