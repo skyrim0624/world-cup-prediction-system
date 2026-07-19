@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-19T19:47:33.444185+00:00",
+  "updatedAt": "2026-07-19T20:57:57.188638+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22482,6 +22482,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 19 Jul 2026 18:47:56 GMT"
+    },
+    {
+      "title": "Rate the Spain and Argentina players in World Cup final",
+      "detail": "Rate the Spain and Argentina players out of 10 below and come back 30 minutes after full-time to see the final ratings.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 19:55:40 GMT"
+    },
+    {
+      "title": "Arsenal line up Stones free transfer - Monday's gossip",
+      "detail": "Arsenal are weighing up a move for John Stones as a replacement for the injured William Saliba, Chelsea hold formal talks over Maxence Lacroix, plus more.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 19 Jul 2026 20:48:37 GMT"
+    },
+    {
+      "title": "Stars shine at the World Cup final half-time show",
+      "detail": "Madonna, BTS, Justin Bieber, and Shakira entertain the crowd at half-time in the World Cup final, with a special appearance from Ronaldo and Ronaldinho at the New York New Jersey Stadium.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 20:52:06 GMT"
     }
   ],
   "teams": [
@@ -22595,7 +22616,7 @@
         "champion": 0.0,
         "final": 0.1,
         "semifinal": 0.8,
-        "quarterfinal": 6.6,
+        "quarterfinal": 6.7,
         "change": -0.1
       }
     },
@@ -22727,8 +22748,8 @@
       "tournament": {
         "champion": 0.5,
         "final": 1.9,
-        "semifinal": 6.9,
-        "quarterfinal": 29.9,
+        "semifinal": 7.0,
+        "quarterfinal": 30.3,
         "change": -0.5
       }
     },
@@ -22954,9 +22975,9 @@
       },
       "tournament": {
         "champion": 1.4,
-        "final": 3.8,
-        "semifinal": 10.6,
-        "quarterfinal": 35.8,
+        "final": 3.9,
+        "semifinal": 10.9,
+        "quarterfinal": 36.7,
         "change": -1.7
       }
     },
@@ -23029,11 +23050,11 @@
         "margin": 85
       },
       "tournament": {
-        "champion": 18.7,
+        "champion": 18.8,
         "final": 28.6,
-        "semifinal": 44.7,
+        "semifinal": 44.8,
         "quarterfinal": 54.7,
-        "change": 7.1
+        "change": 7.2
       }
     },
     {
@@ -23120,15 +23141,15 @@
         "strength": 81,
         "form": 78,
         "path": 69,
-        "squad": 76,
+        "squad": 73,
         "margin": 80
       },
       "tournament": {
-        "champion": 0.8,
-        "final": 2.2,
-        "semifinal": 7.3,
-        "quarterfinal": 27.7,
-        "change": -0.2
+        "champion": 0.6,
+        "final": 2.0,
+        "semifinal": 6.7,
+        "quarterfinal": 26.3,
+        "change": -0.4
       }
     },
     {
@@ -23258,8 +23279,8 @@
       },
       "tournament": {
         "champion": 5.1,
-        "final": 9.6,
-        "semifinal": 19.2,
+        "final": 9.7,
+        "semifinal": 19.3,
         "quarterfinal": 26.9,
         "change": -1.1
       }
@@ -23353,8 +23374,8 @@
       },
       "tournament": {
         "champion": 1.0,
-        "final": 2.4,
-        "semifinal": 6.5,
+        "final": 2.5,
+        "semifinal": 6.6,
         "quarterfinal": 11.2,
         "change": 0.1
       }
@@ -23417,18 +23438,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3127,
+      "eventCount": 3130,
       "manualEventCount": 3,
-      "rawNewsCount": 3124,
+      "rawNewsCount": 3127,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3127,
-      "applied": 2865,
+      "watched": 3130,
+      "applied": 2868,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3122,
+      "singleSource": 3125,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -23676,7 +23697,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": 0.0,
-        "squad": -3.4499999999999997
+        "squad": -5.6
       },
       "iraq": {
         "attack": 0.0,
@@ -34069,17 +34090,78 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-19T19:47:56.137735+00:00",
+    "generatedAt": "2026-07-19T20:58:15.202939+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "senegal",
+        "name": "塞内加尔",
+        "code": "SEN",
+        "previousChampion": 0.8,
+        "currentChampion": 0.6,
+        "change": -0.2,
+        "direction": "down",
+        "reason": "人员盘下调 -2.1",
+        "reasons": [
+          "人员盘下调 -2.1",
+          "八强概率下降 -1.4%",
+          "四强概率下降 -0.6%",
+          "决赛概率下降 -0.2%",
+          "可入模型事件新增 3 条"
+        ]
+      },
+      {
+        "team": "spain",
+        "name": "西班牙",
+        "code": "ESP",
+        "previousChampion": 18.7,
+        "currentChampion": 18.8,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.1%",
+        "reasons": [
+          "四强概率上升 +0.1%",
+          "可入模型事件新增 3 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 1,
+      "down": 1,
+      "largestUp": {
+        "team": "spain",
+        "name": "西班牙",
+        "code": "ESP",
+        "previousChampion": 18.7,
+        "currentChampion": 18.8,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.1%",
+        "reasons": [
+          "四强概率上升 +0.1%",
+          "可入模型事件新增 3 条"
+        ]
+      },
+      "largestDown": {
+        "team": "senegal",
+        "name": "塞内加尔",
+        "code": "SEN",
+        "previousChampion": 0.8,
+        "currentChampion": 0.6,
+        "change": -0.2,
+        "direction": "down",
+        "reason": "人员盘下调 -2.1",
+        "reasons": [
+          "人员盘下调 -2.1",
+          "八强概率下降 -1.4%",
+          "四强概率下降 -0.6%",
+          "决赛概率下降 -0.2%",
+          "可入模型事件新增 3 条"
+        ]
+      }
     }
   }
 }
