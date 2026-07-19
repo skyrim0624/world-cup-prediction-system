@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-19T20:57:57.188638+00:00",
+  "updatedAt": "2026-07-19T22:01:40.901607+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -34090,78 +34090,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-19T20:58:15.202939+00:00",
+    "generatedAt": "2026-07-19T22:02:01.407877+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "senegal",
-        "name": "塞内加尔",
-        "code": "SEN",
-        "previousChampion": 0.8,
-        "currentChampion": 0.6,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "八强概率下降 -1.4%",
-          "四强概率下降 -0.6%",
-          "决赛概率下降 -0.2%",
-          "可入模型事件新增 3 条"
-        ]
-      },
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 18.7,
-        "currentChampion": 18.8,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.1%",
-        "reasons": [
-          "四强概率上升 +0.1%",
-          "可入模型事件新增 3 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
-      "down": 1,
-      "largestUp": {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 18.7,
-        "currentChampion": 18.8,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.1%",
-        "reasons": [
-          "四强概率上升 +0.1%",
-          "可入模型事件新增 3 条"
-        ]
-      },
-      "largestDown": {
-        "team": "senegal",
-        "name": "塞内加尔",
-        "code": "SEN",
-        "previousChampion": 0.8,
-        "currentChampion": 0.6,
-        "change": -0.2,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "八强概率下降 -1.4%",
-          "四强概率下降 -0.6%",
-          "决赛概率下降 -0.2%",
-          "可入模型事件新增 3 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
