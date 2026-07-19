@@ -43312,5 +43312,47 @@
     "factor": "attack",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-49299b61684c",
+    "title": "Who am I? Guess World Cup star No 42",
+    "summary": "Will you get today's player in as few attempts as possible?",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 05:51:01 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c4g02zp311po?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-14ceb16092c5",
+    "title": "Football Daily",
+    "summary": "What's next for England?",
+    "source": "bbc",
+    "team": "england",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 05:22:00 GMT",
+    "url": "https://www.bbc.co.uk/sounds/play/p0nxtxwv?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-7ea3f8c70cbb",
+    "title": "England beat France in an epic World Cup third-place playoff – in pictures",
+    "summary": "<p>As England register their best World Cup finish since 1966, we bring you our pick of the images from Miami where <a href=\"https://www.theguardian.com/football/2026/jul/19/england-france-world-cup-third-place-playoff-match-report\">Bukayo Saka’s hat-trick sealed a 6-4 victory</a> for Thomas Tuchel’s side</p> <a href=\"https://www.theguardian.com/football/gallery/2026/jul/19/england-beat-france-world-cup-third-place-playoff-best-images-gallery-in-pictures\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 04:29:58 GMT",
+    "url": "https://www.theguardian.com/football/gallery/2026/jul/19/england-beat-france-world-cup-third-place-playoff-best-images-gallery-in-pictures",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

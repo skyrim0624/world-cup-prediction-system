@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-19T04:04:30.129433+00:00",
+  "updatedAt": "2026-07-19T07:06:45.554674+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22279,6 +22279,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 19 Jul 2026 01:27:05 GMT"
+    },
+    {
+      "title": "Who am I? Guess World Cup star No 42",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 05:51:01 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "What's next for England?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 05:22:00 GMT"
+    },
+    {
+      "title": "England beat France in an epic World Cup third-place playoff – in pictures",
+      "detail": "<p>As England register their best World Cup finish since 1966, we bring you our pick of the images from Miami where <a href=\"https://www.theguardian.com/football/2026/jul/19/england-france-world-cup-third-place-playoff-match-report\">Bukayo Saka’s hat-trick sealed a 6-4 victory</a> for Thomas Tuchel’s side</p> <a href=\"https://www.theguardian.com/football/gallery/2026/jul/19/england-beat-france-world-cup-third-place-playoff-best-images-gallery-in-pictures\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 04:29:58 GMT"
     }
   ],
   "teams": [
@@ -23214,18 +23235,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3098,
+      "eventCount": 3101,
       "manualEventCount": 3,
-      "rawNewsCount": 3095,
+      "rawNewsCount": 3098,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3098,
-      "applied": 2838,
+      "watched": 3101,
+      "applied": 2840,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3093,
+      "singleSource": 3096,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33866,7 +33887,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-19T04:04:46.545011+00:00",
+    "generatedAt": "2026-07-19T07:07:07.678922+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
