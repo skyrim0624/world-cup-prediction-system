@@ -43536,5 +43536,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-698300a05c37",
+    "title": "How the World Cup has affected your Premier League team",
+    "summary": "Once the trophy is lifted by either Spain or Argentina in New Jersey on Sunday night, attention will shift from the 2026 World Cup to the upcoming domestic season.",
+    "source": "bbc",
+    "team": "spain",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 13:29:34 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c3ek99pz1wgo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-22acba31199b",
+    "title": "World Cup quiz: Can you name every winner?",
+    "summary": "With the World Cup final taking place on Sunday, put your knowledge of the previous winners to the test.",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 13:00:51 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c2k2zxdl5edo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
