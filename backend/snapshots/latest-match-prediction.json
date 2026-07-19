@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-18T23:00:08.252774+00:00",
+  "updatedAt": "2026-07-19T00:03:48.554045+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22209,6 +22209,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 18 Jul 2026 22:30:09 GMT"
+    },
+    {
+      "title": "How did England players rate during the World Cup?",
+      "detail": "BBC Sport England reporter Alex Howell assess how the Three Lions' players fared in North America.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 23:31:46 GMT"
+    },
+    {
+      "title": "Over to you, Messi - Mbappe leads Golden Boot race for the ages",
+      "detail": "Kylian Mbappe leads the Golden Boot race by two goals but Lionel Messi could yet overtake him in the World Cup final.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 23:48:40 GMT"
+    },
+    {
+      "title": "Saka hat-trick seals 6-4 England win over France in epic World Cup third-place playoff",
+      "detail": "<p>Where to start with this rollercoaster of a match? Thomas Tuchel had promised a reaction but he could not have imagined the manner of the response from England, albeit against a France team firmly on their sunloungers during an incredible first half in which they conceded four times.</p><p>Yet with Kylian Mbappé on the hunt for his second successive Golden Boot in Didier Deschamps’ last match in charge of <em>Les Bleus</em>, even that lead courtesy of goals from Declan Rice, Ezri Konsa two from Bukayo Saka almost wasn’t enough. Mbappé began the comeback straight after half-time before adding his second after Bradley Barcola’s strike.</p> <a href=\"https://www.theguardian.com/football/2026/jul/19/england-france-world-cup-third-place-playoff-match-report\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 18 Jul 2026 23:05:21 GMT"
     }
   ],
   "teams": [
@@ -23144,18 +23165,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3088,
+      "eventCount": 3091,
       "manualEventCount": 3,
-      "rawNewsCount": 3085,
+      "rawNewsCount": 3088,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3088,
-      "applied": 2829,
+      "watched": 3091,
+      "applied": 2831,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3083,
+      "singleSource": 3086,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33679,13 +33700,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-07-18",
+      "referenceDate": "2026-07-19",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 35,
-      "oldestAgeDays": 109,
+      "newestAgeDays": 36,
+      "oldestAgeDays": 110,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -33796,7 +33817,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-18T23:00:30.798064+00:00",
+    "generatedAt": "2026-07-19T00:04:10.738870+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

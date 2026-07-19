@@ -43172,5 +43172,47 @@
     "factor": "path",
     "direction": 0,
     "confidence": 0.52
+  },
+  {
+    "id": "bbc-a288237723b4",
+    "title": "How did England players rate during the World Cup?",
+    "summary": "BBC Sport England reporter Alex Howell assess how the Three Lions' players fared in North America.",
+    "source": "bbc",
+    "team": "norway",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 23:31:46 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cx2jljx84rwo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-54549ece1bf7",
+    "title": "Over to you, Messi - Mbappe leads Golden Boot race for the ages",
+    "summary": "Kylian Mbappe leads the Golden Boot race by two goals but Lionel Messi could yet overtake him in the World Cup final.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 23:48:40 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c89nl42dnpyo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-e2c8cee38d11",
+    "title": "Saka hat-trick seals 6-4 England win over France in epic World Cup third-place playoff",
+    "summary": "<p>Where to start with this rollercoaster of a match? Thomas Tuchel had promised a reaction but he could not have imagined the manner of the response from England, albeit against a France team firmly on their sunloungers during an incredible first half in which they conceded four times.</p><p>Yet with Kylian Mbappé on the hunt for his second successive Golden Boot in Didier Deschamps’ last match in charge of <em>Les Bleus</em>, even that lead courtesy of goals from Declan Rice, Ezri Konsa two from Bukayo Saka almost wasn’t enough. Mbappé began the comeback straight after half-time before adding his second after Bradley Barcola’s strike.</p> <a href=\"https://www.theguardian.com/football/2026/jul/19/england-france-world-cup-third-place-playoff-match-report\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Sat, 18 Jul 2026 23:05:21 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/19/england-france-world-cup-third-place-playoff-match-report",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
