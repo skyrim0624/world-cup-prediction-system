@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-19T09:28:53.401080+00:00",
+  "updatedAt": "2026-07-19T10:56:30.404166+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22342,6 +22342,41 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 19 Jul 2026 07:00:20 GMT"
+    },
+    {
+      "title": "Messi on the brink of history - will it be his last World Cup game?",
+      "detail": "Argentina captain Lionel Messi will play his 34th World Cup match in Sunday's final, but will it be his last appearance?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 09:55:22 GMT"
+    },
+    {
+      "title": "I've been a World Cup official - I promise you there is no favouritism",
+      "detail": "Darren Cann speaks to BBC Sport about the conspiracy theories around the World Cup and what referees really think.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 09:55:59 GMT"
+    },
+    {
+      "title": "Has Saka shown Tuchel he's too good to leave out?",
+      "detail": "Bukayo Saka’s World Cup hat-trick against France reignited the selection debate and Thomas Tuchel’s decision to leave him out of the semi-final.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 09:52:44 GMT"
+    },
+    {
+      "title": "'Legend' or 'regrets'? A final that will define Lamine Yamal's World Cup",
+      "detail": "Lamine Yamal may not have had a sparkling World Cup but victory for Spain in Sunday's World Cup final would write a very different narrative.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 10:11:29 GMT"
+    },
+    {
+      "title": "‘Afraid of nothing’: how Argentina’s players drew on childhood inspiration to reach the final",
+      "detail": "<p>Lionel Scaloni says he has a squad full of fighters – wild and unruly – but on the pitch they play with a freedom reminiscent of eight- or nine-year olds</p><p>After scoring the goal that <a href=\"https://www.theguardian.com/football/2026/jul/15/england-argentina-world-cup-semi-final-match-report\">secured Argentina’s place in the World Cup final</a>, Lautaro Martínez burst into convulsive sobs during the touchline interview. He spoke of the first pair of trainers his father bought him and of how his mother kept making his bed when he moved to a club pension house in another city as a teenager. <a href=\"https://www.goal.com/en-gb/lists/can-t-stop-crying-lautaro-martinez-breaks-down-in-live-tv-interview-after-argentina-s-world-cup-semi-final-win-over-england/blt782af970bf4c7132\">Every single day.</a> Martínez said that mattered to him more than any goal, any cup.</p><p><a href=\"https://www.theguardian.com/football/2026/jul/14/lionel-scaloni-messi-argentina-england-world-cup-hero\">Argentina’s head coach, Lionel Scaloni</a>, said he was a bit worried after England’s goal but never stopped believing in his players. “They grew up in environments where they were afraid of nothing, in which they’ve always been the best at what they do,” he said. “As small children they competed and everyone expected so much of them; responsibility doesn’t weigh them down.”</p> <a href=\"https://www.theguardian.com/football/2026/jul/19/afraid-of-nothing-argentina-players-childhood-world-cup-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 19 Jul 2026 10:04:33 GMT"
     }
   ],
   "teams": [
@@ -22428,7 +22463,7 @@
       "factors": {
         "strength": 76,
         "form": 62,
-        "path": 54,
+        "path": 53,
         "squad": 50,
         "margin": 70
       },
@@ -23277,18 +23312,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3107,
+      "eventCount": 3112,
       "manualEventCount": 3,
-      "rawNewsCount": 3104,
+      "rawNewsCount": 3109,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3107,
-      "applied": 2846,
+      "watched": 3112,
+      "applied": 2851,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3102,
+      "singleSource": 3107,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -23332,7 +23367,7 @@
         "attack": -23.5,
         "defense": -4.699999999999999,
         "goalkeeper": -6.449999999999999,
-        "path": -13.379999999999999,
+        "path": -14.299999999999999,
         "squad": -39.54999999999999
       },
       "bosnia-herzegovina": {
@@ -33929,48 +33964,16 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-19T09:29:16.170892+00:00",
+    "generatedAt": "2026-07-19T10:56:52.625819+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 8.2,
-        "currentChampion": 8.3,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 6 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
+      "up": 0,
       "down": 0,
-      "largestUp": {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 8.2,
-        "currentChampion": 8.3,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.2%",
-          "可入模型事件新增 6 条"
-        ]
-      },
+      "largestUp": null,
       "largestDown": null
     }
   }
