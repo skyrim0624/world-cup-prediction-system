@@ -43718,5 +43718,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-51bace5a9fb1",
+    "title": "Rate the Spain and Argentina players in World Cup final",
+    "summary": "Rate the Spain and Argentina players out of 10 below and come back 30 minutes after full-time to see the final ratings.",
+    "source": "bbc",
+    "team": "belgium",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 19:55:40 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cvgjgp7656xo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-87d72d8e9814",
+    "title": "Arsenal line up Stones free transfer - Monday's gossip",
+    "summary": "Arsenal are weighing up a move for John Stones as a replacement for the injured William Saliba, Chelsea hold formal talks over Maxence Lacroix, plus more.",
+    "source": "bbc",
+    "team": "senegal",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 20:48:37 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cwy41vd9ewxo?at_medium=RSS&at_campaign=rss",
+    "category": "injury",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.78
+  },
+  {
+    "id": "bbc-e00ecd95f399",
+    "title": "Stars shine at the World Cup final half-time show",
+    "summary": "Madonna, BTS, Justin Bieber, and Shakira entertain the crowd at half-time in the World Cup final, with a special appearance from Ronaldo and Ronaldinho at the New York New Jersey Stadium.",
+    "source": "bbc",
+    "team": "croatia",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 20:52:06 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/videos/cddj0m5pzglo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
