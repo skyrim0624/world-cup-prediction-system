@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-19T12:03:12.760100+00:00",
+  "updatedAt": "2026-07-19T14:04:08.162405+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22391,6 +22391,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 19 Jul 2026 11:00:24 GMT"
+    },
+    {
+      "title": "How the World Cup has affected your Premier League team",
+      "detail": "Once the trophy is lifted by either Spain or Argentina in New Jersey on Sunday night, attention will shift from the 2026 World Cup to the upcoming domestic season.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 13:29:34 GMT"
+    },
+    {
+      "title": "World Cup quiz: Can you name every winner?",
+      "detail": "With the World Cup final taking place on Sunday, put your knowledge of the previous winners to the test.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 13:00:51 GMT"
     }
   ],
   "teams": [
@@ -23326,18 +23340,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3114,
+      "eventCount": 3116,
       "manualEventCount": 3,
-      "rawNewsCount": 3111,
+      "rawNewsCount": 3113,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3114,
-      "applied": 2853,
+      "watched": 3116,
+      "applied": 2855,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3109,
+      "singleSource": 3111,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -33978,7 +33992,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-19T12:03:31.892492+00:00",
+    "generatedAt": "2026-07-19T14:04:30.765984+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

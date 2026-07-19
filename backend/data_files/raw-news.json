@@ -43564,5 +43564,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-ce4d710972d0",
+    "title": "World Cup error will make Lammens stronger - Heaton",
+    "summary": "Tom Heaton is backing Manchester United team-mate Senne Lammens to emerge as a stronger character from his World Cup disappointment.",
+    "source": "bbc",
+    "team": "germany",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 14:47:08 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cjej09nx5q8o?at_medium=RSS&at_campaign=rss",
+    "category": "weather",
+    "factor": "path",
+    "direction": -1,
+    "confidence": 0.66
+  },
+  {
+    "id": "bbc-8cbfd2ca39c4",
+    "title": "Robinson not a fan but can League Cup groups help build momentum?",
+    "summary": "Aberdeen manager Stephen Robinson has criticised the format of the Premier Sports Cup, but can the competition help clubs build early momentum?",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 14:37:00 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c304pmj70pno?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-ae6986ce1abf",
+    "title": "Football Daily | Give it up for Vozinha, Spence and the 2026 World Cup’s cult heroes",
+    "summary": "<p><a href=\"https://www.theguardian.com/info/2022/nov/14/football-daily-email-sign-up\"><strong>Sign up now! Sign up now! Sign up now? Sign up now!</strong></a></p><p>Every World Cup produces cult heroes, icons who make it possible for us to sit back and start misty-eyed recollections by saying: “Do you remember Roger Milla/Saeed Al-Owairan/Keisuke Honda/Paul the Octopus?” Well, the Geopolitics World Cup has not let us down! Here are 10 cult heroes who’ve emerged from this tournament.</p> <a href=\"https://www.theguardian.com/football/2026/jul/19/football-daily-email-gwc-cult-heroes\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "germany",
+    "status": "single_source",
+    "published_at": "Sun, 19 Jul 2026 13:19:30 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/19/football-daily-email-gwc-cult-heroes",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
