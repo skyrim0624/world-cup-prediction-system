@@ -44698,5 +44698,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-255aa5142a9a",
+    "title": "Gallery: Spain celebrate World Cup triumph in Madrid",
+    "summary": "Thousands of fans take to the streets of Madrid as the Spain squad enjoy a bus parade after winning the World Cup.",
+    "source": "bbc",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Mon, 20 Jul 2026 21:50:12 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cgje79d6q64o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-7085296798de",
+    "title": "Football Daily",
+    "summary": "The Football Daily pays tribute to Kevin Keegan with teammates, colleagues and fans.",
+    "source": "bbc",
+    "team": "colombia",
+    "status": "single_source",
+    "published_at": "Mon, 20 Jul 2026 19:29:00 GMT",
+    "url": "https://www.bbc.co.uk/sounds/play/p0nzx54w?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-9373a92fb51c",
+    "title": "Argentina players face bans as Fifa opens investigation into World Cup final brawls",
+    "summary": "<ul><li><p>Leandro Paredes was shown red card after final whistle</p></li><li><p>Fifa looking into Falklands banner at England game</p></li></ul><p>Fifa has opened an investigation into the violent scenes that followed Spain’s World Cup final win on Sunday, with several Argentina players facing bans.</p><p>Nahuel Molina appeared to strike Spain’s captain Rodri in the stomach as he ran on to the pitch following the final whistle, while there was also a large melee on the halfway line, where Leandro Paredes appeared to grab Eric García by the throat before throwing Gavi to the ground.</p> <a href=\"https://www.theguardian.com/football/2026/jul/20/argentina-players-face-bans-as-fifa-opens-investigation-into-world-cup-final-brawls\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Mon, 20 Jul 2026 20:42:33 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/20/argentina-players-face-bans-as-fifa-opens-investigation-into-world-cup-final-brawls",
+    "category": "suspension",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.9
   }
 ]
