@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-20T15:15:08.734840+00:00",
+  "updatedAt": "2026-07-20T16:58:35.536098+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22853,6 +22853,62 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 20 Jul 2026 13:30:34 GMT"
+    },
+    {
+      "title": "Could Argentina face action after post-final trouble?",
+      "detail": "Argentina are likely to face a Fifa investigation following the ugly scenes at the end of the World Cup final.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 16:44:00 GMT"
+    },
+    {
+      "title": "Uefa president boycotts World Cup final in protest against Fifa",
+      "detail": "Uefa president Aleksander Ceferin did not attend the World Cup final between Argentina and Spain in protest against Fifa.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 16:44:02 GMT"
+    },
+    {
+      "title": "Rodri's stock at all-time high as he adds to trophy collection",
+      "detail": "Rodri cements status as one of the world's best midfielders after World Cup and Golden Ball triumphs.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 15:52:37 GMT"
+    },
+    {
+      "title": "Thank you for making this a World Cup to remember on the BBC",
+      "detail": "BBC Director of Sport Alex Kay-Jelski's message as BBC Sport delivers a record-breaking World Cup across TV, radio, online and social.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 16:51:31 GMT"
+    },
+    {
+      "title": "'I'm proud of it' - Keegan looks back on career highlights and legacy",
+      "detail": "Kevin Keegan talks to Football Focus' Dan Walker in 2018 about some of the standout moments from his career - from winning World Player of the Year twice, to managing England and the iconic \"I would love it\" remark from the 1995–96 season.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 16:32:51 GMT"
+    },
+    {
+      "title": "Hearts agree deal to sign Forest Green captain Mendy",
+      "detail": "Forest Green Rovers captain Laurent Mendy is set to become Hearts' 10th summer signing.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 16:19:24 GMT"
+    },
+    {
+      "title": "Who are the World Cup record-holders?",
+      "detail": "BBC Sport's Ask Me Anything team looks at the record-holders in World Cup history ahead of the 2026 tournament.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 13 Jul 2026 15:09:31 GMT"
+    },
+    {
+      "title": "More than the Score",
+      "detail": "A review of the biggest men's World Cup ever",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 15:07:00 GMT"
     }
   ],
   "teams": [
@@ -23788,18 +23844,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3180,
+      "eventCount": 3188,
       "manualEventCount": 3,
-      "rawNewsCount": 3177,
+      "rawNewsCount": 3185,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3180,
-      "applied": 2913,
+      "watched": 3188,
+      "applied": 2920,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3175,
+      "singleSource": 3183,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -34440,7 +34496,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-20T15:15:30.610508+00:00",
+    "generatedAt": "2026-07-20T16:58:57.735180+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

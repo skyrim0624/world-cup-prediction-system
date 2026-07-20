@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-20T16:58:35.536098+00:00",
+  "updatedAt": "2026-07-20T19:01:57.434274+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22909,6 +22909,48 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 20 Jul 2026 15:07:00 GMT"
+    },
+    {
+      "title": "Guardiola in reported talks with Italy - would England come calling?",
+      "detail": "Former Manchester City manager Pep Guardiola, a fluent Italian speaker, is a contender for the vacant Italy head coach job.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 17:20:11 GMT"
+    },
+    {
+      "title": "Chelsea step up interest in Palace's Lacroix",
+      "detail": "Chelsea accelerate their interest in defender Maxence Lacroix after a fresh round of talks with Crystal Palace.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 18:04:52 GMT"
+    },
+    {
+      "title": "Hearts to 'go for it' in Champions League quest",
+      "detail": "Head coach Wouter Vrancken insists Hearts will \"go for it\" as they prepare to start their Champions League qualifying campaign at Sturm Graz on Tuesday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 17:07:27 GMT"
+    },
+    {
+      "title": "Thousands brave 34C heat to join Spain’s World Cup celebrations in Madrid",
+      "detail": "<ul><li><p>Squad arrived home at 2.30pm local time on Monday</p></li><li><p>Victory festivities to centre around the Plaza de Cibeles</p></li></ul><p>Tens of thousands of Spaniards, many still bleary-eyed and feeling a little delicate after the <a href=\"https://www.theguardian.com/football/2026/jul/19/spain-win-world-cup-argentina-final-match-report\">country’s historic World Cup victory against Argentina</a>, descended on central Madrid on Monday night to welcome the triumphant national team home.</p><p><em>La Roja</em>, who beat Argentina 1-0 in the final in New Jersey on Sunday night, were afforded the first of many heroes’ welcomes when they touched down at Madrid’s Barajas airport at 2.30pm local time on Monday.</p> <a href=\"https://www.theguardian.com/football/2026/jul/20/spain-world-cup-celebration-madrid\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 20 Jul 2026 18:17:59 GMT"
+    },
+    {
+      "title": "The 2026 World Cup was full of spectacle, scandal and compromise | Jonathan Wilson",
+      "detail": "<p>This was a good rather than great World Cup on the field. In the background, things were a lot less edifying</p><p>Perhaps it’s too early, with the shreds of gold tape still fluttering through the New Jersey sky, to make a proper assessment. That will only come when everything has sunk in properly, when memories have had the chance to settle and shape themselves, when the consequences of certain events have become clear. But let’s try anyway to make some sort of assessment of where the World Cup that ended with <a href=\"https://www.theguardian.com/football/2026/jul/20/lionel-messis-world-cup-fairytale-ends-with-pitiful-argentina-as-final-villains\">Leandro Paredes grappling with Gavi</a> ranks historically.</p><p><a href=\"https://www.theguardian.com/football/2026/jul/05/folarin-balogun-red-card-suspension-lifted-usmnt-belgium-world-cup\">The Balogun Affair</a> could yet have major consequences. At the moment, it feels that the world has moved on, but that’s the nature of tournaments. They have a momentum of their own, a drive towards the finish that tends to sweep everything else aside. But there can be little doubt that the bending before political pressure, sweeping aside 64 years of precedent to ensure a particular player could take the stage, just as Gianni Infantino <a href=\"https://www.theguardian.com/football/2025/nov/25/cristiano-ronaldo-clear-world-cup-fifa-suspends-two-games-portugal\">had done with Cristiano Ronaldo</a>, just as he had done in gerrymandering the qualification criteria for the Club World Cup to ensure Lionel Messi played, represents a milestone.</p> <a href=\"https://www.theguardian.com/football/2026/jul/20/a-world-cup-of-spectacle-scandal-and-compromise\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 20 Jul 2026 16:45:46 GMT"
+    },
+    {
+      "title": "Trump show offers fitting fever-dream end to a World Cup of excess and damage",
+      "detail": "<p>Football appeared a sideshow for much of the last afternoon of a tournament nurtured to indulge the cult of the individual</p><p>It ended almost as Gianni Infantino and Donald Trump had planned. Earlier on a seemingly endless World Cup final day, the trophy had, in a scene perfectly of a piece with the event’s excess, been let out of a Louis Vuitton trunk. Now they shuffled up to the podium together and presented it to a beaming Rodri, fumbling the moment slightly when <a href=\"https://www.theguardian.com/football/2026/jul/19/donald-trump-world-cup-final\">Trump lingered for Spain’s team photo</a>. After shrugging off anything resembling embarrassment they had made their exit, golden glitter sparkling on a bobbly pitch and the reverberations from a football event of unprecedented scale pulsing far beyond this concreted mini-state in New Jersey.</p><p>How to make sense of a heady, intoxicating, often deeply strange tournament that at once appeared totally welcoming and chillingly distant? It concluded with a disorientating fever dream beneath a bright blue American sky, football appearing a sideshow for much of the afternoon even if <a href=\"https://www.theguardian.com/football/2026/jul/19/spain-win-world-cup-argentina-final-match-report\">the game</a> did not exactly help itself. Anyone straining for a parable could, if they wanted, take pleasure in Spain’s success. This was ultimately <a href=\"https://www.theguardian.com/football/2026/jul/20/world-cup-2026-final-spain-argentina\">the triumph of a collective idea</a> in a World Cup nurtured to indulge the cult of the individual.</p> <a href=\"https://www.theguardian.com/football/2026/jul/20/donald-trump-world-cup-excess-damage-football\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Sun, 19 Jul 2026 23:59:56 GMT"
     }
   ],
   "teams": [
@@ -22995,7 +23037,7 @@
       "factors": {
         "strength": 76,
         "form": 62,
-        "path": 53,
+        "path": 52,
         "squad": 50,
         "margin": 70
       },
@@ -23071,7 +23113,7 @@
       "factors": {
         "strength": 91,
         "form": 82,
-        "path": 61,
+        "path": 60,
         "squad": 50,
         "margin": 83
       },
@@ -23844,18 +23886,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3188,
+      "eventCount": 3194,
       "manualEventCount": 3,
-      "rawNewsCount": 3185,
+      "rawNewsCount": 3191,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3188,
-      "applied": 2920,
+      "watched": 3194,
+      "applied": 2926,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3183,
+      "singleSource": 3189,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -23899,8 +23941,8 @@
         "attack": -23.5,
         "defense": -4.699999999999999,
         "goalkeeper": -6.449999999999999,
-        "path": -14.35,
-        "squad": -39.54999999999999
+        "path": -15.27,
+        "squad": -42.09999999999999
       },
       "bosnia-herzegovina": {
         "attack": -5.1,
@@ -23927,7 +23969,7 @@
         "attack": -7.7,
         "defense": 0.0,
         "goalkeeper": -2.15,
-        "path": -13.290000000000001,
+        "path": -14.21,
         "squad": -37.34999999999999
       },
       "morocco": {
@@ -34496,7 +34538,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-20T16:58:57.735180+00:00",
+    "generatedAt": "2026-07-20T19:02:12.891824+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
