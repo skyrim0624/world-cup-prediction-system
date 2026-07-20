@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-20T06:53:47.588222+00:00",
+  "updatedAt": "2026-07-20T10:17:12.795924+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -554,11 +554,11 @@
       "probability": 11,
       "title": "两队路径保持胶着",
       "details": [
-        "德国夺冠概率 ±0.0%",
+        "德国夺冠概率 +0.1%",
         "库拉索夺冠概率 ±0.0%",
         "小组第一仍取决于末轮和净胜球"
       ],
-      "championShift": "±0.0% / ±0.0%",
+      "championShift": "+0.1% / ±0.0%",
       "tone": "gold"
     },
     {
@@ -22650,6 +22650,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 20 Jul 2026 04:19:11 GMT"
+    },
+    {
+      "title": "Villa sign Wolves midfielder Gomes in £38m deal",
+      "detail": "Aston Villa move for Brazil midfielder Joao Gomes after Amadou Onana suffered a serious knee injury at the World Cup.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 20 Jul 2026 10:08:19 GMT"
+    },
+    {
+      "title": "Stay or go - at 28, Rashford faces big Man Utd call",
+      "detail": "The World Cup is over, and Marcus Rashford returns home not knowing if his future at club level lies with Manchester United.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 08:26:36 GMT"
+    },
+    {
+      "title": "Mbappe wins race for the 2026 World Cup golden boot",
+      "detail": "All the goals from the race for the 2026 World Cup golden boot as Kylian Mbappe leads the way from Lionel Messi, Jude Bellingham and Erling Haaland.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 08:03:37 GMT"
+    },
+    {
+      "title": "Scottish clubs to learn European qualifying opponents",
+      "detail": "Hearts, Rangers, Motherwell and Hibernian await news of potential European opponents on Monday when the third qualifying round draws are made for the Champions League, Europa League and Conference League.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 08:07:29 GMT"
+    },
+    {
+      "title": "Celtic revive chase for striker Hogh - gossip",
+      "detail": "Celtic rekindle interest in Norway-based striker and receive encouragement in hunt for a new goalkeeper...",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 06:53:12 GMT"
+    },
+    {
+      "title": "Podcast: World Cup lessons & Celtic's transfer standstill",
+      "detail": "What has the World Cup changed - and why are Celtic fans losing patience?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Top 30: from half a million World Cup photos, why I love these the most",
+      "detail": "<p>Our picture editor chooses his favourite images from the tournament including Lionel Messi’s cathedral, <em>that</em> delicious diving header from Jude Bellingham and a humbling scene in Gaza</p><p>What makes a great World Cup photograph? Now there’s a question with myriad answers. Composition, newsworthiness, emotional resonance, expert timing and luck can all contribute to varying degrees. But one thing they all share is the power to capture attention.</p><p>On the Guardian sport picture desk, we have received more than 500,000 World Cup photographs over the past six weeks, with so many gems among them. Here, with much applause to the photographers who created them and a slight bias towards England, are my favourite images of the tournament.</p> <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jul/20/world-cup-2026-best-30-photographs-gallery\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 07:00:49 GMT"
     }
   ],
   "teams": [
@@ -22736,7 +22785,7 @@
       "factors": {
         "strength": 76,
         "form": 62,
-        "path": 52,
+        "path": 53,
         "squad": 50,
         "margin": 70
       },
@@ -22813,15 +22862,15 @@
         "strength": 91,
         "form": 82,
         "path": 61,
-        "squad": 51,
+        "squad": 50,
         "margin": 83
       },
       "tournament": {
-        "champion": 1.4,
-        "final": 4.0,
-        "semifinal": 10.6,
-        "quarterfinal": 24.9,
-        "change": -9.4
+        "champion": 1.3,
+        "final": 3.9,
+        "semifinal": 10.3,
+        "quarterfinal": 24.4,
+        "change": -9.5
       }
     },
     {
@@ -22832,14 +22881,14 @@
         "strength": 84,
         "form": 72,
         "path": 68,
-        "squad": 59,
+        "squad": 60,
         "margin": 76
       },
       "tournament": {
         "champion": 0.2,
         "final": 0.9,
-        "semifinal": 3.8,
-        "quarterfinal": 17.1,
+        "semifinal": 3.9,
+        "quarterfinal": 17.4,
         "change": -1.3
       }
     },
@@ -23010,7 +23059,7 @@
         "champion": 0.4,
         "final": 1.5,
         "semifinal": 5.2,
-        "quarterfinal": 15.7,
+        "quarterfinal": 15.8,
         "change": 0.0
       }
     },
@@ -23027,7 +23076,7 @@
       },
       "tournament": {
         "champion": 1.6,
-        "final": 5.0,
+        "final": 5.1,
         "semifinal": 13.8,
         "quarterfinal": 27.4,
         "change": 1.0
@@ -23046,9 +23095,9 @@
       },
       "tournament": {
         "champion": 8.3,
-        "final": 16.5,
-        "semifinal": 33.8,
-        "quarterfinal": 70.1,
+        "final": 16.4,
+        "semifinal": 33.6,
+        "quarterfinal": 69.8,
         "change": 1.5
       }
     },
@@ -23065,9 +23114,9 @@
       },
       "tournament": {
         "champion": 2.6,
-        "final": 6.8,
-        "semifinal": 16.2,
-        "quarterfinal": 33.8,
+        "final": 6.9,
+        "semifinal": 16.3,
+        "quarterfinal": 34.1,
         "change": 1.5
       }
     },
@@ -23198,7 +23247,7 @@
       },
       "tournament": {
         "champion": 18.8,
-        "final": 28.6,
+        "final": 28.7,
         "semifinal": 44.8,
         "quarterfinal": 54.7,
         "change": 7.2
@@ -23274,7 +23323,7 @@
       },
       "tournament": {
         "champion": 14.3,
-        "final": 23.8,
+        "final": 23.9,
         "semifinal": 40.1,
         "quarterfinal": 58.3,
         "change": 0.8
@@ -23332,8 +23381,8 @@
       "tournament": {
         "champion": 1.1,
         "final": 3.6,
-        "semifinal": 10.3,
-        "quarterfinal": 25.5,
+        "semifinal": 10.4,
+        "quarterfinal": 25.7,
         "change": 0.2
       }
     },
@@ -23483,7 +23532,7 @@
       },
       "tournament": {
         "champion": 3.9,
-        "final": 10.2,
+        "final": 10.3,
         "semifinal": 20.5,
         "quarterfinal": 50.8,
         "change": 1.4
@@ -23502,8 +23551,8 @@
       },
       "tournament": {
         "champion": 10.2,
-        "final": 21.2,
-        "semifinal": 39.9,
+        "final": 21.3,
+        "semifinal": 40.0,
         "quarterfinal": 59.5,
         "change": -0.5
       }
@@ -23585,18 +23634,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3151,
+      "eventCount": 3158,
       "manualEventCount": 3,
-      "rawNewsCount": 3148,
+      "rawNewsCount": 3155,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3151,
-      "applied": 2888,
+      "watched": 3158,
+      "applied": 2894,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3146,
+      "singleSource": 3153,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -23640,7 +23689,7 @@
         "attack": -23.5,
         "defense": -4.699999999999999,
         "goalkeeper": -6.449999999999999,
-        "path": -15.219999999999999,
+        "path": -14.35,
         "squad": -39.54999999999999
       },
       "bosnia-herzegovina": {
@@ -23669,14 +23718,14 @@
         "defense": 0.0,
         "goalkeeper": -2.15,
         "path": -13.290000000000001,
-        "squad": -35.19999999999999
+        "squad": -37.34999999999999
       },
       "morocco": {
         "attack": -11.95,
         "defense": -8.6,
         "goalkeeper": -2.15,
         "path": -3.0599999999999996,
-        "squad": -21.499999999999996
+        "squad": -19.849999999999998
       },
       "haiti": {
         "attack": -2.55,
@@ -34237,17 +34286,51 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-20T06:54:10.139234+00:00",
+    "generatedAt": "2026-07-20T10:17:33.167381+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "brazil",
+        "name": "巴西",
+        "code": "BRA",
+        "previousChampion": 1.4,
+        "currentChampion": 1.3,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "人员盘下调 -2.1",
+        "reasons": [
+          "人员盘下调 -2.1",
+          "八强概率下降 -0.5%",
+          "四强概率下降 -0.3%",
+          "决赛概率下降 -0.1%",
+          "可入模型事件新增 6 条"
+        ]
+      }
+    ],
     "summary": {
       "up": 0,
-      "down": 0,
+      "down": 1,
       "largestUp": null,
-      "largestDown": null
+      "largestDown": {
+        "team": "brazil",
+        "name": "巴西",
+        "code": "BRA",
+        "previousChampion": 1.4,
+        "currentChampion": 1.3,
+        "change": -0.1,
+        "direction": "down",
+        "reason": "人员盘下调 -2.1",
+        "reasons": [
+          "人员盘下调 -2.1",
+          "八强概率下降 -0.5%",
+          "四强概率下降 -0.3%",
+          "决赛概率下降 -0.1%",
+          "可入模型事件新增 6 条"
+        ]
+      }
     }
   }
 }
