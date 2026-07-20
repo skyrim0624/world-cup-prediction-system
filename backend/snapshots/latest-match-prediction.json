@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-19T23:31:54.745341+00:00",
+  "updatedAt": "2026-07-20T03:41:13.493782+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22573,6 +22573,62 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Sun, 19 Jul 2026 22:11:12 GMT"
+    },
+    {
+      "title": "Victory for football? Spain beat Argentina to win World Cup",
+      "detail": "It might seem like a trite cliche, but you won't find many neutrals disagreeing with that verdict on the World Cup final.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 00:28:50 GMT"
+    },
+    {
+      "title": "Sixteen titles in five years - why Spain are a dominant force",
+      "detail": "We look at what's behind Spain's dominance after they become the first nation to be men's and women's World Cup champions at the same time.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 01:19:50 GMT"
+    },
+    {
+      "title": "Lamine Yamal 'completes football' at 19 as Argentina betray Messi",
+      "detail": "Spain's Lamine Yamal takes the glory of World Cup victory as the great Lionel Messi's evening ends in tears.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 01:28:28 GMT"
+    },
+    {
+      "title": "Trump, Bieber and Shakira - a World Cup final like never before",
+      "detail": "The 2026 World Cup final may not linger long in the memory for what happened on the pitch but it will for all that surrounded it, with an appearance by President Trump, the longest half-time in football and songs by a host of stars.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 00:44:03 GMT"
+    },
+    {
+      "title": "Scaloni leaves news conference in tears talking about his future",
+      "detail": "Argentina manager Lionel Scaloni leaves his post-match news conference after Sunday's World Cup final defeat by Spain in tears.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 00:29:09 GMT"
+    },
+    {
+      "title": "'The reaction is terrible' - World Cup final turns ugly at full-time",
+      "detail": "The frustration of some Argentina players boils over at the end of the 2026 World Cup final, after the 2022 winners are beaten by Spain in extra time.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 00:22:33 GMT"
+    },
+    {
+      "title": "Football Daily: Spain win the World Cup",
+      "detail": "Spain won 1-0 against Argentina after extra time in New Jersey.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 19 Jul 2026 23:39:00 GMT"
+    },
+    {
+      "title": "‘We had a date with destiny’: De la Fuente lauds Spain players after World Cup victory",
+      "detail": "<ul><li><p>Manager says team and and fans ‘deserve everything’</p></li><li><p>‘It hurts my soul’: Scaloni to consider Argentina future</p></li></ul><p>Spain’s manager, Luis de la Fuente, hailed his players for fulfilling what he described as “their destiny” by <a href=\"https://www.theguardian.com/football/2026/jul/19/spain-win-world-cup-argentina-final-match-report\">winning a second World Cup final</a> against 10-man Argentina.</p><p>The reigning champions were second best throughout but it took until the second period of extra time for <a href=\"https://www.theguardian.com/football/2026/jul/20/world-cup-2026-final-spain-argentina\">Spain to find the breakthrough</a> from the substitute, Ferran Torres. Nico Williams saw his goal disallowed in the first half of extra time, while Enzo Fernández became the sixth player – and third from Argentina – to be sent off in a World Cup final after the Chelsea midfielder was shown a second yellow card in the 93rd minute.</p> <a href=\"https://www.theguardian.com/football/2026/jul/20/luis-de-la-fuente-spain-manager-coach-world-cup-win\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 20 Jul 2026 01:37:43 GMT"
     }
   ],
   "teams": [
@@ -22774,7 +22830,7 @@
         "strength": 64,
         "form": 68,
         "path": 61,
-        "squad": 69,
+        "squad": 66,
         "margin": 69
       },
       "tournament": {
@@ -23508,18 +23564,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3140,
+      "eventCount": 3148,
       "manualEventCount": 3,
-      "rawNewsCount": 3137,
+      "rawNewsCount": 3145,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3140,
-      "applied": 2878,
+      "watched": 3148,
+      "applied": 2886,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3135,
+      "singleSource": 3143,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -23606,7 +23662,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": -0.92,
-        "squad": 0.0
+        "squad": -2.55
       },
       "scotland": {
         "attack": -9.399999999999999,
@@ -34043,13 +34099,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-07-19",
+      "referenceDate": "2026-07-20",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 36,
-      "oldestAgeDays": 110,
+      "newestAgeDays": 37,
+      "oldestAgeDays": 111,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -34160,96 +34216,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-19T23:32:16.766883+00:00",
+    "generatedAt": "2026-07-20T03:41:35.610493+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 10.1,
-        "currentChampion": 10.2,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.1%",
-        "reasons": [
-          "四强概率上升 +0.1%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 10 条"
-        ]
-      },
-      {
-        "team": "japan",
-        "name": "日本",
-        "code": "JPN",
-        "previousChampion": 2.5,
-        "currentChampion": 2.6,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.5%",
-        "reasons": [
-          "八强概率上升 +0.5%",
-          "四强概率上升 +0.3%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 10 条"
-        ]
-      },
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 1.5,
-        "currentChampion": 1.4,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "八强概率下降 -0.9%",
-          "四强概率下降 -0.7%",
-          "决赛概率下降 -0.4%",
-          "可入模型事件新增 10 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 2,
-      "down": 1,
-      "largestUp": {
-        "team": "england",
-        "name": "英格兰",
-        "code": "ENG",
-        "previousChampion": 10.1,
-        "currentChampion": 10.2,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "四强概率上升 +0.1%",
-        "reasons": [
-          "四强概率上升 +0.1%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 10 条"
-        ]
-      },
-      "largestDown": {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 1.5,
-        "currentChampion": 1.4,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "人员盘下调 -2.1",
-        "reasons": [
-          "人员盘下调 -2.1",
-          "八强概率下降 -0.9%",
-          "四强概率下降 -0.7%",
-          "决赛概率下降 -0.4%",
-          "可入模型事件新增 10 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
