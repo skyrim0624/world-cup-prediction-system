@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-20T03:41:13.493782+00:00",
+  "updatedAt": "2026-07-20T06:53:47.588222+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22629,6 +22629,27 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Mon, 20 Jul 2026 01:37:43 GMT"
+    },
+    {
+      "title": "Who am I? Guess World Cup star No 43",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 05:44:11 GMT"
+    },
+    {
+      "title": "World Cup 2026: latest news and reaction after Spain beat Argentina to win trophy",
+      "detail": "<p>⚽ Latest World Cup news as tournament comes to close<br>⚽ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"https://www.tiktok.com/@guardiansport\">Follow on TikTok</a> | <a href=\"mailto:jo.khan@theguardian.com\">Mail us</a></p><p>Back to the action on the field, or rather slightly adjacent to it. A lacklustre “closing ceremony” in which Tom Cruise was drowned out by the crowd got proceedings under way in New Jersey. A <a href=\"https://www.theguardian.com/football/2026/jul/19/hits-misses-and-muppets-the-star-studded-world-cup-half-time-show-nobody-asked-for\">half-time show no one asked for</a> filled the gap in the middle that didn’t need to be plugged. And finally, having kept his physical distance all tournament, US president <a href=\"https://www.theguardian.com/football/2026/jul/19/donald-trump-world-cup-final\">Donald Trump tried to steal the show</a> just as the curtain was falling.</p><p><em>“I think I heard a match commentator say that the last team that beat Spain was Scotland. Does that mean Scotland have won the World Cup?!”</em> asks <strong>Peter Oh</strong>.</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/20/world-cup-2026-final-reaction-news-spain-argentina\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 20 Jul 2026 06:36:01 GMT"
+    },
+    {
+      "title": "Spain’s system subdues a team built on the irrational magic of Messi’s lone genius | Barney Ronay",
+      "detail": "<p>The route to this World Cup victory involved beating the other 2022 finalist and then suffocating Argentina as they dried out in the sun</p><p>Time to break the staff, bury the book and call time on that rough magic. There was, by the end, an <a href=\"https://www.theguardian.com/football/2026/jul/20/lionel-messis-world-cup-fairytale-ends-with-pitiful-argentina-as-final-villains\">undertone of sadness about Lionel Messi</a>, New Jersey and a World Cup final that brought Spain the glory of an <a href=\"https://www.theguardian.com/football/2026/jul/19/spain-win-world-cup-argentina-final-match-report\">entirely deserved second trophy</a>, and which saw Argentina offer almost nothing beyond a gnarled and gristly sense of resistance.</p><p>This is an Argentina team built on faith, devotional energy and a belief in the frankly irrational magic of your lone scurrying 39-year-old genius. Well, sometimes that magic will forsake you. The deus ex machina will refuse to appear. And he is perhaps gone from this stage now for good, a Prospero giving his final address to the crowd from a clanky metal bowl outside New York.</p> <a href=\"https://www.theguardian.com/football/2026/jul/20/spain-team-system-subdue-argentina-messi-magic-world-cup-2026-final\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 04:19:11 GMT"
     }
   ],
   "teams": [
@@ -22849,7 +22870,7 @@
         "strength": 75,
         "form": 72,
         "path": 65,
-        "squad": 61,
+        "squad": 59,
         "margin": 77
       },
       "tournament": {
@@ -23564,18 +23585,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3148,
+      "eventCount": 3151,
       "manualEventCount": 3,
-      "rawNewsCount": 3145,
+      "rawNewsCount": 3148,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3148,
-      "applied": 2886,
+      "watched": 3151,
+      "applied": 2888,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3143,
+      "singleSource": 3146,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -23669,7 +23690,7 @@
         "defense": -1.73,
         "goalkeeper": 0.0,
         "path": -2.86,
-        "squad": -15.05
+        "squad": -17.2
       },
       "usa": {
         "attack": -9.399999999999999,
@@ -34216,7 +34237,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-20T03:41:35.610493+00:00",
+    "generatedAt": "2026-07-20T06:54:10.139234+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
