@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-20T19:01:57.434274+00:00",
+  "updatedAt": "2026-07-20T20:49:18.500441+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22951,6 +22951,27 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Sun, 19 Jul 2026 23:59:56 GMT"
+    },
+    {
+      "title": "Messi says 'pain is immense' after losing World Cup final",
+      "detail": "Lionel Messi says \"the pain is immense\" and that it \"will take time to heal\" after Argentina lost 1-0 to Spain in the World Cup final.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 19:13:58 GMT"
+    },
+    {
+      "title": "Man Utd and Arsenal fight over Kone - Tuesday's gossip",
+      "detail": "Manchester United and Arsenal fight over France's Manu Kone, Nico Williams could be heading to the Premier League champions, and West Ham reject latest Crysencio Summerville offer.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 20:33:45 GMT"
+    },
+    {
+      "title": "A big red speaker, Louis Vuitton trophy trunks and a tattoo bet – how Spain celebrated World Cup win",
+      "detail": "<p>Luis de la Fuente’s team was the best at the tournament by some margin but are not satisfied yet with focus now on ‘the next game in September’</p><p>On the night that Spain won their first World Cup in 2010, Rodrigo Hernández was on camp somewhere lost in the woods of Connecticut. He had been canoeing when the <em>selección</em> beat Germany in the semi-final, upset to have missed it, and for the final he convinced one of the supervisors to let him watch, alone, on a mini-laptop in the hut where the staff slept. When Andrés Iniesta scored the <a href=\"https://www.theguardian.com/football/2010/jul/11/world-cup-final-spain-champions\">winning goal</a> in the 116th minute, he ran off screaming, doing laps of the lake. He was 14.</p><p>On the night that Spain won their second World Cup 16 years later, <a href=\"https://www.theguardian.com/football/2026/jul/13/rodri-interview-spain-captain-world-cup-2026\">Rodrigo Hernández was back in the US</a>, not so far from there. When <a href=\"https://www.theguardian.com/football/2026/jul/20/world-cup-2026-final-spain-argentina\">Ferran Torres scored </a>the winning goal in the 106th minute, he ran off screaming in a straighter line and accompanied this time: towards the corner where his other<em> family</em> were. And then, when it ended, when the fighting finished too, he collected the trophy, pausing just long enough for Donald Trump to leave centre stage before lifting it, his timing perfect even here.</p> <a href=\"https://www.theguardian.com/football/2026/jul/20/a-big-red-speaker-louis-vuitton-trophy-trunks-and-a-tattoo-bet-how-spain-celebrated-world-cup-win\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 19:05:17 GMT"
     }
   ],
   "teams": [
@@ -23886,18 +23907,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3194,
+      "eventCount": 3197,
       "manualEventCount": 3,
-      "rawNewsCount": 3191,
+      "rawNewsCount": 3194,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3194,
-      "applied": 2926,
+      "watched": 3197,
+      "applied": 2929,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3189,
+      "singleSource": 3192,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -34538,7 +34559,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-20T19:02:12.891824+00:00",
+    "generatedAt": "2026-07-20T20:49:31.477102+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
