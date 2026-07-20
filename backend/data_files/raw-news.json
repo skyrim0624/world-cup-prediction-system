@@ -44740,5 +44740,33 @@
     "factor": "squad",
     "direction": -1,
     "confidence": 0.9
+  },
+  {
+    "id": "bbc-68112a5f031a",
+    "title": "Ex-Villa striker Duran joins seventh club aged 22",
+    "summary": "Former Aston Villa striker Jhon Duran joins Benfica on a season-long loan from Saudi Arabian side Al-Nassr.",
+    "source": "bbc",
+    "team": "saudi-arabia",
+    "status": "single_source",
+    "published_at": "Mon, 20 Jul 2026 23:11:08 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c75gwl3n50qo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-c6f95e3c4c6c",
+    "title": "Donald Trump has to let it linger as he hangs on for Spain’s World Cup celebrations",
+    "summary": "<p>For the second time in as many years, the US president made sure he was a part of a moment of triumph he had little to do with</p><p><a href=\"https://www.theguardian.com/football/2025/jul/13/trump-club-world-cup-final-chelsea-psg\">He did it again</a>. There was a world championship trophy, waiting to be held aloft at the same gargantuan stadium in East Rutherford, New Jersey. There was Gianni Infantino, waiting alongside the US president. And there was that same US president, Donald Trump, fresh off a round of <a href=\"https://www.theguardian.com/football/2025/jul/13/trump-club-world-cup-final-chelsea-psg\">stadium-wide booing</a> and jeering, handing off the trophy with Infantino and then staying stubbornly in the frame as another team enjoyed the pinnacle of their professional careers with an octogenarian standing awkwardly in the shot.</p><p>Should we be surprised? Marc Cucurella probably wasn’t – the defender was on stage for both occasions, first as a member of Chelsea as they lifted the 2025 Club World Cup, and then again on Sunday when Trump <a href=\"https://www.theguardian.com/football/2026/jul/19/donald-trump-world-cup-final\">once again remained in the shot</a> as Spain celebrated their World Cup victory.</p> <a href=\"https://www.theguardian.com/football/2026/jul/20/trump-world-cup-trophy-lift-spain-infantino-fifa\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Mon, 20 Jul 2026 08:30:50 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/20/trump-world-cup-trophy-lift-spain-infantino-fifa",
+    "category": "general",
+    "factor": "defense",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

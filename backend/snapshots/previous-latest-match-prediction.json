@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-20T20:49:18.500441+00:00",
+  "updatedAt": "2026-07-20T22:05:32.793009+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22972,6 +22972,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 20 Jul 2026 19:05:17 GMT"
+    },
+    {
+      "title": "Gallery: Spain celebrate World Cup triumph in Madrid",
+      "detail": "Thousands of fans take to the streets of Madrid as the Spain squad enjoy a bus parade after winning the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 21:50:12 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "The Football Daily pays tribute to Kevin Keegan with teammates, colleagues and fans.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 19:29:00 GMT"
+    },
+    {
+      "title": "Argentina players face bans as Fifa opens investigation into World Cup final brawls",
+      "detail": "<ul><li><p>Leandro Paredes was shown red card after final whistle</p></li><li><p>Fifa looking into Falklands banner at England game</p></li></ul><p>Fifa has opened an investigation into the violent scenes that followed Spain’s World Cup final win on Sunday, with several Argentina players facing bans.</p><p>Nahuel Molina appeared to strike Spain’s captain Rodri in the stomach as he ran on to the pitch following the final whistle, while there was also a large melee on the halfway line, where Leandro Paredes appeared to grab Eric García by the throat before throwing Gavi to the ground.</p> <a href=\"https://www.theguardian.com/football/2026/jul/20/argentina-players-face-bans-as-fifa-opens-investigation-into-world-cup-final-brawls\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Mon, 20 Jul 2026 20:42:33 GMT"
     }
   ],
   "teams": [
@@ -23907,18 +23928,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3197,
+      "eventCount": 3200,
       "manualEventCount": 3,
-      "rawNewsCount": 3194,
+      "rawNewsCount": 3197,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3197,
-      "applied": 2929,
+      "watched": 3200,
+      "applied": 2932,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3192,
+      "singleSource": 3195,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -23991,7 +24012,7 @@
         "defense": 0.0,
         "goalkeeper": -2.15,
         "path": -14.21,
-        "squad": -37.34999999999999
+        "squad": -39.899999999999984
       },
       "morocco": {
         "attack": -11.95,
@@ -34559,7 +34580,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-20T20:49:31.477102+00:00",
+    "generatedAt": "2026-07-20T22:05:54.803306+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

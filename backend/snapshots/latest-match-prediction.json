@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-20T22:05:32.793009+00:00",
+  "updatedAt": "2026-07-20T23:32:46.684329+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -22993,6 +22993,20 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Mon, 20 Jul 2026 20:42:33 GMT"
+    },
+    {
+      "title": "Ex-Villa striker Duran joins seventh club aged 22",
+      "detail": "Former Aston Villa striker Jhon Duran joins Benfica on a season-long loan from Saudi Arabian side Al-Nassr.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 23:11:08 GMT"
+    },
+    {
+      "title": "Donald Trump has to let it linger as he hangs on for Spain’s World Cup celebrations",
+      "detail": "<p>For the second time in as many years, the US president made sure he was a part of a moment of triumph he had little to do with</p><p><a href=\"https://www.theguardian.com/football/2025/jul/13/trump-club-world-cup-final-chelsea-psg\">He did it again</a>. There was a world championship trophy, waiting to be held aloft at the same gargantuan stadium in East Rutherford, New Jersey. There was Gianni Infantino, waiting alongside the US president. And there was that same US president, Donald Trump, fresh off a round of <a href=\"https://www.theguardian.com/football/2025/jul/13/trump-club-world-cup-final-chelsea-psg\">stadium-wide booing</a> and jeering, handing off the trophy with Infantino and then staying stubbornly in the frame as another team enjoyed the pinnacle of their professional careers with an octogenarian standing awkwardly in the shot.</p><p>Should we be surprised? Marc Cucurella probably wasn’t – the defender was on stage for both occasions, first as a member of Chelsea as they lifted the 2025 Club World Cup, and then again on Sunday when Trump <a href=\"https://www.theguardian.com/football/2026/jul/19/donald-trump-world-cup-final\">once again remained in the shot</a> as Spain celebrated their World Cup victory.</p> <a href=\"https://www.theguardian.com/football/2026/jul/20/trump-world-cup-trophy-lift-spain-infantino-fifa\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 20 Jul 2026 08:30:50 GMT"
     }
   ],
   "teams": [
@@ -23928,18 +23942,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3200,
+      "eventCount": 3202,
       "manualEventCount": 3,
-      "rawNewsCount": 3197,
+      "rawNewsCount": 3199,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3200,
-      "applied": 2932,
+      "watched": 3202,
+      "applied": 2934,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3195,
+      "singleSource": 3197,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -34580,7 +34594,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-20T22:05:54.803306+00:00",
+    "generatedAt": "2026-07-20T23:33:08.755626+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
