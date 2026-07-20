@@ -44012,5 +44012,47 @@
     "factor": "squad",
     "direction": -1,
     "confidence": 0.9
+  },
+  {
+    "id": "bbc-47c6c7c44ab6",
+    "title": "Who am I? Guess World Cup star No 43",
+    "summary": "Will you get today's player in as few attempts as possible?",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Mon, 20 Jul 2026 05:44:11 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cn0png1j1lno?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-a72db1d50980",
+    "title": "World Cup 2026: latest news and reaction after Spain beat Argentina to win trophy",
+    "summary": "<p>⚽ Latest World Cup news as tournament comes to close<br>⚽ <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/world-cup-2026-complete-player-guide\">Player guide</a> | <a href=\"https://www.theguardian.com/football/ng-interactive/2026/jun/04/golden-boot-world-cup-2026-top-goalscorers-winner\">Golden Boot</a> | <a href=\"https://www.tiktok.com/@guardiansport\">Follow on TikTok</a> | <a href=\"mailto:jo.khan@theguardian.com\">Mail us</a></p><p>Back to the action on the field, or rather slightly adjacent to it. A lacklustre “closing ceremony” in which Tom Cruise was drowned out by the crowd got proceedings under way in New Jersey. A <a href=\"https://www.theguardian.com/football/2026/jul/19/hits-misses-and-muppets-the-star-studded-world-cup-half-time-show-nobody-asked-for\">half-time show no one asked for</a> filled the gap in the middle that didn’t need to be plugged. And finally, having kept his physical distance all tournament, US president <a href=\"https://www.theguardian.com/football/2026/jul/19/donald-trump-world-cup-final\">Donald Trump tried to steal the show</a> just as the curtain was falling.</p><p><em>“I think I heard a match commentator say that the last team that beat Spain was Scotland. Does that mean Scotland have won the World Cup?!”</em> asks <strong>Peter Oh</strong>.</p> <a href=\"https://www.theguardian.com/football/live/2026/jul/20/world-cup-2026-final-reaction-news-spain-argentina\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Mon, 20 Jul 2026 06:36:01 GMT",
+    "url": "https://www.theguardian.com/football/live/2026/jul/20/world-cup-2026-final-reaction-news-spain-argentina",
+    "category": "injury",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.78
+  },
+  {
+    "id": "guardian-2a55627f5739",
+    "title": "Spain’s system subdues a team built on the irrational magic of Messi’s lone genius | Barney Ronay",
+    "summary": "<p>The route to this World Cup victory involved beating the other 2022 finalist and then suffocating Argentina as they dried out in the sun</p><p>Time to break the staff, bury the book and call time on that rough magic. There was, by the end, an <a href=\"https://www.theguardian.com/football/2026/jul/20/lionel-messis-world-cup-fairytale-ends-with-pitiful-argentina-as-final-villains\">undertone of sadness about Lionel Messi</a>, New Jersey and a World Cup final that brought Spain the glory of an <a href=\"https://www.theguardian.com/football/2026/jul/19/spain-win-world-cup-argentina-final-match-report\">entirely deserved second trophy</a>, and which saw Argentina offer almost nothing beyond a gnarled and gristly sense of resistance.</p><p>This is an Argentina team built on faith, devotional energy and a belief in the frankly irrational magic of your lone scurrying 39-year-old genius. Well, sometimes that magic will forsake you. The deus ex machina will refuse to appear. And he is perhaps gone from this stage now for good, a Prospero giving his final address to the crowd from a clanky metal bowl outside New York.</p> <a href=\"https://www.theguardian.com/football/2026/jul/20/spain-team-system-subdue-argentina-messi-magic-world-cup-2026-final\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "south-africa",
+    "status": "single_source",
+    "published_at": "Mon, 20 Jul 2026 04:19:11 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/20/spain-team-system-subdue-argentina-messi-magic-world-cup-2026-final",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
