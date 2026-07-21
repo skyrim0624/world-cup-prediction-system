@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-21T09:11:45.040217+00:00",
+  "updatedAt": "2026-07-21T11:24:54.770499+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23119,6 +23119,41 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 21 Jul 2026 07:00:04 GMT"
+    },
+    {
+      "title": "Everton agree deal to sign Leicester’s Rantala",
+      "detail": "Everton agree a deal to sign Finland international Jutta Rantala from Leicester City.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 10:18:16 GMT"
+    },
+    {
+      "title": "Why is the Community Shield being held in Wales?",
+      "detail": "BBC Sport's Ask Me Anything team explains why the 2026 Community Shield is being held in Wales.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 10:11:03 GMT"
+    },
+    {
+      "title": "Japan goalkeeper Okuma signs for Aston Villa",
+      "detail": "Aston Villa announce the signing of 21-year-old Japan goalkeeper Akane Okuma.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 09:22:27 GMT"
+    },
+    {
+      "title": "All you need to know about Wafcon 2026",
+      "detail": "Find out the favourites, format and kick-off times for the delayed 2026 Women's Africa Cup of Nations in Morocco, which starts on 26 July.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 10:30:09 GMT"
+    },
+    {
+      "title": "Only four years to the next men’s World Cup – what can we expect from the 2030 edition?",
+      "detail": "<p>If you thought the 2026 tournament was sprawling, think again with six host countries over three continents getting involved in four years’ time</p><p>If the <a href=\"https://www.theguardian.com/football/2026/jul/19/spain-win-world-cup-argentina-final-match-report\">2026 World Cup</a> was the tournament’s largest edition yet – featuring 48 teams for the first time in its 96-year history, being played in three different countries – the 2030 World Cup is going to have an even bigger footprint.</p> <a href=\"https://www.theguardian.com/football/2026/jul/21/men-world-cup-2030-what-to-expect\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 10:23:46 GMT"
     }
   ],
   "teams": [
@@ -24054,18 +24089,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3218,
+      "eventCount": 3223,
       "manualEventCount": 3,
-      "rawNewsCount": 3215,
+      "rawNewsCount": 3220,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3218,
-      "applied": 2949,
+      "watched": 3223,
+      "applied": 2953,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3213,
+      "singleSource": 3218,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -24144,7 +24179,7 @@
         "attack": -11.95,
         "defense": -8.6,
         "goalkeeper": -2.15,
-        "path": -3.0599999999999996,
+        "path": -2.1899999999999995,
         "squad": -19.849999999999998
       },
       "haiti": {
@@ -34706,7 +34741,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-21T09:12:07.271248+00:00",
+    "generatedAt": "2026-07-21T11:25:11.611489+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
