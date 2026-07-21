@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-21T12:56:38.621106+00:00",
+  "updatedAt": "2026-07-21T15:10:27.462255+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23182,6 +23182,76 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 21 Jul 2026 11:08:14 GMT"
+    },
+    {
+      "title": "Premier League and World Cup referee Taylor retires",
+      "detail": "Anthony Taylor announces his retirement from refereeing with immediate effect - ending a 20-year career.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 15:00:45 GMT"
+    },
+    {
+      "title": "'They want us gone' - Man Utd fans' fury over ticket ultimatum",
+      "detail": "Fans tell BBC Sport that a crackdown on touting is affecting some of the club's most loyal fans.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 14:34:05 GMT"
+    },
+    {
+      "title": "Keeper Martinez may 'step aside' from Argentina",
+      "detail": "Argentina goalkeeper Emi Martinez says he is considering whether it is \"time to step aside\" from international football after his side's 1-0 defeat to Spain in the World Cup final.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 13:01:20 GMT"
+    },
+    {
+      "title": "What could Burnham as PM mean for football?",
+      "detail": "Andy Burnham is only into his second day as the UK's Prime Minister, but already people are wondering what this could mean for sport.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 13:24:45 GMT"
+    },
+    {
+      "title": "Fernandez defends Argentina as Messi questions remain",
+      "detail": "Midfielder Enzo Fernandez claims Argentina represented their nation \"in the best possible way\" in the World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 13:19:17 GMT"
+    },
+    {
+      "title": "Ferguson says Keegan built Newcastle's greatest team",
+      "detail": "Former Manchester United manager Sir Alex Ferguson says Kevin Keegan \"carried the love of the game on his sleeve\" as he paid tribute to his former rival.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 13:21:54 GMT"
+    },
+    {
+      "title": "Derry City given suspended partial stadium closure by Uefa",
+      "detail": "Derry City are to be issued a suspended partial closure of Ryan McBride Brandywell Stadium by Uefa.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Tue, 21 Jul 2026 14:46:49 GMT"
+    },
+    {
+      "title": "Australia striker McNamara joins Everton",
+      "detail": "Everton sign Australia striker Holly McNamara on a free transfer from Melbourne City.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 13:54:14 GMT"
+    },
+    {
+      "title": "Celtic & Rangers cited after unrest 'near miss' at Ibrox",
+      "detail": "Rangers and Celtic face disciplinary charges over the unrest that followed their Scottish Cup meeting at Ibrox in March, while an independent review is critical of ultras groups and scathing on planning inadequacies.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 13:48:27 GMT"
+    },
+    {
+      "title": "La Liga chief claims Fifa is ‘destroying football industry’ and calls for Infantino to quit",
+      "detail": "<ul><li><p>Javier Tebas: ‘Fifa are making irresponsible decisions’</p></li><li><p>‘Hydration breaks are a lie … it was a break for advertising’</p></li></ul><p>La Liga’s president, Javier Tebas, has accused Fifa of “destroying the football industry” and called for its president, Gianni Infantino, to quit. Tebas spoke out as the dust settled on the 2026 World Cup with suggestions that the 2030 tournament <a href=\"https://www.theguardian.com/football/2026/jul/12/gianni-infantino-expansion-64-team-world-cup-2030-fifa\">could be increased from 48 to 64 teams</a>.</p><p>“Increasing the number of national teams makes no sense,” Tebas said <a href=\"https://www.gazzetta.it/en/football/world-cup/21-07-2026/tebas-interview-spain-fifa-infantino.shtml\">in an interview </a>with the Italian newspaper La Gazzetta dello Sport. “The football industry is not just the World Cup, which is the most important event. Not everything can revolve around the World Cup. It is national competitions that support this sport.</p> <a href=\"https://www.theguardian.com/football/2026/jul/21/la-liga-chief-javier-tebas-claims-fifa-is-destroying-football-industry-and-calls-for-gianni-infantino-to-quit\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 12:44:40 GMT"
     }
   ],
   "teams": [
@@ -24117,18 +24187,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3227,
+      "eventCount": 3237,
       "manualEventCount": 3,
-      "rawNewsCount": 3224,
+      "rawNewsCount": 3234,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3227,
-      "applied": 2956,
+      "watched": 3237,
+      "applied": 2965,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3222,
+      "singleSource": 3232,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -24201,7 +24271,7 @@
         "defense": 0.0,
         "goalkeeper": -2.15,
         "path": -14.21,
-        "squad": -39.899999999999984
+        "squad": -42.44999999999998
       },
       "morocco": {
         "attack": -11.95,
@@ -34769,7 +34839,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-21T12:57:00.917730+00:00",
+    "generatedAt": "2026-07-21T15:10:49.826216+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
