@@ -45440,5 +45440,33 @@
     "factor": "defense",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-ead766a732c7",
+    "title": "Iraola wants Mac Allister & Alisson to stay with Reds",
+    "summary": "Liverpool boss Andoni Iraola wants midfielder Alexis Mac Allister and goalkeeper Alisson to remain at the club.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Tue, 21 Jul 2026 22:46:06 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cpd7n21n2qno?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "goalkeeper",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-0004657cad80",
+    "title": "What can Hearts pick from debris of ongoing summer of hurt?",
+    "summary": "There's crashing back to Earth with a bang, and there's whatever Hearts fans have been going through since 16 May.",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Tue, 21 Jul 2026 22:37:30 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cz05re7pe7ko?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

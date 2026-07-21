@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-21T20:02:13.814366+00:00",
+  "updatedAt": "2026-07-21T21:41:15.796990+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23336,6 +23336,13 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 21 Jul 2026 19:00:53 GMT"
+    },
+    {
+      "title": "Chelsea, Arsenal and Spurs all want Rashford - Wednesday's gossip",
+      "detail": "A trio of Premier League heavyweights all want Marcus Rashford, Arsenal are interested in Aston Villa's Ezri Konsa, and Nottingham Forest look set to sign a new defender.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 21:36:25 GMT"
     }
   ],
   "teams": [
@@ -24271,18 +24278,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3249,
+      "eventCount": 3250,
       "manualEventCount": 3,
-      "rawNewsCount": 3246,
+      "rawNewsCount": 3247,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3249,
-      "applied": 2974,
+      "watched": 3250,
+      "applied": 2975,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3244,
+      "singleSource": 3245,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -34923,7 +34930,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-21T20:02:35.603115+00:00",
+    "generatedAt": "2026-07-21T21:41:38.366379+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
