@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-21T11:24:54.770499+00:00",
+  "updatedAt": "2026-07-21T12:56:38.621106+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23154,6 +23154,34 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 21 Jul 2026 10:23:46 GMT"
+    },
+    {
+      "title": "Infantino's 'time is up' with Fifa - La Liga boss",
+      "detail": "La Liga president Javier Tebas calls for Fifa president Gianni Infantino to quit, and claims the governing body is \"destroying the football industry\".",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 12:26:34 GMT"
+    },
+    {
+      "title": "Why Newcastle are changing club badge",
+      "detail": "Newcastle United supporters are set to vote on a new crest as the club look to change their badge for the first time since 1988.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 12:34:13 GMT"
+    },
+    {
+      "title": "More than the Score",
+      "detail": "Erling Haaland didn't lift the World Cup - but he's won millions of new fans in the US",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 11:28:00 GMT"
+    },
+    {
+      "title": "David Squires on … Spain winning the World Cup final in the shadow of Trump",
+      "detail": "<p>Our cartoonist looks back at the final game of the 2026 World Cup as Donald Trump watched Spain triumph again</p><ul><li><p><a href=\"https://guardianprintshop.com/collections/david-squires\">Buy David’s cartoons</a> | <a href=\"https://www.theguardian.com/football/2025/dec/04/david-squires-picks-his-favourite-cartoons-of-2025\">Some of his favourite works</a></p></li><li><p><a href=\"https://guardianbookshop.com/chaos-in-the-box-9781783352838/?utm_source=editoriallink&amp;utm_medium=merch&amp;utm_campaign=article\">And his latest book, Chaos in the Box: get it now</a></p></li></ul> <a href=\"https://www.theguardian.com/football/picture/2026/jul/21/david-squires-spain-winning-world-cup-final-argentina-shadow-of-donald-trump\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 11:08:14 GMT"
     }
   ],
   "teams": [
@@ -23449,7 +23477,7 @@
       "factors": {
         "strength": 79,
         "form": 77,
-        "path": 68,
+        "path": 69,
         "squad": 80,
         "margin": 77
       },
@@ -24089,18 +24117,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3223,
+      "eventCount": 3227,
       "manualEventCount": 3,
-      "rawNewsCount": 3220,
+      "rawNewsCount": 3224,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3223,
-      "applied": 2953,
+      "watched": 3227,
+      "applied": 2956,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3218,
+      "singleSource": 3222,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -24221,7 +24249,7 @@
         "attack": -3.0499999999999994,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": -0.19999999999999984,
+        "path": 0.6700000000000002,
         "squad": 0.7999999999999998
       },
       "germany": {
@@ -34741,7 +34769,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-21T11:25:11.611489+00:00",
+    "generatedAt": "2026-07-21T12:57:00.917730+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

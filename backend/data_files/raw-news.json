@@ -45062,5 +45062,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-d9036b4fecab",
+    "title": "Infantino's 'time is up' with Fifa - La Liga boss",
+    "summary": "La Liga president Javier Tebas calls for Fifa president Gianni Infantino to quit, and claims the governing body is \"destroying the football industry\".",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Tue, 21 Jul 2026 12:26:34 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cqjxzy44l0vo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-94cf4b958e95",
+    "title": "Why Newcastle are changing club badge",
+    "summary": "Newcastle United supporters are set to vote on a new crest as the club look to change their badge for the first time since 1988.",
+    "source": "bbc",
+    "team": "portugal",
+    "status": "single_source",
+    "published_at": "Tue, 21 Jul 2026 12:34:13 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cwyex91dwqlo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-6bf376d45895",
+    "title": "More than the Score",
+    "summary": "Erling Haaland didn't lift the World Cup - but he's won millions of new fans in the US",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Tue, 21 Jul 2026 11:28:00 GMT",
+    "url": "https://www.bbc.co.uk/sounds/play/w3ct9bcy?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-21fc61424c4f",
+    "title": "David Squires on … Spain winning the World Cup final in the shadow of Trump",
+    "summary": "<p>Our cartoonist looks back at the final game of the 2026 World Cup as Donald Trump watched Spain triumph again</p><ul><li><p><a href=\"https://guardianprintshop.com/collections/david-squires\">Buy David’s cartoons</a> | <a href=\"https://www.theguardian.com/football/2025/dec/04/david-squires-picks-his-favourite-cartoons-of-2025\">Some of his favourite works</a></p></li><li><p><a href=\"https://guardianbookshop.com/chaos-in-the-box-9781783352838/?utm_source=editoriallink&amp;utm_medium=merch&amp;utm_campaign=article\">And his latest book, Chaos in the Box: get it now</a></p></li></ul> <a href=\"https://www.theguardian.com/football/picture/2026/jul/21/david-squires-spain-winning-world-cup-final-argentina-shadow-of-donald-trump\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Tue, 21 Jul 2026 11:08:14 GMT",
+    "url": "https://www.theguardian.com/football/picture/2026/jul/21/david-squires-spain-winning-world-cup-final-argentina-shadow-of-donald-trump",
+    "category": "market_proxy",
+    "factor": "path",
+    "direction": 1,
+    "confidence": 0.52
   }
 ]
