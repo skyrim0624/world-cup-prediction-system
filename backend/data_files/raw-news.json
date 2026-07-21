@@ -45426,5 +45426,19 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-4b1a8d403d80",
+    "title": "Chelsea, Arsenal and Spurs all want Rashford - Wednesday's gossip",
+    "summary": "A trio of Premier League heavyweights all want Marcus Rashford, Arsenal are interested in Aston Villa's Ezri Konsa, and Nottingham Forest look set to sign a new defender.",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Tue, 21 Jul 2026 21:36:25 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c70g8j875klo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "defense",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
