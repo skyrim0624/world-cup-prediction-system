@@ -44768,5 +44768,47 @@
     "factor": "defense",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-4869993d41ac",
+    "title": "Introducing football to the country with one pitch",
+    "summary": "Nauru is the only nation to have never played an official international football match and hardly anyone there plays the game. Is that about to change?",
+    "source": "bbc",
+    "team": "uruguay",
+    "status": "single_source",
+    "published_at": "Tue, 21 Jul 2026 05:47:13 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c5y03dermmeo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-fa5ed104d089",
+    "title": "Fake kits worth £18m seized by police during World Cup",
+    "summary": "Counterfeit football shirts worth over £18m were seized in the UK during the course of the World Cup because of safety concerns, with the Fire Service warning the outfits can be a danger to those who wear them.",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Tue, 21 Jul 2026 05:12:13 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c0rdgrkx552o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-240645e6e833",
+    "title": "Who am I? Guess Premier League star No 1",
+    "summary": "Work out the identity of today's player in as few attempts as possible.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Tue, 21 Jul 2026 06:00:13 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/clyjly9484go?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

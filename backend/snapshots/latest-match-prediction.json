@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-21T03:21:20.792524+00:00",
+  "updatedAt": "2026-07-21T06:12:39.684074+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23007,6 +23007,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 20 Jul 2026 08:30:50 GMT"
+    },
+    {
+      "title": "Introducing football to the country with one pitch",
+      "detail": "Nauru is the only nation to have never played an official international football match and hardly anyone there plays the game. Is that about to change?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 05:47:13 GMT"
+    },
+    {
+      "title": "Fake kits worth £18m seized by police during World Cup",
+      "detail": "Counterfeit football shirts worth over £18m were seized in the UK during the course of the World Cup because of safety concerns, with the Fire Service warning the outfits can be a danger to those who wear them.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 05:12:13 GMT"
+    },
+    {
+      "title": "Who am I? Guess Premier League star No 1",
+      "detail": "Work out the identity of today's player in as few attempts as possible.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 06:00:13 GMT"
     }
   ],
   "teams": [
@@ -23942,18 +23963,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3202,
+      "eventCount": 3205,
       "manualEventCount": 3,
-      "rawNewsCount": 3199,
+      "rawNewsCount": 3202,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3202,
-      "applied": 2934,
+      "watched": 3205,
+      "applied": 2936,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3197,
+      "singleSource": 3200,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -34594,7 +34615,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-21T03:21:42.485720+00:00",
+    "generatedAt": "2026-07-21T06:13:02.147676+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
