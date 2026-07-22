@@ -45664,5 +45664,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-7d50397f3427",
+    "title": "Southampton boss Eckert charged by FA over Spygate",
+    "summary": "Southampton head coach Tonda Eckert is charged by the Football Association for his role in the Spygate scandal.",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Wed, 22 Jul 2026 10:30:54 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c93480l4ex7o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-7ea2a256c907",
+    "title": "Financial exceptions could be made for Guardiola - Italian FA",
+    "summary": "Pep Guardiola has held talks about becoming Italy head coach, Italian Football Federation president Giovanni Malago has confirmed.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Wed, 22 Jul 2026 10:12:58 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/czxqdv4818yo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-309769332c86",
+    "title": "Liverpool issue bans as £1.2m seized from ticket touts",
+    "summary": "Liverpool issue hundreds of lifetime bans after more than £1.2m of assets relating to the illegal selling of tickets was seized by police.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Wed, 22 Jul 2026 11:38:22 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c74g5pv140do?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-372a96ffc7a4",
+    "title": "Wrexham to appoint Newcastle's Nickson as sporting director",
+    "summary": "Steve Nickson is poised to leave his role as head of recruitment at Newcastle United to become sporting director of Championship club Wrexham.",
+    "source": "bbc",
+    "team": "portugal",
+    "status": "single_source",
+    "published_at": "Wed, 22 Jul 2026 11:14:06 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c62v72xyyz7o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
