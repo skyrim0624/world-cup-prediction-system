@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-21T21:41:15.796990+00:00",
+  "updatedAt": "2026-07-21T23:02:17.276033+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23343,6 +23343,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 21 Jul 2026 21:36:25 GMT"
+    },
+    {
+      "title": "Iraola wants Mac Allister & Alisson to stay with Reds",
+      "detail": "Liverpool boss Andoni Iraola wants midfielder Alexis Mac Allister and goalkeeper Alisson to remain at the club.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 22:46:06 GMT"
+    },
+    {
+      "title": "What can Hearts pick from debris of ongoing summer of hurt?",
+      "detail": "There's crashing back to Earth with a bang, and there's whatever Hearts fans have been going through since 16 May.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 21 Jul 2026 22:37:30 GMT"
     }
   ],
   "teams": [
@@ -24278,18 +24292,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3250,
+      "eventCount": 3252,
       "manualEventCount": 3,
-      "rawNewsCount": 3247,
+      "rawNewsCount": 3249,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3250,
-      "applied": 2975,
+      "watched": 3252,
+      "applied": 2976,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3245,
+      "singleSource": 3247,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -34930,7 +34944,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-21T21:41:38.366379+00:00",
+    "generatedAt": "2026-07-21T23:02:34.192940+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
