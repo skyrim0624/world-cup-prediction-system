@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-22T07:14:32.455819+00:00",
+  "updatedAt": "2026-07-22T10:01:26.281647+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23406,6 +23406,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 22 Jul 2026 07:00:09 GMT"
+    },
+    {
+      "title": "Where are Newcastle in bid to be the best by 2030?",
+      "detail": "As the fifth anniversary of Newcastle's takeover approaches, BBC Sport assesses whether the project to be \"the best\" is still on track.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 08:41:21 GMT"
+    },
+    {
+      "title": "Arsenal make sixth summer signing as Spain keeper Rodriguez joins",
+      "detail": "Arsenal bring in Spain goalkeeper Misa Rodriguez on a free transfer - the Women's Super League side's sixth signing of the summer.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 08:57:48 GMT"
+    },
+    {
+      "title": "Why will the September international break last three weeks?",
+      "detail": "BBC Sport's Ask Me Anything team explain the major changes happening to football's international breaks starting in September 2026",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 08:20:24 GMT"
+    },
+    {
+      "title": "Listen: Hearts flop in Europe, Maeda nears exit as Rangers rebuild continues",
+      "detail": "Hearts collapse in Graz, Maeda nears exit and Rangers keep rebuilding.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 07:00:00 GMT"
+    },
+    {
+      "title": "World Cup 2026 awards: the Guardian team give their final tournament verdicts",
+      "detail": "<p>The best games, goals and personal highlights – from a magical Azteca to Erling Haaland breaking America</p><p><strong>Paraguay </strong><strong>1-1 Germany.</strong> There were plenty more games with more goals but none could match the drama of the penalty shootout in this last-32 tie. Germany aren’t supposed to lose in them <a href=\"https://www.theguardian.com/football/2026/jun/30/germany-paraguay-world-cup-2026-last-32-match-report\">but they did this time</a> in spectacular fashion. <strong>Ed Aarons</strong></p> <a href=\"https://www.theguardian.com/football/2026/jul/22/world-cup-awards-guardian-team-2026-tournament-verdicts\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 09:01:34 GMT"
+    },
+    {
+      "title": "Why many Black Americans were rooting for Argentina to lose the World Cup | Etan Thomas",
+      "detail": "<p>Many Black Americans were not cheering Spain’s complicated history. They were rooting against the racism, politics and silence associated with Argentina</p><p>There are moments in sports when you realize people aren’t just watching the score any more. They’re watching values. They’re watching who speaks. They’re watching who stays silent. And they’re watching what those silences say.</p><p>I found myself thinking about that throughout this World Cup. On paper, Sunday’s final looked simple. <a href=\"https://www.theguardian.com/football/spain\">Spain</a> v <a href=\"https://www.theguardian.com/football/argentina\">Argentina</a>. Two footballing giants and countries with glorious soccer histories. Two nations whose pasts are also stained by colonization, oppression and chapters of history that shouldn’t be whitewashed simply because someone can score a goal.</p> <a href=\"https://www.theguardian.com/football/2026/jul/22/argentina-black-americans-spain-world-cup-messi-silence\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 09:00:10 GMT"
+    },
+    {
+      "title": "World Cup 2030 (very early) power rankings: who will challenge Spain at top?",
+      "detail": "<p>The next men’s World Cup is still four years away, but we take a look at the teams with the firmest foundations who should be primed to contend</p><p>The 2026 World Cup provided many an esteemed veteran with what could be their international swansongs, with golden greats Lionel Messi, Cristiano Ronaldo, Luka Modric, Neymar, James Rodríguez and Guillermo Ochoa all making teary exits as their tournament ended. As we turn ahead to the 2030 World Cup, any player 32 or older will be sweating their selection status and changing their daily routines to stay sharp against inevitable aging.</p><p>For these power rankings, we’re overvaluing sure things. Teams with plenty of leading players comfortably in their 20s can build for this impending four-year cycle with greater confidence than a team replacing an ageless talisman. Consider these the 10 teams with the firmest foundations and viable reasons to hope to reach a quarter-final in four years’ time.</p> <a href=\"https://www.theguardian.com/football/2026/jul/22/world-cup-2030-very-early-power-rankings\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 09:00:11 GMT"
     }
   ],
   "teams": [
@@ -24341,18 +24390,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3259,
+      "eventCount": 3266,
       "manualEventCount": 3,
-      "rawNewsCount": 3256,
+      "rawNewsCount": 3263,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3259,
-      "applied": 2981,
+      "watched": 3266,
+      "applied": 2988,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3254,
+      "singleSource": 3261,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -34993,7 +35042,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-22T07:14:54.355231+00:00",
+    "generatedAt": "2026-07-22T10:01:48.317904+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
