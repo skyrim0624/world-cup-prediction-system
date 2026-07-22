@@ -45860,5 +45860,33 @@
     "factor": "squad",
     "direction": -1,
     "confidence": 0.9
+  },
+  {
+    "id": "bbc-9ab6bc8451d9",
+    "title": "Ex-Man Utd midfielder Casemiro joins Inter Miami",
+    "summary": "Former Manchester United midfielder Casemiro signs for Inter Miami.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Wed, 22 Jul 2026 17:39:35 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c3304ex7n7xo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-1557d83f0234",
+    "title": "Burkina Faso, Mali and Niger launch bid for 2032 Afcon",
+    "summary": "Burkina Faso, Mali and Niger - three countries led by military governments - submit a joint bid to host the 2032 Africa Cup of Nations.",
+    "source": "bbc",
+    "team": "germany",
+    "status": "single_source",
+    "published_at": "Wed, 22 Jul 2026 16:11:23 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c0kmv61z4gko?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

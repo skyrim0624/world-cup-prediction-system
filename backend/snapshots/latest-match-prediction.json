@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-22T16:24:16.122423+00:00",
+  "updatedAt": "2026-07-22T17:50:07.025150+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23553,6 +23553,20 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Wed, 22 Jul 2026 16:13:28 GMT"
+    },
+    {
+      "title": "Ex-Man Utd midfielder Casemiro joins Inter Miami",
+      "detail": "Former Manchester United midfielder Casemiro signs for Inter Miami.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 17:39:35 GMT"
+    },
+    {
+      "title": "Burkina Faso, Mali and Niger launch bid for 2032 Afcon",
+      "detail": "Burkina Faso, Mali and Niger - three countries led by military governments - submit a joint bid to host the 2032 Africa Cup of Nations.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 16:11:23 GMT"
     }
   ],
   "teams": [
@@ -24488,18 +24502,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3280,
+      "eventCount": 3282,
       "manualEventCount": 3,
-      "rawNewsCount": 3277,
+      "rawNewsCount": 3279,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3280,
-      "applied": 2998,
+      "watched": 3282,
+      "applied": 2999,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3275,
+      "singleSource": 3277,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35140,76 +35154,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-22T16:24:38.207995+00:00",
+    "generatedAt": "2026-07-22T17:50:29.059251+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 18.8,
-        "currentChampion": 18.7,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.1%",
-        "reasons": [
-          "决赛概率下降 -0.1%",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 8.3,
-        "currentChampion": 8.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 4 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
-      "down": 1,
-      "largestUp": {
-        "team": "netherlands",
-        "name": "荷兰",
-        "code": "NED",
-        "previousChampion": 8.3,
-        "currentChampion": 8.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.6%",
-        "reasons": [
-          "八强概率上升 +0.6%",
-          "四强概率上升 +0.4%",
-          "决赛概率上升 +0.1%",
-          "可入模型事件新增 4 条"
-        ]
-      },
-      "largestDown": {
-        "team": "spain",
-        "name": "西班牙",
-        "code": "ESP",
-        "previousChampion": 18.8,
-        "currentChampion": 18.7,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "决赛概率下降 -0.1%",
-        "reasons": [
-          "决赛概率下降 -0.1%",
-          "可入模型事件新增 4 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
