@@ -45930,5 +45930,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-f2af7686b0c4",
+    "title": "Saliba to miss extended period with back injury",
+    "summary": "Arsenal confirm defender William Saliba is set to miss an \"extended period\" after suffering a back injury while at the World Cup with France.",
+    "source": "bbc",
+    "team": "france",
+    "status": "single_source",
+    "published_at": "Wed, 22 Jul 2026 20:33:58 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c5yveezg9q3o?at_medium=RSS&at_campaign=rss",
+    "category": "injury",
+    "factor": "defense",
+    "direction": -1,
+    "confidence": 0.78
+  },
+  {
+    "id": "bbc-ab36344a8329",
+    "title": "Wrexham win on Women's Champions League debut",
+    "summary": "Wrexham Women celebrate their Champions League debut with a thrilling 4-2 victory against FC Pyunik in the first qualifying round semi-final at the Racecourse.",
+    "source": "bbc",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Wed, 22 Jul 2026 20:12:12 GMT",
+    "url": "https://www.bbc.co.uk/sport/articles/c5yveexxz5do?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
