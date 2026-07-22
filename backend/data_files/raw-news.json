@@ -45888,5 +45888,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-70e7426f5cb2",
+    "title": "Villa agree loan deal for Chelsea winger Garnacho",
+    "summary": "Aston Villa agree a loan deal for Chelsea winger Alejandro Garnacho until the end of the 2026-27 season, with an obligation to buy.",
+    "source": "bbc",
+    "team": "germany",
+    "status": "single_source",
+    "published_at": "Wed, 22 Jul 2026 18:58:52 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cly9nrel0pyo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-af3348b873f9",
+    "title": "FAW charges TNS chairman Harris over social media post",
+    "summary": "The owner of the Welsh champions is accused of publishing offensive, insulting and derogatory content online.",
+    "source": "bbc",
+    "team": "haiti",
+    "status": "single_source",
+    "published_at": "Wed, 22 Jul 2026 17:10:28 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c5yrdxrqw04o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-c7573814dd93",
+    "title": "A host of issues: World Cup focus turns to Morocco with costs and legacy topping agenda",
+    "summary": "<p>With just over 1,400 days to go until 2030 kicks off, the co-hosts are facing a series of challenges familiar to their South African predecessors</p><p>Morocco’s World Cup adventure came to a halt with <a href=\"https://www.theguardian.com/football/2026/jul/09/morocco-france-world-cup-quarter-final-match-report\">their quarter-final defeat by France</a>. But taking a break, even for a brief post-season summer, is no option for officials of the FRMF, the country’s football federation.</p><p>The Women’s Africa Cup of Nations (Wafcon), in its newly expanded 16-team format, begins in Rabat on Sunday, a week after the World Cup final in New Jersey, and Morocco then hosts the Under-17 Women’s World Cup in the autumn.</p> <a href=\"https://www.theguardian.com/football/2026/jul/22/host-morocco-2030-world-cup-costs-infrastructure-legacy\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "south-africa",
+    "status": "single_source",
+    "published_at": "Wed, 22 Jul 2026 18:00:21 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/22/host-morocco-2030-world-cup-costs-infrastructure-legacy",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
