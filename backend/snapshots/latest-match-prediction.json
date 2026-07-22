@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-22T04:24:13.770422+00:00",
+  "updatedAt": "2026-07-22T07:14:32.455819+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23357,6 +23357,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 21 Jul 2026 22:37:30 GMT"
+    },
+    {
+      "title": "Why Chelsea have signed so many Man City academy graduates",
+      "detail": "Morgan Rogers is the latest ex-Man City academy player to join Chelsea and will be reunited with more former City team-mates.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 06:13:29 GMT"
+    },
+    {
+      "title": "Who am I? Guess Premier League star No 2",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 05:56:20 GMT"
+    },
+    {
+      "title": "Football Daily",
+      "detail": "Fergie, chocolate and Beckham... which one is true?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 06:00:00 GMT"
+    },
+    {
+      "title": "Newcastle closing in on Liverpool forward Kiernan",
+      "detail": "Newcastle United are in advanced talks to sign Republic of Ireland forward Leanne Kiernan from Liverpool.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 06:47:34 GMT"
+    },
+    {
+      "title": "'Baur agrees terms for £4m sale to Celtic' - gossip",
+      "detail": "Celtic are reportedly poised to Paderborn's Mika Baur while agreeing a transfer to Ipswich Town for Daizen Maeda as Vanja Dragojević's switch to Rangers appears to be unofficially confirmed.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 06:41:54 GMT"
+    },
+    {
+      "title": "World Cup, Ballon d’Or, Champions League, Euros … has Rodri completed football? | The Knowledge",
+      "detail": "<p>Plus: the most World Cup assists, Ballon d’Or winners with fewest caps and what happens to World Cup balls?</p><ul><li><p><a href=\"mailto:knowledge@theguardian.com\"><strong>Mail us</strong></a><strong> with your all of your questions and answers</strong></p></li></ul><p><strong>“Adding <a href=\"https://www.theguardian.com/football/2026/jul/20/rodris-redemption-story-leaves-world-cup-stars-in-the-shadow-of-spains-great-controller\">the World Cup to his résumé</a> means Rodri has now won the World Cup, the European Championship, the Champions League, and the Ballon d’Or,” </strong>writes Owen Bagnall.<strong> “Has anyone else ‘completed football’ like this?”</strong></p><p>They have but it’s a small, elite list.</p> <a href=\"https://www.theguardian.com/football/2026/jul/22/world-cup-champions-league-ballon-dor-euros-has-rodri-completed-football\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 07:00:08 GMT"
+    },
+    {
+      "title": "The quirky side of World Cup 2026 – in pictures",
+      "detail": "<p>As we say goodbye and adios to World Cup 2026, we round up some of the stranger photographs taken during the tournament, featuring animals, cake … and a dancing robot</p> <a href=\"https://www.theguardian.com/football/gallery/2026/jul/22/the-quirky-side-of-world-cup-2026-in-pictures\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 07:00:09 GMT"
     }
   ],
   "teams": [
@@ -24292,18 +24341,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3252,
+      "eventCount": 3259,
       "manualEventCount": 3,
-      "rawNewsCount": 3249,
+      "rawNewsCount": 3256,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3252,
-      "applied": 2976,
+      "watched": 3259,
+      "applied": 2981,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3247,
+      "singleSource": 3254,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -34944,7 +34993,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-22T04:24:35.698691+00:00",
+    "generatedAt": "2026-07-22T07:14:54.355231+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
