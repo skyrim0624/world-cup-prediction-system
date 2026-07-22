@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-22T10:01:26.281647+00:00",
+  "updatedAt": "2026-07-22T12:12:50.544357+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23455,6 +23455,34 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 22 Jul 2026 09:00:11 GMT"
+    },
+    {
+      "title": "Southampton boss Eckert charged by FA over Spygate",
+      "detail": "Southampton head coach Tonda Eckert is charged by the Football Association for his role in the Spygate scandal.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 10:30:54 GMT"
+    },
+    {
+      "title": "Financial exceptions could be made for Guardiola - Italian FA",
+      "detail": "Pep Guardiola has held talks about becoming Italy head coach, Italian Football Federation president Giovanni Malago has confirmed.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 10:12:58 GMT"
+    },
+    {
+      "title": "Liverpool issue bans as £1.2m seized from ticket touts",
+      "detail": "Liverpool issue hundreds of lifetime bans after more than £1.2m of assets relating to the illegal selling of tickets was seized by police.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 11:38:22 GMT"
+    },
+    {
+      "title": "Wrexham to appoint Newcastle's Nickson as sporting director",
+      "detail": "Steve Nickson is poised to leave his role as head of recruitment at Newcastle United to become sporting director of Championship club Wrexham.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 22 Jul 2026 11:14:06 GMT"
     }
   ],
   "teams": [
@@ -24390,18 +24418,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3266,
+      "eventCount": 3270,
       "manualEventCount": 3,
-      "rawNewsCount": 3263,
+      "rawNewsCount": 3267,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3266,
-      "applied": 2988,
+      "watched": 3270,
+      "applied": 2990,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3261,
+      "singleSource": 3265,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35042,7 +35070,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-22T10:01:48.317904+00:00",
+    "generatedAt": "2026-07-22T12:13:12.511751+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
