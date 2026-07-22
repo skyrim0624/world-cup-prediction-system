@@ -45958,5 +45958,19 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-27258ecfab23",
+    "title": "Liverpool confident of signing Barcola - Thursday's gossip",
+    "summary": "Alex Scott favours a move to Arsenal, Bruno Fernandes is ready to commit his future to Manchester United, Liverpool are confident they will sign Bradley Barcola, plus more.",
+    "source": "bbc",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Wed, 22 Jul 2026 22:22:25 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c78gx10d9n4o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
