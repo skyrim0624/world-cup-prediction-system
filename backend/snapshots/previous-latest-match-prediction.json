@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-23T09:28:33.568052+00:00",
+  "updatedAt": "2026-07-23T11:27:27.700950+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23651,6 +23651,13 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Thu, 23 Jul 2026 07:00:37 GMT"
+    },
+    {
+      "title": "Newcastle agree £34m deal for Monaco's Bamba",
+      "detail": "Midfielder Aladji Bamba is due to arrive on Thursday for a medical and to sign a long-term contract.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 11:17:26 GMT"
     }
   ],
   "teams": [
@@ -24586,18 +24593,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3294,
+      "eventCount": 3295,
       "manualEventCount": 3,
-      "rawNewsCount": 3291,
+      "rawNewsCount": 3292,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3294,
+      "watched": 3295,
       "applied": 3010,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3289,
+      "singleSource": 3290,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35238,7 +35245,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-23T09:28:55.265180+00:00",
+    "generatedAt": "2026-07-23T11:27:49.962294+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
