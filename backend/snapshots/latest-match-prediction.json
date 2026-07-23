@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-23T06:35:49.672792+00:00",
+  "updatedAt": "2026-07-23T09:28:33.568052+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23623,6 +23623,34 @@
       "impact": "全局备注",
       "tone": "green",
       "time": "Thu, 23 Jul 2026 05:46:44 GMT"
+    },
+    {
+      "title": "Ruiz & Gavi's reward for World Cup win... 150kg of tomatoes",
+      "detail": "Spain's Fabian Ruiz and Gavi receive their body weight in tomatoes when they return to their hometown Los Palacios y Villafranca.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 07:54:03 GMT"
+    },
+    {
+      "title": "Listen: Will Hibs & Well deliver in Europe? Is McInnes ban fair?",
+      "detail": "Hibs and Motherwell begin their European campaigns. Can both progress?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 07:00:00 GMT"
+    },
+    {
+      "title": "'Rangers lead chase for Sturm's Fosso' - gossip",
+      "detail": "Rangers are reportedly leading the chase to sign Ryan Fosso from Sturm Graz, while Dundee United's Will Ferry is linked with Celtic and Aberdeen are said to want Hibernian's Chris Cadden.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 07:09:23 GMT"
+    },
+    {
+      "title": "‘A surprising success’: US, Mexico and Canada fans on hosting the World Cup",
+      "detail": "<p>The joy, love, hope and fun provided by fans outweighed the commercialism, extortionate prices and ugly politics</p><p>This summer has been so vibrant and full of life. I had my doubts but, as the World Cup approached and Boston got ready to host its first game, I started feeling the excitement and enthusiasm in the air. That mainly had to do with the huge numbers of Scottish fans who arrived for their match against Haiti. They were a delight, what with their shenanigans of putting cones everywhere, walking around in kilts and carrying bagpipes, jamming with the other buskers on the streets. They were such a fun bunch. I found myself getting hooked. Seeing people from so many different countries, kitted out in their jerseys, gave you the feeling that something was happening. Friends and colleagues who don’t follow the sport were as excited as me. I attended three games and my only complaint is the extremely expensive ticket prices. The fans who came only had wonderful things to say about American hospitality – but everyone agreed that the political situation in the country is terrible. It was heartening that the visiting fans were able to separate the administration from the people living here. <strong>Moon, Boston</strong></p> <a href=\"https://www.theguardian.com/football/2026/jul/23/surprising-success-us-mexico-canada-fans-hosting-world-cup-joy-love-hope-fun-prices-politics\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 23 Jul 2026 07:00:37 GMT"
     }
   ],
   "teams": [
@@ -24558,18 +24586,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3290,
+      "eventCount": 3294,
       "manualEventCount": 3,
-      "rawNewsCount": 3287,
+      "rawNewsCount": 3291,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3290,
-      "applied": 3006,
+      "watched": 3294,
+      "applied": 3010,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3285,
+      "singleSource": 3289,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -24586,7 +24614,7 @@
         "defense": -16.630000000000003,
         "goalkeeper": 0.0,
         "path": -11.39,
-        "squad": -35.04999999999999
+        "squad": -37.19999999999999
       },
       "south-africa": {
         "attack": -12.75,
@@ -35210,7 +35238,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-23T06:36:11.466279+00:00",
+    "generatedAt": "2026-07-23T09:28:55.265180+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

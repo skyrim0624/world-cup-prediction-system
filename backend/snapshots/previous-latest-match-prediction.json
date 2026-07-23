@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-23T03:55:51.682101+00:00",
+  "updatedAt": "2026-07-23T06:35:49.672792+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23609,6 +23609,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 22 Jul 2026 22:22:25 GMT"
+    },
+    {
+      "title": "One month, two record transfers - why English midfielders are in demand",
+      "detail": "Elliot Anderson and Morgan Rogers both sold for record transfer fees, so why are English midfielders so in demand?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 05:15:52 GMT"
+    },
+    {
+      "title": "Who am I? Guess Premier League star No 3",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 05:46:44 GMT"
     }
   ],
   "teams": [
@@ -24544,18 +24558,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3288,
+      "eventCount": 3290,
       "manualEventCount": 3,
-      "rawNewsCount": 3285,
+      "rawNewsCount": 3287,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3288,
-      "applied": 3005,
+      "watched": 3290,
+      "applied": 3006,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3283,
+      "singleSource": 3285,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35196,7 +35210,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-23T03:56:09.160552+00:00",
+    "generatedAt": "2026-07-23T06:36:11.466279+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

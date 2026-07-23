@@ -46000,5 +46000,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-55181387439c",
+    "title": "Ruiz & Gavi's reward for World Cup win... 150kg of tomatoes",
+    "summary": "Spain's Fabian Ruiz and Gavi receive their body weight in tomatoes when they return to their hometown Los Palacios y Villafranca.",
+    "source": "bbc",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Thu, 23 Jul 2026 07:54:03 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cvg840jye74o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-cfa448d7b9a8",
+    "title": "Listen: Will Hibs & Well deliver in Europe? Is McInnes ban fair?",
+    "summary": "Hibs and Motherwell begin their European campaigns. Can both progress?",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Thu, 23 Jul 2026 07:00:00 GMT",
+    "url": "https://www.bbc.co.uk/sounds/play/p0p0c9v1?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-eb4adfacf65b",
+    "title": "'Rangers lead chase for Sturm's Fosso' - gossip",
+    "summary": "Rangers are reportedly leading the chase to sign Ryan Fosso from Sturm Graz, while Dundee United's Will Ferry is linked with Celtic and Aberdeen are said to want Hibernian's Chris Cadden.",
+    "source": "bbc",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Thu, 23 Jul 2026 07:09:23 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c07rk8g00y8o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "guardian-cd3b7c6a600b",
+    "title": "‘A surprising success’: US, Mexico and Canada fans on hosting the World Cup",
+    "summary": "<p>The joy, love, hope and fun provided by fans outweighed the commercialism, extortionate prices and ugly politics</p><p>This summer has been so vibrant and full of life. I had my doubts but, as the World Cup approached and Boston got ready to host its first game, I started feeling the excitement and enthusiasm in the air. That mainly had to do with the huge numbers of Scottish fans who arrived for their match against Haiti. They were a delight, what with their shenanigans of putting cones everywhere, walking around in kilts and carrying bagpipes, jamming with the other buskers on the streets. They were such a fun bunch. I found myself getting hooked. Seeing people from so many different countries, kitted out in their jerseys, gave you the feeling that something was happening. Friends and colleagues who don’t follow the sport were as excited as me. I attended three games and my only complaint is the extremely expensive ticket prices. The fans who came only had wonderful things to say about American hospitality – but everyone agreed that the political situation in the country is terrible. It was heartening that the visiting fans were able to separate the administration from the people living here. <strong>Moon, Boston</strong></p> <a href=\"https://www.theguardian.com/football/2026/jul/23/surprising-success-us-mexico-canada-fans-hosting-world-cup-joy-love-hope-fun-prices-politics\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "mexico",
+    "status": "single_source",
+    "published_at": "Thu, 23 Jul 2026 07:00:37 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/23/surprising-success-us-mexico-canada-fans-hosting-world-cup-joy-love-hope-fun-prices-politics",
+    "category": "injury",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.78
   }
 ]
