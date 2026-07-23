@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-23T15:33:08.818107+00:00",
+  "updatedAt": "2026-07-23T17:36:20.694479+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23763,6 +23763,41 @@
       "impact": "可入模型",
       "tone": "orange",
       "time": "Thu, 23 Jul 2026 13:40:39 GMT"
+    },
+    {
+      "title": "Arsenal set to make £70m bid for Newcastle's Guimaraes",
+      "detail": "Arsenal are set to make a £70m offer for Newcastle captain Bruno Guimaraes.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 16:56:18 GMT"
+    },
+    {
+      "title": "Newcastle and Liverpool planning Keegan tribute at season opener",
+      "detail": "Newcastle United and Liverpool are in discussions over a tribute to Kevin Keegan before their Premier League opener at St James' Park on Sunday 23rd August.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 15:37:52 GMT"
+    },
+    {
+      "title": "Anderson gets Man City move he craved as £116m deal done",
+      "detail": "Manchester City confirm the arrival of Elliot Anderson on a five-year deal, as the England player is tipped to become a \"complete midfielder\" at his new club.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 16:01:00 GMT"
+    },
+    {
+      "title": "Rangers sign 'huge potential' in Partizan captain Dragojevic",
+      "detail": "Rangers sign 20-year-old Serbia midfielder Vanja Dragojevic from Partizan for an undisclosed fee.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 16:13:39 GMT"
+    },
+    {
+      "title": "'Motherhood should not be the end of anyone's story'",
+      "detail": "After returning to football after giving birth, Nigeria's Ngozi Okobi-Okeoghene says social media users makes players \"feel bad\" about getting married and having children.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 17:01:46 GMT"
     }
   ],
   "teams": [
@@ -24698,18 +24733,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3310,
+      "eventCount": 3315,
       "manualEventCount": 3,
-      "rawNewsCount": 3307,
+      "rawNewsCount": 3312,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3310,
-      "applied": 3022,
+      "watched": 3315,
+      "applied": 3027,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3305,
+      "singleSource": 3310,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35350,89 +35385,17 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-23T15:33:30.575112+00:00",
+    "generatedAt": "2026-07-23T17:36:42.605613+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [
-      {
-        "team": "ecuador",
-        "name": "厄瓜多尔",
-        "code": "ECU",
-        "previousChampion": 1.7,
-        "currentChampion": 1.6,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 6 条",
-        "reasons": [
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 1.3,
-        "currentChampion": 1.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.2%",
-        "reasons": [
-          "八强概率上升 +0.2%",
-          "四强概率上升 +0.1%",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      {
-        "team": "norway",
-        "name": "挪威",
-        "code": "NOR",
-        "previousChampion": 0.9,
-        "currentChampion": 0.8,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "人员盘下调 -2.5",
-        "reasons": [
-          "人员盘下调 -2.5",
-          "八强概率下降 -0.9%",
-          "四强概率下降 -0.5%",
-          "决赛概率下降 -0.2%",
-          "可入模型事件新增 6 条"
-        ]
-      }
-    ],
+    "items": [],
     "summary": {
-      "up": 1,
-      "down": 2,
-      "largestUp": {
-        "team": "brazil",
-        "name": "巴西",
-        "code": "BRA",
-        "previousChampion": 1.3,
-        "currentChampion": 1.4,
-        "change": 0.1,
-        "direction": "up",
-        "reason": "八强概率上升 +0.2%",
-        "reasons": [
-          "八强概率上升 +0.2%",
-          "四强概率上升 +0.1%",
-          "可入模型事件新增 6 条"
-        ]
-      },
-      "largestDown": {
-        "team": "ecuador",
-        "name": "厄瓜多尔",
-        "code": "ECU",
-        "previousChampion": 1.7,
-        "currentChampion": 1.6,
-        "change": -0.1,
-        "direction": "down",
-        "reason": "可入模型事件新增 6 条",
-        "reasons": [
-          "可入模型事件新增 6 条"
-        ]
-      }
+      "up": 0,
+      "down": 0,
+      "largestUp": null,
+      "largestDown": null
     }
   }
 }
