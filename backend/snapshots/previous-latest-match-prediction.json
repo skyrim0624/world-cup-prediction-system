@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-23T20:38:19.965539+00:00",
+  "updatedAt": "2026-07-23T22:09:05.883370+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23819,6 +23819,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 23 Jul 2026 19:12:57 GMT"
+    },
+    {
+      "title": "Defoe leaves Woking after 'eye-opening' first managerial role",
+      "detail": "Former England and Tottenham striker Jermain Defoe has described his first managerial job as an \"eye-opening experience\" following his departure from National League side Woking after just four months and nine matches in charge.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 21:02:11 GMT"
+    },
+    {
+      "title": "Man Utd handed Tchouameni boost - Friday's gossip",
+      "detail": "Real Madrid open to selling Aurelien Tchouameni to Manchester United, Arsenal eye John Stones and Ezri Konsa, Chelsea favourites for Kerim Alajbegovic, Yan Diomande back on radar of Premier League clubs and Daizen Maeda set for Ipswich Town move.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 21:50:22 GMT"
     }
   ],
   "teams": [
@@ -24456,7 +24470,7 @@
       "factors": {
         "strength": 81,
         "form": 78,
-        "path": 69,
+        "path": 70,
         "squad": 73,
         "margin": 80
       },
@@ -24754,18 +24768,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3318,
+      "eventCount": 3320,
       "manualEventCount": 3,
-      "rawNewsCount": 3315,
+      "rawNewsCount": 3317,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3318,
-      "applied": 3030,
+      "watched": 3320,
+      "applied": 3032,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3313,
+      "singleSource": 3315,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -25012,7 +25026,7 @@
         "attack": -4.699999999999999,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 0.0,
+        "path": 0.87,
         "squad": -5.6
       },
       "iraq": {
@@ -35406,7 +35420,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-23T20:38:41.841256+00:00",
+    "generatedAt": "2026-07-23T22:09:22.785497+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
