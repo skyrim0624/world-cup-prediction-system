@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-23T11:27:27.700950+00:00",
+  "updatedAt": "2026-07-23T13:06:42.637115+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23658,6 +23658,55 @@
       "impact": "全局备注",
       "tone": "green",
       "time": "Thu, 23 Jul 2026 11:17:26 GMT"
+    },
+    {
+      "title": "Leeds in talks to sign Man City keeper Trafford",
+      "detail": "Leeds United are in discussions with Manchester City to sign goalkeeper James Trafford.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 11:56:17 GMT"
+    },
+    {
+      "title": "Hull City owner 'disturbed' by transfer claims",
+      "detail": "Hull City owner Acun Ilicali says he is \"disturbed\" by claims of the club being rejected by transfer targets and, in an unusual move, attempted to clarify the situation.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 12:15:10 GMT"
+    },
+    {
+      "title": "Can Emery work his magic again at Villa?",
+      "detail": "Aston Villa are back in the Champions League but must now cope with the loss of key players Morgan Rogers and Youri Tielemans.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 12:35:35 GMT"
+    },
+    {
+      "title": "Norway consider complaint over Balogun World Cup ban suspension",
+      "detail": "The Norwegian Football Federation is considering filing a formal complaint to Fifa's ethics committee.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Thu, 23 Jul 2026 12:43:30 GMT"
+    },
+    {
+      "title": "England U16 player fight was resolved quickly - FA",
+      "detail": "The FA says a fight between two players at an England Under-16s camp was caused by an \"internal matter\".",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 12:32:22 GMT"
+    },
+    {
+      "title": "Iraola in talks with clubs before Liverpool move",
+      "detail": "New Liverpool manager Andoni Iraola says he was in talks with other clubs before the Reds swooped - then \"things moved quite fast\" to take him to Anfield.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 12:44:30 GMT"
+    },
+    {
+      "title": "Pandur joined Rangers after Hull planned new number one",
+      "detail": "New Rangers goalkeeper Ivor Pandur says he passed up the chance to be part of Hull City's return to the Premier League after being told they planned to sign a new number one this summer.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 11:37:26 GMT"
     }
   ],
   "teams": [
@@ -23826,9 +23875,9 @@
       },
       "tournament": {
         "champion": 1.3,
-        "final": 3.9,
-        "semifinal": 10.3,
-        "quarterfinal": 24.4,
+        "final": 4.0,
+        "semifinal": 10.5,
+        "quarterfinal": 24.8,
         "change": -9.5
       }
     },
@@ -24017,8 +24066,8 @@
       "tournament": {
         "champion": 0.4,
         "final": 1.5,
-        "semifinal": 5.2,
-        "quarterfinal": 15.8,
+        "semifinal": 5.4,
+        "quarterfinal": 16.4,
         "change": 0.0
       }
     },
@@ -24034,11 +24083,11 @@
         "margin": 80
       },
       "tournament": {
-        "champion": 1.6,
+        "champion": 1.7,
         "final": 5.1,
-        "semifinal": 13.8,
+        "semifinal": 13.9,
         "quarterfinal": 27.4,
-        "change": 1.0
+        "change": 1.1
       }
     },
     {
@@ -24073,9 +24122,9 @@
       },
       "tournament": {
         "champion": 2.6,
-        "final": 6.9,
-        "semifinal": 16.3,
-        "quarterfinal": 34.1,
+        "final": 7.0,
+        "semifinal": 16.6,
+        "quarterfinal": 34.7,
         "change": 1.5
       }
     },
@@ -24334,15 +24383,15 @@
         "strength": 79,
         "form": 80,
         "path": 69,
-        "squad": 79,
+        "squad": 76,
         "margin": 76
       },
       "tournament": {
-        "champion": 1.1,
-        "final": 3.6,
-        "semifinal": 10.4,
-        "quarterfinal": 25.7,
-        "change": 0.2
+        "champion": 0.9,
+        "final": 3.2,
+        "semifinal": 9.4,
+        "quarterfinal": 24.2,
+        "change": 0.0
       }
     },
     {
@@ -24357,11 +24406,11 @@
         "margin": 84
       },
       "tournament": {
-        "champion": 22.4,
+        "champion": 22.5,
         "final": 39.0,
         "semifinal": 57.0,
         "quarterfinal": 76.3,
-        "change": 7.2
+        "change": 7.3
       }
     },
     {
@@ -24511,7 +24560,7 @@
       "tournament": {
         "champion": 10.3,
         "final": 21.3,
-        "semifinal": 40.0,
+        "semifinal": 40.2,
         "quarterfinal": 59.5,
         "change": -0.4
       }
@@ -24593,18 +24642,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3295,
+      "eventCount": 3302,
       "manualEventCount": 3,
-      "rawNewsCount": 3292,
+      "rawNewsCount": 3299,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3295,
-      "applied": 3010,
+      "watched": 3302,
+      "applied": 3016,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3290,
+      "singleSource": 3297,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -24866,7 +24915,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": 0.87,
-        "squad": 0.0
+        "squad": -2.55
       },
       "argentina": {
         "attack": 0.0,
@@ -35245,17 +35294,90 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-23T11:27:49.962294+00:00",
+    "generatedAt": "2026-07-23T13:06:55.752317+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
     "baseline": "previous_snapshot",
-    "items": [],
+    "items": [
+      {
+        "team": "norway",
+        "name": "挪威",
+        "code": "NOR",
+        "previousChampion": 1.1,
+        "currentChampion": 0.9,
+        "change": -0.2,
+        "direction": "down",
+        "reason": "人员盘下调 -2.5",
+        "reasons": [
+          "人员盘下调 -2.5",
+          "八强概率下降 -1.5%",
+          "四强概率下降 -1.0%",
+          "决赛概率下降 -0.4%",
+          "可入模型事件新增 6 条"
+        ]
+      },
+      {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 22.4,
+        "currentChampion": 22.5,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 6 条",
+        "reasons": [
+          "可入模型事件新增 6 条"
+        ]
+      },
+      {
+        "team": "ecuador",
+        "name": "厄瓜多尔",
+        "code": "ECU",
+        "previousChampion": 1.6,
+        "currentChampion": 1.7,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "四强概率上升 +0.1%",
+        "reasons": [
+          "四强概率上升 +0.1%",
+          "可入模型事件新增 6 条"
+        ]
+      }
+    ],
     "summary": {
-      "up": 0,
-      "down": 0,
-      "largestUp": null,
-      "largestDown": null
+      "up": 2,
+      "down": 1,
+      "largestUp": {
+        "team": "argentina",
+        "name": "阿根廷",
+        "code": "ARG",
+        "previousChampion": 22.4,
+        "currentChampion": 22.5,
+        "change": 0.1,
+        "direction": "up",
+        "reason": "可入模型事件新增 6 条",
+        "reasons": [
+          "可入模型事件新增 6 条"
+        ]
+      },
+      "largestDown": {
+        "team": "norway",
+        "name": "挪威",
+        "code": "NOR",
+        "previousChampion": 1.1,
+        "currentChampion": 0.9,
+        "change": -0.2,
+        "direction": "down",
+        "reason": "人员盘下调 -2.5",
+        "reasons": [
+          "人员盘下调 -2.5",
+          "八强概率下降 -1.5%",
+          "四强概率下降 -1.0%",
+          "决赛概率下降 -0.4%",
+          "可入模型事件新增 6 条"
+        ]
+      }
     }
   }
 }
