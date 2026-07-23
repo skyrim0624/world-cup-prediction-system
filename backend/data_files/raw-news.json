@@ -46392,5 +46392,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-d3c501ea5321",
+    "title": "Defoe leaves Woking after 'eye-opening' first managerial role",
+    "summary": "Former England and Tottenham striker Jermain Defoe has described his first managerial job as an \"eye-opening experience\" following his departure from National League side Woking after just four months and nine matches in charge.",
+    "source": "bbc",
+    "team": "paraguay",
+    "status": "single_source",
+    "published_at": "Thu, 23 Jul 2026 21:02:11 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c304d47ql6jo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-017d59023043",
+    "title": "Man Utd handed Tchouameni boost - Friday's gossip",
+    "summary": "Real Madrid open to selling Aurelien Tchouameni to Manchester United, Arsenal eye John Stones and Ezri Konsa, Chelsea favourites for Kerim Alajbegovic, Yan Diomande back on radar of Premier League clubs and Daizen Maeda set for Ipswich Town move.",
+    "source": "bbc",
+    "team": "senegal",
+    "status": "single_source",
+    "published_at": "Thu, 23 Jul 2026 21:50:22 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cedjnz7wxy6o?at_medium=RSS&at_campaign=rss",
+    "category": "market_proxy",
+    "factor": "path",
+    "direction": 1,
+    "confidence": 0.52
   }
 ]
