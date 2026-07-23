@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-23T17:36:20.694479+00:00",
+  "updatedAt": "2026-07-23T19:27:08.874420+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23798,6 +23798,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 23 Jul 2026 17:01:46 GMT"
+    },
+    {
+      "title": "Modric, 40, signs new AC Milan deal",
+      "detail": "AC Milan midfielder Luka Modric - who turns 41 in September - signs a one-year contract extension at the club.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 17:48:56 GMT"
+    },
+    {
+      "title": "Italy confirm Ancelotti approach before Guardiola",
+      "detail": "Italy held discussions with Carlo Ancelotti to become their national team manager before opening talks with Pep Guardiola.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 18:57:04 GMT"
+    },
+    {
+      "title": "Can Hibs recover from calamity in Kosovo?",
+      "detail": "Hibernian’s hopes of reaching the Conference League are in jeopardy after a shock 2-0 defeat by Malisheva, with head coach David Gray saying his team \"were way below the levels required\".",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Thu, 23 Jul 2026 19:12:57 GMT"
     }
   ],
   "teams": [
@@ -24733,18 +24754,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3315,
+      "eventCount": 3318,
       "manualEventCount": 3,
-      "rawNewsCount": 3312,
+      "rawNewsCount": 3315,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3315,
-      "applied": 3027,
+      "watched": 3318,
+      "applied": 3030,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3310,
+      "singleSource": 3313,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35385,7 +35406,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-23T17:36:42.605613+00:00",
+    "generatedAt": "2026-07-23T19:27:30.877185+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
