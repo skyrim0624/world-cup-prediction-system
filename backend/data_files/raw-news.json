@@ -46056,5 +46056,19 @@
     "factor": "squad",
     "direction": -1,
     "confidence": 0.78
+  },
+  {
+    "id": "bbc-8f18a9777b18",
+    "title": "Newcastle agree £34m deal for Monaco's Bamba",
+    "summary": "Midfielder Aladji Bamba is due to arrive on Thursday for a medical and to sign a long-term contract.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Thu, 23 Jul 2026 11:17:26 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cr593z81lqno?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
