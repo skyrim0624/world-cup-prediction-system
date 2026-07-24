@@ -46714,5 +46714,47 @@
     "factor": "path",
     "direction": 1,
     "confidence": 0.52
+  },
+  {
+    "id": "bbc-e4263be02e14",
+    "title": "Are Celtic fans right to be nervous now?",
+    "summary": "Former Celtic striker Cillian Sheridan suggests the Scottish champions are making the same mistakes as last season, so we look at how their preparations are going.",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Fri, 24 Jul 2026 13:50:09 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cy74xkxzy86o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-54ca6827df94",
+    "title": "Van Bommel appointed Belgium head coach",
+    "summary": "Belgium appoint former Netherlands captain Mark van Bommel as their new head coach on a contract running through Euro 2028.",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Fri, 24 Jul 2026 13:26:45 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/czjle30y29xo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-d85df6b9ae2c",
+    "title": "Former Brighton keeper Baggaley joins Birmingham",
+    "summary": "Newly-promoted Birmingham City sign goalkeeper Sophie Baggaley as a free agent after she leaves Brighton.",
+    "source": "bbc",
+    "team": "ghana",
+    "status": "single_source",
+    "published_at": "Fri, 24 Jul 2026 14:00:11 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/ceqej9rnngro?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "goalkeeper",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
