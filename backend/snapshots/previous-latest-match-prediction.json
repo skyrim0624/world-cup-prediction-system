@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-24T12:03:30.685671+00:00",
+  "updatedAt": "2026-07-24T14:21:41.057398+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23980,6 +23980,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 24 Jul 2026 10:10:30 GMT"
+    },
+    {
+      "title": "Are Celtic fans right to be nervous now?",
+      "detail": "Former Celtic striker Cillian Sheridan suggests the Scottish champions are making the same mistakes as last season, so we look at how their preparations are going.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 13:50:09 GMT"
+    },
+    {
+      "title": "Van Bommel appointed Belgium head coach",
+      "detail": "Belgium appoint former Netherlands captain Mark van Bommel as their new head coach on a contract running through Euro 2028.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 13:26:45 GMT"
+    },
+    {
+      "title": "Former Brighton keeper Baggaley joins Birmingham",
+      "detail": "Newly-promoted Birmingham City sign goalkeeper Sophie Baggaley as a free agent after she leaves Brighton.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 14:00:11 GMT"
     }
   ],
   "teams": [
@@ -24915,18 +24936,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3341,
+      "eventCount": 3344,
       "manualEventCount": 3,
-      "rawNewsCount": 3338,
+      "rawNewsCount": 3341,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3341,
-      "applied": 3049,
+      "watched": 3344,
+      "applied": 3052,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3336,
+      "singleSource": 3339,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35567,7 +35588,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-24T12:03:53.050370+00:00",
+    "generatedAt": "2026-07-24T14:22:01.354982+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

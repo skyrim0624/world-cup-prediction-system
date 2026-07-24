@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-24T14:21:41.057398+00:00",
+  "updatedAt": "2026-07-24T15:56:58.621432+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24001,6 +24001,41 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 24 Jul 2026 14:00:11 GMT"
+    },
+    {
+      "title": "Rodri to have back surgery but Maresca brushes off transfer speculation",
+      "detail": "World Cup winner Rodri is to have back surgery, says new Manchester City boss Enzo Maresca.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 14:24:53 GMT"
+    },
+    {
+      "title": "Senegal appeal date set after Afcon win overturned",
+      "detail": "The Court of Arbitration for Sport sets a date for a hearing over Senegal's appeal against being stripped of the 2025 Africa Cup of Nations title.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 15:14:21 GMT"
+    },
+    {
+      "title": "Scottish sides in Europe postpone league matches",
+      "detail": "All five Scottish teams in European competitions have opted to postpone their Premiership matches scheduled for Saturday, 22 August.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 15:31:09 GMT"
+    },
+    {
+      "title": "Hearts sign Mendy for potential Forest Green record fee",
+      "detail": "Forest Green Rovers sell midfielder Laurent Mendy to Heart of Midlothian for what the National League outfit say could be a club record fee of nearly £1m \"if all targets are met\".",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 15:33:06 GMT"
+    },
+    {
+      "title": "Feeling lost without the World Cup? Six ways to survive the weekend",
+      "detail": "<p>What to watch on TV plus other ways to occupy your time now that the party is over</p><p>The 2026 World Cup is over, and the millions of people who enjoyed it now find themselves presented with a yawning chasm this weekend. In the UK alone, ITV and the BBC broadcast approximately 275 hours of live coverage over the duration of the tournament, and something that colossal will be hard to replace.</p><p>But fear not. Just because the football is over, we are still brimming with things similarly designed to take our minds off the screaming hellpit that is the world around us. Here’s a guide, hope it helps.</p> <a href=\"https://www.theguardian.com/football/2026/jul/24/feeling-lost-without-the-world-cup-six-ways-to-survive-the-weekend\">Continue reading...</a>",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 14:36:08 GMT"
     }
   ],
   "teams": [
@@ -24936,18 +24971,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3344,
+      "eventCount": 3349,
       "manualEventCount": 3,
-      "rawNewsCount": 3341,
+      "rawNewsCount": 3346,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3344,
-      "applied": 3052,
+      "watched": 3349,
+      "applied": 3057,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3339,
+      "singleSource": 3344,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35588,7 +35623,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-24T14:22:01.354982+00:00",
+    "generatedAt": "2026-07-24T15:57:21.259316+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
