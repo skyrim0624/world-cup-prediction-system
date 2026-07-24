@@ -10,7 +10,7 @@
   "homeWin": 83,
   "draw": 11,
   "awayWin": 6,
-  "updatedAt": "2026-07-24T04:50:57.559813+00:00",
+  "updatedAt": "2026-07-24T07:36:03.332265+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -23833,6 +23833,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Thu, 23 Jul 2026 21:50:22 GMT"
+    },
+    {
+      "title": "Why Rogers and Palmer will thrive together in Alonso's Chelsea",
+      "detail": "Why Morgan Rogers' skillset means he and fellow attacking midfielder Cole Palmer will prosper in Xabi Alonso's Chelsea.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 05:28:55 GMT"
+    },
+    {
+      "title": "Socceroos star allegedly tests positive for cocaine after speeding",
+      "detail": "Socceroos World Cup star Cristian Volpato allegedly tests positive for cocaine after being twice caught for speeding in Sydney.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 06:24:26 GMT"
+    },
+    {
+      "title": "What's working - and what's not - for WSL fans?",
+      "detail": "BBC Sport spoke to fans of the Women's Super League and England Lionesses to learn about their experiences in the game and discuss what could be improved.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 05:45:20 GMT"
+    },
+    {
+      "title": "Who am I? Guess Premier League star No 4",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 05:34:02 GMT"
+    },
+    {
+      "title": "Vyner braced for eye-opening Wrexham popularity in US",
+      "detail": "Wrexham defender Zak Vyner is looking forward to see for himself how popular the Welsh club are in the United States.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 05:27:13 GMT"
+    },
+    {
+      "title": "Listen: Hibs on brink, Well in control as Celtic await recruits",
+      "detail": "Business as usual at Motherwell – but what's going on at Celtic?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 07:00:00 GMT"
+    },
+    {
+      "title": "'Celtic close on Hogh' as Maeda & Danilo near exits - gossip",
+      "detail": "Bodo/Glimt's Kasper Hogh is reportedly close to joining Celtic with Daizen Maeda poised to complete his switch to Ipswich Town and Rangers' Danilo pictured arriving in Brazil to complete a loan move.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 06:37:55 GMT"
     }
   ],
   "teams": [
@@ -24768,18 +24817,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3320,
+      "eventCount": 3327,
       "manualEventCount": 3,
-      "rawNewsCount": 3317,
+      "rawNewsCount": 3324,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3320,
-      "applied": 3032,
+      "watched": 3327,
+      "applied": 3036,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3315,
+      "singleSource": 3322,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35420,7 +35469,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-24T04:51:19.612426+00:00",
+    "generatedAt": "2026-07-24T07:36:25.448244+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
