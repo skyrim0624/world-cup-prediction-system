@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-24T19:37:58.337802+00:00",
+  "updatedAt": "2026-07-24T21:11:09.049318+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24064,6 +24064,13 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 24 Jul 2026 18:37:02 GMT"
+    },
+    {
+      "title": "Real Madrid confident of signing Rodri - Saturday's gossip",
+      "detail": "Real Madrid are confident they will sign Rodri from Man City, Arsenal eye player-plus-cash deal for Atletico striker Julian Alvarez, while Roma are keen on Fulham winger Oscar Bobb, plus more.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 20:37:28 GMT"
     }
   ],
   "teams": [
@@ -24999,18 +25006,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3353,
+      "eventCount": 3354,
       "manualEventCount": 3,
-      "rawNewsCount": 3350,
+      "rawNewsCount": 3351,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3353,
-      "applied": 3060,
+      "watched": 3354,
+      "applied": 3061,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3348,
+      "singleSource": 3349,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35651,7 +35658,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-24T19:38:20.125998+00:00",
+    "generatedAt": "2026-07-24T21:11:30.719438+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
