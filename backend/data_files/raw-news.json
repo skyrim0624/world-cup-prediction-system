@@ -46854,5 +46854,33 @@
     "factor": "defense",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-2a1b206d4f48",
+    "title": "Seven stars to watch at Wafcon 2026 and why",
+    "summary": "As the biggest ever Women's Africa Cup of Nations gets ready for kick-off, BBC Sport Africa picks seven players to keep an eye on in Morocco.",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Fri, 24 Jul 2026 18:18:40 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/crk8jvpdnvno?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-8fa6bab2fa5b",
+    "title": "Who needs what in Premier Sports Cup?",
+    "summary": "With one round of fixtures left in the Premier Sports Cup group stage, who needs what to progress this weekend?",
+    "source": "bbc",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Fri, 24 Jul 2026 18:37:02 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c9801371y2ko?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
