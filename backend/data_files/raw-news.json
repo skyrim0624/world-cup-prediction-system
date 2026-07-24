@@ -46826,5 +46826,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-a06e4ced22e3",
+    "title": "IOC says Infantino complaint outside its scope",
+    "summary": "The IOC says it will not investigate Gianni Infantino as a complaint about the Fifa president is \"outside\" its scope.",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Fri, 24 Jul 2026 16:07:14 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c07rzz54jyro?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-20beb1361b3e",
+    "title": "Palace want teenage Brest defender Le Guen",
+    "summary": "Crystal Palace are interested in signing 19-year-old Brest centre-back Raphael le Guen.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Fri, 24 Jul 2026 17:20:04 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cq6dy718z2vo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "defense",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

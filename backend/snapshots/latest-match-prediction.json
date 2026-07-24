@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-24T15:56:58.621432+00:00",
+  "updatedAt": "2026-07-24T17:45:17.219824+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24036,6 +24036,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 24 Jul 2026 14:36:08 GMT"
+    },
+    {
+      "title": "IOC says Infantino complaint outside its scope",
+      "detail": "The IOC says it will not investigate Gianni Infantino as a complaint about the Fifa president is \"outside\" its scope.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 16:07:14 GMT"
+    },
+    {
+      "title": "Palace want teenage Brest defender Le Guen",
+      "detail": "Crystal Palace are interested in signing 19-year-old Brest centre-back Raphael le Guen.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 17:20:04 GMT"
     }
   ],
   "teams": [
@@ -24971,18 +24985,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3349,
+      "eventCount": 3351,
       "manualEventCount": 3,
-      "rawNewsCount": 3346,
+      "rawNewsCount": 3348,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3349,
-      "applied": 3057,
+      "watched": 3351,
+      "applied": 3058,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3344,
+      "singleSource": 3346,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35623,7 +35637,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-24T15:57:21.259316+00:00",
+    "generatedAt": "2026-07-24T17:45:39.241731+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
