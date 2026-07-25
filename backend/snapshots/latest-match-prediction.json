@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-25T06:23:23.321948+00:00",
+  "updatedAt": "2026-07-25T08:31:40.765067+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24092,6 +24092,20 @@
       "impact": "全局备注",
       "tone": "green",
       "time": "Sat, 25 Jul 2026 05:51:21 GMT"
+    },
+    {
+      "title": "On the move - football's youngest journeymen",
+      "detail": "The players who had appeared for a remarkable number of clubs by their 23rd birthday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 25 Jul 2026 07:35:48 GMT"
+    },
+    {
+      "title": "Celtic eye Cancellieri as Maeda replacement - gossip",
+      "detail": "Celtic consider move for Serie A winger as former Rangers captain has talks with MLS club...",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 25 Jul 2026 07:44:51 GMT"
     }
   ],
   "teams": [
@@ -25027,18 +25041,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3357,
+      "eventCount": 3359,
       "manualEventCount": 3,
-      "rawNewsCount": 3354,
+      "rawNewsCount": 3356,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3357,
-      "applied": 3063,
+      "watched": 3359,
+      "applied": 3065,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3352,
+      "singleSource": 3354,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35679,7 +35693,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-25T06:23:45.333958+00:00",
+    "generatedAt": "2026-07-25T08:31:58.063197+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

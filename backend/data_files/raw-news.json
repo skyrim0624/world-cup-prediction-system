@@ -46938,5 +46938,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-ee2553f7aebb",
+    "title": "On the move - football's youngest journeymen",
+    "summary": "The players who had appeared for a remarkable number of clubs by their 23rd birthday.",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Sat, 25 Jul 2026 07:35:48 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c39e1789j8po?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-d85977b553a3",
+    "title": "Celtic eye Cancellieri as Maeda replacement - gossip",
+    "summary": "Celtic consider move for Serie A winger as former Rangers captain has talks with MLS club...",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Sat, 25 Jul 2026 07:44:51 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cd695gqx376o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
