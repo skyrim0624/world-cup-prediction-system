@@ -47106,5 +47106,33 @@
     "factor": "attack",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-5f09c18a494b",
+    "title": "Arsenal plot shock Vinicius Jr move - Sunday's gossip",
+    "summary": "Arsenal explore move for Vinicius Jr, Inter Milan interested in Cristian Romero and Real Madrid bid for Yan Diomande rejected, plus more.",
+    "source": "bbc",
+    "team": "senegal",
+    "status": "single_source",
+    "published_at": "Sat, 25 Jul 2026 21:21:03 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c5yw2wqxvjwo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-f5b5150c42c8",
+    "title": "Listen: League Cup reaction and league season lookahead",
+    "summary": "Reaction to Saturday's League Cup plus the fans get involved ahead of the SPFL season.",
+    "source": "bbc",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Sat, 25 Jul 2026 18:37:00 GMT",
+    "url": "https://www.bbc.co.uk/sounds/play/p0p0w4kf?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
