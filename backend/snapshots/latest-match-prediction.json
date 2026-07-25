@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-25T12:05:35.316774+00:00",
+  "updatedAt": "2026-07-25T14:11:23.012780+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24134,6 +24134,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 25 Jul 2026 11:08:50 GMT"
+    },
+    {
+      "title": "Ipswich sign Japan forward Maeda from Celtic",
+      "detail": "Ipswich Town sign Japan forward Daizen Maeda from Celtic on a contract until summer 2029.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 25 Jul 2026 12:20:37 GMT"
+    },
+    {
+      "title": "Barcelona pledge support after worker dies",
+      "detail": "Barcelona offer support to the family of a worker who died during renovations at the club's Nou Camp stadium.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 25 Jul 2026 12:18:55 GMT"
     }
   ],
   "teams": [
@@ -25069,18 +25083,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3363,
+      "eventCount": 3365,
       "manualEventCount": 3,
-      "rawNewsCount": 3360,
+      "rawNewsCount": 3362,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3363,
-      "applied": 3068,
+      "watched": 3365,
+      "applied": 3070,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3358,
+      "singleSource": 3360,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35721,7 +35735,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-25T12:05:57.849898+00:00",
+    "generatedAt": "2026-07-25T14:11:44.950088+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

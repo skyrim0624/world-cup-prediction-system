@@ -47022,5 +47022,33 @@
     "factor": "attack",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-998ea489e90f",
+    "title": "Ipswich sign Japan forward Maeda from Celtic",
+    "summary": "Ipswich Town sign Japan forward Daizen Maeda from Celtic on a contract until summer 2029.",
+    "source": "bbc",
+    "team": "japan",
+    "status": "single_source",
+    "published_at": "Sat, 25 Jul 2026 12:20:37 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cx2dgkg5rq0o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-00b4d142cc5e",
+    "title": "Barcelona pledge support after worker dies",
+    "summary": "Barcelona offer support to the family of a worker who died during renovations at the club's Nou Camp stadium.",
+    "source": "bbc",
+    "team": "portugal",
+    "status": "single_source",
+    "published_at": "Sat, 25 Jul 2026 12:18:55 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/crrvd8zz7vqo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-25T10:38:24.486716+00:00",
+  "updatedAt": "2026-07-25T12:05:35.316774+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24120,6 +24120,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 25 Jul 2026 10:09:31 GMT"
+    },
+    {
+      "title": "Could Mount be final piece in Man Utd midfield jigsaw?",
+      "detail": "Mason Mount has been outstanding alongside new arrival Andrey Santos for Manchester United in their first two pre-season games.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sat, 25 Jul 2026 11:01:53 GMT"
+    },
+    {
+      "title": "Growing concerns before Defoe exit - Woking director",
+      "detail": "Woking director of football Jody Brown says there were \"growing concerns\" across the club before the National League side parted ways with former England striker Jermain Defoe as manager.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 25 Jul 2026 11:08:50 GMT"
     }
   ],
   "teams": [
@@ -25055,18 +25069,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3361,
+      "eventCount": 3363,
       "manualEventCount": 3,
-      "rawNewsCount": 3358,
+      "rawNewsCount": 3360,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3361,
-      "applied": 3067,
+      "watched": 3363,
+      "applied": 3068,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3356,
+      "singleSource": 3358,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35707,7 +35721,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-25T10:38:46.814940+00:00",
+    "generatedAt": "2026-07-25T12:05:57.849898+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
