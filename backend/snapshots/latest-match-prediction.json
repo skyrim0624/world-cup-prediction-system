@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-25T03:50:18.887413+00:00",
+  "updatedAt": "2026-07-25T06:23:23.321948+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24078,6 +24078,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 24 Jul 2026 19:29:18 GMT"
+    },
+    {
+      "title": "How do Manchester City manage the Rodri dilemma?",
+      "detail": "BBC Sport looks at what City's new-look midfield could be like and whether it is time to cash in on Rodri.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 25 Jul 2026 05:36:46 GMT"
+    },
+    {
+      "title": "Who am I? Guess Premier League star No 5",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sat, 25 Jul 2026 05:51:21 GMT"
     }
   ],
   "teams": [
@@ -25013,18 +25027,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3355,
+      "eventCount": 3357,
       "manualEventCount": 3,
-      "rawNewsCount": 3352,
+      "rawNewsCount": 3354,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3355,
-      "applied": 3062,
+      "watched": 3357,
+      "applied": 3063,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3350,
+      "singleSource": 3352,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35665,7 +35679,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-25T03:50:41.261444+00:00",
+    "generatedAt": "2026-07-25T06:23:45.333958+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
