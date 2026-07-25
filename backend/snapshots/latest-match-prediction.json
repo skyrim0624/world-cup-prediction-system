@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-25T17:05:57.352598+00:00",
+  "updatedAt": "2026-07-25T18:28:26.845593+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24155,6 +24155,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 25 Jul 2026 14:54:03 GMT"
+    },
+    {
+      "title": "Bodo/Glimt's Hogh to have Celtic medical within 24 hours",
+      "detail": "Bodo/Glimt striker Kasper Hogh is due to have a medical with Celtic in the next 24 hours, the Scottish champions' manager, Martin O'Neill, reveals.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 25 Jul 2026 18:07:42 GMT"
+    },
+    {
+      "title": "St Johnstone crash out as Dundee Utd squeeze through - League Cup round-up",
+      "detail": "St Johnstone crash out the Premier Sports Cup thanks to East Fife's dramatic stoppage-time equaliser, but Premiership rivals Dundee United squeeze through after Montrose blow their chance.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 25 Jul 2026 17:15:09 GMT"
     }
   ],
   "teams": [
@@ -25090,18 +25104,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3366,
+      "eventCount": 3368,
       "manualEventCount": 3,
-      "rawNewsCount": 3363,
+      "rawNewsCount": 3365,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3366,
-      "applied": 3071,
+      "watched": 3368,
+      "applied": 3073,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3361,
+      "singleSource": 3363,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35742,7 +35756,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-25T17:06:19.225745+00:00",
+    "generatedAt": "2026-07-25T18:28:49.406215+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

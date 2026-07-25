@@ -47064,5 +47064,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-b7902ca8fe8e",
+    "title": "Bodo/Glimt's Hogh to have Celtic medical within 24 hours",
+    "summary": "Bodo/Glimt striker Kasper Hogh is due to have a medical with Celtic in the next 24 hours, the Scottish champions' manager, Martin O'Neill, reveals.",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Sat, 25 Jul 2026 18:07:42 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cwymjrm0xlwo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-95c8b1ccf2c2",
+    "title": "St Johnstone crash out as Dundee Utd squeeze through - League Cup round-up",
+    "summary": "St Johnstone crash out the Premier Sports Cup thanks to East Fife's dramatic stoppage-time equaliser, but Premiership rivals Dundee United squeeze through after Montrose blow their chance.",
+    "source": "bbc",
+    "team": "portugal",
+    "status": "single_source",
+    "published_at": "Sat, 25 Jul 2026 17:15:09 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c70gegrnen5o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
