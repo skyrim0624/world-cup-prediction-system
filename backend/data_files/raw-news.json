@@ -47092,5 +47092,19 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "guardian-ac5474498ad7",
+    "title": "From Haaland love to Mexico’s Merlin: 26 memories from the 2026 World Cup",
+    "summary": "<p>Norway’s striker left his mark, as did Scotland’s fans in Boston, but Turkey’s dark horses fell at the first hurdle</p><p>“I played with him on my PlayStation, and now I’ve scored against him,” Livano Comenencia said after converting Curaçao’s first World Cup goal past Manuel Neuer in their opening match against Germany. The smallest nation ever to qualify for the World Cup <a href=\"https://www.theguardian.com/football/2026/jun/14/germany-curacao-world-cup-match-report\">went on to lose 7-1</a> but that goal – their only one of the tournament – will go down in history.</p> <a href=\"https://www.theguardian.com/football/2026/jul/25/26-memories-from-the-2026-world-cup-football\">Continue reading...</a>",
+    "source": "guardian",
+    "team": "mexico",
+    "status": "single_source",
+    "published_at": "Sat, 25 Jul 2026 19:00:50 GMT",
+    "url": "https://www.theguardian.com/football/2026/jul/25/26-memories-from-the-2026-world-cup-football",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
