@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-24T22:36:18.940977+00:00",
+  "updatedAt": "2026-07-25T00:09:26.752060+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24071,6 +24071,13 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Fri, 24 Jul 2026 20:37:28 GMT"
+    },
+    {
+      "title": "West Ham winger Summerville joins Al-Hilal",
+      "detail": "West Ham confirm the sale of Netherlands winger Crysencio Summerville to Saudi club Al-Hilal.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Fri, 24 Jul 2026 19:29:18 GMT"
     }
   ],
   "teams": [
@@ -25006,18 +25013,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3354,
+      "eventCount": 3355,
       "manualEventCount": 3,
-      "rawNewsCount": 3351,
+      "rawNewsCount": 3352,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3354,
-      "applied": 3061,
+      "watched": 3355,
+      "applied": 3062,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3349,
+      "singleSource": 3350,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35541,13 +35548,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-07-24",
+      "referenceDate": "2026-07-25",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 41,
-      "oldestAgeDays": 115,
+      "newestAgeDays": 42,
+      "oldestAgeDays": 116,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -35658,7 +35665,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-24T22:36:41.221979+00:00",
+    "generatedAt": "2026-07-25T00:09:49.159437+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
