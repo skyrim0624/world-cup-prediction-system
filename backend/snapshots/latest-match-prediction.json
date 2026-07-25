@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-25T08:31:40.765067+00:00",
+  "updatedAt": "2026-07-25T10:38:24.486716+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24106,6 +24106,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 25 Jul 2026 07:44:51 GMT"
+    },
+    {
+      "title": "Unhappy Tottenham players should leave - De Zerbi",
+      "detail": "Tottenham Hotspur manager Roberto de Zerbi says players who are not \"proud and happy to stay\" at the club should leave.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 25 Jul 2026 10:26:41 GMT"
+    },
+    {
+      "title": "Chelsea in talks for Villa set-piece guru MacPhee",
+      "detail": "Chelsea are looking to sign highly regarded set-piece coach Austin MacPhee from Aston Villa but they face competition from Premier League and Saudi Pro League clubs.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 25 Jul 2026 10:09:31 GMT"
     }
   ],
   "teams": [
@@ -25041,18 +25055,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3359,
+      "eventCount": 3361,
       "manualEventCount": 3,
-      "rawNewsCount": 3356,
+      "rawNewsCount": 3358,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3359,
-      "applied": 3065,
+      "watched": 3361,
+      "applied": 3067,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3354,
+      "singleSource": 3356,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35693,7 +35707,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-25T08:31:58.063197+00:00",
+    "generatedAt": "2026-07-25T10:38:46.814940+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
