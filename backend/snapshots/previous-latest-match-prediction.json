@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-25T14:11:23.012780+00:00",
+  "updatedAt": "2026-07-25T15:42:52.623352+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24148,6 +24148,13 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 25 Jul 2026 12:18:55 GMT"
+    },
+    {
+      "title": "Howe unsure over Guimaraes amid Arsenal interest",
+      "detail": "Newcastle United head coach Eddie Howe says he has had positive discussions with captain Bruno Guimaraes.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 25 Jul 2026 14:54:03 GMT"
     }
   ],
   "teams": [
@@ -25083,18 +25090,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3365,
+      "eventCount": 3366,
       "manualEventCount": 3,
-      "rawNewsCount": 3362,
+      "rawNewsCount": 3363,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3365,
-      "applied": 3070,
+      "watched": 3366,
+      "applied": 3071,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3360,
+      "singleSource": 3361,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35735,7 +35742,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-25T14:11:44.950088+00:00",
+    "generatedAt": "2026-07-25T15:43:15.422800+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
