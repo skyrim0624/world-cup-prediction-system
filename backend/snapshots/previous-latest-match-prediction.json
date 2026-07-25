@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-25T20:59:14.244528+00:00",
+  "updatedAt": "2026-07-25T22:03:39.237515+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24176,6 +24176,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 25 Jul 2026 19:00:50 GMT"
+    },
+    {
+      "title": "Arsenal plot shock Vinicius Jr move - Sunday's gossip",
+      "detail": "Arsenal explore move for Vinicius Jr, Inter Milan interested in Cristian Romero and Real Madrid bid for Yan Diomande rejected, plus more.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 25 Jul 2026 21:21:03 GMT"
+    },
+    {
+      "title": "Listen: League Cup reaction and league season lookahead",
+      "detail": "Reaction to Saturday's League Cup plus the fans get involved ahead of the SPFL season.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sat, 25 Jul 2026 18:37:00 GMT"
     }
   ],
   "teams": [
@@ -25111,18 +25125,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3369,
+      "eventCount": 3371,
       "manualEventCount": 3,
-      "rawNewsCount": 3366,
+      "rawNewsCount": 3368,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3369,
-      "applied": 3074,
+      "watched": 3371,
+      "applied": 3076,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3364,
+      "singleSource": 3366,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35763,7 +35777,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-25T20:59:36.640506+00:00",
+    "generatedAt": "2026-07-25T22:04:01.353812+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
