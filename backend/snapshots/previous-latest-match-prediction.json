@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-26T16:06:15.133279+00:00",
+  "updatedAt": "2026-07-26T17:34:35.574041+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24239,6 +24239,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 26 Jul 2026 14:59:58 GMT"
+    },
+    {
+      "title": "Holders St Mirren visit Rangers in League Cup last 16",
+      "detail": "Holders St Mirren are drawn away to Rangers in the last 16 of the Premier Sports Cup, while Celtic visit Dundee United.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 26 Jul 2026 16:32:13 GMT"
+    },
+    {
+      "title": "Gittens keen to impress 'world-class' Alonso",
+      "detail": "Chelsea winger Jamie Gittens says he will be involved in Xabi Alonso's squad next season and describes his new manager as \"one of the best to do it\".",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 26 Jul 2026 16:00:27 GMT"
     }
   ],
   "teams": [
@@ -25174,18 +25188,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3378,
+      "eventCount": 3380,
       "manualEventCount": 3,
-      "rawNewsCount": 3375,
+      "rawNewsCount": 3377,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3378,
-      "applied": 3079,
+      "watched": 3380,
+      "applied": 3081,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3373,
+      "singleSource": 3375,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35826,7 +35840,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-26T16:06:37.099669+00:00",
+    "generatedAt": "2026-07-26T17:34:57.434461+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
