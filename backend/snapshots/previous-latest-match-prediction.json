@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-26T14:41:47.832053+00:00",
+  "updatedAt": "2026-07-26T16:06:15.133279+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24225,6 +24225,20 @@
       "impact": "全局备注",
       "tone": "green",
       "time": "Sun, 26 Jul 2026 14:11:47 GMT"
+    },
+    {
+      "title": "Chiesa happy but wants new chapter at Liverpool",
+      "detail": "Liverpool forward Federico Chiesa says he is \"happy\" at the club amid speculation over his future.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 26 Jul 2026 16:02:26 GMT"
+    },
+    {
+      "title": "Maynard loses York job three months after title win",
+      "detail": "York City confirm the exit of manager Stuart Maynard, three months after he guided the club back into the English Football League.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 26 Jul 2026 14:59:58 GMT"
     }
   ],
   "teams": [
@@ -25160,18 +25174,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3376,
+      "eventCount": 3378,
       "manualEventCount": 3,
-      "rawNewsCount": 3373,
+      "rawNewsCount": 3375,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3376,
-      "applied": 3077,
+      "watched": 3378,
+      "applied": 3079,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3371,
+      "singleSource": 3373,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35812,7 +35826,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-26T14:42:10.163101+00:00",
+    "generatedAt": "2026-07-26T16:06:37.099669+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
