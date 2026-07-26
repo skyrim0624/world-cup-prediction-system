@@ -47204,5 +47204,33 @@
     "factor": "squad",
     "direction": -1,
     "confidence": 0.78
+  },
+  {
+    "id": "bbc-dec1bc69148d",
+    "title": "Chiesa happy but wants new chapter at Liverpool",
+    "summary": "Liverpool forward Federico Chiesa says he is \"happy\" at the club amid speculation over his future.",
+    "source": "bbc",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Sun, 26 Jul 2026 16:02:26 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c70gzrx034ro?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-a5798bb4586c",
+    "title": "Maynard loses York job three months after title win",
+    "summary": "York City confirm the exit of manager Stuart Maynard, three months after he guided the club back into the English Football League.",
+    "source": "bbc",
+    "team": "germany",
+    "status": "single_source",
+    "published_at": "Sun, 26 Jul 2026 14:59:58 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cp87v9ddqvvo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
