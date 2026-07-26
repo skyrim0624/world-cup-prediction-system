@@ -47134,5 +47134,19 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-924d469723db",
+    "title": "Gomez injury overshadows winning start for Iraola",
+    "summary": "Liverpool start life under Andoni Iraola with a 4-2 win over Sunderland thanks to goals from Kieran Morrison, Dominik Szoboszlai, Federico Chiesa and Lewis Koumas.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Sun, 26 Jul 2026 06:25:17 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cm2genrg72do?at_medium=RSS&at_campaign=rss",
+    "category": "injury",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.78
   }
 ]

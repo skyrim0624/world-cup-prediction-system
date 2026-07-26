@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-25T23:32:28.971074+00:00",
+  "updatedAt": "2026-07-26T03:32:49.865082+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -35660,13 +35660,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-07-25",
+      "referenceDate": "2026-07-26",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 42,
-      "oldestAgeDays": 116,
+      "newestAgeDays": 43,
+      "oldestAgeDays": 117,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -35777,7 +35777,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-25T23:32:51.496587+00:00",
+    "generatedAt": "2026-07-26T03:33:12.451155+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
