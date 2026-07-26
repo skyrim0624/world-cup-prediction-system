@@ -47260,5 +47260,47 @@
     "factor": "attack",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-ff4ebbf13f61",
+    "title": "Japan legend Miura, 59, scores first goal since 2022",
+    "summary": "Kazuyoshi Miura, the world's oldest professional footballer, scores his first goal in nearly four years at the age of 59 for Japanese third-tier side Fukushima United.",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Sun, 26 Jul 2026 20:57:04 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c3r087181ndo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-060e6c930c39",
+    "title": "PSG want £145m for Barcola - Monday's gossip",
+    "summary": "Paris St-Germain want £145m for Bradley Barcola, Real Madrid set Vinicius Jr price and Arsenal to accelerate Bruno Guimaraes talks, plus more.",
+    "source": "bbc",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Sun, 26 Jul 2026 21:06:05 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cly5189yjgdo?at_medium=RSS&at_campaign=rss",
+    "category": "market_proxy",
+    "factor": "path",
+    "direction": 0,
+    "confidence": 0.52
+  },
+  {
+    "id": "bbc-9b8665027c23",
+    "title": "McInnes teases Rangers signing within 48 hours",
+    "summary": "Rangers hope to announce another signing within 48 hours, with manager Derek McInnes teasing a second by the time his side open their season away to Dundee United on Friday.",
+    "source": "bbc",
+    "team": "germany",
+    "status": "single_source",
+    "published_at": "Sun, 26 Jul 2026 20:43:41 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cly9w1eez14o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
