@@ -47190,5 +47190,19 @@
     "factor": "goalkeeper",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-9be53a3888b4",
+    "title": "Female referee injured in melee during friendly",
+    "summary": "A female referee is injured and has to leave the pitch after being knocked to the ground during a friendly.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Sun, 26 Jul 2026 14:11:47 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cm2gemrn7jdo?at_medium=RSS&at_campaign=rss",
+    "category": "injury",
+    "factor": "squad",
+    "direction": -1,
+    "confidence": 0.78
   }
 ]
