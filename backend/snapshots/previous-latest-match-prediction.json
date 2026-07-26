@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-26T20:31:58.379568+00:00",
+  "updatedAt": "2026-07-26T22:03:49.259616+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24253,6 +24253,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 26 Jul 2026 16:00:27 GMT"
+    },
+    {
+      "title": "Japan legend Miura, 59, scores first goal since 2022",
+      "detail": "Kazuyoshi Miura, the world's oldest professional footballer, scores his first goal in nearly four years at the age of 59 for Japanese third-tier side Fukushima United.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 26 Jul 2026 20:57:04 GMT"
+    },
+    {
+      "title": "PSG want £145m for Barcola - Monday's gossip",
+      "detail": "Paris St-Germain want £145m for Bradley Barcola, Real Madrid set Vinicius Jr price and Arsenal to accelerate Bruno Guimaraes talks, plus more.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 26 Jul 2026 21:06:05 GMT"
+    },
+    {
+      "title": "McInnes teases Rangers signing within 48 hours",
+      "detail": "Rangers hope to announce another signing within 48 hours, with manager Derek McInnes teasing a second by the time his side open their season away to Dundee United on Friday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 26 Jul 2026 20:43:41 GMT"
     }
   ],
   "teams": [
@@ -25188,18 +25209,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3380,
+      "eventCount": 3383,
       "manualEventCount": 3,
-      "rawNewsCount": 3377,
+      "rawNewsCount": 3380,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3380,
-      "applied": 3081,
+      "watched": 3383,
+      "applied": 3084,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3375,
+      "singleSource": 3378,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35840,7 +35861,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-26T20:32:20.453619+00:00",
+    "generatedAt": "2026-07-26T22:04:11.669767+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
