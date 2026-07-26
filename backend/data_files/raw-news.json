@@ -47148,5 +47148,47 @@
     "factor": "squad",
     "direction": -1,
     "confidence": 0.78
+  },
+  {
+    "id": "bbc-63c5241951e7",
+    "title": "Who am I? Guess Premier League star No 6",
+    "summary": "Will you get today's player in as few attempts as possible?",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Sun, 26 Jul 2026 06:51:27 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/czekgekw0elo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-8a555aea22f4",
+    "title": "Wilson makes Leeds debut in defeat by Wrexham",
+    "summary": "Wales attacking midfielder Harry Wilson makes his first outing for Leeds United as they are beaten 3-2 by Wrexham in the club's opening pre-season game.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Sun, 26 Jul 2026 06:24:28 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cy9wvln2234o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-25195eeba40f",
+    "title": "Horkas to join Hogh at Celtic - gossip",
+    "summary": "Celtic to pay record fee for striker and closing in on Croatian goalkeeper from Spanish second tier...",
+    "source": "bbc",
+    "team": "croatia",
+    "status": "single_source",
+    "published_at": "Sun, 26 Jul 2026 07:39:52 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/ckg41gzx0qko?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "goalkeeper",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

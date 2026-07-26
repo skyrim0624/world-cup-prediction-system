@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-26T03:32:49.865082+00:00",
+  "updatedAt": "2026-07-26T06:41:45.673907+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24190,6 +24190,13 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sat, 25 Jul 2026 18:37:00 GMT"
+    },
+    {
+      "title": "Gomez injury overshadows winning start for Iraola",
+      "detail": "Liverpool start life under Andoni Iraola with a 4-2 win over Sunderland thanks to goals from Kieran Morrison, Dominik Szoboszlai, Federico Chiesa and Lewis Koumas.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sun, 26 Jul 2026 06:25:17 GMT"
     }
   ],
   "teams": [
@@ -25125,18 +25132,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3371,
+      "eventCount": 3372,
       "manualEventCount": 3,
-      "rawNewsCount": 3368,
+      "rawNewsCount": 3369,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3371,
+      "watched": 3372,
       "applied": 3076,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3366,
+      "singleSource": 3367,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35777,7 +35784,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-26T03:33:12.451155+00:00",
+    "generatedAt": "2026-07-26T06:42:07.745086+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

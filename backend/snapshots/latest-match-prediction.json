@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-26T06:41:45.673907+00:00",
+  "updatedAt": "2026-07-26T09:19:09.444149+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24197,6 +24197,27 @@
       "impact": "全局备注",
       "tone": "green",
       "time": "Sun, 26 Jul 2026 06:25:17 GMT"
+    },
+    {
+      "title": "Who am I? Guess Premier League star No 6",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sun, 26 Jul 2026 06:51:27 GMT"
+    },
+    {
+      "title": "Wilson makes Leeds debut in defeat by Wrexham",
+      "detail": "Wales attacking midfielder Harry Wilson makes his first outing for Leeds United as they are beaten 3-2 by Wrexham in the club's opening pre-season game.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Sun, 26 Jul 2026 06:24:28 GMT"
+    },
+    {
+      "title": "Horkas to join Hogh at Celtic - gossip",
+      "detail": "Celtic to pay record fee for striker and closing in on Croatian goalkeeper from Spanish second tier...",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Sun, 26 Jul 2026 07:39:52 GMT"
     }
   ],
   "teams": [
@@ -25132,18 +25153,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3372,
+      "eventCount": 3375,
       "manualEventCount": 3,
-      "rawNewsCount": 3369,
+      "rawNewsCount": 3372,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3372,
-      "applied": 3076,
+      "watched": 3375,
+      "applied": 3077,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3367,
+      "singleSource": 3370,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35784,7 +35805,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-26T06:42:07.745086+00:00",
+    "generatedAt": "2026-07-26T09:19:26.510240+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
