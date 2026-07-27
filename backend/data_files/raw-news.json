@@ -47540,5 +47540,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-541fd3c4fd40",
+    "title": "The Chelsea academy stars looking to break through",
+    "summary": "BBC Sport takes a look at the seven academy players Chelsea are showcasing on their pre-season tour.",
+    "source": "bbc",
+    "team": "portugal",
+    "status": "single_source",
+    "published_at": "Mon, 27 Jul 2026 15:27:53 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c4gd0pvr3z0o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-c2288db14351",
+    "title": "'Every country wants to beat Nigeria' - Super Falcons hunt 11th Wafcon title",
+    "summary": "Nigeria face Malawi, Zambia and Egypt at the 2026 Women's Africa Cup of Nations, looking to defend their crown and claim an 11th title.",
+    "source": "bbc",
+    "team": "germany",
+    "status": "single_source",
+    "published_at": "Mon, 27 Jul 2026 16:47:12 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cly5q0e2g0ro?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-27T11:31:12.443178+00:00",
+  "updatedAt": "2026-07-27T14:49:22.192021+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24372,6 +24372,27 @@
       "impact": "全局备注",
       "tone": "green",
       "time": "Mon, 27 Jul 2026 11:00:39 GMT"
+    },
+    {
+      "title": "Chelsea open talks to sign Brighton striker Welbeck",
+      "detail": "Chelsea are in talks to sign Brighton & Hove Albion striker Danny Welbeck, with the 35-year-old keen to join new manager Xabi Alonso at Stamford Bridge.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 13:24:43 GMT"
+    },
+    {
+      "title": "English football agrees trial to end goalkeeper tactical timeouts",
+      "detail": "English football is set to implement a radical trial to try to eradicate the goalkeeper tactical timeout this season, BBC Sport can reveal.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 13:22:05 GMT"
+    },
+    {
+      "title": "Salah, Stones & Sancho - Premier League free agents",
+      "detail": "BBC Sport takes a look at some of the notable out-of-contract players who playing in the English top flight last season.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 14:05:42 GMT"
     }
   ],
   "teams": [
@@ -25307,18 +25328,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3397,
+      "eventCount": 3400,
       "manualEventCount": 3,
-      "rawNewsCount": 3394,
+      "rawNewsCount": 3397,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3397,
-      "applied": 3093,
+      "watched": 3400,
+      "applied": 3096,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3392,
+      "singleSource": 3395,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35959,7 +35980,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-27T11:31:34.509036+00:00",
+    "generatedAt": "2026-07-27T14:49:44.302241+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
