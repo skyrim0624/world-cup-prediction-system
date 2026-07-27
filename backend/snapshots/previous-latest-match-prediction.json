@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-26T22:03:49.259616+00:00",
+  "updatedAt": "2026-07-26T23:30:56.732394+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -35861,7 +35861,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-26T22:04:11.669767+00:00",
+    "generatedAt": "2026-07-26T23:31:18.755924+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
