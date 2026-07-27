@@ -47582,5 +47582,19 @@
     "factor": "defense",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-0b4eba34d854",
+    "title": "Inter in advanced talks with England defender Stones",
+    "summary": "England defender John Stones is in advanced talks with Inter Milan about joining the Italian side on a free transfer.",
+    "source": "bbc",
+    "team": "england",
+    "status": "single_source",
+    "published_at": "Mon, 27 Jul 2026 20:02:14 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cgewgj8qwvjo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "defense",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

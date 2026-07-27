@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-27T17:02:57.009838+00:00",
+  "updatedAt": "2026-07-27T18:57:23.160924+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24407,6 +24407,13 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 27 Jul 2026 16:47:12 GMT"
+    },
+    {
+      "title": "Liverpool's centre-back situation and why Iraola must act",
+      "detail": "BBC Sport looks at Liverpool's issues at centre-back, and what Andoni Iraola might do to fix them.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 16:58:59 GMT"
     }
   ],
   "teams": [
@@ -25342,18 +25349,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3402,
+      "eventCount": 3403,
       "manualEventCount": 3,
-      "rawNewsCount": 3399,
+      "rawNewsCount": 3400,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3402,
-      "applied": 3098,
+      "watched": 3403,
+      "applied": 3099,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3397,
+      "singleSource": 3398,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35994,7 +36001,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-27T17:03:18.640097+00:00",
+    "generatedAt": "2026-07-27T18:57:45.250291+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
