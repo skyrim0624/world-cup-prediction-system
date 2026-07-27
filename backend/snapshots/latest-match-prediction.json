@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-27T03:41:07.994072+00:00",
+  "updatedAt": "2026-07-27T07:38:48.880344+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24274,6 +24274,62 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Sun, 26 Jul 2026 20:43:41 GMT"
+    },
+    {
+      "title": "Diomande agrees Real Madrid terms as PSG step away",
+      "detail": "RB Leipzig winger Yan Diomande agrees personal terms with Real Madrid after Paris St-Germain withdraw their interest.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 05:46:37 GMT"
+    },
+    {
+      "title": "Record Spurs spend shows new ambition - Van de Ven",
+      "detail": "Micky van de Ven says Tottenham's record spending highlights a \"new ambition\" after an \"unacceptable\" season.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 07:00:41 GMT"
+    },
+    {
+      "title": "Rogers and Palmer can play together - Alonso",
+      "detail": "Chelsea manager Xabi Alonso says he has a \"plan\" to play club record £117m signing Morgan Rogers alongside Cole Palmer.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 06:10:05 GMT"
+    },
+    {
+      "title": "How many midfielders do Rangers need after busy summer of recruitment?",
+      "detail": "Rangers have a team full of central midfielders, but are they good enough to provide enough ammunition for their strikers?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 06:30:34 GMT"
+    },
+    {
+      "title": "Who am I? Guess Premier League star No 7",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 06:08:51 GMT"
+    },
+    {
+      "title": "Glamour club Wrexham proving it can produce its own",
+      "detail": "Despite the club's high-profile recruitment, there remains a firm desire to develop the next generation of homegrown talent.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 05:04:28 GMT"
+    },
+    {
+      "title": "Paderborn turn down Celtic's £4m bid for Baur - gossip",
+      "detail": "Celtic bid for midfielder turned down amid conflicting reports over winger's proposed move to Scottish champions.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 06:45:38 GMT"
+    },
+    {
+      "title": "Podcast: League Cup Shocks, Celtic movement & St Johnstone concerns",
+      "detail": "Dunfermline impress, St Johnstone struggle and Celtic get moving.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 07:00:00 GMT"
     }
   ],
   "teams": [
@@ -25209,18 +25265,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3383,
+      "eventCount": 3391,
       "manualEventCount": 3,
-      "rawNewsCount": 3380,
+      "rawNewsCount": 3388,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3383,
-      "applied": 3084,
+      "watched": 3391,
+      "applied": 3089,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3378,
+      "singleSource": 3386,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35861,7 +35917,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-27T03:41:30.653665+00:00",
+    "generatedAt": "2026-07-27T07:39:09.282749+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
