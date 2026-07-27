@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-27T18:57:23.160924+00:00",
+  "updatedAt": "2026-07-27T20:38:20.999939+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24414,6 +24414,13 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 27 Jul 2026 16:58:59 GMT"
+    },
+    {
+      "title": "Inter in advanced talks with England defender Stones",
+      "detail": "England defender John Stones is in advanced talks with Inter Milan about joining the Italian side on a free transfer.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 20:02:14 GMT"
     }
   ],
   "teams": [
@@ -25349,18 +25356,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3403,
+      "eventCount": 3404,
       "manualEventCount": 3,
-      "rawNewsCount": 3400,
+      "rawNewsCount": 3401,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3403,
-      "applied": 3099,
+      "watched": 3404,
+      "applied": 3100,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3398,
+      "singleSource": 3399,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -36001,7 +36008,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-27T18:57:45.250291+00:00",
+    "generatedAt": "2026-07-27T20:38:43.366151+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

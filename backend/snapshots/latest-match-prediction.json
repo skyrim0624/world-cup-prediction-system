@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-27T20:38:20.999939+00:00",
+  "updatedAt": "2026-07-27T22:12:14.820440+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24421,6 +24421,13 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 27 Jul 2026 20:02:14 GMT"
+    },
+    {
+      "title": "Man City brace for Rodri bid - Tuesday's gossip",
+      "detail": "Manchester City brace for Real Madrid's Rodri bid, Leeds set to sign James Trafford for £40m, Crystal Palace agree terms with Raphael Le Guen and Real Madrid set for Vinicius Jr talks amid Arsenal interest.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 21:21:18 GMT"
     }
   ],
   "teams": [
@@ -25356,18 +25363,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3404,
+      "eventCount": 3405,
       "manualEventCount": 3,
-      "rawNewsCount": 3401,
+      "rawNewsCount": 3402,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3404,
-      "applied": 3100,
+      "watched": 3405,
+      "applied": 3101,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3399,
+      "singleSource": 3400,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -36008,7 +36015,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-27T20:38:43.366151+00:00",
+    "generatedAt": "2026-07-27T22:12:37.194423+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
