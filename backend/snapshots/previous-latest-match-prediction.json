@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-27T14:49:22.192021+00:00",
+  "updatedAt": "2026-07-27T17:02:57.009838+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24393,6 +24393,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 27 Jul 2026 14:05:42 GMT"
+    },
+    {
+      "title": "The Chelsea academy stars looking to break through",
+      "detail": "BBC Sport takes a look at the seven academy players Chelsea are showcasing on their pre-season tour.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 15:27:53 GMT"
+    },
+    {
+      "title": "'Every country wants to beat Nigeria' - Super Falcons hunt 11th Wafcon title",
+      "detail": "Nigeria face Malawi, Zambia and Egypt at the 2026 Women's Africa Cup of Nations, looking to defend their crown and claim an 11th title.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 16:47:12 GMT"
     }
   ],
   "teams": [
@@ -25328,18 +25342,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3400,
+      "eventCount": 3402,
       "manualEventCount": 3,
-      "rawNewsCount": 3397,
+      "rawNewsCount": 3399,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3400,
-      "applied": 3096,
+      "watched": 3402,
+      "applied": 3098,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3395,
+      "singleSource": 3397,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35980,7 +35994,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-27T14:49:44.302241+00:00",
+    "generatedAt": "2026-07-27T17:03:18.640097+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

@@ -47568,5 +47568,19 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-90400ab7a4e6",
+    "title": "Liverpool's centre-back situation and why Iraola must act",
+    "summary": "BBC Sport looks at Liverpool's issues at centre-back, and what Andoni Iraola might do to fix them.",
+    "source": "bbc",
+    "team": "portugal",
+    "status": "single_source",
+    "published_at": "Mon, 27 Jul 2026 16:58:59 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cpw9zw972l2o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "defense",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
