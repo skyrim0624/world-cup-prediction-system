@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-27T07:38:48.880344+00:00",
+  "updatedAt": "2026-07-27T11:31:12.443178+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24330,6 +24330,48 @@
       "impact": "全局备注",
       "tone": "green",
       "time": "Mon, 27 Jul 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Real Madrid contract talks and Arsenal interest - what is Vinicius Jr's future?",
+      "detail": "With Real Madrid renewing contract talks and Arsenal showing interest, there may be no more intriguing transfer situation right now than Vinicius Jr's future.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 10:26:36 GMT"
+    },
+    {
+      "title": "Meditate, pray or watch football instead of spreading hate - Infantino",
+      "detail": "Fifa president Gianni Infantino tells critics to \"meditate, pray or watch a football match\" instead of \"spreading hate and false rumours\" about him and the World Cup.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 08:07:28 GMT"
+    },
+    {
+      "title": "Pirlo out of running for Italy job over link to Russian betting company",
+      "detail": "Andrea Pirlo says he is no longer a candidate to coach Italy following days of controversy over his link to a Russian betting company.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 11:03:15 GMT"
+    },
+    {
+      "title": "Martin & Foxes must 'find own way' after struggles",
+      "detail": "Leicester City manager Russell Martin says history should not be used to judge what he can achieve with the former Premier League champions.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 11:04:51 GMT"
+    },
+    {
+      "title": "York appoint Lindsey after shock Maynard sacking",
+      "detail": "York City appoint former Crawley Town boss Scott Lindsey as their new head coach, one day after sacking title-winning Stuart Maynard.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 10:51:13 GMT"
+    },
+    {
+      "title": "Brighton captain Symonds signs new 'long-term' deal",
+      "detail": "Brighton captain Maisie Symonds signs a new contract, described by the club as long-term.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Mon, 27 Jul 2026 11:00:39 GMT"
     }
   ],
   "teams": [
@@ -25265,18 +25307,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3391,
+      "eventCount": 3397,
       "manualEventCount": 3,
-      "rawNewsCount": 3388,
+      "rawNewsCount": 3394,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3391,
-      "applied": 3089,
+      "watched": 3397,
+      "applied": 3093,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3386,
+      "singleSource": 3392,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -35917,7 +35959,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-27T07:39:09.282749+00:00",
+    "generatedAt": "2026-07-27T11:31:34.509036+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
