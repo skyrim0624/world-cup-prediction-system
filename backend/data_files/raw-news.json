@@ -47960,5 +47960,47 @@
     "factor": "attack",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-8be0cc5a9a47",
+    "title": "Kick It Out wants tougher sanctions as discrimination hits new high",
+    "summary": "Anti-discrimination body Kick It Out says tougher sanctions are needed to punish discrimination in football, as the number of annual incidents hits a record high.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Tue, 28 Jul 2026 21:31:24 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c30489zl298o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-cc02276a7a28",
+    "title": "Villa offer glimpse into future despite friendly loss",
+    "summary": "Youngsters Brian Madjo and George Hemmings scored in Aston Villa's defeat to Real Sociedad.",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Tue, 28 Jul 2026 20:47:11 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cg4dv0qyvzvo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-eceaae8a441b",
+    "title": "Barcola agrees Liverpool move - Wednesday's gossip",
+    "summary": "PSG's Bradley Barcola verbally agrees to join Liverpool but clubs apart on valuation, Real Madrid have no plans to sell Vinicius Jr, Everton want around £70m for Iliman Ndiaye, plus more.",
+    "source": "bbc",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Tue, 28 Jul 2026 21:31:10 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/czrj8ke23g3o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
