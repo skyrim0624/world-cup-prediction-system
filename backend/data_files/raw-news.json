@@ -47876,5 +47876,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-69695c7270ed",
+    "title": "Zidane waited for France - now can he harness their star power?",
+    "summary": "Zinedine Zidane says he waited for the France job, but what will he bring to the role after after five years out of management?",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Tue, 28 Jul 2026 17:04:09 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c20dxgpjng3o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-096598e937c0",
+    "title": "Could Leeds move help Trafford challenge for England keeper spot?",
+    "summary": "BBC Sport examines how James Trafford's England chances could be affected it he completes a big-money move to Leeds.",
+    "source": "bbc",
+    "team": "portugal",
+    "status": "single_source",
+    "published_at": "Tue, 28 Jul 2026 16:28:44 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/clyer1yze4jo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "goalkeeper",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-15db5e8b73c2",
+    "title": "Chelsea set to sign Italy's Dragoni from Barcelona",
+    "summary": "Chelsea are set to sign Italy attacking midfielder Giulia Dragoni from Barcelona.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Tue, 28 Jul 2026 16:18:21 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cy745m20827o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-ee815e3c7b1e",
+    "title": "Motherwell told to 'eat barbed wire' before Faroes test",
+    "summary": "Motherwell boss Alfred Johansson is bracing himself for a tough HB Torshavn welcome in Thursday's Conference League qualifier.",
+    "source": "bbc",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Tue, 28 Jul 2026 17:03:30 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c4gx3e3gdz1o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

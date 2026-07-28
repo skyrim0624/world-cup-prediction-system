@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-28T15:51:27.500561+00:00",
+  "updatedAt": "2026-07-28T17:39:48.544502+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24561,6 +24561,34 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 28 Jul 2026 14:19:01 GMT"
+    },
+    {
+      "title": "Zidane waited for France - now can he harness their star power?",
+      "detail": "Zinedine Zidane says he waited for the France job, but what will he bring to the role after after five years out of management?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 17:04:09 GMT"
+    },
+    {
+      "title": "Could Leeds move help Trafford challenge for England keeper spot?",
+      "detail": "BBC Sport examines how James Trafford's England chances could be affected it he completes a big-money move to Leeds.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 16:28:44 GMT"
+    },
+    {
+      "title": "Chelsea set to sign Italy's Dragoni from Barcelona",
+      "detail": "Chelsea are set to sign Italy attacking midfielder Giulia Dragoni from Barcelona.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 16:18:21 GMT"
+    },
+    {
+      "title": "Motherwell told to 'eat barbed wire' before Faroes test",
+      "detail": "Motherwell boss Alfred Johansson is bracing himself for a tough HB Torshavn welcome in Thursday's Conference League qualifier.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 17:03:30 GMT"
     }
   ],
   "teams": [
@@ -25496,18 +25524,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3424,
+      "eventCount": 3428,
       "manualEventCount": 3,
-      "rawNewsCount": 3421,
+      "rawNewsCount": 3425,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3424,
-      "applied": 3116,
+      "watched": 3428,
+      "applied": 3119,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3419,
+      "singleSource": 3423,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -36148,7 +36176,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-28T15:51:51.255796+00:00",
+    "generatedAt": "2026-07-28T17:40:01.403938+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
