@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-28T02:57:06.171512+00:00",
+  "updatedAt": "2026-07-28T05:54:30.250568+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24428,6 +24428,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Mon, 27 Jul 2026 21:21:18 GMT"
+    },
+    {
+      "title": "Why Chelsea want to sign older players",
+      "detail": "Chelsea are targeting deals for Maxence Lacroix, Jordan Henderson and Danny Welbeck - three experienced heads, in an age when the focus has been on youth.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 05:34:08 GMT"
+    },
+    {
+      "title": "Is Wales set to host football's closest derby?",
+      "detail": "Cwmbran Celtic and Cwmbran Town are separated by just 40 metres but will meet on the pitch for the first time in 16 years.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 05:07:43 GMT"
     }
   ],
   "teams": [
@@ -25363,18 +25377,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3405,
+      "eventCount": 3407,
       "manualEventCount": 3,
-      "rawNewsCount": 3402,
+      "rawNewsCount": 3404,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3405,
-      "applied": 3101,
+      "watched": 3407,
+      "applied": 3103,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3400,
+      "singleSource": 3402,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -36015,7 +36029,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-28T02:57:28.472575+00:00",
+    "generatedAt": "2026-07-28T05:54:51.905444+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
