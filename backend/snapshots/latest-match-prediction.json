@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-28T11:23:34.583935+00:00",
+  "updatedAt": "2026-07-28T13:11:54.954133+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24498,6 +24498,34 @@
       "impact": "全局备注",
       "tone": "green",
       "time": "Tue, 28 Jul 2026 05:08:52 GMT"
+    },
+    {
+      "title": "Only use VAR when error blatant - referee chiefs",
+      "detail": "Video assistant referees should only be used to change \"blatantly incorrect\" decisions and clear missed incidents, say European refereeing officials.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 11:30:00 GMT"
+    },
+    {
+      "title": "Rodri out for 'short period' after back surgery",
+      "detail": "Manchester City midfielder Rodri will be sidelined for a \"short period of rehabilitation\" following back surgery on Monday.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 12:03:03 GMT"
+    },
+    {
+      "title": "England keeper Hampton extends deal at Chelsea",
+      "detail": "England international Hannah Hampton signs a new two-year deal with Chelsea.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 11:34:05 GMT"
+    },
+    {
+      "title": "Can lightning strike twice? Cape Verde set for Wafcon debut",
+      "detail": "After the men's success at the World Cup, Cape Verde should not be underestimated on their Women's Africa Cup of Nations debut, forward Sandra Martins warns.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 12:09:04 GMT"
     }
   ],
   "teams": [
@@ -25433,18 +25461,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3415,
+      "eventCount": 3419,
       "manualEventCount": 3,
-      "rawNewsCount": 3412,
+      "rawNewsCount": 3416,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3415,
-      "applied": 3108,
+      "watched": 3419,
+      "applied": 3111,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3410,
+      "singleSource": 3414,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -36085,7 +36113,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-28T11:23:56.806715+00:00",
+    "generatedAt": "2026-07-28T13:12:16.779229+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-28T08:44:45.923917+00:00",
+  "updatedAt": "2026-07-28T11:23:34.583935+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24477,6 +24477,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 28 Jul 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Zidane confirmed as France head coach",
+      "detail": "Former Real Madrid manager Zinedine Zidane has been confirmed as the head coach of the France national team.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 09:03:49 GMT"
+    },
+    {
+      "title": "Shootouts & regional split for new-look League Cup",
+      "detail": "The Players Cup, formerly the League Cup, will have a 23-team league phase that includes penalty shootouts to settle draws after 90 minutes.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 11:04:57 GMT"
+    },
+    {
+      "title": "Reading remove online shop items with spelling errors",
+      "detail": "The League One football club says the images of the merchandise in its online shop have been removed.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 05:08:52 GMT"
     }
   ],
   "teams": [
@@ -25412,18 +25433,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3412,
+      "eventCount": 3415,
       "manualEventCount": 3,
-      "rawNewsCount": 3409,
+      "rawNewsCount": 3412,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3412,
-      "applied": 3107,
+      "watched": 3415,
+      "applied": 3108,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3407,
+      "singleSource": 3410,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -36064,7 +36085,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-28T08:45:08.273516+00:00",
+    "generatedAt": "2026-07-28T11:23:56.806715+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

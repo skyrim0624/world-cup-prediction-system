@@ -47750,5 +47750,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-93cca96a6417",
+    "title": "Only use VAR when error blatant - referee chiefs",
+    "summary": "Video assistant referees should only be used to change \"blatantly incorrect\" decisions and clear missed incidents, say European refereeing officials.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Tue, 28 Jul 2026 11:30:00 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cm2gyzme6gno?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-2b6ca3343b77",
+    "title": "Rodri out for 'short period' after back surgery",
+    "summary": "Manchester City midfielder Rodri will be sidelined for a \"short period of rehabilitation\" following back surgery on Monday.",
+    "source": "bbc",
+    "team": "germany",
+    "status": "single_source",
+    "published_at": "Tue, 28 Jul 2026 12:03:03 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c1j158w2dxlo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-58e276524798",
+    "title": "England keeper Hampton extends deal at Chelsea",
+    "summary": "England international Hannah Hampton signs a new two-year deal with Chelsea.",
+    "source": "bbc",
+    "team": "england",
+    "status": "single_source",
+    "published_at": "Tue, 28 Jul 2026 11:34:05 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c4gvew81dd0o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "goalkeeper",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-89ba5964c36e",
+    "title": "Can lightning strike twice? Cape Verde set for Wafcon debut",
+    "summary": "After the men's success at the World Cup, Cape Verde should not be underestimated on their Women's Africa Cup of Nations debut, forward Sandra Martins warns.",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Tue, 28 Jul 2026 12:09:04 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c2e4jy2xnglo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
