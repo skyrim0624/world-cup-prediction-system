@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-28T17:39:48.544502+00:00",
+  "updatedAt": "2026-07-28T19:40:40.251820+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24589,6 +24589,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 28 Jul 2026 17:03:30 GMT"
+    },
+    {
+      "title": "Savinho open to leaving Man City amid Spurs interest",
+      "detail": "Manchester City winger Savinho is open to leaving the club and is keen to join Premier League rivals Tottenham.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 19:37:04 GMT"
+    },
+    {
+      "title": "Leicester close in on Swansea's Wales forward Cullen",
+      "detail": "Leicester City head coach Russell Martin closing in on striker Liam Cullen from his former club Swansea City.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 18:51:04 GMT"
     }
   ],
   "teams": [
@@ -25524,18 +25538,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3428,
+      "eventCount": 3430,
       "manualEventCount": 3,
-      "rawNewsCount": 3425,
+      "rawNewsCount": 3427,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3428,
-      "applied": 3119,
+      "watched": 3430,
+      "applied": 3121,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3423,
+      "singleSource": 3425,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -36176,7 +36190,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-28T17:40:01.403938+00:00",
+    "generatedAt": "2026-07-28T19:41:03.029103+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
