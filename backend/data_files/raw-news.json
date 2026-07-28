@@ -47610,5 +47610,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-7557afece876",
+    "title": "Why Chelsea want to sign older players",
+    "summary": "Chelsea are targeting deals for Maxence Lacroix, Jordan Henderson and Danny Welbeck - three experienced heads, in an age when the focus has been on youth.",
+    "source": "bbc",
+    "team": "argentina",
+    "status": "single_source",
+    "published_at": "Tue, 28 Jul 2026 05:34:08 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cn0nw0lyrkdo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-cea7da48bf16",
+    "title": "Is Wales set to host football's closest derby?",
+    "summary": "Cwmbran Celtic and Cwmbran Town are separated by just 40 metres but will meet on the pitch for the first time in 16 years.",
+    "source": "bbc",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Tue, 28 Jul 2026 05:07:43 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c5yw5d2zw1po?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
