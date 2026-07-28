@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-28T05:54:30.250568+00:00",
+  "updatedAt": "2026-07-28T08:44:45.923917+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24442,6 +24442,41 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 28 Jul 2026 05:07:43 GMT"
+    },
+    {
+      "title": "'I needed this summer' - what next for Arsenal's Kelly?",
+      "detail": "Chloe Kelly found 2025-26 hard, but is optimistic about hers and Arsenal's prospects this season.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 08:01:34 GMT"
+    },
+    {
+      "title": "Who am I? Guess Premier League star No 8",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 06:14:06 GMT"
+    },
+    {
+      "title": "Is McInnes era giving Rangers fans fewer fears of failure?",
+      "detail": "An experienced figurehead in the dugout, Lawrence Shankland spearheading the attack and further financial backing - are excuses running dry as Rangers target domestic success?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 08:29:55 GMT"
+    },
+    {
+      "title": "Rangers near Makhanya deal as Hogh passes Celtic medical - gossip",
+      "detail": "Celtic, Dundee United and Rangers close in on latest signings as VAR take on new rules from World Cup.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 06:33:35 GMT"
+    },
+    {
+      "title": "Podcast: Can Hearts produce a Tynecastle miracle?",
+      "detail": "Hearts need something special against Sturm Graz.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 07:00:00 GMT"
     }
   ],
   "teams": [
@@ -25377,18 +25412,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3407,
+      "eventCount": 3412,
       "manualEventCount": 3,
-      "rawNewsCount": 3404,
+      "rawNewsCount": 3409,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3407,
-      "applied": 3103,
+      "watched": 3412,
+      "applied": 3107,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3402,
+      "singleSource": 3407,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -36029,7 +36064,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-28T05:54:51.905444+00:00",
+    "generatedAt": "2026-07-28T08:45:08.273516+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
