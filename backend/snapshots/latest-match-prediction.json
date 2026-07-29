@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-29T20:32:22.353064+00:00",
+  "updatedAt": "2026-07-29T22:05:00.432740+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24834,6 +24834,20 @@
       "impact": "全局备注",
       "tone": "green",
       "time": "Wed, 29 Jul 2026 18:00:20 GMT"
+    },
+    {
+      "title": "Real Madrid confident of Rodri deal - Thursday's gossip",
+      "detail": "Real Madrid confident in securing a deal for Manchester City's Rodri, Inter Milan could rekindle move for Liverpool's Curtis Jones, Aston Villa have bid for Palmeiras forward Allan rejected, plus more.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 21:20:56 GMT"
+    },
+    {
+      "title": "Are Fifa and Infantino Selling the World Cup?",
+      "detail": "World football's governing body plans to sell off stakes in its football competitions.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 19:00:00 GMT"
     }
   ],
   "teams": [
@@ -25769,18 +25783,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3463,
+      "eventCount": 3465,
       "manualEventCount": 3,
-      "rawNewsCount": 3460,
+      "rawNewsCount": 3462,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3463,
-      "applied": 3147,
+      "watched": 3465,
+      "applied": 3148,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3458,
+      "singleSource": 3460,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -36421,7 +36435,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-29T20:32:45.024217+00:00",
+    "generatedAt": "2026-07-29T22:05:22.594251+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

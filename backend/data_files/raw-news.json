@@ -48422,5 +48422,33 @@
     "factor": "defense",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-fe3a731d4850",
+    "title": "Real Madrid confident of Rodri deal - Thursday's gossip",
+    "summary": "Real Madrid confident in securing a deal for Manchester City's Rodri, Inter Milan could rekindle move for Liverpool's Curtis Jones, Aston Villa have bid for Palmeiras forward Allan rejected, plus more.",
+    "source": "bbc",
+    "team": "ecuador",
+    "status": "single_source",
+    "published_at": "Wed, 29 Jul 2026 21:20:56 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cvgj861zn59o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-344e3bcc7b60",
+    "title": "Are Fifa and Infantino Selling the World Cup?",
+    "summary": "World football's governing body plans to sell off stakes in its football competitions.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Wed, 29 Jul 2026 19:00:00 GMT",
+    "url": "https://www.bbc.co.uk/sounds/play/p0p1k1qx?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
