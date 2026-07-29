@@ -48380,5 +48380,47 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-c8ffde0af3cb",
+    "title": "'Change is inevitable' - Liverpool CEO on FSG, Iraola and consortium talks",
+    "summary": "Liverpool Billy Hogan talks to BBC Sport in New York about investment, transition and why FSG aren't done yet.",
+    "source": "bbc",
+    "team": "portugal",
+    "status": "single_source",
+    "published_at": "Wed, 29 Jul 2026 18:54:07 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c8xnvqrxv8ro?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-400a3c486653",
+    "title": "What is the magic number to win Scottish Premiership?",
+    "summary": "Would 31 wins do it? BBC Scotland looks at the trends of Scottish top-flight champions in the 2000s.",
+    "source": "bbc",
+    "team": "scotland",
+    "status": "single_source",
+    "published_at": "Wed, 29 Jul 2026 18:31:29 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c3wy7ww85j1o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-fdc34b33dc99",
+    "title": "Wrexham complete signing of Palace defender Imray",
+    "summary": "Wrexham have completed the signing of Crystal Palace full-back Danny Imray, their first incoming of the summer transfer window.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Wed, 29 Jul 2026 18:00:20 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/crl7d6n6kp5o?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "defense",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

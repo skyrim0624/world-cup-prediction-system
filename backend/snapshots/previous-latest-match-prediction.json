@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-29T16:25:46.993634+00:00",
+  "updatedAt": "2026-07-29T17:50:02.146925+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24799,6 +24799,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 29 Jul 2026 15:00:25 GMT"
+    },
+    {
+      "title": "Fifa opens disciplinary proceedings against Argentina",
+      "detail": "Fifa opens disciplinary proceedings against Argentina over their behaviour after their World Cup final loss to Spain and throughout the tournament.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 17:21:57 GMT"
+    },
+    {
+      "title": "Spain U20s midfielder Arques joins London City",
+      "detail": "London City Lionesses sign Spanish youth international Daniela Arques from Sporting, subject to international clearance.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 17:00:14 GMT"
     }
   ],
   "teams": [
@@ -25734,18 +25748,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3458,
+      "eventCount": 3460,
       "manualEventCount": 3,
-      "rawNewsCount": 3455,
+      "rawNewsCount": 3457,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3458,
-      "applied": 3143,
+      "watched": 3460,
+      "applied": 3145,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3453,
+      "singleSource": 3455,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -36386,7 +36400,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-29T16:26:09.365786+00:00",
+    "generatedAt": "2026-07-29T17:50:24.673290+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
