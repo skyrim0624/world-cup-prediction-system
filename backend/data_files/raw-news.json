@@ -48324,5 +48324,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-827eb7b9d78e",
+    "title": "Liverpool preparing opening bid for PSG's Barcola",
+    "summary": "Liverpool step up their interest for Paris St-Germain's Bradley Barcola and are preparing an opening bid.",
+    "source": "bbc",
+    "team": "brazil",
+    "status": "single_source",
+    "published_at": "Wed, 29 Jul 2026 15:42:20 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c0qv8wekp7eo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-83f9afc4436e",
+    "title": "Neville joins Charlton as Leicester sign Irish duo",
+    "summary": "Charlton Athletic have signed full-back Ashleigh Neville from Leicester City on a two-year deal.",
+    "source": "bbc",
+    "team": "netherlands",
+    "status": "single_source",
+    "published_at": "Wed, 29 Jul 2026 15:00:25 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/clyjzxv990go?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-29T14:52:45.460494+00:00",
+  "updatedAt": "2026-07-29T16:25:46.993634+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24785,6 +24785,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 29 Jul 2026 12:05:50 GMT"
+    },
+    {
+      "title": "Liverpool preparing opening bid for PSG's Barcola",
+      "detail": "Liverpool step up their interest for Paris St-Germain's Bradley Barcola and are preparing an opening bid.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 15:42:20 GMT"
+    },
+    {
+      "title": "Neville joins Charlton as Leicester sign Irish duo",
+      "detail": "Charlton Athletic have signed full-back Ashleigh Neville from Leicester City on a two-year deal.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 15:00:25 GMT"
     }
   ],
   "teams": [
@@ -25720,18 +25734,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3456,
+      "eventCount": 3458,
       "manualEventCount": 3,
-      "rawNewsCount": 3453,
+      "rawNewsCount": 3455,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3456,
-      "applied": 3141,
+      "watched": 3458,
+      "applied": 3143,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3451,
+      "singleSource": 3453,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -36372,7 +36386,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-29T14:53:00.817496+00:00",
+    "generatedAt": "2026-07-29T16:26:09.365786+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
