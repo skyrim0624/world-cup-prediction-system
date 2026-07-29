@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-28T22:35:16.931017+00:00",
+  "updatedAt": "2026-07-29T00:02:41.736402+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24624,6 +24624,20 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 28 Jul 2026 21:31:10 GMT"
+    },
+    {
+      "title": "Are there already worrying signs for Vrancken's Hearts?",
+      "detail": "Former Hearts forward Ryan Stevenson delivers a scathing verdict as Wouter Vrancken's reign begins with a chastening Champions League elimination.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 22:56:30 GMT"
+    },
+    {
+      "title": "'This could be a long season for Hearts'",
+      "detail": "Reaction as Sturm Graz outclass Hearts in the Champions League qualifiers",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 22:54:00 GMT"
     }
   ],
   "teams": [
@@ -25559,18 +25573,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3433,
+      "eventCount": 3435,
       "manualEventCount": 3,
-      "rawNewsCount": 3430,
+      "rawNewsCount": 3432,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3433,
-      "applied": 3123,
+      "watched": 3435,
+      "applied": 3124,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3428,
+      "singleSource": 3430,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -36094,13 +36108,13 @@
     "historyFreshness": {
       "status": "current",
       "source": "team_match_history_latest_elo_date",
-      "referenceDate": "2026-07-28",
+      "referenceDate": "2026-07-29",
       "maxStaleDays": 120,
       "teamCount": 48,
       "newestDate": "2026-06-13",
       "oldestDate": "2026-03-31",
-      "newestAgeDays": 45,
-      "oldestAgeDays": 119,
+      "newestAgeDays": 46,
+      "oldestAgeDays": 120,
       "staleTeams": []
     },
     "historicalEloBlend": {
@@ -36211,7 +36225,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-28T22:35:39.144741+00:00",
+    "generatedAt": "2026-07-29T00:03:03.639952+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
