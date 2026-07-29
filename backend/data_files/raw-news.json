@@ -48030,5 +48030,61 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-34785ca5a87c",
+    "title": "Brighton's Welbeck set for Chelsea medical",
+    "summary": "Brighton striker Danny Welbeck is given permission to have a medical at Stamford Bridge as his move to Chelsea moves closer.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Wed, 29 Jul 2026 05:44:24 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c935lvyeykwo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-c47ebd3c5c8e",
+    "title": "Diomande's rapid and remarkable rise to Real Madrid",
+    "summary": "Yan Diomande has quickly gone from being a relatively unknown winger to the brink of becoming Real Madrid's record signing.",
+    "source": "bbc",
+    "team": "morocco",
+    "status": "single_source",
+    "published_at": "Wed, 29 Jul 2026 06:28:17 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/cm2g3dd2jxko?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-da4792db35d9",
+    "title": "Who am I? Guess Premier League star No 9",
+    "summary": "Will you get today's player in as few attempts as possible?",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Wed, 29 Jul 2026 06:07:50 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c5ydrlg3rjpo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-381c096d38b5",
+    "title": "Karel Prince: Lie Detector podcast - with Asmir Begovic",
+    "summary": "Matchmaking with Tony Pulis, Brendan Rogers' secret transfer or Rafa Benitez's party ban?",
+    "source": "bbc",
+    "team": "paraguay",
+    "status": "single_source",
+    "published_at": "Wed, 29 Jul 2026 06:00:00 GMT",
+    "url": "https://www.bbc.co.uk/sounds/play/p0nzvk5b?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]
