@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-29T17:50:02.146925+00:00",
+  "updatedAt": "2026-07-29T19:25:33.372999+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24813,6 +24813,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 29 Jul 2026 17:00:14 GMT"
+    },
+    {
+      "title": "'Change is inevitable' - Liverpool CEO on FSG, Iraola and consortium talks",
+      "detail": "Liverpool Billy Hogan talks to BBC Sport in New York about investment, transition and why FSG aren't done yet.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 18:54:07 GMT"
+    },
+    {
+      "title": "What is the magic number to win Scottish Premiership?",
+      "detail": "Would 31 wins do it? BBC Scotland looks at the trends of Scottish top-flight champions in the 2000s.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 18:31:29 GMT"
+    },
+    {
+      "title": "Wrexham complete signing of Palace defender Imray",
+      "detail": "Wrexham have completed the signing of Crystal Palace full-back Danny Imray, their first incoming of the summer transfer window.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 18:00:20 GMT"
     }
   ],
   "teams": [
@@ -25748,18 +25769,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3460,
+      "eventCount": 3463,
       "manualEventCount": 3,
-      "rawNewsCount": 3457,
+      "rawNewsCount": 3460,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3460,
-      "applied": 3145,
+      "watched": 3463,
+      "applied": 3147,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3455,
+      "singleSource": 3458,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -36400,7 +36421,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-29T17:50:24.673290+00:00",
+    "generatedAt": "2026-07-29T19:25:55.982671+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
