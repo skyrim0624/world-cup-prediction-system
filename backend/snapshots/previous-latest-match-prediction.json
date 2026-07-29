@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-29T03:51:04.133193+00:00",
+  "updatedAt": "2026-07-29T06:36:36.951776+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24638,6 +24638,34 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 28 Jul 2026 22:54:00 GMT"
+    },
+    {
+      "title": "Brighton's Welbeck set for Chelsea medical",
+      "detail": "Brighton striker Danny Welbeck is given permission to have a medical at Stamford Bridge as his move to Chelsea moves closer.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 05:44:24 GMT"
+    },
+    {
+      "title": "Diomande's rapid and remarkable rise to Real Madrid",
+      "detail": "Yan Diomande has quickly gone from being a relatively unknown winger to the brink of becoming Real Madrid's record signing.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 06:28:17 GMT"
+    },
+    {
+      "title": "Who am I? Guess Premier League star No 9",
+      "detail": "Will you get today's player in as few attempts as possible?",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 06:07:50 GMT"
+    },
+    {
+      "title": "Karel Prince: Lie Detector podcast - with Asmir Begovic",
+      "detail": "Matchmaking with Tony Pulis, Brendan Rogers' secret transfer or Rafa Benitez's party ban?",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 06:00:00 GMT"
     }
   ],
   "teams": [
@@ -25573,18 +25601,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3435,
+      "eventCount": 3439,
       "manualEventCount": 3,
-      "rawNewsCount": 3432,
+      "rawNewsCount": 3436,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3435,
-      "applied": 3124,
+      "watched": 3439,
+      "applied": 3126,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3430,
+      "singleSource": 3434,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -36225,7 +36253,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-29T03:51:26.578173+00:00",
+    "generatedAt": "2026-07-29T06:36:58.864452+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
