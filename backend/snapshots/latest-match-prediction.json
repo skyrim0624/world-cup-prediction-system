@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-29T12:05:24.534642+00:00",
+  "updatedAt": "2026-07-29T14:52:45.460494+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24736,6 +24736,55 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 29 Jul 2026 11:15:59 GMT"
+    },
+    {
+      "title": "Is World Cup sell-off plan a step too far by Infantino?",
+      "detail": "BBC Sport explores why Fifa president Gianni Infantino feels powerful enough to sell off stakes in the World Cup - and what the consequences could be.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 13:48:10 GMT"
+    },
+    {
+      "title": "Timber leaves Arsenal camp for groin check",
+      "detail": "Jurrien Timber travels back to London from Arsenal's training camp in Spain in a move related to the groin injury that caused him to miss the end of last season.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Wed, 29 Jul 2026 13:14:41 GMT"
+    },
+    {
+      "title": "Shankland named captain as Rangers near Makhanya signing",
+      "detail": "Lawrence Shankland says being named Rangers captain exceeds the dream he had of playing for his boyhood team.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 14:35:42 GMT"
+    },
+    {
+      "title": "Wolves striker Arokodare joins Ajax on loan",
+      "detail": "Wolves striker Tolu Arokodare joins Ajax on a season's loan with the Dutch club having the option to make it a permanent move in the summer.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 13:19:46 GMT"
+    },
+    {
+      "title": "Forest close in on Ivory Coast defender Diomande",
+      "detail": "Nottingham Forest are close to completing a deal for Sporting Lisbon defender Ousmane Diomande.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 12:41:27 GMT"
+    },
+    {
+      "title": "Newcastle sign Spurs forward Thomas",
+      "detail": "WSL 2 side Newcastle United sign Scotland forward Martha Thomas for an undisclosed fee.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 14:21:31 GMT"
+    },
+    {
+      "title": "Spacey-Cale to step down at Southampton",
+      "detail": "Southampton director of women's football Marieanne Spacey-Cale says she will step down this year.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 12:05:50 GMT"
     }
   ],
   "teams": [
@@ -25012,7 +25061,7 @@
       "factors": {
         "strength": 78,
         "form": 75,
-        "path": 64,
+        "path": 62,
         "squad": 69,
         "margin": 77
       },
@@ -25671,18 +25720,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3449,
+      "eventCount": 3456,
       "manualEventCount": 3,
-      "rawNewsCount": 3446,
+      "rawNewsCount": 3453,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3449,
-      "applied": 3135,
+      "watched": 3456,
+      "applied": 3141,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3444,
+      "singleSource": 3451,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -25796,7 +25845,7 @@
         "attack": -4.699999999999999,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": -3.73,
+        "path": -5.88,
         "squad": -6.949999999999999
       },
       "turkiye": {
@@ -36323,7 +36372,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-29T12:05:41.644824+00:00",
+    "generatedAt": "2026-07-29T14:53:00.817496+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
