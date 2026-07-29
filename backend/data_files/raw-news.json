@@ -48198,5 +48198,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-610855c536bd",
+    "title": "Rayo Vallecano to move stadium over Legionnaires risk",
+    "summary": "La Liga side Rayo Vallecano are barred from playing at their home stadium just weeks before the new season over the risk of supporters contracting Legionnaires' disease.",
+    "source": "bbc",
+    "team": "canada",
+    "status": "single_source",
+    "published_at": "Wed, 29 Jul 2026 10:48:24 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c1w1p797q7qo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-fc792d0e8f31",
+    "title": "McGregor wants Celtic to win league 'in more style'",
+    "summary": "Celtic captain Callum McGregor insists he sees his future at the club and wants to win the league \"in a bit more style\" this term.",
+    "source": "bbc",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Wed, 29 Jul 2026 11:15:59 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/c0km740dngdo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

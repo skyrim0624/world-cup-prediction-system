@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-29T06:36:36.951776+00:00",
+  "updatedAt": "2026-07-29T09:41:45.161062+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24666,6 +24666,62 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Wed, 29 Jul 2026 06:00:00 GMT"
+    },
+    {
+      "title": "FA concerns over Fifa plan that could lead to Uefa World Cup boycott",
+      "detail": "The Football Association says it is concerned by Fifa's proposals to sell stakes in its major competitions as Uefa's 55 member associations hold an emergency meeting to discuss the issue.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 09:26:15 GMT"
+    },
+    {
+      "title": "Grealish misses Man City tour despite training return",
+      "detail": "Jack Grealish will not make his return in a Manchester City shirt after being left out of the club's pre-season tour of Asia as he continues to recover from a foot injury.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Wed, 29 Jul 2026 07:26:32 GMT"
+    },
+    {
+      "title": "Cucurella gets tattoo of Spain coach De la Fuente",
+      "detail": "Spain defender Marc Cucurella keeps his promise to get a tattoo of World Cup-winning coach Luis de la Fuente.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 07:42:52 GMT"
+    },
+    {
+      "title": "Palace hold talks with ex-Arsenal defender Tomiyasu",
+      "detail": "Japan's Takehiro Tomiyasu, who is training with Crystal Palace, was named as a substitute in the pre-season friendly against Lens.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Wed, 29 Jul 2026 09:22:02 GMT"
+    },
+    {
+      "title": "Birmingham & Preston - Barcelona's unlikely UK camp",
+      "detail": "Barcelona will be training at St George's Park this week and taking on Championship sides Birmingham City and Preston.",
+      "impact": "可入模型",
+      "tone": "orange",
+      "time": "Wed, 29 Jul 2026 08:12:58 GMT"
+    },
+    {
+      "title": "Middlesbrough sign USA midfielder Berhalter",
+      "detail": "Middlesbrough sign Vancouver Whitecaps midfielder Sebastian Berhalter for an undisclosed fee on a four-year deal.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 08:30:29 GMT"
+    },
+    {
+      "title": "Rangers set to make profit on Antman - gossip",
+      "detail": "Rangers have accepted a bid from Anderlecht for winger Oliver Antman, while Celtic have had a permanent offer for Benjamin Arthur rejected.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 07:01:40 GMT"
+    },
+    {
+      "title": "The tactical trends & big ideas shaping new Premiership season",
+      "detail": "A team-by-team look at the season's tactical storylines.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 07:00:00 GMT"
     }
   ],
   "teams": [
@@ -24923,7 +24979,7 @@
       "factors": {
         "strength": 75,
         "form": 68,
-        "path": 60,
+        "path": 59,
         "squad": 61,
         "margin": 74
       },
@@ -24962,7 +25018,7 @@
         "strength": 79,
         "form": 77,
         "path": 69,
-        "squad": 80,
+        "squad": 78,
         "margin": 77
       },
       "tournament": {
@@ -25075,7 +25131,7 @@
       "factors": {
         "strength": 84,
         "form": 82,
-        "path": 71,
+        "path": 70,
         "squad": 80,
         "margin": 80
       },
@@ -25601,18 +25657,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3439,
+      "eventCount": 3447,
       "manualEventCount": 3,
-      "rawNewsCount": 3436,
+      "rawNewsCount": 3444,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3439,
-      "applied": 3126,
+      "watched": 3447,
+      "applied": 3133,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3434,
+      "singleSource": 3442,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -25719,7 +25775,7 @@
         "attack": -9.5,
         "defense": -4.699999999999999,
         "goalkeeper": 0.0,
-        "path": -4.75,
+        "path": -5.67,
         "squad": -14.5
       },
       "australia": {
@@ -25734,7 +25790,7 @@
         "defense": 0.0,
         "goalkeeper": 0.0,
         "path": 1.54,
-        "squad": 0.7999999999999998
+        "squad": -1.35
       },
       "germany": {
         "attack": -4.3,
@@ -25775,7 +25831,7 @@
         "attack": 0.0,
         "defense": 0.0,
         "goalkeeper": 0.0,
-        "path": 0.0,
+        "path": -0.92,
         "squad": 0.0
       },
       "tunisia": {
@@ -36253,7 +36309,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-29T06:36:58.864452+00:00",
+    "generatedAt": "2026-07-29T09:42:07.520980+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {

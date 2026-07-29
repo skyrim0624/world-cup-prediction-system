@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-29T09:41:45.161062+00:00",
+  "updatedAt": "2026-07-29T12:05:24.534642+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24722,6 +24722,20 @@
       "impact": "全局备注",
       "tone": "green",
       "time": "Wed, 29 Jul 2026 07:00:00 GMT"
+    },
+    {
+      "title": "Rayo Vallecano to move stadium over Legionnaires risk",
+      "detail": "La Liga side Rayo Vallecano are barred from playing at their home stadium just weeks before the new season over the risk of supporters contracting Legionnaires' disease.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 10:48:24 GMT"
+    },
+    {
+      "title": "McGregor wants Celtic to win league 'in more style'",
+      "detail": "Celtic captain Callum McGregor insists he sees his future at the club and wants to win the league \"in a bit more style\" this term.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Wed, 29 Jul 2026 11:15:59 GMT"
     }
   ],
   "teams": [
@@ -25657,18 +25671,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3447,
+      "eventCount": 3449,
       "manualEventCount": 3,
-      "rawNewsCount": 3444,
+      "rawNewsCount": 3446,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3447,
-      "applied": 3133,
+      "watched": 3449,
+      "applied": 3135,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3442,
+      "singleSource": 3444,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -36309,7 +36323,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-29T09:42:07.520980+00:00",
+    "generatedAt": "2026-07-29T12:05:41.644824+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
