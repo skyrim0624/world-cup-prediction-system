@@ -48002,5 +48002,33 @@
     "factor": "squad",
     "direction": 0,
     "confidence": 0.4
+  },
+  {
+    "id": "bbc-b272dd232063",
+    "title": "Are there already worrying signs for Vrancken's Hearts?",
+    "summary": "Former Hearts forward Ryan Stevenson delivers a scathing verdict as Wouter Vrancken's reign begins with a chastening Champions League elimination.",
+    "source": "bbc",
+    "team": null,
+    "status": "single_source",
+    "published_at": "Tue, 28 Jul 2026 22:56:30 GMT",
+    "url": "https://www.bbc.co.uk/sport/football/articles/clyxgpkkp0mo?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "attack",
+    "direction": 0,
+    "confidence": 0.4
+  },
+  {
+    "id": "bbc-b189e05b6869",
+    "title": "'This could be a long season for Hearts'",
+    "summary": "Reaction as Sturm Graz outclass Hearts in the Champions League qualifiers",
+    "source": "bbc",
+    "team": "turkiye",
+    "status": "single_source",
+    "published_at": "Tue, 28 Jul 2026 22:54:00 GMT",
+    "url": "https://www.bbc.co.uk/sounds/play/p0p1c3m1?at_medium=RSS&at_campaign=rss",
+    "category": "general",
+    "factor": "squad",
+    "direction": 0,
+    "confidence": 0.4
   }
 ]

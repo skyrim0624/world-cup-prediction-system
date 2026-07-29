@@ -10,7 +10,7 @@
   "homeWin": 82,
   "draw": 12,
   "awayWin": 6,
-  "updatedAt": "2026-07-28T21:13:16.745663+00:00",
+  "updatedAt": "2026-07-28T22:35:16.931017+00:00",
   "fixtureContext": {
     "home": {
       "team": "germany",
@@ -24603,6 +24603,27 @@
       "impact": "可入模型",
       "tone": "green",
       "time": "Tue, 28 Jul 2026 18:51:04 GMT"
+    },
+    {
+      "title": "Kick It Out wants tougher sanctions as discrimination hits new high",
+      "detail": "Anti-discrimination body Kick It Out says tougher sanctions are needed to punish discrimination in football, as the number of annual incidents hits a record high.",
+      "impact": "全局备注",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 21:31:24 GMT"
+    },
+    {
+      "title": "Villa offer glimpse into future despite friendly loss",
+      "detail": "Youngsters Brian Madjo and George Hemmings scored in Aston Villa's defeat to Real Sociedad.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 20:47:11 GMT"
+    },
+    {
+      "title": "Barcola agrees Liverpool move - Wednesday's gossip",
+      "detail": "PSG's Bradley Barcola verbally agrees to join Liverpool but clubs apart on valuation, Real Madrid have no plans to sell Vinicius Jr, Everton want around £70m for Iliman Ndiaye, plus more.",
+      "impact": "可入模型",
+      "tone": "green",
+      "time": "Tue, 28 Jul 2026 21:31:10 GMT"
     }
   ],
   "teams": [
@@ -25538,18 +25559,18 @@
       "teamCount": 48,
       "groupCount": 12,
       "fixtureCount": 72,
-      "eventCount": 3430,
+      "eventCount": 3433,
       "manualEventCount": 3,
-      "rawNewsCount": 3427,
+      "rawNewsCount": 3430,
       "newsSourceCount": 10,
       "placeholderSlots": 0
     },
     "events": {
-      "watched": 3430,
-      "applied": 3121,
+      "watched": 3433,
+      "applied": 3123,
       "ignored": 2,
       "reviewRequired": 1,
-      "singleSource": 3425,
+      "singleSource": 3428,
       "multiSource": 0,
       "confirmed": 4
     },
@@ -36190,7 +36211,7 @@
   },
   "snapshotMeta": {
     "type": "match-prediction",
-    "generatedAt": "2026-07-28T21:13:38.551473+00:00",
+    "generatedAt": "2026-07-28T22:35:39.144741+00:00",
     "path": "backend/snapshots/latest-match-prediction.json"
   },
   "dailyMovers": {
